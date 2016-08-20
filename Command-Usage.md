@@ -63,7 +63,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms group \<group\> `unset` \<node\> [server] [world] - luckperms.group.unsetpermission
 *  /perms group \<group\> `setinherit` \<group\> [server] [world] - luckperms.group.setinherit
 *  /perms group \<group\> `unsetinherit` \<group\> [server] [world] - luckperms.group.unsetinherit
-*  /perms group \<group\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world] - settemppermission
+*  /perms group \<group\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world] - lcsettemppermission
 *  /perms group \<group\> `unsettemp` \<node\> [server] [world] - luckperms.group.unsettemppermission
 *  /perms group \<group\> `settempinherit` \<group\> \<duration\> [server] [world] - luckperms.group.settempinherit
 *  /perms group \<group\> `unsettempinherit` \<group\> [server] [world] - luckperms.group.unsettempinherit
