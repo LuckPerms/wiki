@@ -5,6 +5,7 @@ LuckPerms has built in support to allow easy migration of permissions data from 
 * **zPermissions**
 * **PermissionsEx**
 * **PowerfulPerms**
+* **BungeePerms**
 
 # How to
 **IMPORTANT: Migration commands do not work from in-game. You MUST use them from the console.**
@@ -15,12 +16,14 @@ The migration process is fairly simple, however it varies slightly for each plat
 2. Start the server up. You can technically carry out the process on a live production server, however I advise that if possible, you do it on a server with no players.
 3. Be aware that the import process has the potential to use a lot of memory. A lot of data has to be loaded, processed and saved. You should be ok, but make sure your server has enough allocated.
 
-## zPermissions, PermissionsEx & GroupManager
+## zPermissions, PermissionsEx, BungeePerms & GroupManager
 These all follow a similar process.
 
 #### Execute the following command from the server console:
 
 **/luckperms migration [plugin name] [list of worlds]**
+
+(no need to supply the list of worlds for BungeePerms)
 
 Where the plugin name is the plugin you are importing from.
 
