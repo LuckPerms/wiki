@@ -17,4 +17,5 @@ The LuckPerms identifier is just **"luckperms"**.
 
 To use the placeholders, simply grab a download of `LuckPermsPlaceholderExpansion.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions` folder.
 
+[Click here to download the expansion](https://ci.lucko.me/job/LuckPerms/lastSuccessfulBuild/artifact/bukkit-placeholders/target/LuckPermsPlaceholderExpansion.jar)
 
