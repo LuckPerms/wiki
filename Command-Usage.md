@@ -69,6 +69,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms group \<group\> `unsettempinherit` \<group\> [server] [world] - luckperms.group.unsettempinherit
 *  /perms group \<group\> `showtracks` - luckperms.group.showtracks
 *  /perms group \<group\> `clear` - luckperms.group.clear
+*  /perms group \<group\> `rename` \<new name\> - luckperms.group.rename
 
 ### Track
 *  /perms track \<track\> `info` - luckperms.track.info
@@ -76,6 +77,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms track \<track\> `insert` \<group\> \<position\> - luckperms.track.insert
 *  /perms track \<track\> `remove` \<group\> - luckperms.track.remove
 *  /perms track \<track\> `clear` - luckperms.track.clear
+*  /perms track \<track\> `rename` \<new name\> - luckperms.track.rename
 
 ### Log
 *  /perms log `recent` [user] [page] - luckperms.log.recent
