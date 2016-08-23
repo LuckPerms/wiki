@@ -12,6 +12,8 @@ LuckPerms has built in support to allow easy migration of permissions data from 
 
 The migration process is fairly simple, however it varies slightly for each platform.
 
+The console output during the migration process is purposely verbose and spammy. Messages starting with "(LP) LOG" can be ignored, however stack traces shouldn't be (they usually mention some sort of exception). If your migration output contains stack traces, please report them to me. More info at the bottom of this page. 
+
 1. Place the LuckPerms jar file, as well as the jar of zPermissions, etc... in your servers plugin folder.
 2. Start the server up. You can technically carry out the process on a live production server, however I advise that if possible, you do it on a server with no players.
 3. Be aware that the import process has the potential to use a lot of memory. A lot of data has to be loaded, processed and saved. You should be ok, but make sure your server has enough allocated.
