@@ -22,86 +22,173 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 
 ### General
 *  /perms - n/a
-*  /perms `sync` - luckperms.sync
-*  /perms `info` - luckperms.info
-*  /perms `debug` - luckperms.debug
-*  /perms `import` \<file\> - luckperms.import
-*  /perms `creategroup` \<group\> - luckperms.creategroup
-*  /perms `deletegroup` \<group\> - luckperms.deletegroup
-*  /perms `listgroups` - luckperms.listgroups
-*  /perms `createtrack` \<track\> - luckperms.createtrack
-*  /perms `deletetrack` \<track\> - luckperms.deletetrack
-*  /perms `listtracks` - luckperms.listtracks
+*  /perms `sync`
+*  /perms `info`
+*  /perms `debug`
+*  /perms `import` \<file\>
+*  /perms `creategroup` \<group\>
+*  /perms `deletegroup` \<group\>
+*  /perms `listgroups`
+*  /perms `createtrack` \<track\>
+*  /perms `deletetrack` \<track\>
+*  /perms `listtracks`
 
 ### User
-*  /perms user \<user\> `info` - luckperms.user.info
-*  /perms user \<user\> `getuuid` - luckperms.user.getuuid
-*  /perms user \<user\> `listnodes` - luckperms.user.listnodes
-*  /perms user \<user\> `haspermission` \<node\> [server] [world] - luckperms.user.haspermission
-*  /perms user \<user\> `inheritspermission` \<node\> [server] [world] - luckperms.user.inheritspermission
-*  /perms user \<user\> `set` \<node\> \<true/false\> [server] [world] - luckperms.user.setpermission
-*  /perms user \<user\> `unset` \<node\> [server] [world] -  luckperms.user.unsetpermission
-*  /perms user \<user\> `addgroup` \<group\> [server] [world] - luckperms.user.addgroup
-*  /perms user \<user\> `removegroup` \<group\> [server] [world] - luckperms.user.removegroup
-*  /perms user \<user\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world] - luckperms.user.settemppermission
-*  /perms user \<user\> `unsettemp` \<node\> [server] [world] - luckperms.user.unsettemppermission
-*  /perms user \<user\> `addtempgroup` \<group\> \<duration\> [server] [world] - luckperms.user.addtempgroup
-*  /perms user \<user\> `removetempgroup` \<group\> [server] [world] - luckperms.user.removetempgroup
-*  /perms user \<user\> `setprimarygroup` \<group\> - luckperms.user.setprimarygroup
-*  /perms user \<user\> `showtracks` - luckperms.user.showtracks
-*  /perms user \<user\> `promote` \<track\> - luckperms.user.promote
-*  /perms user \<user\> `demote` \<track\> - luckperms.user.demote
-*  /perms user \<user\> `showpos` \<track\> - luckperms.user.showpos
-*  /perms user \<user\> `chatmeta` - luckperms.user.chatmeta
-*  /perms user \<user\> `addprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.addprefix
-*  /perms user \<user\> `addsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.addsuffix
-*  /perms user \<user\> `removeprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.removeprefix
-*  /perms user \<user\> `removesuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.removesuffix
-*  /perms user \<user\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world] - luckperms.user.addtempprefix
-*  /perms user \<user\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world] - luckperms.user.addtempsuffix
-*  /perms user \<user\> `removetempprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.removetempprefix
-*  /perms user \<user\> `removetempsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.removetempsuffix
-*  /perms user \<user\> `clear` - luckperms.user.clear
+*  /perms user \<user\> `info`
+*  /perms user \<user\> `getuuid`
+*  /perms user \<user\> `listnodes`
+*  /perms user \<user\> `haspermission` \<node\> [server] [world]
+*  /perms user \<user\> `inheritspermission` \<node\> [server] [world]
+*  /perms user \<user\> `set` \<node\> \<true/false\> [server] [world]
+*  /perms user \<user\> `unset` \<node\> [server] [world]
+*  /perms user \<user\> `addgroup` \<group\> [server] [world]
+*  /perms user \<user\> `removegroup` \<group\> [server] [world]
+*  /perms user \<user\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
+*  /perms user \<user\> `unsettemp` \<node\> [server] [world]
+*  /perms user \<user\> `addtempgroup` \<group\> \<duration\> [server] [world]
+*  /perms user \<user\> `removetempgroup` \<group\> [server] [world]
+*  /perms user \<user\> `setprimarygroup` \<group\>
+*  /perms user \<user\> `showtracks`
+*  /perms user \<user\> `promote` \<track\>
+*  /perms user \<user\> `demote` \<track\>
+*  /perms user \<user\> `showpos` \<track\>
+*  /perms user \<user\> `chatmeta`
+*  /perms user \<user\> `addprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms user \<user\> `addsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms user \<user\> `removeprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms user \<user\> `removesuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms user \<user\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
+*  /perms user \<user\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
+*  /perms user \<user\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms user \<user\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms user \<user\> `clear`
 
 ### Group
-*  /perms group \<group\> `info` - 	luckperms.group.info
-*  /perms group \<group\> `listnodes` - luckperms.group.listnodes
-*  /perms group \<group\> `haspermission` \<node\> [server] [world] - luckperms.group.haspermission
-*  /perms group \<group\> `inheritspermission` \<node\> [server] [world] - luckperms.group.inheritspermission
-*  /perms group \<group\> `set` \<node\> \<true/false\> [server] [world] - luckperms.group.setpermission
-*  /perms group \<group\> `unset` \<node\> [server] [world] - luckperms.group.unsetpermission
-*  /perms group \<group\> `setinherit` \<group\> [server] [world] - luckperms.group.setinherit
-*  /perms group \<group\> `unsetinherit` \<group\> [server] [world] - luckperms.group.unsetinherit
-*  /perms group \<group\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world] - lcsettemppermission
-*  /perms group \<group\> `unsettemp` \<node\> [server] [world] - luckperms.group.unsettemppermission
-*  /perms group \<group\> `settempinherit` \<group\> \<duration\> [server] [world] - luckperms.group.settempinherit
-*  /perms group \<group\> `unsettempinherit` \<group\> [server] [world] - luckperms.group.unsettempinherit
-*  /perms group \<group\> `showtracks` - luckperms.group.showtracks
-*  /perms group \<group\> `chatmeta` - luckperms.group.chatmeta
-*  /perms group \<group\> `addprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.addprefix
-*  /perms group \<group\> `addsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.addsuffix
-*  /perms group \<group\> `removeprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.removeprefix
-*  /perms group \<group\> `removesuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.removesuffix
-*  /perms group \<group\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world] - luckperms.group.addtempprefix
-*  /perms group \<group\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world] - luckperms.group.addtempsuffix
-*  /perms group \<group\> `removetempprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.removetempprefix
-*  /perms group \<group\> `removetempsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.removetempsuffix
-*  /perms group \<group\> `clear` - luckperms.group.clear
-*  /perms group \<group\> `rename` \<new name\> - luckperms.group.rename
+*  /perms group \<group\> `info`
+*  /perms group \<group\> `listnodes`
+*  /perms group \<group\> `haspermission` \<node\> [server] [world]
+*  /perms group \<group\> `inheritspermission` \<node\> [server] [world]
+*  /perms group \<group\> `set` \<node\> \<true/false\> [server] [world]
+*  /perms group \<group\> `unset` \<node\> [server] [world]
+*  /perms group \<group\> `setinherit` \<group\> [server] [world]
+*  /perms group \<group\> `unsetinherit` \<group\> [server] [world]
+*  /perms group \<group\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
+*  /perms group \<group\> `unsettemp` \<node\> [server] [world]
+*  /perms group \<group\> `settempinherit` \<group\> \<duration\> [server] [world]
+*  /perms group \<group\> `unsettempinherit` \<group\> [server] [world]
+*  /perms group \<group\> `showtracks`
+*  /perms group \<group\> `chatmeta`
+*  /perms group \<group\> `addprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms group \<group\> `addsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms group \<group\> `removeprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms group \<group\> `removesuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms group \<group\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
+*  /perms group \<group\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
+*  /perms group \<group\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
+*  /perms group \<group\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms group \<group\> `clear`
+*  /perms group \<group\> `rename` \<new name\>
 
 ### Track
-*  /perms track \<track\> `info` - luckperms.track.info
-*  /perms track \<track\> `append` \<group\> - luckperms.track.append
-*  /perms track \<track\> `insert` \<group\> \<position\> - luckperms.track.insert
-*  /perms track \<track\> `remove` \<group\> - luckperms.track.remove
-*  /perms track \<track\> `clear` - luckperms.track.clear
-*  /perms track \<track\> `rename` \<new name\> - luckperms.track.rename
+*  /perms track \<track\> `info`
+*  /perms track \<track\> `append` \<group\>
+*  /perms track \<track\> `insert` \<group\> \<position\>
+*  /perms track \<track\> `remove` \<group\>
+*  /perms track \<track\> `clear`
+*  /perms track \<track\> `rename` \<new name\>
 
 ### Log
-*  /perms log `recent` [user] [page] - luckperms.log.recent
-*  /perms log `search` \<query\> [page] - luckperms.log.search
-*  /perms log `notify` [on|off] - luckperms.log.notify
-*  /perms log `export` \<file\> - luckperms.log.export
-*  /perms log `userhistory` \<user\> [page] - luckperms.log.userhistory
-*  /perms log `grouphistory` \<group\> [page] - luckperms.log.grouphistory
-*  /perms log `trackhistory` \<track\> [page] - luckperms.log.trackhistory
+*  /perms log `recent` [user] [page]
+*  /perms log `search` \<query\> [page]
+*  /perms log `notify` [on|off]
+*  /perms log `export` \<file\>
+*  /perms log `userhistory` \<user\> [page]
+*  /perms log `grouphistory` \<group\> [page]
+*  /perms log `trackhistory` \<track\> [page]
+
+
+## Command Permissions
+### General
+*  luckperms.sync
+*  luckperms.info
+*  luckperms.debug
+*  luckperms.import
+*  luckperms.creategroup
+*  luckperms.deletegroup
+*  luckperms.listgroups
+*  luckperms.createtrack
+*  luckperms.deletetrack
+*  luckperms.listtracks
+
+### User
+*  luckperms.user.info
+*  luckperms.user.getuuid
+*  luckperms.user.listnodes
+*  luckperms.user.haspermission
+*  luckperms.user.inheritspermission
+*  luckperms.user.setpermission
+*  luckperms.user.unsetpermission
+*  luckperms.user.addgroup
+*  luckperms.user.removegroup
+*  luckperms.user.settemppermission
+*  luckperms.user.unsettemppermission
+*  luckperms.user.addtempgroup
+*  luckperms.user.removetempgroup
+*  luckperms.user.setprimarygroup
+*  luckperms.user.showtracks
+*  luckperms.user.promote
+*  luckperms.user.demote
+*  luckperms.user.showpos
+*  luckperms.user.chatmeta
+*  luckperms.user.addprefix
+*  luckperms.user.addsuffix
+*  luckperms.user.removeprefix
+*  luckperms.user.removesuffix
+*  luckperms.user.addtempprefix
+*  luckperms.user.addtempsuffix
+*  luckperms.user.removetempprefix
+*  luckperms.user.removetempsuffix
+*  luckperms.user.clear
+
+### Group
+*  luckperms.group.info
+*  luckperms.group.listnodes
+*  luckperms.group.haspermission
+*  luckperms.group.inheritspermission
+*  luckperms.group.setpermission
+*  luckperms.group.unsetpermission
+*  luckperms.group.setinherit
+*  luckperms.group.unsetinherit
+*  luckperms.group.settemppermission
+*  luckperms.group.unsettemppermission
+*  luckperms.group.settempinherit
+*  luckperms.group.unsettempinherit
+*  luckperms.group.showtracks
+*  luckperms.group.chatmeta
+*  luckperms.group.addprefix
+*  luckperms.group.addsuffix
+*  luckperms.group.removeprefix
+*  luckperms.group.removesuffix
+*  luckperms.group.addtempprefix
+*  luckperms.group.addtempsuffix
+*  luckperms.group.removetempprefix
+*  luckperms.group.removetempsuffix
+*  luckperms.group.clear
+*  luckperms.group.rename
+
+### Track
+*  luckperms.track.info
+*  luckperms.track.append
+*  luckperms.track.insert
+*  luckperms.track.remove
+*  luckperms.track.clear
+*  luckperms.track.rename
+
+### Log
+*  luckperms.log.recent
+*  luckperms.log.search
+*  luckperms.log.notify
+*  luckperms.log.export
+*  luckperms.log.userhistory
+*  luckperms.log.grouphistory
+*  luckperms.log.trackhistory
