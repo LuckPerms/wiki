@@ -52,6 +52,15 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms user \<user\> `promote` \<track\> - luckperms.user.promote
 *  /perms user \<user\> `demote` \<track\> - luckperms.user.demote
 *  /perms user \<user\> `showpos` \<track\> - luckperms.user.showpos
+*  /perms user \<user\> `chatmeta` - luckperms.user.chatmeta
+*  /perms user \<user\> `addprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.addprefix
+*  /perms user \<user\> `addsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.addsuffix
+*  /perms user \<user\> `removeprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.removeprefix
+*  /perms user \<user\> `removesuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.removesuffix
+*  /perms user \<user\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world] - luckperms.user.addtempprefix
+*  /perms user \<user\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world] - luckperms.user.addtempsuffix
+*  /perms user \<user\> `removetempprefix` \<priority\> \<prefix\> [server] [world] - luckperms.user.removetempprefix
+*  /perms user \<user\> `removetempsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.user.removetempsuffix
 *  /perms user \<user\> `clear` - luckperms.user.clear
 
 ### Group
@@ -68,6 +77,15 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms group \<group\> `settempinherit` \<group\> \<duration\> [server] [world] - luckperms.group.settempinherit
 *  /perms group \<group\> `unsettempinherit` \<group\> [server] [world] - luckperms.group.unsettempinherit
 *  /perms group \<group\> `showtracks` - luckperms.group.showtracks
+*  /perms group \<group\> `chatmeta` - luckperms.group.chatmeta
+*  /perms group \<group\> `addprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.addprefix
+*  /perms group \<group\> `addsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.addsuffix
+*  /perms group \<group\> `removeprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.removeprefix
+*  /perms group \<group\> `removesuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.removesuffix
+*  /perms group \<group\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world] - luckperms.group.addtempprefix
+*  /perms group \<group\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world] - luckperms.group.addtempsuffix
+*  /perms group \<group\> `removetempprefix` \<priority\> \<prefix\> [server] [world] - luckperms.group.removetempprefix
+*  /perms group \<group\> `removetempsuffix` \<priority\> \<suffix\> [server] [world] - luckperms.group.removetempsuffix
 *  /perms group \<group\> `clear` - luckperms.group.clear
 *  /perms group \<group\> `rename` \<new name\> - luckperms.group.rename
 
