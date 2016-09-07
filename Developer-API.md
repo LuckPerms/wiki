@@ -59,7 +59,7 @@ You can add LuckPerms as a Maven dependency by adding the following to your proj
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
-        <version>2.6</version>
+        <version>2.8</version>
     </dependency>
 </dependencies>
 ````
