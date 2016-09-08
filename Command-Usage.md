@@ -33,6 +33,11 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms `deletetrack` \<track\>
 *  /perms `listtracks`
 
+### Super Secret Console Commands
+*  /perms `export` \<file\> - exports all data to a file
+*  /perms `migration` - lists the platforms availble for migration
+*  /perms `queuecommand` \<command args...\> - queues a command for execution. Should be used if you use LuckPerms commands in scripts.
+
 ### User
 *  /perms user \<user\> `info`
 *  /perms user \<user\> `getuuid`
