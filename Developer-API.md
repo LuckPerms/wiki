@@ -1,7 +1,7 @@
 ## Intro
 I spent an huge amount of time and effort making LuckPerms great for developers.
 
-Most other permissions plugins either don't have APIs, have bad APIs, or have APIs with poor documentation and methods and classes that disappear or move randomly between versions. The Vault project is a great interface and  a great way to integrate with lots of plugins at once, but it's functionality is limited.
+Most other permissions plugins either don't have APIs, have bad APIs, or have APIs with poor documentation and methods and classes that disappear or move randomly between versions. The Vault project is a great interface and  a great way to integrate with lots of plugins at once, but its functionality is limited.
 
 The LuckPerms API allows you to change a huge amount of the plugins internals programmatically, and easily integrate LuckPerms deeply into your existing plugins and systems. There is a massive amount of documentation you can read if you're unsure about what something does.
 
