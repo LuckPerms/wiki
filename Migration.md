@@ -6,6 +6,7 @@ LuckPerms has built in support to allow easy migration of permissions data from 
 * **PermissionsEx**
 * **PowerfulPerms**
 * **BungeePerms**
+* **bPermissions**
 
 # How to
 **IMPORTANT: Migration commands do not work from in-game. You MUST use them from the console.**
@@ -14,18 +15,18 @@ The migration process is fairly simple, however it varies slightly for each plat
 
 The console output during the migration process is purposely verbose and spammy. Messages starting with "(LP) LOG" can be ignored, however stack traces shouldn't be (they usually mention some sort of exception). If your migration output contains stack traces, please report them to me. More info at the bottom of this page. 
 
-1. Place the LuckPerms jar file, as well as the jar of zPermissions, etc... in your servers plugin folder.
+1. Place the LuckPerms jar file, as well as the jar of the plugin you are migrating from in your servers plugin folder.
 2. Start the server up. You can technically carry out the process on a live production server, however I advise that if possible, you do it on a server with no players.
 3. Be aware that the import process has the potential to use a lot of memory. A lot of data has to be loaded, processed and saved. You should be ok, but make sure your server has enough allocated.
 
-## zPermissions, PermissionsEx, BungeePerms & GroupManager
+## zPermissions, PermissionsEx, BungeePerms, bPermissions & GroupManager
 These all follow a similar process.
 
 #### Execute the following command from the server console:
 
 **/luckperms migration [plugin name] [list of worlds]**
 
-(no need to supply the list of worlds for BungeePerms)
+(except no need to supply the list of worlds for BungeePerms or bPermissions)
 
 Where the plugin name is the plugin you are importing from.
 
@@ -69,7 +70,7 @@ The migration will start, and give you logging output about the progress of the 
 When the process has finished, stop the server, remove the other jar file, and then start your server again.
 
 # Errors
-When writing the migration system, I had to code in most cases against poorly written APIs, APIs that change randomly with almost every release (what's the point in the API!), or in some cases no API whatsoever.
+When writing the migration system, I had to code in most cases against poorly written APIs, APIs that change randomly with almost every release , or in some cases no API whatsoever. 
 
 This makes it firstly very hard to design a perfect, bug free solution, and secondly very hard to test. Additionally, everyones dataset is different, and I may not have accounted for errors thrown by the internals of other plugins.
 
