@@ -19,3 +19,5 @@ To use the placeholders, simply grab a download of `LuckPermsPlaceholderExpansio
 
 [Click here to download the expansion](https://ci.lucko.me/job/LuckPerms/lastSuccessfulBuild/artifact/bukkit-placeholders/target/LuckPermsPlaceholderExpansion.jar)
 
+You can also use the standard Vault placeholders. (In fact, if you're trying to get prefixes or suffixes, you should definitely use the Vault placeholders. They will be affected by the LuckPerms Vault config options)
+
