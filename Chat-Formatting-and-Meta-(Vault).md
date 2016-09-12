@@ -18,13 +18,15 @@ I want people in the admin group to have the "&c[Admin]" prefix, and people in t
 * /luckperms creategroup admin
 * /luckperms creategroup mod
 * /luckperms group admin setinherit mod
-* /luckperms group admin addprefix 100 &c[Admin]{SPACE}
-* /luckperms group mod addprefix 90 &d[Mod]{SPACE}
+* /luckperms group admin addprefix 100 "&c[Admin] "
+* /luckperms group mod addprefix 90 "&d[Mod] "
 
-Hey, did you notice {SPACE}? If you want to include spaces in your prefixes/suffixes, you can just use "{SPACE}". The command system will treat your prefix as different arguments otherwise. 😄 
+If you want to include spaces in your prefixes/suffixes, you can just use " " quotes. The command system will treat your prefix/suffix as different arguments otherwise. The quotes will be removed when the prefix/suffix is applied. 😄 
 
 ### Displaying Prefixes and Suffixes
 LuckPerms does **not** format the chat for you. It only provides a way to store this data. You will need a Vault compatible chat formatting plugin to actually change how the chat looks.
+
+I recommend using Vault and EssentialsX. (The regular Essentials version does not support Vault.)
 
 ## Meta
 For the most part, server admins will rarely ever need to touch the meta system. However, I'll provide some brief docs on it anyway.
