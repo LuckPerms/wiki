@@ -1,7 +1,7 @@
 Command usage is printed to the console/chat whenever invalid arguments are provided. Simply typing /perms will list all commands a user has permission to use.
 
 ### Aliases
-| Bukkit           | Bungee           |
+| Bukkit / Sponge  | Bungee           |
 |------------------|------------------|
 | /luckperms       | /luckpermsbungee |
 | /perms           | /bperms          |
