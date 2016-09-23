@@ -42,6 +42,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms user \<user\> `info`
 *  /perms user \<user\> `getuuid`
 *  /perms user \<user\> `listnodes`
+*  /perms user \<user\> `listgroups`
 *  /perms user \<user\> `haspermission` \<node\> [server] [world]
 *  /perms user \<user\> `inheritspermission` \<node\> [server] [world]
 *  /perms user \<user\> `set` \<node\> \<true/false\> [server] [world]
@@ -71,6 +72,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 ### Group
 *  /perms group \<group\> `info`
 *  /perms group \<group\> `listnodes`
+*  /perms group \<group\> `listparents`
 *  /perms group \<group\> `haspermission` \<node\> [server] [world]
 *  /perms group \<group\> `inheritspermission` \<node\> [server] [world]
 *  /perms group \<group\> `set` \<node\> \<true/false\> [server] [world]
@@ -129,6 +131,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  luckperms.user.info
 *  luckperms.user.getuuid
 *  luckperms.user.listnodes
+*  luckperms.user.listgroups
 *  luckperms.user.haspermission
 *  luckperms.user.inheritspermission
 *  luckperms.user.setpermission
@@ -158,6 +161,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 ### Group
 *  luckperms.group.info
 *  luckperms.group.listnodes
+*  luckperms.group.listparents
 *  luckperms.group.haspermission
 *  luckperms.group.inheritspermission
 *  luckperms.group.setpermission
