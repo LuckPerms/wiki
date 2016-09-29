@@ -1,4 +1,3 @@
-# Bulk Edits
 LuckPerms provides some commands to help perform bulk permission modifications with ease. These commands should be used with care, as they can easily corrupt your setup if used in the wrong way. Having said that, most mistakes should be recoverable.  Also be aware that when performing changes to lots of users, there is a potential for a lot of load on your storage, as well as potentially high memory usage on your server.
 
 ## /perms group/user \<?\> bulkchange \<server|world\> \<from\> \<to\>
