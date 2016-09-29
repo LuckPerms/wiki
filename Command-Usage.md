@@ -67,6 +67,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms user \<user\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
 *  /perms user \<user\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
 *  /perms user \<user\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms user \<user\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms user \<user\> `clear`
 
 ### Group
@@ -93,8 +94,10 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms group \<group\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
 *  /perms group \<group\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
 *  /perms group \<group\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
+*  /perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms group \<group\> `clear`
 *  /perms group \<group\> `rename` \<new name\>
+*  /perms group \<group\> `clone` \<name of clone\>
 
 ### Track
 *  /perms track \<track\> `info`
@@ -103,6 +106,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms track \<track\> `remove` \<group\>
 *  /perms track \<track\> `clear`
 *  /perms track \<track\> `rename` \<new name\>
+*  /perms track \<track\> `clone` \<name of clone\>
 
 ### Log
 *  /perms log `recent` [user] [page]
@@ -113,6 +117,10 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms log `grouphistory` \<group\> [page]
 *  /perms log `trackhistory` \<track\> [page]
 
+### User Bulk Edit
+(see the wiki page for details)
+*  /perms usersbulkedit `group` \<group|null\> \<server|world\> \<from\> \<to\>
+*  /perms usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>
 
 ## Command Permissions
 ### General
@@ -156,6 +164,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  luckperms.user.addtempsuffix
 *  luckperms.user.removetempprefix
 *  luckperms.user.removetempsuffix
+*  luckperms.user.bulkchange
 *  luckperms.user.clear
 
 ### Group
@@ -182,8 +191,10 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  luckperms.group.addtempsuffix
 *  luckperms.group.removetempprefix
 *  luckperms.group.removetempsuffix
+*  luckperms.group.bulkchange
 *  luckperms.group.clear
 *  luckperms.group.rename
+*  luckperms.group.clone
 
 ### Track
 *  luckperms.track.info
@@ -192,6 +203,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  luckperms.track.remove
 *  luckperms.track.clear
 *  luckperms.track.rename
+*  luckperms.track.clone
 
 ### Log
 *  luckperms.log.recent
