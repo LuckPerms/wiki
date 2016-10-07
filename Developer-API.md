@@ -105,3 +105,18 @@ As of version 2.0, LuckPerms roughly follows the standards set out in Semantic V
 The only difference is that the patch number is not included anywhere within the pom, and is calculated each build, based upon how may commits have been made since the last tag. (A new tag is made every minor version)
 
 This means that API versions do not have a patch number (as no API changes are made in patches). API versions will be x.y, and each individual build of LuckPerms will follow x.y.z.
+
+## Group Lookups
+If you just want to find out which group a player is in, I **highly** recommend the following method.
+
+```java
+public static String getPlayerGroup(Player player, List<String> possibleGroups) {
+    for (String group : possibleGroups) {
+        if (player.hasPermission("group." + group)) {
+            return group;
+        }
+    }
+    return null;
+}
+```
+Remember to order your group list in a order of priority. e.g. Owner first, member last. 
