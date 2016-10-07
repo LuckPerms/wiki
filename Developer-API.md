@@ -119,4 +119,4 @@ public static String getPlayerGroup(Player player, List<String> possibleGroups) 
     return null;
 }
 ```
-Remember to order your group list in a order of priority. e.g. Owner first, member last. 
+Remember to order your group list in order of priority. e.g. Owner first, member last. 
