@@ -55,7 +55,7 @@ If you have more specific needs, then you can use this option. However, be aware
 The following rule will configure a different default group.
 ```yml
 default-assignments:
-  rule3:
+  my-defaults-rule:
     if:
       has-true: <group.default>
     take:
