@@ -1,6 +1,6 @@
 The way I handle defaults and default groups in LuckPerms is probably the most disliked feature in the whole plugin. Recently I've been adding some additional / alternative features to the plugin to allow a greater degree of control compared with what's seen in any of the other permission plugins out there, and hopefully making my approach people's favourite part of the plugin, not their least favourite.
 
-## Where to start
+# Where to start
 So, here's my thinking.
 
 Users on your server are likely to be split into two types. 
@@ -28,7 +28,7 @@ There's also issues with rankup plugins. If you want a "main" group, and then se
 
 Here are your options.
 
-### Keep using the default group, but just modify the "display name"
+## Keep using the default group, but just modify the "display name"
 I strongly recommend for the reasons above that you keep using the default group.
 
 If you want to simply change the visible name of the default group, (in Vault for example), I suggest you configure a `group-name-rewrite` rule, by adding the following to your `config.yml`/`luckperms.conf` file.
@@ -39,7 +39,7 @@ group-name-rewrite:
   default: Member
 ```
 
-### Configure inheritance
+## Configure inheritance
 This option would mean that all users are still in the "default" group. However, a parent group is configured for default, so it can inherit permissions from a group with a different name.
 
 ```
@@ -47,7 +47,7 @@ This option would mean that all users are still in the "default" group. However,
 /luckperms group default parents add member
 ```
 
-### Configure default assignments
+## Configure default assignments
 If you have more specific needs, then you can use this option. However, be aware that it will negate the storage space optimisations discussed in the first section of this page. All users will be explicitly saved, whether they are a "regular" user or not.
 
 ##### Note: see the "Default Assignments" section of the config for more detail on this.
