@@ -17,9 +17,9 @@ I want people in the admin group to have the "&c[Admin]" prefix, and people in t
 
 * /luckperms creategroup admin
 * /luckperms creategroup mod
-* /luckperms group admin setinherit mod
-* /luckperms group admin addprefix 100 "&c[Admin] "
-* /luckperms group mod addprefix 90 "&d[Mod] "
+* /luckperms group admin parent add mod
+* /luckperms group admin meta addprefix 100 "&c[Admin] "
+* /luckperms group mod meta addprefix 90 "&d[Mod] "
 
 If you want to include spaces in your prefixes/suffixes, you can just use " " quotes. The command system will treat your prefix/suffix as different arguments otherwise. The quotes will be removed when the prefix/suffix is applied. 😄 
 
@@ -35,11 +35,11 @@ Vault Chat requires that LuckPerms provides a way to store "meta". This "meta" c
 
 The key, or as Vault calls them, nodes, is what the values, or "meta" is stored under.
 
-Meta is stored in a similar way to prefixes and suffixes, except they are not inherited.
+Meta is stored in a similar way to prefixes and suffixes, and are also inherited.
 
 ### Example
 * Vault wants to store a value of "3.3" against the node "something".
 * LuckPerms will convert this into the permission node: meta.something.3{SEP}3
 
 ### More info
-If you're interested in utilising the Meta system, I suggest you check out [the Vault Chat API class](https://github.com/MilkBowl/VaultAPI/blob/master/src/main/java/net/milkbowl/vault/chat/Chat.java) and the [LuckPerms implementation of it](https://github.com/lucko/LuckPerms/blob/master/bukkit/src/main/java/me/lucko/luckperms/api/vault/VaultChatHook.java). If you don't understand it, just forget you ever read this. :sweat_smile: 
+If you're interested in utilising the Meta system, I suggest you check out [the Vault Chat API class](https://github.com/MilkBowl/VaultAPI/blob/master/src/main/java/net/milkbowl/vault/chat/Chat.java) and the [LuckPerms implementation of it](https://github.com/lucko/LuckPerms/blob/master/bukkit/src/main/java/me/lucko/luckperms/bukkit/vault/VaultChatHook.java). If you don't understand it, just forget you ever read this. :sweat_smile: 
