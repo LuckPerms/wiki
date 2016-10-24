@@ -21,7 +21,7 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 * **All log commands** - luckperms.log.*
 
 ### General
-*  /perms - n/a
+*  /perms
 *  /perms `sync`
 *  /perms `info`
 *  /perms `debug`
@@ -38,66 +38,64 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms `migration` - lists the platforms availble for migration
 *  /perms `queuecommand` \<command args...\> - queues a command for execution. Should be used if you use LuckPerms commands in scripts.
 
-### User
+### User   (/lp user \<user\> ...)
 *  /perms user \<user\> `info`
+*  **/perms user \<user\> `permission`** (see the "permission" section below.)
+*  **/perms user \<user\> `parent`** (see the "parent" section below)
+*  **/perms user \<user\> `meta`** (see the "meta" section below)
 *  /perms user \<user\> `getuuid`
-*  /perms user \<user\> `listnodes`
-*  /perms user \<user\> `listgroups`
 *  /perms user \<user\> `haspermission` \<node\> [server] [world]
 *  /perms user \<user\> `inheritspermission` \<node\> [server] [world]
-*  /perms user \<user\> `set` \<node\> \<true/false\> [server] [world]
-*  /perms user \<user\> `unset` \<node\> [server] [world]
-*  /perms user \<user\> `addgroup` \<group\> [server] [world]
-*  /perms user \<user\> `removegroup` \<group\> [server] [world]
-*  /perms user \<user\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
-*  /perms user \<user\> `unsettemp` \<node\> [server] [world]
-*  /perms user \<user\> `addtempgroup` \<group\> \<duration\> [server] [world]
-*  /perms user \<user\> `removetempgroup` \<group\> [server] [world]
 *  /perms user \<user\> `setprimarygroup` \<group\>
 *  /perms user \<user\> `showtracks`
 *  /perms user \<user\> `promote` \<track\>
 *  /perms user \<user\> `demote` \<track\>
 *  /perms user \<user\> `showpos` \<track\>
-*  /perms user \<user\> `chatmeta`
-*  /perms user \<user\> `addprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms user \<user\> `addsuffix` \<priority\> \<suffix\> [server] [world]
-*  /perms user \<user\> `removeprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms user \<user\> `removesuffix` \<priority\> \<suffix\> [server] [world]
-*  /perms user \<user\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
-*  /perms user \<user\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
-*  /perms user \<user\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms user \<user\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
 *  /perms user \<user\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms user \<user\> `clear`
 
-### Group
+### Group   (/lp group \<group\> ...)
 *  /perms group \<group\> `info`
-*  /perms group \<group\> `listnodes`
-*  /perms group \<group\> `listparents`
+*  **/perms group \<group\> `permission`** (see the "permission" section below.)
+*  **/perms group \<group\> `parent`** (see the "parent" section below)
+*  **/perms group \<group\> `meta`** (see the "meta" section below)
 *  /perms group \<group\> `haspermission` \<node\> [server] [world]
 *  /perms group \<group\> `inheritspermission` \<node\> [server] [world]
-*  /perms group \<group\> `set` \<node\> \<true/false\> [server] [world]
-*  /perms group \<group\> `unset` \<node\> [server] [world]
-*  /perms group \<group\> `setinherit` \<group\> [server] [world]
-*  /perms group \<group\> `unsetinherit` \<group\> [server] [world]
-*  /perms group \<group\> `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
-*  /perms group \<group\> `unsettemp` \<node\> [server] [world]
-*  /perms group \<group\> `settempinherit` \<group\> \<duration\> [server] [world]
-*  /perms group \<group\> `unsettempinherit` \<group\> [server] [world]
 *  /perms group \<group\> `showtracks`
-*  /perms group \<group\> `chatmeta`
-*  /perms group \<group\> `addprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms group \<group\> `addsuffix` \<priority\> \<suffix\> [server] [world]
-*  /perms group \<group\> `removeprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms group \<group\> `removesuffix` \<priority\> \<suffix\> [server] [world]
-*  /perms group \<group\> `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
-*  /perms group \<group\> `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
-*  /perms group \<group\> `removetempprefix` \<priority\> \<prefix\> [server] [world]
-*  /perms group \<group\> `removetempsuffix` \<priority\> \<suffix\> [server] [world]
 *  /perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms group \<group\> `clear`
 *  /perms group \<group\> `rename` \<new name\>
 *  /perms group \<group\> `clone` \<name of clone\>
+
+### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
+*  `info`
+*  `set` \<node\> \<true/false\> [server] [world]
+*  `unset` \<node\> [server] [world]
+*  `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
+*  `unsettemp` \<node\> [server] [world]
+
+### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
+*  `info`
+*  `add` \<group\> [server] [world]
+*  `remove` \<group\> [server] [world]
+*  `addtemp` \<group\> \<duration\> [server] [world]
+*  `removetemp` \<group\> [server] [world]
+
+### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
+*  `info`
+*  `set` \<key\> \<value\> [server] [world]
+*  `unset` \<key\> [server] [world]
+*  `settemp` \<key\> \<value\> \<duration\> [server] [world]
+*  `unsettemp` \<key\> [server] [world]
+*  `addprefix` \<priority\> \<prefix\> [server] [world]
+*  `addsuffix` \<priority\> \<suffix\> [server] [world]
+*  `removeprefix` \<priority\> \<prefix\> [server] [world]
+*  `removesuffix` \<priority\> \<suffix\> [server] [world]
+*  `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
+*  `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
+*  `removetempprefix` \<priority\> \<prefix\> [server] [world]
+*  `removetempsuffix` \<priority\> \<suffix\> [server] [world]
+*  `clear` [server] [world]
 
 ### Track
 *  /perms track \<track\> `info`
