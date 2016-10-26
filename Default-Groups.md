@@ -39,6 +39,8 @@ group-name-rewrite:
   default: Member
 ```
 
+You can also use this approach: https://github.com/lucko/LuckPerms/wiki/Primary-Groups
+
 ## Configure inheritance
 This option would mean that all users are still in the "default" group. However, a parent group is configured for default, so it can inherit permissions from a group with a different name.
 
