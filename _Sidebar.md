@@ -9,6 +9,7 @@
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
+* [**Primary Groups**](https://github.com/lucko/LuckPerms/wiki/Primary-Groups)
 
 ### About
 * [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
