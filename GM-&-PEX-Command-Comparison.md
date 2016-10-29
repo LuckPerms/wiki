@@ -1,4 +1,4 @@
-## Grou pManager
+## Group Manager
 | Group Manager Commands                     | LuckPerms Commands                                        |
 |--------------------------------------------|-----------------------------------------------------------|
 | manuadd \<player\> \<group\>               | lp user \<player\> parent add \<group\>                   |
