@@ -3,6 +3,7 @@
 ### Setup
 * [**Basic Setup**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Command Usage & Permissions**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
+* [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Comparison)
 * [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 
 ### Advanced Usage
