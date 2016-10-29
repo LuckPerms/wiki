@@ -17,7 +17,6 @@
 | manuaddv \<player\> \<variable\> \<value\> | lp user \<player\> meta set \<variable\> \<value\>        |
 | manudelv \<player\> \<variable\>           | lp user \<player\> meta unset \<variable\>                |
 | manulistv \<player\>                       | lp user \<player\> meta info                              |
-|--------------------------------------------|-----------------------------------------------------------|
 | mangadd \<group\>                          | lp creategroup \<group\>                                  |
 | mangdel \<group\>                          | lp deletegroup \<group\>                                  |
 | mangaddi \<group1\> \<group2\>             | lp group \<group1\> parent add \<group2\>                 |
@@ -32,7 +31,6 @@
 | mangaddv \<player\> \<variable\> \<value\> | lp group \<group\> meta set \<variable\> \<value\>        |
 | mangdelv \<player\> \<variable\>           | lp group \<group\> meta unset \<variable\>                |
 | manglistv \<player\>                       | lp group \<group\> meta info                              |
-|--------------------------------------------|-----------------------------------------------------------|
 | mansave                                    | lp sync                                                   |
 | manload                                    | lp sync                                                   |
 
