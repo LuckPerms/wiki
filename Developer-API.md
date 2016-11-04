@@ -51,7 +51,7 @@ depend: [LuckPerms]
 On Sponge, add the following to your plugins declaration.
 ```java
 @Plugin(
-        id = "myPlugin",
+        id = "myplugin",
         dependencies = {
                 @Dependency(id = "luckperms")
         }
@@ -74,7 +74,7 @@ You can add LuckPerms as a Maven dependency by adding the following to your proj
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
-        <version>2.8</version>
+        <version>2.13</version>
     </dependency>
 </dependencies>
 ````
