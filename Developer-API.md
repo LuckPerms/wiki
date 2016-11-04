@@ -41,9 +41,24 @@ if (provider.isPresent()) {
 }
 ```
 
-If you want to use LuckPerms in your onEnable method, you need to add the following to your plugins `plugin.yml`.
+If you want to use LuckPerms in your onEnable/ServerStart method:
+
+On Bukkit/Bungee, you need to add the following to your plugins `plugin.yml`.
 ```yml
 depend: [LuckPerms]
+```
+
+On Sponge, add the following to your plugins declaration.
+```java
+@Plugin(
+        id = "myPlugin",
+        dependencies = {
+                @Dependency(id = "luckperms")
+        }
+)
+public class MyPlugin {
+    ...
+}
 ```
 
 You can add LuckPerms as a Maven dependency by adding the following to your projects `pom.xml`.
