@@ -9,5 +9,7 @@ If you run a network of servers, you should install LuckPerms into the plugin fo
 
 If you also want to use LuckPerms to apply permissions on your BungeeCord proxy, you should place LuckPermsBungee.jar into your BungeeCord plugins folder.
 
+If you choose to only install LuckPerms on your BungeeCord proxy, it will have no impact on any permission checks performed by plugins on any backend Spigot/Sponge servers. If you want that functionality, you need to install LuckPerms on those servers too.
+
 ### How do I get permissions to sync across multiple servers
 Connect each LuckPerms installation to the same MySQL/MongoDB server. You can use `/luckperms sync` to pull the latest changes from the database. If you're also using Redis, you can use `/luckperms networksync` to push changes to other connected servers.
