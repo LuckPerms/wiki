@@ -1,12 +1,12 @@
 LuckPerms has built in support to allow easy migration of permissions data from existing permissions plugins into LuckPerms.
 
 # Currently Supported:
-* **GroupManager** (if you're using this currently, you should urgently switch to something else, even if it isn't LuckPerms. GroupManager is old, buggy and bad.)
-* **zPermissions**
-* **PermissionsEx**
-* **PowerfulPerms**
-* **BungeePerms**
-* **bPermissions**
+| Bukkit / Spigot       | BungeeCord            | Sponge                |
+| GroupManager          | BungeePerms           | PermissionsEx         |
+| PermissionsEx         |                       | PermissionManager     |
+| zPermissions          |                       |                       |
+| PowerfulPerms         |                       |                       |
+| bPermissions          |                       |                       |
 
 # How to
 **IMPORTANT: Migration commands do not work from in-game. You MUST use them from the console.**
