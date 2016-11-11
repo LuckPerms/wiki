@@ -3,6 +3,7 @@
 ### Setup
 * [**Basic Setup**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Command Usage & Permissions**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
+* [**Migration from existing plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 * [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
@@ -21,5 +22,6 @@
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
 * [**PlaceholderAPI**](https://github.com/lucko/LuckPerms/wiki/PlaceholderAPI)
 
-
+### Other
+* [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
 
