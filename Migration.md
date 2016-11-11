@@ -2,6 +2,7 @@ LuckPerms has built in support to allow easy migration of permissions data from 
 
 # Currently Supported:
 | Bukkit / Spigot       | BungeeCord            | Sponge                |
+|-----------------------|-----------------------|-----------------------|
 | GroupManager          | BungeePerms           | PermissionsEx         |
 | PermissionsEx         |                       | PermissionManager     |
 | zPermissions          |                       |                       |
