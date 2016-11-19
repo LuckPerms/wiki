@@ -219,6 +219,165 @@ Lists commands availble to begin a migration process.
 
 ___
 
+### User   (/lp user \<user\> ...)
+___
+#### `/perms user <user> info`  
+**Permission**: luckperms.user.info  
+Displays information about a user, including their username, primary group, parents, and current contexts.
+
+___
+#### `/perms user <user> switchprimarygroup`  
+**Permission**: luckperms.user.switchprimarygroup  
+**Arguments**:  
+* `<group>` - the group to switch to
+
+This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
+
+___
+#### `/perms user <user> promote`  
+**Permission**: luckperms.user.promote  
+**Arguments**:  
+* `<track>` - the track to promote along
+* `[server]` - the server to promote in
+* `[world]` - the world to promote in
+
+This command will promote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given server/world. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be promoted up the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
+
+___
+#### `/perms user <user> demote`  
+**Permission**: luckperms.user.demote  
+**Arguments**:  
+* `<track>` - the track to demote along
+* `[server]` - the server to demote in
+* `[world]` - the world to demote in
+
+This command will demote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given server/world. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be demoted down the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
+
+___
+#### `/perms user <user> showtracks`  
+**Permission**: luckperms.user.showtracks  
+Displays a list of all of the tracks a user is currently on.
+
+___
+#### `/perms user <user> clear`  
+**Permission**: luckperms.user.clear  
+**Arguments**:  
+* `[server]` - the server to filter by
+* `[world]` - the world to filter by
+
+Clears the user's permissions, parent groups and meta.
+
+___
+
+### Group   (/lp group \<group\> ...)
+___
+#### `/perms group <group> info`  
+**Permission**: luckperms.group.info  
+Displays information about a group.
+
+___
+#### `/perms group <group> showtracks`  
+**Permission**: luckperms.group.showtracks  
+Displays a list of all of the tracks a group is currently on.
+
+___
+#### `/perms group <group> clear`  
+**Permission**: luckperms.group.clear  
+**Arguments**:  
+* `[server]` - the server to filter by
+* `[world]` - the world to filter by
+
+Clears the group's permissions, parent groups and meta.
+
+___
+#### `/perms group <group> rename`  
+**Permission**: luckperms.group.rename  
+**Arguments**:  
+* `<new name>` - the new name for the group
+
+Changes a group's name. Note that any members of this group will not know about the change, and will still point to the old group name. If you wish to update this, please see the bulk edit commands.
+
+___
+#### `/perms group <group> clone`  
+**Permission**: luckperms.group.clone  
+**Arguments**:  
+* `<new name>` - the name of the clone
+
+Makes an exact copy of the group under a different name.
+
+___
+
+### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
+___
+#### `/perms user <user> permission info` `/perms group <group> permission info`  
+**Permission**: luckperms.user.permission.info or luckperms.group.permission.info  
+Displays a list of the permission nodes a user/group has.
+
+___
+#### `/perms user <user> permission set` `/perms group <group> permission set`  
+**Permission**: luckperms.user.permission.set or luckperms.group.permission.set  
+**Arguments**:  
+* `<node>` - the permission node to set
+* `<true|false>` - the value to set the permission to
+* `[server]` - the server to set the permission on (specify "global" for all servers)
+* `[world]` - the world to set the permission on
+
+Sets a permission for a user/group. Giving a value of "false" will negate the permission.
+
+___
+#### `/perms user <user> permission unset` `/perms group <group> permission unset`  
+**Permission**: luckperms.user.permission.unset or luckperms.group.permission.unset  
+**Arguments**:  
+* `<node>` - the permission node to unset
+* `[server]` - the server to unset the permission on (specify "global" for all servers)
+* `[world]` - the world to unset the permission on
+
+Unsets a permission for a user/group.
+
+___
+#### `/perms user <user> permission settemp` `/perms group <group> permission settemp`  
+**Permission**: luckperms.user.permission.settemp or luckperms.group.permission.settemp  
+**Arguments**:  
+* `<node>` - the permission node to set
+* `<true|false>` - the value to set the permission to
+* `<duration>` - the duration until the permission will expire
+* `[server]` - the server to set the permission on (specify "global" for all servers)
+* `[world]` - the world to set the permission on
+
+Sets a permission temporarily for a user/group. Giving a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+___
+#### `/perms user <user> permission unsettemp` `/perms group <group> permission unsettemp`  
+**Permission**: luckperms.user.permission.unsettemp or luckperms.group.permission.unsettemp  
+**Arguments**:  
+* `<node>` - the permission node to unset
+* `[server]` - the server to unset the permission on (specify "global" for all servers)
+* `[world]` - the world to unset the permission on
+
+Unsets a temproary permission for a user/group.
+
+___
+#### `/perms user <user> permission check` `/perms group <group> permission check`  
+**Permission**: luckperms.user.permission.check or luckperms.group.permission.check  
+**Arguments**:  
+* `<node>` - the permission node to check for
+* `[server]` - the server to check for the permission on (specify "global" for all servers)
+* `[world]` - the world to check for the permission on
+
+Checks to see if a user/group has a certain permission.
+
+___
+#### `/perms user <user> permission checkinherits` `/perms group <group> permission checkinherits`  
+**Permission**: luckperms.user.permission.checkinherits or luckperms.group.permission.checkinherits  
+**Arguments**:  
+* `<node>` - the permission node to check for
+* `[server]` - the server to check for the permission on (specify "global" for all servers)
+* `[world]` - the world to check for the permission on
+
+Checks to see if a user/group inherits a certain permission, and if so, where from.
+
+___
+
 # Command Permissions
 
 **Note**: You can use wildcards to grant users access to a selection of commands.
