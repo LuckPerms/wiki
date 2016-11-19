@@ -1,6 +1,8 @@
-Command usage is printed to the console/chat whenever invalid arguments are provided. Simply typing /perms will list all commands a user has permission to use.
+Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /perms** will list all commands a user has permission to use.
 
 ### Aliases
+A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
+
 | Bukkit / Sponge  | Bungee           |
 |------------------|------------------|
 | /luckperms       | /luckpermsbungee |
@@ -9,22 +11,19 @@ Command usage is printed to the console/chat whenever invalid arguments are prov
 | /lp              | /lpb             |
 | /perm            | /bperm           |
 
-Arguments: \<required\> [optional]
+**Important**: Commands are different on BungeeCord. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
 
-Users with OP have access to all commands.
+If you are using Bukkit/Spigot, by default, all OPed users have access to LuckPerms commands. You can change this in the config.
 
-Additionally, you can use wildcards to grant users access to a selection of commands.
-* **All commands** - luckperms.*
-* **All user commands** - luckperms.user.*
-* **All group commands** - luckperms.group.*
-* **All track commands** - luckperms.track.*
-* **All log commands** - luckperms.log.*
+# Overview
+Arguments Key: \<required\> [optional]
 
 ### General
 *  /perms
 *  /perms `sync`
+*  /perms `networksync`
 *  /perms `info`
-*  /perms `debug`
+*  /perms `verbose` \<true|false\> [filters...]
 *  /perms `import` \<file\>
 *  /perms `creategroup` \<group\>
 *  /perms `deletegroup` \<group\>
@@ -34,9 +33,9 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms `listtracks`
 
 ### Super Secret Console Commands
-*  /perms `export` \<file\> - exports all data to a file
-*  /perms `migration` - lists the platforms availble for migration
-*  /perms `queuecommand` \<command args...\> - queues a command for execution. Should be used if you use LuckPerms commands in scripts.
+*  /perms `export` \<file\>
+*  /perms `migration`
+*  /perms `queuecommand` \<command args...\>
 
 ### User   (/lp user \<user\> ...)
 *  /perms user \<user\> `info`
@@ -44,13 +43,10 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  **/perms user \<user\> `parent`** (see the "parent" section below)
 *  **/perms user \<user\> `meta`** (see the "meta" section below)
 *  /perms user \<user\> `getuuid`
-*  /perms user \<user\> `haspermission` \<node\> [server] [world]
-*  /perms user \<user\> `inheritspermission` \<node\> [server] [world]
-*  /perms user \<user\> `setprimarygroup` \<group\>
-*  /perms user \<user\> `showtracks`
+*  /perms user \<user\> `switchprimarygroup` \<group\>
 *  /perms user \<user\> `promote` \<track\>
 *  /perms user \<user\> `demote` \<track\>
-*  /perms user \<user\> `showpos` \<track\>
+*  /perms user \<user\> `showtracks`
 *  /perms user \<user\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms user \<user\> `clear`
 
@@ -59,8 +55,6 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  **/perms group \<group\> `permission`** (see the "permission" section below.)
 *  **/perms group \<group\> `parent`** (see the "parent" section below)
 *  **/perms group \<group\> `meta`** (see the "meta" section below)
-*  /perms group \<group\> `haspermission` \<node\> [server] [world]
-*  /perms group \<group\> `inheritspermission` \<node\> [server] [world]
 *  /perms group \<group\> `showtracks`
 *  /perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
 *  /perms group \<group\> `clear`
@@ -121,6 +115,14 @@ Additionally, you can use wildcards to grant users access to a selection of comm
 *  /perms usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>
 
 ## Command Permissions
+
+**Note**: You can use wildcards to grant users access to a selection of commands.
+* **All commands** - luckperms.*
+* **All user commands** - luckperms.user.*
+* **All group commands** - luckperms.group.*
+* **All track commands** - luckperms.track.*
+* **All log commands** - luckperms.log.*
+
 ### General
 *  luckperms.sync
 *  luckperms.info
