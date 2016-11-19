@@ -39,7 +39,7 @@ Arguments Key: \<required\> [optional]
 
 ### User   (/lp user \<user\> ...)
 *  /perms user \<user\> `info`
-*  **/perms user \<user\> `permission`** (see the "permission" section below.)
+*  [**/perms user \<user\> `permission`**](###Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)) (see the "permission" section below.)
 *  **/perms user \<user\> `parent`** (see the "parent" section below)
 *  **/perms user \<user\> `meta`** (see the "meta" section below)
 *  /perms user \<user\> `getuuid`
