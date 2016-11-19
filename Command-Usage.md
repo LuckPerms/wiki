@@ -114,7 +114,112 @@ Arguments Key: \<required\> [optional]
 *  /perms usersbulkedit `group` \<group|null\> \<server|world\> \<from\> \<to\>
 *  /perms usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>
 
-## Command Permissions
+# Command Detail
+
+### General
+___
+#### `/perms`  
+**Permission**: n/a  
+Prints a list of the LuckPerms commands a user has permission to use.  
+
+___
+#### `/perms sync`  
+**Permission**: luckperms.sync  
+Refreshes all cached data with the storage provider.
+
+___
+#### `/perms networksync`  
+**Permission**: luckperms.sync  
+Refreshes all cached data with the storage provider, and then uses Redis (if configured) to "ping" all other connected servers and request that they sync too.
+
+___
+#### `/perms info`  
+**Permission**: luckperms.info  
+Lists data about LuckPerms, including debug output, statistics, settings, and values from the configuration. 
+
+___
+#### `/perms verbose`  
+**Permission**: luckperms.verbose  
+**Arguments**:  
+* `<true|false>` - whether to enable the feature
+* `[filters...]` - the name of the user / start of the node to filter by
+
+Enables verbose permission checking output for the sender executing the command. As a result, whenever a permission is checked for by a plugin, if the permission / user being checked match the filters provided, the sender will be notified.
+
+___
+#### `/perms import`  
+**Permission**: luckperms.import  
+**Arguments**:  
+* `<file>` - the file to import from
+
+Imports data into LuckPerms from a file. The file must be a list of commands, starting with "/luckperms". This file can be generated using the export command. The file is expected to be in the root plugin directory.
+
+___
+#### `/perms export`  
+**Permission**: n/a (only usable by the console)  
+**Arguments**:  
+* `<file>` - the file to export to
+
+Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the root plugin directory.
+
+___
+#### `/perms queuecommand`  
+**Permission**: n/a (only usable by the console)  
+**Arguments**:  
+* `<command args...>` - the command arguments
+
+Queues a command for execution. This command should be used when you use LuckPerms in automated scripts. "/lp creategroup test" becomes "/lp queuecommand creategroup test".
+
+___
+#### `/perms creategroup`  
+**Permission**: luckperms.creategroup  
+**Arguments**:  
+* `<name>` - the name of the group
+
+Creates a new group.
+
+___
+#### `/perms deletegroup`  
+**Permission**: luckperms.deletegroup  
+**Arguments**:  
+* `<name>` - the name of the group
+
+Permanently deletes a group.
+
+___
+#### `/perms listgroups`  
+**Permission**: luckperms.listgroups  
+Displays a list of all current groups.
+
+___
+#### `/perms createtrack`  
+**Permission**: luckperms.createtrack  
+**Arguments**:  
+* `<name>` - the name of the track
+
+Creates a new track.
+
+___
+#### `/perms deletetrack`  
+**Permission**: luckperms.deletetrack  
+**Arguments**:  
+* `<name>` - the name of the track
+
+Permanently deletes a track.
+
+___
+#### `/perms listtracks`  
+**Permission**: luckperms.listtracks  
+Displays a list of all current tracks.
+
+___
+#### `/perms migration`  
+**Permission**: n/a (only usable by the console)  
+Lists commands availble to begin a migration process.
+
+___
+
+# Command Permissions
 
 **Note**: You can use wildcards to grant users access to a selection of commands.
 * **All commands** - luckperms.*
