@@ -38,58 +38,60 @@ Arguments Key: \<required\> [optional]
 *  [/perms `queuecommand` \<command args...\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-queuecommand)
 
 ### User   (/lp user \<user\> ...)
-*  /perms user \<user\> `info`
-*  **/perms user \<user\> `permission`** (see the "permission" section below.)
-*  **/perms user \<user\> `parent`** (see the "parent" section below)
-*  **/perms user \<user\> `meta`** (see the "meta" section below)
-*  /perms user \<user\> `getuuid`
-*  /perms user \<user\> `switchprimarygroup` \<group\>
-*  /perms user \<user\> `promote` \<track\>
-*  /perms user \<user\> `demote` \<track\>
-*  /perms user \<user\> `showtracks`
-*  /perms user \<user\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
-*  /perms user \<user\> `clear`
+*  [/perms user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-info)
+*  [/perms user \<user\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-)
+*  [/perms user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#parent---lp-user-user-parent---lp-group-group-parent-)
+*  [/perms user \<user\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/perms user \<user\> `switchprimarygroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-switchprimarygroup)
+*  [/perms user \<user\> `promote` \<track\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-promote)
+*  [/perms user \<user\> `demote` \<track\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-demote)
+*  [/perms user \<user\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-showtracks)
+*  [/perms user \<user\> `bulkchange` \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#perms-groupuser--bulkchange-serverworld-from-to)
+*  [/perms user \<user\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-clear)
 
 ### Group   (/lp group \<group\> ...)
-*  /perms group \<group\> `info`
-*  **/perms group \<group\> `permission`** (see the "permission" section below.)
-*  **/perms group \<group\> `parent`** (see the "parent" section below)
-*  **/perms group \<group\> `meta`** (see the "meta" section below)
-*  /perms group \<group\> `showtracks`
-*  /perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\> (see the wiki page for details)
-*  /perms group \<group\> `clear`
-*  /perms group \<group\> `rename` \<new name\>
-*  /perms group \<group\> `clone` \<name of clone\>
+*  [/perms group \<group\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-info)
+*  [/perms group \<group\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-)
+*  [/perms group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#parent---lp-user-user-parent---lp-group-group-parent-)
+*  [/perms group \<group\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/perms group \<group\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-showtracks)
+*  [/perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#perms-groupuser--bulkchange-serverworld-from-to)
+*  [/perms group \<group\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-clear)
+*  [/perms group \<group\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-rename)
+*  [/perms group \<group\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-clone)
 
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
-*  `info`
-*  `set` \<node\> \<true/false\> [server] [world]
-*  `unset` \<node\> [server] [world]
-*  `settemp` \<node\> \<true/false\> \<duration\> [server] [world]
-*  `unsettemp` \<node\> [server] [world]
+*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-info)
+*  [`set` \<node\> \<true/false\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-set)
+*  [`unset` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-unset)
+*  [`settemp` \<node\> \<true/false\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-settemp)
+*  [`unsettemp` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-unsettemp)
+*  [`check` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-check)
+*  [`checkinherits` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-checkinherits)
 
-### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
-*  `info`
-*  `add` \<group\> [server] [world]
-*  `remove` \<group\> [server] [world]
-*  `addtemp` \<group\> \<duration\> [server] [world]
-*  `removetemp` \<group\> [server] [world]
+###[ Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
+*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-info)
+*  [`set` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-set)
+*  [`add` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-add)
+*  [`remove` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-remove)
+*  [`addtemp` \<group\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-addtemp)
+*  [`removetemp` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-removetemp)
 
 ### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
-*  `info`
-*  `set` \<key\> \<value\> [server] [world]
-*  `unset` \<key\> [server] [world]
-*  `settemp` \<key\> \<value\> \<duration\> [server] [world]
-*  `unsettemp` \<key\> [server] [world]
-*  `addprefix` \<priority\> \<prefix\> [server] [world]
-*  `addsuffix` \<priority\> \<suffix\> [server] [world]
-*  `removeprefix` \<priority\> \<prefix\> [server] [world]
-*  `removesuffix` \<priority\> \<suffix\> [server] [world]
-*  `addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]
-*  `addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]
-*  `removetempprefix` \<priority\> \<prefix\> [server] [world]
-*  `removetempsuffix` \<priority\> \<suffix\> [server] [world]
-*  `clear` [server] [world]
+*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-info)
+*  [`set` \<key\> \<value\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-set)
+*  [`unset` \<key\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-unset)
+*  [`settemp` \<key\> \<value\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-settemp)
+*  [`unsettemp` \<key\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-unsettemp)
+*  [`addprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-addprefix)
+*  [`addsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-addsuffix)
+*  [`removeprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-removeprefix)
+*  [`removesuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-removesuffix)
+*  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-addtempprefix)
+*  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-addtempsuffix)
+*  [`removetempprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-removetempprefix)
+*  [`removetempsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-removetempsuffix)
+*  [`clear` [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-clear)
 
 ### Track
 *  /perms track \<track\> `info`
