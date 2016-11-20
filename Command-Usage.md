@@ -589,6 +589,124 @@ Removes all meta/prefixes/suffixes.
 
 ___
 
+### Track   (/lp track \<track\> ...)
+___
+#### `/perms track <track> info`  
+**Permission**: luckperms.track.info  
+Displays the groups in the track.
+
+___
+#### `/perms track <track> append`  
+**Permission**: luckperms.track.info  
+**Arguments**:  
+* `<group>` - the group to add
+
+Adds a group onto the end of the track.
+
+___
+#### `/perms track <track> insert`  
+**Permission**: luckperms.track.insert  
+**Arguments**:  
+* `<group>` - the group to insert
+* `<position>` - the position to insert the group at
+
+Inserts a group into a specific position within this track. A position of 1 would place it at the start of the track.
+
+___
+#### `/perms track <track> remove`  
+**Permission**: luckperms.track.remove  
+**Arguments**:  
+* `<group>` - the group to remove
+
+Removes a group from the track.
+
+___
+#### `/perms track <track> clear`  
+**Permission**: luckperms.track.clear  
+Removes all groups from the track.
+
+___
+#### `/perms track <track> rename`  
+**Permission**: luckperms.track.rename  
+**Arguments**:  
+* `<new name>` - the new name for the track
+
+Changes a track's name.
+
+___
+#### `/perms track <track> clone`  
+**Permission**: luckperms.track.clone  
+**Arguments**:  
+* `<new name>` - the name of the clone
+
+Makes an exact copy of the track under a different name.
+
+___
+
+### Log   (/lp log ...)
+___
+#### `/perms log recent`  
+**Permission**: luckperms.log.recent  
+**Arguments**:  
+* `[user]` - the name/uuid of the user to filter by
+* `[page]` - the page number to view
+
+Shows a list of recent actions.
+
+___
+#### `/perms log search`  
+**Permission**: luckperms.log.search  
+**Arguments**:  
+* `<query>` - the query to search for
+* `[page]` - the page number to view
+
+Searches for log entries matching the given query.
+
+___
+#### `/perms log notify`  
+**Permission**: luckperms.log.notify  
+**Arguments**:  
+* `[on|off]` - whether to enable or disable
+
+Toggles log notifications for the sender executing the command.
+
+___
+#### `/perms log export`  
+**Permission**: luckperms.log.export  
+**Arguments**:  
+* `<file>` - the file to export to
+
+Exports the log to a list of commands, recognisable by the "/lp import" command. This feature should rarely be used, and use of "/lp export" is reccomended instead.
+
+___
+#### `/perms log userhistory`  
+**Permission**: luckperms.log.userhistory  
+**Arguments**:  
+* `<user>` - the user to search for
+* `[page]` - the page number to view
+
+Searches for log entries acting upon the given user.
+
+___
+#### `/perms log grouphistory`  
+**Permission**: luckperms.log.grouphistory  
+**Arguments**:  
+* `<group>` - the group to search for
+* `[page]` - the page number to view
+
+Searches for log entries acting upon the given group.
+
+___
+#### `/perms log trackhistory`  
+**Permission**: luckperms.log.trackhistory  
+**Arguments**:  
+* `<track>` - the track to search for
+* `[page]` - the page number to view
+
+Searches for log entries acting upon the given track.
+
+___
+
 # Command Permissions
 
 **Note**: You can use wildcards to grant users access to a selection of commands.
