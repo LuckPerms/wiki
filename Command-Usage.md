@@ -93,28 +93,27 @@ Arguments Key: \<required\> [optional]
 *  [`removetempsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-removetempsuffix)
 *  [`clear` [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-meta-clear)
 
-### Track
-*  /perms track \<track\> `info`
-*  /perms track \<track\> `append` \<group\>
-*  /perms track \<track\> `insert` \<group\> \<position\>
-*  /perms track \<track\> `remove` \<group\>
-*  /perms track \<track\> `clear`
-*  /perms track \<track\> `rename` \<new name\>
-*  /perms track \<track\> `clone` \<name of clone\>
+### Track   (/lp track \<track\> ...)
+*  [/perms track \<track\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-info)
+*  [/perms track \<track\> `append` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-append)
+*  [/perms track \<track\> `insert` \<group\> \<position\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-insert)
+*  [/perms track \<track\> `remove` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-remove)
+*  [/perms track \<track\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-clear)
+*  [/perms track \<track\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-rename)
+*  [/perms track \<track\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-track-track-clone)
 
-### Log
-*  /perms log `recent` [user] [page]
-*  /perms log `search` \<query\> [page]
-*  /perms log `notify` [on|off]
-*  /perms log `export` \<file\>
-*  /perms log `userhistory` \<user\> [page]
-*  /perms log `grouphistory` \<group\> [page]
-*  /perms log `trackhistory` \<track\> [page]
+### Log   (/lp log ...)
+*  [/perms log `recent` [user] [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-recent)
+*  [/perms log `search` \<query\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-search)
+*  [/perms log `notify` [on|off]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-notify)
+*  [/perms log `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-export)
+*  [/perms log `userhistory` \<user\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-userhistory)
+*  [/perms log `grouphistory` \<group\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-grouphistory)
+*  [/perms log `trackhistory` \<track\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-log-trackhistory)
 
 ### User Bulk Edit
-(see the wiki page for details)
-*  /perms usersbulkedit `group` \<group|null\> \<server|world\> \<from\> \<to\>
-*  /perms usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>
+*  [/perms usersbulkedit `group` \<group|null\> \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#perms-usersbulkedit-group-groupnull-serverworld-from-to)
+*  [/perms usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#perms-usersbulkedit-permission-nodenull-serverworld-from-to)
 
 # Command Detail
 
@@ -719,7 +718,7 @@ ___
 ### General
 *  luckperms.sync
 *  luckperms.info
-*  luckperms.debug
+*  luckperms.verbose
 *  luckperms.import
 *  luckperms.creategroup
 *  luckperms.deletegroup
@@ -735,7 +734,10 @@ ___
 *  luckperms.user.permission.unset
 *  luckperms.user.permission.settemp
 *  luckperms.user.permission.unsettemp
+*  luckperms.user.permission.check
+*  luckperms.user.permission.checkinherits
 *  luckperms.user.parent.info
+*  luckperms.user.parent.set
 *  luckperms.user.parent.add
 *  luckperms.user.parent.remove
 *  luckperms.user.parent.addtemp
@@ -754,14 +756,10 @@ ___
 *  luckperms.user.meta.removetempprefix
 *  luckperms.user.meta.removetempsuffix
 *  luckperms.user.meta.clear
-*  luckperms.user.getuuid
-*  luckperms.user.haspermission
-*  luckperms.user.inheritspermission
-*  luckperms.user.setprimarygroup
+*  luckperms.user.switchprimarygroup
 *  luckperms.user.showtracks
 *  luckperms.user.promote
 *  luckperms.user.demote
-*  luckperms.user.showpos
 *  luckperms.user.bulkchange
 *  luckperms.user.clear
 
@@ -772,7 +770,10 @@ ___
 *  luckperms.group.permission.unset
 *  luckperms.group.permission.settemp
 *  luckperms.group.permission.unsettemp
+*  luckperms.group.permission.check
+*  luckperms.group.permission.checkinherits
 *  luckperms.group.parent.info
+*  luckperms.group.parent.set
 *  luckperms.group.parent.add
 *  luckperms.group.parent.remove
 *  luckperms.group.parent.addtemp
@@ -791,8 +792,6 @@ ___
 *  luckperms.group.meta.removetempprefix
 *  luckperms.group.meta.removetempsuffix
 *  luckperms.group.meta.clear
-*  luckperms.group.haspermission
-*  luckperms.group.inheritspermission
 *  luckperms.group.showtracks
 *  luckperms.group.bulkchange
 *  luckperms.group.clear
