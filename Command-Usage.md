@@ -309,12 +309,12 @@ ___
 
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
 ___
-#### `/perms user <user> permission info` `/perms group <group> permission info`  
+#### `/perms user/group <user|group> permission info`  
 **Permission**: luckperms.user.permission.info or luckperms.group.permission.info  
 Displays a list of the permission nodes a user/group has.
 
 ___
-#### `/perms user <user> permission set` `/perms group <group> permission set`  
+#### `/perms user/group <user|group> permission set`  
 **Permission**: luckperms.user.permission.set or luckperms.group.permission.set  
 **Arguments**:  
 * `<node>` - the permission node to set
@@ -325,7 +325,7 @@ ___
 Sets a permission for a user/group. Giving a value of "false" will negate the permission.
 
 ___
-#### `/perms user <user> permission unset` `/perms group <group> permission unset`  
+#### `/perms user/group <user|group> permission unset`  
 **Permission**: luckperms.user.permission.unset or luckperms.group.permission.unset  
 **Arguments**:  
 * `<node>` - the permission node to unset
@@ -335,7 +335,7 @@ ___
 Unsets a permission for a user/group.
 
 ___
-#### `/perms user <user> permission settemp` `/perms group <group> permission settemp`  
+#### `/perms user/group <user|group> permission settemp`  
 **Permission**: luckperms.user.permission.settemp or luckperms.group.permission.settemp  
 **Arguments**:  
 * `<node>` - the permission node to set
@@ -347,7 +347,7 @@ ___
 Sets a permission temporarily for a user/group. Giving a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
 ___
-#### `/perms user <user> permission unsettemp` `/perms group <group> permission unsettemp`  
+#### `/perms user/group <user|group> permission unsettemp`  
 **Permission**: luckperms.user.permission.unsettemp or luckperms.group.permission.unsettemp  
 **Arguments**:  
 * `<node>` - the permission node to unset
@@ -357,7 +357,7 @@ ___
 Unsets a temproary permission for a user/group.
 
 ___
-#### `/perms user <user> permission check` `/perms group <group> permission check`  
+#### `/perms user/group <user|group> permission check`  
 **Permission**: luckperms.user.permission.check or luckperms.group.permission.check  
 **Arguments**:  
 * `<node>` - the permission node to check for
@@ -367,7 +367,7 @@ ___
 Checks to see if a user/group has a certain permission.
 
 ___
-#### `/perms user <user> permission checkinherits` `/perms group <group> permission checkinherits`  
+#### `/perms user/group <user|group> permission checkinherits`  
 **Permission**: luckperms.user.permission.checkinherits or luckperms.group.permission.checkinherits  
 **Arguments**:  
 * `<node>` - the permission node to check for
@@ -375,6 +375,215 @@ ___
 * `[world]` - the world to check for the permission on
 
 Checks to see if a user/group inherits a certain permission, and if so, where from.
+
+___
+
+### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
+___
+#### `/perms user/group <user|group> parent info`  
+**Permission**: luckperms.user.parent.info or luckperms.group.parent.info  
+Displays a list of a user/group's parent groups. (groups they inherit from)
+
+___
+#### `/perms user/group <user|group> parent set`  
+**Permission**: luckperms.user.parent.set or luckperms.group.parent.set  
+**Arguments**:  
+* `<group>` - the group to set
+* `[server]` - the server to set the group on (specify "global" for all servers)
+* `[world]` - the world to set the group on
+
+Sets a user/group's parent. Unlike the "parent add" command, this command will clear all existing groups set at the given context. The add command will simply "add" the group to the existing ones a user/group has. If the command is executed with no server or world arguments, this command will also update a user's primary group.
+
+___
+#### `/perms user/group <user|group> parent add`  
+**Permission**: luckperms.user.parent.add or luckperms.group.parent.add  
+**Arguments**:  
+* `<group>` - the group to add
+* `[server]` - the server to add the group on (specify "global" for all servers)
+* `[world]` - the world to add the group on
+
+Adds a parent to a user/group. Unlike the "parent set" command, this command will just accumulate the given parent with the ones the user/group already has. No existing parents will be removed from the user, and a user's primary group will be unaffected.
+
+___
+#### `/perms user/group <user|group> parent remove`  
+**Permission**: luckperms.user.parent.remove or luckperms.group.parent.remove  
+**Arguments**:  
+* `<group>` - the group to remove
+* `[server]` - the server to add remove group on (specify "global" for all servers)
+* `[world]` - the world to add remove group on
+
+Removes a parent from the user/group.
+
+___
+#### `/perms user/group <user|group> parent addtemp`  
+**Permission**: luckperms.user.parent.addtemp or luckperms.group.parent.addtemp  
+**Arguments**:  
+* `<group>` - the group to add
+* `<duration>` - the duration until the group will expire
+* `[server]` - the server to add the group on (specify "global" for all servers)
+* `[world]` - the world to add the group on
+
+Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+___
+#### `/perms user/group <user|group> parent removetemp`  
+**Permission**: luckperms.user.parent.removetemp or luckperms.group.parent.removetemp  
+**Arguments**:  
+* `<group>` - the group to remove
+* `[server]` - the server to add remove group on (specify "global" for all servers)
+* `[world]` - the world to add remove group on
+
+Removes a tempoary parent from the user/group.
+
+___
+
+### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
+___
+#### `/perms user/group <user|group> meta info`  
+**Permission**: luckperms.user.meta.info or luckperms.group.meta.info  
+Displays a list of a user/group's inherited meta (options), prefixes and suffixes.
+
+___
+#### `/perms user/group <user|group> meta set`  
+**Permission**: luckperms.user.meta.set or luckperms.group.meta.set  
+**Arguments**:  
+* `<key>` - the key to set
+* `<value>` - the value to set the key to
+* `[server]` - the server to set the meta on (specify "global" for all servers)
+* `[world]` - the world to set the meta on
+
+Sets a meta key value pair for a user/group. These values can be read and modified by other plugins using Vault or the Sponge Permissions API. However, most users will never need to use them.
+
+___
+#### `/perms user/group <user|group> meta unset`  
+**Permission**: luckperms.user.meta.unset or luckperms.group.meta.unset  
+**Arguments**:  
+* `<key>` - the key to unset
+* `[server]` - the server to unset the meta on (specify "global" for all servers)
+* `[world]` - the world to unset the meta on
+
+Unsets a meta key value pair for a user/group.
+
+___
+#### `/perms user/group <user|group> meta settemp`  
+**Permission**: luckperms.user.meta.settemp or luckperms.group.meta.settemp  
+**Arguments**:  
+* `<key>` - the key to set
+* `<value>` - the value to set the key to
+* `<duration>` - the duration until the meta will expire
+* `[server]` - the server to set the meta on (specify "global" for all servers)
+* `[world]` - the world to set the meta on
+
+Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+___
+#### `/perms user/group <user|group> meta unsettemp`  
+**Permission**: luckperms.user.meta.unsettemp or luckperms.group.meta.unsettemp  
+**Arguments**:  
+* `<key>` - the key to unset
+* `[server]` - the server to unset the meta on (specify "global" for all servers)
+* `[world]` - the world to unset the meta on
+
+Unsets a temporary meta key value pair for a user/group.
+
+___
+#### `/perms user/group <user|group> meta addprefix`  
+**Permission**: luckperms.user.meta.addprefix or luckperms.group.meta.addprefix  
+**Arguments**:  
+* `<priority>` - the priority to add the prefix at
+* `<prefix>` - the actual prefix string
+* `[server]` - the server to add the prefix on (specify "global" for all servers)
+* `[world]` - the world to add the prefix on
+
+Adds a prefix to a user/group. You can wrap the prefix in " " quotes to escape spaces. 
+
+___
+#### `/perms user/group <user|group> meta addsuffix`  
+**Permission**: luckperms.user.meta.addsuffix or luckperms.group.meta.addsuffix  
+**Arguments**:  
+* `<priority>` - the priority to add the suffix at
+* `<suffix>` - the actual suffix string
+* `[server]` - the server to add the suffix on (specify "global" for all servers)
+* `[world]` - the world to add the suffix on
+
+Adds a suffix to a user/group. You can wrap the suffix in " " quotes to escape spaces. 
+
+___
+#### `/perms user/group <user|group> meta removeprefix`  
+**Permission**: luckperms.user.meta.removeprefix or luckperms.group.meta.removeprefix  
+**Arguments**:  
+* `<priority>` - the priority to remove the prefix at
+* `<prefix>` - the actual prefix string
+* `[server]` - the server to remove the prefix on (specify "global" for all servers)
+* `[world]` - the world to remove the prefix on
+
+Removes a prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces. If you simply specify "null" as the prefix, all registered prefixes at the given priority will be removed.
+
+___
+#### `/perms user/group <user|group> meta removesuffix`  
+**Permission**: luckperms.user.meta.removesuffix or luckperms.group.meta.removesuffix  
+**Arguments**:  
+* `<priority>` - the priority to remove the suffix at
+* `<suffix>` - the actual suffix string
+* `[server]` - the server to remove the suffix on (specify "global" for all servers)
+* `[world]` - the world to remove the suffix on
+
+Removes a suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces. If you simply specify "null" as the suffix, all registered suffixes at the given priority will be removed.
+
+___
+#### `/perms user/group <user|group> meta addtempprefix`  
+**Permission**: luckperms.user.meta.addtempprefix or luckperms.group.meta.addtempprefix  
+**Arguments**:  
+* `<priority>` - the priority to add the prefix at
+* `<prefix>` - the actual prefix string
+* `<duration>` - the duration until the prefix will expire
+* `[server]` - the server to add the prefix on (specify "global" for all servers)
+* `[world]` - the world to add the prefix on
+
+Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+___
+#### `/perms user/group <user|group> meta addtempsuffix`  
+**Permission**: luckperms.user.meta.addtempsuffix or luckperms.group.meta.addtempsuffix  
+**Arguments**:  
+* `<priority>` - the priority to add the suffix at
+* `<suffix>` - the actual suffix string
+* `<duration>` - the duration until the suffix will expire
+* `[server]` - the server to add the suffix on (specify "global" for all servers)
+* `[world]` - the world to add the suffix on
+
+Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+___
+#### `/perms user/group <user|group> meta removetempprefix`  
+**Permission**: luckperms.user.meta.removetempprefix or luckperms.group.meta.removetempprefix  
+**Arguments**:  
+* `<priority>` - the priority to remove the prefix at
+* `<prefix>` - the actual prefix string
+* `[server]` - the server to remove the prefix on (specify "global" for all servers)
+* `[world]` - the world to remove the prefix on
+
+Removes a tempoary prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces. If you simply specify "null" as the prefix, all registered prefixes at the given priority will be removed.
+
+___
+#### `/perms user/group <user|group> meta removetempsuffix`  
+**Permission**: luckperms.user.meta.removetempsuffix or luckperms.group.meta.removetempsuffix  
+**Arguments**:  
+* `<priority>` - the priority to remove the suffix at
+* `<suffix>` - the actual suffix string
+* `[server]` - the server to remove the suffix on (specify "global" for all servers)
+* `[world]` - the world to remove the suffix on
+
+Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces. If you simply specify "null" as the suffix, all registered suffixes at the given priority will be removed.
+
+___
+#### `/perms user/group <user|group> meta clear`  
+**Permission**: luckperms.user.meta.clear or luckperms.group.meta.clear  
+**Arguments**:  
+* `[server]` - the server to filter by
+* `[world]` - the world to filter by
+
+Removes all meta/prefixes/suffixes.
 
 ___
 
