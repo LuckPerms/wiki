@@ -19,23 +19,23 @@ If you are using Bukkit/Spigot, by default, all OPed users have access to LuckPe
 Arguments Key: \<required\> [optional]
 
 ### General
-*  /perms
-*  /perms `sync`
-*  /perms `networksync`
-*  /perms `info`
-*  /perms `verbose` \<true|false\> [filters...]
-*  /perms `import` \<file\>
-*  /perms `creategroup` \<group\>
-*  /perms `deletegroup` \<group\>
-*  /perms `listgroups`
-*  /perms `createtrack` \<track\>
-*  /perms `deletetrack` \<track\>
-*  /perms `listtracks`
+*  [/perms](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms)
+*  [/perms `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-sync)
+*  [/perms `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-networksync)
+*  [/perms `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-info)
+*  [/perms `verbose` \<true|false\> [filters...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-verbose)
+*  [/perms `import` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-import)
+*  [/perms `creategroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-creategroup)
+*  [/perms `deletegroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-deletegroup)
+*  [/perms `listgroups`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-listgroups)
+*  [/perms `createtrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-createtrack)
+*  [/perms `deletetrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-deletetrack)
+*  [/perms `listtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-listtracks)
 
 ### Super Secret Console Commands
-*  /perms `export` \<file\>
-*  /perms `migration`
-*  /perms `queuecommand` \<command args...\>
+*  [/perms `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-export)
+*  [/perms `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-migration)
+*  [/perms `queuecommand` \<command args...\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-queuecommand)
 
 ### User   (/lp user \<user\> ...)
 *  /perms user \<user\> `info`
