@@ -69,7 +69,7 @@ Arguments Key: \<required\> [optional]
 *  [`check` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-permission-checkinherits)
 
-###[ Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
+### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
 *  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-info)
 *  [`set` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-set)
 *  [`add` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-usergroup-usergroup-parent-add)
