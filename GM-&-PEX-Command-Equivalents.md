@@ -4,7 +4,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | Group Manager Commands                     | LuckPerms Commands                                        |
 |--------------------------------------------|-----------------------------------------------------------|
 | manuadd \<player\> \<group\>               | lp user \<player\> parent add \<group\>                   |
-| manudel \<player\>                         | lp user \<player\> parent clear                           |
+| manudel \<player\>                         | lp user \<player\> clear                                  |
 | manuaddsub \<player\> \<group\>            | lp user \<player\> parent add \<group\>                   |
 | manudelsub \<player\> \<group\>            | lp user \<player\> parent remove \<group\>                |
 | manpromote \<player\> \<group\>            | lp user \<player\> promote \<track\>                      |
