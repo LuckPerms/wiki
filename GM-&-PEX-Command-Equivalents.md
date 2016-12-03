@@ -3,7 +3,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 ## Group Manager
 | Group Manager Commands                     | LuckPerms Commands                                        |
 |--------------------------------------------|-----------------------------------------------------------|
-| manuadd \<player\> \<group\>               | lp user \<player\> parent add \<group\>                   |
+| manuadd \<player\> \<group\>               | lp user \<player\> parent set \<group\>                   |
 | manudel \<player\>                         | lp user \<player\> clear                                  |
 | manuaddsub \<player\> \<group\>            | lp user \<player\> parent add \<group\>                   |
 | manudelsub \<player\> \<group\>            | lp user \<player\> parent remove \<group\>                |
@@ -65,7 +65,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | pex user \<user\> group list                                        | lp user \<user\> parent info                                                        |
 | pex user \<user\> group add \<group\> \<world\>                     | lp user \<user\> parent add \<group\> global \<world\>                              |
 | pex user \<user\> group add \<group\> \<world\> \<time\>            | lp user \<user\> parent addtemp \<group\> \<time\> global \<world\>                 |
-| pex user \<user\> group set \<group\>                               | lp user \<user\> parent clear / lp user \<user\> parant add \<group\>               |
+| pex user \<user\> group set \<group\>                               | lp user \<user\> parant set \<group\>               |
 | pex user \<user\> group remove \<group\> \<world\>                  | lp user \<user\> parent remove \<group\> global \<world\>                           |
 | pex groups list                                                     | lp listgroups                                                                       |
 | pex group \<group\> list                                            | lp group \<group\> permission info                                                  |
