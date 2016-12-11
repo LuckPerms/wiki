@@ -35,7 +35,6 @@ Arguments Key: \<required\> [optional]
 ### Super Secret Console Commands
 *  [/perms `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-export)
 *  [/perms `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-migration)
-*  [/perms `queuecommand` \<command args...\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-queuecommand)
 
 ### User   (/lp user \<user\> ...)
 *  [/perms user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-user-user-info)
@@ -162,14 +161,6 @@ ___
 * `<file>` - the file to export to
 
 Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the root plugin directory.
-
-___
-#### `/perms queuecommand`  
-**Permission**: n/a (only usable by the console)  
-**Arguments**:  
-* `<command args...>` - the command arguments
-
-Queues a command for execution. This command should be used when you use LuckPerms in automated scripts. "/lp creategroup test" becomes "/lp queuecommand creategroup test".
 
 ___
 #### `/perms creategroup`  
