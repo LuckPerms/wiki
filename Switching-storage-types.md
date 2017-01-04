@@ -12,3 +12,7 @@ Switching datastores is easy.
 
 ## Backups
 You can also use this feature to backup all of your LuckPerms data. Just run the export command, and save the file output in a safe place.
+
+## How does it work?
+The export command converts all of your data into a list of commands, than when executed, will recreate your existing setup. The import command just runs each command sequentially. This means that you can export/import small parts of your data, by deleting the parts you don't need.
+
