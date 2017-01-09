@@ -38,6 +38,7 @@ You should generally reflect the setting in server.properties here. Except when.
 1. You have Spigot servers connected to a BungeeCord proxy, with online-mode set to false, but 'bungeecord' set to true in the spigot.yml AND 'ip-forward' set to true in the BungeeCord config.yml. In this case, set online-mode in LuckPerms to true, despite the server being in offline mode.
 2. You are only running one server instance using LuckPerms, (not a network) In this case, set online-mode to true no matter what is set in server.properties. (we can just fallback to the servers uuid cache)
 3. If your proxy is running in offline mode, and you are using PaperSpigot (https://ci.destroystokyo.com/job/PaperSpigot/), you should set "bungee-online-mode" to false in the paper.yml, and set "online-mode" to true in all LuckPerms configs. This approach is thoroughly recommended for offline mode networks.
+
 ____
 
 #### `log-notify`
