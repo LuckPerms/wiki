@@ -53,6 +53,7 @@ Arguments Key: \<required\> [optional]
 *  [/perms group \<group\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-)
 *  [/perms group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#parent---lp-user-user-parent---lp-group-group-parent-)
 *  [/perms group \<group\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/perms group \<group\> `setweight`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-setweight)
 *  [/perms group \<group\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-showtracks)
 *  [/perms group \<group\> `bulkchange` \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#perms-groupuser--bulkchange-serverworld-from-to)
 *  [/perms group \<group\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-clear)
@@ -266,6 +267,14 @@ ___
 #### `/perms group <group> info`  
 **Permission**: luckperms.group.info  
 Displays information about a group.
+
+___
+#### `/perms group <group> setweight`  
+**Permission**: luckperms.group.setweight  
+**Arguments**:  
+* `<weight>` - the weight to set
+
+Sets the groups weight value, which determines the order in which groups will be considered when accumulating a users permissions. Higher value = higher weight.
 
 ___
 #### `/perms group <group> showtracks`  
