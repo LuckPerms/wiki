@@ -10,12 +10,18 @@
 You can change a number of settings in the config file. The file has detailed annotations that should make it clear what each option does.
 
 ### Requirements
-#### Java 8
+* **Java 8**
+
 The only requirement is that you must be using **Java 8**.
 
 Most hosts have updated by now, but if your provider still doesn't run Java 8, ask them nicely to update.
 
 If you control your own server, shame on you for not updating yet! The process is simple, there's tons of guides online if you're struggling to do it. It's not good to be running outdated software. :wink:
 
-#### Older Bukkit versions
+### Older Bukkit versions
 If you are getting errors related to "NoSuchMethod" or "ClassNotFound", the likelihood is you're using an older Bukkit version. Before reporting it as an issue to me, please first try using the "Bukkit-Legacy" version found on the "Development Builds" download page.
+
+### Switching storage type
+The default storage type for LuckPerms is a **H2 database**. All of your data will be stored inside of the `luckperms.db.mv.db` file in the LuckPerms folder. (either `/plugins/LuckPerms/` or `/luckperms/`)
+
+This format is **not readable** using a standard text editor. If you want to be able to manually read/edit the LuckPerms data, then you need to switch to **YAML or JSON** storage, by modifying the options in the `config.yml` file.
