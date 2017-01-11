@@ -2,10 +2,10 @@
 # LuckPerms
 ### Setup
 * [**Basic Setup**](https://github.com/lucko/LuckPerms/wiki/Setup)
+* [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
 * [**Command Usage & Permissions**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 * [**Migration from existing plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
-* [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 
 ### Advanced Usage
@@ -17,6 +17,7 @@
 ### About
 * [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
+* [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
