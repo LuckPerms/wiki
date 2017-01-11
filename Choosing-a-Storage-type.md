@@ -29,7 +29,7 @@ storage-method: sqlite
 ```
 
 ## JSON / YAML
-JSON and YAML types store data in readable and editable text files. YAML is stored with the `.yml` extension, whereas JSON is stored as `.json`.   
+JSON and YAML options store data in readable and editable text files. YAML is stored with the `.yml` extension, whereas JSON is stored with `.json`.   
    
 The layouts inside of these types are very similar, and only differ in syntax.
 
@@ -39,6 +39,7 @@ uuid: c1d60c50-70b5-4722-8057-87767557e50d
 name: Luck
 primary-group: default
 perms:
+  group.default: true
   test.permission: true
   other.test.permission: false
   special.permission: true
@@ -51,11 +52,19 @@ perms:
   "name": "Luck",
   "primaryGroup": "default",
   "perms": {
+    "group.default": true,
     "test.permission": true,
     "other.test.permission": false,
     "special.permission": true
   }
 }
+```
+
+To use either of these options, set:
+```yaml
+storage-method: yaml
+# or
+storage-method: json
 ```
 
 ## MySQL / PostgreSQL
@@ -67,5 +76,17 @@ This option is recommended for users expecting to store a lot of data, or thinki
    
 The schema layouts can be found [here](https://github.com/lucko/LuckPerms/tree/master/common/src/main/resources).
 
+To use either of these options, set:
+```yaml
+storage-method: mysql
+# or
+storage-method: postgresql
+```
+
 ## MongoDB
 LuckPerms also supports MongoDB, which is a remote database, somewhat similar to MySQL. This option is only likely to be used by a small proportion of users.
+
+To use this option, set:
+```yaml
+storage-method: mongodb
+```
