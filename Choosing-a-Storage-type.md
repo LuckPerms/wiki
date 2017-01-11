@@ -1,6 +1,6 @@
 LuckPerms comes with a variety of Storage options to choose from.
 
-The storage provider can be modified in the `config.yml` or `luckperms.conf` file.
+The storage option can be modified in the `config.yml` or `luckperms.conf` file.
 ```yaml
 # +------------------------------------------------------------------------+ #
 # |                               Storage                                  | #
@@ -12,6 +12,10 @@ The storage provider can be modified in the `config.yml` or `luckperms.conf` fil
 storage-method: h2
 ```
 
+Remember that if you switch storage type, your data will not be automatically transferred. To manually move data between storage providers, please see [here](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types) for more information.   
+   
+The available options are outlined below.   
+   
 ## H2 / SQLite
 The default storage option is **H2**.   
    
