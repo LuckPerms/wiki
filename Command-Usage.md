@@ -1,4 +1,6 @@
-Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /perms** will list all commands a user has permission to use.
+Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /lp or /lpb** will list all commands a user has permission to use.
+
+If the only thing returned when you type a command is the plugin version, you do not have permission to use any of the commands. You need to use the server console to give yourself access to LuckPerms commands first.
 
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
@@ -8,33 +10,40 @@ A list of aliases for each platform are listed below. Each command works in exac
 | /luckperms       | /luckpermsbungee |
 | /perms           | /bperms          |
 | /permissions     | /bpermissions    |
-| /lp              | /lpb             |
 | /perm            | /bperm           |
+| /lp              | /lpb             |
 
-**Important**: Commands are different on BungeeCord. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
+**`Important:`** Commands are different on BungeeCord. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
 
 If you are using Bukkit/Spigot, by default, all OPed users have access to LuckPerms commands. You can change this in the config.
 
 # Overview
-Arguments Key: \<required\> [optional]
+#### Arguments Key:
+* `<required>` - you *must* specify this argument when running the command
+* `[optional]` - you do not need to specify this argument. a default will be used if not given.
+
+If you want to include spaces in arguments, you must escape the argument with quotes. `"  "`
+
+The alias used below (/lp) can be exchanged for any of the ones listed in the aliases section above.
 
 ### General
 *  [/lp](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp)
 *  [/lp `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-sync)
-*  [/lp `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-networksync)
 *  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-info)
-*  [/lp `verbose` \<true|false\> [filters...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
+*  [/lp `verbose` \<on|record|off|paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
+*  [/lp `search` \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-search)
+*  [/lp `check` \<user\> \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-check)
+*  [/lp `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-networksync)
 *  [/lp `import` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-import)
+*  [/lp `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-export)
+*  [/lp `reloadconfig`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-reloadconfig)
+*  [/lp `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-migration)
 *  [/lp `creategroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-creategroup)
 *  [/lp `deletegroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-deletegroup)
 *  [/lp `listgroups`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-listgroups)
 *  [/lp `createtrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-createtrack)
 *  [/lp `deletetrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-deletetrack)
 *  [/lp `listtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-listtracks)
-
-### Super Secret Console Commands
-*  [/lp `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-export)
-*  [/lp `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-migration)
 
 ### User   (/lp user \<user\> ...)
 *  [/lp user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-info)
@@ -129,11 +138,6 @@ ___
 Refreshes all cached data with the storage provider.
 
 ___
-#### `/lp networksync`  
-**Permission**: luckperms.sync  
-Refreshes all cached data with the storage provider, and then uses Redis (if configured) to "ping" all other connected servers and request that they sync too.
-
-___
 #### `/lp info`  
 **Permission**: luckperms.info  
 Lists data about LuckPerms, including debug output, statistics, settings, and values from the configuration. 
@@ -142,10 +146,45 @@ ___
 #### `/lp verbose`  
 **Permission**: luckperms.verbose  
 **Arguments**:  
-* `<true|false>` - whether to enable the feature
-* `[filters...]` - the name of the user / start of the node to filter by
+* `<on|record|off|paste>` - whether to enable/disable logging, or to paste the logged output
+* `[filter]` - the filter to sort the output
 
-Enables verbose permission checking output for the sender executing the command. As a result, whenever a permission is checked for by a plugin, if the permission / user being checked match the filters provided, the sender will be notified.
+Controls the LuckPerms verbose logging system. This allows you to listen for all permission checks against players on the server. Whenever a permission is checked by a plugin, the check is passed onto the verbose handler.    
+
+If your filters match the permission check, you will be notified.    
+
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first 500 results to GitHub's pastebin, and provide you with a link.    
+
+Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
+
+**For example:**    
+* `Luck & (essentials | worldedit)` - matches any checks made against my user starting with "essentials" or "worldedit"
+* `!Luck & !anticheat` - matches any checks not against my user and not starting with "anticheat"
+* `nocheatplus & !nocheatplus.check` - matches any checks starting with "nocheatplus" but not starting with "nochectplus.check"    
+     
+You get the idea. ;)
+
+___
+#### `/lp search`  
+**Permission**: luckperms.search  
+**Arguments**:  
+* `<permission>` - the permission to search for
+
+Searches all users/groups for a specific permission, and returns a paginated list of all found entries. 
+
+___
+#### `/lp check`  
+**Permission**: luckperms.check  
+**Arguments**:  
+* `<user>` - the user to check
+* `<permission>` - the permission to check for
+
+Performs a standard permission check on an online player, and returns the result. This check is equivalent to the checks performed by other plugins when checking for permissions.
+
+___
+#### `/lp networksync`  
+**Permission**: luckperms.sync  
+Refreshes all cached data with the storage provider, and then uses Redis (if configured) to "ping" all other connected servers and request that they sync too.
 
 ___
 #### `/lp import`  
@@ -157,11 +196,22 @@ Imports data into LuckPerms from a file. The file must be a list of commands, st
 
 ___
 #### `/lp export`  
-**Permission**: n/a (only usable by the console)  
+**Permission**: luckperms.export  
 **Arguments**:  
 * `<file>` - the file to export to
 
 Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the root plugin directory.
+
+___
+#### `/lp reloadconfig`  
+**Permission**: luckperms.reloadconfig  
+
+Reloads some values from the configuration file. Not all entries are reloaded by this command, and some require a full server reboot to take effect. (storage settings, for example)
+
+___
+#### `/lp migration`  
+**Permission**: luckperms.migration  
+Lists commands availble to begin a migration process.
 
 ___
 #### `/lp creategroup`  
@@ -204,11 +254,6 @@ ___
 #### `/lp listtracks`  
 **Permission**: luckperms.listtracks  
 Displays a list of all current tracks.
-
-___
-#### `/lp migration`  
-**Permission**: n/a (only usable by the console)  
-Lists commands availble to begin a migration process.
 
 ___
 
@@ -719,7 +764,12 @@ ___
 *  luckperms.sync
 *  luckperms.info
 *  luckperms.verbose
+*  luckperms.search
+*  luckperms.check
 *  luckperms.import
+*  luckperms.export
+*  luckperms.reloadconfig
+*  luckperms.migration
 *  luckperms.creategroup
 *  luckperms.deletegroup
 *  luckperms.listgroups
