@@ -205,7 +205,6 @@ Exports data from LuckPerms into a file. This file can either be used as a backu
 ___
 #### `/lp reloadconfig`  
 **Permission**: luckperms.reloadconfig  
-
 Reloads some values from the configuration file. Not all entries are reloaded by this command, and some require a full server reboot to take effect. (storage settings, for example)
 
 ___
