@@ -30,7 +30,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp)
 *  [/lp `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-sync)
 *  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-info)
-*  [/lp `verbose` \<on|record|off|paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
+*  [/lp `verbose` \<on | record | off | paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
 *  [/lp `search` \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-search)
 *  [/lp `check` \<user\> \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-check)
 *  [/lp `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-networksync)
