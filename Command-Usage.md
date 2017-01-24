@@ -160,7 +160,7 @@ Filters match the start of permissions or the user being checked. You can use `&
 **For example:**    
 * `Luck & (essentials | worldedit)` - matches any checks made against my user starting with "essentials" or "worldedit"
 * `!Luck & !anticheat` - matches any checks not against my user and not starting with "anticheat"
-* `nocheatplus & !nocheatplus.check` - matches any checks starting with "nocheatplus" but not starting with "nochectplus.check"    
+* `anticheat & !anticheat.check` - matches any checks starting with "anticheat" but not starting with "anticheat.check"    
      
 You get the idea. ;)
 
