@@ -10,9 +10,11 @@
 You can change a number of settings in the config file. The file has detailed annotations that should make it clear what each option does.
 
 ### Requirements
+LuckPerms has only one requirement.
+
 * **Java 8**
 
-The only requirement is that you must be using **Java 8**.
+The only requirement is that you must be using **Java 8**. LuckPerms will not work on older versions of Java.
 
 Most hosts have updated by now, but if your provider still doesn't run Java 8, ask them nicely to update.
 
@@ -25,3 +27,5 @@ If you are getting errors related to "NoSuchMethod" or "ClassNotFound", the like
 The default storage type for LuckPerms is a **H2 database**. All of your data will be stored inside of the `luckperms.db.mv.db` file in the LuckPerms folder. (either `/plugins/LuckPerms/` or `/luckperms/`)
 
 This format is **not readable** using a standard text editor. If you want to be able to manually read/edit the LuckPerms data, then you need to switch to **YAML or JSON** storage, by modifying the options in the `config.yml` file.
+
+[**Click here for more info on Storage Types**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
