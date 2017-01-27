@@ -1,19 +1,51 @@
 ## Intro
-I spent an huge amount of time and effort making LuckPerms great for developers.
+The LuckPerms API allows you to change a huge amount of the plugins internals programmatically, and easily integrate LuckPerms deeply into your existing plugins and systems.
 
-Most other permissions plugins either don't have APIs, have bad APIs, or have APIs with poor documentation and methods and classes that disappear or move randomly between versions. The Vault project is a great interface and  a great way to integrate with lots of plugins at once, but its functionality is limited.
-
-The LuckPerms API allows you to change a huge amount of the plugins internals programmatically, and easily integrate LuckPerms deeply into your existing plugins and systems. There is a massive amount of documentation you can read if you're unsure about what something does.
+Most other permissions plugins either don't have APIs, have bad APIs, or have APIs with poor documentation and methods and classes that disappear or move randomly between versions. The Vault project is a great interface and a great way to integrate with lots of plugins at once, but its functionality is very limited.
 
 LuckPerms follows Semantic Versioning, meaning whenever a non-backwards compatible API change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
-The vast majority of operations in LuckPerms run asynchronously in separate threads. This shouldn't affect API users significantly, as the internals of LuckPerms are thread safe. However, take great care to not perform blocking operations in Callbacks (these are called in the server thread), and not call synchronous datastore methods on the main server thread (Your server will lag).
+## How to use the API in your project
+The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
 
-## Useful Links
-* **Maven Repository** - <https://nexus.lucko.me/>
-* **CI Server** - <https://ci.lucko.me/job/LuckPerms/>
-* **JavaDocs** - <https://jd.lucko.me/LuckPerms/> (I spent a lot of time on these, please make sure you read them <3)
-* **API Source Code** - <https://github.com/lucko/LuckPerms/tree/master/api> (Can be really useful if you don't like reading JavaDocs online.)
+My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me/). The repository you need for your build scripts is [https://repo.lucko.me/](https://repo.lucko.me/).
+
+#### Other useful links
+* [JavaDocs](https://jd.lucko.me/LuckPerms/)
+* [CI Server](https://ci.lucko.me/job/LuckPerms/)
+
+### Maven
+````xml
+<repositories>
+    <repository>
+        <id>luck-repo</id>
+        <url>http://repo.lucko.me/</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>me.lucko.luckperms</groupId>
+        <artifactId>luckperms-api</artifactId>
+        <version>2.17</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+````
+
+### Gradle
+```gradle
+repositories {
+    maven {
+        name "luck-repo"
+        url "http://repo.lucko.me/"
+    }
+}
+
+dependencies {
+    compile ("me.lucko.luckperms:luckperms-api:2.17")
+}
+```
 
 ## Usage Instructions
 To use the API, you need to obtain an instance of the `LuckPermsApi` interface. This can be done in a number of ways.
@@ -41,8 +73,12 @@ if (provider.isPresent()) {
 }
 ```
 
-If you want to use LuckPerms in your onEnable/ServerStart method:
+### A warning about thread safety
+All LuckPerms internals are thread-safe, including the API. You can call API methods from async threads without incurring issues.
 
+However, please be aware that some operations, (especially in the Storage class) are blocking. [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s are used in these situations to prevent accidental issues, where the main server thread waits for I/O to execute. Care should be taken to specify the correct executor when adding callbacks to these futures.
+
+### I want to depend on LuckPerms
 On Bukkit/Bungee, you need to add the following to your plugins `plugin.yml`.
 ```yml
 depend: [LuckPerms]
@@ -60,25 +96,6 @@ public class MyPlugin {
     ...
 }
 ```
-
-You can add LuckPerms as a Maven dependency by adding the following to your projects `pom.xml`.
-````xml
-<repositories>
-    <repository>
-        <id>luck-repo</id>
-        <url>http://repo.lucko.me/</url>
-    </repository>
-</repositories>
-
-<dependencies>
-    <dependency>
-        <groupId>me.lucko.luckperms</groupId>
-        <artifactId>luckperms-api</artifactId>
-        <version>2.17</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-````
 
 ### Events
 LuckPerms exposes a full read/write API, as well as an event listening system. Due to the multi-platform nature of the project, an internal Event system is used, as opposed to the systems already in place on each platform. (the Bukkit Event API, for example). This means that simply registering your listener with the platform will not work.
