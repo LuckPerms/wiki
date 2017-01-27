@@ -76,7 +76,7 @@ if (provider.isPresent()) {
 ### A warning about thread safety
 All LuckPerms internals are thread-safe, including the API. You can call API methods from async threads without incurring issues.
 
-However, please be aware that some operations, (especially in the Storage class) are blocking. [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s are used in these situations to prevent accidental issues, where the main server thread waits for I/O to execute. Care should be taken to specify the correct executor when adding callbacks to these futures.
+However, please be aware that some operations, (especially in the Storage class) are blocking. [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s are used in these situations to prevent accidental issues whereby through poor handling, the main server thread waits for I/O to execute. Care should be taken to specify the correct executor when adding callbacks to these futures.
 
 ### I want to depend on LuckPerms
 On Bukkit/Bungee, you need to add the following to your plugins `plugin.yml`.
