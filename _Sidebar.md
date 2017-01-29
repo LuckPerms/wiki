@@ -8,17 +8,18 @@
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 
+### About
+* [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
+* [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
+* [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
+* [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
+* [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
+
 ### Advanced Usage
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Primary Groups**](https://github.com/lucko/LuckPerms/wiki/Primary-Groups)
-
-### About
-* [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
-* [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
-* [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
-* [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
