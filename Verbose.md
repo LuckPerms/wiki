@@ -20,7 +20,7 @@ The first argument enables/disables the system, and the second sets up the filte
 #### Filters
 The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
 
-A filter string will match the start of the permission being checked, or the users full name. You can also use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `(  )` are also supported.
+A filter string will match the start of the permission being checked, or the users full name. You can use `&` (and), `|` (or), and `!` symbols to negate a match. Parenthesis `(  )` are also supported.
 
 ##### Some examples
 * `Luck & (essentials | worldedit)` - Matches any checks made against "Luck" that start with "essentials" or "worldedit"
