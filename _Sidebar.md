@@ -16,6 +16,7 @@
 
 ### About
 * [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
+* [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
 * [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
 
