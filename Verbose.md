@@ -18,7 +18,7 @@ The first argument enables/disables the system, and the second sets up the filte
 | `paste`  | Same as "off", but will also upload the first 500 results to GitHub, and provide you with a link. |
 
 #### Filters
-The filter is an expression used to match permission entries, and filter out only the results you're looking for. It could just be a player name, or much more advanced.
+The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
 
 A filter string will match the start of the permission being checked, or the users full name. You can also use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `(  )` are also supported.
 
