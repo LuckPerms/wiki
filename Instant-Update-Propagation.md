@@ -34,7 +34,7 @@ Once setup, you can use the `/lp networksync` command to push changes to all oth
 | Service | Description | 
 |---------|-------------|
 | Bungee | Uses the plugin messaging channels to push changes around your BungeeCord network. |
-| Lilypad | Uses the LilyPad Connect Servers Pub Sub system to push changes around your LilyPad network. |
+| Lilypad | Uses the LilyPad Connect Server's Pub Sub system to push changes around your LilyPad network. |
 | Redis | Uses Redis Pub Sub to push changes to all other connected servers. |
 
 #### Bungee
