@@ -36,8 +36,7 @@ The plugin then uploaded the results, and returned this link. [`https://git.io/v
 
 If you take a look at the link, you'll see the results of the check. 😄 
 
-Under metadata, you can see some data about the check. You'll notice that `Count: **58** / 72`. This means that during the checking period, 72 permissions were checked, and 58 matched the filter. The results of each of those checks are shown below.
-
+Under metadata, you can see some data about the check. You'll notice that `Count: 58 / 72`. This means that during the checking period, 72 permissions were checked, and 58 matched the filter. The results of each of those checks are also shown.
 
 
 
