@@ -31,6 +31,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-sync)
 *  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-info)
 *  [/lp `verbose` \<on | record | off | paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
+*  [/lp `tree` [selection] [max level] [player]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-tree)
 *  [/lp `search` \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-search)
 *  [/lp `check` \<user\> \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-check)
 *  [/lp `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-networksync)
@@ -163,6 +164,22 @@ Filters match the start of permissions or the user being checked. You can use `&
 * `anticheat & !anticheat.check` - matches any checks starting with "anticheat" but not starting with "anticheat.check"    
      
 You get the idea. ;)
+
+___
+#### `/lp tree`  
+**Permission**: luckperms.tree  
+**Arguments**:  
+* `[selection]` - the root of the tree (specify `.` to include all permissions)
+* `[max level]` - how many sub branches should be returned (in other words, the width of the tree)
+* `[player]` - the name of an online player to check against
+
+Generates a tree view of permissions registered to the server. The tree is built using data exposed to the server by plugins, and expanded over time as plugins check for permissions.
+
+All arguments are optional. The default selection is `.` (just a dot, which means all), and the default max level is `5`.
+
+Selection allows you to only generate a part of the tree. For example, a selection of `luckperms.user` will only return the branch of the tree starting with "luckperms.user".
+
+Max level allows you to define how many sub branches will be included. For example, if you set a max level of `2`, "luckperms.user" will be returned, but "luckperms.user.info" will not be shown.
 
 ___
 #### `/lp search`  
