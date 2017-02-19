@@ -27,7 +27,7 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
-        <version>2.17</version>
+        <version>3.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    compile ("me.lucko.luckperms:luckperms-api:2.17")
+    compile ("me.lucko.luckperms:luckperms-api:3.0")
 }
 ```
 
@@ -138,6 +138,10 @@ As of version 2.0, LuckPerms roughly follows the standards set out in Semantic V
 The only difference is that the patch number is not included anywhere within the pom, and is calculated each build, based upon how may commits have been made since the last tag. (A new tag is made every minor version)
 
 This means that API versions do not have a patch number (as no API changes are made in patches). API versions will be x.y, and each individual build of LuckPerms will follow x.y.z.
+
+### Changelog
+* Version 2.x remained stable for a number of months, without any backwards incompatible changes. However, a number of methods became deprecated in the later versions, and the event API really needed a rewrite.
+* Version 3.x introduced the following backwards incompatible changes. https://gist.github.com/lucko/fdf6ae4b2d9e466d8103dd9c68e5db9e
 
 ## Group Lookups
 If you just want to find out which group a player is in, I **highly** recommend the following method.
