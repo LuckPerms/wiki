@@ -11,7 +11,7 @@ The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lu
 My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me/). The repository you need for your build scripts is [https://repo.lucko.me/](https://repo.lucko.me/).
 
 #### Other useful links
-* [JavaDocs](https://jd.lucko.me/LuckPerms/)
+* [JavaDocs](https://luckperms.lucko.me/javadocs/)
 * [CI Server](https://ci.lucko.me/job/LuckPerms/)
 
 ### Maven
