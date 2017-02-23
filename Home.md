@@ -23,4 +23,4 @@ If you have any further questions that haven't been answered within this wiki, y
 
 ### Some useful links
 * [**Development Builds**](https://ci.lucko.me/job/LuckPerms)
-* [**Javadocs**](https://jd.lucko.me/LuckPerms)
+* [**Javadocs**](https://luckperms.lucko.me/javadocs/)
