@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/bfaq4vv.png)
 # LuckPerms
 ### Setup
-* [**Basic Setup**](https://github.com/lucko/LuckPerms/wiki/Setup)
+* [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
 * [**Command Usage & Permissions**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 * [**Migration from existing plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
