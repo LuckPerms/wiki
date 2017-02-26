@@ -27,12 +27,12 @@ If you haven't got LuckPerms installed just yet, please refer to the [installati
 
 Then, please make sure you read the section about [Choosing a Storage type](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) before proceeding. Whilst it is possible to change these options later, it's better to get them right the first time around.
 
-## Granting full access
-The first thing you'll want to do is give yourself full access to the server.
+## Granting full access to modify permissions
+The first thing you'll want to do is give yourself full access to the plugin. When the plugin is first installed, nobody has access to the LuckPerms commands.
 
-To do this, we're just going to give our user access to everything. 
+You want to give your own use full access to all LuckPerms commands whilst you get everything setup.
 
-You need to type  `/luckperms user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
+You need to type `/luckperms user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
 
 This should be the result:    
 ![](http://i.imgur.com/zaw4l7q.png)
@@ -42,7 +42,7 @@ Effectively, what this command does, is give the user `Luck` the `luckperms.*` p
 > You'll notice we just used the `*` character at the end of the permission string. This character is called a wildcard, and gives a user access to **all** permissions which start with "luckperms".
 
 ## Creating the first group
-We can create a new group with the create group command command.
+We can create a new group with the create group command.
 
 Let's create a new group called admin, and then give it a permission.
 
