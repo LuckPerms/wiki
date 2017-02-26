@@ -30,9 +30,7 @@ Then, please make sure you read the section about [Choosing a Storage type](http
 ## Granting full access to modify permissions
 The first thing you'll want to do is give yourself full access to the plugin. When the plugin is first installed, nobody has access to the LuckPerms commands.
 
-You want to give your own use full access to all LuckPerms commands whilst you get everything setup.
-
-You need to type `/luckperms user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
+To do this, you need to type `/luckperms user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
 
 This should be the result:    
 ![](http://i.imgur.com/zaw4l7q.png)
