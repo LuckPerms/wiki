@@ -3,14 +3,9 @@
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
 ### Where to start?
-If you've never used a permissions plugin before, I suggest you read the following tutorials first. They outline how permissions work, and how to use them with your other plugins.
+If you've never used a permissions plugin before, I suggest you start at the top of the "Setup" section and work your way through everything.
 
-* [Bukkit's Permission Guide](http://wiki.bukkit.org/Understanding_Permissions) (credit: mbaxter & XHawk87)
-* [Sponge's Permission Guide](https://docs.spongepowered.org/master/en/server/management/permissions.html) (credit: SpongeDocs contributors)
-* [A list of Minecraft permission nodes](http://wiki.bukkit.org/CraftBukkit_Commands) (credit: too many to list)
-* [A brief summary of how permissions work](https://www.bisecthosting.com/clients/knowledgebase/87/Introduction-to-permissions.html) (credit: BisectHosting)
-
-If you're happy with all of that, then I suggest you move onto the "**Basic Setup**" page. It's a good idea to familiarise yourself with the documentation before you start creating your permissions setup. 😃 
+The basics are covered in detail in the "Usage" section. Full command usage is detailed under "Command Usage & Permissions".
 
 ### Can't find something?
 
