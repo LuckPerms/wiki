@@ -1,6 +1,4 @@
-This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, I suggest you read the page on [Command Usage and Permissions](https://github.com/lucko/LuckPerms/wiki/Command-Usage).
-
-This gives a much more "straight to the point" description of how the plugin works.
+This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, I suggest you read the page on [Command Usage and Permissions](https://github.com/lucko/LuckPerms/wiki/Command-Usage), as this gives a much more "straight to the point" description of how the plugin works.
 
 If you're struggling to understand that, then this guide is a good place to start. :)
 
