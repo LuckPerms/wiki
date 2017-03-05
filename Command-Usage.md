@@ -579,7 +579,7 @@ ___
 * `[server]` - the server to remove the prefix on (specify "global" for all servers)
 * `[world]` - the world to remove the prefix on
 
-Removes a prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces. If you simply specify "null" as the prefix, all registered prefixes at the given priority will be removed.
+Removes a prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
 ___
 #### `/lp user/group <user|group> meta removesuffix`  
@@ -590,7 +590,7 @@ ___
 * `[server]` - the server to remove the suffix on (specify "global" for all servers)
 * `[world]` - the world to remove the suffix on
 
-Removes a suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces. If you simply specify "null" as the suffix, all registered suffixes at the given priority will be removed.
+Removes a suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
 ___
 #### `/lp user/group <user|group> meta addtempprefix`  
@@ -625,7 +625,7 @@ ___
 * `[server]` - the server to remove the prefix on (specify "global" for all servers)
 * `[world]` - the world to remove the prefix on
 
-Removes a tempoary prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces. If you simply specify "null" as the prefix, all registered prefixes at the given priority will be removed.
+Removes a tempoary prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
 ___
 #### `/lp user/group <user|group> meta removetempsuffix`  
@@ -636,7 +636,7 @@ ___
 * `[server]` - the server to remove the suffix on (specify "global" for all servers)
 * `[world]` - the world to remove the suffix on
 
-Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces. If you simply specify "null" as the suffix, all registered suffixes at the given priority will be removed.
+Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
 ___
 #### `/lp user/group <user|group> meta clear`  
