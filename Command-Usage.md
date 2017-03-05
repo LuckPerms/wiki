@@ -95,12 +95,12 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`unsettemp` \<key\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-unsettemp)
 *  [`addprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addprefix)
 *  [`addsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addsuffix)
-*  [`removeprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removeprefix)
-*  [`removesuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removesuffix)
+*  [`removeprefix` \<priority\> [prefix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removeprefix)
+*  [`removesuffix` \<priority\> [suffix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removesuffix)
 *  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addtempprefix)
 *  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addtempsuffix)
-*  [`removetempprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempprefix)
-*  [`removetempsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempsuffix)
+*  [`removetempprefix` \<priority\> [prefix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempprefix)
+*  [`removetempsuffix` \<priority\> [suffix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempsuffix)
 *  [`clear` [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-clear)
 
 ### Track   (/lp track \<track\> ...)
@@ -575,7 +575,7 @@ ___
 **Permission**: luckperms.user.meta.removeprefix or luckperms.group.meta.removeprefix  
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
-* `<prefix>` - the actual prefix string
+* `[prefix]` - the actual prefix string
 * `[server]` - the server to remove the prefix on (specify "global" for all servers)
 * `[world]` - the world to remove the prefix on
 
@@ -586,7 +586,7 @@ ___
 **Permission**: luckperms.user.meta.removesuffix or luckperms.group.meta.removesuffix  
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
-* `<suffix>` - the actual suffix string
+* `[suffix]` - the actual suffix string
 * `[server]` - the server to remove the suffix on (specify "global" for all servers)
 * `[world]` - the world to remove the suffix on
 
@@ -621,7 +621,7 @@ ___
 **Permission**: luckperms.user.meta.removetempprefix or luckperms.group.meta.removetempprefix  
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
-* `<prefix>` - the actual prefix string
+* `[prefix]` - the actual prefix string
 * `[server]` - the server to remove the prefix on (specify "global" for all servers)
 * `[world]` - the world to remove the prefix on
 
@@ -632,7 +632,7 @@ ___
 **Permission**: luckperms.user.meta.removetempsuffix or luckperms.group.meta.removetempsuffix  
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
-* `<suffix>` - the actual suffix string
+* `[suffix]` - the actual suffix string
 * `[server]` - the server to remove the suffix on (specify "global" for all servers)
 * `[world]` - the world to remove the suffix on
 
