@@ -31,8 +31,7 @@ The migration process is fairly simple, however it varies slightly for each plat
 
 **Run the following command: `/lp migration <plugin name>`**   
 
-Some plugins also require you to specify a list of worlds to be included in the migration.   
-For example: `/lp migration GroupManager world world_nether world_the_end`.
+Some plugins also require you to specify extra options/flags. If any are needed, you will be notified in chat before the migration begins.
 
 Then, just let LuckPerms handle the rest! You will be notified of the migration progress, and then notified again once it has finished.
 
