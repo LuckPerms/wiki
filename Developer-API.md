@@ -189,6 +189,10 @@ Node node = api.getNodeFactory().newBuilder(permission).setValue(true).build();
 // Set the permission, and return true if the user didn't already have it set.
 try {
     user.get().setPermission(node);
+
+    // Now we need to save the user back to the storage
+    api.getStorage().saveUser(u);
+
     return true;
 } catch (ObjectAlreadyHasException e) {
     return false;
@@ -247,7 +251,7 @@ You can use Java 8 streams to easily filter and return permissions applied to a 
 public boolean hasPermissionStartingWith(UUID uuid, String startingWith) {
     // Get the user, if they're online.
     Optional<User> user = api.getUserSafe(uuid);
-    
+
     // If they're online, perform the check, otherwise, return false.
     return user.map(u -> u.getPermissions().stream()
             .filter(Node::getValue)
@@ -257,6 +261,30 @@ public boolean hasPermissionStartingWith(UUID uuid, String startingWith) {
             .anyMatch(n -> n.getPermission().startsWith(startingWith))
     ).orElse(false);
 }
+```
+
+### Creating a new group and assigning a permission
+This method is not blocking, so can be safely called on the main server thread. The callback will be ran async too, once the operation has finished.
+```java
+api.getStorage().createAndLoadGroup("my-new-group").thenAcceptAsync(success -> {
+    if (!success) {
+        return;
+    }
+
+    Group group = api.getGroup("my-new-group");
+    if (group == null) {
+        return;
+    }
+
+    Node permission = api.buildNode("test.permission").build();
+
+    try {
+        group.setPermission(permission);
+    } catch (ObjectAlreadyHasException ignored) {}
+
+    // Now save the group back to storage
+    api.getStorage().saveGroup(group);
+}, api.getStorage().getAsyncExecutor());
 ```
 
 ## Versioning
@@ -269,18 +297,3 @@ This means that API versions do not have a patch number (as no API changes are m
 ### Changelog
 * Version 2.x remained stable for a number of months, without any backwards incompatible changes. However, a number of methods became deprecated in the later versions, and the event API really needed a rewrite.
 * Version 3.x introduced the following backwards incompatible changes. https://gist.github.com/lucko/fdf6ae4b2d9e466d8103dd9c68e5db9e
-
-## Group Lookups
-If you just want to find out which group a player is in, I **highly** recommend the following method.
-
-```java
-public static String getPlayerGroup(Player player, List<String> possibleGroups) {
-    for (String group : possibleGroups) {
-        if (player.hasPermission("group." + group)) {
-            return group;
-        }
-    }
-    return null;
-}
-```
-Remember to order your group list in order of priority. e.g. Owner first, member last. 
