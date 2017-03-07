@@ -156,6 +156,109 @@ public class TestListener {
 
 [`EventBus#subscribe`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventBus.java#L43) returns an [`EventHander`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
 
+## Example Usage
+Below are some short examples which illustrate some basic API functions.
+
+### Finding a players group
+If you just want to find out which group a player is in, I **highly** recommend the following method. (you don't even need to use the API!)
+
+```java
+public static String getPlayerGroup(Player player, List<String> possibleGroups) {
+    for (String group : possibleGroups) {
+        if (player.hasPermission("group." + group)) {
+            return group;
+        }
+    }
+    return null;
+}
+```
+Remember to order your group list in order of priority. e.g. Owner first, member last. 
+
+### Adding a permission to a user
+```java
+LuckPermsApi api = null; // See above for how to get the API instance.
+
+Optional<User> user = api.getUserSafe(uuid);
+if (!user.isPresent()) {
+    return false; // The user isn't loaded in memory.
+}
+
+// Build the permission node we want to set
+Node node = api.getNodeFactory().newBuilder(permission).setValue(true).build();
+
+// Set the permission, and return true if the user didn't already have it set.
+try {
+    user.get().setPermission(node);
+    return true;
+} catch (ObjectAlreadyHasException e) {
+    return false;
+}
+```
+
+### Getting a players prefix
+LuckPerms has a (somewhat complex) caching system which is used for super fast permission / meta lookups. These classes are exposed in the API, and should be used where possible.
+
+```java
+LuckPermsApi api = null; // See above for how to get the API instance.
+
+// Get the user, or null if they're not loaded.
+User user = api.getUserSafe(uuid).orElse(null);
+if (user == null) {
+    return Optional.empty(); // The user isn't loaded. :(
+}
+
+// Now get their UserData. This is only loaded for online players.
+UserData userData = user.getUserDataCache().orElse(null);
+if (userData == null) {
+    return Optional.empty(); // Nope! Not loaded.
+}
+
+// Now get the users "Contexts". This is basically just data about the players current state.
+// Don't worry about it too much, just know we need it to get their cached data.
+Contexts contexts = api.getContextForUser(user).orElse(null);
+if (contexts == null) {
+    return Optional.empty();
+}
+
+// Ah, now we're making progress. We can use the Contexts to get the users "MetaData". This is their cached meta data.
+MetaData metaData = userData.getMetaData(contexts);
+
+// Now return an optional of their prefix, if they have one.
+// MetaData#getPrefix returns null if they have no prefix, so we wrap the return in Optional#ofNullable to catch this.
+return Optional.ofNullable(metaData.getPrefix());
+```
+
+### Getting a players applied permissions
+We can also use this caching system to get a Map containing the users permissions. This map contains the data which backs their permission lookups.
+```java
+// All retrieved in the same way as shown above.
+User user;
+UserData userData;
+Contexts contexts;
+
+PermissionData permissionData = userData.getPermissionData(contexts);
+
+Map<String, Boolean> data = permissionData.getImmutableBacking();
+```
+
+### Searching for a permission
+You can use Java 8 streams to easily filter and return permissions applied to a user.
+```java
+public boolean hasPermissionStartingWith(UUID uuid, String startingWith) {
+    // Get the user, if they're online.
+    Optional<User> user = api.getUserSafe(uuid);
+    
+    // If they're online, perform the check, otherwise, return false.
+    return user.map(u -> u.getPermissions().stream()
+            .filter(Node::getValue)
+            .filter(Node::isPermanent)
+            .filter(n -> !n.isServerSpecific())
+            .filter(n -> !n.isWorldSpecific())
+            .anyMatch(n -> n.getPermission().startsWith(startingWith))
+    ).orElse(false);
+}
+```
+
 ## Versioning
 As of version 2.0, LuckPerms roughly follows the standards set out in Semantic Versioning.
 
