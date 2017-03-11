@@ -2,6 +2,13 @@ LuckPerms has a few placeholders available in extended_clip's [PlaceholderAPI](h
 
 The LuckPerms identifier is just **"luckperms"**.
 
+| Placeholder | Description |
+|-------------|-------------|
+
+| `` |  |
+| `` |  |
+| `` |  |
+
 * **%luckperms_group_name%** - the name of the players group
 * **%luckperms_has_permission_\<node\>%** -  if the player has the permission
 * **%luckperms_inherits_permission_\<node\>%** - if the player has or inherits the permission
