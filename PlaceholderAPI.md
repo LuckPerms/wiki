@@ -4,7 +4,8 @@ The LuckPerms identifier is just **"luckperms"**.
 
 ## Usage
 
-To use the placeholders, simply download a copy of `Expansion-LuckPerms.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions/` folder.     
+To use the placeholders, simply download a copy of `Expansion-LuckPerms.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions/` folder.
+
 [**Click here to download the expansion**](https://ci.lucko.me/job/LuckPermsPlaceholders/)
 
 You can then use the LuckPerms placeholders in the same way as any other PlaceholderAPI placeholders.
