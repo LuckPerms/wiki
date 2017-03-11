@@ -209,7 +209,7 @@ ___
 **Arguments**:  
 * `<file>` - the file to import from
 
-Imports data into LuckPerms from a file. The file must be a list of commands, starting with "/luckperms". This file can be generated using the export command. The file is expected to be in the root plugin directory.
+Imports data into LuckPerms from a file. The file must be a list of commands, starting with "/luckperms". This file can be generated using the export command. The file is expected to be in the plugin directory.
 
 ___
 #### `/lp export`  
