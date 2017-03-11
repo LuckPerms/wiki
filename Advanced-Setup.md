@@ -145,12 +145,6 @@ For example:
 `/luckperms group default set essentials.fly true (hub1|hub2|hub3|hub4)`
 would give users the fly permission on all of my hub servers.
 
-### Limitations
-There are some limitations: firstly, you cannot use shorthand in the first part of the node. (The "luckperms" part in the example above)
-
-Additionally, you cannot combine shorthand and normal text in the same part of the node.
-For example, `luckperms.(user|group).(set|unset)permission` would not work.
-
 ## Regex
 LuckPerms has support for regex when defining permission nodes and server/world names.
 
