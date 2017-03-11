@@ -15,9 +15,9 @@ The LuckPerms identifier is just **"luckperms"**.
 * **%luckperms_meta_\<node\>** - the value of the meta node for the player
 
 
-To use the placeholders, simply grab a download of `LuckPermsPlaceholderExpansion.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions` folder.
+To use the placeholders, simply grab a download of `Expansion-LuckPerms.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions/` folder.
 
-[Click here to download the expansion](https://ci.lucko.me/job/LuckPerms/lastSuccessfulBuild/artifact/bukkit-placeholders/target/LuckPermsPlaceholderExpansion.jar)
+[Click here to download the expansion](https://ci.lucko.me/job/LuckPermsPlaceholders/)
 
 You can also use the standard Vault placeholders. (In fact, if you're trying to get prefixes or suffixes, you should definitely use the Vault placeholders. They will be affected by the LuckPerms Vault config options)
 
