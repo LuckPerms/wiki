@@ -2,6 +2,16 @@ LuckPerms has a few placeholders available in extended_clip's [PlaceholderAPI](h
 
 The LuckPerms identifier is just **"luckperms"**.
 
+## Usage
+
+To use the placeholders, simply download a copy of `Expansion-LuckPerms.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions/` folder.     
+[**Click here to download the expansion**](https://ci.lucko.me/job/LuckPermsPlaceholders/)
+
+You can then use the LuckPerms placeholders in the same way as any other PlaceholderAPI placeholders.
+
+
+Also note that if you only want to retrieve prefix/suffix data, you can use the Vault placeholders if you have Vault installed on your server, and the Vault expansion installed.
+
 ## Placeholders
 ### `%luckperms_group_name%`
 **Description:** Returns the name of the players primary group    
@@ -93,13 +103,3 @@ ___
 **Example:** %luckperms_meta_some-key%
 
 ___
-
-## Usage
-
-To use the placeholders, simply download a copy of `Expansion-LuckPerms.jar` from the CI server, and place it in the `/plugins/PlaceholderAPI/expansions/` folder.     
-[**Click here to download the expansion**](https://ci.lucko.me/job/LuckPermsPlaceholders/)
-
-You can then use the LuckPerms placeholders in the same way as any other PlaceholderAPI placeholders.
-
-
-Also note that if you only want to retrieve prefix/suffix data, you can use the Vault placeholders if you have Vault installed on your server, and the Vault expansion installed.
