@@ -21,6 +21,8 @@ The default storage option is **H2**.
    
 Both are types of file based SQL databases. All data is stored within one file in the LuckPerms folder. The data cannot be easily edited with a text editor, unlike YAML or JSON. The plugin commands must be used to edit or view the data.
 
+If you opt for H2 (the default), all data is stored in the `luckperms-h2.mv.db` file. The file for SQLite is `luckperms-sqlite.db`.
+
 To use either of these options, set:
 ```yaml
 storage-method: h2
