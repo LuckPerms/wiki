@@ -1,45 +1,98 @@
-# Intro
-LuckPerms fully implements the [Vault](https://dev.bukkit.org/bukkit-plugins/vault/) Chat and Permission API, meaning most plugins that depend on Permissions or Chat integration will work seamlessly with LuckPerms, even if the plugin was made before LuckPerms was.
+This guide covers how to setup and manage prefixes, suffixes and options/meta with LuckPerms.
 
-The Permissions part of the API simply hooks with LuckPerms, allowing other plugins to modify permissions. Even though it would make sense to have a separate plugin to handle the Chat part of Vault, it is most common that permissions plugins do this too.
+If you are already familiar with these concepts, and just want to view how the commands work, then you should read the "meta" section of the [Command Usage](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-) page.
 
-LuckPerms stores all data about groups and players in the form of permission nodes. Vault Chat requires a way to store and read special "meta" about a player, as well as a prefix and suffix. These are stored within LuckPerms as special permission nodes.
+# Key Definitions
+### Prefix / Suffix
+Prefixes and suffixes on Minecraft servers relate to the text that comes before and after your username in chat.
 
-## Chat (Prefix/Suffix)
-Prefixes and suffixes are stored in two separate permission nodes. These permission nodes behave like any other permission you set in LuckPerms, and can therefore be inherited, or only apply in certain servers, worlds, etc.
+For example, given the chat message:
+```
+[Admin] Luck the great: Hello!
+```
+The prefix is the `"[Admin] "` part, and the suffix is `" the great"` part.
 
-The node for storing prefixes and suffixes follows the format: prefix.priority.the_prefix & suffix.priority.the_suffix
+### Meta
+Also sometimes referred to as "options" or "variables", meta is just a general term for extra data associated with a user or group. Unlike permissions, meta is split up into two parts, the "key" and the "value". The key is the name of the meta, and the value is whatever the key is set to.
 
-If a user/group has or inherits multiple prefixes, the one with the highest priority applies.
+For example, my user might have the following meta, to indicate that I can have a maximum of 5 homes, and that my username should be colored blue.
+```
+max-homes = 5
+username-color: blue
+```
 
-### Example:
-I want people in the admin group to have the "&c[Admin]" prefix, and people in the mod group to have a "&d[Mod]" prefix. To achieve this, I would run the following commands:
+## Who provides what?
+Generally, plugins which provide and manage permissions on your server will also have functionality to allow you to set, manage and store prefixes/suffixes/meta. This is true of LuckPerms.
 
-* /luckperms creategroup admin
-* /luckperms creategroup mod
-* /luckperms group admin parent add mod
-* /luckperms group admin meta addprefix 100 "&c[Admin] "
-* /luckperms group mod meta addprefix 90 "&d[Mod] "
+Occasionally, permissions plugins will also provide the means to apply this data to the chat. This is not the case for LuckPerms, and you'll need an addittional plugin to apply chat formatting for you. More on this later.
 
-If you want to include spaces in your prefixes/suffixes, you can just use " " quotes. The command system will treat your prefix/suffix as different arguments otherwise. The quotes will be removed when the prefix/suffix is applied. 😄 
+## How do prefixes/suffixes/meta get stored
+Prefixes and suffixes in LuckPerms are converted and stored as permission nodes. You'll notice that when you add a prefix or suffix to a user/group, that a new entry will appear in their permissions data which relates to the value you set. Why do it this way? Well, it makes things much easier from a programming point of view to have everything stored in the same place, and in similar formats. It also means you can easily manipulate prefix and suffix data in the same way you do for permissions.
 
-### Displaying Prefixes and Suffixes
-LuckPerms does **not** format the chat for you. It only provides a way to store this data. You will need a Vault compatible chat formatting plugin to actually change how the chat looks.
+Prefixes and suffixes are split up into two parts
+* **Weight** - this is just a number which determines the priority of the prefix/suffix. A higher number = a higher weight and a higher priority. 
+* **Value** - what the actual value of the prefix is.
 
-I recommend using Vault and EssentialsX. (The regular Essentials version does not support Vault.)
+A prefix of "[Admin] ", set with a weight of 100 translates into the permission: `"prefix.100.[Admin] "`.
 
-## Meta
-For the most part, server admins will rarely ever need to touch the meta system. However, I'll provide some brief docs on it anyway.
+A similar system is used for meta. A meta pair, `favourite-color = red` would translate into the permission: `"meta.favourite-color.red"`.
 
-Vault Chat requires that LuckPerms provides a way to store "meta". This "meta" could be an Integer, Double, Boolean or String (Text). Think of it as a key value store.
+## How does prefix/suffix weight work
+Prefixes and suffixes can be inherited in the same way as permissions. This means that LuckPerms needs to determine which prefix/suffix to actually use for a player, when it gets requested.
 
-The key, or as Vault calls them, nodes, is what the values, or "meta" is stored under.
+When another plugin asks for a Users prefix/suffix, LuckPerms will:
+* Collect all of the prefixes/suffixes the user has and inherits together
+* Sorts them according to their weight, where a higher weight number = a higher priority
+* Then selects the prefix/suffix with the highest weight to go on to represent the player.
 
-Meta is stored in a similar way to prefixes and suffixes, and are also inherited.
+If two entries with the same weight are found, the one closest to the user is used first. Closest meaning the one that was discovered first by the plugin when searching the inheritance tree for data.
 
-### Example
-* Vault wants to store a value of "3.3" against the node "something".
-* LuckPerms will convert this into the permission node: meta.something.3{SEP}3
+## How do I actually set prefixes and suffixes for a user
+For example, if I want people in the admin group to have the "&c[Admin] " prefix, and people in the mod group to have the "&d[Mod] " prefix, I would run:
 
-### More info
-If you're interested in utilising the Meta system, I suggest you check out [the Vault Chat API class](https://github.com/MilkBowl/VaultAPI/blob/master/src/main/java/net/milkbowl/vault/chat/Chat.java) and the [LuckPerms implementation of it](https://github.com/lucko/LuckPerms/blob/master/bukkit/src/main/java/me/lucko/luckperms/bukkit/vault/VaultChatHook.java). If you don't understand it, just forget you ever read this. :sweat_smile: 
+* /lp creategroup admin
+* /lp creategroup mod
+* /lp group admin parent add mod
+* /lp group admin meta addprefix 100 "&c[Admin] "
+* /lp group mod meta addprefix 90 "&d[Mod] "
+
+If I then decided I wanted to change admins prefix to use the "&4" color, to remove the previously set value, I'd run:
+* /lp group admin meta removeprefix 100
+
+This would remove all prefixes set to admin with a weight of 100. I could then re-set the new prefix value.
+
+The command usage for setting prefixes/suffixes temporarily follows the same format as the commands for adding temporary permissions, or parent groups.
+
+The full command usages can be found [**here**](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-). The commands for adding and removing meta are also documented there.
+
+## How do I see the prefixes/suffixes a user or group has
+The easiest way to debug issues with prefixes/suffixes is to use the info command.
+
+For example: `/lp user Luck meta info`. This will list all of the prefixes, suffixes and meta a user has and inherits, and will order the entries by weight, so you can easily see which values are being applied.
+
+Another useful command is the general user info command: `/lp user Luck info`. If the player is online on the server, this will show you which of their prefixes is currently being provided to plugins looking to read data from LuckPerms.
+
+### Displaying prefixes and suffixes
+As mentioned earlier, LuckPerms does not handle any of the chat formatting for you. You will need to install an external plugin to do it for you.
+
+Some reccomendations are listed below.
+
+#### Bukkit/Spigot
+LuckPerms has support for **any** chat formatting plugin which can read data from [Vault](https://dev.bukkit.org/projects/vault). You need to have Vault installed on your server for this to work.    
+If you're having issues with a plugin not picking up data correctly, please make sure the output of `/vault-info` shows that data is being read from LuckPerms.
+
+Some popular chat formatting plugins which work with Vault include:
+* [EssentialsX](https://ci.drtshock.net/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!) You need to have EssentialsXChat installed too.
+* [ChatEx](https://dev.bukkit.org/projects/chatex)
+* [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - supports the newer "json" format. You can use either the Vault or LuckPerms placeholders.
+* [VentureChat](https://www.spigotmc.org/resources/venturechat.771/)
+* [ChatControl](https://www.spigotmc.org/resources/10258/) - also supports a bunch of other stuff to help manage the chat.
+
+This is by no means a definitive list. Anything that supports Vault also supports LuckPerms!
+
+
+#### BungeeCord
+* [BungeeChat](https://www.spigotmc.org/resources/bungee-chat.12592/) - has built-in support for retreiving prefixes/suffixes from LuckPerms.
+
+#### Sponge
+* [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
