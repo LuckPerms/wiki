@@ -1,4 +1,4 @@
-# ![](https://i.imgur.com/fJJWnuo.png)    LuckPerms
+# LuckPerms Wiki
 ### Setup
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
