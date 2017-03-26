@@ -9,7 +9,7 @@
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 
-### About
+### Basic Usage
 * [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 * [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
