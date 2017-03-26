@@ -77,14 +77,14 @@ As mentioned earlier, LuckPerms does not handle any of the chat formatting for y
 
 Some reccomendations are listed below.
 
-#### Bukkit/Spigot
+### Bukkit/Spigot
 LuckPerms has support for **any** chat formatting plugin which can read data from [Vault](https://dev.bukkit.org/projects/vault). You need to have Vault installed on your server for this to work.    
 If you're having issues with a plugin not picking up data correctly, please make sure the output of `/vault-info` shows that data is being read from LuckPerms.
 
 Some popular chat formatting plugins which work with Vault include:
-* [EssentialsX](https://ci.drtshock.net/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!) You need to have EssentialsXChat installed too.
+* [EssentialsXChat](https://ci.drtshock.net/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!)
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
-* [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - supports the newer "json" format. You can use either the Vault or LuckPerms placeholders.
+* [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - you can use either the Vault or LuckPerms placeholders.
 * [VentureChat](https://www.spigotmc.org/resources/venturechat.771/)
 * [ChatControl](https://www.spigotmc.org/resources/10258/) - also supports a bunch of other stuff to help manage the chat.
 
