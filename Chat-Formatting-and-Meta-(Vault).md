@@ -72,13 +72,14 @@ For example: `/lp user Luck meta info`. This will list all of the prefixes, suff
 
 Another useful command is the general user info command: `/lp user Luck info`. If the player is online on the server, this will show you which of their prefixes is currently being provided to plugins looking to read data from LuckPerms.
 
-### Displaying prefixes and suffixes
+## Displaying prefixes and suffixes
 As mentioned earlier, LuckPerms does not handle any of the chat formatting for you. You will need to install an external plugin to do it for you.
 
 Some reccomendations are listed below.
 
 ### Bukkit/Spigot
-LuckPerms has support for **any** chat formatting plugin which can read data from [Vault](https://dev.bukkit.org/projects/vault). You need to have Vault installed on your server for this to work.    
+LuckPerms has support for **any** chat formatting plugin which can read data from [Vault](https://dev.bukkit.org/projects/vault). You need to have Vault installed on your server for this to work.
+
 If you're having issues with a plugin not picking up data correctly, please make sure the output of `/vault-info` shows that data is being read from LuckPerms.
 
 Some popular chat formatting plugins which work with Vault include:
@@ -91,8 +92,8 @@ Some popular chat formatting plugins which work with Vault include:
 This is by no means a definitive list. Anything that supports Vault also supports LuckPerms!
 
 
-#### BungeeCord
+### BungeeCord
 * [BungeeChat](https://www.spigotmc.org/resources/bungee-chat.12592/) - has built-in support for retreiving prefixes/suffixes from LuckPerms.
 
-#### Sponge
+### Sponge
 * [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
