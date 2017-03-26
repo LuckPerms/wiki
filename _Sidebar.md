@@ -1,4 +1,4 @@
-![](http://i.imgur.com/hgVaE4z.png)
+![](http://i.imgur.com/1Apwj8M.png)
 ### Setup
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
