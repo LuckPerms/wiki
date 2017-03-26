@@ -14,7 +14,7 @@
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 * [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
-* [**Chat Formatting & Meta**](https://github.com/lucko/LuckPerms/wiki/Chat-Formatting-and-Meta-(Vault))
+* [**Prefixes, Suffixes & Meta**](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta)
 
 ### Advanced Usage
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
