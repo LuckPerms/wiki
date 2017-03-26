@@ -1,4 +1,4 @@
-# LuckPerms Wiki
+![](http://i.imgur.com/hgVaE4z.png)
 ### Setup
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
