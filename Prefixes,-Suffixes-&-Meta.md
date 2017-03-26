@@ -1,4 +1,4 @@
-This guide covers how to setup and manage prefixes, suffixes and options/meta with LuckPerms.
+This guide covers how to setup and manage prefixes, suffixes and meta with LuckPerms.
 
 If you are already familiar with these concepts, and just want to view how the commands work, then you should read the "meta" section of the [Command Usage](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-) page.
 
