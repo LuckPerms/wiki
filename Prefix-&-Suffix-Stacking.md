@@ -38,7 +38,7 @@ The following elements are allowed.
 | `lowest_on_track_<track>` | Same as above, except takes the value with the lowest weight. |
 
 ### An example
-For example, on a prison server, you might have 3 groups of group. The "gameplay" rank, a user's donor group, and staff groups.
+For example, on a prison server, you might have 3 types of group. The "gameplay" rank, a user's donor group, and staff groups.
 
 If a user is in all 3 groups, I want all three prefixes to display. e.g.   
 `[Mine C] [Donor] [Admin] Luck: hi!`.
