@@ -4,7 +4,7 @@ The "meta stacking" feature allows you to display multiple prefixes or suffixes 
 You still need to have a chat formatting plugin installed. 
 
 ### How does it work?
-Effectively, when the chat formatting plugin requests a Players prefix/suffix, instead of just returning the prefix with the highest weight, LuckPerms can apply a set of rules to combine a number of prefixes together.
+When the chat formatting plugin requests a Players prefix/suffix, instead of just returning the prefix with the highest weight, LuckPerms can apply a set of rules to combine a number of prefixes together.
 
 The default settings look like this:
 ```yml
