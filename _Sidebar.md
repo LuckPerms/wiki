@@ -21,6 +21,7 @@
 * [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Primary Groups**](https://github.com/lucko/LuckPerms/wiki/Primary-Groups)
+* [**Meta Formatting & Stacking**](https://github.com/lucko/LuckPerms/wiki/Meta-Formatting-&-Stacking)
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
