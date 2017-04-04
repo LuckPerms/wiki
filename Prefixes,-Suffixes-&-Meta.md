@@ -75,7 +75,7 @@ Another useful command is the general user info command: `/lp user Luck info`. I
 ## Displaying prefixes and suffixes
 As mentioned earlier, LuckPerms does not handle any of the chat formatting for you. You will need to install an external plugin to do it for you.
 
-Some reccomendations are listed below.
+Some recommendations are listed below.
 
 ### Bukkit/Spigot
 LuckPerms has support for **any** chat formatting plugin which can read data from [Vault](https://dev.bukkit.org/projects/vault). You need to have Vault installed on your server for this to work.
