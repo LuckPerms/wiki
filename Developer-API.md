@@ -223,7 +223,7 @@ api.getStorage().loadUser(uuid, "null").thenComposeAsync(success -> {
     try {
         user.setPermission(node);
         
-        // not we've set the permission, but still need to save the user data
+        // now we've set the permission, but still need to save the user data
         // back to the storage.
         
         // first save the user
