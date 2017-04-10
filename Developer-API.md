@@ -199,6 +199,49 @@ try {
 }
 ```
 
+### Adding a permission to a (potentially) offline user
+The CompletionStage API can be used to easily interact with the plugins Storage backing. See [here](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html) and [here](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html) for more details about these classes.
+
+```java
+LuckPermsApi api = null; // See above for how to get the API instance.
+
+// load the user in from storage. we can specify "null" for their username,
+// since it's unknown to us.
+api.getStorage().loadUser(uuid, "null").thenComposeAsync(success -> {
+    // loading the user failed, return straight away
+    if (!success) {
+        return CompletableFuture.completedFuture(false);
+    }
+    
+    // get the user instance, they're now loaded in memory.
+    User user = api.getUser(uuid);
+
+    // Build the permission node we want to set
+    Node node = api.getNodeFactory().newBuilder(permission).setValue(true).build();
+
+    // Set the permission, and return true if the user didn't already have it set.
+    try {
+        user.setPermission(node);
+        
+        // not we've set the permission, but still need to save the user data
+        // back to the storage.
+        
+        // first save the user
+        return api.getStorage().saveUser(user)
+                .thenCompose(b -> {
+                    // then cleanup their user instance so we don't create
+                    // a memory leak.
+                    api.cleanupUser(user);
+                    return CompletableFuture.completedFuture(b);
+                });
+        
+    } catch (ObjectAlreadyHasException e) {
+        return CompletableFuture.completedFuture(false);
+    }
+    
+}, api.getStorage().getAsyncExecutor());
+```
+
 ### Getting a players prefix
 LuckPerms has a (somewhat complex) caching system which is used for super fast permission / meta lookups. These classes are exposed in the API, and should be used where possible.
 
