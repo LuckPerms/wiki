@@ -17,6 +17,25 @@ A list of aliases for each platform are listed below. Each command works in exac
 
 If you are using Bukkit/Spigot, by default, all users with OP have access to LuckPerms commands. You can change this in the config.
 
+### What is "Context"
+The argument `context` is used frequently in the LuckPerms commands as an argument, and it's meaning may not be obvious to most users.
+
+Context, in the most basic sense simply means the **circumstances where** a certain permission, parent, prefix, suffix or meta value **will apply**.
+
+Contexts are split into two parts, the **key** and the **value**. LuckPerms provides two contexts by default, the `server` and `world` contexts, but it's possible that other plugins on the server will provide more contexts for you to use. A users "current" contexts can be found in the output of the user info command.
+
+For example, if I wanted to set a permission in a specific world, I would use the "world" context. For the sake of explaining, let's say the world is called "nether". The context I would specify in the command would be `world=nether`. 
+
+When used in commands, the context "key" and the context "value" are separated by the equals sign. `=` You can specify as many contexts as you like, but remember that ALL of the contexts have to be met by the player in order for the permission/parent/thing to apply.
+
+Finally, an example. I want to set the "luckperms.info" permission to true in the "nether" world, and on the "factions" server. The command would be:
+
+`/luckperms user Luck permission set luckperms.info true server=factions world=nether`.
+
+This same format can be applied to any of the commands that accept "context" as an argument. :smile:
+
+> And finally, just a note for users who have been using the plugin for a while, the old way of specifying `[server] [world]` as two extra arguments at the end of a command is still supported!
+
 # Overview
 #### Arguments Key:
 * `<required>` - you *must* specify this argument when running the command
