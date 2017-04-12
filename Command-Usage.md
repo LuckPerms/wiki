@@ -1,11 +1,11 @@
 Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /lp or /lpb** will list all commands a user has permission to use.
 
-If the only thing returned when you type a command is the plugin version, you do not have permission to use any of the commands. You need to use the server console to give yourself access to LuckPerms commands first.
+If the only thing returned when you type a command is the plugin version, you do not have permission to use any of the commands. You need to use the server console to [give yourself access to LuckPerms commands first](https://github.com/lucko/LuckPerms/wiki/Usage#granting-full-access-to-modify-permissions).
 
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
 
-| Bukkit / Sponge  | Bungee           |
+| Bukkit / Sponge  | BungeeCord       |
 |------------------|------------------|
 | /luckperms       | /luckpermsbungee |
 | /perms           | /bperms          |
@@ -15,7 +15,7 @@ A list of aliases for each platform are listed below. Each command works in exac
 
 **`Important:`** Commands are different on BungeeCord. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
 
-If you are using Bukkit/Spigot, by default, all OPed users have access to LuckPerms commands. You can change this in the config.
+If you are using Bukkit/Spigot, by default, all users with OP have access to LuckPerms commands. You can change this in the config.
 
 # Overview
 #### Arguments Key:
@@ -27,103 +27,99 @@ If you want to include spaces in arguments, you must escape the argument with qu
 The alias used below (/lp) can be exchanged for any of the ones listed in the aliases section above.
 
 ### General
-*  [/lp](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp)
-*  [/lp `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-sync)
-*  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-info)
-*  [/lp `verbose` \<on | record | off | paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-verbose)
-*  [/lp `tree` [selection] [max level] [player]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-tree)
-*  [/lp `search` \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-search)
-*  [/lp `check` \<user\> \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-check)
-*  [/lp `networksync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-networksync)
-*  [/lp `import` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-import)
-*  [/lp `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-export)
-*  [/lp `reloadconfig`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-reloadconfig)
-*  [/lp `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-migration)
-*  [/lp `creategroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-creategroup)
-*  [/lp `deletegroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-deletegroup)
-*  [/lp `listgroups`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-listgroups)
-*  [/lp `createtrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-createtrack)
-*  [/lp `deletetrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-deletetrack)
-*  [/lp `listtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-listtracks)
+*  [/lp](#lp)
+*  [/lp `sync`](#lp-sync)
+*  [/lp `info`](#lp-info)
+*  [/lp `verbose` \<on | record | off | paste\> [filter]](#lp-verbose)
+*  [/lp `tree` [selection] [max level] [player]](#lp-tree)
+*  [/lp `search` \<permission\>](#lp-search)
+*  [/lp `check` \<user\> \<permission\>](#lp-check)
+*  [/lp `networksync`](#lp-networksync)
+*  [/lp `import` \<file\>](#lp-import)
+*  [/lp `export` \<file\>](#lp-export)
+*  [/lp `reloadconfig`](#lp-reloadconfig)
+*  [/lp `bulkupdate`](#lp-bulkupdate)
+*  [/lp `migration`](#lp-migration)
+*  [/lp `creategroup` \<group\>](#lp-creategroup)
+*  [/lp `deletegroup` \<group\>](#lp-deletegroup)
+*  [/lp `listgroups`](#lp-listgroups)
+*  [/lp `createtrack` \<track\>](#lp-createtrack)
+*  [/lp `deletetrack` \<track\>](#lp-deletetrack)
+*  [/lp `listtracks`](#lp-listtracks)
 
 ### User   (/lp user \<user\> ...)
-*  [/lp user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-info)
-*  [/lp user \<user\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-)
-*  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#parent---lp-user-user-parent---lp-group-group-parent-)
-*  [/lp user \<user\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-)
-*  [/lp user \<user\> `switchprimarygroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-switchprimarygroup)
-*  [/lp user \<user\> `promote` \<track\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-promote)
-*  [/lp user \<user\> `demote` \<track\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-demote)
-*  [/lp user \<user\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-showtracks)
-*  [/lp user \<user\> `bulkchange` \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#lp-groupuser--bulkchange-serverworld-from-to)
-*  [/lp user \<user\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-user-user-clear)
+*  [/lp user \<user\> `info`](#lp-user-user-info)
+*  [/lp user \<user\> `permission`](#permission---lp-user-user-permission---lp-group-group-permission-)
+*  [/lp user \<user\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
+*  [/lp user \<user\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/lp user \<user\> `switchprimarygroup` \<group\>](#lp-user-user-switchprimarygroup)
+*  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote)
+*  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
+*  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
+*  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear)
 
 ### Group   (/lp group \<group\> ...)
-*  [/lp group \<group\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-info)
-*  [/lp group \<group\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-)
-*  [/lp group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#parent---lp-user-user-parent---lp-group-group-parent-)
-*  [/lp group \<group\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#meta---lp-user-user-meta---lp-group-group-meta-)
-*  [/lp group \<group\> `setweight`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-setweight)
-*  [/lp group \<group\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-showtracks)
-*  [/lp group \<group\> `bulkchange` \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#lp-groupuser--bulkchange-serverworld-from-to)
-*  [/lp group \<group\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-clear)
-*  [/lp group \<group\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-rename)
-*  [/lp group \<group\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-clone)
+*  [/lp group \<group\> `info`](#lp-group-group-info)
+*  [/lp group \<group\> `permission`](#permission---lp-user-user-permission---lp-group-group-permission-)
+*  [/lp group \<group\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
+*  [/lp group \<group\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers)
+*  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight)
+*  [/lp group \<group\> `showtracks`](#lp-group-group-showtracks)
+*  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
+*  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
+*  [/lp group \<group\> `clone` \<name of clone\>](#lp-group-group-clone)
 
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
-*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-info)
-*  [`set` \<node\> \<true/false\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-set)
-*  [`unset` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-unset)
-*  [`settemp` \<node\> \<true/false\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-settemp)
-*  [`unsettemp` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-unsettemp)
-*  [`check` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-check)
-*  [`checkinherits` \<node\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-checkinherits)
+*  [`info`](#lp-usergroup-usergroup-permission-info)
+*  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set)
+*  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset)
+*  [`settemp` \<node\> \<true/false\> \<duration\> [context...]](#lp-usergroup-usergroup-permission-settemp)
+*  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
+*  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
+*  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
 
 ### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
-*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-info)
-*  [`set` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-set)
-*  [`add` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-add)
-*  [`remove` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-remove)
-*  [`addtemp` \<group\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-addtemp)
-*  [`removetemp` \<group\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-removetemp)
+*  [`info`](#lp-usergroup-usergroup-parent-info)
+*  [`set` \<group\> [context...]](#lp-usergroup-usergroup-parent-set)
+*  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add)
+*  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove)
+*  [`addtemp` \<group\> \<duration\> [context...]](#lp-usergroup-usergroup-parent-addtemp)
+*  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp)
 
 ### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
-*  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-info)
-*  [`set` \<key\> \<value\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-set)
-*  [`unset` \<key\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-unset)
-*  [`settemp` \<key\> \<value\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-settemp)
-*  [`unsettemp` \<key\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-unsettemp)
-*  [`addprefix` \<priority\> \<prefix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addprefix)
-*  [`addsuffix` \<priority\> \<suffix\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addsuffix)
-*  [`removeprefix` \<priority\> [prefix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removeprefix)
-*  [`removesuffix` \<priority\> [suffix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removesuffix)
-*  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addtempprefix)
-*  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-addtempsuffix)
-*  [`removetempprefix` \<priority\> [prefix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempprefix)
-*  [`removetempsuffix` \<priority\> [suffix] [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-removetempsuffix)
-*  [`clear` [server] [world]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-meta-clear)
+*  [`info`](#lp-usergroup-usergroup-meta-info)
+*  [`set` \<key\> \<value\> [context...]](#lp-usergroup-usergroup-meta-set)
+*  [`unset` \<key\> [context...]](#lp-usergroup-usergroup-meta-unset)
+*  [`settemp` \<key\> \<value\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-settemp)
+*  [`unsettemp` \<key\> [context...]](#lp-usergroup-usergroup-meta-unsettemp)
+*  [`addprefix` \<priority\> \<prefix\> [context...]](#lp-usergroup-usergroup-meta-addprefix)
+*  [`addsuffix` \<priority\> \<suffix\> [context...]](#lp-usergroup-usergroup-meta-addsuffix)
+*  [`removeprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removeprefix)
+*  [`removesuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removesuffix)
+*  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-addtempprefix)
+*  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-addtempsuffix)
+*  [`removetempprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removetempprefix)
+*  [`removetempsuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removetempsuffix)
+*  [`clear` [context...]](#lp-usergroup-usergroup-meta-clear)
 
 ### Track   (/lp track \<track\> ...)
-*  [/lp track \<track\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-info)
-*  [/lp track \<track\> `append` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-append)
-*  [/lp track \<track\> `insert` \<group\> \<position\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-insert)
-*  [/lp track \<track\> `remove` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-remove)
-*  [/lp track \<track\> `clear`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-clear)
-*  [/lp track \<track\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-rename)
-*  [/lp track \<track\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-track-track-clone)
+*  [/lp track \<track\> `info`](#lp-track-track-info)
+*  [/lp track \<track\> `append` \<group\>](#lp-track-track-append)
+*  [/lp track \<track\> `insert` \<group\> \<position\>](#lp-track-track-insert)
+*  [/lp track \<track\> `remove` \<group\>](#lp-track-track-remove)
+*  [/lp track \<track\> `clear`](#lp-track-track-clear)
+*  [/lp track \<track\> `rename` \<new name\>](#lp-track-track-rename)
+*  [/lp track \<track\> `clone` \<name of clone\>](#lp-track-track-clone)
 
 ### Log   (/lp log ...)
-*  [/lp log `recent` [user] [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-recent)
-*  [/lp log `search` \<query\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-search)
-*  [/lp log `notify` [on|off]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-notify)
-*  [/lp log `export` \<file\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-export)
-*  [/lp log `userhistory` \<user\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-userhistory)
-*  [/lp log `grouphistory` \<group\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-grouphistory)
-*  [/lp log `trackhistory` \<track\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-log-trackhistory)
-
-### User Bulk Edit
-*  [/lp usersbulkedit `group` \<group|null\> \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#lp-usersbulkedit-group-groupnull-serverworld-from-to)
-*  [/lp usersbulkedit `permission` \<node|null\> \<server|world\> \<from\> \<to\>](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing#lp-usersbulkedit-permission-nodenull-serverworld-from-to)
+*  [/lp log `recent` [user] [page]](#lp-log-recent)
+*  [/lp log `search` \<query\> [page]](#lp-log-search)
+*  [/lp log `notify` [on|off]](#lp-log-notify)
+*  [/lp log `export` \<file\>](#lp-log-export)
+*  [/lp log `userhistory` \<user\> [page]](#lp-log-userhistory)
+*  [/lp log `grouphistory` \<group\> [page]](#lp-log-grouphistory)
+*  [/lp log `trackhistory` \<track\> [page]](#lp-log-trackhistory)
 
 # Command Detail
 
@@ -131,17 +127,17 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 ___
 #### `/lp`  
 **Permission**: n/a  
-Prints a list of the LuckPerms commands a user has permission to use.  
+Base LuckPerms command. Will print a list of the LuckPerms commands a user has permission to use, with brief information about what each command does, and what arguments it accepts.  
 
 ___
 #### `/lp sync`  
 **Permission**: luckperms.sync  
-Refreshes all cached data with the storage provider.
+Performs a refresh of all currently loaded data. If any changes have been made to the data in the storage, this command will update the copy on the server to include those changes. 
 
 ___
 #### `/lp info`  
 **Permission**: luckperms.info  
-Lists data about LuckPerms, including debug output, statistics, settings, and values from the configuration. 
+Lists some information/data about LuckPerms, including debugging output, statistics, settings, and important values from the configuration. 
 
 ___
 #### `/lp verbose`  
@@ -154,7 +150,7 @@ Controls the LuckPerms verbose logging system. This allows you to listen for all
 
 If your filters match the permission check, you will be notified.    
 
-`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first 500 results to GitHub's pastebin, and provide you with a link.    
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first 3500 results to GitHub's pastebin, and provide you with a link.    
 
 Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
 
@@ -163,7 +159,7 @@ Filters match the start of permissions or the user being checked. You can use `&
 * `!Luck & !anticheat` - matches any checks not against my user and not starting with "anticheat"
 * `anticheat & !anticheat.check` - matches any checks starting with "anticheat" but not starting with "anticheat.check"    
      
-You get the idea. ;)
+More information can be found [**here**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 
 ___
 #### `/lp tree`  
@@ -201,7 +197,7 @@ Performs a standard permission check on an online player, and returns the result
 ___
 #### `/lp networksync`  
 **Permission**: luckperms.sync  
-Refreshes all cached data with the storage provider, and then uses Redis (if configured) to "ping" all other connected servers and request that they sync too.
+Refreshes all cached data with the storage provider, and then uses the plugins Messaging Service (if configured) to "ping" all other connected servers and request that they sync too.
 
 ___
 #### `/lp import`  
@@ -217,7 +213,7 @@ ___
 **Arguments**:  
 * `<file>` - the file to export to
 
-Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the root plugin directory.
+Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the plugin directory.
 
 ___
 #### `/lp reloadconfig`  
@@ -225,9 +221,14 @@ ___
 Reloads some values from the configuration file. Not all entries are reloaded by this command, and some require a full server reboot to take effect. (storage settings, for example)
 
 ___
+#### `/lp bulkupdate`  
+**Permission**: **Console Only**  
+Allows you to perform a bulk modifiction to all permission data. A detailed guide on how to use this command can be found [here]().
+
+___
 #### `/lp migration`  
 **Permission**: luckperms.migration  
-Lists commands availble to begin a migration process.
+Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Migration).
 
 ___
 #### `/lp creategroup`  
@@ -287,25 +288,25 @@ ___
 
 This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
 
+If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the `parent add`(#lp-usergroup-usergroup-parent-add) or `parent set`(#lp-usergroup-usergroup-parent-set) commands instead of this.
+
 ___
 #### `/lp user <user> promote`  
 **Permission**: luckperms.user.promote  
 **Arguments**:  
 * `<track>` - the track to promote along
-* `[server]` - the server to promote in
-* `[world]` - the world to promote in
+* `[context...]` - the contexts to promote in
 
-This command will promote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given server/world. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be promoted up the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
+This command will promote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given contexts. If the user is not on the track, they will be added to the first group on the track. If they are on the track in more than one place, the command will fail. In all other cases, the user will be promoted up the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
 
 ___
 #### `/lp user <user> demote`  
 **Permission**: luckperms.user.demote  
 **Arguments**:  
 * `<track>` - the track to demote along
-* `[server]` - the server to demote in
-* `[world]` - the world to demote in
+* `[context...]` - the contexts to demote in
 
-This command will demote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given server/world. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be demoted down the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
+This command will demote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given contexts. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be demoted down the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
 
 ___
 #### `/lp user <user> showtracks`  
@@ -316,8 +317,7 @@ ___
 #### `/lp user <user> clear`  
 **Permission**: luckperms.user.clear  
 **Arguments**:  
-* `[server]` - the server to filter by
-* `[world]` - the world to filter by
+* `[context...]` - the contexts to filter by
 
 Clears the user's permissions, parent groups and meta.
 
@@ -328,6 +328,14 @@ ___
 #### `/lp group <group> info`  
 **Permission**: luckperms.group.info  
 Displays information about a group.
+
+___
+#### `/lp group <group> listmembers`  
+**Permission**: luckperms.group.listmembers  
+**Arguments**:  
+* `[page]` - the page to view
+
+Gets a list of the other users/groups which inherit directly from this group.
 
 ___
 #### `/lp group <group> setweight`  
@@ -346,8 +354,7 @@ ___
 #### `/lp group <group> clear`  
 **Permission**: luckperms.group.clear  
 **Arguments**:  
-* `[server]` - the server to filter by
-* `[world]` - the world to filter by
+* `[context...]` - the contexts to filter by
 
 Clears the group's permissions, parent groups and meta.
 
@@ -357,7 +364,7 @@ ___
 **Arguments**:  
 * `<new name>` - the new name for the group
 
-Changes a group's name. Note that any members of this group will not know about the change, and will still point to the old group name. If you wish to update this, please see the bulk edit commands.
+Changes a group's name. Note that any members of this group will not know about the change, and will still point to the old group name. If you wish to update this, you'll need to use the bulk change feature to update the existing entries.
 
 ___
 #### `/lp group <group> clone`  
@@ -381,20 +388,18 @@ ___
 **Arguments**:  
 * `<node>` - the permission node to set
 * `<true|false>` - the value to set the permission to
-* `[server]` - the server to set the permission on (specify "global" for all servers)
-* `[world]` - the world to set the permission on
+* `[context...]` - the contexts to set the permission in
 
-Sets a permission for a user/group. Giving a value of "false" will negate the permission.
+Sets (or gives) a permission for a user/group. Providing a value of "false" will negate the permission.
 
 ___
 #### `/lp user/group <user|group> permission unset`  
 **Permission**: luckperms.user.permission.unset or luckperms.group.permission.unset  
 **Arguments**:  
 * `<node>` - the permission node to unset
-* `[server]` - the server to unset the permission on (specify "global" for all servers)
-* `[world]` - the world to unset the permission on
+* `[context...]` - the contexts to unset the permission in
 
-Unsets a permission for a user/group.
+Unsets (or removes) a permission for a user/group.
 
 ___
 #### `/lp user/group <user|group> permission settemp`  
@@ -403,28 +408,25 @@ ___
 * `<node>` - the permission node to set
 * `<true|false>` - the value to set the permission to
 * `<duration>` - the duration until the permission will expire
-* `[server]` - the server to set the permission on (specify "global" for all servers)
-* `[world]` - the world to set the permission on
+* `[context...]` - the contexts to set the permission in
 
-Sets a permission temporarily for a user/group. Giving a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
 ___
 #### `/lp user/group <user|group> permission unsettemp`  
 **Permission**: luckperms.user.permission.unsettemp or luckperms.group.permission.unsettemp  
 **Arguments**:  
 * `<node>` - the permission node to unset
-* `[server]` - the server to unset the permission on (specify "global" for all servers)
-* `[world]` - the world to unset the permission on
+* `[context...]` - the contexts to unset the permission in
 
-Unsets a temproary permission for a user/group.
+Unsets a temporary permission for a user/group.
 
 ___
 #### `/lp user/group <user|group> permission check`  
 **Permission**: luckperms.user.permission.check or luckperms.group.permission.check  
 **Arguments**:  
 * `<node>` - the permission node to check for
-* `[server]` - the server to check for the permission on (specify "global" for all servers)
-* `[world]` - the world to check for the permission on
+* `[context...]` - the contexts to check for the permission in
 
 Checks to see if a user/group has a certain permission.
 
@@ -433,8 +435,7 @@ ___
 **Permission**: luckperms.user.permission.checkinherits or luckperms.group.permission.checkinherits  
 **Arguments**:  
 * `<node>` - the permission node to check for
-* `[server]` - the server to check for the permission on (specify "global" for all servers)
-* `[world]` - the world to check for the permission on
+* `[context...]` - the contexts to check for the permission in
 
 Checks to see if a user/group inherits a certain permission, and if so, where from.
 
@@ -451,18 +452,16 @@ ___
 **Permission**: luckperms.user.parent.set or luckperms.group.parent.set  
 **Arguments**:  
 * `<group>` - the group to set
-* `[server]` - the server to set the group on (specify "global" for all servers)
-* `[world]` - the world to set the group on
+* `[context...]` - the contexts to set the group in
 
-Sets a user/group's parent. Unlike the "parent add" command, this command will clear all existing groups set at the given context. The add command will simply "add" the group to the existing ones a user/group has. If the command is executed with no server or world arguments, this command will also update a user's primary group.
+Sets a user/group's parent. Unlike the "parent add" command, this command will clear all existing groups set at the given context. The add command will simply "add" the group to the existing ones a user/group has. If the command is executed with no context arguments, this command will also update a user's primary group.
 
 ___
 #### `/lp user/group <user|group> parent add`  
 **Permission**: luckperms.user.parent.add or luckperms.group.parent.add  
 **Arguments**:  
 * `<group>` - the group to add
-* `[server]` - the server to add the group on (specify "global" for all servers)
-* `[world]` - the world to add the group on
+* `[context...]` - the contexts to add the group in
 
 Adds a parent to a user/group. Unlike the "parent set" command, this command will just accumulate the given parent with the ones the user/group already has. No existing parents will be removed from the user, and a user's primary group will be unaffected.
 
@@ -471,8 +470,7 @@ ___
 **Permission**: luckperms.user.parent.remove or luckperms.group.parent.remove  
 **Arguments**:  
 * `<group>` - the group to remove
-* `[server]` - the server to add remove group on (specify "global" for all servers)
-* `[world]` - the world to add remove group on
+* `[context...]` - the contexts to remove the group in
 
 Removes a parent from the user/group.
 
@@ -482,8 +480,7 @@ ___
 **Arguments**:  
 * `<group>` - the group to add
 * `<duration>` - the duration until the group will expire
-* `[server]` - the server to add the group on (specify "global" for all servers)
-* `[world]` - the world to add the group on
+* `[context...]` - the contexts to add the group in
 
 Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
@@ -492,8 +489,7 @@ ___
 **Permission**: luckperms.user.parent.removetemp or luckperms.group.parent.removetemp  
 **Arguments**:  
 * `<group>` - the group to remove
-* `[server]` - the server to add remove group on (specify "global" for all servers)
-* `[world]` - the world to add remove group on
+* `[context...]` - the contexts to add remove group in
 
 Removes a tempoary parent from the user/group.
 
@@ -511,18 +507,16 @@ ___
 **Arguments**:  
 * `<key>` - the key to set
 * `<value>` - the value to set the key to
-* `[server]` - the server to set the meta on (specify "global" for all servers)
-* `[world]` - the world to set the meta on
+* `[context...]` - the contexts to set the meta in
 
-Sets a meta key value pair for a user/group. These values can be read and modified by other plugins using Vault or the Sponge Permissions API. However, most users will never need to use them.
+Sets a meta key value pair for a user/group. These values can be read and modified by other plugins using Vault or the Sponge Permissions API.
 
 ___
 #### `/lp user/group <user|group> meta unset`  
 **Permission**: luckperms.user.meta.unset or luckperms.group.meta.unset  
 **Arguments**:  
 * `<key>` - the key to unset
-* `[server]` - the server to unset the meta on (specify "global" for all servers)
-* `[world]` - the world to unset the meta on
+* `[context...]` - the contexts to unset the meta in
 
 Unsets a meta key value pair for a user/group.
 
@@ -533,8 +527,7 @@ ___
 * `<key>` - the key to set
 * `<value>` - the value to set the key to
 * `<duration>` - the duration until the meta will expire
-* `[server]` - the server to set the meta on (specify "global" for all servers)
-* `[world]` - the world to set the meta on
+* `[context...]` - the contexts to set the meta in
 
 Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
@@ -543,8 +536,7 @@ ___
 **Permission**: luckperms.user.meta.unsettemp or luckperms.group.meta.unsettemp  
 **Arguments**:  
 * `<key>` - the key to unset
-* `[server]` - the server to unset the meta on (specify "global" for all servers)
-* `[world]` - the world to unset the meta on
+* `[context...]` - the contexts to unset the meta in
 
 Unsets a temporary meta key value pair for a user/group.
 
@@ -554,8 +546,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to add the prefix at
 * `<prefix>` - the actual prefix string
-* `[server]` - the server to add the prefix on (specify "global" for all servers)
-* `[world]` - the world to add the prefix on
+* `[context...]` - the contexts to add the prefix in
 
 Adds a prefix to a user/group. You can wrap the prefix in " " quotes to escape spaces. 
 
@@ -565,8 +556,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to add the suffix at
 * `<suffix>` - the actual suffix string
-* `[server]` - the server to add the suffix on (specify "global" for all servers)
-* `[world]` - the world to add the suffix on
+* `[context...]` - the contexts to add the suffix in
 
 Adds a suffix to a user/group. You can wrap the suffix in " " quotes to escape spaces. 
 
@@ -576,8 +566,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
 * `[prefix]` - the actual prefix string
-* `[server]` - the server to remove the prefix on (specify "global" for all servers)
-* `[world]` - the world to remove the prefix on
+* `[context...]` - the contexts to remove the prefix in
 
 Removes a prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
@@ -587,8 +576,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
 * `[suffix]` - the actual suffix string
-* `[server]` - the server to remove the suffix on (specify "global" for all servers)
-* `[world]` - the world to remove the suffix on
+* `[context...]` - the contexts to remove the suffix in
 
 Removes a suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
@@ -599,8 +587,7 @@ ___
 * `<priority>` - the priority to add the prefix at
 * `<prefix>` - the actual prefix string
 * `<duration>` - the duration until the prefix will expire
-* `[server]` - the server to add the prefix on (specify "global" for all servers)
-* `[world]` - the world to add the prefix on
+* `[context...]` - the server to add the prefix in
 
 Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
@@ -611,8 +598,7 @@ ___
 * `<priority>` - the priority to add the suffix at
 * `<suffix>` - the actual suffix string
 * `<duration>` - the duration until the suffix will expire
-* `[server]` - the server to add the suffix on (specify "global" for all servers)
-* `[world]` - the world to add the suffix on
+* `[context...]` - the contexts to add the suffix in
 
 Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
@@ -622,8 +608,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
 * `[prefix]` - the actual prefix string
-* `[server]` - the server to remove the prefix on (specify "global" for all servers)
-* `[world]` - the world to remove the prefix on
+* `[context...]` - the contexts to remove the prefix in
 
 Removes a tempoary prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
@@ -633,8 +618,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
 * `[suffix]` - the actual suffix string
-* `[server]` - the server to remove the suffix on (specify "global" for all servers)
-* `[world]` - the world to remove the suffix on
+* `[context...]` - the contexts to remove the suffix in
 
 Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
@@ -642,8 +626,7 @@ ___
 #### `/lp user/group <user|group> meta clear`  
 **Permission**: luckperms.user.meta.clear or luckperms.group.meta.clear  
 **Arguments**:  
-* `[server]` - the server to filter by
-* `[world]` - the world to filter by
+* `[context...]` - the contexts to filter by
 
 Removes all meta/prefixes/suffixes.
 
@@ -780,6 +763,7 @@ ___
 *  luckperms.sync
 *  luckperms.info
 *  luckperms.verbose
+*  luckperms.tree
 *  luckperms.search
 *  luckperms.check
 *  luckperms.import
@@ -808,6 +792,7 @@ ___
 *  luckperms.user.parent.remove
 *  luckperms.user.parent.addtemp
 *  luckperms.user.parent.removetemp
+*  luckperms.user.parent.clear
 *  luckperms.user.meta.info
 *  luckperms.user.meta.set
 *  luckperms.user.meta.unset
@@ -826,7 +811,6 @@ ___
 *  luckperms.user.showtracks
 *  luckperms.user.promote
 *  luckperms.user.demote
-*  luckperms.user.bulkchange
 *  luckperms.user.clear
 
 ### Group
@@ -844,6 +828,7 @@ ___
 *  luckperms.group.parent.remove
 *  luckperms.group.parent.addtemp
 *  luckperms.group.parent.removetemp
+*  luckperms.group.parent.clear
 *  luckperms.group.meta.info
 *  luckperms.group.meta.set
 *  luckperms.group.meta.unset
@@ -858,8 +843,9 @@ ___
 *  luckperms.group.meta.removetempprefix
 *  luckperms.group.meta.removetempsuffix
 *  luckperms.group.meta.clear
+*  luckperms.group.listmembers
 *  luckperms.group.showtracks
-*  luckperms.group.bulkchange
+*  luckperms.group.setweight
 *  luckperms.group.clear
 *  luckperms.group.rename
 *  luckperms.group.clone
