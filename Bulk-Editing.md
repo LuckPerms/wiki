@@ -8,7 +8,7 @@ These commands are **only available from the console**. This is because they hav
 
 The command usage is as follows...
 
-### `/lp bulkupdate <data type> <action> [action field] [action value] [constraint...]`
+## `/lp bulkupdate <data type> <action> [action field] [action value] [constraint...]`
 
 A bit daunting at first, I know. To break it down...
 
