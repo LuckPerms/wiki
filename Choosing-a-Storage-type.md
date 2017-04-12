@@ -40,11 +40,14 @@ The layouts inside of these types are very similar, and only differ in syntax.
 uuid: c1d60c50-70b5-4722-8057-87767557e50d
 name: Luck
 primary-group: default
-perms:
-  group.default: true
-  test.permission: true
-  other.test.permission: false
-  special.permission: true
+permissions:
+- group.default:
+    value: true
+- test.permission:
+    value: true
+    server: factions
+- other.test.permission:
+    value: false
 ```
 
 ##### Example JSON file
@@ -53,12 +56,25 @@ perms:
   "uuid": "c1d60c50-70b5-4722-8057-87767557e50d",
   "name": "Luck",
   "primaryGroup": "default",
-  "perms": {
-    "group.default": true,
-    "test.permission": true,
-    "other.test.permission": false,
-    "special.permission": true
-  }
+  "permissions": [
+    {
+      "group.default": {
+        "value": true
+      }
+    },
+    {
+      "test.permission": {
+        "value": true,
+        "server": "factions"
+      }
+    },
+    {
+      "other.test.permission": {
+        "value": false,
+        "server": "test"
+      }
+    }
+  ]
 }
 ```
 
