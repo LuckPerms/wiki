@@ -1,133 +1,70 @@
-LuckPerms provides some commands to help perform bulk permission modifications with ease. These commands should be used with care, as they can easily corrupt your setup if used in the wrong way. Having said that, most mistakes should be recoverable.  Also be aware that when performing changes to lots of users, there is a potential for a lot of load on your storage, as well as potentially high memory usage on your server.
+LuckPerms provides a command to help perform bulk permission modifications with ease. This command should be used with care, as it can easily corrupt or break your setup if used in the wrong way.
 
-## /perms group/user \<?\> bulkchange \<server|world\> \<from\> \<to\>
-This command allows you to bulk change the context of a user/group's permissions. Context is the specific servers or worlds that a permission node applies in.
+It may be wise to take a backup of your permission data before using the command, either by making a copy of your database / files, or by using the export command.
 
-Instead of (badly) explaining how the system works, I have provided some examples below, so you can (hopefully!) teach yourself, and build the commands yourself. 😄
+The commands design is basically stripped back SQL syntax. This means the data passed into the command can be converted directly to an SQL query, or used to modify data in YAML or JSON storage files. Those who have experience with SQL may find it easier to write queries directly into their database server instead of using this command.
 
-Just note that this command **will** modify group nodes, except if the group is a user's primary group.
+These commands are **only available from the console**. This is because they have the potential to cause a great deal of damage to your servers data. You are asked to type a confirmation code before the action is processed, in order to prevent users from "sudoing" the console and gaining access to these commands.
 
-#### Example 1
-```
-essentials.fly (server="factions")
-essentials.ban (server="factions")
-essentials.gamemode (server="creative")
-essentials.msg
-```
-`/perms group/user <?> bulkchange server factions kitpvp`
-```
-essentials.fly (server="kitpvp")
-essentials.ban (server="kitpvp")
-essentials.gamemode (server="creative")
-essentials.msg
-```
+The command usage is as follows...
 
-#### Example 2
-```
-essentials.fly (server="factions") (world="world_nether")
-essentials.ban (server="factions") (world="world_nether")
-essentials.gamemode (server="creative") (world="world_nether")
-essentials.msg
-```
-`/perms group/user <?> bulkchange world world_nether null`
-```
-essentials.fly (server="factions")
-essentials.ban (server="factions")
-essentials.gamemode (server="creative")
-essentials.msg
-```
+## `/lp bulkupdate <data type> <action> [action field] [action value] [constraint...]`
 
-#### Example 3
-```
-essentials.fly
-essentials.ban
-essentials.gamemode
-essentials.msg
-```
-`/perms group/user <?> bulkchange server global creative`
+A bit daunting at first, I know. To break it down...
 
-`/perms group/user <?> bulkchange world null some_world`
-```
-essentials.fly (server="creative") (world="some_world")
-essentials.ban (server="creative") (world="some_world")
-essentials.gamemode (server="creative") (world="some_world")
-essentials.msg (server="creative") (world="some_world")
-```
+| Argument | Description |
+|----------|-------------|
+| `data type` | the type of data being changed. (can be "all", "users" or "groups") |
+| `action` | the action to perform on the data. (can be "update" or "delete") |
+| `action field` | the field to act upon. only required for update actions. (can be "permission", "server" or "world") |
+| `action value` | the value to replace with. only required for update actions |
+| `constraint` | the constraints required for the update |
 
-## /perms usersbulkedit group \<group|null\> \<server|world\> \<from\> \<to\>
-This command allows you to bulk change the context of all user's group memberships. Context is the specific servers or worlds that a permission node applies in.
+The `data type` is the simple bit. It simply tells LuckPerms what data should be affected by the update. Either just users, just groups, or users and groups.
 
-The syntax is very similar to the above command.
+The `action` is what will be done to the data. It can either be "update" or "delete". Delete simply means that any records which match the constraints will be deleted. Update will replace any values that match with another value.
 
-I appreciate the example is a little lengthy, however it should show you pretty clearly how the commands work.
+The `action field` and `action value` arguments are optional because they only apply to the "update" action. The field is what will be updated, and the value is the replacement value for the field.
 
-Like before, "null" = nothing, "global" = all servers, and "null" = all worlds.
+The `constraints` argument relates to the limitations of the update. Only the permissions (or entries) which match the constraints will be affected.
 
-This command will not modify a user's primary group.
+### Constraints
+Constraints are split into 3 parts. The `field`, the `comparison` and the `value`.
 
-#### Example 1
-```
-Luck is a member of "admin" (server="factions")
-Luck is a member of "mod" (server="kitpvp")
-Notch is a member of "owner"
-Herobrine is a member of "owner" (server="creative") (world="world_the_end")
-Cr33perM4n is a member of "donator" (server="kitpvp")
-```
-`/perms usersbulkedit group null world null world_nether`
-```
-Luck is a member of "admin" (server="factions") (world="world_nether")
-Luck is a member of "mod" (server="kitpvp") (world="world_nether")
-Notch is a member of "owner" (world="world_nether")
-Herobrine is a member of "owner" (server="creative") (world="world_the_end")
-Cr33perM4n is a member of "donator" (server="kitpvp") (world="world_nether")
-```
-`/perms usersbulkedit group null world null null`
-```
-Luck is a member of "admin" (server="factions")
-Luck is a member of "mod" (server="kitpvp")
-Notch is a member of "owner"
-Herobrine is a member of "owner" (server="creative")
-Cr33perM4n is a member of "donator" (server="kitpvp")
-```
-`/perms usersbulkedit group owner server null kitpvp`
-```
-Luck is a member of "admin" (server="factions")
-Luck is a member of "mod" (server="kitpvp")
-Notch is a member of "owner" (server="kitpvp")
-Herobrine is a member of "owner" (server="creative")
-Cr33perM4n is a member of "donator" (server="kitpvp")
-```
-`/perms usersbulkedit group null server kitpvp factions`
-```
-Luck is a member of "admin" (server="factions")
-Luck is a member of "mod" (server="factions")
-Notch is a member of "owner" (server="factions")
-Herobrine is a member of "owner" (server="creative")
-Cr33perM4n is a member of "donator" (server="factions")
-```
-`/perms usersbulkedit group null server factions null`
-```
-Luck is a member of "admin"
-Luck is a member of "mod"
-Notch is a member of "owner"
-Herobrine is a member of "owner" (server="creative")
-Cr33perM4n is a member of "donator"
-```
+The available `fields` are `permission`, `server` and `world`. Permission is just the permission node being stored in the file (remember that everything, even group memberships and prefixes are stored as permissions "under the hood"). The server and world fields relate to the server/world where the permission will apply. They are set to "global" if the permission doesn't have a value for either of them.
 
-#### Example 2
-```
-Luck is a member of "admin" (server="creative")
-Notch is a member of "admin" (server="creative")
-Herobrine is a member of "admin" (server="creative")
-Cr33perM4n is a member of "donator" (server="creative")
-```
-`/perms usersbulkedit group admin server creative test`
-```
-Luck is a member of "admin" (server="test")
-Notch is a member of "admin" (server="test")
-Herobrine is a member of "admin" (server="test")
-Cr33perM4n is a member of "donator" (server="creative")
-```
+The `value` part of the constraint is just the expected value of the field, with respect to the comparison being used.
 
-## /perms usersbulkedit permission \<node|null\> \<server|world\> \<from\> \<to\>
-Works in exactly the same way as the command above, except this modifies a user's permissions, not their group memberships.
+There are 4 different comparisons available.
+
+| Comparison Symbol | Comparison Name | Description |
+|-------------------|-----------------|-------------|
+| `==`              | Equal to        | If the two values are the same. (ignores case) |
+| `!=`              | Not equal to    | If the two values are not the same. (ignores case) |
+| `~~`              | Similar to      | If the two values are "similar". Uses SQL's `LIKE` syntax. |
+| `!~`              | Not similar to  | If the two values are not "similar". Uses SQL's `LIKE` syntax. |
+
+More information about the syntax used by "similar" can be found [here](https://www.w3schools.com/sql/sql_like.asp) and [here](https://www.tutorialspoint.com/sql/sql-like-clause.htm).
+
+The basic idea is that:
+* `%` - The percent sign represents zero, one, or multiple characters
+* `_` - The underscore represents a single character
+
+##### Some examples
+* `server ~~ hub_` will match server values "hub1", "hub2", "hub3" etc
+* `permission !~ group.%` will match any permission which isn't a group
+* `world == nether` will match world values exactly equal to "nether"
+
+When constraints are defined in commands, the entire constraint must be wrapped with `" "` quotes.
+
+### Command Examples
+#### `/lp bulkupdate all update permission group.mod "permission == group.moderator"`
+Will update all entries, and replace any occurrence of the "group.moderator" permission with "group.mod". (effectively renaming the group)
+
+#### `/lp bulkupdate user delete "server ~~ hub%" world == nether"`
+Will delete any permission assigned to a user where the server starts with "hub" and the world is equal to "nether".
+
+#### `/lp bulkupdate all delete "permission == essentials.fly"`
+Will delete any permission entry where the permission is equal to "essentials.fly"
+
+Hopefully you get the idea. If you're unsure about how to form a command for an update you want to apply, feel free to contact me using the means detailed on the wiki homepage.
