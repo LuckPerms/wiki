@@ -242,7 +242,7 @@ Reloads some values from the configuration file. Not all entries are reloaded by
 ___
 #### `/lp bulkupdate`  
 **Permission**: **Console Only**  
-Allows you to perform a bulk modifiction to all permission data. A detailed guide on how to use this command can be found [here]().
+Allows you to perform a bulk modifiction to all permission data. A detailed guide on how to use this command can be found [here](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing).
 
 ___
 #### `/lp migration`  
