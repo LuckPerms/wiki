@@ -587,7 +587,7 @@ ___
 * `<priority>` - the priority to add the prefix at
 * `<prefix>` - the actual prefix string
 * `<duration>` - the duration until the prefix will expire
-* `[context...]` - the server to add the prefix in
+* `[context...]` - the contexts to add the prefix in
 
 Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
