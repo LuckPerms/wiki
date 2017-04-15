@@ -67,4 +67,7 @@ Will delete any permission assigned to a user where the server starts with "hub"
 #### `/lp bulkupdate all delete "permission == essentials.fly"`
 Will delete any permission entry where the permission is equal to "essentials.fly"
 
+#### `/lp bulkupdate all update server global "server == factions"`
+Will change any server entries from "factions" to "global"
+
 Hopefully you get the idea. If you're unsure about how to form a command for an update you want to apply, feel free to contact me using the means detailed on the wiki homepage.
