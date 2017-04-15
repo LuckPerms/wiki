@@ -2,9 +2,7 @@
 Whilst the basics of LuckPerms are fairly simple, you can leverage a number of features and internal rules to setup an advanced permission system.
 
 ## Server and World specific permissions
-LuckPerms is designed for multi-server networks. (it also works great with a single server :wink:)
-
-You can define permissions that only apply on certain servers and in certain worlds.
+LuckPerms is designed for multi-server networks. You can define permissions that only apply on certain servers and in certain worlds.
 
 #### Some important config options:
 ```yml
