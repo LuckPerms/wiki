@@ -36,6 +36,8 @@ The following elements are allowed.
 | `lowest_own` | Same as above, except takes the value with the lowest weight. |
 | `highest_on_track_<track>` | Selects the value with the highest weight, but only if the value was inherited from a group on the given track. |
 | `lowest_on_track_<track>` | Same as above, except takes the value with the lowest weight. |
+| `highest_not_on_track_<track>` | Selects the value with the highest weight, but only if the value was inherited from a group not on the given track. |
+| `lowest_not_on_track_<track>` | Same as above, except takes the value with the lowest weight. |
 
 ### An example
 For example, on a prison server, you might have 3 types of group. The "gameplay" rank, a user's donor group, and staff groups.
