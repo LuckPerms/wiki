@@ -136,20 +136,9 @@ However, with shorthand, you can just apply the following node:
 
 `prisonmines.teleport.(1-4)`
 
-#### Example 4
-The shorthand system also works for server and world names.
-
-For example:
-`/luckperms group default set essentials.fly true (hub1|hub2|hub3|hub4)`
-would give users the fly permission on all of my hub servers.
-
 ## Regex
 LuckPerms has support for regex when defining permission nodes and server/world names.
 
 Whenever regex is used, it MUST be prefixed with "R=", so LuckPerms knows to treat it as regex, and not as a normal string.
 
-For example, if you wanted to give all members of the default group, the `essentials.fly` permission on all of your hub servers, where the hub server names are hub1, hub2, hub3, etc.
-You would use the command `/perms group default set essentials.fly true R=hub\d+`.
-
-You can also use regex in permission nodes.
-Once again using LuckPerms permissions as an example, if you wanted a user to be able to create both groups and tracks, you would normally just add the two permission nodes. However with regex, you can just add one. `luckperms\.create.*` Remember to escape any characters (including dots) as the entire node will be parsed.
+Foe example, if you wanted a user to be able to create both groups and tracks, you would normally just add the two permission nodes. However with regex, you can just add one. `luckperms\.create.*` Remember to escape any characters (including dots) as the entire node will be parsed.
