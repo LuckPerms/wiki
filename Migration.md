@@ -61,7 +61,7 @@ The default db table, as far as I know, is "players", however if you have an add
 
 e.g. if my table prefix is "pp_", the db table should = "pp_players". (without the quotes)
 
-For example: `/luckperms migration powerfulperms 127.0.0.1:3306 root passw0rd players`
+For example: `/luckperms migration powerfulperms 127.0.0.1:3306 minecraft root passw0rd players`
 
 # Errors
 If it seems that the command does not exist, check your server's startup log to check if the plugin you are importing from loaded correctly.
