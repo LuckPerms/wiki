@@ -4,10 +4,10 @@ The LuckPerms identifier is just **"luckperms"**.
 
 ## Usage
 
-To use the placeholders, you need to run the commands below. These will install the LuckPerms placeholder expansion so you can use all the placeholders listed below.
+To use the placeholders, you need to run the commands below. This will install the LuckPerms placeholder expansion so you can use the placeholders listed below.
 ##### `/papi ecloud download LuckPerms`
 ##### `/papi reload`
-Keep in mind you will need to be opped in order to run these commands (* will not work).
+Keep in mind you will need to be opped in order to run these commands (or you can just run them from console).
 
 Also note that if you only want to retrieve prefix/suffix data, you can use the Vault placeholders if you have Vault installed on your server, and the Vault expansion installed.
 
