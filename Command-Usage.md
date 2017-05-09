@@ -103,8 +103,11 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`set` \<group\> [context...]](#lp-usergroup-usergroup-parent-set)
 *  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add)
 *  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove)
+*  [`settrack` \<track\> \<group\> [context...]](#lp-usergroup-usergroup-parent-settrack)
 *  [`addtemp` \<group\> \<duration\> [context...]](#lp-usergroup-usergroup-parent-addtemp)
 *  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp)
+*  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear)
+*  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack)
 
 ### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
 *  [`info`](#lp-usergroup-usergroup-meta-info)
@@ -494,6 +497,15 @@ ___
 Removes a parent from the user/group.
 
 ___
+#### `/lp user/group <user|group> parent settrack`  
+**Permission**: luckperms.user.parent.settrack or luckperms.group.parent.settrack  
+**Arguments**:  
+* `<track>` - the track to set on
+* `<group>` - the group to set to, or a number relating to the position of the group on the given track
+* `[context...]` - the contexts to set the group in
+
+Sets a users/groups position on a given track. This behaves in the same way as the set command, except it only clears existing groups which are on the specified track. Other parent groups are not affected.
+___
 #### `/lp user/group <user|group> parent addtemp`  
 **Permission**: luckperms.user.parent.addtemp or luckperms.group.parent.addtemp  
 **Arguments**:  
@@ -511,6 +523,23 @@ ___
 * `[context...]` - the contexts to add remove group in
 
 Removes a tempoary parent from the user/group.
+
+___
+#### `/lp user/group <user|group> parent clear`  
+**Permission**: luckperms.user.parent.clear or luckperms.group.parent.clear  
+**Arguments**:  
+* `[context...]` - the contexts to filter by
+
+Removes all parents.
+
+___
+#### `/lp user/group <user|group> parent cleartrack`  
+**Permission**: luckperms.user.parent.cleartrack or luckperms.group.parent.cleartrack  
+**Arguments**:  
+* `<track>` - the track to remove on
+* `[context...]` - the contexts to filter by
+
+Removes all parents from the user/group on a given track.
 
 ___
 
