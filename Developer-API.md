@@ -19,7 +19,7 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
 <repositories>
     <repository>
         <id>luck-repo</id>
-        <url>http://repo.lucko.me/</url>
+        <url>https://repo.lucko.me/</url>
     </repository>
 </repositories>
 
@@ -27,7 +27,7 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
-        <version>3.1</version>
+        <version>3.2</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -38,12 +38,12 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
 repositories {
     maven {
         name "luck-repo"
-        url "http://repo.lucko.me/"
+        url "https://repo.lucko.me/"
     }
 }
 
 dependencies {
-    compile ("me.lucko.luckperms:luckperms-api:3.1")
+    compile ("me.lucko.luckperms:luckperms-api:3.2")
 }
 ```
 
@@ -254,12 +254,6 @@ if (user == null) {
     return Optional.empty(); // The user isn't loaded. :(
 }
 
-// Now get their UserData. This is only loaded for online players.
-UserData userData = user.getUserDataCache().orElse(null);
-if (userData == null) {
-    return Optional.empty(); // Nope! Not loaded.
-}
-
 // Now get the users "Contexts". This is basically just data about the players current state.
 // Don't worry about it too much, just know we need it to get their cached data.
 Contexts contexts = api.getContextForUser(user).orElse(null);
@@ -268,11 +262,10 @@ if (contexts == null) {
 }
 
 // Ah, now we're making progress. We can use the Contexts to get the users "MetaData". This is their cached meta data.
-MetaData metaData = userData.getMetaData(contexts);
+MetaData metaData = user.getCachedData().getMetaData(contexts);
 
-// Now return an optional of their prefix, if they have one.
-// MetaData#getPrefix returns null if they have no prefix, so we wrap the return in Optional#ofNullable to catch this.
-return Optional.ofNullable(metaData.getPrefix());
+// MetaData#getPrefix returns null if they have no prefix.
+return metaData.getPrefix();
 ```
 
 ### Getting a players applied permissions
@@ -280,11 +273,9 @@ We can also use this caching system to get a Map containing the users permission
 ```java
 // All retrieved in the same way as shown above.
 User user;
-UserData userData;
 Contexts contexts;
 
-PermissionData permissionData = userData.getPermissionData(contexts);
-
+PermissionData permissionData = user.getCachedData().getPermissionData(contexts);
 Map<String, Boolean> data = permissionData.getImmutableBacking();
 ```
 
