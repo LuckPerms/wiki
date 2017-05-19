@@ -2,7 +2,7 @@ The configuration files are heavily annotated with descriptions of exactly what 
 
 ## Index
 * General
- * Test
+  * Test
 
 ## General
 #### `server`
