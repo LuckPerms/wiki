@@ -8,6 +8,8 @@ Edit the messages in the file to your liking, and then restart your server.
 ## Translations
 * [**en_US** - English](https://github.com/lucko/LuckPerms/blob/master/.locale/en_US.yml)
 * [**es_ES** - Spanish](https://github.com/lucko/LuckPerms/blob/master/.locale/es_ES.yml)
+* [**ru_RU** - Russian](https://github.com/lucko/LuckPerms/blob/master/.locale/ru_RU.yml)
+* [**zh-CN** - Simplified Chinese](https://github.com/lucko/LuckPerms/blob/master/.locale/zh-CN.yml)
 
 
 ### Contributing translations
