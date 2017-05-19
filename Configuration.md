@@ -2,7 +2,55 @@ The configuration files are heavily annotated with descriptions of exactly what 
 
 ## Index
 * General
-  * Test
+  * [`server`]()
+  * [`include-global`]()
+  * [`include-global-world`]()
+  * [`apply-global-groups`]()
+  * [`apply-global-world-groups`]()
+  * [`use-server-uuids`]()
+  * [`log-notify`]()
+  * [`world-rewrite`]()
+  * [`group-name-rewrite`]()
+  * [`temporary-add-behaviour`]()
+  * [`primary-group-calculation`]()
+  
+* Permission Calculation
+  * [`apply-wildcards`]()
+  * [`apply-regex`]()
+  * [`apply-shorthand`]()
+  * [`group-weight`]()
+  * Bukkit
+    * [`apply-bukkit-child-permissions`]()
+    * [`apply-bukkit-default-permissions`]()
+    * [`apply-bukkit-attachment-permissions`]()
+  * Bungee
+    * [`apply-bungee-config-permissions`]()
+  * Sponge
+    * [`apply-sponge-implicit-wildcards`]()
+    * [`apply-sponge-default-subjects`]()
+  
+* Server Operator / Vault (Bukkit version only)
+  * [`enable-ops`]()
+  * [`auto-op`]()
+  * [`commands-allow-op`]()
+  * [`use-vault-server`]()
+  * [`vault-server`]()
+  * [`vault-include-global`]()
+  * [`vault-ignore-world`]()
+  * [`vault-debug`]()
+  
+* Storage
+  * [`storage-method`]()
+  * [`watch-files`]()
+  * [`split-storage`]()
+  * [`data`]()
+  * [`pool-size`]()
+  * [`table-prefix`]()
+  * [`sync-minutes`]()
+  * [`messaging-service`]()
+  * [`auto-push-updates`]()
+  * [`redis`]()
+
 
 ## General
 #### `server`
