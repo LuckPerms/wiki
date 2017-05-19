@@ -19,15 +19,15 @@ The configuration files are heavily annotated with descriptions of exactly what 
 * [`apply-regex`]()
 * [`apply-shorthand`]()
 * [`group-weight`]()
-* Bukkit
-  * [`apply-bukkit-child-permissions`]()
-  * [`apply-bukkit-default-permissions`]()
-  * [`apply-bukkit-attachment-permissions`]()
-* Bungee
-  * [`apply-bungee-config-permissions`]()
-* Sponge
-  * [`apply-sponge-implicit-wildcards`]()
-  * [`apply-sponge-default-subjects`]()
+#### Bukkit
+* [`apply-bukkit-child-permissions`]()
+* [`apply-bukkit-default-permissions`]()
+* [`apply-bukkit-attachment-permissions`]()
+#### Bungee
+* [`apply-bungee-config-permissions`]()
+#### Sponge
+* [`apply-sponge-implicit-wildcards`]()
+* [`apply-sponge-default-subjects`]()
 
 ### Server Operator / Vault (Bukkit version only)
 * [`enable-ops`]()
