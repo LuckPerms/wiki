@@ -1,133 +1,560 @@
-The configuration files are heavily annotated with descriptions of exactly what each option does, however, this page goes into more detail on each section.
-
 ## Index
 ### General
-* [`server`]()
-* [`include-global`]()
-* [`include-global-world`]()
-* [`apply-global-groups`]()
-* [`apply-global-world-groups`]()
-* [`use-server-uuids`]()
-* [`log-notify`]()
-* [`world-rewrite`]()
-* [`group-name-rewrite`]()
-* [`temporary-add-behaviour`]()
-* [`primary-group-calculation`]()
+* [`server`](#server)
+* [`include-global`](#include-global)
+* [`include-global-world`](#include-global-world)
+* [`apply-global-groups`](#apply-global-groups)
+* [`apply-global-world-groups`](#apply-global-world-groups)
+* [`use-server-uuids`](#use-server-uuids)
+* [`log-notify`](#log-notify)
+* [`world-rewrite`](#world-rewrite)
+* [`group-name-rewrite`](#group-name-rewrite)
+* [`temporary-add-behaviour`](#temporary-add-behaviour)
+* [`primary-group-calculation`](#primary-group-calculation)
 
 ### Permission Calculation
-* [`apply-wildcards`]()
-* [`apply-regex`]()
-* [`apply-shorthand`]()
-* [`group-weight`]()
-#### Bukkit
-* [`apply-bukkit-child-permissions`]()
-* [`apply-bukkit-default-permissions`]()
-* [`apply-bukkit-attachment-permissions`]()
-#### Bungee
-* [`apply-bungee-config-permissions`]()
-#### Sponge
-* [`apply-sponge-implicit-wildcards`]()
-* [`apply-sponge-default-subjects`]()
+* [`apply-wildcards`](#apply-wildcards)
+* [`apply-regex`](#apply-regex)
+* [`apply-shorthand`](#apply-shorthand)
+##### Bukkit
+* [`apply-bukkit-child-permissions`](#apply-bukkit-child-permissions)
+* [`apply-bukkit-default-permissions`](#apply-bukkit-default-permissions)
+* [`apply-bukkit-attachment-permissions`](#apply-bukkit-attachment-permissions)
+##### Bungee
+* [`apply-bungee-config-permissions`](#apply-bungee-config-permissions)
+##### Sponge
+* [`apply-sponge-implicit-wildcards`](#apply-sponge-implicit-wildcards)
+* [`apply-sponge-default-subjects`](#apply-sponge-default-subjects)
 
 ### Server Operator / Vault (Bukkit version only)
-* [`enable-ops`]()
-* [`auto-op`]()
-* [`commands-allow-op`]()
-* [`use-vault-server`]()
-* [`vault-server`]()
-* [`vault-include-global`]()
-* [`vault-ignore-world`]()
-* [`vault-debug`]()
+* [`enable-ops`](#enable-ops)
+* [`auto-op`](#auto-op)
+* [`commands-allow-op`](#commands-allow-op)
+* [`use-vault-server`](#use-vault-server)
+* [`vault-server`](#vault-server)
+* [`vault-include-global`](#vault-include-global)
+* [`vault-ignore-world`](#vault-ignore-world)
+* [`vault-debug`](#vault-debug)
 
 ### Storage
-* [`storage-method`]()
-* [`watch-files`]()
-* [`split-storage`]()
-* [`data`]()
-* [`pool-size`]()
-* [`table-prefix`]()
-* [`sync-minutes`]()
-* [`messaging-service`]()
-* [`auto-push-updates`]()
-* [`redis`]()
+* [`storage-method`](#storage-method)
+* [`watch-files`](#watch-files)
+* [`split-storage`](#split-storage)
+* [`data`](#data)
+* [`pool-size`](#pool-size)
+* [`table-prefix`](#table-prefix)
+* [`sync-minutes`](#sync-minutes)
+* [`messaging-service`](#messaging-service)
+* [`auto-push-updates`](#auto-push-updates)
+* [`redis`](#redis)
 
 
 ## General
-#### `server`
-**Default**: global   
-The name of this server instance. Used for per-server permissions. More info on this can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup).
-____
+___
+### `server`
+The name of the server, used for server specific permissions.   
 
-#### `include-global`
-**Default**: true (false on BungeeCord)   
-If players on this server should have their global permissions applied. (permissions that were not set with a specific server). If this option is set to false, only permissions that were specifically set to apply on this server will apply. Do not set to false if the "server" option above is set to global.
-____
+If set to "global" this setting is ignored. More details about how server specific permissions are groups work can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup).
 
-#### `include-global-world`
-**Default**: true   
-Similar to the option above, except this works with worlds. If set to false, only permissions that are set in specific worlds will be given to users.
-____
+##### Example
+```yaml
+server: global
+```
 
-#### `apply-global-groups`
-**Default**: true   
+___
+### `include-global`
+If players on this server should have their global permissions applied. (permissions that were not set with a specific server).
+
+If this option is set to false, only permissions that were specifically set to apply on this server will apply. Do not set to false if the "server" option above is set to global. More details about how server specific permissions are groups work can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup).
+
+##### Example
+```yaml
+include-global: true
+```
+
+___
+### `include-global-world`
+
+Similar to the option above, except this works with worlds. If set to false, only permissions that are set in specific worlds will be given to users. Any permissions set without a specific world context will not be applied.
+
+##### Example
+```yaml
+include-global-world: true
+```
+
+___
+### `apply-global-groups`
 This option operates in the same manner as "include-global", except changes the setting for group inheritance.
-____
 
-#### `apply-global-world-groups`
-**Default**: true   
-Same as above, except changes the behaviour for worlds.
-____
+When calculating a players permissions, the plugin will scale the inheritance tree, resolving group memberships recursively. If this setting is set to false, and as a result, a group is not "applied", then none of that groups parents will be considered, and the inheritance lookup will stop at that point.
 
-#### `online-mode`
-**Default**: true   
-If this server is in offline or online mode. This setting allows a player to have the same UUID across a network of offline mode/mixed servers.   
+This means that even if a player indirectly inherits a group on a specific server, the group will not be applied if it is inherited through a non-server specific group.
 
-You should generally reflect the setting in server.properties here. Except when...
+For example, with this setting false, and the following setup:
 
-1. You have Spigot servers connected to a BungeeCord proxy, with online-mode set to false, but 'bungeecord' set to true in the spigot.yml AND 'ip-forward' set to true in the BungeeCord config.yml. In this case, set online-mode in LuckPerms to true, despite the server being in offline mode.
-2. You are only running one server instance using LuckPerms, (not a network) In this case, set online-mode to true no matter what is set in server.properties. (we can just fallback to the servers uuid cache)
-3. If your proxy is running in offline mode, and you are using PaperSpigot (https://ci.destroystokyo.com/job/PaperSpigot/), you should set "bungee-online-mode" to false in the paper.yml, and set "online-mode" to true in all LuckPerms configs. This approach is thoroughly recommended for offline mode networks.
+```
+User "Luck" inherits from group "admin" globally, and admin inherits from "default" on a specific server.
+```
 
-____
+Even though Luck inherits default on the specific server, it will not be applied, because the inheritance lookup stops at admin. The parent groups of admin are therefore never even considered.
 
-#### `log-notify`
-**Default**: true   
-If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with permission to view them, and this command acts as a global toggle for /lp log notify \<on|off\>
-____
+##### Example
+```yaml
+apply-global-groups: true
+```
+
+___
+### `apply-global-world-groups`
+
+Similar to the option above, except this works with worlds. If set to false, only groups that are set in specific worlds will be assigned and resolved for users. Any groups set without a specific world context will not be applied.
+
+##### Example
+```yaml
+apply-global-world-groups: true
+```
+
+___
+### `use-server-uuids`
+
+If UUIDs should be pulled from the server, or looked up by username based upon previous connections. This setting should be kept set to true, unless you're sure you know what you're doing.
+
+Normally, when this is set to true: when a player logs in, LuckPerms will use the username / uuid provided by the server to identify the player. This is fine for the majority of servers.
+
+When set to false, LuckPerms will first check to see if someone has joined previously with the same username. If a player is found, then the previous UUID mapped to that username will be used. Otherwise, it will fallback to the standard method of retrieving uuids from the server.
+
+On offline mode (cracked) servers, a players UUID is generated based upon their username.
+
+**Important:**
+If you are running a BungeeCord proxy, you *must* have IP forwarding setup, in order for the backend server to use the correct uuid for players.
+
+Guides for this can be found [here for Spigot](https://www.spigotmc.org/wiki/bungeecord-ip-forwarding/), and [here for Sponge](https://docs.spongepowered.org/stable/en/server/getting-started/bungeecord.html). SpongeForge users are advised to use [HexaCord](https://github.com/HexagonMC/BungeeCord), a BungeeCord fork, which supports IP forwaring for Forge.
+
+If your BungeeCord proxy is running in offline mode & you are running Spigot, you should still be setting up ip forwarding as described above. However, it is reccomended that you install [Paper](https://ci.destroystokyo.com/job/PaperSpigot/) and set `bungee-online-mode: false` in paper.yml.
+
+If for whatever reason you are unable to setup IP forwarding, you may need to set this option to false. Make sure you are aware of the consequences before you do this.
+
+##### Example
+```yaml
+use-server-uuids: true
+```
+
+___
+### `log-notify`
+
+If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to recieve the notification. 
+
+Notifications can also be disabled temporarily in-game using `/lp log notify off`
+
+##### Example
+```yaml
+log-notify: true
+```
+
+___
+### `world-rewrite`
+
+Allows you to set "aliases" for the worlds sent forward for context calculation. These aliases are provided in addittion to the real world name. Applied recursively.
+
+##### Example
+```yaml
+world-rewrite:
+  world_nether: world
+  world_the_end: world
+```
+
+___
+### `group-name-rewrite`
+
+Allows you to set "aliases" for group names. These are purely display names, the actual underlying name of the group does not change. Only the output in commands/messages are affected.
+
+##### Example
+```yaml
+group-name-rewrite:
+  default: Member
+```
+
+___
+### `temporary-add-behaviour`
+
+Controls how temporary permissions/parents/meta should be accumulated. The default behaviour is `deny`.
+
+* **`accumulate`** - the duration of any existing nodes will just be added to the new duration
+* **`replace`** - the longest duration will be kept, any others nodes will be forgotten
+* **`deny`** - the command will just fail if you try to add a duplicate temporary node
+
+##### Example
+```yaml
+temporary-add-behaviour: deny
+```
+
+___
+### `primary-group-calculation`
+
+How should LuckPerms determine a users "primary" group. The default behaviour for Bukkit/Bungee is `stored`, and the default for Sponge is `parents-by-weight`.
+
+* **`stored`** - use the value stored against the users record in the file/database
+* **`parents-by-weight`** - use the users most highly weighted parent
+* **`all-parents-by-weight`** - same as above, but calculates based upon all parents inherited from both directly and indirectly
+
+##### Example
+```yaml
+primary-group-calculation: stored
+```
+
+___
 
 
 ## Permission Calculation
-#### `apply-wildcards`
-**Default**: true   
-If the plugin should apply wildcard permissions. If plugin authors do not provide their own wildcard permissions, then enabling this option will allow LuckPerms to parse them instead. Bukkit especially did not endorse this practice, however it has become common among server administrators. On Sponge, this setting control whether "node.part.*" style wildcards will function.
-____
+___
+### `apply-wildcards`
+If the plugin should apply wildcard permissions.
 
-#### `apply-regex`
-**Default**: true   
-If the plugin should parse regex permissions. If set to true, LuckPerms will detect any regex permissions, marked with "r=" at the start of the node, and return all requests matching the node. If you do not have any regex permissions setup, enabling this option will have no impact on performance. More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#regex).
-____
+If plugin authors do not provide their own wildcard permissions, then enabling this option will allow LuckPerms to parse them instead. Bukkit especially did not endorse this practice, however it has become common among server administrators. On Sponge, this setting control whether "node.part.*" style wildcards will function.
 
-#### `apply-shorthand`
-**Default**: true   
-If the plugin should resolve and apply any shorthand (GLOB style) permissions. More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#shorthand-permissions).
-____
+##### Example
+```yaml
+apply-wildcards: true
+```
 
-#### `group-weight`
-**Default**: empty   
-This section allows you to define a list of group weights, as opposed to setting them with the [set weight command](https://github.com/lucko/LuckPerms/wiki/Command-Usage#perms-group-group-setweight). Higher weight = higher priority. The default weight is 0.   
-   
-**Example**:   
-```yml
-group-weight:
-  admin: 10
-  mod: 5
-  default: 1
+___
+### `apply-regex`
+If the plugin should parse regex permissions.
+
+If set to true, LuckPerms will detect any regex permissions, marked with "r=" at the start of the node, and return all requests matching the node. If you do not have any regex permissions setup, enabling this option will have no impact on performance. More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#regex).
+
+##### Example
+```yaml
+apply-regex: true
+```
+
+___
+### `apply-shorthand`
+If the plugin should resolve and apply any shorthand (GLOB style) permissions.
+
+More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#shorthand-permissions).
+
+##### Example
+```yaml
+apply-shorthand: true
+```
+
+___
+### `apply-bukkit-child-permissions`
+If the plugin should apply Bukkit child permissions.
+
+Plugin authors can define custom permissions structures for their plugin, which will be resolved and used by LuckPerms if this setting is enabled.
+
+This is enabled by default, as it is a standard Bukkit feature, which most server admins expect to work. However, if you'd prefer not to use this system, it can be safely disabled.
+
+##### Example
+```yaml
+apply-bukkit-child-permissions: true
+```
+
+___
+### `apply-bukkit-default-permissions`
+If the plugin should apply Bukkit default permissions.
+
+Plugin authors can define permissions which should be given to all users by default, or setup permissions which should/shouldn't be given to opped players. If this option is set to false, LuckPerms will ignore these defaults.
+
+This is enabled by default, as it is a standard Bukkit feature, which most server admins expect to work. However, if you'd prefer not to use this system, it can be safely disabled.
+
+##### Example
+```yaml
+apply-bukkit-default-permissions: true
+```
+
+___
+### `apply-bukkit-attachment-permissions`
+If the plugin should apply Bukkit attachment permissions.
+
+Other plugins on the server are able to add their own "permission attachments" to players. This allows them to grant players additional permissions which last until the end of the session, or until they're removed. If this option is set to false, LuckPerms will not include these attachment permissions when considering if a player should have access to a certain permission.
+
+You may also see a slight performance improvement by enabling this feature. Combined with disabling the OP system, this system can be quite effective at disabling malicious attempts by plugins to grant arbitrary permissions to players.
+
+This is enabled by default, as it is a standard Bukkit feature, which most server admins expect to work. However, if you'd prefer not to use this system, it can be safely disabled.
+
+##### Example
+```yaml
+apply-bukkit-attachment-permissions: true
+```
+
+___
+### `apply-bungee-config-permissions`
+If the plugin should apply the permissions & groups defined in the BungeeCord config.yml
+
+If set to false, LuckPerms will ignore these values.
+
+This is disabled by default, as permissions should really be defined within LuckPerms, so they can be viewed and edited in-game alongside everything else.
+
+##### Example
+```yaml
+apply-bungee-config-permissions: false
+```
+
+___
+### `apply-sponge-implicit-wildcards`
+If the plugin should resolve and apply permissions according to Sponge's implicit wildcard inheritance system.
+
+That being: If a user has been granted `example`, then the player should have also be automatically granted `example.function`, `example.another`, `example.deeper.nesting`, and so on.
+
+If this option is set to false, this system will not be applied.
+
+This is enabled by default, as it is a standard Sponge feature, which most server admins / plugin authors expect to work. However, if you'd prefer not to use this system, it can be disabled.
+
+##### Example
+```hocon
+apply-sponge-implicit-wildcards=true
+```
+
+___
+### `apply-sponge-default-subjects`
+If the plugin should apply Sponge default subject permissions.
+
+Plugins can manipulate a set of default permissions granted to all users. If this option is set to false, the plugin will ignore this data when considering if a player has a permission.
+
+This is enabled by default, as it is a standard Sponge feature, which most server admins / plugin authors expect to work. However, if you'd prefer not to use this system, it can be disabled.
+
+##### Example
+```hocon
+apply-sponge-default-subjects=true
 ```
 
 
+## Server Operator / Vault (Bukkit version only)
+___
+### `enable-ops`
+If the vanilla OP system should be used.
+
+If set to false, all users will be de-opped, and the op/deop commands will be disabled.
+
+##### Example
+```yaml
+enable-ops: true
+```
+
+___
+### `auto-op`
+If set to true, any user with the permission "luckperms.autoop" will automatically be granted server operator status.
+
+This permission can be inherited, or set on specific servers/worlds, temporarily, etc. Additionally, setting this to true will force the "enable-ops" option above to false. All users will be de-opped unless they have the permission node, and the op/deop commands will be disabled.
+
+It is important to note that this setting is only checked when a player first joins the server, and when they switch worlds. Therefore, simply removing this permission from a user will not automatically de-op them. A player may need to relog to have the change take effect.
+
+It is recommended that you use this option instead of assigning a single '*' permission.
+
+##### Example
+```yaml
+auto-op: false
+```
+
+___
+### `commands-allow-op`
+If opped players should be allowed to use LuckPerms commands.
+
+Set to false to only allow users who have the permissions access to the commands
+
+##### Example
+```yaml
+commands-allow-op: true
+```
+
+___
+### `use-vault-server`
+If the `vault-server` option below should be used.
+
+When this option is set to false, the server value defined above under "server" is used for Vault operations.
+
+##### Example
+```yaml
+use-vault-server: false
+```
+
+___
+### `vault-server`
+The name of the server used within Vault operations.
+
+If you don't want Vault operations to be server specific, set this to "global".
+
+Will only take effect if `use-vault-server` is set to true above.
+
+##### Example
+```yaml
+vault-server: global
+```
+
+___
+### `vault-include-global`
+If global permissions should be considered when retrieving meta or player groups.
+
+##### Example
+```yaml
+vault-include-global: true
+```
+
+___
+### `vault-ignore-world`
+If Vault operations should ignore any world arguments if supplied.
+
+By default, if a world argument is not supplied, permissions will be set on the players current world. (Vault design is just 10/10). Set this to true to change this behaviour.
+
+##### Example
+```yaml
+vault-ignore-world: false
+```
+
+___
+### `vault-debug`
+If LuckPerms should print debugging info to console when a plugin uses a Vault function
+
+##### Example
+```yaml
+vault-debug: false
+```
 
 
+## Storage
+___
+### `storage-method`
+Which storage method the plugin should use.
+
+See [here](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) for a full list of supported types.
+
+**Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `mongodb`
+
+If your MySQL server supports it, the `mariadb` option is preferred over `mysql`. `h2` is also generally preferred over `sqlite`.
+
+##### Example
+```yaml
+storage-method: h2
+```
+
+___
+### `watch-files`
+When using a file-based storage type, LuckPerms will monitor the data files for changes, and then schedule automatic updates when changes are detected.
+
+If you don't want this to happen, set this option to false.
+
+##### Example
+```yaml
+watch-files: true
+```
+
+___
+### `split-storage`
+The split storage section allows you to use multiple storage options for different types of data.
+
+**The different types of data are:**
+
+* **`user`** - data about users, including their permissions, parents and meta
+* **`group`** - data about groups, including their permissions, parents and meta
+* **`track`** - data about tracks (or so called "ladders")
+* **`uuid`** - a cache of `uuid <-- --> username` used by LuckPerms when usernames are used in the `/lp user` command instead of uuids.
+* **`log`** - the action log stored by LuckPerms
+
+The allowed storage types are detailed above.
+
+##### Example
+```yaml
+split-storage:
+  enabled: true
+  methods:
+    user: mariadb
+    group: yaml
+    track: yaml
+    uuid: mariadb
+    log: mariadb
+```
+
+___
+### `data`
+This section is used for specifying credentials used for storage methods.
+
+* **`address`** - the host to be used for the database. Uses the standard DB engine port by default. If you have a non-default port, specify it here using `host:port`.
+* **`database`** - the database which should be used by LuckPerms
+* **`username`** - the username to be used
+* **`password`** - the password to be used. Leave empty to use no authentication.
 
 
+##### Example
+```yaml
+data:
+  address: localhost
+  database: minecraft
+  username: root
+  password: ''
+```
 
+___
+### `pool-size`
+The size of the MySQL connection pool.
 
+By default this option is set to `10`, which should be fine for most servers. Only change this option if you know what you're doing.
+
+See [here](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing) for more details about pool sizing.
+
+##### Example
+```yaml
+data:
+  pool-size: 10 # The size of the MySQL connection pool.
+```
+
+___
+### `sync-minutes`
+This option controls how frequently LuckPerms will perform a sync task.
+
+A sync task will refresh all data from the storage, and ensure that the most up-to-date data is being used by the plugin.
+
+This is disabled by default, as most users will not need it. However, if you're using a remote storage type without a messaging service setup, you may wish to set this value to something like 3.
+
+Set to -1 to disable the task completely.
+
+##### Example
+```yaml
+data:
+  sync-minutes: 3
+```
+
+___
+### `messaging-service`
+Settings for the messaging service.
+
+If enabled and configured, LuckPerms will use the messaging system to inform other connected servers of changes. Use the command "/luckperms networksync" to push changes. Data is NOT stored using this service. It is only used as a messaging platform.
+
+If you decide to enable this feature, you should set "sync-minutes" to -1, as there is no need for LuckPerms to poll the database for changes.
+
+**Available options:**
+
+* **`bungee`** - uses the plugin messaging channels. Must be enabled on all connected servers to work, and you need to have LP installed on your proxy.
+* **`lilypad`** - uses LilyPad's pub sub to push changes. You need to have the LilyPad-Connect plugin installed.
+* **`redis`** - uses Redis pub sub to push changes.
+* **`none`** - nothing!
+
+##### Example
+```yaml
+messaging-service: none
+```
+
+___
+### `auto-push-updates`
+If LuckPerms should automatically push updates after a change has been made with a command.
+
+##### Example
+```yaml
+auto-push-updates: true
+```
+
+___
+### `redis`
+Settings for Redis.
+
+* **`address`** - the host to be used for redis. Uses the standard port by default (6379). If you have a non-default port, specify it here using `host:port`.
+* **`password`** - the password to be used. Leave empty to use no authentication.
+
+##### Example
+```yaml
+redis:
+  enabled: true
+  address: localhost
+  password: 'passw0rd'
+```
