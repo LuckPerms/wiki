@@ -4,6 +4,7 @@
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
 * [**Usage**](https://github.com/lucko/LuckPerms/wiki/Usage)
+* [**Configuration**](https://github.com/lucko/LuckPerms/wiki/Configuration)
 * [**Command Usage & Permissions**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 * [**Migration from existing plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
