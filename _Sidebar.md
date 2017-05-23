@@ -25,8 +25,7 @@
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
-* [**PlaceholderAPI**](https://github.com/lucko/LuckPerms/wiki/PlaceholderAPI)
 
 ### Other
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
-
+* [**PlaceholderAPI**](https://github.com/lucko/LuckPerms/wiki/PlaceholderAPI)
