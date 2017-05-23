@@ -1,3 +1,11 @@
+The main configuration file for LuckPerms can be found at these locations.
+
+| Platform      | Location                           |
+|---------------|------------------------------------|
+| Bukkit/Spigot | `/plugins/LuckPerms/config.yml`    |
+| BungeeCord    | `/plugins/LuckPerms/config.yml`    |
+| Sponge        | `/config/luckperms/luckperms.conf` |
+
 ## Index
 ### General
 * [`server`](#server)
