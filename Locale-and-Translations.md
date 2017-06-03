@@ -10,6 +10,7 @@ Edit the messages in the file to your liking, and then restart your server.
 * [**es_ES** - Spanish](https://github.com/lucko/LuckPerms/blob/master/.locale/es_ES.yml)
 * [**ru_RU** - Russian](https://github.com/lucko/LuckPerms/blob/master/.locale/ru_RU.yml)
 * [**zh-CN** - Simplified Chinese](https://github.com/lucko/LuckPerms/blob/master/.locale/zh-CN.yml)
+* [**pl_PL** - Polish](https://github.com/lucko/LuckPerms/blob/master/.locale/pl_PL.yml)
 
 
 ### Contributing translations
