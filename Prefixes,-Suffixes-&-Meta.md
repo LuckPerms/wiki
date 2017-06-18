@@ -92,6 +92,7 @@ This is by no means a definitive list. Anything that supports Vault also support
 
 
 ### BungeeCord
+* [gChat](https://github.com/lucko/gChat) (written by me :wink:)
 * [MultiChat](https://www.spigotmc.org/resources/multichat.26204/)
 
 ### Sponge
