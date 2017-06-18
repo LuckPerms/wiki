@@ -92,7 +92,7 @@ This is by no means a definitive list. Anything that supports Vault also support
 
 
 ### BungeeCord
-* [BungeeChat](https://www.spigotmc.org/resources/bungee-chat.12592/) - has built-in support for retreiving prefixes/suffixes from LuckPerms.
+* [MultiChat](https://www.spigotmc.org/resources/multichat.26204/)
 
 ### Sponge
 * [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
