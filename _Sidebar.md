@@ -10,18 +10,16 @@
 * [**GM & PEX Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 
-### Basic Usage
-* [**Switching Storage Types**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
+### Features
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
+* [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
 * [**Instant Update Propagation**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
+* [**Switching Storage Types & Backups**](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
 * [**Prefixes, Suffixes & Meta**](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta)
-
-### Advanced Usage
-* [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
-* [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
-* [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Prefix & Suffix Stacking**](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking)
+* [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
+* [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
