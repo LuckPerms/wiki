@@ -349,7 +349,7 @@ ___
 #### `/lp user <user> editor`
 **Permission**: luckperms.user.editor
 
-Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take affect.
+Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take effect.
 
 ___
 ### Group   (/lp group \<group\> ...)
@@ -407,7 +407,7 @@ ___
 #### `/lp group <group> editor`
 **Permission**: luckperms.group.editor
 
-Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take affect.
+Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take effect.
 
 ___
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
