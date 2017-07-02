@@ -71,25 +71,25 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp user \<user\> `permission`](#permission---lp-user-user-permission---lp-group-group-permission-)
 *  [/lp user \<user\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
 *  [/lp user \<user\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/lp user \<user\> `editor`](#lp-user-user-editor)
 *  [/lp user \<user\> `switchprimarygroup` \<group\>](#lp-user-user-switchprimarygroup)
 *  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote)
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear)
-*  [/lp user \<user\> `editor`](#lp-user-user-editor)
 
 ### Group   (/lp group \<group\> ...)
 *  [/lp group \<group\> `info`](#lp-group-group-info)
 *  [/lp group \<group\> `permission`](#permission---lp-user-user-permission---lp-group-group-permission-)
 *  [/lp group \<group\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
 *  [/lp group \<group\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/lp group \<group\> `editor`](#lp-group-group-editor)
 *  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers)
 *  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight)
 *  [/lp group \<group\> `showtracks`](#lp-group-group-showtracks)
 *  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
 *  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
 *  [/lp group \<group\> `clone` \<name of clone\>](#lp-group-group-clone)
-*  [/lp group \<group\> `editor`](#lp-group-group-editor)
 
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
 *  [`info`](#lp-usergroup-usergroup-permission-info)
@@ -305,6 +305,11 @@ ___
 Displays information about a user, including their username, primary group, parents, and current contexts.
 
 ___
+#### `/lp user <user> editor`  
+**Permission**: luckperms.user.editor  
+Opens a web interface to edit permissions for the specified group. After changes are saved, a command will be given that you need to run for the changes to take effect.
+
+___
 #### `/lp user <user> switchprimarygroup`  
 **Permission**: luckperms.user.switchprimarygroup  
 **Arguments**:  
@@ -346,17 +351,16 @@ ___
 Clears the user's permissions, parent groups and meta.
 
 ___
-#### `/lp user <user> editor`
-**Permission**: luckperms.user.editor
-
-Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take effect.
-
-___
 ### Group   (/lp group \<group\> ...)
 ___
 #### `/lp group <group> info`  
 **Permission**: luckperms.group.info  
 Displays information about a group.
+
+___
+#### `/lp group <group> editor`  
+**Permission**: luckperms.group.editor  
+Opens a web interface to edit permissions for the specified group. After changes are saved, a command will be given that you need to run for the changes to take effect.
 
 ___
 #### `/lp group <group> listmembers`  
@@ -402,12 +406,6 @@ ___
 * `<new name>` - the name of the clone
 
 Makes an exact copy of the group under a different name.
-
-___
-#### `/lp group <group> editor`
-**Permission**: luckperms.group.editor
-
-Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take effect.
 
 ___
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
@@ -867,12 +865,12 @@ ___
 *  luckperms.user.meta.removetempprefix
 *  luckperms.user.meta.removetempsuffix
 *  luckperms.user.meta.clear
+*  luckperms.user.editor
 *  luckperms.user.switchprimarygroup
 *  luckperms.user.showtracks
 *  luckperms.user.promote
 *  luckperms.user.demote
 *  luckperms.user.clear
-*  luckperms.user.editor
 
 ### Group
 *  luckperms.group.info
@@ -904,13 +902,13 @@ ___
 *  luckperms.group.meta.removetempprefix
 *  luckperms.group.meta.removetempsuffix
 *  luckperms.group.meta.clear
+*  luckperms.group.editor
 *  luckperms.group.listmembers
 *  luckperms.group.showtracks
 *  luckperms.group.setweight
 *  luckperms.group.clear
 *  luckperms.group.rename
 *  luckperms.group.clone
-*  luckperms.group.editor
 
 ### Track
 *  luckperms.track.info
