@@ -2,7 +2,7 @@ Even been in a situation where you need to find a permission for a certain comma
 
 Maybe the documentation is outdated, or just doesn't contain the right info. Perhaps you want to debug an issue with players not having the right permissions, or are just interested in what plugins are checking for.
 
-The verbose system solves all!
+The verbose system allows you to monitor permission checks occurring in real time! 😄 
 
 ## How to use it
 The command usage is as follows:
@@ -15,7 +15,7 @@ The first argument enables/disables the system, and the second sets up the filte
 | `on`     | Enables the system, and will send you an alert in chat when the filter is matched. |
 | `record` | Same as "on", however you will not be notified via chat. |
 | `off`    | Just disables the system, and clears any matches from memory. |
-| `paste`  | Same as "off", but will also upload the first 500 results to GitHub, and provide you with a link. |
+| `paste`  | Same as "off", but will also upload the first 500 results to the web, and provide you with a link. |
 
 #### Filters
 The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
