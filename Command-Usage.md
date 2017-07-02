@@ -76,6 +76,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear)
+*  [/lp user \<user\> `editor`](#lp-user-user-editor)
 
 ### Group   (/lp group \<group\> ...)
 *  [/lp group \<group\> `info`](#lp-group-group-info)
@@ -88,6 +89,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
 *  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
 *  [/lp group \<group\> `clone` \<name of clone\>](#lp-group-group-clone)
+*  [/lp group \<group\> `editor`](#lp-group-group-editor)
 
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
 *  [`info`](#lp-usergroup-usergroup-permission-info)
@@ -344,7 +346,12 @@ ___
 Clears the user's permissions, parent groups and meta.
 
 ___
+#### `/lp user <user> editor`
+**Permission**: luckperms.user.editor
 
+Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take affect.
+
+___
 ### Group   (/lp group \<group\> ...)
 ___
 #### `/lp group <group> info`  
@@ -397,7 +404,12 @@ ___
 Makes an exact copy of the group under a different name.
 
 ___
+#### `/lp group <group> editor`
+**Permission**: luckperms.group.editor
 
+Opens a web interface to edit permissions for the specified group. Once done, a command will be given that you need to run for the changes to take affect.
+
+___
 ### Permission   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
 ___
 #### `/lp user/group <user|group> permission info`  
@@ -860,6 +872,7 @@ ___
 *  luckperms.user.promote
 *  luckperms.user.demote
 *  luckperms.user.clear
+*  luckperms.user.editor
 
 ### Group
 *  luckperms.group.info
@@ -897,6 +910,7 @@ ___
 *  luckperms.group.clear
 *  luckperms.group.rename
 *  luckperms.group.clone
+*  luckperms.group.editor
 
 ### Track
 *  luckperms.track.info
