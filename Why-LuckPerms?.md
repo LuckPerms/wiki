@@ -1,14 +1,14 @@
-### Yet another permissions plugin?
+## Yet another permissions plugin?
 Yep. I thought there was room for improvement among the plugins already out there.
 
 LuckPerms is an advanced permissions plugin, aiming to be a **fast**, **reliable** and **flexible** alternative to existing permission plugins. The project's main goals are centered around **high performance** and a wide feature set, filling the gaps of functionality and building upon existing features found in other plugins. LuckPerms also includes an extensive API for developers, and support for a variety of Minecraft server software & data storage options.
 
-### I've been using x plugin for years and it works great for me! Why should I bother switching?
+## I've been using x plugin for years and it works great for me! Why should I bother switching?
 Most of the other available permission plugins date back a number of years, and were created in the early Bukkit era. Whilst this may mean they're stable, it also means they're often abandoned by the original authors, and receive no updates, support or bug fixes.
 
 LuckPerms is still a growing and active resource, and I endeavour to reply to all bug reports, issues and feature requests in a timely manner.
 
-### Yeah but, x plugin works fine for me.
+## Yeah but, x plugin works fine for me.
 That's fine! I totally understand that mindset. I'm not trying to claim you absolutely *have* to use LP. There are lots of other viable options which may suit your needs better.
 
 ## Come on then, tell me, why should I use it?
