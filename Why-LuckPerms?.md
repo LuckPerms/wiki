@@ -1,3 +1,4 @@
+<!--- https://paste.lucko.me/HWn0fZKoJn -->
 ## Yet another permissions plugin?
 Yep. I thought there was room for improvement among the plugins already out there.
 
