@@ -94,6 +94,7 @@ This is by no means a definitive list. Anything that supports Vault also support
 ### BungeeCord
 * [gChat](https://github.com/lucko/gChat) (written by me :wink:)
 * [MultiChat](https://www.spigotmc.org/resources/multichat.26204/)
+* [BungeeChat](https://www.spigotmc.org/resources/bungee-chat.12592/)
 
 ### Sponge
 * [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
