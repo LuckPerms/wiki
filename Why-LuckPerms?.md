@@ -53,7 +53,7 @@ As well as the command interface, you can also use the web editor to make change
 
 It's super easy to use.
 
-[![](https://zippy.gfycat.com/MeanThatChinesecrocodilelizard.gif)](https://gfycat.com/MeanThatChinesecrocodilelizard)
+[![](https://giant.gfycat.com/MeanThatChinesecrocodilelizard.gif)](https://gfycat.com/MeanThatChinesecrocodilelizard)
 
 ### Action logging
 LuckPerms also makes a detailed log of all changes made to permissions. If you have a rogue staff member try to give themselves permissions, instead of trawling through the servers log file, you can simply search for any actions executed by them!
