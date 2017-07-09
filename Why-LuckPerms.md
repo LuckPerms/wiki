@@ -9,7 +9,7 @@ Most of the other available permission plugins date back a number of years, and 
 
 LuckPerms is still a growing and active resource, and I endeavour to reply to all bug reports, issues and feature requests in a timely manner.
 
-## Yeah but, x plugin works fine for me.
+## Yeah but I like x plugin because it does everything I need it to do.
 That's fine! I totally understand that mindset. I'm not trying to claim you absolutely *have* to use LP. There are lots of other viable options which may suit your needs better.
 
 ## Come on then, tell me, why should I use it?
