@@ -23,8 +23,8 @@ For the rest of this page, I'll focus on some of the new features LuckPerms has,
 ### Verbose
 LuckPerms has a verbose system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-![](https://zippy.gfycat.com/FearlessVelvetyBellfrog.webm)
-![](https://zippy.gfycat.com/DistortedMetallicLabradorretriever.webm)
+![](https://thumbs.gfycat.com/FearlessVelvetyBellfrog-size_restricted.gif)
+![](https://thumbs.gfycat.com/DistortedMetallicLabradorretriever-size_restricted.gif)
 
 You can also upload recordings to the web, for easier analysis and reading.
 [https://git.io/vQitM](https://git.io/vQitM)
