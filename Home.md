@@ -16,6 +16,11 @@ If you have any further questions that haven't been answered within this wiki, y
 * I am "Luck" on the SpigotMC and SpongePowered forums
 * Submit an issue [here on GitHub](https://github.com/lucko/LuckPerms/issues) (probably best if you're reporting a bug)
 
+### Translations
+Translated versions of this wiki can be found below.
+
+* [**Simplified Chinese**](https://github.com/PluginsCDTribe/LuckPerms/wiki) (thanks to PluginsCDTribe)
+
 ### Some useful links
 * [**Development Builds**](https://ci.lucko.me/job/LuckPerms)
 * [**Javadocs**](https://luckperms.lucko.me/javadocs/)
