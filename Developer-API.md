@@ -159,6 +159,17 @@ public class TestListener {
 ## Example Usage
 Below are some short examples which illustrate some basic API functions.
 
+### Checking if a player is in a group
+Checking for group membership can be done directly via hasPermission checks.
+
+```java
+public static boolean isPlayerInGroup(Player player, String group) {
+    return player.hasPermission("group." + group);
+}
+```
+
+However, remember that anyone with server operator status or `*` permissions will also have these permissions.
+
 ### Finding a players group
 If you just want to find out which group a player is in, I **highly** recommend the following method. (you don't even need to use the API!)
 
