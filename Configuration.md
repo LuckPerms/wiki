@@ -217,7 +217,7 @@ ___
 
 If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
 
-This system is documented in detail [here]().
+This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions).
 
 ##### Example
 ```yaml
