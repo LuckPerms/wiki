@@ -8,18 +8,18 @@ The extra checks can be broken down into 3 sections.
 
 ### Contents
 
-* [**Checks when a player modifies/views themselves or other users**]()
-* [- Modify self]()
-* [- Modify another player]()
-* [- View self]()
-* [- View another player]()
-* [**Checks when a player modifies/views a group**]()
-* [- Modify a group]()
-* [- View a group]()
-* [**Checks when a player makes changes in a specific context**]()
-* [- Change in the global context]()
-* [- Change in a specific set of contexts]()
-* [**Checks when a player makes changes with a set of specific arguments**]()
+* [**Checks when a player modifies/views themselves or other users**](#checks-when-a-player-modifiesviews-themselves-or-other-users)
+    * [Modify self](#modify-self)
+    * [Modify another player](#modify-another-player)
+    * [View self](#view-self)
+    * [View another player](#view-another-player)
+* [**Checks when a player modifies/views a group**](#checks-when-a-player-modifiesviews-a-group)
+    * [Modify a group](#modify-a-group)
+    * [View a group](#view-a-group)
+* [**Checks when a player makes changes in a specific context**](#checks-when-a-player-makes-changes-in-a-specific-context)
+    * [Change in the global context](#change-in-the-global-context)
+    * [Change in a specific set of contexts](#change-in-a-specific-set-of-contexts)
+* [**Checks when a player makes changes with a set of specific arguments**](#checks-when-a-player-makes-changes-with-a-set-of-specific-arguments)
 
 ## Checks when a player modifies/views themselves or other users
 
