@@ -21,6 +21,7 @@ Links to the default file for each platform are above. Please note that the conf
 * [`group-name-rewrite`](#group-name-rewrite)
 * [`temporary-add-behaviour`](#temporary-add-behaviour)
 * [`primary-group-calculation`](#primary-group-calculation)
+* [`argument-based-command-permissions`](#argument-based-command-permissions)
 
 ### Permission Calculation
 * [`apply-wildcards`](#apply-wildcards)
@@ -209,6 +210,18 @@ How should LuckPerms determine a users "primary" group. The default behaviour fo
 ##### Example
 ```yaml
 primary-group-calculation: stored
+```
+
+___
+# `argument-based-command-permissions`
+
+If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
+
+This system is documented in detail [here]().
+
+##### Example
+```yaml
+argument-based-command-permissions: true
 ```
 
 ___
