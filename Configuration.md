@@ -213,7 +213,7 @@ primary-group-calculation: stored
 ```
 
 ___
-# `argument-based-command-permissions`
+### `argument-based-command-permissions`
 
 If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
 
