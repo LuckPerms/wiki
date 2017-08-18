@@ -21,6 +21,7 @@
 * [**Prefix & Suffix Stacking**](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking)
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
+* [**Argument based command permissions**](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions)
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
