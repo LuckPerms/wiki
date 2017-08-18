@@ -1,8 +1,25 @@
-When enabled, LuckPerms will run extra permission checks when a player tries to modify or view permission data.
+This page documents the [`argument-based-command-permissions`](https://github.com/lucko/LuckPerms/wiki/Configuration#argument-based-command-permissions) configuration option.
 
-These permissions allow for finer control over what changes a player is able to make, including preventing them from granting specific groups, or making changes in certain contexts.
+When this option is enabled, LuckPerms will run extra permission checks when a player tries to modify or view permission data.
+
+These permissions allow for finer control over what changes a player is able to do, including preventing them from granting specific groups, or making changes in certain contexts.
 
 The extra checks can be broken down into 3 sections.
+
+### Contents
+
+* [**Checks when a player modifies/views themselves or other users**]()
+* [- Modify self]()
+* [- Modify another player]()
+* [- View self]()
+* [- View another player]()
+* [**Checks when a player modifies/views a group**]()
+* [- Modify a group]()
+* [- View a group]()
+* [**Checks when a player makes changes in a specific context**]()
+* [- Change in the global context]()
+* [- Change in a specific set of contexts]()
+* [**Checks when a player makes changes with a set of specific arguments**]()
 
 ## Checks when a player modifies/views themselves or other users
 
@@ -157,6 +174,3 @@ The arguments which are checked are outlined below.
 | meta unset        | key                   |
 | promote           | track.next-group      |
 | demote            | track.old-group       |
-
-
-
