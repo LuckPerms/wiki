@@ -131,7 +131,7 @@ When this functionality is used, LuckPerms will communicate and post data to the
 
 The editor page itself at https://lpedit.lucko.me is hosted by GitHub pages, and proxied via CloudFlare.
 
-I (Luck) do not host, control or every come into contact with any content.
+I (Luck) do not host, control or ever come into contact with any content.
 
 ### `Metrics`
 LuckPerms **does not** and never will report back to analytics services.
