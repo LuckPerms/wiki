@@ -28,6 +28,13 @@ Each respective software, along with it's homepage, usage in LuckPerms, licence,
 - Apache License 2.0 https://github.com/ben-manes/caffeine/blob/master/LICENSE
 - Maintained by Ben Manes https://github.com/ben-manes
 
+### `text`
+- https://github.com/KyoriPowered/text
+- Included in the plugin jar
+- Used for constructing text messages
+- MIT License https://github.com/KyoriPowered/text/blob/master/license.txt
+- Maintained by kashike/KyoriPowered https://github.com/KyoriPowered
+
 ### `MariaDB Java Driver`
 - https://github.com/MariaDB/mariadb-connector-j
 - Downloaded at runtime if needed
