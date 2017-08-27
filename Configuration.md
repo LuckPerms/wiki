@@ -603,3 +603,38 @@ redis:
   address: localhost
   password: 'passw0rd'
 ```
+
+## contexts.json
+The `contexts.json` file is found alongside the main LuckPerms configuration file, and allows you to set two things.
+
+### Static Contexts
+Static contexts are [contexts](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context) which never change, and are granted to all players on the server by default.
+
+LuckPerms provides one static context by default, called "server". This value is set using the `server` option in the main configuration file.
+
+For example, if in my network, I have 3 factions servers, each with distinct names. The in LP config of each server, I have the server names set to `factions1`, `factions2` and `factions3`. However, I want to grant a permission on all of the servers.
+
+To achieve this, on all of the factions servers, I can add a static context called `servertype` and set it to `factions`.
+```json
+{
+  "static-contexts": {
+  	"servertype": "factions"
+  },
+}
+```
+
+Then, I can use `/lp group default permission set some.permission true servertype=factions` to set a permission on all of the factions servers.
+
+
+### Default Contexts
+Default contexts are [contexts](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context) which are used by default in all commands executed on the server, if nothing is specifically specified.
+
+```json
+{
+  "default-contexts": {
+  	"server": "survival"
+  },
+}
+```
+
+With the above set, running `/lp user Luck permission set some.permission true` would set `some.permission` to true for me in the `server=survival` context.
