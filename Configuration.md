@@ -57,6 +57,8 @@ Links to the default file for each platform are above. Please note that the conf
 * [`sync-minutes`](#sync-minutes)
 * [`messaging-service`](#messaging-service)
 * [`auto-push-updates`](#auto-push-updates)
+* [`push-log-entries`](#push-log-entries)
+* [`broadcast-received-log-entries`](#broadcast-received-log-entries)
 * [`redis`](#redis)
 
 
@@ -565,6 +567,26 @@ If LuckPerms should automatically push updates after a change has been made with
 ##### Example
 ```yaml
 auto-push-updates: true
+```
+
+___
+### `push-log-entries`
+If LuckPerms should push logging entries to connected servers via the messaging service.
+
+##### Example
+```yaml
+push-log-entries: true
+```
+
+___
+### `broadcast-received-log-entries`
+If LuckPerms should broadcast received logging entries to players on this platform.
+
+If you have LuckPerms installed on your backend servers as well as a BungeeCord proxy, you should set this option to false on either your backends or your proxies, to avoid players being messaged twice about log entries.
+
+##### Example
+```yaml
+broadcast-received-log-entries: true
 ```
 
 ___
