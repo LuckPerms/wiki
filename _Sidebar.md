@@ -28,4 +28,4 @@
 
 ### Other
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
-* [**PlaceholderAPI**](https://github.com/lucko/LuckPerms/wiki/PlaceholderAPI)
+* [**Placeholders**](https://github.com/lucko/LuckPerms/wiki/Placeholders)
