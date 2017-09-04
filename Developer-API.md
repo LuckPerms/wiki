@@ -216,14 +216,13 @@ The CompletionStage API can be used to easily interact with the plugins Storage 
 ```java
 LuckPermsApi api = null; // See above for how to get the API instance.
 
-// load the user in from storage. we can specify "null" for their username,
-// since it's unknown to us.
-api.getStorage().loadUser(uuid, "null").thenComposeAsync(success -> {
+// load the user in from storage.
+api.getStorage().loadUser(uuid).thenComposeAsync(success -> {
     // loading the user failed, return straight away
     if (!success) {
         return CompletableFuture.completedFuture(false);
     }
-    
+
     // get the user instance, they're now loaded in memory.
     User user = api.getUser(uuid);
 
@@ -231,13 +230,8 @@ api.getStorage().loadUser(uuid, "null").thenComposeAsync(success -> {
     Node node = api.getNodeFactory().newBuilder(permission).setValue(true).build();
 
     // Set the permission, and return true if the user didn't already have it set.
-    try {
-        user.setPermission(node);
-        
-        // now we've set the permission, but still need to save the user data
-        // back to the storage.
-        
-        // first save the user
+    DataMutateResult result = user.setPermissionUnchecked(node);
+    if (result.asBoolean()) {
         return api.getStorage().saveUser(user)
                 .thenCompose(b -> {
                     // then cleanup their user instance so we don't create
@@ -245,12 +239,46 @@ api.getStorage().loadUser(uuid, "null").thenComposeAsync(success -> {
                     api.cleanupUser(user);
                     return CompletableFuture.completedFuture(b);
                 });
-        
-    } catch (ObjectAlreadyHasException e) {
+    } else {
         return CompletableFuture.completedFuture(false);
     }
-    
 }, api.getStorage().getAsyncExecutor());
+```
+
+### Checking a permission for an offline user
+```java
+public static boolean hasPermission(LuckPermsApi api, UUID uuid, String permission) {
+
+    // load the user in from storage.
+    return api.getStorage().loadUser(uuid).thenApplyAsync(success -> {
+        // loading the user failed, return straight away
+        if (!success) {
+            return false;
+        }
+
+        // get the user instance, they're now loaded in memory.
+        User user = api.getUser(uuid);
+        if (user == null) {
+            return false;
+        }
+
+        // Now get the users "Contexts". This is basically just data about the players current state.
+        // see more here: https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context
+        Contexts contexts = api.getContextForUser(user).orElse(null);
+
+        // the getContextForUser method will return null for offline users, so we have to specify
+        // it ourselves. we can just use the global context.
+        if (contexts == null) {
+            contexts = Contexts.global();
+        }
+
+        UserData data = user.getCachedData();
+        PermissionData permissionData = data.getPermissionData(contexts);
+
+        // run a permission check, and return the result
+        return permissionData.getPermissionValue(permission).asBoolean();
+    }, api.getStorage().getAsyncExecutor()).join();
+}
 ```
 
 ### Getting a players prefix
