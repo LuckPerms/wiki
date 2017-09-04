@@ -246,6 +246,9 @@ api.getStorage().loadUser(uuid).thenComposeAsync(success -> {
 ```
 
 ### Checking a permission for an offline user
+The below method will allow you to check an offline player for a permission. It also works for online users.
+
+Note that the method below is a blocking lookup, and should **only be used from an async task**.
 ```java
 public static boolean hasPermission(LuckPermsApi api, UUID uuid, String permission) {
 
