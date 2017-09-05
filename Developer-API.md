@@ -405,7 +405,7 @@ Once you have a `Contexts` instance, you can start using the `UserData` object. 
 The containing data is split into two separate sections, 'Permission' and 'Meta' data.
 ```java
 UserData cachedData = user.getCachedData();
-Contexts contexts = null;
+Contexts contexts = ...;
 
 PermissionData permissionData = cachedData.getPermissionData(contexts);
 MetaData metaData = cachedData.getMetaData(contexts);
