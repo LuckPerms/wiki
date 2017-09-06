@@ -89,8 +89,6 @@ However, **a large proportion** of the work LuckPerms does is multi threaded. Th
 
 Additionally, some API methods are not "main thread friendly", meaning if they are called from the main Minecraft Server thread, the server will lag. These methods are either marked accordingly in the JavaDocs, or return [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s.
 
-However, please be aware that some operations, (especially in the Storage class) are blocking. [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s are used in these situations to prevent accidental issues whereby through poor handling, the main server thread waits for I/O to execute. Care should be taken to specify the correct executor when adding callbacks to these futures.
-
 ### General design
 The whole API centres around one core interface, `LuckPermsApi`. From here, you can:
 
