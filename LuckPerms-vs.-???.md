@@ -1,17 +1,6 @@
-:white_check_mark:
-
-:red_circle:
-
-:x:
-
-:heavy_check_mark:
-
-:grey_question:
-
-:o:
-
-✔️
-
-❌
-
-❔
+| | PermissionsEx | zPermissions | bPermissions | GroupManager | PowerfulPerms | PermissionsBukkit | BungeePerms | LuckPerms |
+|--|---------------|--------------|--------------|--------------|---------------|-------------------|-------------|-----------|
+| Per-world permissions | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| Per-server permissions | ❌ | ❌ | ❌ | ❌ | ✔️ | ❌ | ✔️ | ✔️ |
+| Per-world groups | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| Per-server groups | ❌ | ❌ | ❌ | ❌ | ✔️ | ❌ | ✔️ | ✔️ |
