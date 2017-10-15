@@ -1,26 +1,28 @@
 LuckPerms has a few placeholders available for use in supported plugins.
 
-## Usage
-### PlaceholderAPI
+# Usage
+## PlaceholderAPI
 To use the LuckPerms placeholders in plugins which support clip's [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/), you need to install the LuckPerms expansion.
 
-#### Automatic install
-To install the latest version of the expansion automagically from clip's ecloud system, simply run the following commands.
+### Automatic install
+* To install the latest version of the expansion automagically from clip's ecloud system, simply run the following commands.
+  * `/papi ecloud download LuckPerms`
+  * `/papi reload`
 
-##### `/papi ecloud download LuckPerms`
-##### `/papi reload`
+* You will need to be opped in order to run these commands (or you can just run them from console).
 
-You will need to be opped in order to run these commands (or you can just run them from console).
+### Manual install
+* To manually install the latest version of the expansion, you need to...
+* Download `Expansion-LuckPerms.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and ...
+* Place it in `/plugins/PlaceholderAPI/expansions/`.
 
-#### Manual install
-To manually install the latest version of the expansion, you need to download `Expansion-LuckPerms.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and place it in `/plugins/PlaceholderAPI/expansions/`.
-
-### MVdWPlaceholderAPI
+## MVdWPlaceholderAPI
 To use the LuckPerms placeholders in plugins which support Maximvdw's [MVdWPlaceholderAPI](https://www.spigotmc.org/resources/mvdwplaceholderapi.11182/), you need to install the LuckPerms placeholder hook plugin.
 
-Download `LuckPermsMVdWHook.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and place it in your `/plugins/` folder.
+* Download `LuckPermsMVdWHook.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and ...
+* Place it in your `/plugins/` folder.
 
-## Placeholders
+# Placeholders
 ### `%luckperms_group_name%`
 **Description:** Returns the name of the players primary group    
 **Example:** n/a
