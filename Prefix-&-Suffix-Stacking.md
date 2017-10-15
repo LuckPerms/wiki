@@ -34,6 +34,8 @@ The following elements are allowed.
 | `lowest` | Same as above, except takes the one with the lowest weight. |
 | `highest_own` | Selects the value with the highest weight, but will not accept any inherited values. |
 | `lowest_own` | Same as above, except takes the value with the lowest weight. |
+| `highest_inherited` | Selects the value with the highest weight, but will only accept inherited values. |
+| `lowest_inherited` | Same as above, except takes the value with the lowest weight. |
 | `highest_on_track_<track>` | Selects the value with the highest weight, but only if the value was inherited from a group on the given track. |
 | `lowest_on_track_<track>` | Same as above, except takes the value with the lowest weight. |
 | `highest_not_on_track_<track>` | Selects the value with the highest weight, but only if the value was inherited from a group not on the given track. |
