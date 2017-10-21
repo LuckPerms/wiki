@@ -26,8 +26,12 @@ storage-method: h2
 storage-method: sqlite
 ```
 
-## JSON / YAML / HOCON
-JSON, YAML and HOCON options store data in readable and editable text files. YAML is stored with a `.yml` extension, JSON is stored with a `.json` extension and HOCON is stored with a `.conf` extension.   
+## YAML / JSON / HOCON
+YAML, JSON and HOCON options store data in readable and editable text files.
+
+* YAML is stored with a `.yml` extension
+* JSON is stored with a `.json` extension
+* HOCON is stored with a `.conf` extension
    
 The layouts inside of these types are very similar, and only differ in syntax.
 
@@ -67,7 +71,7 @@ permissions:
 ```
 
 ##### Example HOCON file
-```hocon
+```conf
 uuid=c1d60c50-70b5-4722-8057-87767557e50d
 name=Luck
 primary-group=default
