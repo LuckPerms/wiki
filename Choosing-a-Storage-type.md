@@ -3,7 +3,7 @@ LuckPerms comes with a variety of Storage options to choose from.
 The storage option can be modified in the `config.yml` or `luckperms.conf` file.
 ```yaml
 # Which storage method the plugin should use.
-# Currently supported: mysql, postgresql, sqlite, h2, json, yaml, mongodb
+# Currently supported: mysql, postgresql, sqlite, h2, json, yaml, hocon, mongodb
 # Fill out connection info below if you're using MySQL, PostgreSQL or MongoDB
 storage-method: h2
 ```
@@ -71,7 +71,7 @@ permissions:
 ```
 
 ##### Example HOCON file
-```conf
+```config
 uuid=c1d60c50-70b5-4722-8057-87767557e50d
 name=Luck
 primary-group=default
