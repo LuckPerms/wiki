@@ -26,8 +26,8 @@ storage-method: h2
 storage-method: sqlite
 ```
 
-## JSON / YAML
-JSON and YAML options store data in readable and editable text files. YAML is stored with the `.yml` extension, whereas JSON is stored with `.json`.   
+## JSON / YAML / HOCON
+JSON, YAML and HOCON options store data in readable and editable text files. YAML is stored with a `.yml` extension, JSON is stored with a `.json` extension and HOCON is stored with a `.conf` extension.   
    
 The layouts inside of these types are very similar, and only differ in syntax.
 
@@ -37,10 +37,8 @@ uuid: c1d60c50-70b5-4722-8057-87767557e50d
 name: Luck
 primary-group: default
 permissions:
-- group.default:
-    value: true
+- group.default
 - test.permission:
-    value: true
     server: factions
 - other.test.permission:
     value: false
@@ -53,25 +51,40 @@ permissions:
   "name": "Luck",
   "primaryGroup": "default",
   "permissions": [
-    {
-      "group.default": {
-        "value": true
-      }
-    },
+    "group.default",
     {
       "test.permission": {
-        "value": true,
         "server": "factions"
       }
     },
     {
       "other.test.permission": {
-        "value": false,
-        "server": "test"
+        "value": false
       }
     }
   ]
 }
+```
+
+##### Example HOCON file
+```hocon
+uuid=c1d60c50-70b5-4722-8057-87767557e50d
+name=Luck
+primary-group=default
+permissions=[
+  group.default,
+  {
+    test.permission {
+      server=factions
+    }
+  },
+  {
+    other.test.permission {
+      value=false
+      server=test
+    }
+  }
+]
 ```
 
 To use either of these options, set:
@@ -79,6 +92,8 @@ To use either of these options, set:
 storage-method: yaml
 # or
 storage-method: json
+# or
+storage-method: hocon
 ```
 
 ## MySQL / PostgreSQL
