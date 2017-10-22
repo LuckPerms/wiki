@@ -67,6 +67,9 @@ Will delete any permission assigned to a user where the server starts with "hub"
 #### `/lp bulkupdate all delete "permission == essentials.fly"`
 Will delete any permission entry where the permission is equal to "essentials.fly"
 
+#### `/lp bulkupdate all delete "permission == group.vip"`
+Will delete all memberships of the VIP group.
+
 #### `/lp bulkupdate all update server global "server == factions"`
 Will change any server entries from "factions" to "global"
 
