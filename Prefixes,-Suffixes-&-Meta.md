@@ -83,7 +83,8 @@ LuckPerms has support for **any** chat formatting plugin which can read data fro
 If you're having issues with a plugin not picking up data correctly, please make sure the output of `/vault-info` shows that data is being read from LuckPerms.
 
 Some popular chat formatting plugins which work with Vault include:
-* [EssentialsXChat](https://ci.drtshock.net/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!)
+* [VaultChatFormatter](https://www.spigotmc.org/resources/vaultchatformatter.49016/) - written by me
+* [EssentialsXChat](https://ci.akpmakes.tech/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!)
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - you can use either the Vault or LuckPerms placeholders.
 * [ChatControl](https://www.spigotmc.org/resources/10258/) - also supports a bunch of other stuff to help manage the chat.
@@ -92,9 +93,9 @@ This is by no means a definitive list. Anything that supports Vault also support
 
 
 ### BungeeCord
-* [gChat](https://github.com/lucko/gChat) (written by me :wink:)
-* [MultiChat](https://www.spigotmc.org/resources/multichat.26204/)
 * [BungeeChat](https://www.spigotmc.org/resources/bungee-chat.12592/)
+* [gChat](https://github.com/lucko/gChat) - written by me
+* [MultiChat](https://www.spigotmc.org/resources/multichat.26204/)
 
 ### Sponge
 * [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
