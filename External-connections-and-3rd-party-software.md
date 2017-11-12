@@ -1,11 +1,11 @@
-In order to deliver it's functionality, LuckPerms will under some circumstances make connections with and communicate with external services outside of the local server.
+In order to deliver its functionality, LuckPerms will under some circumstances make connections with and communicate with external services outside of the local server.
 
 A number of 3rd party libraries are also used by the plugin.
 
 
 ## 3rd party software
 LuckPerms utilises some software written by 3rd parties to provide it's functionality.   
-Each respective software, along with it's homepage, usage in LuckPerms, licence, and maintainer are documented below.
+Each respective software, along with its homepage, usage in LuckPerms, licence, and maintainer are documented below.
 
 ### `Google Guava`
 - https://github.com/google/guava
@@ -90,6 +90,12 @@ Each respective software, along with it's homepage, usage in LuckPerms, licence,
 - Used by Hikari for logging.
 - MIT License https://github.com/qos-ch/slf4j/blob/master/LICENSE.txt
 - Maintained by SLF4J https://www.slf4j.org/
+
+### `configurate`
+- https://github.com/zml2008/configurate
+- Downloaded at runtime if needed
+- Used to interact with flatfile storage types (yaml, json and hocon)
+- Maintained by zml https://github.com/zml2008
 
 ### `Jedis`
 - https://github.com/xetorthio/jedis
