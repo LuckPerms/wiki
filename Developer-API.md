@@ -344,7 +344,7 @@ public boolean addPermission(User user, String permission) {
     Node node = api.getNodeFactory().newBuilder(permission).build();
 
     // set the permission
-    DataMutateResult result = user.setPermissionUnchecked(node);
+    DataMutateResult result = user.setPermission(node);
 
     // wasn't successful.
     // they most likely already have the permission
@@ -396,6 +396,8 @@ Optional<Contexts> contexts = api.getContextForUser(user);
 ```
 but be aware this will only return an instance for Users where the corresponding player is online.
 
+You can fallback to the platforms static content instance using `ContextManager#getStaticContexts`.
+
 Finally, as a last result, you can either construct your own custom `Contexts` instance using your own values, or use `Contexts.global()` or `Contexts.allowAll()`.
 
 Once you have a `Contexts` instance, you can start using the `UserData` object. 😄 
@@ -428,6 +430,8 @@ String prefix = metaData.getPrefix();
 String metaResult = metaData.getMeta().getOrDefault("some-key", "default-value");
 ```
 
+Since v4.0, these queries and lookups can also be performed for groups! The methods are identical for performing group based checks.
+
 ### Searching for a permission
 You can use Java 8 streams to easily filter and return permissions applied to a user.
 ```java
@@ -451,3 +455,4 @@ This means that API versions do not have a patch number (as no API changes are m
 ### Changelog
 * Version 2.x remained stable for a number of months, without any backwards incompatible changes. However, a number of methods became deprecated in the later versions, and the event API really needed a rewrite.
 * Version 3.x introduced the following backwards incompatible changes. https://gist.github.com/lucko/fdf6ae4b2d9e466d8103dd9c68e5db9e
+* Version 4.x introduces the following backwards incompatible changes. https://gist.github.com/lucko/34c5c3c52ad80f8541395a096a937e91
