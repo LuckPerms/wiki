@@ -27,7 +27,7 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
-        <version>3.3</version>
+        <version>4.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    compile ("me.lucko.luckperms:luckperms-api:3.3")
+    compile ("me.lucko.luckperms:luckperms-api:4.0")
 }
 ```
 
