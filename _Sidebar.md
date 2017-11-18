@@ -7,9 +7,11 @@
 * [**Usage**](https://github.com/lucko/LuckPerms/wiki/Usage)
 * [**Configuration**](https://github.com/lucko/LuckPerms/wiki/Configuration)
 * [**Command Usage**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
+* [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
+
+### Migration
 * [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
-* [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 
 ### Features
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
