@@ -34,3 +34,46 @@ You should also take steps to ensure that your network is correctly firewalled, 
 
 ### LilyPad
 As per the [LilyPad setup guide](http://www.lilypadmc.org/threads/connecting-your-bukkit-servers.13/), you should ensure that the `LilyPad-Connect` plugin is installed and correctly configured on your backend server.
+
+___
+
+## Installing LuckPerms across your network
+Installing LP on a network is fairly easy, however, there are a number of configuration options which need to be changed as you setup each instance.
+
+The more general [Installation](https://github.com/lucko/LuckPerms/wiki/Setup) guide provides details about how to install LuckPerms on a single server instance. This should be followed for each server in your network. (in most cases it's as simple as adding the plugin jar to the plugins/mods folder)
+
+Once LuckPerms has been installed, you need to stop the server, open the main configuration file, and pay particular attention to the following options:
+
+### [`server`](https://github.com/lucko/LuckPerms/wiki/Configuration#server)
+
+If you want to set permissions or assign group inheritances on a per server basis within your setup, you'll need to change the value of `server` in your configuration file. (this is conveniently located right at the top of the file! 😄)
+
+This value is used to define a "server" context for all players when they're connected to the instance.
+
+More information about defining server and world specific permissions can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup) and [here](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context).
+
+### [`storage-method`](https://github.com/lucko/LuckPerms/wiki/Configuration#storage-method)
+
+As mentioned at the top of this page, if you want data to sync between instances, then all of your LuckPerms instances need to connect to the same database. 
+
+This means that `storage-method` should be set to 'mysql', 'mariadb', 'postgresql' or 'mongodb'. Remember to fill out your database connection info when you change these options!
+
+### [`messaging-service`](https://github.com/lucko/LuckPerms/wiki/Configuration#messaging-service)
+
+The "Messaging Service" is a feature within LuckPerms which allows servers to notify other servers within the network whenever changes are made. It also allows log entries to be dispatched across the network.
+
+* If you're running a small network with one BungeeCord proxy, then you should set this option to `bungee`.
+* If you're running a LilyPad network, set this to `lilypad`.
+* If you're running a network with more than one BungeeCord proxy, then it is advisable to install a Redis server (if you're running a network with more than one proxy, I'll assume you already know how to do this!), and set this option to `redis`. Remember to fill out your Redis credentials after changing this option!
+
+___
+
+## The BungeeCord version of LuckPerms
+A common misconception with the BungeeCord version is that it's a replacement for installing LuckPerms on your backend Spigot/Sponge servers. This is untrue.
+
+When LuckPerms is installed on a BungeeCord proxy, it does two things:
+
+* It handles permissions checks made by **BungeeCord plugins**. It does *not* intercept or handle permission checks made by plugins on the backend server.
+* It forwards update notifications and log messages around the network when `messaging-service` is set to 'bungee'.
+
+This means that if you want LuckPerms to respond to permission checks on your backend Spigot or Sponge server, you need to install it there too, even if you have it on your proxy.
