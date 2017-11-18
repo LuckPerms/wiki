@@ -16,11 +16,14 @@ Links to the default file for each platform are above. Please note that the conf
 * [`apply-global-groups`](#apply-global-groups)
 * [`apply-global-world-groups`](#apply-global-world-groups)
 * [`use-server-uuids`](#use-server-uuids)
+* [`use-server-uuid-cache`](#use-server-uuid-cache)
+* [`allow-invalid-usernames`](#allow-invalid-usernames)
+* [`debug-logins`](#debug-logins)
 * [`log-notify`](#log-notify)
 * [`world-rewrite`](#world-rewrite)
-* [`group-name-rewrite`](#group-name-rewrite)
 * [`temporary-add-behaviour`](#temporary-add-behaviour)
 * [`primary-group-calculation`](#primary-group-calculation)
+* [`prevent-primary-group-removal`](#prevent-primary-group-removal)
 * [`argument-based-command-permissions`](#argument-based-command-permissions)
 
 ### Permission Calculation
@@ -152,6 +155,50 @@ use-server-uuids: true
 ```
 
 ___
+### `use-server-uuid-cache`
+
+If the servers own UUID cache/lookup facility should be used when there is no record for a player in the LuckPerms cache.
+
+When this setting is disabled, LP only uses its own cache. 
+
+##### Example
+```yaml
+use-server-uuid-cache: false
+```
+
+___
+### `allow-invalid-usernames`
+
+If set to true, LuckPerms will allow usernames with non alphanumeric characters.
+
+Note that due to the design of the storage implementation, usernames must still be 16 characters or less.
+
+##### Example
+```yaml
+allow-invalid-usernames: false
+```
+
+___
+### `debug-logins`
+
+If LuckPerms should produce extra logging output when it handles logins.
+
+Useful if you're having issues with UUID forwarding or data not being loaded.
+
+The debug messages look like this:
+```
+[INFO]: [LP] Processing pre-login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
+[INFO]: UUID of player Luck is c1d60c50-70b5-4722-8057-87767557e50d
+[INFO]: [LP] Processing login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
+[INFO]: Luck[/xxx:xxx] logged in with entity id xxx at ([xxx]x, x, x)
+```
+
+##### Example
+```yaml
+debug-logins: false
+```
+
+___
 ### `log-notify`
 
 If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to recieve the notification. 
@@ -173,17 +220,6 @@ Allows you to set "aliases" for the worlds sent forward for context calculation.
 world-rewrite:
   world_nether: world
   world_the_end: world
-```
-
-___
-### `group-name-rewrite`
-
-Allows you to set "aliases" for group names. These are purely display names, the actual underlying name of the group does not change. Only the output in commands/messages are affected.
-
-##### Example
-```yaml
-group-name-rewrite:
-  default: Member
 ```
 
 ___
@@ -212,6 +248,16 @@ How should LuckPerms determine a users "primary" group. The default behaviour fo
 ##### Example
 ```yaml
 primary-group-calculation: stored
+```
+
+___
+### `prevent-primary-group-removal`
+
+If set to false, the plugin will allow a user's primary group to be removed with the `parent remove` command, and will set their primary group back to default.
+
+##### Example
+```yaml
+prevent-primary-group-removal: false
 ```
 
 ___
@@ -445,7 +491,7 @@ Which storage method the plugin should use.
 
 See [here](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) for a full list of supported types.
 
-**Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `mongodb`
+**Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `hocon`, `mongodb`
 
 If your MySQL server supports it, the `mariadb` option is preferred over `mysql`. `h2` is also generally preferred over `sqlite`.
 
@@ -512,16 +558,19 @@ data:
 
 ___
 ### `pool-size`
-The size of the MySQL connection pool.
 
-By default this option is set to `10`, which should be fine for most servers. Only change this option if you know what you're doing.
+These settings apply to the MySQL connection pool. The default values will be suitable for the majority of users. Do not change these settings unless you know what you're doing!
 
-See [here](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing) for more details about pool sizing.
+Sets the maximum size of the MySQL connection pool. Basically this value will determine the maximum number of actual
+connections to the database backend. More information about determining the size of connection pools can be found here:
+
+https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing
 
 ##### Example
 ```yaml
 data:
-  pool-size: 10 # The size of the MySQL connection pool.
+  pool-settings:
+    maximum-pool-size: 10
 ```
 
 ___
