@@ -7,25 +7,32 @@
 5. Read through the config file, and change the options to suit your server, especially taking note of the **Storage** settings.
 6. Start your server again.
 
-You can change a number of settings in the config file. The file has detailed annotations that should make it clear what each option does.
+## Requirements
+LuckPerms has a few requirements. The *vast* majority of servers will meet these requirements already.
 
-### Requirements
-LuckPerms has only one requirement.
+#### tl;dr
+* You need Java 8 or higher
+* Your server needs access to the internet the first time you load the plugin
 
-* **Java 8**
+### Java 8
+Your server must be running **Java 8** or higher. LuckPerms does not work on older versions of Java.
 
-The only requirement is that you must be using **Java 8**. LuckPerms will not work on older versions of Java.
+Most MC shared hosting companies have updated by now, but if your provider still doesn't run Java 8, ask them nicely to update. If you control your own server, the update process is very simple. There are plenty of guides available online.
 
-Most hosts have updated by now, but if your provider still doesn't run Java 8, ask them nicely to update.
+### Internet Connection
+LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software#external-services).
 
-If you control your own server, shame on you for not updating yet! The process is simple, there's tons of guides online if you're struggling to do it. It's not good to be running outdated software. :wink:
+If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server.
 
-### Older Bukkit versions
-If you are getting errors related to "NoSuchMethod" or "ClassNotFound", the likelihood is you're using an older Bukkit version. Before reporting it as an issue to me, please first try using the "Bukkit-Legacy" version found on the "Development Builds" download page.
+### CraftBukkit and Offline Mode
+If your server is using CraftBukkit and running in Offline or Cracked mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541). 
 
-### Switching storage type
-The default storage type for LuckPerms is a **H2 database**. All of your data will be stored inside of the `luckperms.db.mv.db` file in the LuckPerms folder. (either `/plugins/LuckPerms/` or `/luckperms/`)
+Your options are:
 
-This format is **not readable** using a standard text editor. If you want to be able to manually read/edit the LuckPerms data, then you need to switch to **YAML or JSON** storage, by modifying the options in the `config.yml` file.
+1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/PaperSpigot/) [recommended]
+2. Enable online mode
 
-[**Click here for more info on Storage Types**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
+### Older MC versions
+The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
+
+A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPerms/), under "Bukkit-Legacy".
