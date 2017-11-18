@@ -14,16 +14,19 @@ LuckPerms has a few requirements. The *vast* majority of servers will meet these
 * You need Java 8 or higher
 * Your server needs access to the internet the first time you load the plugin
 
+---
 ### Java 8
 Your server must be running **Java 8** or higher. LuckPerms does not work on older versions of Java.
 
 Most MC shared hosting companies have updated by now, but if your provider still doesn't run Java 8, ask them nicely to update. If you control your own server, the update process is very simple. There are plenty of guides available online.
 
+---
 ### Internet Connection
 LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software#external-services).
 
 If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server.
 
+---
 ### CraftBukkit and Offline Mode
 If your server is using CraftBukkit and running in Offline or Cracked mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541). 
 
@@ -32,6 +35,7 @@ Your options are:
 1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/PaperSpigot/) [recommended]
 2. Enable online mode
 
+---
 ### Older MC versions
 The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
 
