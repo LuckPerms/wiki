@@ -5,6 +5,7 @@
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
 * [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
 * [**Usage**](https://github.com/lucko/LuckPerms/wiki/Usage)
+* [**Network Installation**](https://github.com/lucko/LuckPerms/wiki/Network-Installation)
 * [**Configuration**](https://github.com/lucko/LuckPerms/wiki/Configuration)
 * [**Command Usage**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
