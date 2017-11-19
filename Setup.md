@@ -40,3 +40,16 @@ Your options are:
 The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
 
 A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPerms/), under "Bukkit-Legacy".
+
+If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encounter errors when trying to load LuckPerms. This is **not** a LuckPerms issue - but rather due to the "hacky" nature of these server solutions.
+
+These issues have been reported to the respective projects, however none are currently being maintained, so this issue will (most likely) never be fixed. In the meantime, you can hack around these problems using the steps outlined below.
+
+(I offer absolutely **no support** for these fixes.)
+
+1. Navigate to libraries\net\md-5\SpecialSource\1.7-SNAPSHOT folder
+2. Delete the SpecialSource-1.7-SNAPSHOT.jar jar file
+3. Download SpecialSource v1.7.4 from `http://central.maven.org/maven2/net/md-5/SpecialSource/1.7.4/SpecialSource-1.7.4.jar`
+4. Copy the jar file to the libraries\net\md-5\SpecialSource\1.7-SNAPSHOT folder
+5. Rename the jar file you just copied to SpecialSource-1.7-SNAPSHOT.jar
+6. Start up server. If it stops immediately, you have renamed the SpecialSource wrong.
