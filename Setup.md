@@ -47,9 +47,9 @@ These issues have been reported to the respective projects, however none are cur
 
 (I offer absolutely **no support** for these fixes.)
 
-1. Navigate to libraries\net\md-5\SpecialSource\1.7-SNAPSHOT folder
-2. Delete the SpecialSource-1.7-SNAPSHOT.jar jar file
+1. Navigate to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
+2. Delete the `SpecialSource-1.7-SNAPSHOT.jar` file
 3. Download SpecialSource v1.7.4 from `http://central.maven.org/maven2/net/md-5/SpecialSource/1.7.4/SpecialSource-1.7.4.jar`
-4. Copy the jar file to the libraries\net\md-5\SpecialSource\1.7-SNAPSHOT folder
-5. Rename the jar file you just copied to SpecialSource-1.7-SNAPSHOT.jar
+4. Copy the jar file to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
+5. Rename the jar file you just copied to `SpecialSource-1.7-SNAPSHOT.jar`
 6. Start up server. If it stops immediately, you have renamed the SpecialSource wrong.
