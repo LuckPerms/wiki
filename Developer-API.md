@@ -6,23 +6,15 @@ Most other permissions plugins either don't have APIs, have bad APIs, or have AP
 LuckPerms follows Semantic Versioning, meaning whenever a non-backwards compatible API change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
 ## How to use the API in your project
-The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
+The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms). The API code can be found in the `api` module within the LuckPerms repository here on GitHub.
 
-My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me/). The repository you need for your build scripts is [https://repo.lucko.me/](https://repo.lucko.me/).
+Javadocs are can be viewed online [**here**](https://javadoc.io/doc/me.lucko.luckperms/luckperms-api/).
 
-#### Other useful links
-* [JavaDocs](https://luckperms.lucko.me/javadocs/)
-* [CI Server](https://ci.lucko.me/job/LuckPerms/)
+The LuckPerms API is published to the [Maven Central](http://central.sonatype.org/) repository. This means that you do not need to reference a 3rd party repository in order to depend on the API.
 
 ### Maven
+If you're using Maven, simply add this to the `dependencies` section of your POM.
 ````xml
-<repositories>
-    <repository>
-        <id>luck-repo</id>
-        <url>https://repo.lucko.me/</url>
-    </repository>
-</repositories>
-
 <dependencies>
     <dependency>
         <groupId>me.lucko.luckperms</groupId>
@@ -34,18 +26,19 @@ My Nexus Server can be found at [https://nexus.lucko.me/](https://nexus.lucko.me
 ````
 
 ### Gradle
+If you're using Gradle, you need to add these lines to your build script.
 ```gradle
-repositories {
-    maven {
-        name "luck-repo"
-        url "https://repo.lucko.me/"
-    }
-}
-
 dependencies {
     compile ("me.lucko.luckperms:luckperms-api:4.0")
 }
 ```
+
+### Manual
+If you want to manually add the API to your classpath, you can obtain the jar by:
+
+1. Navigating to [`https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/)
+2. Selecting the version you wish to use
+3. Downloading the jar titled `luckperms-api-x.x.jar`
 
 ## Usage Instructions
 
