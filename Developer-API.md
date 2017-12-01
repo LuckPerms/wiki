@@ -356,9 +356,7 @@ public boolean addPermission(User user, String permission) {
                 System.out.println("Successfully set permission!");
 
                 // refresh the user's permissions, so the change is "live"
-                // this method is blocking, but it's fine, because this callback is
-                // ran async.
-                user.refreshPermissions();
+                user.refreshCachedData();
 
             }, api.getStorage().getAsyncExecutor());
 
