@@ -28,7 +28,16 @@ In the `spigot.yml` file on each of your backend Spigot servers, you need to set
 bungeecord: true
 ```
 
-After changing these settings, you need to fully restart the Spigot servers and BungeeCord proxy.
+In the `config/sponge/global.conf` file on each of your backend Sponge servers, you need to set
+```hocon
+sponge {
+    bungeecord {
+        ip-forwarding=true
+    }
+}
+```
+
+After changing these settings, you need to fully restart the Spigot/Sponge servers and BungeeCord proxy.
 
 You should also take steps to ensure that your network is correctly firewalled, to ensure malicious users cannot spoof connections to your backend servers. A guide on how to do this is provided [here](https://www.spigotmc.org/wiki/firewall-guide/) by SpigotMC.
 
