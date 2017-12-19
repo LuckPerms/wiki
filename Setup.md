@@ -53,3 +53,21 @@ These issues have been reported to the respective projects, however none are cur
 4. Copy the jar file to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
 5. Rename the jar file you just copied to `SpecialSource-1.7-SNAPSHOT.jar`
 6. Start up server. If it stops immediately, you have renamed the SpecialSource wrong.
+
+---
+### Essentials
+If you're using the "Essentials" bukkit plugin on your server, you may have to perform some extra steps to get it to play nicely with LuckPerms.
+
+#### If you want Essentials to read prefix, suffix & group data from LuckPerms...
+You will need to update to **EssentialsX** - an updated version of the original Essentials plugin. The original maintainer of Essentials stopped working on the project in 2014 & recommends EssentialsX as a replacement.
+
+EssentialsX can be found here: [[GitHub]](https://github.com/EssentialsX/Essentials) [[Download]](http://ci.ender.zone/job/EssentialsX/)
+
+If you want to use LuckPerms prefix/suffix data within Essentials, you also need to install [Vault](https://www.spigotmc.org/resources/vault.34315/).
+
+#### If you don't want Essentials to read prefix, suffix & group data from LuckPerms, but still want LuckPerms to handle permission checks from Essentials...
+You either need to update to EssentialsX (as detailed above) or...
+
+Delete the `player-commands` section of the Essentials config.
+
+When Essentials cannot detect a "known" permission system (it doesn't recognise LuckPerms!) - it falls back to it's [own config based permission system](https://github.com/essentials/Essentials/blob/2.x/Essentials/src/config.yml#L137-L142) for Essentials commands.
