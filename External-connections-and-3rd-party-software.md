@@ -112,10 +112,12 @@ In order to deliver it's functionality, LuckPerms will under some circumstances 
 The dependencies outlined above where stated, are downloaded from the following
 locations when LuckPerms first loads. The downloaded binaries are cached locally.
 
-On subsequent startups, if the cache files are intact, no communications are attempted.
-
 - https://repo1.maven.org/maven2/
 - https://github.com/lucko/jedis/releases/
+
+On subsequent startups, if the cache files are intact, no communications are attempted.
+
+When downloaded, the binaries are hashed and compared with expected checksums to validate the integrity of the file. This prevents malicious code from being executed in the event that the download servers become compromised.
 
 ### `Verbose / Tree pastebin functionality`
 LuckPerms includes functionality which allows for data to be viewed inside of
@@ -126,8 +128,8 @@ https://help.github.com/articles/about-gists/#secret-gists
 
 When these features are used, LuckPerms will communicate and post data to the following endpoints.
 
-- https://api.github.com/gists/
-- https://git.io/
+- https://api.github.com/gists/ (used to create gists)
+- https://git.io/ (used to shorten the gist's url)
 
 ### `Editor functionality`
 LuckPerms includes functionality which allows for permission data to be viewed inside of
@@ -138,13 +140,15 @@ https://help.github.com/articles/about-gists/#secret-gists
 
 When this functionality is used, LuckPerms will communicate and post data to the following endpoints.
 
-- https://api.github.com/gists/
-- https://gist.githubusercontent.com/
+- https://api.github.com/gists/ (used to create & read gists)
+- https://gist.githubusercontent.com/ (used to read the content of a given gist)
 
 
-The editor page itself at https://lpedit.lucko.me is hosted by GitHub pages, and proxied via CloudFlare.
+The editor page itself at https://lpedit.lucko.me is hosted by GitHub pages, and proxied via CloudFlare. The server itself never attempts any communication with the site. Communication is performed using isloated data payloads hosted by GitHub Gist.
 
-I (Luck) do not host, control or ever come into contact with any content.
+I (Luck) do not host, control or ever come into contact with any uploaded content.
 
-### `Metrics`
-LuckPerms **does not** and never will report back to analytics services.
+### `Metrics and auto-updaters`
+
+* LuckPerms **does not** and never will report back to analytics or monitoring services.
+* LuckPerms **does not** and never will automatically check for updates. 
