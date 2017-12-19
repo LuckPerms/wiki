@@ -33,4 +33,4 @@
 ### Other
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
 * [**Placeholders**](https://github.com/lucko/LuckPerms/wiki/Placeholders)
-* [**3rd party software & external communications**](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software)
+* [**External connections & 3rd party software**](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software)
