@@ -12,7 +12,8 @@ The basics are covered in detail in the [Usage](https://github.com/lucko/LuckPer
 If you have any further questions that haven't been answered within this wiki, you can contact me in a number of ways.
 
 * [Discord support server](https://discord.gg/W3FzxHA) (even if I'm not around, there's lots of other people here who can help!)
-* I am "Luck" on irc.esper.net, irc.spi.gt and chat.freenode.net
+* I am "Luck" on irc.esper.net, irc.spi.gt and chat.freenode.net 
+* I have a channel `#luckperms` on Esper or SpigotMC if IRC is your communication platform of choice :)
 * I am "Luck" on the SpigotMC and SpongePowered forums
 * Submit an issue [here on GitHub](https://github.com/lucko/LuckPerms/issues) (probably best if you're reporting a bug)
 
