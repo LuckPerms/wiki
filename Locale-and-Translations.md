@@ -6,12 +6,12 @@ Edit the messages in the file to your liking, and then restart your server.
 
 
 ## Translations
-* [**en_US** - English](https://github.com/lucko/LuckPerms/blob/master/.locale/en_US.yml)
-* [**es_ES** - Spanish](https://github.com/lucko/LuckPerms/blob/master/.locale/es_ES.yml)
-* [**hu_HU** - Hungarian](https://github.com/lucko/LuckPerms/blob/master/.locale/hu_HU.yml)
-* [**pl_PL** - Polish](https://github.com/lucko/LuckPerms/blob/master/.locale/pl_PL.yml)
-* [**ru_RU** - Russian](https://github.com/lucko/LuckPerms/blob/master/.locale/ru_RU.yml)
-* [**zh-CN** - Simplified Chinese](https://github.com/lucko/LuckPerms/blob/master/.locale/zh-CN.yml)
+* [**en_US** - English](https://github.com/LuckPerms/locale/blob/master/en_US.yml)
+* [**es_ES** - Spanish](https://github.com/LuckPerms/locale/blob/master/es_ES.yml)
+* [**hu_HU** - Hungarian](https://github.com/LuckPerms/locale/blob/master/hu_HU.yml)
+* [**pl_PL** - Polish](https://github.com/LuckPerms/locale/blob/master/pl_PL.yml)
+* [**ru_RU** - Russian](https://github.com/LuckPerms/locale/blob/master/ru_RU.yml)
+* [**zh-CN** - Simplified Chinese](https://github.com/LuckPerms/locale/blob/master/zh-CN.yml)
 
 
 
