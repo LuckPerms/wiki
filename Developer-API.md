@@ -76,7 +76,7 @@ Now you've added the API classes to your project, and obtained an instance of th
 
 All LuckPerms internals are thread-safe, which of course includes the API. What does this mean? Well, it means you can interact with the LuckPerms API from async threads without incurring issues.
 
-This also extends to the permission querying methods in Bukkit/Bungee/Sponge. These are also thread-safe, when LuckPerms is being used as the permissions plugin. This means that you can safely run standard `Player#hasPermission` calls async.
+This also extends to the permission querying methods in Bukkit/Bungee/Sponge. These can be safely called async when LuckPerms is being used as the permissions plugin.
 
 However, **a large proportion** of the work LuckPerms does is multi threaded. This means that without exception, all events are fired asynchronously. 
 
@@ -160,7 +160,7 @@ public class TestListener {
 }
 ```
 
-`EventBus#subscribe` returns an [`EventHander`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
+`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
 
 ### Checking if a player is in a group
 Checking for group membership can be done directly via hasPermission checks.
