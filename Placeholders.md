@@ -43,8 +43,13 @@ ___
 **Example:** %luckperms_has_permission_essentials.ban%
 
 ___
+### `%luckperms_inherits_permission_<permission>%`
+**Description:** Checks if the player has or inherits the given permission. Does not account for wildcards, or inherited permissions. The `check_permission` placeholder is preferred over this placeholder.    
+**Example:** %luckperms_inherits_permission_essentials.ban%
+
+___
 ### `%luckperms_check_permission_<permission>%`
-**Description:** Checks to see if the player has a given permission. This is done in the same way a plugin would check for a permission    
+**Description:** Checks to see if the player has a given permission. This is done in the same way a plugin would check for a permission.    
 **Example:** %luckperms_check_permission_some.cool.permission%
 
 ___
