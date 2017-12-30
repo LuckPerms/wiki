@@ -61,7 +61,7 @@ When constraints are defined in commands, the entire constraint must be wrapped 
 #### `/lp bulkupdate all update permission group.mod "permission == group.moderator"`
 Will update all entries, and replace any occurrence of the "group.moderator" permission with "group.mod". (effectively renaming the group)
 
-#### `/lp bulkupdate user delete "server ~~ hub%" "world == nether"`
+#### `/lp bulkupdate users delete "server ~~ hub%" "world == nether"`
 Will delete any permission assigned to a user where the server starts with "hub" and the world is equal to "nether".
 
 #### `/lp bulkupdate all delete "permission == essentials.fly"`
