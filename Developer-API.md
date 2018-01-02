@@ -55,7 +55,7 @@ This works on all platforms.
 // throws IllegalStateException if the API is not loaded
 LuckPermsApi api = LuckPerms.getApi();
 
-// returns an empty Optional if the APi is not loaded
+// returns an empty Optional if the API is not loaded
 Optional<LuckPermsApi> api = LuckPerms.getApiSafe();
 ```
 
