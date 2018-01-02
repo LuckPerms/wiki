@@ -28,15 +28,17 @@ A filter string will match the start of the permission being checked, or the use
 * `anticheat & !anticheat.check` - Matches checks on all users starting with "anticheat" but not starting with "anticheat.check"
 
 ## Example
-I ran `/lp verbose record Luck & minecraft`, which enabled the system, and made it match any checks against "Luck" that start with "minecraft".
+I ran `/lp verbose record Luck & essentials.build`, which enabled the system, and made it match any checks against "Luck" that start with "essentials.build".
 
-I then ran the `/help` command (to generate some permission checks), followed by `/lp verbose paste`.
+I then broke some blocks (to generate some permission checks), followed by `/lp verbose paste`.
 
-The plugin then uploaded the results, and returned this link. [`https://git.io/vDUba`](https://git.io/vDUba)
+The plugin then uploaded the results, and returned this link. [`https://git.io/vbhy7`](https://git.io/vbhy7)
 
 If you take a look at the link, you'll see the results of the check. 😄 
 
-Under metadata, you can see some data about the check. You'll notice that `Count: 58 / 72`. This means that during the checking period, 72 permissions were checked, and 58 matched the filter. The results of each of those checks are also shown.
+Under metadata, you can see some data about the check. You'll notice that `Count: 107 / 213`. This means that during the checking period, 213 permissions were checked, and 107 matched the filter. The results of each of those checks are also shown.
+
+The ❔ symbol represents an undefined result (false), a green tick represents true, and a red cross represents false.
 
 
 
