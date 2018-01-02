@@ -46,9 +46,11 @@ For the rest of this article, I'll focus on some of the new features LuckPerms h
 ### Verbose
 LuckPerms has a [verbose](https://github.com/lucko/LuckPerms/wiki/Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-[![](https://thumbs.gfycat.com/FearlessVelvetyBellfrog-size_restricted.gif)](https://gfycat.com/FearlessVelvetyBellfrog)
+[![](https://giant.gfycat.com/IdioticFaintFishingcat.gif)](https://gfycat.com/IdioticFaintFishingcat)
 
-[![](https://thumbs.gfycat.com/DistortedMetallicLabradorretriever-size_restricted.gif)](https://gfycat.com/DistortedMetallicLabradorretriever)
+You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
+
+[![](https://i.imgur.com/Ta7gtd9.png)](https://i.imgur.com/Ta7gtd9.png)
 
 You can also upload recordings to the web, for easier analysis and reading.
 [https://git.io/vQitM](https://git.io/vQitM)
