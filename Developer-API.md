@@ -28,6 +28,10 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
 ### Gradle
 If you're using Gradle, you need to add these lines to your build script.
 ```gradle
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compile ("me.lucko.luckperms:luckperms-api:4.0")
 }
