@@ -78,8 +78,6 @@ It's super easy to use.
 
 [![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
 
-[![](https://thumbs.gfycat.com/ShorttermPowerfulGoldeneye-size_restricted.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
-
 ### Action logging
 LuckPerms also makes a detailed log of all changes made to permissions. If you have a rogue staff member try to give themselves permissions, instead of trawling through the servers log file, you can simply search for any actions executed by them!
 
