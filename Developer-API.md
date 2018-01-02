@@ -40,7 +40,7 @@ dependencies {
 ### Manual
 If you want to manually add the API to your classpath, you can obtain the jar by:
 
-1. Navigating to [`https://central.maven.org/maven2/me/lucko/luckperms/luckperms-api/`](https://central.maven.org/maven2/me/lucko/luckperms/luckperms-api/)
+1. Navigating to [`https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/)
 2. Selecting the version you wish to use
 3. Downloading the jar titled `luckperms-api-x.x.jar`
 
