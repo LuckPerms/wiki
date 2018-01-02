@@ -46,7 +46,7 @@ For the rest of this article, I'll focus on some of the new features LuckPerms h
 ### Verbose
 LuckPerms has a [verbose](https://github.com/lucko/LuckPerms/wiki/Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-[![](https://giant.gfycat.com/IdioticFaintFishingcat.gif)](https://gfycat.com/IdioticFaintFishingcat)
+[![](https://giant.gfycat.com/ArtisticPleasantAlbacoretuna.gif)](https://gfycat.com/ArtisticPleasantAlbacoretuna)
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
@@ -60,9 +60,16 @@ LuckPerms allows you [build "permission trees"](https://github.com/lucko/LuckPer
 
 As the server runs for longer periods, the tree also grows, as permissions checked for by plugins on the server are added.
 
-An example tree: [https://git.io/vQiti](https://git.io/vQiti)
+An example tree:
 
-You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to. For example: [https://git.io/vQit1](https://git.io/vQit1)
+[![](https://i.imgur.com/68fLMaQ.png)](https://git.io/vbhyZ)
+
+
+You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
+
+For example:
+
+[![](https://i.imgur.com/OR5GNcP.png)](https://git.io/vbhyV)
 
 ### Command interface & tab completion
 The command system for LP is designed to be as easy to use as possible. As well as the [extensive documentation here on the wiki](https://github.com/lucko/LuckPerms/wiki/Command-Usage), command usage and listings can also be viewed in-game.
