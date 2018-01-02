@@ -12,7 +12,7 @@ If you have an old permissions setup, or a setup you're not completely happy wit
 Nope?! Happy with what you have? Let's migrate. 😃    
    
    
-## Currently supported plugins
+## Supported plugins
 | Bukkit / Spigot       | BungeeCord            | Sponge                |
 |-----------------------|-----------------------|-----------------------|
 | GroupManager          | BungeePerms           | PermissionsEx         |
@@ -20,7 +20,7 @@ Nope?! Happy with what you have? Let's migrate. 😃
 | zPermissions          |                       |                       |
 | PowerfulPerms         |                       |                       |
 | bPermissions          |                       |                       |
-
+| PermissionsBukkit     |                       |                       |
 
 # How to
 The migration process is fairly simple, however it varies slightly for each platform.
