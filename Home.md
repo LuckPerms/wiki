@@ -2,26 +2,55 @@
 
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
+:rocket: The **latest downloads** for the project can be found [on Jenkins](https://ci.lucko.me/job/LuckPerms). :rocket:
+
+___
+
 ### Where to start?
 If you've never used a permissions plugin before, I suggest you start at the top of the **Setup** section and work your way through everything.
 
 The basics are covered in detail in the [Usage](https://github.com/lucko/LuckPerms/wiki/Usage) section. Full command usage is detailed under [Command Usage](https://github.com/lucko/LuckPerms/wiki/Command-Usage).
 
-### Can't find something?
+___
 
-If you have any further questions that haven't been answered within this wiki, you can contact me in a number of ways.
+### Support
 
-* [Discord support server](https://discord.gg/W3FzxHA) (even if I'm not around, there's lots of other people here who can help!)
-* I am "Luck" on irc.esper.net, irc.spi.gt and chat.freenode.net 
-* I have a channel `#luckperms` on Esper or SpigotMC if IRC is your communication platform of choice :)
-* I am "Luck" on the SpigotMC and SpongePowered forums
-* Submit an issue [here on GitHub](https://github.com/lucko/LuckPerms/issues) (probably best if you're reporting a bug)
+Free support for the project is offered by me (Luck) and other kind members of the community.
 
-### Translations
-Translated versions of this wiki can be found below.
+### I would like help using / setting up / configuring the plugin
 
-* [**Simplified Chinese**](https://github.com/PluginsCDTribe/LuckPerms/wiki) (thanks to PluginsCDTribe)
+If you would like support using the plugin, please seek help in the following places. (in order of preference)
 
-### Some useful links
-* [**Development Builds**](https://ci.lucko.me/job/LuckPerms)
-* [**Javadocs**](https://luckperms.lucko.me/javadocs/)
+#### 1) :book: Wiki
+
+**Please** make use of the resources available here on GitHub. The entire plugin has extensive documentation, and most things are covered and explained here.
+
+Please do not be offended if we respond to your question linking back here. It gets *seriously* boring answering the same questions again and again, when answers are readily available here for you to read.
+
+Please take a look through the [Frequently Asked Questions](https://github.com/lucko/LuckPerms/wiki/FAQ) page, and any sections which are relevant to your question before seeking support with us directly.
+
+#### 2) :speech_balloon: Discord
+
+[![Discord](https://img.shields.io/discord/241667244927483904.svg)](https://discord.gg/W3FzxHA)  <-- click to join!
+
+The community Discord Server is a great place to go if you have any unanswered questions, or want to chill out and chat with fellow admins and LuckPerms users.
+
+There are lots of other people here who can answer any questions!
+
+#### 3) :speech_balloon: IRC
+
+If IRC is your communication platform of choice, you can find us on the following IRC networks.
+
+* **SpigotMC** - `irc.spi.gt` - `#luckperms`
+* **EsperNet** - `irc.esper.net` - `#luckperms`
+
+
+### I would like to report a bug or an issue
+
+Before reporting a bug or issue, please make sure that the issue is actually being caused by or related to LuckPerms. We get a lot of reports which are caused by other software - please double check!
+
+If you're unsure, feel free to ask using the above resources BEFORE making a report.
+
+#### 1) :octocat: GitHub
+
+Bugs or issues should be reported using the [GitHub Issues tab](https://github.com/lucko/LuckPerms/issues).
