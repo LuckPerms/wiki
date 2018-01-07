@@ -31,15 +31,8 @@ Here are your options.
 ## Keep using the default group, but just modify the "display name"
 I strongly recommend for the reasons above that you keep using the default group.
 
-If you want to simply change the visible name of the default group, (in Vault for example), I suggest you configure a `group-name-rewrite` rule, by adding the following to your `config.yml`/`luckperms.conf` file.
+Simply use `/lp group <group> setdisplayname <name>`
 
-```yml
-# Rewrites group names. The underlying name of the group does not change, just the output in commands / placeholders / Vault.
-group-name-rewrite:
-  default: Member
-```
-
-You can also use this approach: https://github.com/lucko/LuckPerms/wiki/Primary-Groups
 
 ## Configure inheritance
 This option would mean that all users are still in the "default" group. However, a parent group is configured for default, so it can inherit permissions from a group with a different name.
