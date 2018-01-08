@@ -39,7 +39,7 @@ Your options are:
 ### Older MC versions
 The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
 
-A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPerms/), under "Bukkit-Legacy".
+A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPermsLegacy/).
 
 If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encounter errors when trying to load LuckPerms. This is **not** a LuckPerms issue - but rather due to the "hacky" nature of these server solutions.
 
