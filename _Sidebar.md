@@ -16,6 +16,7 @@
 
 ### Features
 * [**Context**](https://github.com/lucko/LuckPerms/wiki/Context)
+* [**Web Editor**](https://github.com/lucko/LuckPerms/wiki/Web-Editor)
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 * [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
 * [**Instant Updates**](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation)
