@@ -64,7 +64,7 @@ FLUSH PRIVILEGES;
 If you get an error similar to:
 > Establishing SSL connection without server's identity verification is not recommended. According to MySQL requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
 
-... you may need to disable SSL for the connection.
+... you need to disable SSL for MySQL connections.
 
 You can do this by editing the connection properties in the LuckPerms config file. Under the "Storage" section, locate:
 ```yaml
@@ -79,3 +79,17 @@ data:
 ```
 
 and add the last two options.
+
+### MySQL "No operations allowed after connection closed" error
+If you get an error similar to:
+> com.zaxxer.hikari.pool.PoolBase - luckperms - Failed to validate connection com.mysql.jdbc.JDBC4Connection@xxxxxxx (No operations allowed after connection closed.)
+
+... you need to modify the `maximum-lifetime` setting in the 'pool-settings' section, within "Storage", in the LuckPerms config file.
+
+This setting (defaults to 30 minutes and measured in milliseconds) must be **less** than the `wait_timeout` value set on your MySQL server.
+
+https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_wait_timeout
+
+The default value of 30 minutes is fine for the **vast** majority of users. It only becomes a problem if you or your hosting provider has changed the wait timeout setting.
+
+If your MySQL server is provided by a 3rd party, ask them what the value is set to.
