@@ -6,7 +6,7 @@ ___
 
 ### Getting started
 
-Editor sessions are created by executing a command on the server.
+Editor sessions are first created by executing a command on the server.
 
 ##### To create an editor session for a group, run
 `/lp group <group> editor` or `/lpb group <group> editor` (for the BungeeCord version)
