@@ -59,3 +59,23 @@ Then, when you have finished your changes, run:
 ```sql
 FLUSH PRIVILEGES;
 ```
+
+### MySQL SSL errors
+If you get an error similar to:
+> Establishing SSL connection without server's identity verification is not recommended. According to MySQL requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+
+... you may need to disable SSL for the connection.
+
+You can do this by editing the connection properties in the LuckPerms config file. Under the "Storage" section, locate:
+```yaml
+data:
+  pool-settings:
+    # This setting allows you to define extra properties for connections.
+    properties:
+      useUnicode: true
+      characterEncoding: utf8
+      useSSL: false
+      verifyServerCertificate: false
+```
+
+and add the last two options.
