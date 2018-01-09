@@ -1,4 +1,4 @@
-LuckPerms features a web editor, which allows you to make changes to permissions data using a friendly interface in your web browser. It is safe, secure and easy to use. You do not need to host the page yourself - and it works for all storage types. Pretty neat, eh?
+LuckPerms features a web editor, which allows you to make changes to permissions data using a friendly interface in your web browser. It is safe, secure and easy to use. You do not need to host the page yourself - and it works for all storage types!
 
 If you'd like more information about the technical details, see the project's [readme page](https://github.com/lucko/LuckPermsWebEditor/blob/master/README.md).
 
