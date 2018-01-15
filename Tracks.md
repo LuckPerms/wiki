@@ -2,6 +2,12 @@ LuckPerms has it's own (somewhat) unique track system, although the majority of 
 
 Think of a Track as a "ladder" or "promotion route".
 
+---
+
+Note that tracks act only as a means for easy promotion and demotion of users, and **do not influence inheritance**.
+
+---
+
 ### Example 1
 I might have a track called "staff". This track would consist the groups:
 
