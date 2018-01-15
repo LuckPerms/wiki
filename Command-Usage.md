@@ -79,7 +79,6 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
 *  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
-*  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup)
 
 ### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
 *  [`info`](#lp-usergroup-usergroup-parent-info)
@@ -91,6 +90,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp)
 *  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear)
 *  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack)
+*  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup)
 
 ### Meta   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
 *  [`info`](#lp-usergroup-usergroup-meta-info)
