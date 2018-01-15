@@ -53,7 +53,6 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp user \<user\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
 *  [/lp user \<user\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
 *  [/lp user \<user\> `editor`](#lp-user-user-editor)
-*  [/lp user \<user\> `switchprimarygroup` \<group\>](#lp-user-user-switchprimarygroup)
 *  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote)
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
@@ -80,6 +79,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
 *  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
+*  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup)
 
 ### Parent   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
 *  [`info`](#lp-usergroup-usergroup-parent-info)
@@ -289,16 +289,6 @@ ___
 #### `/lp user <user> editor`  
 **Permission**: luckperms.user.editor  
 Opens a web interface to edit permissions for the specified group. After changes are saved, a command will be given that you need to run for the changes to take effect.
-
-___
-#### `/lp user <user> switchprimarygroup`  
-**Permission**: luckperms.user.switchprimarygroup  
-**Arguments**:  
-* `<group>` - the group to switch to
-
-This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
-
-If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the `parent add`(#lp-usergroup-usergroup-parent-add) or `parent set`(#lp-usergroup-usergroup-parent-set) commands instead of this.
 
 ___
 #### `/lp user <user> promote`  
@@ -531,6 +521,18 @@ ___
 * `[context...]` - the contexts to filter by
 
 Removes all parents from the user/group on a given track.
+
+___
+#### `/lp user <user> parent switchprimarygroup`  
+**Permission**: luckperms.user.parent.switchprimarygroup  
+**Arguments**:  
+* `<group>` - the group to switch to
+
+This command is only available for users - as groups do not have "primary" groups.
+
+This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
+
+If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the `parent add`(#lp-usergroup-usergroup-parent-add) or `parent set`(#lp-usergroup-usergroup-parent-set) commands instead of this.
 
 ___
 
