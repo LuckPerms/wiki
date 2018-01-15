@@ -532,7 +532,7 @@ This command is only available for users - as groups do not have "primary" group
 
 This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
 
-If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the `parent add`(#lp-usergroup-usergroup-parent-add) or `parent set`(#lp-usergroup-usergroup-parent-set) commands instead of this.
+If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the [`parent add`](#lp-usergroup-usergroup-parent-add) or [`parent set`](#lp-usergroup-usergroup-parent-set) commands instead of this.
 
 ___
 
