@@ -15,7 +15,6 @@ Links to the default file for each platform are above. Please note that the conf
 * [`include-global-world`](#include-global-world)
 * [`apply-global-groups`](#apply-global-groups)
 * [`apply-global-world-groups`](#apply-global-world-groups)
-* [`use-server-uuids`](#use-server-uuids)
 * [`use-server-uuid-cache`](#use-server-uuid-cache)
 * [`allow-invalid-usernames`](#allow-invalid-usernames)
 * [`debug-logins`](#debug-logins)
@@ -127,31 +126,6 @@ Similar to the option above, except this works with worlds. If set to false, onl
 ##### Example
 ```yaml
 apply-global-world-groups: true
-```
-
-___
-### `use-server-uuids`
-
-If UUIDs should be pulled from the server, or looked up by username based upon previous connections. This setting should be kept set to true, unless you're sure you know what you're doing.
-
-Normally, when this is set to true: when a player logs in, LuckPerms will use the username / uuid provided by the server to identify the player. This is fine for the majority of servers.
-
-When set to false, LuckPerms will first check to see if someone has joined previously with the same username. If a player is found, then the previous UUID mapped to that username will be used. Otherwise, it will fallback to the standard method of retrieving uuids from the server.
-
-On offline mode (cracked) servers, a players UUID is generated based upon their username.
-
-**Important:**
-If you are running a BungeeCord proxy, you *must* have IP forwarding setup, in order for the backend server to use the correct uuid for players.
-
-Guides for this can be found [here for Spigot](https://www.spigotmc.org/wiki/bungeecord-ip-forwarding/), and [here for Sponge](https://docs.spongepowered.org/stable/en/server/getting-started/bungeecord.html). SpongeForge users are advised to use [HexaCord](https://github.com/HexagonMC/BungeeCord), a BungeeCord fork, which supports IP forwaring for Forge.
-
-If your BungeeCord proxy is running in offline mode & you are running Spigot, you should still be setting up ip forwarding as described above. However, it is reccomended that you install [Paper](https://ci.destroystokyo.com/job/PaperSpigot/) and set `bungee-online-mode: false` in paper.yml.
-
-If for whatever reason you are unable to setup IP forwarding, you may need to set this option to false. Make sure you are aware of the consequences before you do this.
-
-##### Example
-```yaml
-use-server-uuids: true
 ```
 
 ___
