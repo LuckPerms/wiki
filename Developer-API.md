@@ -13,15 +13,15 @@ The current API release is `4.0`.
 
 #### Quick start guide
 
-* [1) Adding LuckPerms to your project](#1-adding-luckperms-to-your-project)
+* [Adding LuckPerms to your project](#adding-luckperms-to-your-project)
     * [Maven](#maven)
     * [Gradle](#gradle)
     * [Manual](#manual)
-* [2) Obtaining an instance of the API](#2-obtaining-an-instance-of-the-api)
+* [Obtaining an instance of the API](#obtaining-an-instance-of-the-api)
     * [Using the Bukkit ServicesManager](#using-the-bukkit-servicesmanager)
     * [Using the Sponge ServicesManager](#using-the-sponge-servicesmanager)
     * [Using the singleton](#using-the-singleton-static-access)
-* [3) Useful information](#3-useful-information)
+* [Useful information](#useful-information)
     * [Thread safety](#thread-safety)
     * [Immutability](#immutability)
     * [Blocking operations](#blocking-operations)
@@ -43,7 +43,7 @@ ___
 
 ## Quick start guide
 
-### 1) Adding LuckPerms to your project
+### Adding LuckPerms to your project
 The API artifact is published to the [Maven Central](http://central.sonatype.org/) repository.
 
 #### Maven
@@ -80,7 +80,7 @@ If you want to manually add the API dependency to your classpath, you can obtain
 
 ___
 
-### 2) Obtaining an instance of the API
+### Obtaining an instance of the API
 The root API interface is `LuckPermsApi`. You need to obtain an instance of this interface in order to do anything.
 
 It can be obtained in a number of ways.
@@ -118,7 +118,7 @@ LuckPermsApi api = LuckPerms.getApi();
 
 ___
 
-### 3) Useful information
+### Useful information
 
 Now you've added the API classes to your project, and obtained an instance of the `LuckPermsApi`, you're almost ready to start using the API. However, before you go any further, please make sure you read and understand the information below.
 
