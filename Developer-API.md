@@ -1,7 +1,7 @@
-#### Intro
+### Intro
 LuckPerms has a complete developer API, which allows other plugins on the server to read and modify LuckPerms data, and easily integrate LuckPerms deeply into existing plugins and systems.
 
-#### Versioning
+### Versioning
 The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-backwards compatible change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
 The current API release is `4.0`.
@@ -9,28 +9,30 @@ The current API release is `4.0`.
 * The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
 * JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/me.lucko.luckperms/luckperms-api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
 
-#### Index
+### Index
 
-* [Quick start guide]()
-    * [1) Adding LuckPerms to your project]()
-        * [Maven]()
-        * [Gradle]()
-        * [Manual]()
-    * [2) Obtaining an instance of the API]()
-        * [Using the Bukkit ServicesManager]()
-        * [Using the Sponge ServicesManager]()
-        * [Using the singleton]()
-    * [3) Useful information]()
-        * [Thread safety]()
-        * [Immutability]()
-        * [Blocking operations]()
-        * [Using CompletableFutures]()
-        * [Asynchronous events & callbacks]()
-        * [A warning about thread safety & blocking operations]()
-* [Using the API]()
-    * [Checking if a player is in a group]()
-    * [Finding a players group]()
-    * [Listening to LuckPerms events]()
+#### Quick start guide
+
+* [1) Adding LuckPerms to your project](#1-adding-luckperms-to-your-project)
+    * [Maven](#maven)
+    * [Gradle](#gradle)
+    * [Manual](#manual)
+* [2) Obtaining an instance of the API](#2-obtaining-an-instance-of-the-api)
+    * [Using the Bukkit ServicesManager](#using-the-bukkit-servicesmanager)
+    * [Using the Sponge ServicesManager](#using-the-sponge-servicesmanager)
+    * [Using the singleton](#using-the-singleton-static-access)
+* [3) Useful information](#3-useful-information)
+    * [Thread safety](#thread-safety)
+    * [Immutability](#immutability)
+    * [Blocking operations](#blocking-operations)
+    * [Using CompletableFutures](#using-completablefutures)
+    * [Asynchronous events & callbacks](#asynchronous-events--callbacks)
+
+#### Using the API
+
+* [Checking if a player is in a group](#checking-if-a-player-is-in-a-group)
+* [Finding a players group](#finding-a-players-group)
+* [Listening to LuckPerms events](#listening-to-luckperms-events)
 
 ___
 
