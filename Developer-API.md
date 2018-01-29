@@ -1,18 +1,45 @@
-## Intro
-The LuckPerms API allows you to change a huge amount of the plugins internals programmatically, and easily integrate LuckPerms deeply into your existing plugins and systems.
+#### Intro
+LuckPerms has a complete developer API, which allows other plugins on the server to read and modify LuckPerms data, and easily integrate LuckPerms deeply into existing plugins and systems.
 
-Most other permissions plugins either don't have APIs, have bad APIs, or have APIs with poor documentation and methods and classes that disappear or move randomly between versions. The Vault project is a great way to integrate with lots of plugins at once, but its functionality is very limited.
+#### Versioning
+The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-backwards compatible change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
-LuckPerms follows Semantic Versioning, meaning whenever a non-backwards compatible API change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
+The current API release is `4.0`.
 
-## How to use the API in your project
-The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms). The API code can be found in the `api` module within the LuckPerms repository here on GitHub.
+* The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
+* JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/me.lucko.luckperms/luckperms-api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
 
-Javadocs are can be viewed online [**here**](https://javadoc.io/doc/me.lucko.luckperms/luckperms-api/).
+#### Index
 
-The LuckPerms API is published to the [Maven Central](http://central.sonatype.org/) repository. This means that you do not need to reference a 3rd party repository in order to depend on the API.
+* [Quick start guide]()
+    * [1) Adding LuckPerms to your project]()
+        * [Maven]()
+        * [Gradle]()
+        * [Manual]()
+    * [2) Obtaining an instance of the API]()
+        * [Using the Bukkit ServicesManager]()
+        * [Using the Sponge ServicesManager]()
+        * [Using the singleton]()
+    * [3) Useful information]()
+        * [Thread safety]()
+        * [Immutability]()
+        * [Blocking operations]()
+        * [Using CompletableFutures]()
+        * [Asynchronous events & callbacks]()
+        * [A warning about thread safety & blocking operations]()
+* [Using the API]()
+    * [Checking if a player is in a group]()
+    * [Finding a players group]()
+    * [Listening to LuckPerms events]()
 
-### Maven
+___
+
+## Quick start guide
+
+### 1) Adding LuckPerms to your project
+The API artifact is published to the [Maven Central](http://central.sonatype.org/) repository.
+
+#### Maven
 If you're using Maven, simply add this to the `dependencies` section of your POM.
 ````xml
 <dependencies>
@@ -25,7 +52,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
 </dependencies>
 ````
 
-### Gradle
+#### Gradle
 If you're using Gradle, you need to add these lines to your build script.
 ```gradle
 repositories {
@@ -37,81 +64,190 @@ dependencies {
 }
 ```
 
-### Manual
-If you want to manually add the API to your classpath, you can obtain the jar by:
+#### Manual
+If you want to manually add the API dependency to your classpath, you can obtain the jar by:
 
 1. Navigating to [`https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/)
 2. Selecting the version you wish to use
 3. Downloading the jar titled `luckperms-api-x.x.jar`
 
-## Usage Instructions
+___
 
-### Obtaining the API instance
-To use the API, you need to obtain an instance of the `LuckPermsApi` interface. This can be done in a number of ways.
+### 2) Obtaining an instance of the API
+The root API interface is `LuckPermsApi`. You need to obtain an instance of this interface in order to do anything.
 
-#### Using the API Singleton
-This works on all platforms. 
-```java
-// throws IllegalStateException if the API is not loaded
-LuckPermsApi api = LuckPerms.getApi();
-
-// returns an empty Optional if the API is not loaded
-Optional<LuckPermsApi> api = LuckPerms.getApiSafe();
-```
+It can be obtained in a number of ways.
 
 #### Using the Bukkit ServicesManager
+When the plugin is enabled, an instance of `LuckPermsApi` will be provided in the Bukkit ServicesManager. (obviously you need to be writing your plugin for Bukkit!)
+
 ```java
-ServicesManager manager = Bukkit.getServicesManager();
-if (manager.isProvidedFor(LuckPermsApi.class)) {
-    final LuckPermsApi api = manager.getRegistration(LuckPermsApi.class).getProvider();
+RegisteredServiceProvider<LuckPermsApi> provider = Bukkit.getServicesManager().getRegistration(LuckPermsApi.class);
+if (provider != null) {
+    LuckPermsApi api = provider.getProvider();
+    
 }
 ```
 
-#### Using the Sponge ServiceManager
+#### Using the Sponge ServicesManager
+When the plugin is enabled, an instance of `LuckPermsApi` will be provided in the Sponge ServicesManager. (obviously you need to be writing your plugin for Sponge!)
+
 ```java
-Optional<LuckPermsApi> provider = Sponge.getServiceManager().provide(LuckPermsApi.class);
+Optional<ProviderRegistration<LuckPermsApi>> provider = Sponge.getServiceManager().getRegistration(LuckPermsApi.class);
 if (provider.isPresent()) {
-    final LuckPermsApi api = provider.get();
+    LuckPermsApi api = provider.get().getProvider();
+    
 }
 ```
 
-### A warning about thread safety & blocking operations
+#### Using the singleton (static access)
+When the plugin is enabled, an instance of `LuckPermsApi` can be obtained statically from the `LuckPerms` class. (this will work on all platforms)
+
+**Note:** this method will throw an `IllegalStateException` if the API is not loaded.
+
+```java
+LuckPermsApi api = LuckPerms.getApi();
+```
+
+___
+
+### 3) Useful information
+
 Now you've added the API classes to your project, and obtained an instance of the `LuckPermsApi`, you're almost ready to start using the API. However, before you go any further, please make sure you read and understand the information below.
 
-All LuckPerms internals are thread-safe, which of course includes the API. What does this mean? Well, it means you can interact with the LuckPerms API from async threads without incurring issues.
+#### Thread safety
 
-This also extends to the permission querying methods in Bukkit/Bungee/Sponge. These can be safely called async when LuckPerms is being used as the permissions plugin.
+* All LuckPerms internals are thread-safe. You can safely interact with the API from scheduler tasks (or just generally from other threads)
+* This also extends to the permission querying methods in Bukkit/Bungee/Sponge. These can be safely called async when LuckPerms is being used as the permissions plugin.
 
-However, **a large proportion** of the work LuckPerms does is multi threaded. This means that without exception, all events are fired asynchronously. 
+#### Immutability
 
-Additionally, some API methods are not "main thread friendly", meaning if they are called from the main Minecraft Server thread, the server will lag. These methods are either marked accordingly in the JavaDocs, or return [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s.
+* In cases where methods return classes from the Java collections framework, assume that the returned methods are always immutable, unless indicated otherwise. (in the JavaDocs)
+* This means that you cannot make changes to any returned collections.
 
-### General design
-The whole API centres around one core interface, `LuckPermsApi`. From here, you can:
+#### Blocking operations
 
-* Get information about the platform
-* Schedule update tasks
-* Register event listeners
-* Access the storage manager
-* Access the messaging service
-* Obtain `User`, `Group` and `Track` instances
-* Create new permission `Node` instances
-* Create new meta stacks
-* Register `ContextCalculator`s
-* Get current Context data for players and `User`s
+* Some methods are not "main thread friendly", meaning if they are called from the main Minecraft Server thread, the server will lag.
+* This is because many methods conduct I/O with either the file system or the network. 
+* In most cases, these methods return [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s.
+* Futures can be an initially complex paradigm for some users - however, it is crucial that you have at least a basic understanding of how they work before attempting to use them.
+* As a general rule, it is advised that if it's convenient to do so, you conduct as much work with the API as possible within async scheduler tasks. Some methods don't return futures, but may still involve a number of relatively complex computations.
 
-.. and more.
 
-### Events
-LuckPerms exposes an event listening system. Due to the multi-platform nature of the project, an internal Event handling system is used, as opposed to the systems already in place on each platform.
+#### Using CompletableFutures
 
-This means that you have to register your listeners with the LuckPermsApi, and NOT with Bukkit/BungeeCord/Sponge directly.
+This is a super quick guide. If you'd like more comprehensive info, see the [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html) or [CompletionStage](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletionStage.html) JavaDoc pages.
 
-All events are **fired asynchronously**. This means you should not interact with or call any non-thread safe method from within listener methods.
+For the purposes of explaining, take the following method in the `ActionLogger` class.
 
-It is important to note that most of Bukkit/Sponge are **not** thread safe, and should only be interacted with using the main server thread. You should use the scheduler if you need to access Bukkit/Sponge APIs from LuckPerms listeners.
+```java
+/**
+ * Gets a {@link Log} instance from the plugin storage.
+ *
+ * @return a log instance
+ */
+@Nonnull
+CompletableFuture<Log> getLog();
+```
 
-### How do I listen to an event
+After calling the method, we get a `CompletableFuture<Log>` - the object we actually want is the `Log`. The `CompletableFuture` represents the result of some computation (in this case the computation to obtain the Log), and provides us with methods to obtain the `Log` object.
+
+If the context of our method call is already asynchronous (if we're calling the method from an async scheduler task), then we can do-away with the future entirely.
+
+```java
+/*
+  Calling this method effectively "requests" a Log from the API.
+  
+  However, it's unlikely that the log will be available immediately...
+  We need to wait for it to be supplied.
+*/
+CompletableFuture<Log> logFuture = actionLogger.getLog();
+
+/*
+  Since we're already on an async thread, it doesn't matter how long we
+  have to wait for the elusive Log to show up.
+  
+  The #join method will block - and wait until the Log has been supplied,
+  and then return it.
+  
+  If for whatever reason the process to obtain a Log threw an exception,
+  this method will rethrow an the same exception wrapped in a CompletionException
+*/
+Log log = logFuture.join();
+```
+
+An alternative to using `#join` is to register a callback with the Future, to be executed once the `Log` is supplied.
+
+If we need to use the instance on the main server thread, then a special executor can be passed to the callback is executed on the server thread.
+
+```java
+// The executor to run the callback on
+Executor executor = runnable -> Bukkit.getScheduler().runTask(this, runnable);
+
+// To be called once the Log is obtained.
+logFuture.whenCompleteAsync(new BiConsumer<Log, Throwable>() { // can be reduced to a lambda, I've left it as an anonymous class for clarity
+    @Override
+    public void accept(Log log, Throwable exception) {
+        if (exception != null) {
+            // There was some error whilst getting the log.
+            return;
+        }
+
+        // Use the log for something...
+    }
+}, executor);
+```
+
+If you don't care about errors, this can be simplified further.
+
+```java
+logFuture.thenAcceptAsync(log -> { /* Use the log for something */ }, executor);
+```
+
+The CompletableFuture class can initially be very confusing to use (it's still a relatively new API in Java!), however it is a great way to encapsulate async computations, and in the case of Minecraft, ensures that users don't accidently block the server thread waiting on lengthy I/O calls.
+
+#### Asynchronous events & callbacks
+
+* The vast majority of LuckPerms' work is done in async tasks away from the server thread.
+* With that in mind, it would be silly to call LuckPerms events synchronously - meaning that, without exception, all events listeners are called asynchronously.
+
+Please keep in mind that many parts of Bukkit, Sponge and the Minecraft server in general are not thread-safe, and should only be interacted with from the server thread. If you need to use Bukkit or Sponge methods from within LuckPerms event listeners or callbacks, you need to perform your action using the scheduler.
+
+___
+
+## Using the API
+
+### Checking if a player is in a group
+Checking for group membership can be done directly via hasPermission checks.
+
+```java
+public static boolean isPlayerInGroup(Player player, String group) {
+    return player.hasPermission("group." + group);
+}
+```
+
+However, remember that anyone with server operator status or `*` permissions will also have these permissions.
+
+___
+
+### Finding a players group
+If you just want to find out which group a player is in, I **highly** recommend the following method. (you don't even need to use the API!)
+
+```java
+public static String getPlayerGroup(Player player, List<String> possibleGroups) {
+    for (String group : possibleGroups) {
+        if (player.hasPermission("group." + group)) {
+            return group;
+        }
+    }
+    return null;
+}
+```
+Remember to order your group list in order of priority. e.g. Owner first, member last.
+
+___
+
+### Listening to LuckPerms events
 All event interfaces can be found in the [`me.lucko.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/LuckPermsEvent.java).
 
 To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
@@ -119,8 +255,6 @@ To listen to events, you need to obtain the [`EventBus`](https://github.com/luck
 It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
 
 ```java
-package me.lucko.test;
-
 import me.lucko.luckperms.api.event.EventBus;
 import me.lucko.luckperms.api.event.log.LogPublishEvent;
 import me.lucko.luckperms.api.event.user.UserLoadEvent;
@@ -166,31 +300,7 @@ public class TestListener {
 
 `EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
 
-### Checking if a player is in a group
-Checking for group membership can be done directly via hasPermission checks.
-
-```java
-public static boolean isPlayerInGroup(Player player, String group) {
-    return player.hasPermission("group." + group);
-}
-```
-
-However, remember that anyone with server operator status or `*` permissions will also have these permissions.
-
-### Finding a players group
-If you just want to find out which group a player is in, I **highly** recommend the following method. (you don't even need to use the API!)
-
-```java
-public static String getPlayerGroup(Player player, List<String> possibleGroups) {
-    for (String group : possibleGroups) {
-        if (player.hasPermission("group." + group)) {
-            return group;
-        }
-    }
-    return null;
-}
-```
-Remember to order your group list in order of priority. e.g. Owner first, member last.
+___
 
 ### Obtaining a User instance
 A `User` in LuckPerms is simply an object which represents a player on the server, and their associated permission data. In order to conserve memory usage, LuckPerms will only load User data when it absolutely needs to. 
