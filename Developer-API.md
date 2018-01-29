@@ -33,6 +33,11 @@ The current API release is `4.0`.
 * [Checking if a player is in a group](#checking-if-a-player-is-in-a-group)
 * [Finding a players group](#finding-a-players-group)
 * [Listening to LuckPerms events](#listening-to-luckperms-events)
+* [Obtaining a User instance](#obtaining-a-user-instance)
+* [Obtaining a Group/Track instance](#obtaining-a-grouptrack-instance)
+* [Adding a permission/parent/prefix/suffix/metadata to a user/group](#adding-a-permissionparentprefixsuffixmetadata-to-a-usergroup)
+* [Using UserData](#using-userdata)
+* [Searching for a permission](#searching-for-a-permission)
 
 ___
 
