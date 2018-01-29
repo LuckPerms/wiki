@@ -113,7 +113,6 @@ The dependencies outlined above where stated, are downloaded from the following
 locations when LuckPerms first loads. The downloaded binaries are cached locally.
 
 - https://repo1.maven.org/maven2/
-- https://github.com/lucko/jedis/releases/
 
 On subsequent startups, if the cache files are intact, no communications are attempted.
 
@@ -151,4 +150,4 @@ I (Luck) do not host, control or ever come into contact with any uploaded conten
 ### `Metrics and auto-updaters`
 
 * LuckPerms **does not** and never will report back to analytics or monitoring services.
-* LuckPerms **does not** and never will automatically check for updates. 
+* LuckPerms **does not** and never will automatically check for (or automatically install 😠) updates. 
