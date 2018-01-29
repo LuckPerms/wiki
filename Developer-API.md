@@ -222,6 +222,7 @@ public void getUserAndApply(UUID playerUuid, Consumer<User> action) {
     if (user != null) {
         // user is already loaded, just apply the action
         action.accept(user);
+        return;
     }
 
     // ok, user isn't online, so we need to load them.
