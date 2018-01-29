@@ -35,6 +35,20 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 - MIT License https://github.com/KyoriPowered/text/blob/master/license.txt
 - Maintained by kashike/KyoriPowered https://github.com/KyoriPowered
 
+### `ASM`
+- http://asm.ow2.org/
+- Downloaded at runtime
+- Used to process downloaded dependencies
+- BSD 3-Clause License
+- Maintained by OW2 https://www.ow2.org/
+
+### `jar-relocator`
+- https://github.com/lucko/jar-relocator
+- Downloaded at runtime
+- Used to process downloaded dependencies
+- Apache License 2.0 https://github.com/lucko/jar-relocator/blob/master/LICENSE.txt
+- Maintained by Luck (that's me!) https://github.com/lucko
+
 ### `MariaDB Java Driver`
 - https://github.com/MariaDB/mariadb-connector-j
 - Downloaded at runtime if needed
@@ -53,7 +67,7 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 - https://jdbc.postgresql.org/
 - Downloaded at runtime if needed
 - Used to interact with the storage database
-- BSD 2-clause "Simplified" License https://github.com/pgjdbc/pgjdbc/blob/master/LICENSE
+- BSD 2-clause License https://github.com/pgjdbc/pgjdbc/blob/master/LICENSE
 - Maintained by PostgreSQL https://www.postgresql.org/
 
 ### `H2 Database`
@@ -95,6 +109,7 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 - https://github.com/zml2008/configurate
 - Downloaded at runtime if needed
 - Used to interact with flatfile storage types (yaml, json and hocon)
+- Apache License 2.0 https://github.com/zml2008/configurate/blob/master/LICENSE
 - Maintained by zml https://github.com/zml2008
 
 ### `Jedis`
@@ -104,6 +119,12 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 - MIT License https://github.com/xetorthio/jedis/blob/master/LICENSE.txt
 - Maintained by Jonathan Leibiusky https://github.com/xetorthio
 
+### `Apache Commons Pool`
+- https://commons.apache.org/proper/commons-pool/
+- Downloaded at runtime if needed
+- Used by Jedis to pool Redis connections
+- Apache License 2.0 https://github.com/apache/commons-pool/blob/master/LICENSE.txt
+- Maintained by Apache https://www.apache.org/
 
 ## External Services
 In order to deliver it's functionality, LuckPerms will under some circumstances make connections with and communicate with external services outside of the local server.
