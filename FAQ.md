@@ -23,7 +23,7 @@ You **can** just install it on the proxy, but any checks which are performed by 
 ### How do I get permissions to sync across multiple servers
 Connect each LuckPerms installation to the same MySQL/MongoDB server. You can use `/luckperms sync` to pull the latest changes from the database. You can also [setup a Messaging Service](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation#messaging-services) to have your changes sync instantly between servers.
 
-# MySQL errors
+### MySQL errors
 
 Such as:
 
