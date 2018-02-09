@@ -9,6 +9,7 @@
 * [**Configuration**](https://github.com/lucko/LuckPerms/wiki/Configuration)
 * [**Command Usage**](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
+* [**Storage system errors**](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
 ### Migration
 * [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
