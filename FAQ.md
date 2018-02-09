@@ -23,9 +23,12 @@ You **can** just install it on the proxy, but any checks which are performed by 
 ### How do I get permissions to sync across multiple servers
 Connect each LuckPerms installation to the same MySQL/MongoDB server. You can use `/luckperms sync` to pull the latest changes from the database. You can also [setup a Messaging Service](https://github.com/lucko/LuckPerms/wiki/Instant-Update-Propagation#messaging-services) to have your changes sync instantly between servers.
 
-### LuckPerms cannot connect to my MySQL server
-### MySQL SSL errors
-### MySQL "No operations allowed after connection closed" error
-### LuckPerms cannot connect to my Redis server
+# MySQL errors
+
+Such as:
+
+* LuckPerms cannot connect to my MySQL server
+* I'm getting an annoying SSL warning message
+* "No operations allowed after connection closed" error
 
 Please see [here](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors).
