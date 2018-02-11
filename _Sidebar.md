@@ -1,4 +1,4 @@
-![](https://i.imgur.com/bfaq4vv.png)
+![](https://i.imgur.com/VspwLDn.png)
 # LuckPerms
 * [**Why LuckPerms?**](https://github.com/lucko/LuckPerms/wiki/Why-LuckPerms)
 ### Setup
