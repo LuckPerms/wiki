@@ -1,4 +1,5 @@
 ![LuckPerms](https://i.imgur.com/UNmLT3v.png)
+* [**Home**](https://github.com/lucko/LuckPerms/wiki)
 * [**Why LuckPerms?**](https://github.com/lucko/LuckPerms/wiki/Why-LuckPerms)
 ### Setup
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
