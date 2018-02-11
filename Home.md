@@ -25,7 +25,7 @@ If you would like support using the plugin, please seek help in the following pl
 
 **Please** make use of the resources available here on GitHub. The entire plugin has extensive documentation, and most things are covered and explained here.
 
-Please do not be offended if we respond to your question linking back here. It gets *seriously* boring answering the same questions again and again, when answers are readily available here for you to read.
+Please do not be offended if we respond to your question linking back here. It gets *really* boring answering the same questions again and again, when answers are readily available on the wiki. 🙂 
 
 Please take a look through the [Frequently Asked Questions](https://github.com/lucko/LuckPerms/wiki/FAQ) page, and any sections which are relevant to your question before seeking support with us directly.
 
