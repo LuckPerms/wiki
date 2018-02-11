@@ -1,4 +1,4 @@
-# LuckPerms Wiki
+![LuckPerms Wiki](https://i.imgur.com/VspwLDn.png)
 
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
