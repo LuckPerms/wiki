@@ -1,10 +1,10 @@
 ## Initial Setup
 
 1. Download the `LuckPerms-???-x.x.x.jar` file that corresponds to your platform. You can find the latest versions [here](https://ci.lucko.me/job/LuckPerms/).
-2. Navigate to your mods/plugins directory. This is usually either `/server/plugins/` or `/server/mods/`. Then place the LuckPerms jar in this directory.
+2. Navigate to your mods/plugins directory. This is usually either `/plugins/` or `/mods/`. Then place the LuckPerms jar in this directory.
 3. Fully stop & start your server, and allow the default configuration to be generated.
 4. Fully stop your server, and open the config file. It will be located at `/plugins/LuckPerms/config.yml` or `/config/luckperms/luckperms.conf`.
-5. Read through the config file, and change the options to suit your server, especially taking note of the **Storage** settings.
+5. Read through the config file, and change the options to suit your server, especially taking note of the Storage settings.
 6. Start your server again.
 
 ## Requirements
@@ -24,24 +24,45 @@ Most MC shared hosting companies have updated by now, but if your provider still
 ### Internet Connection
 LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software#external-services).
 
-If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server.
+If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/lib/` directory to your other server.
 
----
+## Compatibility
+Some known compatibility issues are outlined below. In all cases, these issues are out of my control - and there's nothing I can do to resolve them in LuckPerms itself. 🙁 
+
+Some of the compatibility issues are resolved in newer releases of the server - but the fixes are not backdated.
+
 ### CraftBukkit and Offline Mode
-If your server is using CraftBukkit and running in Offline or Cracked mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541). 
+If your server is using CraftBukkit and running in Offline or Cracked mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541).
+
+This issue is yet to be resolved. (as of writing on 11th Jan 18)
 
 Your options are:
 
-1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/PaperSpigot/) [recommended]
+1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/Paper/)
 2. Enable online mode
 
 ---
-### Older MC versions
-The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
+### Older CraftBukkit versions
+Releases of CraftBukkit (not including Spigot) prior to 1.12.1 are incompatible with LuckPerms, due to an [inconsistency/bug in CraftBukkit](https://hub.spigotmc.org/jira/browse/SPIGOT-3461).
+
+This issue was [fixed](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/commits/b1b9ab0df94c3b4b5c2613b7bf6347be10e864fc) on 26th July 2017 - any builds released after this date are compatible.
+
+Your options are:
+
+1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/Paper/)
+2. Update CraftBukkit to a version released after 26th Jul 17
+
+---
+### Older Minecraft versions
+The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8. 
 
 A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPermsLegacy/).
 
-If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encounter errors when trying to load LuckPerms. This is **not** a LuckPerms issue - but rather due to the "hacky" nature of these server solutions.
+1.7.10 is the earliest version supported by LuckPerms.
+
+---
+### Cauldron, Thermos, etc
+If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encounter errors when trying to load LuckPerms. This is **not** a LuckPerms issue - but rather due to a bug in the server.
 
 These issues have been reported to the respective projects, however none are currently being maintained, so this issue will (most likely) never be fixed. In the meantime, you can hack around these problems using the steps outlined below.
 
@@ -49,7 +70,7 @@ These issues have been reported to the respective projects, however none are cur
 
 1. Navigate to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
 2. Delete the `SpecialSource-1.7-SNAPSHOT.jar` file
-3. Download SpecialSource v1.7.4 from `http://central.maven.org/maven2/net/md-5/SpecialSource/1.7.4/SpecialSource-1.7.4.jar`
+3. Download SpecialSource v1.7.4 from `https://repo1.maven.org/maven2/net/md-5/SpecialSource/1.7.4/SpecialSource-1.7.4.jar`
 4. Copy the jar file to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
 5. Rename the jar file you just copied to `SpecialSource-1.7-SNAPSHOT.jar`
 6. Start up server. If it stops immediately, you have renamed the SpecialSource wrong.
