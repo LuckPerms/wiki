@@ -1,4 +1,4 @@
-# LuckPerms
+![LuckPerms](https://i.imgur.com/UNmLT3v.png)
 * [**Why LuckPerms?**](https://github.com/lucko/LuckPerms/wiki/Why-LuckPerms)
 ### Setup
 * [**Installation**](https://github.com/lucko/LuckPerms/wiki/Setup)
