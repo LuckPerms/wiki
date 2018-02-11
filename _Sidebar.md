@@ -1,4 +1,4 @@
-# Contents
+## Contents
 
 * [**Home**](https://github.com/lucko/LuckPerms/wiki)
 * [**Why LuckPerms?**](https://github.com/lucko/LuckPerms/wiki/Why-LuckPerms)
