@@ -30,7 +30,7 @@ Then, please make sure you read the section about [Choosing a Storage type](http
 ## Granting full access to modify permissions
 The first thing you'll want to do is give yourself full access to the plugin. When the plugin is first installed, nobody has access to the LuckPerms commands.
 
-To do this, you need to type `/luckperms user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
+To do this, you need to type `lp user Luck permission set luckperms.* true` into your server console, of course, replacing my username with your own. (don't worry, the usage of this command will be explained later)
 
 This should be the result:    
 ![](http://i.imgur.com/zaw4l7q.png)
@@ -44,21 +44,21 @@ We can create a new group with the create group command.
 
 Let's create a new group called admin, and then give it a permission.
 
-First, run [`/luckperms creategroup admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-creategroup). This will create a new empty group named "admin".
+First, run [`/lp creategroup admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-creategroup). This will create a new empty group named "admin".
 
 ![](http://i.imgur.com/3mz08n1.png)
 
-Next, we want to add a permission to the admin group. The command to modify a group is [`/luckperms group <group>`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#group---lp-group-group-). If you run the command, it will list each of the subcommands back to you.
+Next, we want to add a permission to the admin group. The command to modify a group is [`/lp group <group>`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#group---lp-group-group-). If you run the command, it will list each of the subcommands back to you.
 
 ![](http://i.imgur.com/CPiZK5G.png)
 
 You'll notice that the first command is the "info" command. This just lists some information about the group.
 
-We can run [`/luckperms group admin info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-info) to see some information about the new admin group.
+We can run [`/lp group admin info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-group-group-info) to see some information about the new admin group.
 
 ![](http://i.imgur.com/agliG4f.png)
 
-The next command down is the "permission" command. This allows you to modify the permissions held by the group. Again, running [`/luckperms group admin permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-) will list the available sub-commands.
+The next command down is the "permission" command. This allows you to modify the permissions held by the group. Again, running [`/lp group admin permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#permission---lp-user-user-permission---lp-group-group-permission-) will list the available sub-commands.
 
 ![](http://i.imgur.com/T4P5YFy.png)
 
@@ -69,20 +69,20 @@ Remember, we used this earlier to give a user access to the "luckperms.*" permis
 Just running the command without any arguments will return information about how to use it. For example:    
 ![](http://i.imgur.com/8h16DV0.png)
 
-For example, I want to give my admin group access to "minecraft.command.ban". I can therefore just run [`/luckperms group admin permission set minecraft.command.ban true`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-set).
+For example, I want to give my admin group access to "minecraft.command.ban". I can therefore just run [`/lp group admin permission set minecraft.command.ban true`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-set).
 
 ![](http://i.imgur.com/McXI5Nx.png)
 
 This command is giving `admin` access to the `minecraft.command.ban` permission. The true at the end is the value we're assigning the permission as. You can either set a permission to `true` or `false`. Setting a permission as true gives the user or group access to it, and setting it to false negates it. (specifically doesn't give them access)
 
-If I decide later that I don't want admin to have this permission anymore, I can just use the unset command to remove it, with [`/luckperms group admin permission unset minecraft.command.ban`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-unset).
+If I decide later that I don't want admin to have this permission anymore, I can just use the unset command to remove it, with [`/lp group admin permission unset minecraft.command.ban`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-permission-unset).
 
 ![](http://i.imgur.com/x1ecIQo.png)
 
 ## Adding a user to a group
 Adding users to a group can be done with the "parent" command. (we just swap "permission" for "parent" in our command usage)
 
-For example, to add myself to the admin group, I would run [`/luckperms user Luck parent add admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-add).
+For example, to add myself to the admin group, I would run [`/lp user Luck parent add admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-add).
 
 ![](http://i.imgur.com/eScw7gC.png)
 
@@ -104,7 +104,7 @@ I want users in my admin group to also have access to mod and default permission
 
 To achieve this, I can setup the groups to inherit from each other.
 
-The command [`/luckperms group admin parent add mod`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-add) will make admin inherit all of mods permissions. I can then do the same for mod, and run `/luckperms group mod parent add default`.
+The command [`/lp group admin parent add mod`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-add) will make admin inherit all of mods permissions. I can then do the same for mod, and run `/lp group mod parent add default`.
 
 ![](http://i.imgur.com/tYcKGe6.png)
 
@@ -115,6 +115,6 @@ A user in admin has access therefore to `minecraft.command.ban` and `minecraft.c
 ## Removing parent groups
 Removing parent groups is done with a spookily similar command.
 
-To remove myself from admin, I'd just run [`/luckperms user Luck parent remove admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-remove)
+To remove myself from admin, I'd just run [`/lp user Luck parent remove admin`](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-usergroup-usergroup-parent-remove)
 
 ![](http://i.imgur.com/Fa4Mlgs.png)
