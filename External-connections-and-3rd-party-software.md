@@ -13,6 +13,8 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 | Google Gson <br> https://github.com/google/gson | Maintained by Google https://github.com/google | This is included in the jar file for *Bukkit-Legacy*, and provided by the Minecraft server on all other platforms. Used for reading/writing JSON data | Apache License 2.0 https://github.com/google/gson/blob/master/LICENSE |
 | Caffeine cache <br> https://github.com/ben-manes/caffeine | Maintained by Ben Manes https://github.com/ben-manes | Downloaded at runtime. Caching utility | Apache License 2.0 https://github.com/ben-manes/caffeine/blob/master/LICENSE |
 | text <br> https://github.com/KyoriPowered/text | Maintained by kashike/KyoriPowered https://github.com/KyoriPowered | Included in the plugin jar. Used for constructing text messages | MIT License https://github.com/KyoriPowered/text/blob/master/license.txt |
+| Okio <br> https://github.com/square/okio | Maintained by square https://square.github.io/ | Downloaded at runtime. | Apache License 2.0 https://github.com/square/okio/blob/master/LICENSE.txt |
+| OkHttp <br> https://square.github.io/okhttp/ | Maintained by square https://square.github.io/ | Downloaded at runtime. | Apache License 2.0 https://github.com/square/okhttp/blob/master/LICENSE.txt |
 | ASM <br> http://asm.ow2.org/ | Maintained by OW2 https://www.ow2.org/ | Downloaded at runtime. Used to process downloaded dependencies | BSD 3-Clause License |
 | jar-relocator <br> https://github.com/lucko/jar-relocator | Maintained by Luck (that's me!) https://github.com/lucko | Downloaded at runtime. Used to process downloaded dependencies | Apache License 2.0 https://github.com/lucko/jar-relocator/blob/master/LICENSE.txt |
 | MariaDB Java Driver <br> https://github.com/MariaDB/mariadb-connector-j | Maintained by MariaDB https://mariadb.org/ | Downloaded at runtime if needed. Used to interact with the storage database | GNU Lesser General Public License v2.1 https://github.com/MariaDB/mariadb-connector-j/blob/master/LICENSE |
@@ -26,6 +28,7 @@ Each respective software, along with its homepage, usage in LuckPerms, licence, 
 | configurate <br> https://github.com/zml2008/configurate | Maintained by zml https://github.com/zml2008 | Downloaded at runtime if needed. Used to interact with flatfile storage types (yaml, json and hocon) | Apache License 2.0 https://github.com/zml2008/configurate/blob/master/LICENSE |
 | Jedis <br> https://github.com/xetorthio/jedis | Maintained by Jonathan Leibiusky https://github.com/xetorthio | Downloaded at runtime if needed. Used to interact with the redis server | MIT License https://github.com/xetorthio/jedis/blob/master/LICENSE.txt |
 | Apache Commons Pool <br> https://commons.apache.org/proper/commons-pool/ | Maintained by Apache https://www.apache.org/ | Downloaded at runtime if needed. Used by Jedis to pool Redis connections | Apache License 2.0 https://github.com/apache/commons-pool/blob/master/LICENSE.txt |
+
 
 ## External Services
 In order to deliver it's functionality, LuckPerms will under some circumstances make connections with and communicate with external services outside of the local server.
