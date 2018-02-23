@@ -681,7 +681,7 @@ Displays the groups in the track.
 
 ___
 #### `/lp track <track> append`  
-**Permission**: luckperms.track.info  
+**Permission**: luckperms.track.append  
 **Arguments**:  
 * `<group>` - the group to add
 
