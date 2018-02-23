@@ -15,7 +15,7 @@ The first argument enables/disables the system, and the second sets up the filte
 | `on`     | Enables the system, and will send you an alert in chat when the filter is matched. |
 | `record` | Same as "on", however you will not be notified via chat. |
 | `off`    | Just disables the system, and clears any matches from memory. |
-| `paste`  | Same as "off", but will also upload the first 500 results to the web, and provide you with a link. |
+| `paste`  | Same as "off", but will upload the results to the web viewer for easier analysis, and provide you with a link. |
 
 #### Filters
 The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
@@ -27,18 +27,12 @@ A filter string will match the start of the permission being checked, or the use
 * `Luck & !anticheat` - Matches any checks made against "Luck" that do not start with "anticheat"
 * `anticheat & !anticheat.check` - Matches checks on all users starting with "anticheat" but not starting with "anticheat.check"
 
-## Example
-I ran `/lp verbose record Luck & essentials.build`, which enabled the system, and made it match any checks against "Luck" that start with "essentials.build".
+## Web viewer
+The web viewer exposes the same information available in-game, but is easier to analyse when there are lots of checks being processed.
 
-I then broke some blocks (to generate some permission checks), followed by `/lp verbose paste`.
+You can simply click on an entry to see more information about the nature of the check.
 
-The plugin then uploaded the results, and returned this link. [`https://git.io/vbhy7`](https://git.io/vbhy7)
-
-If you take a look at the link, you'll see the results of the check. 😄 
-
-Under metadata, you can see some data about the check. You'll notice that `Count: 107 / 213`. This means that during the checking period, 213 permissions were checked, and 107 matched the filter. The results of each of those checks are also shown.
-
-The ❔ symbol represents an undefined result (false), a green tick represents true, and a red cross represents false.
+![](https://i.imgur.com/lhL6uaO.png)
 
 
 
