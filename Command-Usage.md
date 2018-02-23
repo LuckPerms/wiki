@@ -31,7 +31,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
 *  [/lp `verbose` \<on | record | off | paste\> [filter]](#lp-verbose)
-*  [/lp `tree` [selection] [max level] [player]](#lp-tree)
+*  [/lp `tree` [scope] [player]](#lp-tree)
 *  [/lp `search` \<permission\>](#lp-search)
 *  [/lp `check` \<user\> \<permission\>](#lp-check)
 *  [/lp `networksync`](#lp-networksync)
@@ -170,17 +170,14 @@ ___
 #### `/lp tree`  
 **Permission**: luckperms.tree  
 **Arguments**:  
-* `[selection]` - the root of the tree (specify `.` to include all permissions)
-* `[max level]` - how many sub branches should be returned (in other words, the width of the tree)
+* `[scope]` - the root of the tree (specify `.` to include all permissions)
 * `[player]` - the name of an online player to check against
 
 Generates a tree view of permissions registered to the server. The tree is built using data exposed to the server by plugins, and expanded over time as plugins check for permissions.
 
-All arguments are optional. The default selection is `.` (just a dot, which means all), and the default max level is `5`.
+All arguments are optional. The default selection is `.` (just a dot, which means all).
 
-Selection allows you to only generate a part of the tree. For example, a selection of `luckperms.user` will only return the branch of the tree starting with "luckperms.user".
-
-Max level allows you to define how many sub branches will be included. For example, if you set a max level of `2`, "luckperms.user" will be returned, but "luckperms.user.info" will not be shown.
+Scope allows you to only generate a part of the tree. For example, a scope of `luckperms.user` will only return the branch of the tree starting with "luckperms.user".
 
 ___
 #### `/lp search`  
