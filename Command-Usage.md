@@ -30,6 +30,8 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp](#lp)
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
+*  [/lp `editor`](#lp-editor)
+*  [/lp `debug`](#lp-debug)
 *  [/lp `verbose` \<on | record | off | paste\> [filter]](#lp-verbose)
 *  [/lp `tree` [scope] [player]](#lp-tree)
 *  [/lp `search` \<permission\>](#lp-search)
@@ -145,6 +147,19 @@ ___
 Lists some information/data about LuckPerms, including debugging output, statistics, settings, and important values from the configuration. 
 
 ___
+#### `/lp editor`  
+**Permission**: luckperms.editor  
+**Arguments**:  
+* `[type]` - the types to include in the editor session. can be "all", "users" or "groups"
+
+Opens a web interface to edit permissions data. After changes are saved, a command will be given that you need to run for the changes to take effect.
+
+___
+#### `/lp debug`  
+**Permission**: luckperms.debug  
+Records debugging output and provides you with a link.
+
+___
 #### `/lp verbose`  
 **Permission**: luckperms.verbose  
 **Arguments**:  
@@ -155,7 +170,7 @@ Controls the LuckPerms verbose logging system. This allows you to listen for all
 
 If your filters match the permission check, you will be notified.    
 
-`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first 3500 results to GitHub's pastebin, and provide you with a link.    
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first results to the web viewer, and provide you with a link.    
 
 Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
 
