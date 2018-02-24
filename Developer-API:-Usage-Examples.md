@@ -5,35 +5,29 @@ ___
 ### Index
 
 * Simple queries
-  * Checking if a player is in a group
-  * Finding a players group
-
+  * [Checking if a player is in a group](#checking-if-a-player-is-in-a-group)
+  * [Finding a players group](#finding-a-players-group)
 * I/O - loading & saving data
-  * Obtaining a User instance
-    * Distinction between online & offline players
-    * Loading data for players
-  * Obtaining a Group/Track instance
-  * Saving changes
-
-* The basics of Node
-  * Creating new node instances
-  * Modifying existing nodes
-
-* Reading user/group data
+  * [Obtaining a User instance](#obtaining-a-user-instance)
+    * [Distinction between online & offline players](#distinction-between-online--offline-players)
+    * [Loading data for players](#loading-data-for-players)
+  * [Obtaining a Group/Track instance](#obtaining-a-grouptrack-instance)
+  * [Saving changes](#saving-changes)
+* [The basics of Node](#the-basics-of-node)
+  * [Creating new node instances](#creating-new-node-instances)
+  * [Modifying existing nodes](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage-Examples#modifying-existing-nodes)
+* Reading user/group data (WIP)
 * Modifying user/group data (WIP)
-
 * The basics of Context (WIP)
   * Important classes (WIP)
   * Registering ContextCalculators (WIP)
   * Querying active contexts (WIP)
-
 * The basics of CachedData (WIP)
   * Performing permission checks (WIP)
   * Retrieving prefixes and suffixes (WIP)
   * Retrieving meta data (WIP)
-
-* Using UserData
-* Listening to LuckPerms events
+* [Using UserData](#using-userdata)
+* [Listening to LuckPerms events](#listening-to-luckperms-events)
 
 ___
 
