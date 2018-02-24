@@ -42,6 +42,8 @@
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
+  * [Quick start guide](https://github.com/lucko/LuckPerms/wiki/Developer-API#quick-start-guide)
+  * [Usage Examples](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage-Examples)
 
 ### Other
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
