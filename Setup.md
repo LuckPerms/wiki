@@ -42,17 +42,6 @@ Your options are:
 2. Enable online mode
 
 ---
-### Older CraftBukkit versions
-Releases of CraftBukkit (not including Spigot) prior to 1.12.1 are incompatible with LuckPerms, due to an [inconsistency/bug in CraftBukkit](https://hub.spigotmc.org/jira/browse/SPIGOT-3461).
-
-This issue was [fixed](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/commits/b1b9ab0df94c3b4b5c2613b7bf6347be10e864fc) on 26th July 2017 - any builds released after this date are compatible.
-
-Your options are:
-
-1. Switch to Spigot or [Paper](https://ci.destroystokyo.com/job/Paper/)
-2. Update CraftBukkit to a version released after 26th Jul 17
-
----
 ### Older Minecraft versions
 The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8. 
 
