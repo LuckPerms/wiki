@@ -34,35 +34,32 @@ Before being saved to disk, the binary data is hashed and compared against expec
 
 ___
 
-### Verbose / Tree pastebin functionality
-LuckPerms includes functionality which allows for data to be viewed inside of
-GitHub's Gist pastebin service.
+### Web editor / Verbose viewer / Tree viewer functionality
 
-When these features are used, LuckPerms will communicate and post data to the following endpoints.
+* **Web Editor** - A web based permissions editor for data stored in the plugin.
+* **Verbose Viewer** - A web based viewer for verbose recording logs.
+* **Tree Viewer** - A web based viewer to visualise tree permission structures.
 
-- https://api.github.com/gists/ (used to create gists)
-- https://git.io/ (used to shorten the gist's url)
+The clients for each of these applications can be found at
 
-The uploaded data is posted "anonymously" and in "secret" mode.   
-See here for more information. https://help.github.com/articles/about-gists/#secret-gists
+* https://luckperms.github.io/editor/
+* https://luckperms.github.io/verbose/
+* https://luckperms.github.io/treeview/
 
-___
+respectively. 
 
-### Editor functionality
-LuckPerms includes functionality which allows for permission data to be viewed inside of
-a web editor.
+These sites are hosted and published using [GitHub Pages](https://pages.github.com/). They are not backed by a special web server. All dynamic functionality is provided using client-side JavaScript.
 
-When this functionality is used, LuckPerms will communicate and post data to the following endpoints.
+The source code for these sites is freely available here: https://github.com/lucko/LuckPermsWeb
 
-- https://api.github.com/gists/ (used to create & read gists)
-- https://gist.githubusercontent.com/ (used to read the content of a given gist)
+Communication between the editors/viewers and the plugin (which runs on your MC server) is performed using isolated data payloads.
 
-The uploaded data is posted "anonymously" and in "secret" mode.   
-See here for more information. https://help.github.com/articles/about-gists/#secret-gists
+There is never any direct communication between the editors/viewers and the server. You can freely share the links to editor sessions - changes must be applied by running a command on the MC server.
 
-The editor site at https://lpedit.lucko.me is hosted by GitHub pages, and proxied via CloudFlare. The plugin never makes any direct communication with the editor site. Communication is performed using isloated data payloads hosted by GitHub Gist.
+Data is posted to & read from https://bytebin.lucko.me/ - effectively a very simple pastebin API.   
+This is (currently) hosted by me (Luck) using DigitalOcean & CloudFlare.
 
-I (Luck) do not host, control or ever come into contact with any uploaded content.
+Posted data is retained for 24 hours and then deleted.
 
 ___
 
