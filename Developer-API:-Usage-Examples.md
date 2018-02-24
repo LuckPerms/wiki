@@ -4,14 +4,36 @@ ___
 
 ### Index
 
-* [Checking if a player is in a group](#checking-if-a-player-is-in-a-group)
-* [Finding a players group](#finding-a-players-group)
-* [Listening to LuckPerms events](#listening-to-luckperms-events)
-* [Obtaining a User instance](#obtaining-a-user-instance)
-* [Obtaining a Group/Track instance](#obtaining-a-grouptrack-instance)
-* [Adding a permission/parent/prefix/suffix/metadata to a user/group](#adding-a-permissionparentprefixsuffixmetadata-to-a-usergroup)
-* [Using UserData](#using-userdata)
-* [Searching for a permission](#searching-for-a-permission)
+* Simple queries
+  * Checking if a player is in a group
+  * Finding a players group
+
+* I/O - loading & saving data
+  * Obtaining a User instance
+    * Distinction between online & offline players
+    * Loading data for players
+  * Obtaining a Group/Track instance
+  * Saving changes
+
+* The basics of Node
+  * Creating new node instances
+  * Modifying existing nodes
+
+* Reading user/group data
+* Modifying user/group data (WIP)
+
+* The basics of Context (WIP)
+  * Important classes (WIP)
+  * Registering ContextCalculators (WIP)
+  * Querying active contexts (WIP)
+
+* The basics of CachedData (WIP)
+  * Performing permission checks (WIP)
+  * Retrieving prefixes and suffixes (WIP)
+  * Retrieving meta data (WIP)
+
+* Using UserData
+* Listening to LuckPerms events
 
 ___
 
@@ -29,10 +51,12 @@ However, remember that anyone with server operator status or `*` permissions wil
 ___
 
 ### Finding a players group
-If you just want to find out which group a player is in, I **highly** recommend the following method. (you don't even need to use the API!)
+We can use the method used above alongside a list of defined "possible" groups in order to search for a player's group.
+
+Remember to order your group list in order of priority. e.g. owner first, member last.
 
 ```java
-public static String getPlayerGroup(Player player, List<String> possibleGroups) {
+public static String getPlayerGroup(Player player, Collection<String> possibleGroups) {
     for (String group : possibleGroups) {
         if (player.hasPermission("group." + group)) {
             return group;
@@ -41,171 +65,147 @@ public static String getPlayerGroup(Player player, List<String> possibleGroups) 
     return null;
 }
 ```
-Remember to order your group list in order of priority. e.g. Owner first, member last.
-
-___
-
-### Listening to LuckPerms events
-All event interfaces can be found in the [`me.lucko.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/LuckPermsEvent.java).
-
-To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
-
-It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
-
-```java
-import me.lucko.luckperms.api.event.EventBus;
-import me.lucko.luckperms.api.event.log.LogPublishEvent;
-import me.lucko.luckperms.api.event.user.UserLoadEvent;
-import me.lucko.luckperms.api.event.user.track.UserPromoteEvent;
-
-public class TestListener {
-    private final MyPlugin plugin;
-
-    public TestListener(MyPlugin plugin, LuckPermsApi api) {
-        this.plugin = plugin;
-
-        // get the LuckPerms event bus
-        EventBus eventBus = api.getEventBus();
-
-        // subscribe to an event using a lambda
-        eventBus.subscribe(LogPublishEvent.class, e -> e.getCancellationState().set(true));
-
-        eventBus.subscribe(UserLoadEvent.class, e -> {
-            System.out.println("User " + e.getUser().getName() + " was loaded!");
-            if (e.getUser().hasPermission("some.perm", true)) {
-                // Do something
-            }
-        });
-
-        // subscribe to an event using a method reference
-        eventBus.subscribe(UserPromoteEvent.class, this::onUserPromote);
-    }
-
-    private void onUserPromote(UserPromoteEvent event) {
-        // as we want to access the Bukkit API, we need to use the scheduler to jump back onto the main thread.
-        Bukkit.getScheduler().runTask(plugin, () -> {
-            Bukkit.broadcastMessage(event.getUser().getName() + " was promoted to" + event.getGroupTo().get() + "!");
-
-            Player player = Bukkit.getPlayer(event.getUser().getUuid());
-            if (player != null) {
-                player.sendMessage("Congrats!");
-            }
-        });
-    }
-
-}
-```
-
-`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
 
 ___
 
 ### Obtaining a User instance
-A `User` in LuckPerms is simply an object which represents a player on the server, and their associated permission data. In order to conserve memory usage, LuckPerms will only load User data when it absolutely needs to. 
+A `User` in LuckPerms is simply an object which represents a player on the server, and their associated permission data.
+
+#### Distinction between online & offline players
+In order to conserve memory usage, LuckPerms will only load User data when it absolutely needs to. 
 
 Meaning:
-* **Online players** are guaranteed to have an associated User object loaded in memory.
-* **Offline players** MAY have an associated User object loaded, but they most likely will not.
+* Online players are guaranteed to have an associated User object loaded already.
+* Offline players *may* have an associated User object loaded, but they most likely will not.
 
 This makes getting a User instance a little complicated, depending on if the Player is online or not.
 
-If you need to interact with the `User` on the main thread, then you need to be sure that the player is online.
+#### Loading data for players
 
+##### If the player is already online
+If we know the player is connected, LuckPerms will already have data in memory for them.
+
+It's as simple as...
 ```java
-UUID playerUuid = ....?
-User user = api.getUser(playerUuid);
-if (user == null) {
-    // user isn't already loaded.. :(
-} else {
-    // great, the user is loaded!
+public User loadUser(Player player) {
+    // assert that the player is online
+    if (!player.isOnline()) {
+        throw new IllegalStateException("Player is offline");
+    }
+    
+    return luckPermsApi.getUserManager().getUser(player.getUniqueId());
 }
 ```
 
-Handling this can be tricky, but it's slightly easier if you don't need to get a result back to the same thread immediately.
+However, remember that this instance *may* not represent the user's most up-to-date state. If you want to make changes, it's a good idea to request for the user's data to be loaded again.
 
-If you're not sure if the `User` you want to obtain is online, you can setup a method to help with the process.
+##### If the player isn't (or might not be) online
+Let's assume we want to load some data about a user - but we only have their unique id.
+
+For the purposes of explaining, assume we want to write an implementation for this method.
+
 ```java
-public void getUserAndApply(UUID playerUuid, Consumer<User> action) {
-    User user = api.getUser(playerUuid);
-    if (user != null) {
-        // user is already loaded, just apply the action
-        action.accept(user);
-        return;
-    }
+public void giveAdminPermissions(UUID uuid) {...}
+```
 
-    // ok, user isn't online, so we need to load them.
-    // once the user is loaded, this callback will be executed on the main thread.
-    api.getStorage().loadUser(playerUuid)
-            .thenAcceptAsync(wasSuccessful -> {
+The first thing we need to do is obtain the `UserManager`. This object is responsible for handling all operations relating to `User`s. The user manager provides a method which lets us load a `User` instance, appropriately named `loadUser`.
 
-                // for whatever reason, the user could not be loaded.
-                // this might be because the database is not accessible, or because
-                // there was some other unexpected error.
-                if (!wasSuccessful) {
-                    return;
-                }
+The method returns a `CompletableFuture` (explained [here](https://github.com/lucko/LuckPerms/wiki/Developer-API#using-completablefutures)).
 
-                // ok, so the user *should* be loaded now!
-                User loadedUser = api.getUser(playerUuid);
-                if (loadedUser == null) {
-                    // nope, still not loaded.
-                    return;
-                }
+We can simply attach a callback onto the future to apply the action.
 
-                // apply the action now they're loaded.
-                action.accept(loadedUser);
+```java
+public void giveAdminPermissions(UUID uuid) {
+    UserManager userManager = luckPermsApi.getUserManager();
+    CompletableFuture<User> userFuture = userManager.loadUser(uuid);
 
-                // tell LuckPerms that you're finished with the user, and that
-                // it can unload them.
-
-                api.cleanupUser(loadedUser);
-            }, api.getStorage().getSyncExecutor());
+    userFuture.thenAcceptAsync(user -> {
+        // TODO: apply the action to the User instance
+        user.doSomething(...);
+    });
 }
 ```
 
-This then allows you to do something like this.
+##### How to query information for a (potentially) offline player
+The callback approach works well if you don't need to actually "return" anything. It performs all of the nasty i/o away from the main server thread, and handles everything in the background.
+
+But what if we need data *now*? Well, that's where it gets fun. Unfortunately, there's no straightforward answer - but you effectively have two options.
+
+* Define a blocking method, which will be (kind of) simple, but will lag the server if it's not called async
+* Embrace CompletableFutures and callbacks
+
+The first option effectively comes down to this...
+
 ```java
-getUserAndApply(playerUuid, user -> {
-    // do something with the user.
-    user.doSomething(...);
-});
-```
+public User giveMeADamnUser(UUID uuid) {
+    UserManager userManager = luckPermsApi.getUserManager();
+    CompletableFuture<User> userFuture = userManager.loadUser(uuid);
 
-Alternatively, you can forcefully load the user. However, this is only safe to do from an async thread.
-```java
-public void doSomethingToUser(UUID playerUuid) {
-    User user = api.getUser(playerUuid);
-    if (user == null) {
-        // user not loaded, we need to load them from the storage.
-        // this is a blocking call.
-        api.getStorage().loadUser(playerUuid).join();
-
-        // then grab a new instance
-        user = api.getUser(playerUuid);
-    }
-
-    // still null, despite our efforts to load them.
-    if (user == null) {
-        throw new RuntimeException("Unable to load user for " + playerUuid);
-    }
-
-    // now we have a user, and can apply whatever action we want.
-    user.doSomething(...);
-
-    // remember that once you're finished with a user, you need to tell
-    // LuckPerms to cleanup that instance.
-    api.cleanupUser(loadedUser);
+    return userFuture.join(); // ouch!
 }
 ```
 
-As you can see, this process can get fairly complex. What you decide to do will greatly depend on what you're trying to achieve with the API. If you know the player is online, it's simple. 😄 
+You can then do whatever you want with the user instance - but remember, this method should only ever be called from an async task!
+
+The other option is to embrace callbacks.
+
+In an ideal world, we'd be able to do something like this, without any consequences.
+
+```java
+public boolean isAdmin(UUID who) {
+    User user = luckPermsApi.getUserManager().loadUser(who);
+    return user.inheritsGroup("admin"); // not a real method, just used here as an example :p
+}
+
+public void informIfAdmin(CommandSender sender, UUID who) {
+    if (isAdmin(who)) {
+        sender.sendMessage("Yes! That player is an admin!");
+    } else {
+        sender.sendMessage("No, that player isn't an admin.");
+    }
+}
+```
+
+However, we can't, because `#loadUser` returns a Future - as it performs lots of expensive database queries to produce a result.
+
+The solution? More futures!
+
+```java
+public CompletableFuture<Boolean> isAdmin(UUID who) {
+    return luckPermsApi.getUserManager().loadUser(who)
+            .thenApplyAsync(user -> user.inheritsGroup("admin"));
+}
+
+public void informIfAdmin(CommandSender sender, UUID who) {
+    isAdmin(who).thenAcceptAsync(result -> {
+        if (result) {
+            sender.sendMessage("Yes! That player is an admin!");
+        } else {
+            sender.sendMessage("No, that player isn't an admin.");
+        }
+    });
+}
+```
+
+To summarise, there are two ways to obtain a user.
+
+* Using `UserManager#getUser`
+  * Always returns a result for online players
+  * Is "main thread friendly" (can be called sync)
+  * Will sometimes (but usually not) return a result of offline players
+* Using `UserManager#loadUser`
+  * Returns a future
+  * Can either be used alongside callbacks, or as part of a blocking method which is only ever called async
+  * Always works for both offline/online users
+
+___
 
 ### Obtaining a Group/Track instance
 Grabbing a `Group` or `Track` is much more simple, as they are always kept loaded in memory.
 
 Simply...
 ```java
-Group group = api.getGroup(groupName);
+Group group = api.getGroupManager().getGroup(groupName);
 if (group == null) {
     // group doesn't exist.
     return;
@@ -215,15 +215,75 @@ if (group == null) {
 group.doSomething(...);
 ```
 
-You can do exactly the same for `Track`s using the `#getTrack` method.
+You can do exactly the same for `Track`s using the `TrackManager#getTrack` method.
 
-### Adding a permission/parent/prefix/suffix/metadata to a user/group
-In LuckPerms, group inheritances, chat meta (prefixes/suffixes) and metadata are all stored inside permission `Node`s, represented in the API by the `Node` interface.
+___
 
+### Saving changes
+After making changes to a user/group/track, you have to save the changes back to the storage provider. It's pretty easy.
+
+```java
+public void addPermission(User user, String permission) {
+    // TODO add the permission
+    
+    // Now we need to save changes.
+    luckPermsApi.getUserManager().saveUser(user);
+}
+```
+
+The same methods also exist for groups and tracks.
+
+However, if we're making a change to the user's live data, we'll also need to refresh their caches for the change to apply. In order to do this, we can just add a call onto the end of the save method.
+
+It becomes...
+
+```java
+luckPermsApi.getUserManager().saveUser(user).thenRunAsync(user::refreshCachedData);
+```
+
+For group changes, it's best to request a complete update task.
+
+```java
+luckPermsApi.getGroupManager().saveGroup(group).thenComposeAsync(v -> luckPermsApi.runUpdateTask());
+```
+
+___
+
+### The basics of Node
+
+The `Node` interface is the core data class in LuckPerms.
+
+Most simply, it represents a "permission node". However, it actually encapsulates far more than just permission assignments. Nodes are used to store data about inherited groups, as well as assigned prefixes, suffixes and meta values.
+
+Combining these various states into one object (a "node") means that a holder only has to have one type of data set (a set of nodes) in order to take on various properties.
+
+The `Node` interface provides a number of methods to read the attributes of the node, as well as methods to query and extract additional state and properties from these settings.
+
+Nodes have the following attributes:
+
+* permission - the actual permission string
+* value - the value of the node (false for negated)
+* override - if the node is marked as having special priority over other nodes
+* server - the specific server where this node should apply
+* world - the specific world where this node should apply
+* context - the additional contexts required for this node to apply
+* expiry - the time when this node should expire
+
+Nodes can also fall into the following sub categories.
+
+* normal - just a regular permission
+* group node - a "group node" marks that the holder should inherit data from another group
+* prefix - represents an assigned prefix
+* suffix - represents an assigned suffix
+* meta - represents an assigned meta option
+
+___
+
+### Creating new node instances
 To obtain a `Node`, you use the `NodeFactory`, which can be obtained using `LuckPermsApi#getNodeFactory`.
 
 ```java
-// build a permission node
+// build a simple permission node
 Node node = api.getNodeFactory().newBuilder(permission).build();
 
 // build a group node
@@ -239,43 +299,17 @@ Node node = api.getNodeFactory().makeSuffixNode(150, "[Some Suffix]").build();
 Node node = api.getNodeFactory().makeMetaNode("some-key", "some-value").build();
 ```
 
-Then, you can set the node onto the user/group.
+___
 
-**IMPORTANT:** Whenever you make changes to User/Group/Track data, you need to save your changes using the `Storage` interface.
+### Modifying existing nodes
+`Node`s are immutable - meaning their attributes cannot be changed. However, we can easily create a *new* node based upon the properties of an existing one.
 
+e.g.
 ```java
-public boolean addPermission(User user, String permission) {
-
-    // build the permission node
-    Node node = api.getNodeFactory().newBuilder(permission).build();
-
-    // set the permission
-    DataMutateResult result = user.setPermission(node);
-
-    // wasn't successful.
-    // they most likely already have the permission
-    if (result != DataMutateResult.SUCCESS) {
-        return false;
-    }
-
-    // now, before we return, we need to have the user to storage.
-    // this method will save the user, then run the callback once complete.
-    api.getStorage().saveUser(user)
-            .thenAcceptAsync(wasSuccessful -> {
-                if (!wasSuccessful) {
-                    return;
-                }
-
-                System.out.println("Successfully set permission!");
-
-                // refresh the user's permissions, so the change is "live"
-                user.refreshCachedData();
-
-            }, api.getStorage().getAsyncExecutor());
-
-    return true;
-}
+Node negated = node.toBuilder().setValue(false).build();
 ```
+
+___
 
 ### Using UserData
 All `User`s also have an extra object attached to them called `UserData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all users.
@@ -336,15 +370,59 @@ String metaResult = metaData.getMeta().getOrDefault("some-key", "default-value")
 
 Since v4.0, these queries and lookups can also be performed for groups! The methods are identical for performing group based checks.
 
-### Searching for a permission
-You can use Java 8 streams to easily filter and return permissions applied to a user.
+___
+
+### Listening to LuckPerms events
+All event interfaces can be found in the [`me.lucko.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/LuckPermsEvent.java).
+
+To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
+
+It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
+
 ```java
-public boolean hasPermissionStartingWith(User user, String startingWith) {
-    return user.getPermissions().stream()
-            .filter(Node::getValue)
-            .filter(Node::isPermanent)
-            .filter(n -> !n.isServerSpecific())
-            .filter(n -> !n.isWorldSpecific())
-            .anyMatch(n -> n.getPermission().startsWith(startingWith));
+import me.lucko.luckperms.api.event.EventBus;
+import me.lucko.luckperms.api.event.log.LogPublishEvent;
+import me.lucko.luckperms.api.event.user.UserLoadEvent;
+import me.lucko.luckperms.api.event.user.track.UserPromoteEvent;
+
+public class TestListener {
+    private final MyPlugin plugin;
+
+    public TestListener(MyPlugin plugin, LuckPermsApi api) {
+        this.plugin = plugin;
+
+        // get the LuckPerms event bus
+        EventBus eventBus = api.getEventBus();
+
+        // subscribe to an event using a lambda
+        eventBus.subscribe(LogPublishEvent.class, e -> e.getCancellationState().set(true));
+
+        eventBus.subscribe(UserLoadEvent.class, e -> {
+            System.out.println("User " + e.getUser().getName() + " was loaded!");
+            if (e.getUser().hasPermission("some.perm", true)) {
+                // Do something
+            }
+        });
+
+        // subscribe to an event using a method reference
+        eventBus.subscribe(UserPromoteEvent.class, this::onUserPromote);
+    }
+
+    private void onUserPromote(UserPromoteEvent event) {
+        // as we want to access the Bukkit API, we need to use the scheduler to jump back onto the main thread.
+        Bukkit.getScheduler().runTask(plugin, () -> {
+            Bukkit.broadcastMessage(event.getUser().getName() + " was promoted to" + event.getGroupTo().get() + "!");
+
+            Player player = Bukkit.getPlayer(event.getUser().getUuid());
+            if (player != null) {
+                player.sendMessage("Congrats!");
+            }
+        });
+    }
+
 }
 ```
+
+`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
+
+___
