@@ -26,7 +26,7 @@ The plugin can be configured and used in a number of ways. For example, it suppo
 
 All libraries are downloaded from https://repo1.maven.org/maven2/ - a public software repository commonly referred to as the "Central Repository" or "Maven Central".
 
-This site is a trustworhy source - it is used by most Java developers and open source projects.
+This site is a trustworthy source - it is used by most Java developers and open source projects.
 
 In the extreme event that the site is compromised, and as a precautionary measure, LuckPerms will perform additional verification during the download process to ensure that libraries are intact and as expected. 
 
