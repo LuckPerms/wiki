@@ -59,6 +59,8 @@ There is never any direct communication between the editors/viewers and the serv
 Data is posted to & read from https://bytebin.lucko.me/ - effectively a very simple pastebin API.   
 This is (currently) hosted by me (Luck) using DigitalOcean & CloudFlare.
 
+Again, the source is freely available here: https://github.com/lucko/bytebin
+
 Posted data is retained for 24 hours and then deleted.
 
 ___
