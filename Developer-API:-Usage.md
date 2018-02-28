@@ -559,72 +559,109 @@ You can create a Contexts instance using `Contexts.of(...)`, `Contexts.global()`
 It is more likely that you'll wish to obtain an "active" instance from LuckPerms via the `ContextManager`.
 
 #### Registering ContextCalculators
+
+A "subject" (a player in most cases) is just an object which can have contexts applied to them.
+
+In other words, a "subject" is an object which has an **active context set**. A `ContextCalculator` is an object which determines the "active" contexts for a given type of Subject.
+
+The subject type varies between platforms.
+
+| Platform | Subject type |
+|----------|--------------|
+| Bukkit | `org.bukkit.entity.Player` |
+| BungeeCord | `net.md_5.bungee.api.connection.ProxiedPlayer` |
+| Sponge | `org.spongepowered.api.service.permission.Subject` |
+| Nukkit | `cn.nukkit.Player` |
+
+In order to provide your own context, you need to create and register a `ContextCalculator`.
+
+For example, if I wanted to provide a context for the player's gamemode, in order to set permissions for players only when they are in creative, I'd create a calculator as follows.
+
+```java
+public class CustomCalculator implements ContextCalculator<Player> {
+
+    @Override  
+    public MutableContextSet giveApplicableContext(Player subject, MutableContextSet accumulator) {
+        accumulator.add("gamemode", subject.getGameMode().name());
+        return accumulator;
+    }
+    
+}
+```
+
+Then register it using
+```java
+api.getContextManager().registerCalculator(new CustomCalculator());
+```
+
 #### Querying active contexts
+You can query the "active" contexts of a Subject using the `ContextManager`.
+
+If you already have an instance of the subject type, you can query directly using this.
+```java
+Player player = ...;
+
+ImmutableContextSet contextSet = api.getContextManager().getApplicableContext(player);
+Contexts contexts = api.getContextManager().getApplicableContexts(player);
+```
+
+If you only have a `User`, you can still perform a lookup, however, a result will only be returned if the corresponding subject (player) is online.
+```java
+Optional<ImmutableContextSet> contextSet = api.getContextManager().lookupApplicableContext(user);
+Optional<Contexts> contexts = api.getContextManager().lookupApplicableContexts(user);
+```
+
+If you absolutely need to obtain an instance, you can fallback to the server's "static" context. (these are formed using calculators which provide contexts regardless of the passed subject.)
+```java
+ContextManager cm = api.getContextManager();
+
+ImmutableContextSet contextSet = cm.lookupApplicableContext(user).orElse(cm.getStaticContext());
+Contexts contexts = cm.lookupApplicableContexts(user).orElse(cm.getStaticContexts());
+```
+___
 
 ### The basics of CachedData
+All `User`s and `Group`s also have an extra object attached to them called `CachedData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all permission holders.
+
+The lookup methods provided by this class are very fast. If you're doing frequent data lookups, it is highly recommended that if possible, you use `CachedData` over the methods in `User` and `Group`.
+
+Everything in `CachedData` is indexed by `Contexts`, as this is how LuckPerms processes all lookups internally.
+
+The contained data is split into two separate sections: `PermissionData` and `MetaData`.
+
+`PermissionData` contains the user/groups fully resolved map of permissions, and allows you to run permission checks in exactly the same way as you would using the Player class provided by the platform.
+
+`MetaData` contains information about a user/groups prefixes, suffixes, and meta values.
+
+#### Obtaining `PermissionData` and `MetaData`
+You need:
+* A `User` or `Group` instance
+* The `Contexts` to get the data in (see above for how to obtain this)
+
+Once you have those instances, it's as simple as:
+```java
+PermissionData permissionData = user.getCachedData().getPermissionData(contexts);
+MetaData metaData = user.getCachedData().getMetaData(contexts);
+```
+
 #### Performing permission checks
-#### Retrieving prefixes/suffixes
-#### Retrieving meta data
-
-
-### Using UserData
-All `User`s also have an extra object attached to them called `UserData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all users.
-
-This class is **very fast**, and is actually what is used to respond to all permission check requests made by other plugins on the server. If you're doing frequent data lookups, it is highly recommended that if possible, you use `UserData` over the methods in `User`.
-
-Everything in `UserData` is indexed by `Contexts`, as this is how LuckPerms processes all lookups internally.
-
-Contexts are explained in detail [here](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context), and are represented in the API by the `Contexts` class.
-
-The API exposes methods to obtain instances of `Contexts` using the internal LuckPerms calculation, however, these methods only work for online players. This is because, by their very nature, Contexts depend on the players state.
-
-If you have a `Player` or `ProxiedPlayer` instance handy for the User you're querying, you can use
-```java
-Contexts contexts = api.getContextsForPlayer(player);
-```
-to get a "current" instance.
-
-Otherwise, you can use
-```java
-Optional<Contexts> contexts = api.getContextForUser(user);
-```
-but be aware this will only return an instance for Users where the corresponding player is online.
-
-You can fallback to the platforms static content instance using `ContextManager#getStaticContexts`.
-
-Finally, as a last result, you can either construct your own custom `Contexts` instance using your own values, or use `Contexts.global()` or `Contexts.allowAll()`.
-
-Once you have a `Contexts` instance, you can start using the `UserData` object. 😄 
-
-The containing data is split into two separate sections, 'Permission' and 'Meta' data.
-```java
-UserData cachedData = user.getCachedData();
-Contexts contexts = ...;
-
-PermissionData permissionData = cachedData.getPermissionData(contexts);
-MetaData metaData = cachedData.getMetaData(contexts);
-```
-
-`PermissionData` contains information about a users "active" permission nodes, and allows you to run permission checks, in exactly the same way as you would using the Player/ProxiedPlayer object.
-
-`MetaData` contains information about a users "active" prefixes, suffixes, and meta values.
-
-For example...
 ```java
 // run a permission check!
 Tristate checkResult = permissionData.getPermissionValue("some.permission.node");
 
 // the same as what Player#hasPermission would return
 boolean checkResultAsBoolean = checkResult.asBoolean();
-
-// get their current prefix
-String prefix = metaData.getPrefix();
-
-// get some random meta value
-String metaResult = metaData.getMeta().getOrDefault("some-key", "default-value");
 ```
 
-Since v4.0, these queries and lookups can also be performed for groups! The methods are identical for performing group based checks.
+#### Retrieving prefixes/suffixes
+```java
+String prefix = metaData.getPrefix();
+String suffix = metaData.getSuffix();
+```
+#### Retrieving meta data
+```java
+String metaResult = metaData.getMeta().getOrDefault("some-key", "default-value");
+```
 
 ___
 
