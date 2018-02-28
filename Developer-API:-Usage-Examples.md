@@ -305,6 +305,268 @@ Node negated = node.toBuilder().setValue(false).build();
 
 ___
 
+### Reading user/group data
+
+`User`s and `Group`s both inherit from a super interface called `PermissionHolder`. This interface defines most of the shared permission functionality in users and groups.
+
+As explained above, most data held by users/groups are contained within `Node` instances. This means that there are only a few methods to think about. However, they all do slightly different things!
+
+Importantly, all of the methods below return **immutable collections**. You cannot make changes to the returned connections. 
+
+#### `.getOwnNodes()`
+The method signature is:
+```java
+List<Node> getOwnNodes()
+```
+
+* This method returns an un-flattened (or squashed) list of the user/groups permission nodes. 
+* Entries nearer the start of the list (index zero) have priority over nodes at the end.
+* This view does **not** consider inherited data.
+
+It's a relatively cheap call, and will return quite quickly.
+
+You can use the Stream API to easily filter the returned data to find what you need. For example, if you wanted to get a list of groups a holder inherits from, you could use something like this:
+```java
+Set<String> groups = user.getAllNodes().stream()
+    .filter(Node::isGroupNode)
+    .map(Node::getGroupName)
+    .collect(Collectors.toSet());
+```
+
+Or even more complicated queries, like finding the max weight of a temporary prefix held on a specific server.
+```java
+OptionalInt maxWeight = user.getAllNodes().stream()
+    .filter(Node::isTemporary)
+    .filter(Node::isPrefix)
+    .filter(Node::isServerSpecific)
+    .filter(n -> n.getServer().get().equals("factions"))
+    .map(Node::getPrefix)
+    .mapToInt(Map.Entry::getKey)
+    .max();
+```
+
+#### `.getNodes()`
+The method signature is:
+```java
+ImmutableSetMultimap<ImmutableContextSet, Node> getNodes();
+```
+
+* This method is similar to `#getOwnNodes`, but differs in the way the data is presented.
+* Nodes are mapped to the value of their context - obtained using `Node#getFullContexts`
+* This is how data is stored internally (at the moment) - so again this method should return quickly.
+* You should use this method if you want to query data in a specific set of contexts - otherwise it's probably better to use one of the other options.
+* This view does **not** consider inherited data.
+
+#### `.getPermissions()`
+The method signature is:
+```java
+SortedSet<? extends Node> getPermissions();
+```
+
+Note that despite the name, this method will still return all types of node - not just plain permissions.
+
+* This method returns a sorted view of `#getOwnNodes`. If you are not worried about ordering, it's faster to use `#getOwnNodes`.
+* The nodes are sorted according to "priority order". As the returned type is a set, duplicate elements may be missing.
+* This view does **not** consider inherited data.
+
+#### `.getAllNodes()`
+The method signature is:
+```java
+SortedSet<LocalizedNode> getAllNodes();
+```
+
+* Unlike the other methods, this method **does** return inherited data.
+* This method is quite slow - if you need to query inherited data, consider using `CachedData` (explained below)
+* Users/Groups also define a version of this method which accepts a `Contexts` instance - to filter results based upon on the encapsulated lookup settings in the contexts.
+
+___
+
+### Modifying user/group data
+
+User/group data can be modified by adding and removing `Node`s from the holders data. This can be done in a number of ways.
+
+#### `.setPermission(Node)`
+
+* Effectively "adds" a node to the user/group.
+* Note that despite the name, this method will work for all types of node.
+	* Meaning, this method is also used for
+		* Adding prefixes
+		* Adding suffixes
+		* Adding metadata
+		* Adding inheritances to other groups
+* This method adds the node to the holder's permanent permission store, and when saved, this data will be written to the storage provider.
+
+The method returns a `DataMutateResult`. This enum encapsulates the status of the operation, and will return a value depending on if the operation was performed successfully.
+
+In the case of `#setPermission`, it will return `ALREADY_HAS` if the user/group already has the permission set.
+
+You can check for generic success/failure using `DataMutateResult#wasSuccess` and `DataMutateResult#wasFailure`.
+
+#### `.setTransientPermission(Node)`
+
+Same as the above method, except this method adds the node to the holders "transient" data store.
+
+A transient node is a permission that does not persist. Whenever a user logs out of the server, or the server restarts, this permission will disappear. It is never saved to the storage, and therefore will not apply on other servers.
+
+This is useful if you want to temporarily set a permission for a user while they're online, but don't want it to persist, and have to worry about removing it when they log out.
+
+#### `.unsetPermission(Node)`
+
+* Effectively "removes" a node from the user/group.
+* Note that despite the name, this method will work for all types of node.
+	* Meaning, this method is also used for
+		* Removing prefixes
+		* Removing suffixes
+		* Removing metadata
+		* Removing inheritances from other groups
+* This method removes the node to the holder's permanent permission store, and when saved, this change will be written to the storage provider.
+
+The method returns a `DataMutateResult`. This enum encapsulates the status of the operation, and will return a value depending on if the operation was performed successfully.
+
+In the case of `#unsetPermission`, it will return `LACKS` if the user/group doesn't have the node set.
+
+You can check for generic success/failure using `DataMutateResult#wasSuccess` and `DataMutateResult#wasFailure`.
+
+#### `.unsetTransientPermission(Node)`
+
+Same as the above method, except this method removes the node from the holders "transient" data store.
+
+#### `.clearMatching(Predicate<Node>)`
+
+This method removes any nodes from the user/group which pass the given predicate. It can be used to "bulk remove" nodes of a specific type. 
+
+For example, if I wanted to remove all prefixes set with a weight of 10...
+```java
+user.clearMatching(n -> n.isPrefix() && n.getPrefix().getKey() == 10);
+```
+
+This method is less like a transaction, and more a way to easily remove data matching a given criteria.
+
+`#clearMatchingTransient` works in the same way, but affects the transient data store.
+
+#### `.clearNodes()`
+
+Clears everything!
+
+#### `.clearNodes(ContextSet)`
+
+Clears all nodes which are set in the given context.
+
+___
+
+### The basics of Context
+
+Contexts are an important concept in LuckPerms, and are introduced [here](https://github.com/lucko/LuckPerms/wiki/Context). They are encapsulated within the API by a few important classes.
+
+A very basic overview is that:
+
+> **Context** in the most basic sense simply means the **circumstances where something will apply**.
+> 
+> A single "context" consists of a key and a value, both strings. The key represents the type of context, and the value represents the setting of the context key.
+> 
+> Contexts can be combined with each other to form so called "context sets" - simply a collection of context pairs.
+> 
+> Context keys are case-insensitive, and will be converted to lowercase by all implementations. Values however are case-sensitive. Context keys and values may not be null or empty. A key/value will be deemed empty if it's length is zero, or if it consists of only space characters.
+
+#### Important classes
+#### `ContextSet`
+A "context set" is simply a set of contexts.
+
+Internally, a context set is effectively a `Multimap<String, String>`, or a `<Map<String, Collection<String>>`, but importantly, it is **not** a `Map<String, String>`.
+
+Keys can be mapped to multiple values.
+
+The `ContextSet` interface defines a number of methods which can be used to interact with context set implementations. These methods should be fairly self explanatory - and are sufficiently explained in the Javadocs.
+
+#### `ImmutableContextSet`
+
+An *immutable* implementation of ContextSet. You can obtain an instance in a number of ways.
+
+```java
+ImmutableContextSet set1 = ImmutableContextSet.empty();  
+
+ImmutableContextSet set2 = ImmutableContextSet.singleton("world", "world_nether");  
+
+ImmutableContextSet set3 = ImmutableContextSet.builder()  
+    .add("world", "world_nether")
+    .add("server", "survival")
+    .build();
+
+Map<String, String> map = new HashMap<>();
+map.put("region", "something");
+
+ImmutableContextSet set4 = ImmutableContextSet.fromMap(map);
+```
+
+You can of course also create an `ImmutableContextSet` by first creating (or obtaining) a `MutableContextSet` and converting it.
+
+```java
+MutableContextSet set = MutableContextSet.create();
+set.add("something", "something");
+
+ImmutableContextSet immutableSet = set.makeImmutable();
+```
+
+#### `MutableContextSet`
+
+A *mutable* implementation of ContextSet. You can obtain an instance in a number of ways.
+
+```java
+MutableContextSet set1 = MutableContextSet.create();
+set1.add("world", "text");
+
+MutableContextSet set2 = MutableContextSet.singleton("world", "world_nether");
+
+Map<String, String> map = new HashMap<>();
+map.put("region", "something");
+
+MutableContextSet set3 = MutableContextSet.fromMap(map);
+set3.removeAll("region");
+```
+
+To edit an `ImmutableContextSet`, you can make a "mutable copy" of it.
+
+```java
+ImmutableContextSet set = ImmutableContextSet.singleton("something", "something");
+
+MutableContextSet mutableCopy = set.mutableCopy();
+mutableCopy.add("something", "something-else");
+```
+
+#### `Contexts`
+
+The `Contexts` class encapsulates all of the options and settings for a permission or meta lookup.
+
+It contains the `ContextSet` for the lookup and a set of `LookupSetting`s.
+
+| `LookupSetting` | Description |
+|---------|-------------|
+| `IS_OP` | If the target subject is OP |
+| `INCLUDE_NODES_SET_WITHOUT_SERVER` | If global or non-server-specific nodes should be applied |
+| `INCLUDE_NODES_SET_WITHOUT_WORLD` | If global or non-world-specific nodes should be applied |
+| `RESOLVE_INHERITANCE` | If parent groups should be resolved |
+| `APPLY_PARENTS_SET_WITHOUT_SERVER` | If global or non-server-specific group memberships should be applied |
+| `APPLY_PARENTS_SET_WITHOUT_WORLD` | If global or non-world-specific group memberships should be applied |
+
+You can query the value of a setting using:
+
+```java
+boolean shouldResolveInheritance = contexts.hasSetting(LookupSetting.RESOLVE_INHERITANCE);
+```
+
+You can create a Contexts instance using `Contexts.of(...)`, `Contexts.global()`, or `Contexts.allowAll()`.
+
+It is more likely that you'll wish to obtain an "active" instance from LuckPerms via the `ContextManager`.
+
+#### Registering ContextCalculators
+#### Querying active contexts
+
+### The basics of CachedData
+#### Performing permission checks
+#### Retrieving prefixes/suffixes
+#### Retrieving meta data
+
+
 ### Using UserData
 All `User`s also have an extra object attached to them called `UserData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all users.
 
