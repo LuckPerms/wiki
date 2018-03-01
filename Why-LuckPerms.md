@@ -26,6 +26,19 @@ ___
 
 For the rest of this article, I'll focus on some of the new features LuckPerms has, which you are unlikely to find in other plugins.
 
+### Web editor
+As well as the command interface, you can also use the web editor to make changes to your permission data. Anyone can use the editor, no matter which storage type you're using.
+
+The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
+
+![](https://i.imgur.com/vSJ5NAp.png)
+
+It's super easy to use.
+
+[![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
+
+___
+
 ### Verbose
 LuckPerms has a [verbose](https://github.com/lucko/LuckPerms/wiki/Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
@@ -37,7 +50,9 @@ You can trace exactly where permission checks originate from - right down to the
 
 You can also upload recordings to the web, for easier analysis and reading.
 
-[![](https://i.imgur.com/xhnG2ue.png)](https://git.io/vbhy7)
+![](https://i.imgur.com/6IxXIGg.png)
+
+___
 
 ### Permission Trees
 LuckPerms allows you [build "permission trees"](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-tree) of all permissions known to the server. The data is populated using permissions registered to the server by plugins.
@@ -46,14 +61,12 @@ As the server runs for longer periods, the tree also grows, as permissions check
 
 An example tree:
 
-[![](https://i.imgur.com/68fLMaQ.png)](https://git.io/vbhyZ)
+![](https://i.imgur.com/nkdtDkG.png)
 
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
 
-For example:
-
-[![](https://i.imgur.com/OR5GNcP.png)](https://git.io/vbhyV)
+___
 
 ### Command interface & tab completion
 The command system is super easy to use and understand. As well as the [documentation available here on the wiki](https://github.com/lucko/LuckPerms/wiki/Command-Usage), command usage and listings can also be viewed in-game.
@@ -64,12 +77,7 @@ All LuckPerms commands are fully tab completable, meaning you have to do less ty
 
 [![](https://zippy.gfycat.com/AnnualYoungKoi.gif)](https://gfycat.com/AnnualYoungKoi)
 
-### Web editor
-As well as the command interface, you can also use the web editor to make changes to your permission data. Anyone can use the editor, no matter which storage type you're using.
-
-It's super easy to use.
-
-[![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
+___
 
 ### Action logging
 LuckPerms makes a detailed log of all changes made to permissions. If you have a rogue staff member try to give themselves permissions, instead of trawling through the servers log file, you can simply search for any actions executed by them!
