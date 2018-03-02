@@ -68,6 +68,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp group \<group\> `editor`](#lp-group-group-editor)
 *  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers)
 *  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight)
+*  [/lp group \<group\> `setdisplayname` \<name\>](#lp-group-group-setdisplayname)
 *  [/lp group \<group\> `showtracks`](#lp-group-group-showtracks)
 *  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
 *  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
@@ -360,6 +361,14 @@ ___
 * `<weight>` - the weight to set
 
 Sets the groups weight value, which determines the order in which groups will be considered when accumulating a users permissions. Higher value = higher weight.
+
+___
+#### `/lp group <group> setdisplayname`  
+**Permission**: luckperms.group.setdisplayname  
+**Arguments**:  
+* `<name>` - the name to set
+
+Sets the groups display name. This can effectively be used as an "alias" for the group.
 
 ___
 #### `/lp group <group> showtracks`  
