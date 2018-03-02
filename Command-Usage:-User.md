@@ -11,9 +11,9 @@ ___
 
 ### Index
 *  [/lp user \<user\> `info`](#lp-user-user-info)
-*  [/lp user \<user\> `permission`](#permission---lp-user-user-permission---lp-group-group-permission-)
-*  [/lp user \<user\> `parent`](#parent---lp-user-user-parent---lp-group-group-parent-)
-*  [/lp user \<user\> `meta`](#meta---lp-user-user-meta---lp-group-group-meta-)
+*  [/lp user \<user\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission)
+*  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
+*  [/lp user \<user\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
 *  [/lp user \<user\> `editor`](#lp-user-user-editor)
 *  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote)
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
