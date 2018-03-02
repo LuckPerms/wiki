@@ -77,7 +77,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`info`](#lp-usergroup-usergroup-permission-info)
 *  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set)
 *  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset)
-*  [`settemp` \<node\> \<true/false\> \<duration\> [context...]](#lp-usergroup-usergroup-permission-settemp)
+*  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp)
 *  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
 *  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
@@ -88,7 +88,7 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add)
 *  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove)
 *  [`settrack` \<track\> \<group\> [context...]](#lp-usergroup-usergroup-parent-settrack)
-*  [`addtemp` \<group\> \<duration\> [context...]](#lp-usergroup-usergroup-parent-addtemp)
+*  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-parent-addtemp)
 *  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp)
 *  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear)
 *  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack)
@@ -98,14 +98,14 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`info`](#lp-usergroup-usergroup-meta-info)
 *  [`set` \<key\> \<value\> [context...]](#lp-usergroup-usergroup-meta-set)
 *  [`unset` \<key\> [context...]](#lp-usergroup-usergroup-meta-unset)
-*  [`settemp` \<key\> \<value\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-settemp)
+*  [`settemp` \<key\> \<value\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-settemp)
 *  [`unsettemp` \<key\> [context...]](#lp-usergroup-usergroup-meta-unsettemp)
 *  [`addprefix` \<priority\> \<prefix\> [context...]](#lp-usergroup-usergroup-meta-addprefix)
 *  [`addsuffix` \<priority\> \<suffix\> [context...]](#lp-usergroup-usergroup-meta-addsuffix)
 *  [`removeprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removeprefix)
 *  [`removesuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removesuffix)
-*  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-addtempprefix)
-*  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [context...]](#lp-usergroup-usergroup-meta-addtempsuffix)
+*  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-addtempprefix)
+*  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-addtempsuffix)
 *  [`removetempprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removetempprefix)
 *  [`removetempsuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removetempsuffix)
 *  [`clear` [context...]](#lp-usergroup-usergroup-meta-clear)
@@ -423,9 +423,18 @@ ___
 * `<node>` - the permission node to set
 * `<true|false>` - the value to set the permission to
 * `<duration>` - the duration until the permission will expire
+* `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to set the permission in
 
 Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
 
 ___
 #### `/lp user/group <user|group> permission unsettemp`  
@@ -504,9 +513,18 @@ ___
 **Arguments**:  
 * `<group>` - the group to add
 * `<duration>` - the duration until the group will expire
+* `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to add the group in
 
 Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
 
 ___
 #### `/lp user/group <user|group> parent removetemp`  
@@ -580,9 +598,18 @@ ___
 * `<key>` - the key to set
 * `<value>` - the value to set the key to
 * `<duration>` - the duration until the meta will expire
+* `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to set the meta in
 
 Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
 
 ___
 #### `/lp user/group <user|group> meta unsettemp`  
@@ -640,9 +667,18 @@ ___
 * `<priority>` - the priority to add the prefix at
 * `<prefix>` - the actual prefix string
 * `<duration>` - the duration until the prefix will expire
+* `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to add the prefix in
 
 Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
 
 ___
 #### `/lp user/group <user|group> meta addtempsuffix`  
@@ -651,9 +687,18 @@ ___
 * `<priority>` - the priority to add the suffix at
 * `<suffix>` - the actual suffix string
 * `<duration>` - the duration until the suffix will expire
+* `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to add the suffix in
 
 Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
 
 ___
 #### `/lp user/group <user|group> meta removetempprefix`  
