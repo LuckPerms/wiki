@@ -27,6 +27,8 @@ If you want to include spaces in arguments, you must escape the argument with qu
 The alias used below (/lp) can be exchanged for any of the ones listed in the aliases section above.
 
 ### General commands
+General commands used to operate LuckPerms functions.
+
 *  [/lp](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp)
 *  [/lp `sync`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-sync)
 *  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-info)
@@ -49,7 +51,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp `deletetrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-deletetrack)
 *  [/lp `listtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-listtracks)
 
-### User commands   (/lp user \<user\> ...)
+### User commands
+Commands used to view or modify a specific user.
+
+Formed of `/lp user <user> ...` - where `<user>` is the username of uuid of the user being queried / modified.
 *  [/lp user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-info)
 *  [/lp user \<user\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission)
 *  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
@@ -60,7 +65,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp user \<user\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-clear)
 
-### Group commands   (/lp group \<group\> ...)
+### Group commands
+Commands used to view or modify a specific group.
+
+Formed of `/lp group <group> ...` - where `<group>` is the name of the group being queried / modified.
 *  [/lp group \<group\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-info)
 *  [/lp group \<group\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission)
 *  [/lp group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
@@ -74,7 +82,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp group \<group\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-rename)
 *  [/lp group \<group\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-clone)
 
-### Permission commands   (/lp user \<user\> permission ... | /lp group \<group\> permission ...)
+### Permission commands
+Commands used to view or modify the permissions data of a specific user or group.
+
+Formed of either `/lp user <user> permission ...` or `/lp group <group> permission ...`
 *  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-info)
 *  [`set` \<node\> \<true/false\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-set)
 *  [`unset` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-unset)
@@ -83,7 +94,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`check` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-checkinherits)
 
-### Parent commands   (/lp user \<user\> parent ... | /lp group \<group\> parent ...)
+### Parent commands
+Commands used to view or modify the inheritance properties (parents) of a specific user or group.
+
+Formed of either `/lp user <user> parent ...` or `/lp group <group> parent ...`
 *  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent#lp-usergroup-usergroup-parent-info)
 *  [`set` \<group\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent#lp-usergroup-usergroup-parent-set)
 *  [`add` \<group\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent#lp-usergroup-usergroup-parent-add)
@@ -95,7 +109,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`cleartrack` \<track\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent#lp-usergroup-usergroup-parent-cleartrack)
 *  [`switchprimarygroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent#lp-user-user-parent-switchprimarygroup)
 
-### Meta commands   (/lp user \<user\> meta ... | /lp group \<group\> meta ...)
+### Meta commands
+Commands used to view or modify the metadata of a specific user or group.
+
+Formed of either `/lp user <user> meta ...` or `/lp group <group> meta ...`
 *  [`info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#lp-usergroup-usergroup-meta-info)
 *  [`set` \<key\> \<value\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#lp-usergroup-usergroup-meta-set)
 *  [`unset` \<key\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#lp-usergroup-usergroup-meta-unset)
@@ -111,7 +128,10 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [`removetempsuffix` \<priority\> [suffix] [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#lp-usergroup-usergroup-meta-removetempsuffix)
 *  [`clear` [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#lp-usergroup-usergroup-meta-clear)
 
-### Track commands   (/lp track \<track\> ...)
+### Track commands
+Commands used to view or modify a specific track.
+
+Formed of `/lp track <track> ...` - where `<track>` is the name of the track being queried / modified.
 *  [/lp track \<track\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track#lp-track-track-info)
 *  [/lp track \<track\> `append` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track#lp-track-track-append)
 *  [/lp track \<track\> `insert` \<group\> \<position\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track#lp-track-track-insert)
@@ -120,7 +140,8 @@ The alias used below (/lp) can be exchanged for any of the ones listed in the al
 *  [/lp track \<track\> `rename` \<new name\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track#lp-track-track-rename)
 *  [/lp track \<track\> `clone` \<name of clone\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track#lp-track-track-clone)
 
-### Log commands   (/lp log ...)
+### Log commands
+Commands used to view the action log.
 *  [/lp log `recent` [user] [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Log#lp-log-recent)
 *  [/lp log `search` \<query\> [page]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Log#lp-log-search)
 *  [/lp log `notify` [on|off]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Log#lp-log-notify)
