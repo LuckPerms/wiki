@@ -27,7 +27,7 @@ If you want to include spaces in arguments, you must escape the argument with qu
 The alias used below (/lp) can be exchanged for any of the ones listed in the aliases section above.
 
 ### General
-*  [/lp](#lp)
+*  [/lp](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp)
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
 *  [/lp `editor`](#lp-editor)
