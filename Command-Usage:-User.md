@@ -19,6 +19,7 @@ ___
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear)
+*  [/lp user \<user\> `clone` \<user\>](#lp-user-user-clone)
 
 ___
 #### `/lp user <user> info`  
@@ -60,5 +61,13 @@ ___
 * `[context...]` - the contexts to filter by
 
 Clears the user's permissions, parent groups and meta.
+
+___
+#### `/lp user <user> clone`  
+**Permission**: luckperms.user.clone  
+**Arguments**:  
+* `<user>` - the name of the other user
+
+Clones the users data onto another user.
 
 ___
