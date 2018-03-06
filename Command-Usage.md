@@ -64,6 +64,7 @@ Formed of `/lp user <user> ...` - where `<user>` is the username of uuid of the 
 *  [/lp user \<user\> `demote` \<track\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-demote)
 *  [/lp user \<user\> `showtracks`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-clear)
+*  [/lp user \<user\> `clone` \<user\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-clone)
 
 ### Group commands
 Commands used to view or modify a specific group.
