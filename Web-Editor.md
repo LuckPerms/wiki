@@ -12,8 +12,8 @@ Editor sessions are first created by executing a command on the server.
 | Scope                                                                     | Command                    |
 |---------------------------------------------------------------------------|----------------------------|
 | **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor users`         |
-| **To create an editor session for all users, run:**                       | `/lp editor groups`        |
+| **To create an editor session for all groups, run:**                      | `/lp editor groups`         |
+| **To create an editor session for all users, run:**                       | `/lp editor users`        |
 | **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
 | **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
 
