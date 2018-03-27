@@ -23,18 +23,43 @@ To use the LuckPerms placeholders in plugins which support Maximvdw's [MVdWPlace
 * Place it in your `/plugins/` folder.
 
 # Placeholders
-### `%luckperms_group_name%`
-**Description:** Returns the name of the players primary group    
+### `%luckperms_prefix%`
+**Description:** Returns the players prefix.    
 **Example:** n/a
 
 ___
+### `%luckperms_suffix%`
+**Description:** Returns the players suffix.  
+**Example:** n/a
+
+___
+### `%luckperms_meta_<meta key>%`
+**Description:** Returns the value associated with the given meta key.    
+**Example:** %luckperms_meta_some-key%
+
+___
+### `%luckperms_prefix_element_<element>%`
+**Description:** Returns the value of the prefix element for the player. Valid elements are listed [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
+**Example:** %luckperms_prefix_element_highest_on_track_staff%
+
+___
+### `%luckperms_suffix_element_<element>%`
+**Description:** Returns the value of the suffix element for the player. Valid elements are listed [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
+**Example:** %luckperms_suffix_element_highest_on_track_staff%
+
+___
 ### `%luckperms_context_<context key>%`
-**Description:** Returns the value of the given context, or empty if the context is not assigned.    
+**Description:** Returns the value of the given context key, or an empty string if the context is not assigned.    
 **Example:** %luckperms_context_server%
 
 ___
 ### `%luckperms_groups%`
-**Description:** Returns a list of all groups on the server, separated by commas    
+**Description:** Returns a list of all groups inherited from by the player, separated by commas    
+**Example:** n/a
+
+___
+### `%luckperms_primary_group_name%`
+**Description:** Returns the name of the players primary group    
 **Example:** n/a
 
 ___
@@ -98,23 +123,13 @@ ___
 **Example:** %luckperms_expiry_time_essentials.fly%
 
 ___
+### `%luckperms_inherited_expiry_time_<permission>%`
+**Description:** Gets the time until the given permission will expire for the player. Returns empty if the player doesn't have the permission. This placeholder will also check inherited permissions for a match.    
+**Example:** %luckperms_expiry_time_essentials.fly%
+
+___
 ### `%luckperms_group_expiry_time_<group name>%`
 **Description:** Gets the time until the given group membership will expire for the player. Returns empty if the player doesn't have the group.    
 **Example:** %luckperms_group_expiry_time_vip%
-
-___
-### `%luckperms_prefix%`
-**Description:** Returns the players prefix. Results may be more accurate using the Vault placeholders, as this lookup is not affected by the Vault configuration options.    
-**Example:** n/a
-
-___
-### `%luckperms_suffix%`
-**Description:** Returns the players suffix. Results may be more accurate using the Vault placeholders, as this lookup is not affected by the Vault configuration options.    
-**Example:** n/a
-
-___
-### `%luckperms_meta_<meta key>%`
-**Description:** Returns the value associated with the given meta key.    
-**Example:** %luckperms_meta_some-key%
 
 ___
