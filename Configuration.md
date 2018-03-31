@@ -9,23 +9,42 @@ The main configuration file for LuckPerms can be found at these locations.
 Links to the default file for each platform are above. Please note that the configuration does not automatically update when new options are added. The default options are used if nothing is found in the file.
 
 ## Index
-### General
+### Essential Settings
 * [`server`](#server)
+* [`use-server-uuid-cache`](#use-server-uuid-cache)
+
+### Storage Settings
+* [`storage-method`](#storage-method)
+* [`data`](#data)
+* [`pool-settings`](#pool-settings)
+* [`split-storage`](#split-storage)
+
+### Update Propagation & Messaging Service
+* [`sync-minutes`](#sync-minutes)
+* [`watch-files`](#watch-files)
+* [`messaging-service`](#messaging-service)
+* [`auto-push-updates`](#auto-push-updates)
+* [`push-log-entries`](#push-log-entries)
+* [`broadcast-received-log-entries`](#broadcast-received-log-entries)
+* [`redis`](#redis)
+
+### Customization Settings
+* [`temporary-add-behaviour`](#temporary-add-behaviour)
+* [`primary-group-calculation`](#primary-group-calculation)
+* [`argument-based-command-permissions`](#argument-based-command-permissions)
+* [`log-notify`](#log-notify)
+* [`meta-formatting`](#meta-formatting)
+
+### Permission Calculation & Inheritance
+* [`inheritance-traversal-algorithm`](#inheritance-traversal-algorithm)
+
+#### Permission resolution settings
 * [`include-global`](#include-global)
 * [`include-global-world`](#include-global-world)
 * [`apply-global-groups`](#apply-global-groups)
 * [`apply-global-world-groups`](#apply-global-world-groups)
-* [`use-server-uuid-cache`](#use-server-uuid-cache)
-* [`allow-invalid-usernames`](#allow-invalid-usernames)
-* [`debug-logins`](#debug-logins)
-* [`log-notify`](#log-notify)
-* [`world-rewrite`](#world-rewrite)
-* [`temporary-add-behaviour`](#temporary-add-behaviour)
-* [`primary-group-calculation`](#primary-group-calculation)
-* [`prevent-primary-group-removal`](#prevent-primary-group-removal)
-* [`argument-based-command-permissions`](#argument-based-command-permissions)
 
-### Permission Calculation
+#### Inheritance settings
 * [`apply-wildcards`](#apply-wildcards)
 * [`apply-regex`](#apply-regex)
 * [`apply-shorthand`](#apply-shorthand)
@@ -39,7 +58,12 @@ Links to the default file for each platform are above. Please note that the conf
 * [`apply-sponge-implicit-wildcards`](#apply-sponge-implicit-wildcards)
 * [`apply-sponge-default-subjects`](#apply-sponge-default-subjects)
 
-### Server Operator / Vault (Bukkit version only)
+#### Extra settings
+* [`world-rewrite`](#world-rewrite)
+* [`group-weight`](#group-weight)
+
+### Fine Tuning Options
+#### Server Operator / Vault (Bukkit version only)
 * [`enable-ops`](#enable-ops)
 * [`auto-op`](#auto-op)
 * [`commands-allow-op`](#commands-allow-op)
@@ -49,22 +73,14 @@ Links to the default file for each platform are above. Please note that the conf
 * [`vault-ignore-world`](#vault-ignore-world)
 * [`vault-debug`](#vault-debug)
 
-### Storage
-* [`storage-method`](#storage-method)
-* [`watch-files`](#watch-files)
-* [`split-storage`](#split-storage)
-* [`data`](#data)
-* [`pool-size`](#pool-size)
-* [`table-prefix`](#table-prefix)
-* [`sync-minutes`](#sync-minutes)
-* [`messaging-service`](#messaging-service)
-* [`auto-push-updates`](#auto-push-updates)
-* [`push-log-entries`](#push-log-entries)
-* [`broadcast-received-log-entries`](#broadcast-received-log-entries)
-* [`redis`](#redis)
+### Miscellaneous Settings
+* [`debug-logins`](#debug-logins)
+* [`allow-invalid-usernames`](#allow-invalid-usernames)
+* [`prevent-primary-group-removal`](#prevent-primary-group-removal)
+
+* [`contexts.json`](#contexts.json)
 
 
-## General
 ___
 ### `server`
 The name of the server, used for server specific permissions.   
@@ -74,6 +90,259 @@ If set to "global" this setting is ignored. More details about how server specif
 ##### Example
 ```yaml
 server: global
+```
+
+___
+### `use-server-uuid-cache`
+
+If the servers own UUID cache/lookup facility should be used when there is no record for a player in the LuckPerms cache.
+
+When this setting is disabled, LP only uses its own cache. 
+
+##### Example
+```yaml
+use-server-uuid-cache: false
+```
+
+___
+### `storage-method`
+Which storage method the plugin should use.
+
+See [here](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) for a full list of supported types.
+
+**Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `hocon`, `mongodb`
+
+If your MySQL server supports it, the `mariadb` option is preferred over `mysql`. `h2` is also generally preferred over `sqlite`.
+
+##### Example
+```yaml
+storage-method: h2
+```
+
+___
+### `data`
+This section is used for specifying credentials used for storage methods.
+
+* **`address`** - the host to be used for the database. Uses the standard DB engine port by default. If you have a non-default port, specify it here using `host:port`.
+* **`database`** - the database which should be used by LuckPerms
+* **`username`** - the username to be used
+* **`password`** - the password to be used. Leave empty to use no authentication.
+
+
+##### Example
+```yaml
+data:
+  address: localhost
+  database: minecraft
+  username: root
+  password: ''
+```
+
+___
+### `pool-settings`
+
+These settings apply to the MySQL connection pool. The default values will be suitable for the majority of users. Do not change these settings unless you know what you're doing!
+
+Sets the maximum size of the MySQL connection pool. Basically this value will determine the maximum number of actual
+connections to the database backend. More information about determining the size of connection pools can be found here:
+
+https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing
+
+##### Example
+```yaml
+data:
+  pool-settings:
+    maximum-pool-size: 10
+```
+
+___
+### `split-storage`
+The split storage section allows you to use multiple storage options for different types of data.
+
+**The different types of data are:**
+
+* **`user`** - data about users, including their permissions, parents and meta
+* **`group`** - data about groups, including their permissions, parents and meta
+* **`track`** - data about tracks (or so called "ladders")
+* **`uuid`** - a cache of `uuid <-- --> username` used by LuckPerms when usernames are used in the `/lp user` command instead of uuids.
+* **`log`** - the action log stored by LuckPerms
+
+The allowed storage types are detailed above.
+
+##### Example
+```yaml
+split-storage:
+  enabled: true
+  methods:
+    user: mariadb
+    group: yaml
+    track: yaml
+    uuid: mariadb
+    log: mariadb
+```
+
+___
+### `sync-minutes`
+This option controls how frequently LuckPerms will perform a sync task.
+
+A sync task will refresh all data from the storage, and ensure that the most up-to-date data is being used by the plugin.
+
+This is disabled by default, as most users will not need it. However, if you're using a remote storage type without a messaging service setup, you may wish to set this value to something like 3.
+
+Set to -1 to disable the task completely.
+
+##### Example
+```yaml
+data:
+  sync-minutes: 3
+```
+
+___
+### `watch-files`
+When using a file-based storage type, LuckPerms will monitor the data files for changes, and then schedule automatic updates when changes are detected.
+
+If you don't want this to happen, set this option to false.
+
+##### Example
+```yaml
+watch-files: true
+```
+
+___
+### `messaging-service`
+Settings for the messaging service.
+
+If enabled and configured, LuckPerms will use the messaging system to inform other connected servers of changes. Use the command "/luckperms networksync" to push changes. Data is NOT stored using this service. It is only used as a messaging platform.
+
+If you decide to enable this feature, you should set "sync-minutes" to -1, as there is no need for LuckPerms to poll the database for changes.
+
+**Available options:**
+
+* **`bungee`** - uses the plugin messaging channels. Must be enabled on all connected servers to work, and you need to have LP installed on your proxy.
+* **`lilypad`** - uses LilyPad's pub sub to push changes. You need to have the LilyPad-Connect plugin installed.
+* **`redis`** - uses Redis pub sub to push changes.
+* **`none`** - nothing!
+
+##### Example
+```yaml
+messaging-service: none
+```
+
+___
+### `auto-push-updates`
+If LuckPerms should automatically push updates after a change has been made with a command.
+
+##### Example
+```yaml
+auto-push-updates: true
+```
+
+___
+### `push-log-entries`
+If LuckPerms should push logging entries to connected servers via the messaging service.
+
+##### Example
+```yaml
+push-log-entries: true
+```
+
+___
+### `broadcast-received-log-entries`
+If LuckPerms should broadcast received logging entries to players on this platform.
+
+If you have LuckPerms installed on your backend servers as well as a BungeeCord proxy, you should set this option to false on either your backends or your proxies, to avoid players being messaged twice about log entries.
+
+##### Example
+```yaml
+broadcast-received-log-entries: true
+```
+
+___
+### `redis`
+Settings for Redis.
+
+* **`address`** - the host to be used for redis. Uses the standard port by default (6379). If you have a non-default port, specify it here using `host:port`.
+* **`password`** - the password to be used. Leave empty to use no authentication.
+
+##### Example
+```yaml
+redis:
+  enabled: true
+  address: localhost
+  password: 'passw0rd'
+```
+
+___
+### `temporary-add-behaviour`
+
+Controls how temporary permissions/parents/meta should be accumulated. The default behaviour is `deny`.
+
+* **`accumulate`** - the duration of any existing nodes will just be added to the new duration
+* **`replace`** - the longest duration will be kept, any others nodes will be forgotten
+* **`deny`** - the command will just fail if you try to add a duplicate temporary node
+
+##### Example
+```yaml
+temporary-add-behaviour: deny
+```
+
+___
+### `primary-group-calculation`
+
+How should LuckPerms determine a users "primary" group. The default behaviour for Bukkit/Bungee is `stored`, and the default for Sponge is `parents-by-weight`.
+
+* **`stored`** - use the value stored against the users record in the file/database
+* **`parents-by-weight`** - use the users most highly weighted parent
+* **`all-parents-by-weight`** - same as above, but calculates based upon all parents inherited from both directly and indirectly
+
+##### Example
+```yaml
+primary-group-calculation: stored
+```
+
+___
+### `argument-based-command-permissions`
+
+If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
+
+This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions).
+
+##### Example
+```yaml
+argument-based-command-permissions: true
+```
+
+___
+### `log-notify`
+
+If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to recieve the notification. 
+
+Notifications can also be disabled temporarily in-game using `/lp log notify off`
+
+##### Example
+```yaml
+log-notify: true
+```
+
+___
+### `meta-formatting`
+
+How LuckPerms should form prefixes and suffixes.
+
+This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking).
+
+___
+### `inheritance-traversal-algorithm`
+
+The algorithm LuckPerms should use when traversing the "inheritance tree".
+
+* **`breadth-first`** - See: https://en.wikipedia.org/wiki/Breadth-first_search
+* **`depth-first-pre-order`** - See: https://en.wikipedia.org/wiki/Depth-first_search
+* **`depth-first-post-order`** - See: https://en.wikipedia.org/wiki/Depth-first_search
+
+##### Example
+```yaml
+inheritance-traversal-algorithm: depth-first-pre-order
 ```
 
 ___
@@ -129,132 +398,10 @@ apply-global-world-groups: true
 ```
 
 ___
-### `use-server-uuid-cache`
-
-If the servers own UUID cache/lookup facility should be used when there is no record for a player in the LuckPerms cache.
-
-When this setting is disabled, LP only uses its own cache. 
-
-##### Example
-```yaml
-use-server-uuid-cache: false
-```
-
-___
-### `allow-invalid-usernames`
-
-If set to true, LuckPerms will allow usernames with non alphanumeric characters.
-
-Note that due to the design of the storage implementation, usernames must still be 16 characters or less.
-
-##### Example
-```yaml
-allow-invalid-usernames: false
-```
-
-___
-### `debug-logins`
-
-If LuckPerms should produce extra logging output when it handles logins.
-
-Useful if you're having issues with UUID forwarding or data not being loaded.
-
-The debug messages look like this:
-```
-[INFO]: [LP] Processing pre-login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
-[INFO]: UUID of player Luck is c1d60c50-70b5-4722-8057-87767557e50d
-[INFO]: [LP] Processing login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
-[INFO]: Luck[/xxx:xxx] logged in with entity id xxx at ([xxx]x, x, x)
-```
-
-##### Example
-```yaml
-debug-logins: false
-```
-
-___
-### `log-notify`
-
-If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to recieve the notification. 
-
-Notifications can also be disabled temporarily in-game using `/lp log notify off`
-
-##### Example
-```yaml
-log-notify: true
-```
-
-___
-### `world-rewrite`
-
-Allows you to set "aliases" for the worlds sent forward for context calculation. These aliases are provided in addittion to the real world name. Applied recursively.
-
-##### Example
-```yaml
-world-rewrite:
-  world_nether: world
-  world_the_end: world
-```
-
-___
-### `temporary-add-behaviour`
-
-Controls how temporary permissions/parents/meta should be accumulated. The default behaviour is `deny`.
-
-* **`accumulate`** - the duration of any existing nodes will just be added to the new duration
-* **`replace`** - the longest duration will be kept, any others nodes will be forgotten
-* **`deny`** - the command will just fail if you try to add a duplicate temporary node
-
-##### Example
-```yaml
-temporary-add-behaviour: deny
-```
-
-___
-### `primary-group-calculation`
-
-How should LuckPerms determine a users "primary" group. The default behaviour for Bukkit/Bungee is `stored`, and the default for Sponge is `parents-by-weight`.
-
-* **`stored`** - use the value stored against the users record in the file/database
-* **`parents-by-weight`** - use the users most highly weighted parent
-* **`all-parents-by-weight`** - same as above, but calculates based upon all parents inherited from both directly and indirectly
-
-##### Example
-```yaml
-primary-group-calculation: stored
-```
-
-___
-### `prevent-primary-group-removal`
-
-If set to false, the plugin will allow a user's primary group to be removed with the `parent remove` command, and will set their primary group back to default.
-
-##### Example
-```yaml
-prevent-primary-group-removal: false
-```
-
-___
-### `argument-based-command-permissions`
-
-If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
-
-This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions).
-
-##### Example
-```yaml
-argument-based-command-permissions: true
-```
-
-___
-
-
-## Permission Calculation
-___
 ### `apply-wildcards`
 If the plugin should apply wildcard permissions.
 
-If plugin authors do not provide their own wildcard permissions, then enabling this option will allow LuckPerms to parse them instead. Bukkit especially did not endorse this practice, however it has become common among server administrators. On Sponge, this setting control whether "node.part.*" style wildcards will function.
+If plugin authors do not provide their own wildcard permissions, then enabling this option will allow LuckPerms to parse them instead. Bukkit especially did not endorse this practice, however it has become common among server administrators. On Sponge, this setting control whether "node.part.\*" style wildcards will function.
 
 ##### Example
 ```yaml
@@ -365,8 +512,18 @@ This is enabled by default, as it is a standard Sponge feature, which most serve
 apply-sponge-default-subjects=true
 ```
 
+___
+### `world-rewrite`
 
-## Server Operator / Vault (Bukkit version only)
+Allows you to set "aliases" for the worlds sent forward for context calculation. These aliases are provided in addittion to the real world name. Applied recursively.
+
+##### Example
+```yaml
+world-rewrite:
+  world_nether: world
+  world_the_end: world
+```
+
 ___
 ### `enable-ops`
 If the vanilla OP system should be used.
@@ -386,7 +543,7 @@ This permission can be inherited, or set on specific servers/worlds, temporarily
 
 It is important to note that this setting is only checked when a player first joins the server, and when they switch worlds. Therefore, simply removing this permission from a user will not automatically de-op them. A player may need to relog to have the change take effect.
 
-It is recommended that you use this option instead of assigning a single '*' permission.
+It is recommended that you use this option instead of assigning a single '\*' permission.
 
 ##### Example
 ```yaml
@@ -457,175 +614,52 @@ If LuckPerms should print debugging info to console when a plugin uses a Vault f
 vault-debug: false
 ```
 
-
-## Storage
 ___
-### `storage-method`
-Which storage method the plugin should use.
+### `debug-logins`
 
-See [here](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) for a full list of supported types.
+If LuckPerms should produce extra logging output when it handles logins.
 
-**Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `hocon`, `mongodb`
+Useful if you're having issues with UUID forwarding or data not being loaded.
 
-If your MySQL server supports it, the `mariadb` option is preferred over `mysql`. `h2` is also generally preferred over `sqlite`.
+The debug messages look like this:
+```
+[INFO]: [LP] Processing pre-login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
+[INFO]: UUID of player Luck is c1d60c50-70b5-4722-8057-87767557e50d
+[INFO]: [LP] Processing login for c1d60c50-70b5-4722-8057-87767557e50d - Luck
+[INFO]: Luck[/xxx:xxx] logged in with entity id xxx at ([xxx]x, x, x)
+```
 
 ##### Example
 ```yaml
-storage-method: h2
+debug-logins: false
 ```
 
 ___
-### `watch-files`
-When using a file-based storage type, LuckPerms will monitor the data files for changes, and then schedule automatic updates when changes are detected.
+### `allow-invalid-usernames`
 
-If you don't want this to happen, set this option to false.
+If set to true, LuckPerms will allow usernames with non alphanumeric characters.
+
+Note that due to the design of the storage implementation, usernames must still be 16 characters or less.
 
 ##### Example
 ```yaml
-watch-files: true
+allow-invalid-usernames: false
 ```
 
 ___
-### `split-storage`
-The split storage section allows you to use multiple storage options for different types of data.
+### `prevent-primary-group-removal`
 
-**The different types of data are:**
-
-* **`user`** - data about users, including their permissions, parents and meta
-* **`group`** - data about groups, including their permissions, parents and meta
-* **`track`** - data about tracks (or so called "ladders")
-* **`uuid`** - a cache of `uuid <-- --> username` used by LuckPerms when usernames are used in the `/lp user` command instead of uuids.
-* **`log`** - the action log stored by LuckPerms
-
-The allowed storage types are detailed above.
+If set to false, the plugin will allow a user's primary group to be removed with the `parent remove` command, and will set their primary group back to default.
 
 ##### Example
 ```yaml
-split-storage:
-  enabled: true
-  methods:
-    user: mariadb
-    group: yaml
-    track: yaml
-    uuid: mariadb
-    log: mariadb
+prevent-primary-group-removal: false
 ```
 
 ___
-### `data`
-This section is used for specifying credentials used for storage methods.
-
-* **`address`** - the host to be used for the database. Uses the standard DB engine port by default. If you have a non-default port, specify it here using `host:port`.
-* **`database`** - the database which should be used by LuckPerms
-* **`username`** - the username to be used
-* **`password`** - the password to be used. Leave empty to use no authentication.
 
 
-##### Example
-```yaml
-data:
-  address: localhost
-  database: minecraft
-  username: root
-  password: ''
-```
 
-___
-### `pool-size`
-
-These settings apply to the MySQL connection pool. The default values will be suitable for the majority of users. Do not change these settings unless you know what you're doing!
-
-Sets the maximum size of the MySQL connection pool. Basically this value will determine the maximum number of actual
-connections to the database backend. More information about determining the size of connection pools can be found here:
-
-https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing
-
-##### Example
-```yaml
-data:
-  pool-settings:
-    maximum-pool-size: 10
-```
-
-___
-### `sync-minutes`
-This option controls how frequently LuckPerms will perform a sync task.
-
-A sync task will refresh all data from the storage, and ensure that the most up-to-date data is being used by the plugin.
-
-This is disabled by default, as most users will not need it. However, if you're using a remote storage type without a messaging service setup, you may wish to set this value to something like 3.
-
-Set to -1 to disable the task completely.
-
-##### Example
-```yaml
-data:
-  sync-minutes: 3
-```
-
-___
-### `messaging-service`
-Settings for the messaging service.
-
-If enabled and configured, LuckPerms will use the messaging system to inform other connected servers of changes. Use the command "/luckperms networksync" to push changes. Data is NOT stored using this service. It is only used as a messaging platform.
-
-If you decide to enable this feature, you should set "sync-minutes" to -1, as there is no need for LuckPerms to poll the database for changes.
-
-**Available options:**
-
-* **`bungee`** - uses the plugin messaging channels. Must be enabled on all connected servers to work, and you need to have LP installed on your proxy.
-* **`lilypad`** - uses LilyPad's pub sub to push changes. You need to have the LilyPad-Connect plugin installed.
-* **`redis`** - uses Redis pub sub to push changes.
-* **`none`** - nothing!
-
-##### Example
-```yaml
-messaging-service: none
-```
-
-___
-### `auto-push-updates`
-If LuckPerms should automatically push updates after a change has been made with a command.
-
-##### Example
-```yaml
-auto-push-updates: true
-```
-
-___
-### `push-log-entries`
-If LuckPerms should push logging entries to connected servers via the messaging service.
-
-##### Example
-```yaml
-push-log-entries: true
-```
-
-___
-### `broadcast-received-log-entries`
-If LuckPerms should broadcast received logging entries to players on this platform.
-
-If you have LuckPerms installed on your backend servers as well as a BungeeCord proxy, you should set this option to false on either your backends or your proxies, to avoid players being messaged twice about log entries.
-
-##### Example
-```yaml
-broadcast-received-log-entries: true
-```
-
-___
-### `redis`
-Settings for Redis.
-
-* **`address`** - the host to be used for redis. Uses the standard port by default (6379). If you have a non-default port, specify it here using `host:port`.
-* **`password`** - the password to be used. Leave empty to use no authentication.
-
-##### Example
-```yaml
-redis:
-  enabled: true
-  address: localhost
-  password: 'passw0rd'
-```
 
 ## contexts.json
 The `contexts.json` file is found alongside the main LuckPerms configuration file, and allows you to set two things.
