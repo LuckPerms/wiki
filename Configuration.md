@@ -38,32 +38,35 @@ Links to the default file for each platform are above. Please note that the conf
 ### Permission Calculation & Inheritance
 * [`inheritance-traversal-algorithm`](#inheritance-traversal-algorithm)
 
-#### Permission resolution settings
+##### Permission resolution settings
 * [`include-global`](#include-global)
 * [`include-global-world`](#include-global-world)
 * [`apply-global-groups`](#apply-global-groups)
 * [`apply-global-world-groups`](#apply-global-world-groups)
 
-#### Inheritance settings
+##### Inheritance settings
 * [`apply-wildcards`](#apply-wildcards)
 * [`apply-regex`](#apply-regex)
 * [`apply-shorthand`](#apply-shorthand)
-##### Bukkit
+
+###### Bukkit
 * [`apply-bukkit-child-permissions`](#apply-bukkit-child-permissions)
 * [`apply-bukkit-default-permissions`](#apply-bukkit-default-permissions)
 * [`apply-bukkit-attachment-permissions`](#apply-bukkit-attachment-permissions)
-##### Bungee
+
+###### Bungee
 * [`apply-bungee-config-permissions`](#apply-bungee-config-permissions)
-##### Sponge
+
+###### Sponge
 * [`apply-sponge-implicit-wildcards`](#apply-sponge-implicit-wildcards)
 * [`apply-sponge-default-subjects`](#apply-sponge-default-subjects)
 
-#### Extra settings
+##### Extra settings
 * [`world-rewrite`](#world-rewrite)
 * [`group-weight`](#group-weight)
 
 ### Fine Tuning Options
-#### Server Operator / Vault (Bukkit version only)
+##### Server Operator / Vault (Bukkit version only)
 * [`enable-ops`](#enable-ops)
 * [`auto-op`](#auto-op)
 * [`commands-allow-op`](#commands-allow-op)
@@ -77,8 +80,7 @@ Links to the default file for each platform are above. Please note that the conf
 * [`debug-logins`](#debug-logins)
 * [`allow-invalid-usernames`](#allow-invalid-usernames)
 * [`prevent-primary-group-removal`](#prevent-primary-group-removal)
-
-* [`contexts.json`](#contexts.json)
+* [`contexts.json`](#contextsjson)
 
 
 ___
