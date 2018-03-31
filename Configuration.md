@@ -8,7 +8,7 @@ The main configuration file for LuckPerms can be found at these locations.
 
 Links to the default file for each platform are above. Please note that the configuration does not automatically update when new options are added. The default options are used if nothing is found in the file.
 
-## Index
+# Index
 ### Essential Settings
 * [`server`](#server)
 * [`use-server-uuid-cache`](#use-server-uuid-cache)
@@ -82,8 +82,8 @@ Links to the default file for each platform are above. Please note that the conf
 * [`prevent-primary-group-removal`](#prevent-primary-group-removal)
 * [`contexts.json`](#contextsjson)
 
+# Descriptions
 
-___
 ### `server`
 The name of the server, used for server specific permissions.   
 
