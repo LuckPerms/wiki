@@ -67,7 +67,7 @@ e.g. if my table prefix is "pp_", the db table should = "pp_players". (without t
 
 For example: `/luckperms migration powerfulperms 127.0.0.1:3306 minecraft root passw0rd players`
 
-# Errors
+## Errors
 If it seems that the migration command does not exist, check your server's startup log to check if the plugin you are importing from loaded correctly.
 
 If the process doesn't complete and prints an error message, please submit an Issue on GitHub or [contact me here](https://github.com/lucko/LuckPerms/wiki). I'll try to reply to you ASAP.
