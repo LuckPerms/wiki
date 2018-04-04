@@ -1,28 +1,56 @@
-LuckPerms comes with a variety of Storage options to choose from.
+LuckPerms can store it's data in a number of ways. These options can be changed in the "Storage Settings" section of the config file.
 
-The storage option can be modified in the `config.yml` or `luckperms.conf` file.
-```yaml
-# Which storage method the plugin should use.
-storage-method: h2
-```
+### Possible options
 
-> Remember that if you switch storage type, your data will not be automatically transferred. To manually move data between storage providers, please see [here](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types) for more information.   
-   
-The available options are outlined below.
+* **Remote databases** - require connection to a storage server hosted separately
+  * MySQL
+  * MariaDB (preferred over MySQL)
+  * PostgreSQL
+  * MongoDB
+* **Flatfile/local databases** - don't require any extra setup, they "just work". This format is not easily editable.
+  * H2 (preferred over SQLite)
+  * SQLite
+* **Readable & editable text files**
+  * YAML (.yml files)
+  * JSON (.json files)
+  * HOCON (.conf files)
 
-* [`H2 / SQLite`](#h2--sqlite) (flatfile database)
-* [`YAML / JSON / HOCON`](#yaml--json--hocon) (editable text files)
-* [`MySQL / MariaDB / PostgreSQL`](#mysql--postgresql) (remote SQL database)
-* [`MongoDB`](#mongodb) (remote database)
+The default option is `H2`.
 
-**The default storage option is H2.**
+#### Remote databases
+| Benefits | Drawbacks |
+|----------|-----------|
+| Allows data to be shared between multiple servers. | Complicated to setup?? |
+| Generally more reliable | Requires extra resources to host the database |
+| Can generally handle more data, and supports concurrent reads/writes | |
+| Indexed, more efficient when performing bulk queries and updates | |
+
+#### Flatfile databases
+| Benefits | Drawbacks |
+|----------|-----------|
+| Generally more reliable and more efficient than editable files | Not (easily) possible to edit the data directly |
+| Indexed, more efficient when performing bulk queries and updates | Sometimes prone to data corruption issues |
+| | Data cannot be shared between servers |
+
+#### Text (config) files
+| Benefits | Drawbacks |
+|----------|-----------|
+| Human readable! | Less efficient use of disk space compared to a flatfile database |
+| It's possible to edit/inspect the files directly | Difficult to perform bulk queries and updates |
+| | Data cannot be shared between servers |
+| | More prone to corruption due to human error (mistakes when editing the data by hand) |
 
 ___
 
-## H2 / SQLite
-Both are types of file based SQL databases. All data is stored within one file in the LuckPerms folder. The data cannot be easily edited with a text editor, unlike YAML or JSON. The plugin commands must be used to edit or view the data.
+### More details
 
-If you opt for H2 (the default), all data is stored in the `luckperms-h2.mv.db` file. The file for SQLite is `luckperms-sqlite.db`.
+#### Flatfile/local databases (H2 & SQLite)
+* All data is stored within one file in the LuckPerms folder.
+* The data cannot be easily edited with a text editor, unlike YAML or JSON.
+* The plugin commands must be used to edit or view the data.
+
+With `H2`, all data is stored in the `luckperms-h2.mv.db` file.
+With `SQLite`, all data is stored in the `luckperms-sqlite.db` file.
 
 To use either of these options, set:
 ```yaml
@@ -30,12 +58,13 @@ storage-method: h2
 storage-method: sqlite
 ```
 
-## YAML / JSON / HOCON
-YAML, JSON and HOCON options store data in readable and editable text files.
+#### Readable & editable text files (YAML / JSON / HOCON)
+* Data is stored in multiple files within the LuckPerms folder.
+* The files can be read/edited when the server is running, and changes will be automatically applied.
 
-* YAML is stored with a `.yml` extension
-* JSON is stored with a `.json` extension
-* HOCON is stored with a `.conf` extension
+With `YAML`, data is stored with a `.yml` extension in the `yaml-storage` directory.
+With `JSON`, data is stored with a `.json` extension in the `json-storage` directory.
+With `HOCON`, data is stored with a `.conf` extension in the `hocon-storage` directory.
    
 The layouts inside of these types are very similar, and only differ in syntax.
 
@@ -48,9 +77,7 @@ storage-method: json
 storage-method: hocon
 ```
 
-## MySQL / PostgreSQL
-Data stored in MySQL or PostgreSQL is in the same format as H2/SQLite above, however the data is instead stored on a remote server. This means that the same set of data can be shared by multiple servers.   
-   
+#### Remote databases (MySQL / MariaDB / PostgreSQL / MongoDB)
 You will need to input the address, port, database, username and password values for your database server into the configuration file.   
    
 This option is recommended for users expecting to store a lot of data, or thinking about expanding into a network of servers. If you are already running multiple servers and want to sync data between them, then you need to use a remote database type.   
@@ -62,31 +89,33 @@ To use either of these options, set:
 storage-method: mysql
 storage-method: mariadb
 storage-method: postgresql
-```
-
-## MongoDB
-LuckPerms also supports MongoDB, which is another type of remote database.
-
-To use this option, set:
-```yaml
 storage-method: mongodb
 ```
 
 ___
 
-
-## Example files
+### Example files
 ##### Example YAML file
 ```yml
 uuid: c1d60c50-70b5-4722-8057-87767557e50d
 name: Luck
 primary-group: default
 permissions:
-- group.default
 - test.permission:
+    value: true
     server: factions
-- other.test.permission:
+- negated.permission.example:
     value: false
+- special.test.perm
+- special.test.permission
+parents:
+- default
+prefixes:
+- '&c[Admin] ':
+    priority: 10
+meta:
+- homes:
+    value: '10'
 ```
 
 ##### Example JSON file
@@ -96,15 +125,34 @@ permissions:
   "name": "Luck",
   "primaryGroup": "default",
   "permissions": [
-    "group.default",
     {
       "test.permission": {
+        "value": true,
         "server": "factions"
       }
     },
     {
-      "other.test.permission": {
+      "negated.permission.example": {
         "value": false
+      }
+    },
+    "special.test.perm",
+    "special.test.permission"
+  ],
+  "parents": [
+    "default"
+  ],
+  "prefixes": [
+    {
+      "&c[Admin] ": {
+        "priority": 10
+      }
+    }
+  ],
+  "meta": [
+    {
+      "homes": {
+        "value": "10"
       }
     }
   ]
@@ -112,21 +160,39 @@ permissions:
 ```
 
 ##### Example HOCON file
-```config
+```conf
 uuid=c1d60c50-70b5-4722-8057-87767557e50d
-name=Luck
+name="Luck"
 primary-group=default
 permissions=[
-  group.default,
   {
-    test.permission {
+    "test.permission" {
       server=factions
+      value=true
     }
   },
   {
-    other.test.permission {
+    "negated.permission.example" {
       value=false
-      server=test
+    }
+  },
+  "special.test.perm",
+  "special.test.permission"
+]
+parents=[
+  default
+]
+prefixes=[
+  {
+    "&c[Admin] " {
+      priority=10
+    }
+  }
+]
+meta=[
+  {
+    homes {
+      value="10"
     }
   }
 ]
