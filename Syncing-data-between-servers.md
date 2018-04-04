@@ -1,86 +1,51 @@
-## Intro
-If you're running LuckPerms on multiple servers, you are likely to run into the issue at somepoint whereby you make a change on one server, but that change hasn't "propagated" to the other servers in your network yet.
+Data can be synchronised between different servers with ease.
 
-This page documents ways to fix this problem.
+## Requirements
+For data to sync, you **must** be using a remote storage type. All of your servers need to be connected to the same database.
 
-Of course, none of this is necessary if you only have one server using LuckPerms, or if your servers do not share a common storage method. (connecting to the same database)
+See the page for [Storage types](https://github.com/lucko/LuckPerms/wiki/Storage-types) for more information. You need to use one of the "**remote databases**" listed on that page.
 
-## Sync Interval
-You can setup a sync interval, which will schedule a task that will repeatedly pull the latest changes from the storage.
+## Instantly propagating updates
+Simply connecting the servers to the same database isn't enough for data to be synced instantly between them. LuckPerms needs to know that data has changed in order to update it.
 
-The default value of this option is **-1** (meaning is is disabled)
+This can be achieved in a number of ways.
+
+All of these settings are located in the config under `Update propagation & messaging service`.
+
+### Sync Interval
+You can set a sync interval, which will make LuckPerms periodically pull the latest changes from the database.   
+The setting is controlled in the config, and defaults to `-1` (meaning the task is disabled).
 
 ```yml
-data:
-
-  ...
-
-  # This option controls how frequently LuckPerms will perform a sync task.
-  # A sync task will refresh all data from the storage, and ensure that the most up-to-date data is being used by the plugin.
-  #
-  # This is disabled by default, as most users will not need it. However, if you're using a remote storage type
-  # without a messaging service setup, you may wish to set this value to something like 3.
-  #
-  # Set to -1 to disable the task completely.
-  sync-minutes: -1
+sync-minutes: -1
 ```
 
-You can modify this value to your liking.
+### Watch files
+If you're using a file based storage type (YAML, JSON or HOCON), then LuckPerms can listen for changes made to those data files, and automatically update when it detects that a change has been made.
 
-## Watch files
-If you're using a file based storage type (JSON or YAML), then LuckPerms can listen for changes made to those data files, and automatically update when it detects that a change has been made.
+This means that you can simply edit one of the data files, and press save, and your changes will be applied to the server.   
+The setting is controlled in the config, and is enabled by default.
 
 ```yml
-# When using a file-based storage type, LuckPerms can monitor the data files for changes, and then schedule automatic
-# updates when changes are detected.
-#
-# If you don't want this to happen, set this option to false.
 watch-files: true
 ```
 
-This means that you can simply edit one of the data files, and press save, and your changes will be applied to the server.
+### /lp sync
+The `/lp sync` command will make the plugin pull the latest changes from the database/files.
 
-## /lp sync
-The `/lp sync` command will force the plugin to run one of the update tasks described above. The latest version of data will be loaded from the database/files.
+### Messaging Services
+Once setup, other servers in the network will be "pinged" when a change is made, and will request the latest copy of data from the database.
 
-This command can also be useful when using file storage, in order to request an update.
+Data is **not** stored using this service - it is only used as a messaging platform.
 
-## Messaging Services
-Once setup, you can use the `/lp networksync` command to push changes to all other servers in the network.
+A messaging service can be configured in the config, under the `messaging-service` option.
 
-#### Currently Supported
+#### Possible options
 | Service | Description | 
 |---------|-------------|
-| Bungee | Uses the plugin messaging channels to push changes around your BungeeCord network. |
-| Lilypad | Uses the LilyPad Connect Server's Pub Sub system to push changes around your LilyPad network. |
-| Redis | Uses Redis Pub Sub to push changes to all other connected servers. |
+| sql | Uses the SQL database to form a queue system for communication. This is chosen by default if remote SQL storage is in use. |
+| bungee | Uses the plugin messaging channels to communicate via BungeeCord. LuckPerms must be installed on your proxy & all connected servers backend servers. Won't work if you have more than one BungeeCord proxy. |
+| lilypad | Uses LilyPad Connect's PubSub system to communicate. |
+| redis | Connects to a Redis instance and uses PubSub to communicate. |
 
-#### Bungee
-```yml
-messaging-service: bungee
-```
-
-You must have LuckPerms installed on your proxy server, and have the option above set in all configs. This option does not support multiple BungeeCord proxies, you should be using Redis in this case.
-
-#### LilyPad
-```yml
-messaging-service: lilypad
-```
-
-You need to have the `LilyPad-Connect` plugin installed on your server.
-
-#### Redis
-```yml
-messaging-service: redis
-
-# Settings for Redis.
-# Port 6379 is used by default; set address to "host:port" if differs
-redis:
-  enabled: true
-  address: localhost
-  password: ''
-```
-
-You need to setup a Redis server which is accessible to your server instance. Then fill out the address and password options in the redis section.
-
-Please ensure that appropriate firewall rules are setup to prevent unauthorised access to your Redis server.
+It is also possible to provide your own implementation of this service via the LuckPerms API.
