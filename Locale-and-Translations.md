@@ -7,6 +7,7 @@ Edit the messages in the file to your liking, and then restart your server.
 
 ## Translations
 * [**en_US** - English](https://github.com/LuckPerms/locale/blob/master/en_US.yml)
+* [**de_DE** - German](https://github.com/LuckPerms/locale/blob/master/de_DE.yml)
 * [**es_ES** - Spanish](https://github.com/LuckPerms/locale/blob/master/es_ES.yml)
 * [**hu_HU** - Hungarian](https://github.com/LuckPerms/locale/blob/master/hu_HU.yml)
 * [**pl_PL** - Polish](https://github.com/LuckPerms/locale/blob/master/pl_PL.yml)
@@ -18,4 +19,4 @@ Edit the messages in the file to your liking, and then restart your server.
 ### Contributing translations
 I (and everyone else) would be grateful if those who do make translations submit the changes back to the project so others can benefit.
 
-The "en_US" translation above should be used as a baseline. Only the values should be changed. The keys should remain the same.
+The [en_US](https://github.com/LuckPerms/locale/blob/master/en_US.yml) translation should be used as a baseline. Only the values should be changed. The keys should remain the same.
