@@ -7,6 +7,18 @@
 5. Read through the config file, and change the options to suit your server, especially taking note of the Storage settings.
 6. Start your server again.
 
+## FAQ
+### Where do I install LuckPerms?
+* If you run a network of servers, you should install LuckPerms into the plugin folder of every server you want to use LuckPerms on.
+* If you also want to use LuckPerms to apply permissions on your BungeeCord proxy, you should place LuckPermsBungee.jar into your BungeeCord plugins folder.
+* If you choose to only install LuckPerms on your BungeeCord proxy, it will have no impact on any permission checks performed by plugins on any backend Spigot/Sponge servers. If you want that functionality, you need to install LuckPerms on those servers too.
+
+### Can I just install LuckPerms on BungeeCord?
+* The permissions system used on BungeeCord is completely separate from the systems used on the backend Spigot/Sponge server.
+* If you want the permission checks performed by Spigot/Sponge plugins to be handled by LuckPerms, install LuckPerms on your Spigot/Sponge server.
+* If you want the permission checks performed by BungeeCord plugins to be handled by LuckPerms, install LuckPerms on your proxy.
+* You **can** just install it on the proxy, but any checks which are performed by Spigot/Sponge plugins will not be handled by LuckPerms.
+
 ## Requirements
 LuckPerms has a few requirements. The *vast* majority of servers will meet these requirements already.
 
