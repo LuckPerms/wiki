@@ -49,7 +49,7 @@ ___
 * The data cannot be easily edited with a text editor, unlike YAML or JSON.
 * The plugin commands must be used to edit or view the data.
 
-With `H2`, all data is stored in the `luckperms-h2.mv.db` file.
+With `H2`, all data is stored in the `luckperms-h2.mv.db` file.   
 With `SQLite`, all data is stored in the `luckperms-sqlite.db` file.
 
 To use either of these options, set:
@@ -62,8 +62,8 @@ storage-method: sqlite
 * Data is stored in multiple files within the LuckPerms folder.
 * The files can be read/edited when the server is running, and changes will be automatically applied.
 
-With `YAML`, data is stored with a `.yml` extension in the `yaml-storage` directory.
-With `JSON`, data is stored with a `.json` extension in the `json-storage` directory.
+With `YAML`, data is stored with a `.yml` extension in the `yaml-storage` directory.   
+With `JSON`, data is stored with a `.json` extension in the `json-storage` directory.   
 With `HOCON`, data is stored with a `.conf` extension in the `hocon-storage` directory.
    
 The layouts inside of these types are very similar, and only differ in syntax.
