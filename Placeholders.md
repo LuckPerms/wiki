@@ -1,17 +1,16 @@
 LuckPerms has a few placeholders available for use in supported plugins.
 
-# Usage
 ## PlaceholderAPI
 To use the LuckPerms placeholders in plugins which support clip's [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/), you need to install the LuckPerms expansion.
 
-### Automatic install
+#### Automatic install
 * To install the latest version of the expansion automagically from clip's ecloud system, simply run the following commands.
   * `/papi ecloud download LuckPerms`
   * `/papi reload`
 
 * You will need to be opped in order to run these commands (or you can just run them from console).
 
-### Manual install
+#### Manual install
 * To manually install the latest version of the expansion, you need to...
 * Download `Expansion-LuckPerms.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and ...
 * Place it in `/plugins/PlaceholderAPI/expansions/`.
@@ -22,7 +21,9 @@ To use the LuckPerms placeholders in plugins which support Maximvdw's [MVdWPlace
 * Download `LuckPermsMVdWHook.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/), and ...
 * Place it in your `/plugins/` folder.
 
-# Placeholders
+___
+
+## Placeholders
 ### `%luckperms_prefix%`
 **Description:** Returns the players prefix.    
 **Example:** n/a
