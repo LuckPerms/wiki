@@ -15,7 +15,7 @@ ___
 
 ### Support
 
-Free support for the project is offered by me (Luck) and other kind members of the community.
+Free support for the project is offered by me (Luck) and other members of the community.
 
 ### I would like help using / setting up / configuring the plugin
 
