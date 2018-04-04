@@ -9,7 +9,7 @@
   * [Compatibility](https://github.com/lucko/LuckPerms/wiki/Setup#compatibility)
 * [**Network Installation**](https://github.com/lucko/LuckPerms/wiki/Network-Installation)
   * [BungeeCord version](https://github.com/lucko/LuckPerms/wiki/Network-Installation#the-bungeecord-version-of-luckperms)
-* [**Choosing a Storage type**](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type)
+* [**Storage types**](https://github.com/lucko/LuckPerms/wiki/Storage-types)
 * [**Usage**](https://github.com/lucko/LuckPerms/wiki/Usage)
   * [Key Definitions](https://github.com/lucko/LuckPerms/wiki/Usage#key-definitions)
   * [Getting Started](https://github.com/lucko/LuckPerms/wiki/Usage#getting-started)
