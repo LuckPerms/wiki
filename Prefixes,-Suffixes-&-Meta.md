@@ -84,7 +84,7 @@ If you're having issues with a plugin not picking up data correctly, please make
 
 Some popular chat formatting plugins which work with Vault include:
 * [VaultChatFormatter](https://www.spigotmc.org/resources/vaultchatformatter.49016/) - written by me
-* [EssentialsXChat](https://ci.akpmakes.tech/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!)
+* [EssentialsXChat](https://ci.ender.zone/job/EssentialsX/) - an updated fork of the original Essentials plugin. (the 'X' is important!)
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - you can use either the Vault or LuckPerms placeholders.
 * [ChatControl](https://www.spigotmc.org/resources/10258/) - also supports a bunch of other stuff to help manage the chat.
