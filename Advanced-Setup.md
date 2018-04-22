@@ -72,7 +72,7 @@ Example: if a user has a global "fly.use" permission, and then has a negated "fl
 
 Example: if a user has a false permission set for "test.node", and a temporary true permission set for "test.node", the temporary permission will override the permanent one, and the user will be granted the true node.
 
-* **Non wildcard/regex permissions will be overridden by normal permissions**
+* **Wildcard/regex permissions will be overridden by normal permissions**
 
 Example: if a user has a true permission set for "luckperms.\*", and a false permission set for "luckperms.something", the non-wildcard permission will override the wildcard, and "luckperms.something" will be set to false, despite the wildcard.
 
@@ -141,4 +141,4 @@ LuckPerms has support for regex when defining permission nodes and server/world 
 
 Whenever regex is used, it MUST be prefixed with "R=", so LuckPerms knows to treat it as regex, and not as a normal string.
 
-Foe example, if you wanted a user to be able to create both groups and tracks, you would normally just add the two permission nodes. However with regex, you can just add one. `luckperms\.create.*` Remember to escape any characters (including dots) as the entire node will be parsed.
+For example, if you wanted a user to be able to create both groups and tracks, you would normally just add the two permission nodes. However with regex, you can just add one. `luckperms\.create.*` Remember to escape any characters (including dots) as the entire node will be parsed.
