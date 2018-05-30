@@ -226,20 +226,6 @@ public void addPermission(User user, String permission) {
 
 The same methods also exist for groups and tracks.
 
-However, if we're making a change to the user's live data, we'll also need to refresh their caches for the change to apply. In order to do this, we can just add a call onto the end of the save method.
-
-It becomes...
-
-```java
-luckPermsApi.getUserManager().saveUser(user).thenRunAsync(user::refreshCachedData);
-```
-
-For group changes, it's best to request a complete update task.
-
-```java
-luckPermsApi.getGroupManager().saveGroup(group).thenComposeAsync(v -> luckPermsApi.runUpdateTask());
-```
-
 ___
 
 ### The basics of Node
