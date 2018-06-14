@@ -2,6 +2,8 @@
 
 * [**Home**](https://github.com/lucko/LuckPerms/wiki)
 * [**Why LuckPerms?**](https://github.com/lucko/LuckPerms/wiki/Why-LuckPerms)
+* [**Credits**](https://github.com/lucko/LuckPerms/wiki/Credits)
+
 ### Setup
 * [**Installation**](Installation)
   * [Initial Setup](https://github.com/lucko/LuckPerms/wiki/Installation#initial-setup)
