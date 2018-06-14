@@ -7,9 +7,7 @@ YourKit supports open source projects with its full-featured Java Profiler. Your
 
 ## Open Source
 
-LuckPerms utilises a number of open source libraries and utilities to provide it's functionality.
-
-Each respective software, along with its homepage, maintainer, and licence is documented below.
+LuckPerms utilises a number of open source libraries and utilities to provide it's functionality - listed below.
 
 | Name | Author | License |
 |------|--------|---------|
