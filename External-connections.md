@@ -3,12 +3,9 @@ The tl;dr is...
 
 * LuckPerms uses the servers internet connection to securely download required libraries when it first starts
 * LuckPerms will send data to a remote server in order to provide certain functions - but never for metrics or monitoring purposes
-* LuckPerms uses a number of libraries written by 3rd parties - reinventing the wheel is (usually? sometimes??) bad
+* LuckPerms does not report to metrics or analytics services
 
-For clarity, the nature of these interactions and usages are documented below. 
-
-> Understandably, some server admins are particularly careful about the plugins they install on their server.   
-> For example, "using the internet to download and execute binaries" may scream of [arbitrary code execution](https://en.wikipedia.org/wiki/Arbitrary_code_execution) when read by some people. I want to emphasize that I hear your cries - and have tried to implement these features securely and responsibly.
+The specific nature of these interactions and usages are documented [here](https://github.com/lucko/LuckPerms/wiki/Credits). 
 
 ___
 
