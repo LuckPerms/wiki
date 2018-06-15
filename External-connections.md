@@ -5,13 +5,13 @@ The tl;dr is...
 * LuckPerms will send data to a remote server in order to provide certain functions - but never for metrics or monitoring purposes
 * LuckPerms does not report to metrics or analytics services
 
-The specific nature of these interactions and usages are documented [here](https://github.com/lucko/LuckPerms/wiki/Credits). 
+The specific nature of these interactions and usages are documented below.
 
 ___
 
 ### Downloading libraries
 
-LuckPerms makes use of a lot of libraries - all of which are listed at the end of this page.
+LuckPerms makes use of a lot of libraries - all of which are listed [here](https://github.com/lucko/LuckPerms/wiki/Credits).
 
 The plugin can be configured and used in a number of ways. For example, it supports a number of storage methods, each of which require their own set of drivers. Most plugins simply bundle (or "shade") these libraries into the plugin jar file - however, this is not practical for LuckPerms, as the high number of libraries would produce a huge final jar size. The solution is to download the *required* libraries at runtime, depending on the configuration being used.
 
