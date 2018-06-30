@@ -27,7 +27,22 @@ This site is a trustworthy source - it is used by most Java developers and open 
 
 In the extreme event that the site is compromised, and as a precautionary measure, LuckPerms will perform additional verification during the download process to ensure that libraries are intact and as expected. 
 
-Before being saved to disk, the binary data is hashed and compared against expected checksums to validate the integrity of the file. This prevents malicious code from being executed in the event that the download servers become compromised.
+##### The verification process
+
+Each dependency that can be downloaded at runtime, along with it's version and location within Maven Central is defined in [this source code file](https://github.com/lucko/LuckPerms/blob/master/common/src/main/java/me/lucko/luckperms/common/dependencies/Dependency.java) in LuckPerms.
+
+Each entry also includes a SHA-256 hash of the dependency file, at the time the release was first included within LuckPerms. This hash is used as a checksum for downloaded files.
+
+When a dependency is downloaded from the repository, the same hashing process is performed on the downloaded data, and the hash of this is compared with the checksum of the dependency.
+
+The integrity of the downloaded file can be assumed to be ok if the two hashes are equal. If the hashes are not equal, then one of twothings has most likely happened:
+
+* Only a part of the file has been downloaded, something went wrong in the download process
+* The dependency file has been tampered with in some way, and should not be trusted
+
+In both cases, the downloaded binary data is discarded by LuckPerms, and the plugins startup is cancelled.
+
+These checks are put in place to minimise the risk of malicious code from being executed should the download servers become compromised. It effectively eliminates the possibility of [arbitrary code execution](https://en.wikipedia.org/wiki/Arbitrary_code_execution) taking place, and makes the system just as secure as shading the dependencies directly into the jar.
 
 ___
 
