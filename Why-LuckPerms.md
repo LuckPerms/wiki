@@ -1,4 +1,4 @@
-**Hi there!** 👋 
+**Hi there!** 👋
 
 This page attempts to answer a number of questions/reactions people tend to have when they first discover the project, and address why you should use LuckPerms. It's awesome, I promise!
 
@@ -55,7 +55,7 @@ You can also upload recordings to the web, for easier analysis and reading.
 ___
 
 ### Permission Trees
-LuckPerms allows you [build "permission trees"](https://github.com/lucko/LuckPerms/wiki/Command-Usage#lp-tree) of all permissions known to the server. The data is populated using permissions registered to the server by plugins.
+LuckPerms allows you [build "permission trees"](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-tree) of all permissions known to the server. The data is populated using permissions registered to the server by plugins.
 
 As the server runs for longer periods, the tree also grows, as permissions checked for by plugins on the server are added.
 

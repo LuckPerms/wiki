@@ -27,7 +27,7 @@ If you have an old permissions setup, or a setup you're not completely happy wit
 ## The process
 The migration process is fairly simple, however it varies slightly for each platform.
 
-1. Firstly, you need to [install LuckPerms](https://github.com/lucko/LuckPerms/wiki/Setup). Don't remove your old permissions plugin yet.
+1. Firstly, you need to [install LuckPerms](https://github.com/lucko/LuckPerms/wiki/Installation). Don't remove your old permissions plugin yet.
 2. Ensure that your old permissions plugin is still enabling properly. The migration process won't work if your old setup is broken.
 3. Start your server - **do not reload** - a full restart is needed when installing LP. 
 
@@ -70,4 +70,4 @@ For example: `/luckperms migration powerfulperms 127.0.0.1:3306 minecraft root p
 ## Errors
 If it seems that the migration command does not exist, check your server's startup log to check if the plugin you are importing from loaded correctly.
 
-If the process doesn't complete and prints an error message, please submit an Issue on GitHub or [contact me here](https://github.com/lucko/LuckPerms/wiki). I'll try to reply to you ASAP.
+If the process doesn't complete and prints an error message, please submit an Issue on GitHub or [contact me here](https://github.com/lucko/LuckPerms/wiki#2-speech_balloon-discord). I'll try to reply to you ASAP.
