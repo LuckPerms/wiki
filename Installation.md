@@ -34,12 +34,12 @@ Most MC shared hosting companies have updated by now, but if your provider still
 
 ---
 ### Internet Connection
-LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections-and-3rd-party-software#external-services).
+LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections#downloading-libraries).
 
 If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/lib/` directory to your other server.
 
 ## Compatibility
-Some known compatibility issues are outlined below. In all cases, these issues are out of my control - and there's nothing I can do to resolve them in LuckPerms itself. 🙁 
+Some known compatibility issues are outlined below. In all cases, these issues are out of my control - and there's nothing I can do to resolve them in LuckPerms itself. 🙁
 
 Some of the compatibility issues are resolved in newer releases of the server - but the fixes are not backdated.
 
@@ -55,7 +55,7 @@ Your options are:
 
 ---
 ### Older Minecraft versions
-The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8. 
+The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
 
 A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/job/LuckPermsLegacy/).
 

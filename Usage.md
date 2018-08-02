@@ -23,7 +23,7 @@ For example, I might have 3 groups, "default", "moderator" and "admin". I want m
 
 
 # Getting Started
-If you haven't got LuckPerms installed just yet, please refer to the [installation guide](https://github.com/lucko/LuckPerms/wiki/Setup) first.
+If you haven't got LuckPerms installed just yet, please refer to the [installation guide](https://github.com/lucko/LuckPerms/wiki/Installation) first.
 
 Then, please make sure you read the section about [choosing a Storage type](https://github.com/lucko/LuckPerms/wiki/Storage-types) before proceeding. Whilst it is possible to change these options later, it's better to get them right the first time around.
 
