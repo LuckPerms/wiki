@@ -67,3 +67,18 @@ Once added, we can use the `server-type` context when defining permissions/paren
 
 You can add as many contexts as you like to this file.
 
+### Default Contexts
+Default contexts allow you to specify contexts that are applied to commands if you don't add contexts to the end of the command - for example `/lp user Luck permission set example.permission`. You can define them in the `contexts.yml` file, in the same folder as the main config.
+
+For example, to add a default context to the file, simply add, below the static-contexts section:
+
+```json
+{
+ "default-contexts": {
+    "world": "world_nether",
+    "server": "survival"
+  }
+}
+```
+
+This would mean that, for `/lp` commands on the server which you've added the default context, any commands that can be performed with a context will use `world=world_nether,server=survival` unless you specify otherwise.
