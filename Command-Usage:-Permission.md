@@ -17,6 +17,7 @@ ___
 *  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
 *  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
+*  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear)
 
 ___
 #### `/lp user/group <user|group> permission info`  
@@ -88,5 +89,13 @@ ___
 * `[context...]` - the contexts to check for the permission in
 
 Checks to see if a user/group inherits a certain permission, and if so, where from.
+
+___
+#### `/lp user/group <user|group> permission clear`  
+**Permission**: luckperms.user.permission.clear or luckperms.group.permission.clear  
+**Arguments**:  
+* `[context...]` - the contexts to filter by
+
+Removes all permissions.
 
 ___
