@@ -18,10 +18,14 @@ ___
 *  [`unsettemp` \<key\> [context...]](#lp-usergroup-usergroup-meta-unsettemp)
 *  [`addprefix` \<priority\> \<prefix\> [context...]](#lp-usergroup-usergroup-meta-addprefix)
 *  [`addsuffix` \<priority\> \<suffix\> [context...]](#lp-usergroup-usergroup-meta-addsuffix)
+*  [`setprefix` [priority] \<prefix\> [context...]](#lp-usergroup-usergroup-meta-setprefix)
+*  [`setsuffix` [priority] \<suffix\> [context...]](#lp-usergroup-usergroup-meta-setsuffix)
 *  [`removeprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removeprefix)
 *  [`removesuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removesuffix)
 *  [`addtempprefix` \<priority\> \<prefix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-addtempprefix)
 *  [`addtempsuffix` \<priority\> \<suffix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-addtempsuffix)
+*  [`settempprefix` [priority] \<prefix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-settempprefix)
+*  [`settempsuffix` [priority] \<suffix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-settempsuffix)
 *  [`removetempprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removetempprefix)
 *  [`removetempsuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removetempsuffix)
 *  [`clear` [context...]](#lp-usergroup-usergroup-meta-clear)
@@ -100,6 +104,26 @@ ___
 Adds a suffix to a user/group. You can wrap the suffix in " " quotes to escape spaces. 
 
 ___
+#### `/lp user/group <user|group> meta setprefix`  
+**Permission**: luckperms.user.meta.setprefix or luckperms.group.meta.setprefix  
+**Arguments**:  
+* `[priority]` - the priority to set the prefix at
+* `<prefix>` - the actual prefix string
+* `[context...]` - the contexts to set the prefix in
+
+Sets a prefix for a user/group. You can wrap the prefix in " " quotes to escape spaces. This is different from the `addprefix` command in that existing prefixes set in the same context are removed when the new prefix is added. Another difference is that the priority argument is optional in the setprefix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
+
+___
+#### `/lp user/group <user|group> meta setsuffix`  
+**Permission**: luckperms.user.meta.setsuffix or luckperms.group.meta.setsuffix  
+**Arguments**:  
+* `[priority]` - the priority to set the suffix at
+* `<suffix>` - the actual suffix string
+* `[context...]` - the contexts to set the suffix in
+
+Sets a suffix for a user/group. You can wrap the suffix in " " quotes to escape spaces. This is different from the `addsuffix` command in that existing suffixes set in the same context are removed when the new suffix is added. Another difference is that the priority argument is optional in the setsuffix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
+
+___
 #### `/lp user/group <user|group> meta removeprefix`  
 **Permission**: luckperms.user.meta.removeprefix or luckperms.group.meta.removeprefix  
 **Arguments**:  
@@ -150,6 +174,50 @@ ___
 * `[context...]` - the contexts to add the suffix in
 
 Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
+
+___
+#### `/lp user/group <user|group> meta settempprefix`  
+**Permission**: luckperms.user.meta.settempprefix or luckperms.group.meta.settempprefix  
+**Arguments**:  
+* `[priority]` - the priority to set the prefix at
+* `<prefix>` - the actual prefix string
+* `<duration>` - the duration until the prefix will expire
+* `[temporary modifier]` - how the temporary permission should be applied
+* `[context...]` - the contexts to set the prefix in
+
+Sets a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. This is different from the `addtempprefix` command in that existing prefixes set in the same context are removed when the new prefix is added. Another difference is that the priority argument is optional in the settempprefix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
+
+Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+
+The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
+
+| Modifier key | Description |
+|--------------|-------------|
+| `accumulate` | the duration of any existing nodes will just be added to the new duration |
+| `replace` | the longest duration will be kept, any others nodes will be forgotten |
+| `deny` | the command will just fail if you try to add a duplicate temporary node |
+
+___
+#### `/lp user/group <user|group> meta settempsuffix`  
+**Permission**: luckperms.user.meta.settempsuffix or luckperms.group.meta.settempsuffix  
+**Arguments**:  
+* `[priority]` - the priority to set the suffix at
+* `<suffix>` - the actual suffix string
+* `<duration>` - the duration until the suffix will expire
+* `[temporary modifier]` - how the temporary permission should be applied
+* `[context...]` - the contexts to set the suffix in
+
+Sets a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. This is different from the `addtempsuffix` command in that existing suffixes set in the same context are removed when the new suffix is added. Another difference is that the priority argument is optional in the settempsuffix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
+
+Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
