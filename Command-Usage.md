@@ -94,6 +94,7 @@ Formed of either `/lp user <user> permission ...` or `/lp group <group> permissi
 *  [`unsettemp` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-unsettemp)
 *  [`check` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-check)
 *  [`checkinherits` \<node\> [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-checkinherits)
+*  [`clear` [context...]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission#lp-usergroup-usergroup-permission-clear)
 
 ### Parent commands
 Commands used to view or modify the inheritance properties (parents) of a specific user or group.
