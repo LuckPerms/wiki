@@ -34,7 +34,7 @@ General commands used to operate LuckPerms functions.
 *  [/lp `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-info)
 *  [/lp `editor`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-editor)
 *  [/lp `debug`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-debug)
-*  [/lp `verbose` \<on | record | off | paste\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-verbose)
+*  [/lp `verbose` \<on | record | off | upload\> [filter]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-verbose)
 *  [/lp `tree` [scope] [player]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-tree)
 *  [/lp `search` \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-search)
 *  [/lp `check` \<user\> \<permission\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-check)
