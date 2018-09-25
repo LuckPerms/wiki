@@ -15,7 +15,7 @@ ___
 *  [/lp `info`](#lp-info)
 *  [/lp `editor`](#lp-editor)
 *  [/lp `debug`](#lp-debug)
-*  [/lp `verbose` \<on | record | off | paste\> [filter]](#lp-verbose)
+*  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose)
 *  [/lp `tree` [scope] [player]](#lp-tree)
 *  [/lp `search` \<permission\>](#lp-search)
 *  [/lp `check` \<user\> \<permission\>](#lp-check)
@@ -64,14 +64,14 @@ ___
 #### `/lp verbose`  
 **Permission**: luckperms.verbose  
 **Arguments**:  
-* `<on|record|off|paste>` - whether to enable/disable logging, or to paste the logged output
+* `<on|record|off|upload>` - whether to enable/disable logging, or to upload the logged output
 * `[filter]` - the filter to sort the output
 
 Controls the LuckPerms verbose logging system. This allows you to listen for all permission checks against players on the server. Whenever a permission is checked by a plugin, the check is passed onto the verbose handler.    
 
 If your filters match the permission check, you will be notified.    
 
-`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `paste` will upload the first results to the web viewer, and provide you with a link.    
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `upload` will upload the first results to the web viewer, and provide you with a link.    
 
 Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
 
