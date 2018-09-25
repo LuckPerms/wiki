@@ -3,6 +3,7 @@ This is a sub-page of the main **Command Usage** page. [Click here to go back.](
 Key things to remember from the main page:
 
 * You use `/lpb` instead of `/lp` when running the plugin on BungeeCord
+* You use `/lpv` instead of `/lp` when running the plugin on Velocity
 * Required arguments are marked with angle brackets - e.g. `<required>`
 * Optional arguments are marked with square brackets - e.g. `[optional]`
 * If you want to include spaces in arguments, you must escape the argument with quotes - e.g. `"  "`
