@@ -1,19 +1,19 @@
-Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /lp or /lpb** will list all commands a user has permission to use.
+Command usage is printed to the console/chat whenever invalid arguments are provided. **Simply typing /lp** will list all commands a user has permission to use.
 
 If the only thing returned when you type a command is the plugin version, you do not have permission to use any of the commands. You need to use the server console to [give yourself access to LuckPerms commands first](https://github.com/lucko/LuckPerms/wiki/Usage#granting-full-access-to-modify-permissions).
 
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
 
-| Bukkit / Sponge  | BungeeCord       |
-|------------------|------------------|
-| /luckperms       | /luckpermsbungee |
-| /perms           | /bperms          |
-| /permissions     | /bpermissions    |
-| /perm            | /bperm           |
-| /lp              | /lpb             |
+| Bukkit / Sponge / Nukkit  | BungeeCord       | Velocity           |
+|---------------------------|------------------|--------------------|
+| /luckperms                | /luckpermsbungee | /luckpermsvelocity |
+| /perms                    | /bperms          | /vperms            |
+| /permissions              | /bpermissions    | /vpermissions      |
+| /perm                     | /bperm           | /vperm             |
+| /lp                       | /lpb             | /lpv               |
 
-**`Important:`** Commands are different on BungeeCord. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
+**`Important:`** The command aliases are different on BungeeCord and Velocity. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
 
 If you are using Bukkit/Spigot, by default, all users with OP have access to LuckPerms commands. You can change this in the config.
 
