@@ -17,7 +17,7 @@ ___
 *  [/lp group \<group\> `editor`](#lp-group-group-editor)
 *  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers)
 *  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight)
-*  [/lp group \<group\> `setdisplayname` \<name\>](#lp-group-group-setdisplayname)
+*  [/lp group \<group\> `setdisplayname` \<name\> [context...]](#lp-group-group-setdisplayname)
 *  [/lp group \<group\> `showtracks`](#lp-group-group-showtracks)
 *  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
 *  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
@@ -54,6 +54,7 @@ ___
 **Permission**: luckperms.group.setdisplayname  
 **Arguments**:  
 * `<name>` - the name to set
+* `[context...]` - the contexts to set the display name in
 
 Sets the groups display name. This can effectively be used as an "alias" for the group.
 
