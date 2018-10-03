@@ -54,7 +54,7 @@ General commands used to operate LuckPerms functions.
 ### User commands
 Commands used to view or modify a specific user.
 
-Formed of `/lp user <user> ...` - where `<user>` is the username of uuid of the user being queried / modified.
+Formed of `/lp user <user> ...` - where `<user>` is the username or uuid of the user being queried / modified.
 *  [/lp user \<user\> `info`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-info)
 *  [/lp user \<user\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission)
 *  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
