@@ -93,13 +93,26 @@ If you get an error similar to:
 
 > me.lucko.luckperms.lib.hikari.pool.PoolBase - luckperms - Failed to validate connection me.lucko.luckperms.lib.mariadb.MariaDbConnection@xxxxxxx (xxx cannot be called on a closed connection)
 
-... you need to modify the `maximum-lifetime` setting in the 'pool-settings' section, within "Storage", in the LuckPerms config file.
+... you need to modify the `maximum-lifetime` (LP config) and `wait_timeout` (MySQL config) settings.
 
-This setting (defaults to 30 minutes and measured in milliseconds) must be **less** than the `wait_timeout` value set on your MySQL server.
+Crucially, the `maximum-lifetime` value in the LP config must be **less than** the `wait_timeout` value in your MySQL config.
 
-https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_wait_timeout
+| `maximum-lifetime` |
+|--------------------|
+| Location: [LuckPerms config](https://github.com/lucko/LuckPerms/blob/be92a6754404b387dead24ebc1dd3ca8af8e6456/bukkit/src/main/resources/config.yml#L125-L128) |
+| Units: milliseconds |
+| Default value: `1800000` (30 minutes) |
 
-The default value of 30 minutes is fine for the **vast** majority of users. It only becomes a problem if you or your hosting provider has changed the wait timeout setting.
+
+| `wait_timeout` |
+|----------------|
+| Location: [MySQL server config](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_wait_timeout) |
+| Units: seconds |
+| Default value: `28800` (8 hours) |
+
+It doesn't matter which value you change, so long as the `maximum-lifetime` is less than `wait_timeout`. Remember that the units of each value are different!
+
+The default `maximum-lifetime` value of 30 minutes is fine for the **vast** majority of users. It only becomes a problem if you or your hosting provider have changed the wait timeout setting from the 8 hour default.
 
 If your MySQL server is provided by a 3rd party, ask them what the value is set to.
 
