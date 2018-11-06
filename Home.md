@@ -31,7 +31,9 @@ Please take a look through the [Frequently Asked Questions](https://github.com/l
 
 #### 2) :speech_balloon: Discord
 
-[![Discord](https://img.shields.io/discord/241667244927483904.svg)](https://discord.gg/W3FzxHA)  <-- click to join!
+You can join the LuckPerms guild by clicking on the following link, or typing it manually into the "Join a Server" window.
+
+https://discord.gg/luckperms
 
 The community Discord Server is a great place to go if you have any unanswered questions, or want to chill out and chat with fellow admins and LuckPerms users.
 
