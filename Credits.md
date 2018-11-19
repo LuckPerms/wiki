@@ -27,7 +27,7 @@ LuckPerms utilises a number of open source libraries and utilities to provide it
 | [configurate](https://github.com/SpongePowered/configurate)            | [SpongePowered](https://github.com/SpongePowered)       | [Apache License 2.0](https://github.com/SpongePowered/configurate/blob/master/LICENSE) |
 | [SnakeYAML](https://bitbucket.org/asomov/snakeyaml)                    | [Andrey Somov](https://bitbucket.org/asomov)            | [Apache License 2.0](https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt) |
 | [HOCON](https://github.com/lightbend/config)                           | [lightbend](https://github.com/lightbend)               | [Apache License 2.0](https://github.com/lightbend/config/blob/master/LICENSE-2.0.txt) |
-| [toml4J](https://github.com/zml2008/configurate)                       | [Moandji Ezana](https://github.com/mwanji)              | [MIT License](https://github.com/mwanji/toml4j/blob/master/LICENSE) |
+| [toml4j](https://github.com/mwanji/toml4j)                             | [Moandji Ezana](https://github.com/mwanji)              | [MIT License](https://github.com/mwanji/toml4j/blob/master/LICENSE) |
 
 ## Sponsors
 
