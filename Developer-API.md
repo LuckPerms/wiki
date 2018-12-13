@@ -57,9 +57,11 @@ repositories {
 }
 
 dependencies {
-    compile ("me.lucko.luckperms:luckperms-api:4.3")
+    compile 'me.lucko.luckperms:luckperms-api:4.3'
 }
 ```
+
+> Note: `compile` can be optionally replaced by either `api` or `implementation` on newer Gradle versions to distinguish whether dependant projects should transitively pick up the LuckPerms API dependency.
 
 #### Manual
 If you want to manually add the API dependency to your classpath, you can obtain the jar by:
@@ -143,7 +145,6 @@ For the purposes of explaining, take the following method in the `ActionLogger` 
  *
  * @return a log instance
  */
-@Nonnull
 CompletableFuture<Log> getLog();
 ```
 
