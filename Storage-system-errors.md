@@ -89,9 +89,9 @@ ___
 
 ### MySQL "No operations allowed after connection closed" error
 If you get an error similar to:
-> me.lucko.luckperms.lib.hikari.pool.PoolBase - luckperms - Failed to validate connection com.mysql.jdbc.JDBC4Connection@xxxxxxx (No operations allowed after connection closed.)
+> me.lucko.luckperms.lib.hikari.pool.PoolBase - luckperms-hikari - Failed to validate connection me.lucko.luckperms.lib.mysql.jdbc.JDBC4Connection@xxxxxxx (No operations allowed after connection closed.)
 
-> me.lucko.luckperms.lib.hikari.pool.PoolBase - luckperms - Failed to validate connection me.lucko.luckperms.lib.mariadb.MariaDbConnection@xxxxxxx (xxx cannot be called on a closed connection)
+> me.lucko.luckperms.lib.hikari.pool.PoolBase - luckperms-hikari- Failed to validate connection me.lucko.luckperms.lib.mariadb.MariaDbConnection@xxxxxxx (xxx cannot be called on a closed connection)
 
 ... you need to modify the `maximum-lifetime` (LP config) and `wait_timeout` (MySQL config) settings.
 
