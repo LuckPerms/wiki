@@ -219,8 +219,8 @@ If enabled and configured, LuckPerms will use the messaging system to inform oth
 If you decide to enable this feature, you should set "sync-minutes" to -1, as there is no need for LuckPerms to poll the database for changes.
 
 **Available options:**
-
-* **`bungee`** - uses the plugin messaging channels. Must be enabled on all connected servers to work, and you need to have LP installed on your proxy.
+* **`sql`** - Uses the SQL database to form a queue system for communication. Will only work when 'storage-method' is set to MySQL or MariaDB. This is chosen by default if the. option is set to 'none' and SQL storage is in use. Set to 'notsql' to disable this.
+* **`pluginmsg`** - Uses the plugin messaging channels to communicate with the proxy. LuckPerms must be installed on your proxy & all connected servers backend servers. Won't work if you have more than one proxy.
 * **`lilypad`** - uses LilyPad's pub sub to push changes. You need to have the LilyPad-Connect plugin installed.
 * **`redis`** - uses Redis pub sub to push changes.
 * **`none`** - nothing!
