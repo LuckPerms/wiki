@@ -21,11 +21,12 @@ The plugin can be configured and used in a number of ways. For example, it suppo
 * Downloaded binaries are cached in the `/LuckPerms/lib/` folder after the initial download. If a library is already present here, a connection to the download server will not be attempted.
 * The URL and version of libraries is hardcoded within the plugin - they will never automatically update.
 
-All libraries are downloaded from https://repo1.maven.org/maven2/ - a public software repository commonly referred to as the "Central Repository" or "Maven Central".
+All libraries are downloaded from https://nexus.lucko.me/ or https://repo1.maven.org/maven2/.
+The latter is a public software repository commonly referred to as the "Central Repository" or "Maven Central", and the former is a repository owned and controlled by me (Luck) which mirrors Maven Central.
 
-This site is a trustworthy source - it is used by most Java developers and open source projects.
+Maven Central is a trustworthy source - it is used by most Java developers and open source projects.
 
-In the extreme event that the site is compromised, and as a precautionary measure, LuckPerms will perform additional verification during the download process to ensure that libraries are intact and as expected. 
+As a precautionary measure in case either of the sites become compromised, LuckPerms will perform additional verification during the download process to ensure that libraries are intact and as expected. 
 
 ##### The verification process
 
@@ -35,7 +36,7 @@ Each entry also includes a SHA-256 hash of the dependency file, at the time the 
 
 When a dependency is downloaded from the repository, the same hashing process is performed on the downloaded data, and the hash of this is compared with the checksum of the dependency.
 
-The integrity of the downloaded file can be assumed to be ok if the two hashes are equal. If the hashes are not equal, then one of twothings has most likely happened:
+The integrity of the downloaded file can be assumed to be ok if the two hashes are equal. If the hashes are not equal, then one of two things has most likely happened:
 
 * Only a part of the file has been downloaded, something went wrong in the download process
 * The dependency file has been tampered with in some way, and should not be trusted
