@@ -55,3 +55,4 @@
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
 * [**Placeholders**](https://github.com/lucko/LuckPerms/wiki/Placeholders)
 * [**External connections**](https://github.com/lucko/LuckPerms/wiki/External-connections)
+* [**Self hosting the web interfaces**](https://github.com/lucko/LuckPerms/wiki/Self-hosting-the-web-interfaces)
