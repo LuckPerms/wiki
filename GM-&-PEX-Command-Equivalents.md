@@ -76,6 +76,8 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | pex group \<group\> create                                          | lp creategroup \<group\>                                                            |
 | pex group \<group\> delete                                          | lp deletegroup \<group\>                                                            |
 | pex group \<group\> parents list                                    | lp group \<group\> parent info                                                      |
+| pex group \<group\> users                                           | lp group \<group\> listmembers
+                   |
 | pex group \<group\> parents set \<parents\>                         | lp group \<group\> parent add \<parent\>                                            |
 | pex group \<group\> add \<permission\> \<world\>                    | lp group \<group\> permission set \<permission\> true global \<world\>              |
 | pex group \<group\> remove \<permission\> \<world\>                 | lp group \<group\> permission unset \<permission\> global \<world\>                 |
