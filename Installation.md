@@ -46,7 +46,7 @@ Some of the compatibility issues are resolved in newer releases of the server - 
 ### CraftBukkit and Offline Mode
 If your server is running CraftBukkit and configured in offline (cracked) mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541).
 
-This issue is yet to be resolved. (as of writing on 11th Jan 18)
+This issue is yet to be resolved. (as of writing on 11th Jan 18) There is nothing I can personally do about it.
 
 Your options are:
 
