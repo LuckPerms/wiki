@@ -15,7 +15,7 @@ ___
   * [Saving changes](#saving-changes)
 * [The basics of Node](#the-basics-of-node)
   * [Creating new node instances](#creating-new-node-instances)
-  * [Modifying existing nodes](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage-Examples#modifying-existing-nodes)
+  * [Modifying existing nodes](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage#modifying-existing-nodes)
 * [Reading user/group data](#reading-usergroup-data)
 * [Modifying user/group data](#modifying-usergroup-data)
 * [The basics of Context](#the-basics-of-context)
