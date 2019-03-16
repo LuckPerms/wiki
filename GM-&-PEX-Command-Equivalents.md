@@ -65,7 +65,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | pex user \<user\> group list                                        | lp user \<user\> parent info                                                        |
 | pex user \<user\> group add \<group\> \<world\>                     | lp user \<user\> parent add \<group\> global \<world\>                              |
 | pex user \<user\> group add \<group\> \<world\> \<time\>            | lp user \<user\> parent addtemp \<group\> \<time\> global \<world\>                 |
-| pex user \<user\> group set \<group\>                               | lp user \<user\> parent set \<group\>               |
+| pex user \<user\> group set \<group\>                               | lp user \<user\> parent set \<group\>                                               |
 | pex user \<user\> group remove \<group\> \<world\>                  | lp user \<user\> parent remove \<group\> global \<world\>                           |
 | pex groups list                                                     | lp listgroups                                                                       |
 | pex group \<group\> list                                            | lp group \<group\> permission info                                                  |
@@ -76,8 +76,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | pex group \<group\> create                                          | lp creategroup \<group\>                                                            |
 | pex group \<group\> delete                                          | lp deletegroup \<group\>                                                            |
 | pex group \<group\> parents list                                    | lp group \<group\> parent info                                                      |
-| pex group \<group\> users                                           | lp group \<group\> listmembers
-                   |
+| pex group \<group\> users                                           | lp group \<group\> listmembers                                                      |
 | pex group \<group\> parents set \<parents\>                         | lp group \<group\> parent add \<parent\>                                            |
 | pex group \<group\> add \<permission\> \<world\>                    | lp group \<group\> permission set \<permission\> true global \<world\>              |
 | pex group \<group\> remove \<permission\> \<world\>                 | lp group \<group\> permission unset \<permission\> global \<world\>                 |
