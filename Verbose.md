@@ -15,7 +15,7 @@ The first argument enables/disables the system, and the second sets up the filte
 | `on`     | Enables the system, and will send you an alert in chat when the filter is matched. |
 | `record` | Same as "on", however you will not be notified via chat. |
 | `off`    | Just disables the system, and clears any matches from memory. |
-| `upload  | Same as "off", but will upload the results to the web viewer for easier analysis, and provide you with a link. |
+| `upload`  | Same as "off", but will upload the results to the web viewer for easier analysis, and provide you with a link. |
 
 #### Filters
 The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
