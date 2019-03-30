@@ -71,7 +71,8 @@ This means that `storage-method` should be set to 'mysql', 'mariadb', 'postgresq
 
 The "Messaging Service" is a feature within LuckPerms which allows servers to notify other servers within the network whenever changes are made. It also allows log entries to be dispatched across the network.
 
-* If you're running a small network with one BungeeCord proxy, then you should set this option to `bungee`.
+* If you're running multiple servers which are not connected to one proxy, but use the same database set this option to `sql`.
+* If you're running a small network with one BungeeCord proxy, then you should set this option to `pluginmsg`.
 * If you're running a LilyPad network, set this to `lilypad`.
 * If you're running a network with more than one BungeeCord proxy, then it is advisable to install a Redis server (if you're running a network with more than one proxy, I'll assume you already know how to do this!), and set this option to `redis`. Remember to fill out your Redis credentials after changing this option!
 
@@ -83,6 +84,6 @@ A common misconception with the BungeeCord version is that it's a replacement fo
 When LuckPerms is installed on a BungeeCord proxy, it does two things:
 
 * It handles permissions checks made by **BungeeCord plugins**. It does *not* intercept or handle permission checks made by plugins on the backend server.
-* It forwards update notifications and log messages around the network when `messaging-service` is set to 'bungee'.
+* It forwards update notifications and log messages around the network when `messaging-service` is set to 'pluginmsg'.
 
 This means that if you want LuckPerms to respond to permission checks on your backend Spigot or Sponge server, you need to install it there too, even if you have it on your proxy.
