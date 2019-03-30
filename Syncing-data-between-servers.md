@@ -44,7 +44,7 @@ A messaging service can be configured in the config, under the `messaging-servic
 | Service | Description | 
 |---------|-------------|
 | sql | Uses the SQL database to form a queue system for communication. This is chosen by default if remote SQL storage is in use. |
-| bungee | Uses the plugin messaging channels to communicate via BungeeCord. LuckPerms must be installed on your proxy & all connected servers backend servers. Won't work if you have more than one BungeeCord proxy. |
+| pluginmsg | Uses the plugin messaging channels to communicate with the proxy. LuckPerms must be installed on your proxy & all connected servers backend servers.Won't work if you have more than one proxy. |
 | lilypad | Uses LilyPad Connect's PubSub system to communicate. |
 | redis | Connects to a Redis instance and uses PubSub to communicate. |
 
