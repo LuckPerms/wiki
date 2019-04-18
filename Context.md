@@ -49,7 +49,7 @@ Contexts can either be provided **statically** or **dynamically**.
 * **Dynamic contexts** are given depending on a certain factor, and have to be registered by a plugin using the API.
 
 #### Defining static contexts
-Static contexts can be defined in the `contexts.yml` file within the `/LuckPerms/` plugin directory. (in the same folder as the main config)
+Static contexts can be defined in the `contexts.json` file within the `/LuckPerms/` plugin directory. (in the same folder as the main config)
 
 The file contains two properties, but we're only interested in the one called `static-contexts`.
 
