@@ -638,6 +638,18 @@ Tristate checkResult = permissionData.getPermissionValue("some.permission.node")
 boolean checkResultAsBoolean = checkResult.asBoolean();
 ```
 
+We can put all of this together to create a method that can run a "normal" permission check with passed a `User` and a `String` (the permission).
+
+```java
+public boolean hasPermission(User user, String permission) {
+    ContextManager contextManager = api.getContextManager();
+    Contexts contexts = contextManager.lookupApplicableContexts(user).orElseGet(contextManager::getStaticContexts);
+
+    PermissionData permissionData = user.getCachedData().getPermissionData(contexts);
+    return permissionData.getPermissionValue(permission).asBoolean();
+}
+```
+
 #### Retrieving prefixes/suffixes
 ```java
 String prefix = metaData.getPrefix();
