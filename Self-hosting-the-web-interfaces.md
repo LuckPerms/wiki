@@ -36,7 +36,7 @@ Then open the newly created `config.json` file with your favourite text editor, 
   "port": 8080,
   "keyLength": 10,
   "lifetimeMinutes": 10080,
-  "maxContentLengthMb": 10,
+  "maxContentLengthMb": 10
 }
 ```
 
