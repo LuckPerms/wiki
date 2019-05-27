@@ -39,6 +39,10 @@ The result should look something like this:
 
 Effectively, what this command does, is give the your account the `luckperms.*` permission. (or sets it to true for the user) You'll notice there's a `*` character at the end of the permission string. This character is called a wildcard, and gives a user access to **all** permissions which start with "luckperms".
 
+When you're running LuckPerms on a Sponge-Server you may encounter the issue where `luckperms.*` doesn't grant you all permissions.  
+In this case go to the console and execute the same command again but this time only use `luckperms` as permission.  
+Sponge has its own wildcard system where a permission like `example` would grant access to all permissions starting with `example`.
+
 Now you've done this, you can either continue the setup process in-game, or keep typing commands into the console.
 
 ## Creating the first group
