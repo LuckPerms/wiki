@@ -16,7 +16,7 @@
 ### Can I just install LuckPerms on BungeeCord?
 * The permissions system used on BungeeCord is completely separate from the systems used on the backend Spigot/Sponge server.
 * If you want the permission checks performed by Spigot/Sponge plugins to be handled by LuckPerms, install LuckPerms on your Spigot/Sponge server.
-* If you want the permission checks performed by BungeeCord plugins to be handled by LuckPerms, install LuckPermsBungee on your proxy.
+* If you want the permission checks performed by BungeeCord plugins to be handled by LuckPerms, install the BungeeCord variant of LuckPerms on your proxy.
 * You **can** just install it on the proxy, but any checks which are performed by Spigot/Sponge plugins will not be handled by LuckPerms.
 
 ## Requirements
