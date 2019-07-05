@@ -21,6 +21,15 @@ Users and groups are able to **inherit permissions from each other**. For exampl
 
 For example, I might have 3 groups, "default", "moderator" and "admin". I want moderator to inherit permissions from default, and admin to inherit permissions from moderator.
 
+### Context
+A term that you will encounter quite often in this wiki is "context". Context allows you to change certain behaviours of permissions, groups and similar.  
+
+Lets assume I want to set the permission `essentials.fly` to only work in the world called "creative" for the default group. To do that I just add the contex `world=creative` at the end of the permission set command (right after the true/false).  
+The command would look like this: `/lp group default permission set essentials.fly true world=creative`  
+There is also a pre-defined server context, that can be used to assign permissions, groups, etc. to certain servers only. This as you might have guessed is only useful if you use LuckPerms on multiple connected servers in a network and if they share the same database.
+
+You can also create your very own context to use in LuckPerms.  
+Head over to the [Context page](https://github.com/lucko/LuckPerms/wiki/Context) for more information.
 
 # Getting Started
 If you haven't got LuckPerms installed just yet, please refer to the [installation guide](https://github.com/lucko/LuckPerms/wiki/Installation) first.
