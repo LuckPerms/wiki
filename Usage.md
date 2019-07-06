@@ -21,6 +21,12 @@ Users and groups are able to **inherit permissions from each other**. For exampl
 
 For example, I might have 3 groups, "default", "moderator" and "admin". I want moderator to inherit permissions from default, and admin to inherit permissions from moderator.
 
+### Context
+A term that you will encounter quite often with LuckPerms is "context".
+
+**Context** in the most basic sense simply means the **circumstances where something will apply**.
+
+Contexts are such a fundamental part of the plugin, they have their [very own wiki page](https://github.com/lucko/LuckPerms/wiki/Context) dedicated to explaining their use.
 
 # Getting Started
 If you haven't got LuckPerms installed just yet, please refer to the [installation guide](https://github.com/lucko/LuckPerms/wiki/Installation) first.
