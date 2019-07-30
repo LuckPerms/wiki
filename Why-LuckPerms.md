@@ -37,7 +37,7 @@ It's super easy to use.
 
 [![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
 
-The Web editor is such a powerful tool that it has its own [wiki page](https://github.com/lucko/LuckPerms/wiki/Web-Editor)
+The Web editor is such a powerful tool that it has its own [wiki page](https://github.com/lucko/LuckPerms/wiki/Web-Editor).
 
 ___
 
