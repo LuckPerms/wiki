@@ -37,6 +37,8 @@ It's super easy to use.
 
 [![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
 
+The Web editor is such a powerful tool that it has its own [wiki page](https://github.com/lucko/LuckPerms/wiki/Web-Editor)
+
 ___
 
 ### Verbose
@@ -85,3 +87,11 @@ LuckPerms makes a detailed log of all changes made to permissions. If you have a
 ![](http://i.imgur.com/Jfu8XCI.png)
 
 You can also view the history of certain users, groups, or tracks, or look at the actions executed by a user.
+
+___
+
+### Supports multiple versions and platforms
+LuckPerms was build to support as many server versions and types as possible.  
+The latest version of LuckPerms is compatible with Spigot and any fork of it and supports versions from 1.8.8 up to the latest one.
+
+For older versions or different platforms (BungeeCord, Velocity, Sponge) does LuckPerms have alternative downloads available on its [website](https://luckperms.github.io).
