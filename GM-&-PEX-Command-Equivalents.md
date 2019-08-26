@@ -48,7 +48,6 @@ This page is designed to help users converting from GroupManager or PermissionsE
 | pex user \<user\> check \<permission\>                              | lp user \<user\> haspermission \<permission\>                                                                |
 | pex backend                                                         | lp info                                                                                                      |
 | pex import \<backend\>                                              | lp export \<file\> / lp import \<file\>                                                                      |
-| pex set default group \<group\>                                     | [(in the config file)](https://github.com/lucko/LuckPerms/wiki/Default-Groups#configure-default-assignments) |
 |                                                                     |                                                                                                              |
 | pex user \<user\> list                                              | lp user \<user\> permission info                                                                             |
 | pex user \<user\> prefix                                            | lp user \<user\> meta info                                                                                   |
