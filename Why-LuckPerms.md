@@ -94,4 +94,4 @@ ___
 LuckPerms was build to support as many server versions and types as possible.  
 The latest version of LuckPerms is compatible with Spigot and any fork of it and supports versions from 1.8.8 up to the latest one.
 
-For older versions or different platforms (BungeeCord, Velocity, Sponge) does LuckPerms have alternative downloads available on its [website](https://luckperms.github.io).
+For older versions or different platforms (BungeeCord, Velocity, Sponge, NukkitX, etc.) does LuckPerms have alternative downloads available on its [website](https://luckperms.net).
