@@ -17,7 +17,7 @@ Editor sessions are first created by executing a command on the server.
 | **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
 | **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
 
-> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP.
+> Remember to use `/lpb` or `/lpv` instead of `/lp` if you want to target your command to the BungeeCord or Velocity version of LP.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
