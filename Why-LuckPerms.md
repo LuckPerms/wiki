@@ -12,8 +12,6 @@ Yep. I thought there was room for improvement among the plugins already out ther
 #### I've been using [x] plugin for years and it works great! Why should I bother switching?
 Most of the other available permission plugins date back a number of years, and were created in the early Bukkit era. Whilst this may mean they're stable, it also means they're often abandoned by the original authors, and receive no updates, support or bug fixes. LuckPerms is still a growing and active resource, and I endeavour to reply to all bug reports, issues and feature requests in a timely manner.
 
-LuckPerms is the recommended replacement for the (now discontinued) PermissionsEx plugin. ([source](https://github.com/PEXPlugins/PermissionsEx/blob/master/README.md)) ([other source](https://i.imgur.com/PUpp8ou.png))
-
 #### LuckPerms seems like a pretty big resource, and I just want something simple and lightweight.
 Although the plugin has a pretty huge set of customisation options, the default values are fine for most users. The LuckPerms in-game and online interfaces are very straight forward to use, and there is a extensive set of wiki pages and setup guides you can read here on GitHub. 🎉
 
