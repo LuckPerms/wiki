@@ -6,8 +6,8 @@ The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-
 
 The current API release is `4.4`.
 
-* The API package in LuckPerms is [`me.lucko.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
-* JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/me.lucko.luckperms/luckperms-api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms).
+* The API package in LuckPerms is [`net.luckperms.api`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms).
+* JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/net.luckperms/luckperms-api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms).
 
 #### Changelogs
 * Version `2.x` represented the initial release of the API. 
@@ -41,7 +41,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
 ````xml
 <dependencies>
     <dependency>
-        <groupId>me.lucko.luckperms</groupId>
+        <groupId>net.luckperms</groupId>
         <artifactId>luckperms-api</artifactId>
         <version>4.4</version>
         <scope>provided</scope>
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    compile 'me.lucko.luckperms:luckperms-api:4.4'
+    compile 'net.luckperms:luckperms-api:4.4'
 }
 ```
 
@@ -66,7 +66,7 @@ dependencies {
 #### Manual
 If you want to manually add the API dependency to your classpath, you can obtain the jar by:
 
-1. Navigating to [`https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/me/lucko/luckperms/luckperms-api/)
+1. Navigating to [`https://repo1.maven.org/maven2/net/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/net/luckperms/luckperms-api/)
 2. Selecting the version you wish to use
 3. Downloading the jar titled `luckperms-api-x.x.jar`
 
