@@ -1,8 +1,8 @@
 LuckPerms has a number of online editors / viewers built into the plugin. These do not require self hosting, and public versions everyone can use are deployed in the following locations:
 
-* https://luckperms.github.io/editor/
-* https://luckperms.github.io/verbose/
-* https://luckperms.github.io/treeview/
+* https://luckperms.net/editor/
+* https://luckperms.net/verbose/
+* https://luckperms.net/treeview/
 * https://bytebin.lucko.me/
 
 However, I appreciate there is some interest in self hosting these sites, to allow for customisation or implementing custom behaviour. It's not really something I'd recommend doing (there's not much to gain from it) - but alas, here are the details.

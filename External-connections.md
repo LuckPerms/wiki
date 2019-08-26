@@ -55,9 +55,9 @@ ___
 
 The clients for each of these applications can be found at
 
-* https://luckperms.github.io/editor/
-* https://luckperms.github.io/verbose/
-* https://luckperms.github.io/treeview/
+* https://luckperms.net/editor/
+* https://luckperms.net/verbose/
+* https://luckperms.net/treeview/
 
 respectively. 
 
