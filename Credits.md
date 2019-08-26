@@ -11,8 +11,8 @@ I'd like to especially thank the project's Discord moderators, past and present,
 * **Tobi**
 * **Turbo**
 * **Void**
-* **Darktilldawn**
-* **SpannerMan**
+* **Darktilldawn** (retired)
+* **SpannerMan** (retired)
 
 ## Patreons
 
