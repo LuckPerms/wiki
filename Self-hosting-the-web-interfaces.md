@@ -1,8 +1,8 @@
 LuckPerms has a number of online editors / viewers built into the plugin. These do not require self hosting, and public versions everyone can use are deployed in the following locations:
 
-* https://luckperms.github.io/editor/
-* https://luckperms.github.io/verbose/
-* https://luckperms.github.io/treeview/
+* https://luckperms.net/editor/
+* https://luckperms.net/verbose/
+* https://luckperms.net/treeview/
 * https://bytebin.lucko.me/
 
 However, I appreciate there is some interest in self hosting these sites, to allow for customisation or implementing custom behaviour. It's not really something I'd recommend doing (there's not much to gain from it) - but alas, here are the details.
@@ -79,7 +79,7 @@ These need to be cloned and then copied to the public html directory of your web
 ```bash
 git clone https://github.com/lucko/LuckPermsWeb
 cd LuckPermsWeb
-rm index.html  # the index page is the project homepage (https://luckperms.github.io/), you most likely won't want that :)
+rm index.html  # the index page is the project homepage (https://luckperms.net/), you most likely won't want that :)
 ```
 
 The sites are then in `editor/`, `verbose/` and `treeview/` respectively, and can be copied into the web root.

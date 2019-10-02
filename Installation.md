@@ -1,6 +1,6 @@
 ## Initial Setup
 
-1. Download the `LuckPerms-???-x.x.x.jar` file that corresponds to your platform. You can find the latest versions [here](https://luckperms.github.io/).
+1. Download the `LuckPerms-???-x.x.x.jar` file that corresponds to your platform. You can find the latest versions [here](https://luckperms.net/).
 2. Navigate to your mods/plugins directory. This is usually either `/plugins/` or `/mods/`. Then place the LuckPerms jar in this directory.
 3. Fully stop & start your server, and allow the default configuration to be generated.
 4. Fully stop your server, and open the config file. It will be located at `/plugins/LuckPerms/config.yml` or `/config/luckperms/luckperms.conf`.
