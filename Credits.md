@@ -19,6 +19,7 @@ I'd like to especially thank the project's Discord moderators, past and present,
 A big thank you to my Patreons, whose contributions allow me to continue to work on & offer the project to the community for free!
 
 * **Andre_601**
+* **Birkhoff Lee**
 * **Maldred**
 * **royalkingkb**
 * **Shmeeb**
