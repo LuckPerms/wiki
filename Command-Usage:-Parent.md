@@ -52,7 +52,7 @@ ___
 * `<group>` - the group to remove
 * `[context...]` - the contexts to remove the group in
 
-Removes a parent from the user/group. Add context to it to only remove parents with this specific context.  
+Removes a parent from the user/group.  
 If the removed group was the users primary group, will they be set back to default as primary.
 
 ___
@@ -91,7 +91,7 @@ ___
 * `<group>` - the group to remove
 * `[context...]` - the contexts to remove group in
 
-Removes a tempoary parent from the user/group.D
+Removes a tempoary parent from the user/group.
 
 ___
 #### `/lp user/group <user|group> parent clear`  
@@ -99,7 +99,7 @@ ___
 **Arguments**:  
 * `[context...]` - the contexts to filter by
 
-Removes all parents the user or group has. Add context to it to only remove parents with this specific context.  
+Removes all parents the user or group has.  
 This will add them back to the `default` group.
 
 ___
@@ -109,7 +109,7 @@ ___
 * `<track>` - the track to remove on
 * `[context...]` - the contexts to filter by
 
-Removes all parents from the user/group on a given track. Add context to it to only remove parents with this specific context.
+Removes all parents from the user/group on a given track.
 
 ___
 #### `/lp user <user> parent switchprimarygroup`  
