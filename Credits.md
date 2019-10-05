@@ -1,3 +1,43 @@
+LuckPerms wouldn't be the way it is today without the help of many contributors & supporters.
+
+## Discord moderators
+
+I'd like to especially thank the project's Discord moderators, past and present, who work incredibly hard to keep things in order & support the community in using the plugin:
+
+* **Andre_601**
+* **BrainStone**
+* **OmegaWeapon_**
+* **RyanJH**
+* **Tobi**
+* **Turbo**
+* **Void**
+* **Darktilldawn** (retired)
+* **SpannerMan** (retired)
+
+## Patreons
+
+A big thank you to my Patreons, whose contributions allow me to continue to work on & offer the project to the community for free!
+
+* **Andre_601**
+* **Birkhoff Lee**
+* **Maldred**
+* **royalkingkb**
+* **Shmeeb**
+* **VergilPrime**
+* **Yive**
+
+> (the above list is of those pledging on the "Donor" tier or above)
+
+## Contributors
+
+Additionally, a huge amount of thanks is owed to:
+
+* [contributors to `lucko/LuckPerms`](https://github.com/lucko/LuckPerms/graphs/contributors)
+* [contributors to `lucko/LuckPermsWeb`](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
+* [contributors to the LuckPerms `wiki`](https://github.com/LuckPerms/wiki/graphs/contributors)
+* [contributors to the the `locale` project](https://github.com/LuckPerms/locale/graphs/contributors)
+
+
 ## Open Source
 
 LuckPerms utilises a number of open source libraries and utilities to provide it's functionality - listed below.

@@ -2,7 +2,7 @@
 
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
-:rocket: The **latest downloads** for the project can be found [on our homepage](https://luckperms.github.io/). :rocket:
+:rocket: The **latest downloads** for the project can be found [on our homepage](https://luckperms.net/). :rocket:
 
 ___
 

@@ -16,3 +16,7 @@ Such as:
 * "No operations allowed after connection closed" error
 
 Please see [here](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors).
+
+### I use SpongeForge and when I install LuckPerms do plugins no longer work
+This is an intentional behaviour of SpongeForge. As soon as a permission plugin, in this case LuckPerms, is installed will it disable the OP system.  
+To fix this give the groups and users the required permissions for the plugins.

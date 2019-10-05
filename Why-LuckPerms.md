@@ -12,8 +12,6 @@ Yep. I thought there was room for improvement among the plugins already out ther
 #### I've been using [x] plugin for years and it works great! Why should I bother switching?
 Most of the other available permission plugins date back a number of years, and were created in the early Bukkit era. Whilst this may mean they're stable, it also means they're often abandoned by the original authors, and receive no updates, support or bug fixes. LuckPerms is still a growing and active resource, and I endeavour to reply to all bug reports, issues and feature requests in a timely manner.
 
-LuckPerms is the recommended replacement for the (now discontinued) PermissionsEx plugin. ([source](https://github.com/PEXPlugins/PermissionsEx/blob/master/README.md)) ([other source](https://i.imgur.com/PUpp8ou.png))
-
 #### LuckPerms seems like a pretty big resource, and I just want something simple and lightweight.
 Although the plugin has a pretty huge set of customisation options, the default values are fine for most users. The LuckPerms in-game and online interfaces are very straight forward to use, and there is a extensive set of wiki pages and setup guides you can read here on GitHub. 🎉
 
@@ -36,6 +34,8 @@ The interface is split into multiple tabs. You can add/remove entries, as well a
 It's super easy to use.
 
 [![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
+
+The Web editor is such a powerful tool that it has its own [wiki page](https://github.com/lucko/LuckPerms/wiki/Web-Editor).
 
 ___
 
@@ -85,3 +85,11 @@ LuckPerms makes a detailed log of all changes made to permissions. If you have a
 ![](http://i.imgur.com/Jfu8XCI.png)
 
 You can also view the history of certain users, groups, or tracks, or look at the actions executed by a user.
+
+___
+
+### Supports multiple versions and platforms
+LuckPerms was build to support as many server versions and types as possible.  
+The latest version of LuckPerms is compatible with Spigot and any fork of it and supports versions from 1.8.8 up to the latest one.
+
+For older versions or different platforms (BungeeCord, Velocity, Sponge, NukkitX, etc.) does LuckPerms have alternative downloads available on its [website](https://luckperms.net).
