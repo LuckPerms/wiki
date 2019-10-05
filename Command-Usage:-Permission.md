@@ -30,10 +30,10 @@ ___
 **Permission**: luckperms.user.permission.set or luckperms.group.permission.set  
 **Arguments**:  
 * `<node>` - the permission node to set
-* `<true|false>` - the value to set the permission to
+* `[true|false]` - the value to set the permission to
 * `[context...]` - the contexts to set the permission in
 
-Sets (or gives) a permission for a user/group. Providing a value of "false" will negate the permission.
+Sets (or gives) a permission for a user/group with "true", granting the permission. Providing a value of "false" will negate the permission. Not adding any context will set the permission in context "global".
 
 ___
 #### `/lp user/group <user|group> permission unset`  
@@ -54,15 +54,16 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to set the permission in
 
-Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat]() used in java. F.e. is `1M` one month while `1m` is one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> permission unsettemp`  
