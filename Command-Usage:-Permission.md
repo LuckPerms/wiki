@@ -55,7 +55,7 @@ ___
 * `[context...]` - the contexts to set the permission in
 
 Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
-LuckPerms uses a format for the relative time similar to the [SimpleDateFormat]() used in java. F.e. is `1M` one month while `1m` is one minute.
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. F.e. is `1M` one month while `1m` is one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
