@@ -25,7 +25,7 @@ ___
 Displays the groups in the track.
 
 ___
-#### `/lp track <track> append`  
+#### `/lp track <track> append <group>`  
 **Permission**: luckperms.track.append  
 **Arguments**:  
 * `<group>` - the group to add
@@ -33,7 +33,7 @@ ___
 Adds a group onto the end of the track.
 
 ___
-#### `/lp track <track> insert`  
+#### `/lp track <track> insert <group> <position>`  
 **Permission**: luckperms.track.insert  
 **Arguments**:  
 * `<group>` - the group to insert
@@ -42,7 +42,7 @@ ___
 Inserts a group into a specific position within this track. A position of 1 would place it at the start of the track.
 
 ___
-#### `/lp track <track> remove`  
+#### `/lp track <track> remove <group>`  
 **Permission**: luckperms.track.remove  
 **Arguments**:  
 * `<group>` - the group to remove
@@ -55,7 +55,7 @@ ___
 Removes all groups from the track.
 
 ___
-#### `/lp track <track> rename`  
+#### `/lp track <track> rename <new name>`  
 **Permission**: luckperms.track.rename  
 **Arguments**:  
 * `<new name>` - the new name for the track
@@ -63,7 +63,7 @@ ___
 Changes a track's name.
 
 ___
-#### `/lp track <track> clone`  
+#### `/lp track <track> clone <new name>`  
 **Permission**: luckperms.track.clone  
 **Arguments**:  
 * `<new name>` - the name of the clone
