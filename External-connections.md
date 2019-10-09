@@ -11,7 +11,7 @@ ___
 
 ### Downloading libraries
 
-LuckPerms makes use of a lot of libraries - all of which are listed [here](https://github.com/lucko/LuckPerms/wiki/Credits).
+LuckPerms makes use of a lot of libraries - all of which are listed [here](https://github.com/lucko/LuckPerms/wiki/Credits#open-source).
 
 The plugin can be configured and used in a number of ways. For example, it supports a number of storage methods, each of which require their own set of drivers. Most plugins simply bundle (or "shade") these libraries into the plugin jar file - however, this is not practical for LuckPerms, as the high number of libraries would produce a huge final jar size. The solution is to download the *required* libraries at runtime, depending on the configuration being used.
 
