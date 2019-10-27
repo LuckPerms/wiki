@@ -26,6 +26,7 @@
   * [Meta commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
   * [Track commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track)
   * [Log commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Log)
+* [**Permissions**](https://github.com/lucko/LuckPerms/wiki/Permissions)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 * [**Storage system errors**](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
