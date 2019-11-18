@@ -41,3 +41,12 @@ This option would mean that all users are still in the "default" group. However,
 /luckperms creategroup member
 /luckperms group default parents add member
 ```
+
+## Default assignements
+**Default assignements** were a feature of LuckPerms that got removed in v5.
+
+To make updating easier, a extension has been created.
+It can be found under https://github.com/LuckPerms/extension-default-assignments
+**Note:** This shouldn't be a long term solution, and you should consider using other features to achieve same/similar results.
+
+If you have any questions, feel free to ask on the [https://github.com/lucko/LuckPerms/wiki#2-speech_balloon-discord](Discord). 
