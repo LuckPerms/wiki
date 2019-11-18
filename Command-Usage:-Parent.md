@@ -52,7 +52,8 @@ ___
 * `<group>` - the group to remove
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the group in
 
-Removes a parent from the user/group.
+Removes a parent from the user/group.  
+If the removed group was the users primary group, will they be set back to default as primary.
 
 ___
 #### `/lp user/group <user|group> parent settrack <track> <group> [context...]`  
@@ -72,22 +73,23 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the group in
 
-Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> parent removetemp <group> [context...]`  
 **Permission**: luckperms.user.parent.removetemp or luckperms.group.parent.removetemp  
 **Arguments**:  
 * `<group>` - the group to remove
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add remove group in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the group in
 
 Removes a tempoary parent from the user/group.
 
@@ -97,7 +99,8 @@ ___
 **Arguments**:  
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
 
-Removes all parents.
+Removes all parents the user or group has.  
+This will add them back to the `default` group.
 
 ___
 #### `/lp user/group <user|group> parent cleartrack <track> [context...]`  

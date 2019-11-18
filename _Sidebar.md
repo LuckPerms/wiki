@@ -26,10 +26,12 @@
   * [Meta commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
   * [Track commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Track)
   * [Log commands](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Log)
+* [**Permissions**](https://github.com/lucko/LuckPerms/wiki/Permissions)
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 * [**Storage system errors**](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
 ### Migration
+* [**Upgrading from v4 to v5**](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5)
 * [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 
@@ -42,6 +44,7 @@
 * [**Prefixes, Suffixes & Meta**](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta)
 * [**Prefix & Suffix Stacking**](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
+* [**Extensions**](https://github.com/lucko/LuckPerms/wiki/Extensions)
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Argument based command permissions**](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions)

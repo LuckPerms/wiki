@@ -19,7 +19,8 @@ Contexts can be combined with each other to form so called "context sets" - simp
 
 Context sets exist in two places:
 
-* LuckPerms internally will calculate what it deems to be a **players** "current context set" - in other words, the contexts which the player currently satisfies. If the player is in the `world_nether` world, then their current context set will contain the `world=world_nether` context.
+* LuckPerms internally will calculate what it deems to be a **players** "current context set" - in other words, the contexts which the player currently satisfies. If the player is in the `world_nether` world, then their current context set will contain the `world=world_nether` context.  
+Players that are currently offline won't have any context set. You can see this by using the `/lp user <user> info` command and check the "Has contextual data" option on the bottom of the output.
 
 * **Each permission, parent/group, prefix/suffix/meta setting** also has it's own context set - indicating the contexts a player must have for the respective permission/parent/meta value to apply.
 
