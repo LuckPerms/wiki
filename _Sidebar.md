@@ -42,6 +42,7 @@
 * [**Prefixes, Suffixes & Meta**](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta)
 * [**Prefix & Suffix Stacking**](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking)
 * [**Tracks**](https://github.com/lucko/LuckPerms/wiki/Tracks)
+* [**Extensions**](https://github.com/lucko/LuckPerms/wiki/Extensions)
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Argument based command permissions**](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions)
