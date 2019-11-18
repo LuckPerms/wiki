@@ -20,7 +20,7 @@ ___
 *  [/lp log `trackhistory` \<track\> [page]](#lp-log-trackhistory)
 
 ___
-#### `/lp log recent`  
+#### `/lp log recent [user] [page]`  
 **Permission**: luckperms.log.recent  
 **Arguments**:  
 * `[user]` - the name/uuid of the user to filter by
@@ -29,7 +29,7 @@ ___
 Shows a list of recent actions.
 
 ___
-#### `/lp log search`  
+#### `/lp log search <query> [page]`  
 **Permission**: luckperms.log.search  
 **Arguments**:  
 * `<query>` - the query to search for
@@ -38,7 +38,7 @@ ___
 Searches for log entries matching the given query.
 
 ___
-#### `/lp log notify`  
+#### `/lp log notify [on|off]`  
 **Permission**: luckperms.log.notify  
 **Arguments**:  
 * `[on|off]` - whether to enable or disable
@@ -46,15 +46,15 @@ ___
 Toggles log notifications for the sender executing the command.
 
 ___
-#### `/lp log export`  
+#### `/lp log export <file>`  
 **Permission**: luckperms.log.export  
 **Arguments**:  
 * `<file>` - the file to export to
 
-Exports the log to a list of commands, recognisable by the "/lp import" command. This feature should rarely be used, and use of "/lp export" is reccomended instead.
+Exports the log to a list of commands, recognisable by the "/lp import" command. This feature should rarely be used, and use of "/lp export" is recommended instead.
 
 ___
-#### `/lp log userhistory`  
+#### `/lp log userhistory <user> [page]`  
 **Permission**: luckperms.log.userhistory  
 **Arguments**:  
 * `<user>` - the user to search for
@@ -63,7 +63,7 @@ ___
 Searches for log entries acting upon the given user.
 
 ___
-#### `/lp log grouphistory`  
+#### `/lp log grouphistory <group> [page]`  
 **Permission**: luckperms.log.grouphistory  
 **Arguments**:  
 * `<group>` - the group to search for
@@ -72,7 +72,7 @@ ___
 Searches for log entries acting upon the given group.
 
 ___
-#### `/lp log trackhistory`  
+#### `/lp log trackhistory <track> [page]`  
 **Permission**: luckperms.log.trackhistory  
 **Arguments**:  
 * `<track>` - the track to search for
