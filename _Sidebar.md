@@ -30,6 +30,7 @@
 * [**Storage system errors**](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
 ### Migration
+* [**Upgrading from v4 to v5**](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5)
 * [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
 * [**Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 
