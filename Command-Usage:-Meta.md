@@ -64,15 +64,16 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to set the meta in
 
-Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> meta unsettemp`  
@@ -153,15 +154,16 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to add the prefix in
 
-Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> meta addtempsuffix`  
@@ -173,15 +175,16 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the contexts to add the suffix in
 
-Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> meta settempprefix`  
@@ -195,15 +198,16 @@ ___
 
 Sets a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. This is different from the `addtempprefix` command in that existing prefixes set in the same context are removed when the new prefix is added. Another difference is that the priority argument is optional in the settempprefix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
 
-Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> meta settempsuffix`  
@@ -217,15 +221,16 @@ ___
 
 Sets a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. This is different from the `addtempsuffix` command in that existing suffixes set in the same context are removed when the new suffix is added. Another difference is that the priority argument is optional in the settempsuffix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
 
-Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.
+Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
+LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
-| Modifier key | Description |
-|--------------|-------------|
+| Modifier key | Description                                                               |
+|--------------|---------------------------------------------------------------------------|
 | `accumulate` | the duration of any existing nodes will just be added to the new duration |
-| `replace` | the longest duration will be kept, any others nodes will be forgotten |
-| `deny` | the command will just fail if you try to add a duplicate temporary node |
+| `replace`    | the longest duration will be kept, any others nodes will be forgotten     |
+| `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
 #### `/lp user/group <user|group> meta removetempprefix`  
