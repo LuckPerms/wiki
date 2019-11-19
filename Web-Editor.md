@@ -12,8 +12,8 @@ Editor sessions are first created by executing a command on the server.
 | Scope                                                                     | Command                    |
 |---------------------------------------------------------------------------|----------------------------|
 | **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor groups`         |
-| **To create an editor session for all users, run:**                       | `/lp editor users`        |
+| **To create an editor session for all groups, run:**                      | `/lp editor groups`        |
+| **To create an editor session for all users, run:**                       | `/lp editor users`         |
 | **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
 | **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
 
@@ -23,11 +23,11 @@ Once the command has been executed, the server will begin creating a new session
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/fvNzH9B.png)
+![](https://i.imgur.com/mH2vwBy.png)
 
 To proceed, click on the URL, then press "Yes".
 
-![](https://i.imgur.com/qGiG2cl.png)
+![](https://i.imgur.com/6RlmeQ1.png)
 
 Your default web browser should then open the new editor session you've created.
 
