@@ -73,8 +73,7 @@ ___
 * `[temporary modifier]` - how the temporary permission should be applied
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the group in
 
-Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
-LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
+Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "1mo3d13h45m" will set the permission to expire in 1 month, 3 days, 13 hours and 45 minutes time, while "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 
 The "temporary modifier" argument allows you to specify how the permission should be accumulated. You can pick between 3 different options.
 
