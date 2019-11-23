@@ -15,12 +15,18 @@ It should be fairly stable, but this release (at the moment) has received signif
 
 ### API compatibility
 
-If you have any plugins which use the native LuckPerms API, these plugins will likely stop working after the update.
+If you have any plugins which use the previous version of the LuckPerms API, these plugins will likely stop working after the update.
 
 You have two options for fixing this:
 
 1. Ask the author of the plugin to update to support the new API version. (preferred)
-2. Install the `extension-legacy-api` extension. More details available [here](https://github.com/lucko/LuckPerms/wiki/Extensions).
+2. Install the `extension-legacy-api` extension.
+
+#### Installing the extension
+1. Go to your main `/LuckPerms/` folder. (this is probably at `/plugins/LuckPerms`)
+2. Create a folder within this directory called `extensions`.
+3. Download [`extension-legacy-api.jar`](https://ci.lucko.me/job/extension-legacy-api/lastSuccessfulBuild/artifact/build/libs/extension-legacy-api-1.0.0.jar) and put it in this folder.
+4. Restart your server.
 
 ### Other
 
