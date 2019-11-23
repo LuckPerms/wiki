@@ -49,7 +49,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
 <dependencies>
     <dependency>
         <groupId>net.luckperms</groupId>
-        <artifactId>luckperms-api</artifactId>
+        <artifactId>api</artifactId>
         <version>5.0</version>
         <scope>provided</scope>
     </dependency>
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    compile 'net.luckperms:luckperms-api:5.0'
+    compile 'net.luckperms:api:5.0'
 }
 ```
 
@@ -76,7 +76,7 @@ dependencies {
 
 If you want to manually add the API dependency to your classpath, you can obtain the jar by:
 
-1. Navigating to [`https://repo1.maven.org/maven2/net/luckperms/luckperms-api/`](https://repo1.maven.org/maven2/net/luckperms/luckperms-api/)
+1. Navigating to [`https://repo1.maven.org/maven2/net/luckperms/api/`](https://repo1.maven.org/maven2/net/luckperms/api/)
 2. Selecting the version you wish to use
 3. Downloading the jar titled `luckperms-api-x.x.jar`
 
@@ -142,7 +142,7 @@ Now you've added the API classes to your project, and obtained an instance of th
 
 * Some methods are not "main thread friendly", meaning if they are called from the main Minecraft Server thread, the server will lag.
 * This is because many methods conduct I/O with either the file system or the network. 
-* In most cases, these methods return [CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)s.
+* In most cases, these methods return [CompletableFutures](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html).
 * Futures can be an initially complex paradigm for some users - however, it is crucial that you have at least a basic understanding of how they work before attempting to use them.
 * As a general rule, it is advised that if it's convenient to do so, you conduct as much work with the API as possible within async scheduler tasks. Some methods don't return futures, but may still involve a number of relatively complex computations.
 
