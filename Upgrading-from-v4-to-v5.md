@@ -25,7 +25,7 @@ You have two options for fixing this:
 #### Installing the extension
 1. Go to your main `/LuckPerms/` folder. (this is probably at `/plugins/LuckPerms`)
 2. Create a folder within this directory called `extensions`.
-3. Download [`extension-legacy-api.jar`](https://ci.lucko.me/job/extension-legacy-api/lastSuccessfulBuild/artifact/build/libs/extension-legacy-api-1.0.0.jar) and put it in this folder.
+3. Download [`extension-legacy-api.jar`](https://ci.lucko.me/job/extension-legacy-api/lastSuccessfulBuild/artifact/build/libs/extension-legacy-api-1.0.0.jar) and put it in the extensions folder.
 4. Restart your server.
 
 ### Other
