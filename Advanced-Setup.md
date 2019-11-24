@@ -106,9 +106,9 @@ luckperms.group.unsetpermission
 ```
 However, with shorthand, you can just apply the following node:
 
-`luckperms.(user|group).(setpermission|unsetpermission)`
+`luckperms.{user,group}.{setpermission,unsetpermission}`
 
-You use brackets to define part of a node as a shorthand group, and then use the vertical bar `|` to separate entries.
+You use curly brackets to define part of a node as a shorthand group, and then use the comma character `,` to separate entries.
 
 #### Example 2
 You can use the `-` character to create character ranges.
@@ -121,7 +121,7 @@ coolkits.kit.d
 ```
 However, with shorthand, you can just apply the following node:
 
-`coolkits.kit.(a-d)`
+`coolkits.kit.{a-d}`
 
 #### Example 3
 You can use the `-` character to create number ranges.
@@ -134,7 +134,7 @@ prisonmines.teleport.4
 ```
 However, with shorthand, you can just apply the following node:
 
-`prisonmines.teleport.(1-4)`
+`prisonmines.teleport.{1-4}`
 
 ## Regex
 LuckPerms has support for regex when defining permission nodes and server/world names.
