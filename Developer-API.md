@@ -93,7 +93,7 @@ It can be obtained in a number of ways.
 When the plugin is enabled, an instance of `LuckPerms` will be provided in the Bukkit ServicesManager. (obviously you need to be writing your plugin for Bukkit!)
 
 ```java
-RegisteredServiceProvider<LuckPermsApi> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 if (provider != null) {
     LuckPerms api = provider.getProvider();
     
