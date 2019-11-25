@@ -26,33 +26,33 @@ ___
 Displays a list of the permission nodes a user/group has.
 
 ___
-#### `/lp user/group <user|group> permission set <node> [true|false] [context...]`  
+#### `/lp user/group <user|group> permission set`  
 **Permission**: luckperms.user.permission.set or luckperms.group.permission.set  
 **Arguments**:  
 * `<node>` - the permission node to set
-* `[true|false]` - the value to set the permission to (defaults to `true`)
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the permission in
+* `[true|false]` - the value to set the permission to
+* `[context...]` - the contexts to set the permission in
 
 Sets (or gives) a permission for a user/group with "true", granting the permission. Providing a value of "false" will negate the permission. Not adding any context will set the permission in context "global".
 
 ___
-#### `/lp user/group <user|group> permission unset <node> [context...]`  
+#### `/lp user/group <user|group> permission unset`  
 **Permission**: luckperms.user.permission.unset or luckperms.group.permission.unset  
 **Arguments**:  
 * `<node>` - the permission node to unset
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to unset the permission in
+* `[context...]` - the contexts to unset the permission in
 
 Unsets (or removes) a permission for a user/group.
 
 ___
-#### `/lp user/group <user|group> permission settemp <node> <true|false> <duration> [temporary modifier] [context...]`  
+#### `/lp user/group <user|group> permission settemp`  
 **Permission**: luckperms.user.permission.settemp or luckperms.group.permission.settemp  
 **Arguments**:  
 * `<node>` - the permission node to set
 * `<true|false>` - the value to set the permission to
 * `<duration>` - the duration until the permission will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the permission in
+* `[context...]` - the contexts to set the permission in
 
 Sets a permission temporarily for a user/group. Providing a value of "false" will negate the permission. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. F.e. is `1M` one month while `1m` is one minute.
@@ -66,38 +66,38 @@ The "temporary modifier" argument allows you to specify how the permission shoul
 | `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
-#### `/lp user/group <user|group> permission unsettemp <node> [context...]`  
+#### `/lp user/group <user|group> permission unsettemp`  
 **Permission**: luckperms.user.permission.unsettemp or luckperms.group.permission.unsettemp  
 **Arguments**:  
 * `<node>` - the permission node to unset
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to unset the permission in
+* `[context...]` - the contexts to unset the permission in
 
 Unsets a temporary permission for a user/group.
 
 ___
-#### `/lp user/group <user|group> permission check <node> [context...]`  
+#### `/lp user/group <user|group> permission check`  
 **Permission**: luckperms.user.permission.check or luckperms.group.permission.check  
 **Arguments**:  
 * `<node>` - the permission node to check for
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to check for the permission in
+* `[context...]` - the contexts to check for the permission in
 
 Checks to see if a user/group has a certain permission.
 
 ___
-#### `/lp user/group <user|group> permission checkinherits <node> [context...]`  
+#### `/lp user/group <user|group> permission checkinherits`  
 **Permission**: luckperms.user.permission.checkinherits or luckperms.group.permission.checkinherits  
 **Arguments**:  
 * `<node>` - the permission node to check for
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to check for the permission in
+* `[context...]` - the contexts to check for the permission in
 
 Checks to see if a user/group inherits a certain permission, and if so, where from.
 
 ___
-#### `/lp user/group <user|group> permission clear [context...]`  
+#### `/lp user/group <user|group> permission clear`  
 **Permission**: luckperms.user.permission.clear or luckperms.group.permission.clear  
 **Arguments**:  
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
+* `[context...]` - the contexts to filter by
 
-Removes all permissions from the user or group.
+Removes all permissions.
 
 ___

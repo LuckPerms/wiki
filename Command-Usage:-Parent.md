@@ -28,50 +28,50 @@ ___
 Displays a list of a user/group's parent groups. (groups they inherit from)
 
 ___
-#### `/lp user/group <user|group> parent set <group> [context...]`  
+#### `/lp user/group <user|group> parent set`  
 **Permission**: luckperms.user.parent.set or luckperms.group.parent.set  
 **Arguments**:  
 * `<group>` - the group to set
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the group in
+* `[context...]` - the contexts to set the group in
 
 Sets a user/group's parent. Unlike the "parent add" command, this command will clear all existing groups set at the given context. The add command will simply "add" the group to the existing ones a user/group has. If the command is executed with no context arguments, this command will also update a user's primary group.
 
 ___
-#### `/lp user/group <user|group> parent add <group> [context...]`  
+#### `/lp user/group <user|group> parent add`  
 **Permission**: luckperms.user.parent.add or luckperms.group.parent.add  
 **Arguments**:  
 * `<group>` - the group to add
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the group in
+* `[context...]` - the contexts to add the group in
 
 Adds a parent to a user/group. Unlike the "parent set" command, this command will just accumulate the given parent with the ones the user/group already has. No existing parents will be removed from the user, and a user's primary group will be unaffected.
 
 ___
-#### `/lp user/group <user|group> parent remove <group> [context...]`  
+#### `/lp user/group <user|group> parent remove`  
 **Permission**: luckperms.user.parent.remove or luckperms.group.parent.remove  
 **Arguments**:  
 * `<group>` - the group to remove
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the group in
+* `[context...]` - the contexts to remove the group in
 
 Removes a parent from the user/group.  
 If the removed group was the users primary group, will they be set back to default as primary.
 
 ___
-#### `/lp user/group <user|group> parent settrack <track> <group> [context...]`  
+#### `/lp user/group <user|group> parent settrack`  
 **Permission**: luckperms.user.parent.settrack or luckperms.group.parent.settrack  
 **Arguments**:  
 * `<track>` - the track to set on
 * `<group>` - the group to set to, or a number relating to the position of the group on the given track
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the group in
+* `[context...]` - the contexts to set the group in
 
 Sets a users/groups position on a given track. This behaves in the same way as the set command, except it only clears existing groups which are on the specified track. Other parent groups are not affected.
 ___
-#### `/lp user/group <user|group> parent addtemp <group> <duration> [temporary modifier] [context...]`  
+#### `/lp user/group <user|group> parent addtemp`  
 **Permission**: luckperms.user.parent.addtemp or luckperms.group.parent.addtemp  
 **Arguments**:  
 * `<group>` - the group to add
 * `<duration>` - the duration until the group will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the group in
+* `[context...]` - the contexts to add the group in
 
 Adds a parent to a user/group temporarily. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
@@ -85,34 +85,34 @@ The "temporary modifier" argument allows you to specify how the permission shoul
 | `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
-#### `/lp user/group <user|group> parent removetemp <group> [context...]`  
+#### `/lp user/group <user|group> parent removetemp`  
 **Permission**: luckperms.user.parent.removetemp or luckperms.group.parent.removetemp  
 **Arguments**:  
 * `<group>` - the group to remove
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the group in
+* `[context...]` - the contexts to remove group in
 
 Removes a tempoary parent from the user/group.
 
 ___
-#### `/lp user/group <user|group> parent clear [context...]`  
+#### `/lp user/group <user|group> parent clear`  
 **Permission**: luckperms.user.parent.clear or luckperms.group.parent.clear  
 **Arguments**:  
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
+* `[context...]` - the contexts to filter by
 
 Removes all parents the user or group has.  
 This will add them back to the `default` group.
 
 ___
-#### `/lp user/group <user|group> parent cleartrack <track> [context...]`  
+#### `/lp user/group <user|group> parent cleartrack`  
 **Permission**: luckperms.user.parent.cleartrack or luckperms.group.parent.cleartrack  
 **Arguments**:  
 * `<track>` - the track to remove on
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
+* `[context...]` - the contexts to filter by
 
 Removes all parents from the user/group on a given track.
 
 ___
-#### `/lp user <user> parent switchprimarygroup <group>`  
+#### `/lp user <user> parent switchprimarygroup`  
 **Permission**: luckperms.user.parent.switchprimarygroup  
 **Arguments**:  
 * `<group>` - the group to switch to

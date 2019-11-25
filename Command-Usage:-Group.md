@@ -35,7 +35,7 @@ ___
 Opens a web interface to edit permissions for the specified group. After changes are saved, a command will be given that you need to run for the changes to take effect.
 
 ___
-#### `/lp group <group> listmembers [page]`  
+#### `/lp group <group> listmembers`  
 **Permission**: luckperms.group.listmembers  
 **Arguments**:  
 * `[page]` - the page to view
@@ -43,7 +43,7 @@ ___
 Gets a list of the other users/groups which inherit directly from this group.
 
 ___
-#### `/lp group <group> setweight <weight>`  
+#### `/lp group <group> setweight`  
 **Permission**: luckperms.group.setweight  
 **Arguments**:  
 * `<weight>` - the weight to set
@@ -51,11 +51,11 @@ ___
 Sets the groups weight value, which determines the order in which groups will be considered when accumulating a users permissions. Higher value = higher weight.
 
 ___
-#### `/lp group <group> setdisplayname <name>`  
+#### `/lp group <group> setdisplayname`  
 **Permission**: luckperms.group.setdisplayname  
 **Arguments**:  
 * `<name>` - the name to set
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the display name in
+* `[context...]` - the contexts to set the display name in
 
 Sets the groups display name. This can effectively be used as an "alias" for the group.
 
@@ -65,15 +65,15 @@ ___
 Displays a list of all of the tracks a group is currently on.
 
 ___
-#### `/lp group <group> clear [context]`  
+#### `/lp group <group> clear`  
 **Permission**: luckperms.group.clear  
 **Arguments**:  
-* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
+* `[context...]` - the contexts to filter by
 
 Clears the group's permissions, parent groups and meta.
 
 ___
-#### `/lp group <group> rename <new name>`  
+#### `/lp group <group> rename`  
 **Permission**: luckperms.group.rename  
 **Arguments**:  
 * `<new name>` - the new name for the group
@@ -81,7 +81,7 @@ ___
 Changes a group's name. Note that any members of this group will not know about the change, and will still point to the old group name. If you wish to update this, you'll need to use the bulk change feature to update the existing entries.
 
 ___
-#### `/lp group <group> clone <new name>`  
+#### `/lp group <group> clone`  
 **Permission**: luckperms.group.clone  
 **Arguments**:  
 * `<new name>` - the name of the clone

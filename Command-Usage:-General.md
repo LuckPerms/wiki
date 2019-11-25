@@ -49,7 +49,7 @@ ___
 Lists some information/data about LuckPerms, including debugging output, statistics, settings, and important values from the configuration. 
 
 ___
-#### `/lp editor [type]`  
+#### `/lp editor`  
 **Permission**: luckperms.editor  
 **Arguments**:  
 * `[type]` - the types to include in the editor session. can be "all", "users" or "groups"
@@ -62,7 +62,7 @@ ___
 Records debugging output and provides you with a link.
 
 ___
-#### `/lp verbose <on|record|off|upload> [filter]`  
+#### `/lp verbose`  
 **Permission**: luckperms.verbose  
 **Arguments**:  
 * `<on|record|off|upload>` - whether to enable/disable logging, or to upload the logged output
@@ -84,7 +84,7 @@ Filters match the start of permissions or the user being checked. You can use `&
 More information can be found [**here**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 
 ___
-#### `/lp tree [scope] [player]`  
+#### `/lp tree`  
 **Permission**: luckperms.tree  
 **Arguments**:  
 * `[scope]` - the root of the tree (specify `.` to include all permissions)
@@ -97,7 +97,7 @@ All arguments are optional. The default selection is `.` (just a dot, which mean
 Scope allows you to only generate a part of the tree. For example, a scope of `luckperms.user` will only return the branch of the tree starting with "luckperms.user".
 
 ___
-#### `/lp search <permission>`  
+#### `/lp search`  
 **Permission**: luckperms.search  
 **Arguments**:  
 * `<permission>` - the permission to search for
@@ -105,7 +105,7 @@ ___
 Searches all users/groups for a specific permission, and returns a paginated list of all found entries. 
 
 ___
-#### `/lp check <user> <permission>`  
+#### `/lp check`  
 **Permission**: luckperms.check  
 **Arguments**:  
 * `<user>` - the user to check
@@ -119,7 +119,7 @@ ___
 Refreshes all cached data with the storage provider, and then uses the plugins Messaging Service (if configured) to "ping" all other connected servers and request that they sync too.
 
 ___
-#### `/lp import <file>`  
+#### `/lp import`  
 **Permission**: luckperms.import  
 **Arguments**:  
 * `<file>` - the file to import from
@@ -127,7 +127,7 @@ ___
 Imports data into LuckPerms from a file. The file must be a list of commands, starting with "/luckperms". This file can be generated using the export command. The file is expected to be in the plugin directory.
 
 ___
-#### `/lp export <file>`  
+#### `/lp export`  
 **Permission**: luckperms.export  
 **Arguments**:  
 * `<file>` - the file to export to
@@ -140,28 +140,17 @@ ___
 Reloads some values from the configuration file. Not all entries are reloaded by this command, and some require a full server reboot to take effect. (storage settings, for example)
 
 ___
-#### `/lp bulkupdate <data type> <action> [action field] [action value] [constraints...]`  
+#### `/lp bulkupdate`  
 **Permission**: **Console Only**  
-**Arguments**:  
-* `<data type>` - the type of data being changed. (can be `all`, `users` or `groups`)
-* `<action>` - the action to perform on the data. (can be `update` or `delete`)
-* `[action field]` - the field to act upon. only required for update actions. (can be `permission`, `server` or `world`)
-* `[action value]` - the value to replace with. only required for update actions
-* `[constraints]` - the constraints required for the update
-
-Allows you to perform a bulk modification to all permission data. A detailed guide on how to use this command can be found [here](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing).
+Allows you to perform a bulk modifiction to all permission data. A detailed guide on how to use this command can be found [here](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing).
 
 ___
-#### `/lp migration <plugin name> [options]`  
+#### `/lp migration`  
 **Permission**: luckperms.migration  
-**Arguments**:  
-* `<plugin name>` - the plugin to migrate data from
-* `[options]` - the options required for certain plugin migrations
-
 Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Migration).
 
 ___
-#### `/lp creategroup <name>`  
+#### `/lp creategroup`  
 **Permission**: luckperms.creategroup  
 **Arguments**:  
 * `<name>` - the name of the group
@@ -169,7 +158,7 @@ ___
 Creates a new group.
 
 ___
-#### `/lp deletegroup <name>`  
+#### `/lp deletegroup`  
 **Permission**: luckperms.deletegroup  
 **Arguments**:  
 * `<name>` - the name of the group
@@ -182,7 +171,7 @@ ___
 Displays a list of all current groups.
 
 ___
-#### `/lp createtrack <name>`  
+#### `/lp createtrack`  
 **Permission**: luckperms.createtrack  
 **Arguments**:  
 * `<name>` - the name of the track
@@ -190,7 +179,7 @@ ___
 Creates a new track.
 
 ___
-#### `/lp deletetrack <name>`  
+#### `/lp deletetrack`  
 **Permission**: luckperms.deletetrack  
 **Arguments**:  
 * `<name>` - the name of the track
