@@ -610,17 +610,17 @@ ___
 
 ### Listening to LuckPerms events
 
-All event interfaces can be found in the [`me.lucko.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/me/lucko/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/LuckPermsEvent.java).
+All event interfaces can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java).
 
-To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
+To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
 
 It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
 
 ```java
-import me.lucko.luckperms.api.event.EventBus;
-import me.lucko.luckperms.api.event.log.LogPublishEvent;
-import me.lucko.luckperms.api.event.user.UserLoadEvent;
-import me.lucko.luckperms.api.event.user.track.UserPromoteEvent;
+import net.luckperms.api.event.EventBus;
+import net.luckperms.api.event.log.LogPublishEvent;
+import net.luckperms.api.event.user.UserLoadEvent;
+import net.luckperms.api.event.user.track.UserPromoteEvent;
 
 public class TestListener {
     private final MyPlugin plugin;
@@ -660,4 +660,4 @@ public class TestListener {
 }
 ```
 
-`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/me/lucko/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
+`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
