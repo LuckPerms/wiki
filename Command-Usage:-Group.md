@@ -16,13 +16,13 @@ ___
 *  [/lp group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
 *  [/lp group \<group\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
 *  [/lp group \<group\> `editor`](#lp-group-group-editor)
-*  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers)
-*  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight)
-*  [/lp group \<group\> `setdisplayname` \<name\> [context...]](#lp-group-group-setdisplayname)
+*  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers-page)
+*  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight-weight)
+*  [/lp group \<group\> `setdisplayname` \<name\> [context...]](#lp-group-group-setdisplayname-name)
 *  [/lp group \<group\> `showtracks`](#lp-group-group-showtracks)
-*  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear)
-*  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename)
-*  [/lp group \<group\> `clone` \<name of clone\>](#lp-group-group-clone)
+*  [/lp group \<group\> `clear` [context...]](#lp-group-group-clear-context)
+*  [/lp group \<group\> `rename` \<new name\>](#lp-group-group-rename-new-name)
+*  [/lp group \<group\> `clone` \<name of clone\>](#lp-group-group-clone-new-name)
 
 ___
 #### `/lp group <group> info`  

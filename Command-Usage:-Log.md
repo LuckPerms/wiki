@@ -11,13 +11,13 @@ Key things to remember from the main page:
 ___
 
 ### Index
-*  [/lp log `recent` [user] [page]](#lp-log-recent)
-*  [/lp log `search` \<query\> [page]](#lp-log-search)
-*  [/lp log `notify` [on|off]](#lp-log-notify)
-*  [/lp log `export` \<file\>](#lp-log-export)
-*  [/lp log `userhistory` \<user\> [page]](#lp-log-userhistory)
-*  [/lp log `grouphistory` \<group\> [page]](#lp-log-grouphistory)
-*  [/lp log `trackhistory` \<track\> [page]](#lp-log-trackhistory)
+*  [/lp log `recent` [user] [page]](#lp-log-recent-user-page)
+*  [/lp log `search` \<query\> [page]](#lp-log-search-query-page)
+*  [/lp log `notify` [on|off]](#lp-log-notify-onoff)
+*  [/lp log `export` \<file\>](#lp-log-export-file)
+*  [/lp log `userhistory` \<user\> [page]](#lp-log-userhistory-user-page)
+*  [/lp log `grouphistory` \<group\> [page]](#lp-log-grouphistory-group-page)
+*  [/lp log `trackhistory` \<track\> [page]](#lp-log-trackhistory-track-page)
 
 ___
 #### `/lp log recent [user] [page]`  

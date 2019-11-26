@@ -16,11 +16,11 @@ ___
 *  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
 *  [/lp user \<user\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
 *  [/lp user \<user\> `editor`](#lp-user-user-editor)
-*  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote)
-*  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote)
+*  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote-track-context)
+*  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote-track-context)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
-*  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear)
-*  [/lp user \<user\> `clone` \<user\>](#lp-user-user-clone)
+*  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear-context)
+*  [/lp user \<user\> `clone` \<user\>](#lp-user-user-clone-user)
 
 ___
 #### `/lp user <user> info`  
