@@ -20,6 +20,7 @@ A big thank you to my Patreons, whose contributions allow me to continue to work
 
 * **Andre_601**
 * **Birkhoff Lee**
+* **James Darling**
 * **Maldred**
 * **royalkingkb**
 * **Shmeeb**
