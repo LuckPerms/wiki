@@ -12,12 +12,12 @@ ___
 
 ### Index
 *  [/lp track \<track\> `info`](#lp-track-track-info)
-*  [/lp track \<track\> `append` \<group\>](#lp-track-track-append)
-*  [/lp track \<track\> `insert` \<group\> \<position\>](#lp-track-track-insert)
-*  [/lp track \<track\> `remove` \<group\>](#lp-track-track-remove)
+*  [/lp track \<track\> `append` \<group\>](#lp-track-track-append-group)
+*  [/lp track \<track\> `insert` \<group\> \<position\>](#lp-track-track-insert-group-position)
+*  [/lp track \<track\> `remove` \<group\>](#lp-track-track-remove-group)
 *  [/lp track \<track\> `clear`](#lp-track-track-clear)
-*  [/lp track \<track\> `rename` \<new name\>](#lp-track-track-rename)
-*  [/lp track \<track\> `clone` \<name of clone\>](#lp-track-track-clone)
+*  [/lp track \<track\> `rename` \<new name\>](#lp-track-track-rename-new-name)
+*  [/lp track \<track\> `clone` \<name of clone\>](#lp-track-track-clone-new-name)
 
 ___
 #### `/lp track <track> info`  

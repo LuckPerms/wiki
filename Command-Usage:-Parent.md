@@ -12,15 +12,15 @@ ___
 
 ### Index
 *  [`info`](#lp-usergroup-usergroup-parent-info)
-*  [`set` \<group\> [context...]](#lp-usergroup-usergroup-parent-set)
-*  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add)
-*  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove)
-*  [`settrack` \<track\> \<group\> [context...]](#lp-usergroup-usergroup-parent-settrack)
-*  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-parent-addtemp)
-*  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp)
-*  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear)
-*  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack)
-*  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup)
+*  [`set` \<group\> [context...]](#lp-usergroup-usergroup-parent-set-group-context)
+*  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add-group-context)
+*  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove-group-context)
+*  [`settrack` \<track\> \<group\> [context...]](#lp-usergroup-usergroup-parent-settrack-track-group-context)
+*  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-parent-addtemp-group-duration-temporary-modifier-context)
+*  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp-group-context)
+*  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear-context)
+*  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack-track-context)
+*  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup-group)
 
 ___
 #### `/lp user/group <user|group> parent info`  
@@ -120,7 +120,7 @@ This command is only available for users - as groups do not have "primary" group
 
 This command allows you to change a user's primary group. If they are not already a member of the specified group, they will be added to it. This should not be used as a replacement to the "parent set" command. Their existing primary group will not be removed as a parent. (a user can have multiple parent groups)
 
-If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the [`parent add`](#lp-usergroup-usergroup-parent-add) or [`parent set`](#lp-usergroup-usergroup-parent-set) commands instead of this.
+If `primary-group-calculation` is set to something other than "stored" in the LuckPerms config, you should use the [`parent add`](#lp-usergroup-usergroup-parent-add-group-context) or [`parent set`](#lp-usergroup-usergroup-parent-set-group-context) commands instead of this.
 
 ___
 

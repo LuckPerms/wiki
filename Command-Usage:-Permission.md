@@ -12,13 +12,13 @@ ___
 
 ### Index
 *  [`info`](#lp-usergroup-usergroup-permission-info)
-*  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set)
-*  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset)
-*  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp)
-*  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp)
-*  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check)
-*  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits)
-*  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear)
+*  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set-node-truefalse-context)
+*  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset-node-context)
+*  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
+*  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp-node-context)
+*  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check-node-context)
+*  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits-node-context)
+*  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear-context)
 
 ___
 #### `/lp user/group <user|group> permission info`  
