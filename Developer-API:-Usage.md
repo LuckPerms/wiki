@@ -21,7 +21,7 @@ ___
 * [The basics of Context](#the-basics-of-context)
   * [Important classes](#important-classes)
   * [Registering ContextCalculators](#registering-contextcalculators)
-  * [Querying active contexts](#querying-active-contexts)
+  * [Querying active contexts](#querying-active-contexts-query-options)
 * [The basics of CachedData](#the-basics-of-cacheddata)
   * [Performing permission checks](#performing-permission-checks)
   * [Retrieving prefixes and suffixes](#retrieving-prefixessuffixes)
@@ -427,7 +427,7 @@ An *immutable* implementation of ContextSet. You can obtain an instance in a num
 ```java
 ImmutableContextSet set1 = ImmutableContextSet.empty();  
 
-ImmutableContextSet set2 = ImmutableContextSet.singleton("world", "world_nether");  
+ImmutableContextSet set2 = ImmutableContextSet.of("world", "world_nether");
 
 ImmutableContextSet set3 = ImmutableContextSet.builder()  
     .add("world", "world_nether")
@@ -437,7 +437,8 @@ ImmutableContextSet set3 = ImmutableContextSet.builder()
 Map<String, String> map = new HashMap<>();
 map.put("region", "something");
 
-ImmutableContextSet set4 = ImmutableContextSet.fromMap(map);
+ImmutableContextSet set4 = ImmutableContextSet.create();
+map.forEach(set4::add);
 ```
 
 You can of course also create an `ImmutableContextSet` by first creating (or obtaining) a `MutableContextSet` and converting it.
@@ -446,7 +447,7 @@ You can of course also create an `ImmutableContextSet` by first creating (or obt
 MutableContextSet set = MutableContextSet.create();
 set.add("something", "something");
 
-ImmutableContextSet immutableSet = set.makeImmutable();
+ImmutableContextSet immutableSet = set.immutableCopy();
 ```
 
 #### `MutableContextSet`
@@ -457,19 +458,21 @@ A *mutable* implementation of ContextSet. You can obtain an instance in a number
 MutableContextSet set1 = MutableContextSet.create();
 set1.add("world", "text");
 
-MutableContextSet set2 = MutableContextSet.singleton("world", "world_nether");
+MutableContextSet set2 = MutableContextSet.of("world", "world_nether");
 
 Map<String, String> map = new HashMap<>();
 map.put("region", "something");
 
-MutableContextSet set3 = MutableContextSet.fromMap(map);
+MutableContextSet set3 = MutableContextSet.create();
+map.forEach(set3::add);
+
 set3.removeAll("region");
 ```
 
 To edit an `ImmutableContextSet`, you can make a "mutable copy" of it.
 
 ```java
-ImmutableContextSet set = ImmutableContextSet.singleton("something", "something");
+ImmutableContextSet set = ImmutableContextSet.of("something", "something");
 
 MutableContextSet mutableCopy = set.mutableCopy();
 mutableCopy.add("something", "something-else");
@@ -493,14 +496,23 @@ The subject type varies between platforms.
 In order to provide your own context, you need to create and register a `ContextCalculator`.
 
 For example, if I wanted to provide a context for the player's gamemode, in order to set permissions for players only when they are in creative, I'd create a calculator as follows.
+The `estimatePotentialContexts` method can be added, but is not necessary, to show context suggestions in the tab completion.
 
 ```java
 public class CustomCalculator implements ContextCalculator<Player> {
 
     @Override  
-    public MutableContextSet giveApplicableContext(Player subject, MutableContextSet accumulator) {
-        accumulator.add("gamemode", subject.getGameMode().name());
-        return accumulator;
+    public void calculate(Player t, ContextConsumer contextConsumer) {
+        contextConsumer.add("gamemode", t.getGameMode().name());
+    }
+    
+    @Override
+    public ContextSet estimatePotentialContexts() {
+        ImmutableContextSet.Builder builder = ImmutableContextSet.builder();
+        for (GameMode gameMode : GameMode.values()) {
+            builder.add(KEY, gameMode.name().toLowerCase());
+        }
+        return builder.build();
     }
     
 }
@@ -512,33 +524,33 @@ Then register it using
 api.getContextManager().registerCalculator(new CustomCalculator());
 ```
 
-#### Querying active contexts
+#### Querying active contexts/query options
 
-You can query the "active" contexts of a Subject using the `ContextManager`.
+You can query the "active" contexts/query options of a Subject using the `ContextManager`.
 
 If you already have an instance of the subject type, you can query directly using this.
 
 ```java
 Player player = ...;
 
-ImmutableContextSet contextSet = api.getContextManager().getApplicableContext(player);
-Contexts contexts = api.getContextManager().getApplicableContexts(player);
+ImmutableContextSet contextSet = api.getContextManager().getContext(player);
+QueryOptions queryOptions = api.getContextManager().getQueryOptions(player);
 ```
 
 If you only have a `User`, you can still perform a lookup, however, a result will only be returned if the corresponding subject (player) is online.
 
 ```java
-Optional<ImmutableContextSet> contextSet = api.getContextManager().lookupApplicableContext(user);
-Optional<Contexts> contexts = api.getContextManager().lookupApplicableContexts(user);
+Optional<ImmutableContextSet> contextSet = api.getContextManager().getContext(user);
+Optional<QueryOptions> queryOptions = api.getContextManager().getQueryOptions(user);
 ```
 
-If you absolutely need to obtain an instance, you can fallback to the server's "static" context. (these are formed using calculators which provide contexts regardless of the passed subject.)
+If you absolutely need to obtain an instance, you can fallback to the server's "static" context/query option. (these are formed using calculators which provide contexts/query options regardless of the passed subject.)
 
 ```java
 ContextManager cm = api.getContextManager();
 
-ImmutableContextSet contextSet = cm.lookupApplicableContext(user).orElse(cm.getStaticContext());
-Contexts contexts = cm.lookupApplicableContexts(user).orElse(cm.getStaticContexts());
+ImmutableContextSet contextSet = cm.getContext(user).orElse(cm.getStaticContext());
+QueryOptions queryOptions = cm.getQueryOptions(user).orElse(cm.getStaticQueryOptions());
 ```
 
 ___
@@ -549,33 +561,32 @@ All `User`s and `Group`s also have an extra object attached to them called `Cach
 
 The lookup methods provided by this class are very fast. If you're doing frequent data lookups, it is highly recommended that if possible, you use `CachedData` over the methods in `User` and `Group`.
 
-Everything in `CachedData` is indexed by `Contexts`, as this is how LuckPerms processes all lookups internally.
+Everything in `CachedData` is indexed by `QueryOptions`, as this is how LuckPerms processes all lookups internally.
 
-The contained data is split into two separate sections: `PermissionData` and `MetaData`.
+The contained data is split into two separate sections: `CachedPermissionData` and `CachedMetaData`.
 
-`PermissionData` contains the user/groups fully resolved map of permissions, and allows you to run permission checks in exactly the same way as you would using the Player class provided by the platform.
+`CachedPermissionData` contains the user/groups fully resolved map of permissions, and allows you to run permission checks in exactly the same way as you would using the Player class provided by the platform.
 
-`MetaData` contains information about a user/groups prefixes, suffixes, and meta values.
+`CachedMetaData` contains information about a user/groups prefixes, suffixes, and meta values.
 
-#### Obtaining `PermissionData` and `MetaData`
+#### Obtaining `CachedPermissionData` and `CachedMetaData`
 
 You need:
 
 * A `User` or `Group` instance
-* The `Contexts` to get the data in (see above for how to obtain this)
 
-Once you have those instances, it's as simple as:
+* The `QueryOptions` to get the data in (see above for how to obtain this)
 
 ```java
-PermissionData permissionData = user.getCachedData().getPermissionData(contexts);
-MetaData metaData = user.getCachedData().getMetaData(contexts);
+PermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
+MetaData metaData = user.getCachedData().getMetaData(queryOptions);
 ```
 
 #### Performing permission checks
 
 ```java
 // run a permission check!
-Tristate checkResult = permissionData.getPermissionValue("some.permission.node");
+Tristate checkResult = permissionData.checkPermission("some.permission.node");
 
 // the same as what Player#hasPermission would return
 boolean checkResultAsBoolean = checkResult.asBoolean();
@@ -586,9 +597,9 @@ We can put all of this together to create a method that can run a "normal" permi
 ```java
 public boolean hasPermission(User user, String permission) {
     ContextManager contextManager = api.getContextManager();
-    Contexts contexts = contextManager.lookupApplicableContexts(user).orElseGet(contextManager::getStaticContexts);
+    ImmutableContextSet contextSet = contextManager.getContext(user).orElseGet(contextManager::getStaticContext);
 
-    PermissionData permissionData = user.getCachedData().getPermissionData(contexts);
+    PermissionData permissionData = user.getCachedData().getPermissionData(QueryOptions.contextual(contextSet));
     return permissionData.getPermissionValue(permission).asBoolean();
 }
 ```
@@ -603,16 +614,19 @@ String suffix = metaData.getSuffix();
 #### Retrieving meta data
 
 ```java
-String metaResult = metaData.getMeta().getOrDefault("some-key", "default-value");
+List<String> defaultValues = new ArrayList<>();
+defaultValues.add("default-value");
+
+String metaResult = metaData.getMeta().getOrDefault("some-key", defaultValues);
 ```
 
 ___
 
 ### Listening to LuckPerms events
 
-All event interfaces can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java).
+All event interfaces can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckpermapi/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java).
 
-To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance, using `LuckPermsApi#getEventBus`.
+To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance, using `LuckPerms#getEventBus`.
 
 It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
 
@@ -625,18 +639,18 @@ import net.luckperms.api.event.user.track.UserPromoteEvent;
 public class TestListener {
     private final MyPlugin plugin;
 
-    public TestListener(MyPlugin plugin, LuckPermsApi api) {
+    public TestListener(MyPlugin plugin, LuckPerms api) {
         this.plugin = plugin;
 
         // get the LuckPerms event bus
         EventBus eventBus = api.getEventBus();
 
         // subscribe to an event using a lambda
-        eventBus.subscribe(LogPublishEvent.class, e -> e.getCancellationState().set(true));
+        eventBus.subscribe(LogPublishEvent.class, e -> e.setCancelled(true));
 
         eventBus.subscribe(UserLoadEvent.class, e -> {
-            System.out.println("User " + e.getUser().getName() + " was loaded!");
-            if (e.getUser().hasPermission("some.perm", true)) {
+            System.out.println("User " + e.getUser().getUsername() + " was loaded!");
+            if (e.getUser().hasPermission("some.perm", true)) { <!-- Has problems -->
                 // Do something
             }
         });
@@ -648,9 +662,9 @@ public class TestListener {
     private void onUserPromote(UserPromoteEvent event) {
         // as we want to access the Bukkit API, we need to use the scheduler to jump back onto the main thread.
         Bukkit.getScheduler().runTask(plugin, () -> {
-            Bukkit.broadcastMessage(event.getUser().getName() + " was promoted to" + event.getGroupTo().get() + "!");
+            Bukkit.broadcastMessage(event.getUser().getUsername() + " was promoted to" + event.getGroupTo().get() + "!");
 
-            Player player = Bukkit.getPlayer(event.getUser().getUuid());
+            Player player = Bukkit.getPlayer(event.getUser().getUniqueId());
             if (player != null) {
                 player.sendMessage("Congrats!");
             }
@@ -660,4 +674,4 @@ public class TestListener {
 }
 ```
 
-`EventBus#subscribe` returns an [`EventHandler`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventHandler.java) instance, which can be used to unregister the listener when your plugin disables.
+`EventBus#subscribe` returns an [`EventSubscription`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventSubscription.java) instance, which can be used to unregister the listener when your plugin disables.
