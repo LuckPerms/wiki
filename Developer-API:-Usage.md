@@ -21,7 +21,7 @@ ___
 * [The basics of Context](#the-basics-of-context)
   * [Important classes](#important-classes)
   * [Registering ContextCalculators](#registering-contextcalculators)
-  * [Querying active contexts](#querying-active-contexts-query-options)
+  * [Querying active contexts/query options](#querying-active-contextsquery-options)
 * [The basics of CachedData](#the-basics-of-cacheddata)
   * [Performing permission checks](#performing-permission-checks)
   * [Retrieving prefixes and suffixes](#retrieving-prefixessuffixes)
