@@ -41,3 +41,27 @@ This option would mean that all users are still in the "default" group. However,
 /luckperms creategroup member
 /luckperms group default parents add member
 ```
+
+## Configure default assignments
+If you have more specific needs, then you can use this option. However, be aware that it will negate the storage space optimisations discussed in the first section of this page. All users will be explicitly saved, whether they are a "regular" user or not.
+
+**Note:** This feature got removed in v5 of LuckPerms, if you still need it, see [this page](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5#other).
+
+##### Note: see the "Default Assignments" section of the config for more detail on this.
+
+The following rule will configure a different default group.
+```yml
+default-assignments:
+  my-defaults-rule:
+    if:
+      has-true: <group.default>
+    take:
+      - group.default
+    give:
+      - group.member
+    set-primary-group: member
+```
+
+Simply put, every time a user logs in, the plugin will check if they are a member of the "default" group. If they are, it will remove them from "default", add them to "member", and set their primary group to "member".
+
+This system is very powerful, and allows you to configure defaults to your exact needs. Remember you _could_ add users to more than one "default" group. 😉 
