@@ -14,10 +14,11 @@ I'd like to especially thank the project's Discord moderators, past and present,
 * **Darktilldawn** (retired)
 * **SpannerMan** (retired)
 
-## Patreons
+## Patreons / donors
 
-A big thank you to my Patreons, whose contributions allow me to continue to work on & offer the project to the community for free!
+A big thank you to my Patreons and donators, whose contributions allow me to continue to work on & offer the project to the community for free!
 
+* **andrewkm**
 * **Andre_601**
 * **Birkhoff Lee**
 * **James Darling**
@@ -27,7 +28,7 @@ A big thank you to my Patreons, whose contributions allow me to continue to work
 * **VergilPrime**
 * **Yive**
 
-> (the above list is of those pledging on the "Donor" tier or above)
+> (the above list is of those pledging on the "Donor" tier or above on Patreon, or one-time donations at the same level)
 
 ## Contributors
 
