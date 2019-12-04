@@ -78,7 +78,7 @@ If you want to manually add the API dependency to your classpath, you can obtain
 
 1. Navigating to [`https://repo1.maven.org/maven2/net/luckperms/api/`](https://repo1.maven.org/maven2/net/luckperms/api/)
 2. Selecting the version you wish to use
-3. Downloading the jar titled `luckperms-api-x.x.jar`
+3. Downloading the jar titled `api-x.x.jar`
 
 ___
 
