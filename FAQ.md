@@ -25,3 +25,7 @@ Please see [here](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 ### I use SpongeForge and when I install LuckPerms do plugins no longer work for OPs
 This is an intentional behaviour of SpongeForge. As soon as a permission plugin, in this case LuckPerms, is installed will it disable the OP system.  
 To fix this give the groups and users the required permissions for the plugins.
+
+### What versions does LuckPerms support?
+The default LuckPerms supports versions from 1.8.8 up to the latest release which is currently 1.15.1.  
+For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/)
