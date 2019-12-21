@@ -1,13 +1,11 @@
 # Frequently Asked Questions
 These are some of the questions I get asked quite frequently. I'd appreciate it if you check to see if your question has already been answered here before asking me directly. 😄 
 
-### Prefixes/Suffixes don't show in chat, tab, ...
-LuckPerms doesn't manage the chat, tab list or whereever you want to display the prefix/suffix.  
-You need to use a separate plugin for this. A popular example for a chat plugin is [EssentialsX](https://ci.ender.zone/job/EssentialsX/) with EssentialsXChat, but you may use any plugin that either hooks into [Vault](https://dev.bukkit.org/bukkit-plugins/vault/) or the LuckPerms API.
+### Prefixes/suffixes don't show in chat, tab, etc.
+LuckPerms doesn't manage the chat, tab list, etc, and therefore isn't responsible for actually displaying the prefix/suffix.  
+You need to use a separate plugin for this - some popular chat formatting plugins are listed [here](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta#displaying-prefixes-and-suffixes).
 
-BungeeCord and Sponge don't have a plugin similar to vault, meaning that the plugin has to hook into the LuckPerms API directly to retrieve and display the prefix/suffix.
-
-A list of (known) supported plugins can be found [here](https://github.com/lucko/LuckPerms/wiki/Prefixes,-Suffixes-&-Meta#displaying-prefixes-and-suffixes).
+If you're using Bukkit, it's likely that you'll also need to install `Vault` alongside your chat/tab plugin, don't forget it!
 
 ### How do I get permissions to sync across multiple servers
 Connect each LuckPerms installation to the same MySQL/MongoDB server. You can use `/luckperms sync` to pull the latest changes from the database. You can also [setup a Messaging Service](https://github.com/lucko/LuckPerms/wiki/Network-Installation#messaging-service) to have your changes sync instantly between servers.
