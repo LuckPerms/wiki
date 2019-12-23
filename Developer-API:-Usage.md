@@ -106,7 +106,7 @@ Let's assume we want to load some data about a user - but we only have their uni
 For the purposes of explaining, assume we want to write an implementation for this method.
 
 ```java
-public void giveAdminPermissions(UUID uuid) {...}
+public void giveAdminPermissions(UUID uniqueId) {...}
 ```
 
 The first thing we need to do is obtain the `UserManager`. This object is responsible for handling all operations relating to `User`s. The user manager provides a method which lets us load a `User` instance, appropriately named `loadUser`.
@@ -116,13 +116,13 @@ The method returns a `CompletableFuture` (explained [here](https://github.com/lu
 We can simply attach a callback onto the future to apply the action.
 
 ```java
-public void giveAdminPermissions(UUID uuid) {
+public void giveAdminPermissions(UUID uniqueId) {
     UserManager userManager = luckPerms.getUserManager();
-    CompletableFuture<User> userFuture = userManager.loadUser(uuid);
+    CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
 
     userFuture.thenAcceptAsync(user -> {
         // TODO: apply the action to the User instance
-        user.doSomething(...);
+        user.someMethod(...);
     });
 }
 ```
@@ -139,15 +139,15 @@ But what if we need data *now*? Well, that's where it gets fun. Unfortunately, t
 The first option effectively comes down to this...
 
 ```java
-public User giveMeADamnUser(UUID uuid) {
+public User giveMeADamnUser(UUID uniqueId) {
     UserManager userManager = luckPerms.getUserManager();
-    CompletableFuture<User> userFuture = userManager.loadUser(uuid);
+    CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
 
-    return userFuture.join(); // ouch!
+    return userFuture.join(); // ouch! (block until the User is loaded)
 }
 ```
 
-You can then do whatever you want with the user instance - but remember, this method should only ever be called from an async task!
+You can then do whatever you want with the user instance - but remember, this should only ever be called from an async task!
 
 The other option is to embrace callbacks.
 
@@ -175,7 +175,7 @@ The solution? More futures!
 ```java
 public CompletableFuture<Boolean> isAdmin(UUID who) {
     return luckPerms.getUserManager().loadUser(who)
-            .thenApplyAsync(user -> user.inheritsGroup("admin"));
+            .thenApplyAsync(user -> user.inheritsGroup("admin")); // again, inheritsGroup is not a real method, just used as an example
 }
 
 public void informIfAdmin(CommandSender sender, UUID who) {
@@ -220,6 +220,8 @@ group.doSomething(...);
 ```
 
 You can do exactly the same for `Track`s using the `TrackManager#getTrack` method.
+
+If you need to get up-to-date data (a good idea if you're making changes), then just call `loadGroup` or `loadTrack` instead, respectively.
 
 ___
 
@@ -341,11 +343,11 @@ Importantly, all of the methods below return **immutable collections**. You cann
 The method signature is:
 
 ```java
-List<Node> getNodes()
+Collection<Node> getNodes()
 ```
 
-* This method returns an un-flattened (or squashed) list of the user/groups nodes. 
-* Entries nearer the start of the list (index zero) have priority over nodes at the end.
+* This method returns an un-flattened (or squashed) collection of the user/groups nodes. 
+* Entries nearer the start of the collection (index zero) have priority over nodes at the end.
 * This view does **not** consider inherited data.
 
 It's a relatively cheap call, and will return quite quickly.
@@ -374,6 +376,8 @@ int maxWeight = user.getNodes().stream()
         .orElse(0);
 ```
 
+If you need to do a more specific lookup or check, prefer using one of the other methods (described later) to avoid iterating over the whole collection of nodes.
+
 #### `.getDistinctNodes()`
 
 The method signature is:
@@ -385,6 +389,20 @@ SortedSet<Node> getDistinctNodes();
 * This method returns a sorted view of `#getNodes`. If you are not worried about ordering, it's faster to use `#getNodes`.
 * The nodes are sorted according to "priority order". As the returned type is a set, duplicate elements may be missing.
 * This view does **not** consider inherited data.
+
+#### `.resolveInheritedNodes()`
+
+The method signature is:
+
+```java
+Collection<Node> resolveInheritedNodes(QueryOptions queryOptions)
+```
+
+* This method returns an un-flattened (or squashed) list of the user/groups nodes, and all nodes they inherit from their parents.
+* Entries nearer the start of the list (index zero) have priority over nodes at the end.
+* This view **does** consider inherited data. If you don't need this, use the `getNodes` method instead.
+
+The `QueryOptions` parameter encapsulates the lookup settings for the query. This class is explained in a later section. If you're not worried particularly about filtering by context, simply use `QueryOptions.nonContextual()`.
 
 ___
 
@@ -437,8 +455,10 @@ ImmutableContextSet set3 = ImmutableContextSet.builder()
 Map<String, String> map = new HashMap<>();
 map.put("region", "something");
 
-ImmutableContextSet set4 = ImmutableContextSet.create();
-map.forEach(set4::add);
+ImmutableContextSet.Builder builder2 = ImmutableContextSet.builder();
+map.forEach(builder2::add);
+
+ImmutableContextSet set4 = builder2.build();
 ```
 
 You can of course also create an `ImmutableContextSet` by first creating (or obtaining) a `MutableContextSet` and converting it.
