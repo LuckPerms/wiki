@@ -21,9 +21,11 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **andrewkm**
 * **Andre_601**
 * **Birkhoff Lee**
+* **bloodmc**
 * **Collin**
 * **James Darling**
 * **Maldred**
+* **Niels**
 * **royalkingkb**
 * **Shmeeb**
 * **VergilPrime**
