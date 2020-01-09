@@ -34,7 +34,9 @@ Most of the time this isn't actually an issue with LuckPerms itself but here are
 ### How do I get permissions to sync across multiple servers?
 This is explained in detail on the [Network Installation](https://github.com/lucko/LuckPerms/wiki/Network-Installation) page. You should also read [Syncing data between servers](https://github.com/lucko/LuckPerms/wiki/Syncing-data-between-servers). Here is a brief rundown:
 
-- You need the Bungeecord version of LuckPerms installed on your proxy.
+- You need the Bungeecord version of LuckPerms installed on your proxy if
+  - You want to manage Bungeecord permissions.
+  - You set your messaging-service to `pluginmsg`
 - You need LuckPerms installed on each of your backend (Spigot, Sponge) servers.
 - You must ensure IP forwarding is enabled on Bungeecord and that the Spigot servers have `bungeecord: true`.
 - You must use the same [remote storage method](https://github.com/lucko/LuckPerms/wiki/Storage-types#remote-databases) (such as MySQL) on ALL of your LuckPerms installations. This requires the `storage-method` property to be set as well as the database credentials on all servers.
