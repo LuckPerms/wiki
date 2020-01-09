@@ -12,7 +12,7 @@ If LuckPerms is your only permission plugin, then the issue could be that you ha
 
 ***
 
-### Why are prefixes not working?
+### Why are prefixes/suffixes not working?
 Most of the time this isn't actually an issue with LuckPerms itself but here are a few troubleshooting tips:
 
 - LuckPerms is *not* a chat formatter and another plugin is required to format the chat or tab list to include prefixes and suffixes.
