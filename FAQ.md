@@ -8,7 +8,7 @@ These are some of the questions that are asked quite frequently. Please check to
 ### Why are permissions not working?
 First, *make sure LuckPerms is your only permission plugin!* We have had many issues where people will install LuckPerms and not remove another permission manager like PermissionsEx. You *must* remove any other permission plugins otherwise LuckPerms will not be used for permission checking. The only exception is when you are performing a migration, in which case you must have both permission plugins installed but please remember to remove the old plugin afterwards.
 
-If LuckPerms is your only permission plugin, then the issue could be that you have not added the correct permissions for what you require. Always make sure to consult the documentation of the plugins you are using to see what the available permissions are. If the documentation is incomplete, then you can use [Verbose mode](https://github.com/lucko/LuckPerms/wiki/Verbose) to see which permissions are being checked in real time and what value LuckPerms returns for the user that is being checked.
+If LuckPerms is your only permission plugin, then the issue could be that you have not added the correct permissions for what you require. Always make sure to consult the documentation of the plugins you are using to see what the available permissions are. If the documentation is incomplete or you're unable to find any, then you can use [Verbose mode](https://github.com/lucko/LuckPerms/wiki/Verbose) to see which permissions are being checked in real-time and what value LuckPerms returns for the user that is being checked.
 
 ***
 
