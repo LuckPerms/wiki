@@ -64,6 +64,6 @@ To fix this, give the groups and users the required permissions for the plugins.
 ***
 
 ### What versions does LuckPerms support?
-The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.1.  
+The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.2.  
 For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/).  
 Even older versions are not supported.
