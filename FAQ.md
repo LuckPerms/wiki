@@ -59,11 +59,11 @@ Please see [here](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
 ### I use SpongeForge and when I install LuckPerms I lose all my permissions, why?
 This is an intentional behaviour of SpongeForge. As soon as a permission plugin is installed, it will disable the OP system.  
-To fix this, give the groups and users the required permissions for the plugins. If you want OP-like permissions, you can use the wildcard `*` but this is considered [bad practice](https://nucleuspowered.org/docs/configuration/permissions.html#nucleus-is-not-a-permissions-management-plugin).
+To fix this, give the groups and users the required permissions for the plugins. If you want OP-like permissions, you can use the wildcard `*` but this is considered [bad practice](https://nucleuspowered.org/docs/nowildcard.html).
 
 ***
 
 ### What versions does LuckPerms support?
-The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.1.  
+The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.2.  
 For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/).  
 Even older versions are not supported.
