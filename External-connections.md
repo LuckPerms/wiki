@@ -74,7 +74,7 @@ This is (currently) hosted by me (Luck) using DigitalOcean & CloudFlare.
 
 Again, the source is freely available here: https://github.com/lucko/bytebin
 
-Posted data is retained for 24 hours and then deleted.
+Posted data is retained for 14 days and then deleted.
 
 ___
 
