@@ -285,7 +285,7 @@ Node node = Node.builder("some.node.key").build();
 // and with extra properties!
 Node node = Node.builder("some.node.key")
         .value(false)
-        .expiry(1, TimeUnit.HOURS)
+        .expiry(Duration.ofHours(1))
         .withContext(DefaultContextKeys.SERVER_KEY, "survival")
         .build();
 
