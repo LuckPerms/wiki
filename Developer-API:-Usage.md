@@ -410,6 +410,11 @@ ___
 
 User/group data can be modified by adding and removing `Node`s from the holders data. This can be done by calling `#data` and calling the methods on the returned `NodeMap`.
 
+Here is an example of adding a permission to a user:
+```java
+DataMutateResult result = user.data().add(Node.builder("your.node.here").build());
+```
+
 ___
 
 ### The basics of Context
