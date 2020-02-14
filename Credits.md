@@ -4,13 +4,13 @@ LuckPerms wouldn't be the way it is today without the help of many contributors 
 
 I'd like to especially thank the project's Discord moderators, past and present, who work incredibly hard to keep things in order & support the community in using the plugin:
 
-* **Andre_601**
 * **BrainStone**
 * **OmegaWeapon_**
 * **RyanJH**
 * **Tobi**
 * **Turbo**
 * **Void**
+* **Andre_601** (retired)
 * **Darktilldawn** (retired)
 * **SpannerMan** (retired)
 
@@ -41,6 +41,7 @@ Additionally, a huge amount of thanks is owed to:
 * [contributors to `lucko/LuckPermsWeb`](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
 * [contributors to the LuckPerms `wiki`](https://github.com/LuckPerms/wiki/graphs/contributors)
 * [contributors to the the `locale` project](https://github.com/LuckPerms/locale/graphs/contributors)
+* [contributors to `LuckPerms/clippy`](https://github.com/LuckPerms/clippy/graphs/contributors)
 
 
 ## Open Source
