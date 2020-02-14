@@ -24,6 +24,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **bloodmc**
 * **Collin**
 * **James Darling**
+* **Khan Jal**
 * **Maldred**
 * **Niels**
 * **royalkingkb**
