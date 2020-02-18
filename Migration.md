@@ -30,7 +30,7 @@ The migration process is fairly simple, however it varies slightly for each plat
 1. Firstly, you need to [install LuckPerms](https://github.com/lucko/LuckPerms/wiki/Installation). Don't remove your old permissions plugin yet.
 2. Ensure that your old permissions plugin is still enabling properly. The migration process won't work if your old setup is broken.
 3. Start your server - **do not reload** - a full restart is needed when installing LP. 
-4. (optional) if you need to change your data storage method, for instance, to mysql, make the change in your config.yml, and restart again. 
+4. (optional) If you intend to change your data [storage type](https://github.com/lucko/LuckPerms/wiki/Storage-types), for instance, to mysql, it is easiest to do this now. If you decide to change storage types after the migration, follow the instructions in [Switching Storage Types](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types).
 
 Then, open your server console and run the migration command to start the process:
 
