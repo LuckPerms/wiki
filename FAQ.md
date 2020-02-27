@@ -67,3 +67,16 @@ To fix this, give the groups and users the required permissions for the plugins.
 The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.2.  
 For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/).  
 Even older versions are not supported.
+
+### When I install LuckPerms my server shuts down
+LuckPerms will never shut down your server.  
+In most, if not all cases is the cause another plugin.
+
+If you use AuthMe, make sure to check your console for the following lines:  
+```
+[AuthMe] Aborting initialization of AuthMe: [InjectorReflectionException]: Could not invoke method 'setup' for fr.xephi.authme.permission.PermissionsManager@xxxxxxxx
+[AuthMe] THE SERVER IS GOING TO SHUT DOWN AS DEFINED IN THE CONFIGURATION!
+```  
+If those lines are shown, the server was shut down by AuthMe, due to a configuration setting it has by default.
+
+To fix, open the AuthMe config.yml and change `forceVaultHook` from false to true.
