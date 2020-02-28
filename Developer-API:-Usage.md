@@ -528,14 +528,14 @@ public class CustomCalculator implements ContextCalculator<Player> {
 
     @Override  
     public void calculate(Player t, ContextConsumer contextConsumer) {
-        contextConsumer.add("gamemode", t.getGameMode().name());
+        contextConsumer.accept("gamemode", t.getGameMode().name());
     }
     
     @Override
     public ContextSet estimatePotentialContexts() {
         ImmutableContextSet.Builder builder = ImmutableContextSet.builder();
         for (GameMode gameMode : GameMode.values()) {
-            builder.add(KEY, gameMode.name().toLowerCase());
+            builder.add("gamemode", gameMode.name().toLowerCase());
         }
         return builder.build();
     }
