@@ -675,7 +675,12 @@ public class TestListener {
 
         eventBus.subscribe(UserLoadEvent.class, e -> {
             System.out.println("User " + e.getUser().getUsername() + " was loaded!");
-            if (e.getUser().hasPermission("some.perm", true)) { <!-- Has problems -->
+            
+            ContextManager contextManager = api.getContextManager();
+            ImmutableContextSet contextSet = contextManager.getContext(e.getUser()).orElse(contextManager::getStaticContext);
+            QueryOptions queryOptions = QueryOptions.contextual(contextSet);
+            
+            if (e.getUser().getCachedData().getPermissionData(queryOptions).checkPermission("some.perm").asBoolean()) {
                 // Do something
             }
         });
