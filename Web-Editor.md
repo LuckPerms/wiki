@@ -9,13 +9,13 @@ ___
 Editor sessions are first created by executing a command on the server.
 
 
-| Scope                                                                     | Command                    |
-|---------------------------------------------------------------------------|----------------------------|
-| **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor groups`        |
-| **To create an editor session for all users, run:**                       | `/lp editor users`         |
-| **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
-| **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
+| Scope                            | Command                    |
+|----------------------------------|----------------------------|
+| **All groups and online users:** | `/lp editor`               |
+| **All groups:**                  | `/lp editor groups`        |
+| **All online users:**            | `/lp editor users`         |
+| **For a specific group:**        | `/lp group <group> editor` |
+| **For a specific user:**         | `/lp user <user> editor`   |
 
 > Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
 
