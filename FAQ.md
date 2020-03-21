@@ -68,6 +68,8 @@ The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest
 For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/).  
 Even older versions are not supported.
 
+***
+
 ### When I install LuckPerms my server shuts down
 LuckPerms will never shut down your server.  
 In most, if not all cases is the cause another plugin.
