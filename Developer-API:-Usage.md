@@ -675,9 +675,7 @@ public class TestListener {
 
         eventBus.subscribe(UserLoadEvent.class, e -> {
             System.out.println("User " + e.getUser().getUsername() + " was loaded!");
-            if (e.getUser().hasPermission("some.perm", true)) { <!-- Has problems -->
-                // Do something
-            }
+            // TODO: do something else...
         });
 
         // subscribe to an event using a method reference
