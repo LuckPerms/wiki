@@ -603,8 +603,8 @@ You need:
 * The `QueryOptions` to get the data in (see above for how to obtain this)
 
 ```java
-PermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
-MetaData metaData = user.getCachedData().getMetaData(queryOptions);
+CachedPermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
+CachedMetaData metaData = user.getCachedData().getMetaData(queryOptions);
 ```
 
 #### Performing permission checks
@@ -624,8 +624,8 @@ public boolean hasPermission(User user, String permission) {
     ContextManager contextManager = api.getContextManager();
     ImmutableContextSet contextSet = contextManager.getContext(user).orElseGet(contextManager::getStaticContext);
 
-    PermissionData permissionData = user.getCachedData().getPermissionData(QueryOptions.contextual(contextSet));
-    return permissionData.getPermissionValue(permission).asBoolean();
+    CachedPermissionData permissionData = user.getCachedData().getPermissionData(QueryOptions.contextual(contextSet));
+    return permissionData.checkPermission(permission).asBoolean();
 }
 ```
 
@@ -639,10 +639,7 @@ String suffix = metaData.getSuffix();
 #### Retrieving meta data
 
 ```java
-List<String> defaultValues = new ArrayList<>();
-defaultValues.add("default-value");
-
-String metaResult = metaData.getMeta().getOrDefault("some-key", defaultValues);
+String metaValue = metaData.getMetaValue("some-key");
 ```
 
 ___
