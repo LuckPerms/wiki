@@ -38,8 +38,8 @@ Simply use `/lp group <group> setdisplayname <name>`
 This option would mean that all users are still in the "default" group. However, a parent group is configured for default, so it can inherit permissions from a group with a different name.
 
 ```
-/luckperms creategroup member
-/luckperms group default parent add member
+/lp creategroup member
+/lp group default parent add member
 ```
 
 ## Configure default assignments
