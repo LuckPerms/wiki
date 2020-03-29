@@ -39,7 +39,7 @@ This option would mean that all users are still in the "default" group. However,
 
 ```
 /luckperms creategroup member
-/luckperms group default parents add member
+/luckperms group default parent add member
 ```
 
 ## Configure default assignments
