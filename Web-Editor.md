@@ -9,15 +9,15 @@ ___
 Editor sessions are first created by executing a command on the server.
 
 
-| Scope                                                                     | Command                    |
-|---------------------------------------------------------------------------|----------------------------|
-| **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor groups`         |
-| **To create an editor session for all users, run:**                       | `/lp editor users`        |
-| **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
-| **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
+| Scope                            | Command                    |
+|----------------------------------|----------------------------|
+| **All groups and online users:** | `/lp editor`               |
+| **All groups:**                  | `/lp editor groups`        |
+| **All online users:**            | `/lp editor users`         |
+| **For a specific group:**        | `/lp group <group> editor` |
+| **For a specific user:**         | `/lp user <user> editor`   |
 
-> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP.
+> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
@@ -45,9 +45,9 @@ Note that a permission can only have one world and one server context at a time.
 
 #### Adding a permission
 
-To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same values.  
-When typing the editor will show a list of permissions matching your input. You can select one through the arrow keys or with your cursor and select it by pressing enter or clicking on it.
-After you've set the permission(s), go to the "+" button and press it.
+To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same properties.  
+When typing the editor will show a list of suggestions matching your input so far. You can select one through the arrow keys or with your cursor and include it by pressing enter or clicking on it.
+After you've entered the permission(s), click the "+" button to add.
 
 You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
 
