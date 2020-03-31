@@ -43,6 +43,20 @@ To add a permission, type the node you'd like to add into the "Permission" input
 
 ![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
 
+#### Group & Player Nodes
+
+The editor allows you to add or change aspects abouts groups and players such as weight, parents, and many more.
+This is all of them, and what they do:
+
+| Function                                                                  | Node                         |
+|---------------------------------------------------------------------------|------------------------------|
+| **To define a group's parent, add:**                                      | `group.<parentgroup>`        |
+| **To set a group's displayname, add:**                                    | `displayname.<name>`         |
+| **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
+| **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
+| **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
+
+
 #### Editing existing data
 
 To edit any value in the table, just click it.
