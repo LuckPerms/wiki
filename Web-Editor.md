@@ -43,6 +43,18 @@ To add a permission, type the node you'd like to add into the "Permission" input
 
 ![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
 
+#### Editing existing data
+
+To edit any value in the table, just click it.
+
+![](https://giant.gfycat.com/FirmLightheartedAddax.gif)
+
+#### Sorting the data
+
+To change the sorting settings, click on the column heading you'd like to sort by.
+
+![](https://giant.gfycat.com/PastFinishedCougar.gif)
+
 #### Luckperms Nodes
 
 The editor allows you to add or change aspects abouts groups and players such as weight and parents using nodes.
@@ -55,19 +67,6 @@ This is all of them, and what they do:
 | **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
 | **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
 | **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
-
-
-#### Editing existing data
-
-To edit any value in the table, just click it.
-
-![](https://giant.gfycat.com/FirmLightheartedAddax.gif)
-
-#### Sorting the data
-
-To change the sorting settings, click on the column heading you'd like to sort by.
-
-![](https://giant.gfycat.com/PastFinishedCougar.gif)
 
 ___
 
