@@ -41,19 +41,19 @@ Once you've created and opened the session, you can use the interface to make ch
 
 To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
 
-![](https://i.imgur.com/vyCVt7j.gifv)
+![](https://i.imgur.com/vyCVt7j.gif)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://i.imgur.com/s3G5MvP.gifv)
+![](https://i.imgur.com/s3G5MvP.gif)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://i.imgur.com/yVN4Lzp.gifv)
+![](https://i.imgur.com/yVN4Lzp.gif)
 
 #### Luckperms Nodes
 
@@ -76,7 +76,7 @@ Once you've finished making changes to the data, you need to save your changes b
 
 Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save.
 
-![](https://i.imgur.com/pNZgEN0.gifv)
+![](https://i.imgur.com/pNZgEN0.gif)
 
 The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
