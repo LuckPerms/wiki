@@ -23,11 +23,11 @@ Once the command has been executed, the server will begin creating a new session
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/fvNzH9B.png)
+![](https://i.imgur.com/GEojPzy.png)
 
-To proceed, click on the URL, then press "Yes".
+To proceed, click on the URL, then press "**Yes**".
 
-![](https://i.imgur.com/qGiG2cl.png)
+![](https://i.imgur.com/ORN1mZW.png)
 
 Your default web browser should then open the new editor session you've created.
 
@@ -41,19 +41,19 @@ Once you've created and opened the session, you can use the interface to make ch
 
 To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
 
-![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
+![](https://i.imgur.com/vyCVt7j.gifv)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://giant.gfycat.com/FirmLightheartedAddax.gif)
+![](https://i.imgur.com/s3G5MvP.gifv)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://giant.gfycat.com/PastFinishedCougar.gif)
+![](https://i.imgur.com/yVN4Lzp.gifv)
 
 #### Luckperms Nodes
 
@@ -82,4 +82,4 @@ The editor will generate a command which you need to execute in-game or in the c
 
 When you run the command, a summary of the changes will be shown.
 
-![](https://i.imgur.com/dXbpjQ9.png)
+![](https://i.imgur.com/7nQp5Fn.png)
