@@ -39,11 +39,15 @@ Once you've created and opened the session, you can use the interface to make ch
 
 ### Editor Context
 
-You can add contexts in the editor in addition to in-game. To do so, simply fill in the `key` and `value` fields with approriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with approriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+ 
+Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
 
 #### Adding a permission
 
-To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
+To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same values.  
+When typing the editor will show a list of permissions matching your input. You can select one through the arrow keys or with your cursor and select it by pressing enter or clicking on it.
+After you've set the permission(s), go to the "+" button and press it.
 
 You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
 
@@ -80,11 +84,9 @@ ___
 
 Once you've finished making changes to the data, you need to save your changes back to the server.
 
-Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save.
+Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save, and the editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
 ![](https://i.imgur.com/pNZgEN0.gif)
-
-The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
 When you run the command, a summary of the changes will be shown.
 
