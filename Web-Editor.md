@@ -76,7 +76,7 @@ Once you've finished making changes to the data, you need to save your changes b
 
 Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save.
 
-![](https://giant.gfycat.com/NegativeIncompleteCougar.gif)
+![](https://i.imgur.com/pNZgEN0.gifv)
 
 The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
