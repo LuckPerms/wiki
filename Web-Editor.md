@@ -37,9 +37,15 @@ ___
 
 Once you've created and opened the session, you can use the interface to make changes to the user/group's data.
 
+### Editor Context
+
+You can add contexts in the editor in addition to in-game. To do so, simply fill in the `key` and `value` fields with approriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+
 #### Adding a permission
 
 To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
+
+You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
 
 ![](https://i.imgur.com/vyCVt7j.gif)
 
