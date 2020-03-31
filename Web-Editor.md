@@ -23,11 +23,11 @@ Once the command has been executed, the server will begin creating a new session
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/9mJQnmBl.png)
+![](https://i.imgur.com/GEojPzy.png)
 
-To proceed, click on the URL, then press "Yes".
+To proceed, click on the URL, then press "**Yes**".
 
-![](https://i.imgur.com/bSkrjWHl.png)
+![](https://i.imgur.com/ORN1mZW.png)
 
 Your default web browser should then open the new editor session you've created.
 
@@ -37,33 +37,46 @@ ___
 
 Once you've created and opened the session, you can use the interface to make changes to the user/group's data.
 
+### Editor Context
+
+You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with approriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+ 
+Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
+
 #### Adding a permission
 
-To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same values.  
-When typing will the editor show a list of permissions matching your input. You can select one through the arrow keys or with your cursor and select it by pressing enter or clicking on it.
+To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same properties.  
+When typing the editor will show a list of suggestions matching your input so far. You can select one through the arrow keys or with your cursor and include it by pressing enter or clicking on it.
+After you've entered the permission(s), click the "+" button to add.
 
-After you've set the permission(s), go to the "+" button and press it.
+You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
 
-![](https://thumbs.gfycat.com/ChubbyWarmAmmonite-size_restricted.gif)
+![](https://i.imgur.com/vyCVt7j.gif)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://thumbs.gfycat.com/MiniatureIdleAxolotl-size_restricted.gif)
-
-#### Adding Context
-
-To add context to a permission, either click the "Add Contexts" button before adding a permission, or click the area right under the "Contexts" column to edit the context of a permission.  
-Use "world" or "server" as keys to set per-world and per-server permissions respectively. Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
-
-![](https://thumbs.gfycat.com/SkeletalHarmoniousFattaileddunnart-size_restricted.gif)
+![](https://i.imgur.com/s3G5MvP.gif)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://thumbs.gfycat.com/MistySpectacularLamprey-size_restricted.gif)
+![](https://i.imgur.com/yVN4Lzp.gif)
+
+#### Luckperms Nodes
+
+The editor allows you to add or change aspects abouts groups and players such as weight and parents using nodes.
+This is all of them, and what they do:
+
+| Function                                                                  | Node                         |
+|---------------------------------------------------------------------------|------------------------------|
+| **To define a user or group's parent, add:**                              | `group.<parentgroup>`        |
+| **To set a group's displayname, add:**                                    | `displayname.<name>`         |
+| **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
+| **To add a prefix to a group or player, add:**                            | `prefix.<weight>.<prefix>`   |
+| **To add a suffix to a group or player, add:**                            | `suffix.<weight>.<suffix>`   |
 
 ___
 
@@ -71,8 +84,10 @@ ___
 
 Once you've finished making changes to the data, you need to save your changes back to the server.
 
-Click on the "Save" button. The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
+Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save, and the editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
+
+![](https://i.imgur.com/pNZgEN0.gif)
 
 When you run the command, a summary of the changes will be shown.
 
-![](https://i.imgur.com/4SGTBbMl.png)
+![](https://i.imgur.com/7nQp5Fn.png)
