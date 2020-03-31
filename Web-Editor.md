@@ -43,9 +43,9 @@ To add a permission, type the node you'd like to add into the "Permission" input
 
 ![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
 
-#### Group & Player Nodes
+#### Luckperms Nodes
 
-The editor allows you to add or change aspects abouts groups and players such as weight, parents, and many more.
+The editor allows you to add or change aspects abouts groups and players such as weight and parents using nodes.
 This is all of them, and what they do:
 
 | Function                                                                  | Node                         |
