@@ -9,25 +9,25 @@ ___
 Editor sessions are first created by executing a command on the server.
 
 
-| Scope                                                                     | Command                    |
-|---------------------------------------------------------------------------|----------------------------|
-| **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor groups`         |
-| **To create an editor session for all users, run:**                       | `/lp editor users`        |
-| **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
-| **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
+| Scope                            | Command                    |
+|----------------------------------|----------------------------|
+| **All groups and online users:** | `/lp editor`               |
+| **All groups:**                  | `/lp editor groups`        |
+| **All online users:**            | `/lp editor users`         |
+| **For a specific group:**        | `/lp group <group> editor` |
+| **For a specific user:**         | `/lp user <user> editor`   |
 
-> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP.
+> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/fvNzH9B.png)
+![](https://i.imgur.com/9mJQnmBl.png)
 
 To proceed, click on the URL, then press "Yes".
 
-![](https://i.imgur.com/qGiG2cl.png)
+![](https://i.imgur.com/bSkrjWHl.png)
 
 Your default web browser should then open the new editor session you've created.
 
@@ -39,21 +39,31 @@ Once you've created and opened the session, you can use the interface to make ch
 
 #### Adding a permission
 
-To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
+To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same values.  
+When typing will the editor show a list of permissions matching your input. You can select one through the arrow keys or with your cursor and select it by pressing enter or clicking on it.
 
-![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
+After you've set the permission(s), go to the "+" button and press it.
+
+![](https://thumbs.gfycat.com/ChubbyWarmAmmonite-size_restricted.gif)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://giant.gfycat.com/FirmLightheartedAddax.gif)
+![](https://thumbs.gfycat.com/MiniatureIdleAxolotl-size_restricted.gif)
+
+#### Adding Context
+
+To add context to a permission, either click the "Add Contexts" button before adding a permission, or click the area right under the "Contexts" column to edit the context of a permission.  
+Use "world" or "server" as keys to set per-world and per-server permissions respectively. Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
+
+![](https://thumbs.gfycat.com/SkeletalHarmoniousFattaileddunnart-size_restricted.gif)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://giant.gfycat.com/PastFinishedCougar.gif)
+![](https://thumbs.gfycat.com/MistySpectacularLamprey-size_restricted.gif)
 
 ___
 
@@ -61,12 +71,8 @@ ___
 
 Once you've finished making changes to the data, you need to save your changes back to the server.
 
-Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save.
-
-![](https://giant.gfycat.com/NegativeIncompleteCougar.gif)
-
-The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
+Click on the "Save" button. The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
 When you run the command, a summary of the changes will be shown.
 
-![](https://i.imgur.com/dXbpjQ9.png)
+![](https://i.imgur.com/4SGTBbMl.png)
