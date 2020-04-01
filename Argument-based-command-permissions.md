@@ -174,3 +174,16 @@ The arguments which are checked are outlined below.
 | meta unset        | key                   |
 | promote           | track.next-group      |
 | demote            | track.old-group       |
+
+## How do I set it up so players cannot promote other players to or past their own level on a track?
+
+This is a very common question, and quite simple to set up. All you need to do is add these permissions:
+
+| Permission                                                                        | Value                 |
+|-----------------------------------------------------------------------------------|-----------------------|
+| `luckperms.user.promote`                                                          | true                  |
+| `luckperms.user.promote.modify.others `                                           | true                  |
+| `luckperms.user.promote.<track>.<group they cannot promote to or past>`           | false                 |
+| `luckperms.user.promote.<any track you do not want them to be able to promote on>`| false                 |
+
+
