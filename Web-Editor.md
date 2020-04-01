@@ -7,6 +7,7 @@ ___
 ### Getting started
 
 Editor sessions are first created by executing a command on the server.
+You can run different commands to open sessions with different scopes:
 
 
 | Scope                            | Command                    |
@@ -39,7 +40,7 @@ Once you've created and opened the session, you can use the interface to make ch
 
 ### Editor Context
 
-You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with approriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with appropriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
  
 Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
 
@@ -67,7 +68,7 @@ To change the sorting settings, click on the column heading you'd like to sort b
 
 #### Luckperms Nodes
 
-The editor allows you to add or change aspects abouts groups and players such as weight and parents using nodes.
+The editor allows you to add or change aspects about groups and players such as weight and parents using nodes.
 This is all of them, and what they do:
 
 | Function                                                                  | Node                         |
@@ -75,8 +76,8 @@ This is all of them, and what they do:
 | **To define a user or group's parent, add:**                              | `group.<parentgroup>`        |
 | **To set a group's displayname, add:**                                    | `displayname.<name>`         |
 | **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
-| **To add a prefix to a group or player, add:**                            | `prefix.<weight>.<prefix>`   |
-| **To add a suffix to a group or player, add:**                            | `suffix.<weight>.<suffix>`   |
+| **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
+| **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
 
 ___
 
