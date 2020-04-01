@@ -7,7 +7,6 @@ ___
 ### Getting started
 
 Editor sessions are first created by executing a command on the server.
-
 You can run different commands to open sessions with different scopes:
 
 
@@ -77,8 +76,8 @@ This is all of them, and what they do:
 | **To define a user or group's parent, add:**                              | `group.<parentgroup>`        |
 | **To set a group's displayname, add:**                                    | `displayname.<name>`         |
 | **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
-| **To add a prefix to a group or player, add:**                            | `prefix.<weight>.<prefix>`   |
-| **To add a suffix to a group or player, add:**                            | `suffix.<weight>.<suffix>`   |
+| **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
+| **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
 
 ___
 
