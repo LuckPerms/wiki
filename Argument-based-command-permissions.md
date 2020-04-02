@@ -175,7 +175,7 @@ The arguments which are checked are outlined below.
 | promote           | track.next-group      |
 | demote            | track.old-group       |
 
-## How do I set it up so players cannot promote other players to or past their own level on a track?
+## Promote other players but not to or past their own level on a track
 
 This is a very common question, and quite simple to set up. All you need to do is add these permissions:
 
