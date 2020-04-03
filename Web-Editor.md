@@ -78,6 +78,7 @@ This is all of them, and what they do:
 | **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
 | **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
 | **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
+| **To add meta:**                                                          | `meta.<key>.<value>`         |
 
 ___
 
