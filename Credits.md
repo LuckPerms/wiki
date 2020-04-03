@@ -5,10 +5,11 @@ LuckPerms wouldn't be the way it is today without the help of many contributors 
 I'd like to especially thank the project's Discord moderators, past and present, who work incredibly hard to keep things in order & support the community in using the plugin:
 
 * **BrainStone**
+* **Larry**
 * **OmegaWeapon_**
 * **RyanJH**
 * **Tobi**
-* **Turbo**
+* **Turbotailz**
 * **Void**
 * **Andre_601** (retired)
 * **Darktilldawn** (retired)
@@ -25,12 +26,17 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **Birkhoff Lee**
 * **bloodmc**
 * **Collin**
+* **FreeMonoid**
+* **iLemon**
 * **James Darling**
 * **Khan Jal**
+* **KuNet**
 * **Maldred**
 * **Niels**
 * **royalkingkb**
+* **Ruinscraft**
 * **Shmeeb**
+* **Songoda**
 * **VergilPrime**
 * **Yive**
 
