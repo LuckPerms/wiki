@@ -70,40 +70,27 @@ server {
 
 Now, you can run bytebin with `java -jar bytebin.jar` - and the service should be accessible at `https://bytebin.example.com/`.
 
-### Step 2: Hosting the static pages
+### Step 2: Installing the web app
 
-The static webpages for the web editor, verbose viewer and tree viewer are available on GitHub here: https://github.com/lucko/LuckPermsWeb
+The source for the web app is available from this github repo:
+https://github.com/lucko/LuckPermsWeb/tree/v2
 
-These need to be cloned and then copied to the public html directory of your website.
+This needs to be cloned somewhere on your system, wherever you think is best. Run the following commands to install the app (note: you need [Git](https://git-scm.com/downloads), [Node and NPM](https://nodejs.org/en/download/)).
 
 ```bash
 git clone https://github.com/lucko/LuckPermsWeb
 cd LuckPermsWeb
-rm index.html  # the index page is the project homepage (https://luckperms.net/), you most likely won't want that :)
 ```
-
-The sites are then in `editor/`, `verbose/` and `treeview/` respectively, and can be copied into the web root.
-
-e.g.
-
+Now you will need to edit the file `config.json` and set the `bytebin_url` to the same URL you set up for bytebin above. Once you do that, continue running the following commands to build the app.
 ```bash
-# whilst still in the LuckPermsWeb directory...
-mv * /var/www/html/luckperms/
+git checkout v2
+npm install
+npm run build
 ```
 
-They should then be accessible from your site, at `https://example.com/luckperms/editor/`, `https://example.com/luckperms/verbose/` etc.
+The site files will be generated in the `/dist` folder. You may copy these to your webserver folder or simply point the webserver to the `/dist` folder.
 
-### Step 3: Configuring the static pages to use your custom bytebin instance.
-
-This is only required if you followed Step 1 and setup a custom bytebin instance for the system to use.
-
-The URL needs to be configured in the following places:
-
-* [`editor/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/editor/assets/app.js#L1)
-* [`verbose/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/verbose/assets/app.js#L1)
-* [`treeview/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/treeview/assets/app.js#L1)
-
-### Step 4: Configuring the plugin to use your custom bytebin instance / pages.
+### Step 3: Configuring the plugin to use your custom bytebin instance / pages.
 
 Add the following to the end of the LuckPerms `config.yml`.
 
