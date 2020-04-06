@@ -1,4 +1,4 @@
-This page is an extension to the general [FAQ list](https://github.com/lucko/LuckPerms/wiki/FAQ), with a focus on storage related issues and errors.
+This page is an extension to the general [FAQ list](FAQ), with a focus on storage related issues and errors.
 
 It includes a number of common errors & fixes for storage providers (mostly MySQL!).
 
