@@ -7,27 +7,28 @@ ___
 ### Getting started
 
 Editor sessions are first created by executing a command on the server.
+You can run different commands to open sessions with different scopes:
 
 
-| Scope                                                                     | Command                    |
-|---------------------------------------------------------------------------|----------------------------|
-| **To create an editor session for all groups and any online users, run:** | `/lp editor`               |
-| **To create an editor session for all groups, run:**                      | `/lp editor groups`         |
-| **To create an editor session for all users, run:**                       | `/lp editor users`        |
-| **To create an editor session for a group, run:**                         | `/lp group <group> editor` |
-| **To create an editor session for a user, run:**                          | `/lp user <user> editor`   |
+| Scope                            | Command                    |
+|----------------------------------|----------------------------|
+| **All groups and online users:** | `/lp editor`               |
+| **All groups:**                  | `/lp editor groups`        |
+| **All online users:**            | `/lp editor users`         |
+| **For a specific group:**        | `/lp group <group> editor` |
+| **For a specific user:**         | `/lp user <user> editor`   |
 
-> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP.
+> Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/fvNzH9B.png)
+![](https://i.imgur.com/GEojPzy.png)
 
-To proceed, click on the URL, then press "Yes".
+To proceed, click on the URL, then press "**Yes**".
 
-![](https://i.imgur.com/qGiG2cl.png)
+![](https://i.imgur.com/ORN1mZW.png)
 
 Your default web browser should then open the new editor session you've created.
 
@@ -37,23 +38,47 @@ ___
 
 Once you've created and opened the session, you can use the interface to make changes to the user/group's data.
 
+### Editor Context
+
+You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with appropriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+ 
+Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
+
 #### Adding a permission
 
-To add a permission, type the node you'd like to add into the "Permission" input box, then press the enter key, or click the "add" button.
+To add a permission, type the node you'd like to add into the "Add Permission" input box and press enter. You can repeat this for all permissions that you want to add with the same properties.  
+When typing the editor will show a list of suggestions matching your input so far. You can select one through the arrow keys or with your cursor and include it by pressing enter or clicking on it.
+After you've entered the permission(s), click the "+" button to add.
 
-![](https://giant.gfycat.com/TerrificAccomplishedIndusriverdolphin.gif)
+You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
+
+![](https://i.imgur.com/vyCVt7j.gif)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://giant.gfycat.com/FirmLightheartedAddax.gif)
+![](https://i.imgur.com/s3G5MvP.gif)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://giant.gfycat.com/PastFinishedCougar.gif)
+![](https://i.imgur.com/yVN4Lzp.gif)
+
+#### Luckperms Nodes
+
+The editor allows you to add or change aspects about groups and players such as weight and parents using nodes.
+This is all of them, and what they do:
+
+| Function                                                                  | Node                         |
+|---------------------------------------------------------------------------|------------------------------|
+| **To define a user or group's parent, add:**                              | `group.<parentgroup>`        |
+| **To set a group's displayname, add:**                                    | `displayname.<name>`         |
+| **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
+| **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
+| **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
+| **To add meta:**                                                          | `meta.<key>.<value>`         |
 
 ___
 
@@ -61,12 +86,10 @@ ___
 
 Once you've finished making changes to the data, you need to save your changes back to the server.
 
-Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save.
+Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save, and the editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
-![](https://giant.gfycat.com/NegativeIncompleteCougar.gif)
-
-The editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
+![](https://i.imgur.com/pNZgEN0.gif)
 
 When you run the command, a summary of the changes will be shown.
 
-![](https://i.imgur.com/dXbpjQ9.png)
+![](https://i.imgur.com/7nQp5Fn.png)

@@ -137,7 +137,7 @@ However, with shorthand, you can just apply the following node:
 `prisonmines.teleport.{1-4}`
 
 ## Regex
-LuckPerms has support for regex when defining permission nodes and server/world names.
+LuckPerms has support for regex when defining permission nodes.
 
 Whenever regex is used, it MUST be prefixed with "R=", so LuckPerms knows to treat it as regex, and not as a normal string.
 

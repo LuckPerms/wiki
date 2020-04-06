@@ -110,7 +110,7 @@ ___
 ### `storage-method`
 Which storage method the plugin should use.
 
-See [here](https://github.com/lucko/LuckPerms/wiki/Choosing-a-Storage-type) for a full list of supported types.
+See [here](https://github.com/lucko/LuckPerms/wiki/Storage-types) for a full list of supported types.
 
 **Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `hocon`, `mongodb`
 
