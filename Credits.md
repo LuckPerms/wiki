@@ -26,17 +26,20 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **Birkhoff Lee**
 * **bloodmc**
 * **Collin**
+* **DrOreo002**
 * **FreeMonoid**
 * **iLemon**
 * **James Darling**
 * **Khan Jal**
 * **KuNet**
+* **Kxnrl**
 * **Maldred**
 * **Niels**
 * **royalkingkb**
 * **Ruinscraft**
 * **Shmeeb**
 * **Songoda**
+* **Tobi**
 * **VergilPrime**
 * **Yive**
 
