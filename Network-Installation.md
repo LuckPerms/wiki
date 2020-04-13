@@ -1,6 +1,6 @@
 LuckPerms was written from the start with networks of servers in mind. When correctly setup and configured, permissions data will sync between servers and propagate instantly around your network.
 
-When installing LuckPerms across a network, the regular [installation steps](https://github.com/lucko/LuckPerms/wiki/Installation) and [requirements](https://github.com/lucko/LuckPerms/wiki/Installation#requirements) still apply.
+When installing LuckPerms across a network, the regular [installation steps](Installation) and [requirements](Installation#requirements) still apply.
 
 However, there is one additional requirement.
 
@@ -49,25 +49,25 @@ ___
 ## Installing LuckPerms across your network
 Installing LP on a network is fairly easy, however, there are a number of configuration options which need to be changed as you setup each instance.
 
-The more general [Installation](https://github.com/lucko/LuckPerms/wiki/Installation) guide provides details about how to install LuckPerms on a single server instance. This should be followed for each server in your network. (in most cases it's as simple as adding the plugin jar to the plugins/mods folder)
+The more general [Installation](Installation) guide provides details about how to install LuckPerms on a single server instance. This should be followed for each server in your network. (in most cases it's as simple as adding the plugin jar to the plugins/mods folder)
 
 Once LuckPerms has been installed, you need to stop the server, open the main configuration file, and pay particular attention to the following options:
 
-#### [`server`](https://github.com/lucko/LuckPerms/wiki/Configuration#server)
+#### [`server`](Configuration#server)
 
 If you want to set permissions or assign group inheritances on a per server basis within your setup, you'll need to change the value of `server` in your configuration file. (this is conveniently located right at the top of the file! 😄)
 
 This value is used to define a "server" context for all players when they're connected to the instance.
 
-More information about defining server and world specific permissions can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup) and [here](https://github.com/lucko/LuckPerms/wiki/Context).
+More information about defining server and world specific permissions can be found [here](Advanced-Setup) and [here](Context).
 
-#### [`storage-method`](https://github.com/lucko/LuckPerms/wiki/Configuration#storage-method)
+#### [`storage-method`](Configuration#storage-method)
 
 As mentioned at the top of this page, if you want data to sync between instances, then all of your LuckPerms instances need to connect to the same database. 
 
 This means that `storage-method` should be set to 'mysql', 'mariadb', 'postgresql' or 'mongodb'. Remember to fill out your database connection info when you change these options!
 
-#### [`messaging-service`](https://github.com/lucko/LuckPerms/wiki/Configuration#messaging-service)
+#### [`messaging-service`](Configuration#messaging-service)
 
 The "Messaging Service" is a feature within LuckPerms which allows servers to notify other servers within the network whenever changes are made. It also allows log entries to be dispatched across the network.
 

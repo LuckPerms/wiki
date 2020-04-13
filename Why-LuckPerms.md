@@ -35,12 +35,12 @@ It's super easy to use.
 
 [![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
 
-The Web editor is such a powerful tool that it has its own [wiki page](https://github.com/lucko/LuckPerms/wiki/Web-Editor).
+The Web editor is such a powerful tool that it has its own [wiki page](Web-Editor).
 
 ___
 
 ### Verbose
-LuckPerms has a [verbose](https://github.com/lucko/LuckPerms/wiki/Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
+LuckPerms has a [verbose](Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
 [![](https://giant.gfycat.com/ArtisticPleasantAlbacoretuna.gif)](https://gfycat.com/ArtisticPleasantAlbacoretuna)
 
@@ -55,7 +55,7 @@ You can also upload recordings to the web, for easier analysis and reading.
 ___
 
 ### Permission Trees
-LuckPerms allows you [build "permission trees"](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-tree-scope-player) of all permissions known to the server. The data is populated using permissions registered to the server by plugins.
+LuckPerms allows you [build "permission trees"](Command-Usage:-General#lp-tree-scope-player) of all permissions known to the server. The data is populated using permissions registered to the server by plugins.
 
 As the server runs for longer periods, the tree also grows, as permissions checked for by plugins on the server are added.
 
@@ -69,7 +69,7 @@ You can also color the trees, depending on whether a certain player has a permis
 ___
 
 ### Command interface & tab completion
-The command system is super easy to use and understand. As well as the [documentation available here on the wiki](https://github.com/lucko/LuckPerms/wiki/Command-Usage), command usage and listings can also be viewed in-game.
+The command system is super easy to use and understand. As well as the [documentation available here on the wiki](Command-Usage), command usage and listings can also be viewed in-game.
 
 ![](http://i.imgur.com/XIVPP6P.png)
 
