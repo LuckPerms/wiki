@@ -1,4 +1,4 @@
-This is a sub-page of the main **Command Usage** page. [Click here to go back.](Command-Usage)
+This is a sub-page of the main **Command Usage** page. [Click here to go back.](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 
 Key things to remember from the main page:
 

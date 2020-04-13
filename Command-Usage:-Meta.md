@@ -1,4 +1,4 @@
-This is a sub-page of the main **Command Usage** page. [Click here to go back.](Command-Usage)
+This is a sub-page of the main **Command Usage** page. [Click here to go back.](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 
 Key things to remember from the main page:
 
@@ -41,7 +41,7 @@ ___
 **Arguments**:  
 * `<key>` - the key to set
 * `<value>` - the value to set the key to
-* `[context...]` - the [contexts](Context) to set the meta in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the meta in
 
 Sets a meta key value pair for a user/group. These values can be read and modified by other plugins using Vault or the Sponge Permissions API.
 
@@ -50,7 +50,7 @@ ___
 **Permission**: luckperms.user.meta.unset or luckperms.group.meta.unset  
 **Arguments**:  
 * `<key>` - the key to unset
-* `[context...]` - the [contexts](Context) to unset the meta in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to unset the meta in
 
 Unsets a meta key value pair for a user/group.
 
@@ -62,7 +62,7 @@ ___
 * `<value>` - the value to set the key to
 * `<duration>` - the duration until the meta will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](Context) to set the meta in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the meta in
 
 Sets a temporary meta key value pair for a user/group. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
@@ -80,7 +80,7 @@ ___
 **Permission**: luckperms.user.meta.unsettemp or luckperms.group.meta.unsettemp  
 **Arguments**:  
 * `<key>` - the key to unset
-* `[context...]` - the [contexts](Context) to unset the meta in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to unset the meta in
 
 Unsets a temporary meta key value pair for a user/group.
 
@@ -90,7 +90,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to add the prefix at
 * `<prefix>` - the actual prefix string
-* `[context...]` - the [contexts](Context) to add the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the prefix in
 
 Adds a prefix to a user/group. You can wrap the prefix in " " quotes to escape spaces. 
 
@@ -100,7 +100,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to add the suffix at
 * `<suffix>` - the actual suffix string
-* `[context...]` - the [contexts](Context) to add the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the suffix in
 
 Adds a suffix to a user/group. You can wrap the suffix in " " quotes to escape spaces. 
 
@@ -110,7 +110,7 @@ ___
 **Arguments**:  
 * `[priority]` - the priority to set the prefix at
 * `<prefix>` - the actual prefix string
-* `[context...]` - the [contexts](Context) to set the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the prefix in
 
 Sets a prefix for a user/group. You can wrap the prefix in " " quotes to escape spaces. This is different from the `addprefix` command in that existing prefixes set in the same context are removed when the new prefix is added. Another difference is that the priority argument is optional in the setprefix command - LuckPerms will determine an appropriate value for the priority when the command is ran.
 
@@ -120,7 +120,7 @@ ___
 **Arguments**:  
 * `[priority]` - the priority to set the suffix at
 * `<suffix>` - the actual suffix string
-* `[context...]` - the [contexts](Context) to set the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the suffix in
 
 Sets a suffix for a user/group. You can wrap the suffix in " " quotes to escape spaces. This is different from the `addsuffix` command in that existing suffixes set in the same context are removed when the new suffix is added. Another difference is that the priority argument is optional in the setsuffix command - LuckPerms will determine an appropriate value for the priority when the command is ran.
 
@@ -130,7 +130,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
 * `[prefix]` - the actual prefix string
-* `[context...]` - the [contexts](Context) to remove the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the prefix in
 
 Removes a prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
@@ -140,7 +140,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
 * `[suffix]` - the actual suffix string
-* `[context...]` - the [contexts](Context) to remove the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the suffix in
 
 Removes a suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
@@ -152,7 +152,7 @@ ___
 * `<prefix>` - the actual prefix string
 * `<duration>` - the duration until the prefix will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](Context) to add the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the prefix in
 
 Adds a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
@@ -173,7 +173,7 @@ ___
 * `<suffix>` - the actual suffix string
 * `<duration>` - the duration until the suffix will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](Context) to add the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to add the suffix in
 
 Adds a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. Duration should either be a time period, or a unix timestamp when the permission will expire. e.g. "3d13h45m" will set the permission to expire in 3 days, 13 hours and 45 minutes time. "1482694200" will set the permission to expire at 7:30PM on 25th December 2016.  
 LuckPerms uses a format for the relative time similar to the [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) used in java. I.e. `1M` would be one month while `1m` would be one minute.
@@ -194,7 +194,7 @@ ___
 * `<prefix>` - the actual prefix string
 * `<duration>` - the duration until the prefix will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](Context) to set the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the prefix in
 
 Sets a prefix to a user/group temporarily. You can wrap the prefix in " " quotes to escape spaces. This is different from the `addtempprefix` command in that existing prefixes set in the same context are removed when the new prefix is added. Another difference is that the priority argument is optional in the settempprefix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
 
@@ -217,7 +217,7 @@ ___
 * `<suffix>` - the actual suffix string
 * `<duration>` - the duration until the suffix will expire
 * `[temporary modifier]` - how the temporary permission should be applied
-* `[context...]` - the [contexts](Context) to set the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the suffix in
 
 Sets a suffix to a user/group temporarily. You can wrap the suffix in " " quotes to escape spaces. This is different from the `addtempsuffix` command in that existing suffixes set in the same context are removed when the new suffix is added. Another difference is that the priority argument is optional in the settempsuffix command - LuckPerms will dertermine an appropriate value for the priority when the command is ran.
 
@@ -238,7 +238,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the prefix at
 * `[prefix]` - the actual prefix string
-* `[context...]` - the [contexts](Context) to remove the prefix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the prefix in
 
 Removes a tempoary prefix from a user/group. You can wrap the prefix in " " quotes to escape spaces.
 
@@ -248,7 +248,7 @@ ___
 **Arguments**:  
 * `<priority>` - the priority to remove the suffix at
 * `[suffix]` - the actual suffix string
-* `[context...]` - the [contexts](Context) to remove the suffix in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to remove the suffix in
 
 Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
@@ -256,7 +256,7 @@ ___
 #### `/lp user/group <user|group> meta clear [context...]`  
 **Permission**: luckperms.user.meta.clear or luckperms.group.meta.clear  
 **Arguments**:  
-* `[context...]` - the [contexts](Context) to filter by
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
 
 Removes all meta/prefixes/suffixes.
 

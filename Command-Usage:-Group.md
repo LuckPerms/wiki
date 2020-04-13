@@ -1,4 +1,4 @@
-This is a sub-page of the main **Command Usage** page. [Click here to go back.](Command-Usage)
+This is a sub-page of the main **Command Usage** page. [Click here to go back.](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
 
 Key things to remember from the main page:
 
@@ -12,9 +12,9 @@ ___
 
 ### Index
 *  [/lp group \<group\> `info`](#lp-group-group-info)
-*  [/lp group \<group\> `permission`](Command-Usage:-Permission)
-*  [/lp group \<group\> `parent`](Command-Usage:-Parent)
-*  [/lp group \<group\> `meta`](Command-Usage:-Meta)
+*  [/lp group \<group\> `permission`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Permission)
+*  [/lp group \<group\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
+*  [/lp group \<group\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
 *  [/lp group \<group\> `editor`](#lp-group-group-editor)
 *  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers-page)
 *  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight-weight)
@@ -55,7 +55,7 @@ ___
 **Permission**: luckperms.group.setdisplayname  
 **Arguments**:  
 * `<name>` - the name to set
-* `[context...]` - the [contexts](Context) to set the display name in
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the display name in
 
 Sets the groups display name. This can effectively be used as an "alias" for the group.
 
@@ -68,7 +68,7 @@ ___
 #### `/lp group <group> clear [context]`  
 **Permission**: luckperms.group.clear  
 **Arguments**:  
-* `[context...]` - the [contexts](Context) to filter by
+* `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to filter by
 
 Clears the group's permissions, parent groups and meta.
 

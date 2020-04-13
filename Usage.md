@@ -1,4 +1,4 @@
-This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, I suggest you read the page on [Command Usage and Permissions](Command-Usage), as this gives a much more "straight to the point" description of how the plugin works.
+This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, I suggest you read the page on [Command Usage and Permissions](https://github.com/lucko/LuckPerms/wiki/Command-Usage), as this gives a much more "straight to the point" description of how the plugin works.
 
 If you're struggling to understand that, then this guide is a good place to start. :)
 
@@ -26,12 +26,12 @@ A term that you will encounter quite often with LuckPerms is "context".
 
 **Context** in the most basic sense simply means the **circumstances where something will apply**.
 
-Contexts are such a fundamental part of the plugin, they have their [very own wiki page](Context) dedicated to explaining their use.
+Contexts are such a fundamental part of the plugin, they have their [very own wiki page](https://github.com/lucko/LuckPerms/wiki/Context) dedicated to explaining their use.
 
 # Getting Started
-If you haven't got LuckPerms installed just yet, please refer to the [installation guide](Installation) first.
+If you haven't got LuckPerms installed just yet, please refer to the [installation guide](https://github.com/lucko/LuckPerms/wiki/Installation) first.
 
-Then, please make sure you read the section about [choosing a Storage type](Storage-types) before proceeding. Whilst it is possible to change these options later, it's better to get them right the first time around.
+Then, please make sure you read the section about [choosing a Storage type](https://github.com/lucko/LuckPerms/wiki/Storage-types) before proceeding. Whilst it is possible to change these options later, it's better to get them right the first time around.
 
 ## Granting full access to modify permissions
 The first thing you'll want to do is give yourself full access to the plugin. When the LuckPerms is first installed, nobody has access to any of the LP commands.

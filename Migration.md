@@ -5,7 +5,7 @@ It should be noted that this system is not perfect. It will do a pretty decent j
 
 LuckPerms has some similarities with other permission plugins, however, some parts are fundamentally different, and therefore sometimes automatic migration is tricky.
 
-Additionally, letting the plugin migrate all of your data for you means you will not have a chance to learn any of the LuckPerms commands. This may become an issue later on. 😉 If you're migrating from PermissionsEx or GroupManager, you might [find this page useful](GM-&-PEX-Command-Equivalents).
+Additionally, letting the plugin migrate all of your data for you means you will not have a chance to learn any of the LuckPerms commands. This may become an issue later on. 😉 If you're migrating from PermissionsEx or GroupManager, you might [find this page useful](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents).
 
 If you have an old permissions setup, or a setup you're not completely happy with, now might be a great time to have a restructure and cleanup, and a chance to learn LuckPerms commands in the process!
    
@@ -27,10 +27,10 @@ If you have an old permissions setup, or a setup you're not completely happy wit
 ## The process
 The migration process is fairly simple, however it varies slightly for each platform.
 
-1. Firstly, you need to [install LuckPerms](Installation). Don't remove your old permissions plugin yet.
+1. Firstly, you need to [install LuckPerms](https://github.com/lucko/LuckPerms/wiki/Installation). Don't remove your old permissions plugin yet.
 2. Ensure that your old permissions plugin is still enabling properly. The migration process won't work if your old setup is broken.
 3. Start your server - **do not reload** - a full restart is needed when installing LP. 
-4. (optional) If you intend to change your data [storage type](Storage-types), for instance, to mysql, it is easiest to do this now. If you decide to change storage types after the migration, follow the instructions in [Switching Storage Types](Switching-storage-types).
+4. (optional) If you intend to change your data [storage type](https://github.com/lucko/LuckPerms/wiki/Storage-types), for instance, to mysql, it is easiest to do this now. If you decide to change storage types after the migration, follow the instructions in [Switching Storage Types](https://github.com/lucko/LuckPerms/wiki/Switching-storage-types).
 
 Then, open your server console and run the migration command to start the process:
 

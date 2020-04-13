@@ -1,4 +1,4 @@
-This page documents the [`argument-based-command-permissions`](Configuration#argument-based-command-permissions) configuration option.
+This page documents the [`argument-based-command-permissions`](https://github.com/lucko/LuckPerms/wiki/Configuration#argument-based-command-permissions) configuration option.
 
 When this option is enabled, LuckPerms will run extra permission checks when a player tries to modify or view permission data.
 

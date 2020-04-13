@@ -9,7 +9,7 @@ ___
 ### Where to start?
 If you've never used a permissions plugin before, I suggest you start at the top of the **Setup** section and work your way through everything.
 
-The basics are covered in detail in the [Usage](Usage) section. Full command usage is detailed under [Command Usage](Command-Usage).
+The basics are covered in detail in the [Usage](https://github.com/lucko/LuckPerms/wiki/Usage) section. Full command usage is detailed under [Command Usage](https://github.com/lucko/LuckPerms/wiki/Command-Usage).
 
 ___
 
@@ -27,7 +27,7 @@ If you would like support using the plugin, please seek help in the following pl
 
 Please do not be offended if we respond to your question linking back here. It gets *really* boring answering the same questions again and again, when answers are readily available on the wiki. 🙂 
 
-Please take a look through the [Frequently Asked Questions](FAQ) page, and any sections which are relevant to your question before seeking support with us directly.
+Please take a look through the [Frequently Asked Questions](https://github.com/lucko/LuckPerms/wiki/FAQ) page, and any sections which are relevant to your question before seeking support with us directly.
 
 #### 2) :speech_balloon: Discord
 

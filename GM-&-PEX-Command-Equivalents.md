@@ -44,7 +44,7 @@ This page is designed to help users converting from GroupManager or PermissionsE
 |---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | pex                                                                 | lp                                                                                                           |
 | pex reload                                                          | lp sync                                                                                                      |
-| pex toggle debug                                                    | [lp verbose \<option>](Verbose)                                      |
+| pex toggle debug                                                    | [lp verbose \<option>](https://github.com/lucko/LuckPerms/wiki/Verbose)                                      |
 | pex user \<user\> check \<permission\>                              | lp user \<user\> haspermission \<permission\>                                                                |
 | pex backend                                                         | lp info                                                                                                      |
 | pex import \<backend\>                                              | lp export \<file\> / lp import \<file\>                                                                      |
