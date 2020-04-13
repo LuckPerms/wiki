@@ -179,11 +179,15 @@ The arguments which are checked are outlined below.
 
 This is a very common question, and quite simple to set up. All you need to do is add these permissions:
 
+
+### For Sponge and Spigot:
+
 | Permission                                                                        | Value                 |
 |-----------------------------------------------------------------------------------|-----------------------|
 | `luckperms.user.promote`                                                          | true                  |
+| `luckperms.user.promote.*` <--- This in only needed on Sponge                     | false                 |
 | `luckperms.user.promote.modify.others `                                           | true                  |
-| `luckperms.user.promote.<track>.<group they cannot promote to or past>`           | false                 |
-| `luckperms.user.promote.<any track you do not want them to be able to promote on>`| false                 |
+| `luckperms.user.promote.<track>.*`                                                | true                  |
+| `luckperms.user.promote.<track>.<(all\|groups\|they\|cannot\|promote\|to\|or\|past)>`    | false                 |
 
-
+For the final node, you add all groups in the track they cannot promote to or past, separated by a `|` and all contained within (). For example, you could set `luckperms.user.promote.staff.(admin|owner)` to prevent them from promoting to or past admin on the staff track.
