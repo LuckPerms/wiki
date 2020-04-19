@@ -30,11 +30,6 @@
 * [**FAQ**](FAQ)
 * [**Storage system errors**](Storage-system-errors)
 
-### Migration
-* [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
-* [**Migration from other plugins**](Migration)
-* [**Command Equivalents**](GM-&-PEX-Command-Equivalents)
-
 ### Features
 * [**Context**](Context)
 * [**Web Editor**](Web-Editor)
@@ -48,6 +43,11 @@
 * [**Advanced Setup**](Advanced-Setup)
 * [**Default Groups**](Default-Groups)
 * [**Argument based command permissions**](Argument-based-command-permissions)
+
+### Migration
+* [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
+* [**Migration from other plugins**](Migration)
+* [**Command Equivalents**](GM-&-PEX-Command-Equivalents)
 
 ### Developers
 * [**Developer API**](Developer-API)
