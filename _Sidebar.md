@@ -30,11 +30,6 @@
 * [**FAQ**](https://github.com/lucko/LuckPerms/wiki/FAQ)
 * [**Storage system errors**](https://github.com/lucko/LuckPerms/wiki/Storage-system-errors)
 
-### Migration
-* [**Upgrading from v4 to v5**](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5)
-* [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
-* [**Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
-
 ### Features
 * [**Context**](https://github.com/lucko/LuckPerms/wiki/Context)
 * [**Web Editor**](https://github.com/lucko/LuckPerms/wiki/Web-Editor)
@@ -48,6 +43,11 @@
 * [**Advanced Setup**](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup)
 * [**Default Groups**](https://github.com/lucko/LuckPerms/wiki/Default-Groups)
 * [**Argument based command permissions**](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions)
+
+### Migration
+* [**Upgrading from v4 to v5**](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5)
+* [**Migration from other plugins**](https://github.com/lucko/LuckPerms/wiki/Migration)
+* [**Command Equivalents**](https://github.com/lucko/LuckPerms/wiki/GM-&-PEX-Command-Equivalents)
 
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
