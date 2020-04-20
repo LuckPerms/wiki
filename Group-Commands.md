@@ -12,9 +12,9 @@ ___
 
 ### Index
 *  [/lp group \<group\> `info`](#lp-group-group-info)
-*  [/lp group \<group\> `permission`](Command-Usage:-Permission)
-*  [/lp group \<group\> `parent`](Command-Usage:-Parent)
-*  [/lp group \<group\> `meta`](Command-Usage:-Meta)
+*  [/lp group \<group\> `permission`](Permission-Commands)
+*  [/lp group \<group\> `parent`](Parent-Commands)
+*  [/lp group \<group\> `meta`](Meta-Commands)
 *  [/lp group \<group\> `editor`](#lp-group-group-editor)
 *  [/lp group \<group\> `listmembers` [page]](#lp-group-group-listmembers-page)
 *  [/lp group \<group\> `setweight` \<weight\>](#lp-group-group-setweight-weight)

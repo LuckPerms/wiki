@@ -12,9 +12,9 @@ ___
 
 ### Index
 *  [/lp user \<user\> `info`](#lp-user-user-info)
-*  [/lp user \<user\> `permission`](Command-Usage:-Permission)
-*  [/lp user \<user\> `parent`](Command-Usage:-Parent)
-*  [/lp user \<user\> `meta`](Command-Usage:-Meta)
+*  [/lp user \<user\> `permission`](Permission-Commands)
+*  [/lp user \<user\> `parent`](Parent-Commands)
+*  [/lp user \<user\> `meta`](Meta-Commands)
 *  [/lp user \<user\> `editor`](#lp-user-user-editor)
 *  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote-track-context)
 *  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote-track-context)
