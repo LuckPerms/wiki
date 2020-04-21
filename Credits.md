@@ -35,6 +35,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **Kxnrl**
 * **Maldred**
 * **Niels**
+* **PandaSenpai**
 * **royalkingkb**
 * **Ruinscraft**
 * **Shmeeb**
