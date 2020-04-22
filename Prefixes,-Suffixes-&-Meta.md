@@ -88,6 +88,7 @@ Some popular chat formatting plugins which work with Vault include:
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [DeluxeChat](https://www.spigotmc.org/resources/deluxechat.1277/) - you can use either the Vault or LuckPerms placeholders.
 * [ChatControl](https://www.spigotmc.org/resources/10258/) - also supports a bunch of other stuff to help manage the chat.
+* [VentureChat](https://www.spigotmc.org/resources/venturechat.771/) - comprehensive chat manager with bungee support, channels, and moderation features
 
 This is by no means a definitive list. Anything that supports Vault also supports LuckPerms!
 
