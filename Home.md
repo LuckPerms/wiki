@@ -39,13 +39,6 @@ The community Discord Server is a great place to go if you have any unanswered q
 
 There are lots of other people here who can answer any questions!
 
-#### 3) :speech_balloon: IRC
-
-If IRC is your communication platform of choice, you can find us on the following IRC networks.
-
-* **SpigotMC** - `irc.spi.gt` - `#luckperms`
-* **EsperNet** - `irc.esper.net` - `#luckperms`
-
 
 ### I would like to report a bug or an issue
 
