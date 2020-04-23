@@ -5,6 +5,8 @@ The main configuration file for LuckPerms can be found at these locations.
 | Bukkit/Spigot | [`/plugins/LuckPerms/config.yml`](https://github.com/lucko/LuckPerms/blob/master/bukkit/src/main/resources/config.yml)        |
 | BungeeCord    | [`/plugins/LuckPerms/config.yml`](https://github.com/lucko/LuckPerms/blob/master/bungee/src/main/resources/config.yml)        |
 | Sponge        | [`/config/luckperms/luckperms.conf`](https://github.com/lucko/LuckPerms/blob/master/sponge/src/main/resources/luckperms.conf) |
+| Nukkit        | [`/plugins/LuckPerms/config.yml`](https://github.com/lucko/LuckPerms/blob/master/nukkit/src/main/resources/config.yml)        |
+| Velocity      | [`/plugins/LuckPerms/config.yml`](https://github.com/lucko/LuckPerms/blob/master/velocity/src/main/resources/config.yml)      |
 
 Links to the default file for each platform are above. Please note that the configuration does not automatically update when new options are added. The default options are used if nothing is found in the file.
 
