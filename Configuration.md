@@ -44,6 +44,10 @@ Links to the default file for each platform are above. Please note that the conf
 * [`apply-global-groups`](#apply-global-groups)
 * [`apply-global-world-groups`](#apply-global-world-groups)
 
+##### Meta lookup settings
+* [`meta-value-selection-default`](#meta-value-selection-default)
+* [`meta-value-selection`](#meta-value-selection)
+
 ##### Inheritance settings
 * [`apply-wildcards`](#apply-wildcards)
 * [`apply-regex`](#apply-regex)
@@ -397,6 +401,33 @@ Similar to the option above, except this works with worlds. If set to false, onl
 ##### Example
 ```yaml
 apply-global-world-groups: true
+```
+
+___
+### `meta-value-selection-default`
+
+Defines how meta values should be selected. The default value is `inheritance`.
+
+* **`inheritance`** - Selects the meta value that was inherited first
+* **`highest-number`** - Selects the highest numerical meta value
+* **`lowest-number`** - Selects the lowest numerical meta value
+
+##### Example
+```yaml
+meta-value-selection-default: inheritance
+```
+
+___
+### `meta-value-selection`
+
+Defines how meta values should be selected per key.
+
+See the option above for available settings.
+
+##### Example
+```yaml
+meta-value-selection:
+  max-homes: highest-number
 ```
 
 ___
