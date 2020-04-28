@@ -13,6 +13,7 @@ luckperms.debug | [`/lp debug` command](https://github.com/lucko/LuckPerms/wiki/
 luckperms.deletegroup | [`/lp deletegroup` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-deletegroup-name)
 luckperms.deletetrack | [`/lp deletetrack` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-deletetrack-name)
 luckperms.editor | [`/lp editor` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-editor)
+luckperms.applyedits | [`/lp applyedits` command](https://github.com/lucko/LuckPerms/wiki/Web-Editor#saving-your-changes)
 luckperms.export | [`/lp export` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-export-file)
 luckperms.group.clear | [`/lp group <group> clear` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-clear-context)
 luckperms.group.clone | [`/lp group <group> clone` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-clone-new-name)
