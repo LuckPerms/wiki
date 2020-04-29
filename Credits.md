@@ -38,6 +38,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **PandaSenpai**
 * **royalkingkb**
 * **Ruinscraft**
+* **Shirt**
 * **Shmeeb**
 * **Songoda**
 * **Tobi**
