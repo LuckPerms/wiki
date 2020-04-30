@@ -3,13 +3,13 @@ Weights are an integral part of the way LuckPerms operates, and are based on the
 
 - When setting up weights, it is recommended that large gaps weight-wise be left between groups, like going up by 100 instead of 1. This is so that if you want to insert groups later, you do not have to reweigh all groups.
 
-- Weight can be any number, including negative
+- Weight can be any number, including negative.
 
 
 ## Group Weights
 Group weights determine, in cases where a user has more than one group, which group's nodes take precedence when the nodes conflict. This is best explained by an example:
 
- - Suppose a player was in group default and in group "admin". There is one permission node in each group, and it is `essentials.fly`
+ - Suppose a player was in group default and in group "admin". There is one permission node in each group, and it is `essentials.fly`.
 
 - In default group, `essentials.fly` is set to `false`. In "admin" group, `essentials.fly` is set to `true`. Without setting up weights, it is inconsistent and unclear which node the player will get - there is no way to know for sure whether they will be able to fly or not.
 
