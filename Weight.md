@@ -1,6 +1,10 @@
 # Weights
 Weights are an integral part of the way LuckPerms operates, and are based on the premise of resolving conflict where it may appear. There are two different, independent weights systems in LuckPerms, the first being [**Groups**](#group-weights) and the second being [**Meta**](#meta-weights) like prefixes and suffixes. In all cases,  **a higher weight number is a higher priority** 
 
+- When setting up weights, it is recommended that large gaps weight-wise be left between groups, like going up by 100 instead of 1. This is so that if you want to insert groups later, you do not have to reweigh all groups.
+
+- Weight can be any number, including negative
+
 
 ## Group Weights
 Group weights determine, in cases where a user has more than one group, which group's nodes take precedence when the nodes conflict. This is best explained by an example:
