@@ -32,6 +32,6 @@ Meta weights are very similar to group weights, but for prefixes and suffixes. I
 ### Setting Meta Weights
 There are two ways to set a weight for a prefix or suffix; using a [command]([https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#index](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#index)), and using the [editor]([https://github.com/lucko/LuckPerms/wiki/Web-Editor#luckperms-nodes](https://github.com/lucko/LuckPerms/wiki/Web-Editor#luckperms-nodes)).
 
-- With commands, you simply set the weight when you add or set a prefix or suffix to a group or player: `lp user/group <user|group> meta setprefix/addprefix <weight> "Prefix"`. 
+- With commands, you simply set the weight when you add or set a prefix or suffix to a group or player: `/lp user/group <user|group> meta setprefix/addprefix <weight> &b[ThePrefix]`. 
 
-- With the editor, you simply add or modify the node `prefix.<priority>."Prefix"`to change the weight, AKA priority, of a prefix. The same principle applies to suffixes.
+- With the editor, you simply add or modify the node `prefix.<priority>.&b[ThePrefix]` to change the weight, AKA priority, of a prefix. The same principle applies to suffixes.
