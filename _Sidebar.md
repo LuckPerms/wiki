@@ -37,6 +37,7 @@
 
 ### Features
 * [**Context**](https://github.com/lucko/LuckPerms/wiki/Context)
+* [**Weight**](https://github.com/lucko/LuckPerms/wiki/Weight)
 * [**Web Editor**](https://github.com/lucko/LuckPerms/wiki/Web-Editor)
 * [**Verbose**](https://github.com/lucko/LuckPerms/wiki/Verbose)
 * [**Bulk Editing**](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing)
