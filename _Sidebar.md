@@ -53,7 +53,7 @@
 ### Developers
 * [**Developer API**](https://github.com/lucko/LuckPerms/wiki/Developer-API)
   * [Quick start guide](https://github.com/lucko/LuckPerms/wiki/Developer-API#quick-start-guide)
-  * [Usage](https://github.com/lucko/LuckPerms/wiki/https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage)
+  * [Usage](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage)
 
 ### Other
 * [**Locale and Translations**](https://github.com/lucko/LuckPerms/wiki/Locale-and-Translations)
