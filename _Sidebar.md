@@ -5,7 +5,7 @@
 * [**Credits**](https://github.com/lucko/LuckPerms/wiki/Credits)
 
 ### Setup
-* [**Installation**](Installation)
+* [**Installation**](https://github.com/lucko/LuckPerms/wiki/Installation)
   * [Initial Setup](https://github.com/lucko/LuckPerms/wiki/Installation#initial-setup)
   * [Requirements](https://github.com/lucko/LuckPerms/wiki/Installation#requirements)
   * [Compatibility](https://github.com/lucko/LuckPerms/wiki/Installation#compatibility)
