@@ -2,7 +2,7 @@ LuckPerms features a web editor, which allows you to make changes to permissions
 
 It is important to note that after you run the applyedits command, you **must** start a new editor session to continue editing for it to work in all cases. If you are seeing a certain thing deleted every time you apply edits, it's because you did not start a new session after you ran the `applyedits` command!
 
-If you'd like more information about the technical details, see the project's [readme page](https://github.com/lucko/LuckPermsWeb/blob/master/editor/README.md).
+If you'd like more information about the technical details, see the project's [readme page](https://github.com/lucko/LuckPermsWeb/blob/master/README.md).
 
 ___
 
@@ -95,4 +95,3 @@ Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save, and
 When you run the command, a summary of the changes will be shown.
 
 ![](https://i.imgur.com/7nQp5Fn.png)
-
