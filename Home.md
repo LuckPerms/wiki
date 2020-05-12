@@ -13,11 +13,11 @@ The basics are covered in detail in the [Usage](https://github.com/lucko/LuckPer
 
 ___
 
-### Support
+## Support
 
 Free support for the project is offered by me (Luck) and other members of the community.
 
-### I would like help using / setting up / configuring the plugin
+## I would like help using / setting up / configuring the plugin
 
 If you would like support using the plugin, please seek help in the following places. (in order of preference)
 
@@ -40,7 +40,7 @@ The community Discord Server is a great place to go if you have any unanswered q
 There are lots of other people here who can answer any questions!
 
 
-### I would like to report a bug or an issue
+## I would like to report a bug or an issue
 
 Before reporting a bug or issue, please make sure that the issue is actually being caused by or related to LuckPerms. We get a lot of reports which are caused by other software - please double check!
 
