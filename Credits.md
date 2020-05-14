@@ -29,6 +29,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * **DrOreo002**
 * **FreeMonoid**
 * **iLemon**
+* **imaxorz**
 * **James Darling**
 * **Khan Jal**
 * **KuNet**
