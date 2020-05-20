@@ -1,4 +1,4 @@
-This page shows some sample usages of the LuckPerms API, which is introduced [here](https://github.com/lucko/LuckPerms/wiki/Developer-API).
+This page shows some sample usages of the LuckPerms API, which is introduced [here](Developer-API).
 
 ___
 
@@ -15,7 +15,7 @@ ___
   * [Saving changes](#saving-changes)
 * [The basics of Node](#the-basics-of-node)
   * [Creating new node instances](#creating-new-node-instances)
-  * [Modifying existing nodes](https://github.com/lucko/LuckPerms/wiki/Developer-API:-Usage#modifying-existing-nodes)
+  * [Modifying existing nodes](Developer-API-Usage#modifying-existing-nodes)
 * [Reading user/group data](#reading-usergroup-data)
 * [Modifying user/group data](#modifying-usergroup-data)
 * [The basics of Context](#the-basics-of-context)
@@ -111,7 +111,7 @@ public void giveAdminPermissions(UUID uniqueId) {...}
 
 The first thing we need to do is obtain the `UserManager`. This object is responsible for handling all operations relating to `User`s. The user manager provides a method which lets us load a `User` instance, appropriately named `loadUser`.
 
-The method returns a `CompletableFuture` (explained [here](https://github.com/lucko/LuckPerms/wiki/Developer-API#using-completablefutures)).
+The method returns a `CompletableFuture` (explained [here](Developer-API#using-completablefutures)).
 
 We can simply attach a callback onto the future to apply the action.
 
@@ -419,7 +419,7 @@ ___
 
 ### The basics of Context
 
-Contexts are an important concept in LuckPerms, and are introduced [here](https://github.com/lucko/LuckPerms/wiki/Context). They are encapsulated within the API by a few important classes.
+Contexts are an important concept in LuckPerms, and are introduced [here](Context). They are encapsulated within the API by a few important classes.
 
 A very basic overview is that:
 

@@ -34,7 +34,7 @@ Most MC shared hosting companies have updated by now, but if your provider still
 
 ---
 ### Internet Connection
-LuckPerms uses a number of [external libraries](https://github.com/lucko/LuckPerms/wiki/External-connections), some of which are [downloaded automatically at runtime](https://github.com/lucko/LuckPerms/wiki/External-connections#downloading-libraries).
+LuckPerms uses a number of [external libraries](External-connections), some of which are [downloaded automatically at runtime](External-connections#downloading-libraries).
 
 If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/lib/` directory to your other server.
 

@@ -1,4 +1,4 @@
-This is a sub-page of the main **Command Usage** page. [Click here to go back.](https://github.com/lucko/LuckPerms/wiki/Command-Usage)
+This is a sub-page of the main **Command Usage** page. [Click here to go back.](Command-Usage)
 
 Key things to remember from the main page:
 
@@ -81,7 +81,7 @@ Filters match the start of permissions or the user being checked. You can use `&
 * `!Luck & !anticheat` - matches any checks not against my user and not starting with "anticheat"
 * `anticheat & !anticheat.check` - matches any checks starting with "anticheat" but not starting with "anticheat.check"    
      
-More information can be found [**here**](https://github.com/lucko/LuckPerms/wiki/Verbose)
+More information can be found [**here**](Verbose)
 
 ___
 #### `/lp tree [scope] [player]`  
@@ -149,7 +149,7 @@ ___
 * `[action value]` - the value to replace with. only required for update actions
 * `[constraints]` - the constraints required for the update
 
-Allows you to perform a bulk modification to all permission data. A detailed guide on how to use this command can be found [here](https://github.com/lucko/LuckPerms/wiki/Bulk-Editing).
+Allows you to perform a bulk modification to all permission data. A detailed guide on how to use this command can be found [here](Bulk-Editing).
 
 ___
 #### `/lp migration <plugin name> [options]`  
@@ -158,7 +158,7 @@ ___
 * `<plugin name>` - the plugin to migrate data from
 * `[options]` - the options required for certain plugin migrations
 
-Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Migration).
+Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](Migration).
 
 ___
 #### `/lp creategroup <name>`  

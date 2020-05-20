@@ -40,12 +40,12 @@ ___
 
 ___
 ### `%luckperms_prefix_element_<element>%`
-**Description:** Returns the value of the prefix element for the player. Valid elements are listed [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
+**Description:** Returns the value of the prefix element for the player. Valid elements are listed [here](Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
 **Example:** %luckperms_prefix_element_highest_on_track_staff%
 
 ___
 ### `%luckperms_suffix_element_<element>%`
-**Description:** Returns the value of the suffix element for the player. Valid elements are listed [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
+**Description:** Returns the value of the suffix element for the player. Valid elements are listed [here](Prefix-&-Suffix-Stacking#how-do-i-add-other-elements).    
 **Example:** %luckperms_suffix_element_highest_on_track_staff%
 
 ___

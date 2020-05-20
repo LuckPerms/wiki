@@ -93,7 +93,7 @@ Links to the default file for each platform are above. Please note that the conf
 ### `server`
 The name of the server, used for server specific permissions.   
 
-If set to "global" this setting is ignored. More details about how server specific permissions are groups work can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup).
+If set to "global" this setting is ignored. More details about how server specific permissions are groups work can be found [here](Advanced-Setup).
 
 ##### Example
 ```yaml
@@ -116,7 +116,7 @@ ___
 ### `storage-method`
 Which storage method the plugin should use.
 
-See [here](https://github.com/lucko/LuckPerms/wiki/Storage-types) for a full list of supported types.
+See [here](Storage-types) for a full list of supported types.
 
 **Accepts:** `mysql`, `mariadb`, `postgresql`, `sqlite`, `h2`, `json`, `yaml`, `hocon`, `mongodb`
 
@@ -313,7 +313,7 @@ ___
 
 If LuckPerms should run extra permission checks when a player uses commands to modify permission data.
 
-This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Argument-based-command-permissions).
+This system is documented in detail [here](Argument-based-command-permissions).
 
 ##### Example
 ```yaml
@@ -337,7 +337,7 @@ ___
 
 How LuckPerms should form prefixes and suffixes.
 
-This system is documented in detail [here](https://github.com/lucko/LuckPerms/wiki/Prefix-&-Suffix-Stacking).
+This system is documented in detail [here](Prefix-&-Suffix-Stacking).
 
 ___
 ### `inheritance-traversal-algorithm`
@@ -357,7 +357,7 @@ ___
 ### `include-global`
 If players on this server should have their global permissions applied. (permissions that were not set with a specific server).
 
-If this option is set to false, only permissions that were specifically set to apply on this server will apply. Do not set to false if the "server" option above is set to global. More details about how server specific permissions are groups work can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup).
+If this option is set to false, only permissions that were specifically set to apply on this server will apply. Do not set to false if the "server" option above is set to global. More details about how server specific permissions are groups work can be found [here](Advanced-Setup).
 
 ##### Example
 ```yaml
@@ -447,7 +447,7 @@ ___
 ### `apply-regex`
 If the plugin should parse regex permissions.
 
-If set to true, LuckPerms will detect any regex permissions, marked with "r=" at the start of the node, and return all requests matching the node. If you do not have any regex permissions setup, enabling this option will have no impact on performance. More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#regex).
+If set to true, LuckPerms will detect any regex permissions, marked with "r=" at the start of the node, and return all requests matching the node. If you do not have any regex permissions setup, enabling this option will have no impact on performance. More info on this feature can be found [here](Advanced-Setup#regex).
 
 ##### Example
 ```yaml
@@ -458,7 +458,7 @@ ___
 ### `apply-shorthand`
 If the plugin should resolve and apply any shorthand (GLOB style) permissions.
 
-More info on this feature can be found [here](https://github.com/lucko/LuckPerms/wiki/Advanced-Setup#shorthand-permissions).
+More info on this feature can be found [here](Advanced-Setup#shorthand-permissions).
 
 ##### Example
 ```yaml
@@ -700,7 +700,7 @@ ___
 The `contexts.json` file is found alongside the main LuckPerms configuration file, and allows you to set two things.
 
 ### Static Contexts
-Static contexts are [contexts](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context) which never change, and are granted to all players on the server by default.
+Static contexts are [contexts](Command-Usage#what-is-context) which never change, and are granted to all players on the server by default.
 
 LuckPerms provides one static context by default, called "server". This value is set using the `server` option in the main configuration file.
 
@@ -719,7 +719,7 @@ Then, I can use `/lp group default permission set some.permission true servertyp
 
 
 ### Default Contexts
-Default contexts are [contexts](https://github.com/lucko/LuckPerms/wiki/Command-Usage#what-is-context) which are used by default in all commands executed on the server, if nothing is specifically specified.
+Default contexts are [contexts](Command-Usage#what-is-context) which are used by default in all commands executed on the server, if nothing is specifically specified.
 
 ```json
 {
