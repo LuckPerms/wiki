@@ -13,11 +13,11 @@ The basics are covered in detail in the [Usage](Usage) section. Full command usa
 
 ___
 
-### Support
+## Support
 
 Free support for the project is offered by me (Luck) and other members of the community.
 
-### I would like help using / setting up / configuring the plugin
+## I would like help using / setting up / configuring the plugin
 
 If you would like support using the plugin, please seek help in the following places. (in order of preference)
 
@@ -39,15 +39,8 @@ The community Discord Server is a great place to go if you have any unanswered q
 
 There are lots of other people here who can answer any questions!
 
-#### 3) :speech_balloon: IRC
 
-If IRC is your communication platform of choice, you can find us on the following IRC networks.
-
-* **SpigotMC** - `irc.spi.gt` - `#luckperms`
-* **EsperNet** - `irc.esper.net` - `#luckperms`
-
-
-### I would like to report a bug or an issue
+## I would like to report a bug or an issue
 
 Before reporting a bug or issue, please make sure that the issue is actually being caused by or related to LuckPerms. We get a lot of reports which are caused by other software - please double check!
 

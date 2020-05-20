@@ -42,7 +42,7 @@ After changing these settings, you need to fully restart the Spigot/Sponge serve
 You should also take steps to ensure that your network is correctly firewalled, to ensure malicious users cannot spoof connections to your backend servers. A guide on how to do this is provided [here](https://www.spigotmc.org/wiki/firewall-guide/) by SpigotMC.
 
 ### LilyPad
-As per the [LilyPad setup guide](http://www.lilypadmc.org/threads/connecting-your-bukkit-servers.13/), you should ensure that the `LilyPad-Connect` plugin is installed and correctly configured on your backend server.
+If you're using LilyPad: as per the [LilyPad setup guide](http://www.lilypadmc.org/threads/connecting-your-bukkit-servers.13/), you should ensure that the `LilyPad-Connect` plugin is installed and correctly configured on your backend server.
 
 ___
 

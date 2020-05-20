@@ -83,3 +83,9 @@ For example, to add a default context to the file, simply add, below the static-
 ```
 
 This would mean that, for `/lp` commands on the server which you've added the default context, any commands that can be performed with a context will use `world=world_nether,server=survival` unless you specify otherwise.
+
+### ExtraContexts
+
+ExtraContexts is another plugin which adds functionality for more contexts that stock LuckPerms does not, such as WorldGuard contexts, gamemode contexts, PlaceholderAPI contexts, and more! 
+
+See [here](https://github.com/LuckPerms/ExtraContexts) for more information.

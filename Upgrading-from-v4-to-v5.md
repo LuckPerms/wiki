@@ -11,8 +11,6 @@ ___
 ### Before updating...
 **Please please please make backups of your data.**
 
-It should be fairly stable, but this release (at the moment) has received significantly less testing than previous releases.
-
 ### API compatibility
 
 If you have any plugins which use the previous version of the LuckPerms API, these plugins will likely stop working after the update.
