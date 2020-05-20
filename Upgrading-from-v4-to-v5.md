@@ -30,4 +30,4 @@ You have two options for fixing this:
 
 ### Other
 
-If you previously made use of "default assignments" (last section in the config file), you'll need to [install the `extension-default-assignments` extension](https://github.com/lucko/LuckPerms/wiki/Extensions), and consider migrating away from the feature.
+If you previously made use of "default assignments" (last section in the config file), you'll need to [install the `extension-default-assignments` extension](Extensions), and consider migrating away from the feature.
