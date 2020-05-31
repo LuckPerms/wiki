@@ -17,7 +17,7 @@ In order to achieve this behaviour, I'd use something like: `/lp user Luck permi
 
 There are two ways to set contexts on permissions; the command you use to set the permission, or the web editor. 
 
-* With the command, you simply do as the above example demonstrates. At the end of the command, you add `<key>=<value>` which can be `world=nether`, `server=lobby`, or any other context you can use and its value. A full command would look like `lp user Luck permission set miecraft.command.gamemode true server=lobby world=nether`.
+* With the command, you simply do as the above example demonstrates. At the end of the command, you add `<key>=<value>` which can be `world=nether`, `server=lobby`, or any other context you can use and its value. A full command would look like `lp user Luck permission set minecraft.command.gamemode true server=lobby world=nether`.
 
 * With the editor, you click on `Add Context`, and simply fill in key and value. Just like the command, `key` will be the type of context, and `value` will be its value. An example:
 
