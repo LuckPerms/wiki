@@ -13,6 +13,15 @@ In this case, the context **key** is `"world"`, and the **value** is `"world_net
 
 In order to achieve this behaviour, I'd use something like: `/lp user Luck permission set test.permission world=world_nether` - specifying the context at the end of the command.
 
+### Setting Contexts
+
+There are two ways to set contexts on permissions; the command you use to set the permission, or the web editor. 
+
+* With the command, you simply do as the above example demonstrates. At the end of the command, you add `<key>=<value>` which can be `world=nether`, `server=lobby`, or any other context you can use and its value. A full command would look like `lp user Luck permission set miecraft.command.gamemode true server=lobby world=nether`.
+
+* With the editor, you click on `Add Context`, and simply fill in key and value. Just like the command, `key` will be the type of context, and `value` will be its value. an example:
+
+![](https://i.imgur.com/Assh7sG.gifv)
 ___
 
 Contexts can be combined with each other to form so called "context sets" - simply a collection of context pairs.
@@ -24,14 +33,14 @@ Players that are currently offline won't have any context set. You can see this 
 
 * **Each permission, parent/group, prefix/suffix/meta setting** also has it's own context set - indicating the contexts a player must have for the respective permission/parent/meta value to apply.
 
-Crucially, for a permission/parent/meta value to apply, the player must satisfy **all** of the contexts required by the value. (when I say satisfy, I mean their current context set must contain all of the contexts required by the value - or mathematically, the players context set must be a subset of the value's context set)
+Crucially, for a permission/parent/meta value to apply, the player must satisfy **one of each type** of the contexts required by the value. If you set three world contexts (world, world_nether, and world_the_end) and one server context (survival), then the permission will apply in any of the three worlds on that one server. If you set only three server contexts, the permission will apply in any of the three servers. This makes it very useful if you want permissions to apply in a number of places, and yet not apply in a number of other places, as it means you do not have to create several duplicate nodes and set one context on each of them.
 
 ___
 
 ### Contexts provided by LuckPerms
 The context system is designed to be extensible - the system should not (and is not!) confined to only a few types of contexts.
 
-With that said, LuckPerms provides by default, two contexts of it's own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
+With that said, LuckPerms provides by default, three contexts of its own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
 
 | Context Key | Description | Example |
 |-------------|-------------|---------|
