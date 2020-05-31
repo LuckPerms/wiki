@@ -7,7 +7,7 @@ The verbose system allows you to monitor permission checks occurring in real tim
 ## How to use it
 The command usage is as follows:
 
-### `/lp verbose <on|record|off|upload> [filter]`
+### `/lp verbose <on/record|off/upload> [filter]`
 The first argument enables/disables the system, and the second sets up the filter.
 
 | Option   | Description |
@@ -16,6 +16,9 @@ The first argument enables/disables the system, and the second sets up the filte
 | `record` | Same as "on", however you will not be notified via chat. |
 | `off`    | Just disables the system, and clears any matches from memory. |
 | `upload`  | Same as "off", but will upload the results to the web viewer for easier analysis, and provide you with a link. |
+
+##### Server Lag when verbose is turned on?
+If your server lags when you run `/lp verbose on`, it is likely because there are many permission checks being sent every second and the server can't handle it. In this case, as in many cases, it is best to run `lp verbose record`. The `record` command will send the permission checks to the web-based verbose viewer, and will stop the lag. To finish recording permission checks to the web viewer, simply run `lp verbose upload` and you will be given a link to your web viewer!
 
 #### Filters
 The filter is an expression used to match permission entries, and ignore entries you don't need. It could just be a player name, or much more advanced.
@@ -30,9 +33,11 @@ A filter string will match the start of the permission being checked, or the use
 ## Web viewer
 The web viewer exposes the same information available in-game, but is easier to analyse when there are lots of checks being processed.
 
-You can simply click on an entry to see more information about the nature of the check.
+![](https://i.imgur.com/WT4Bql6.png)
 
-![](https://i.imgur.com/lhL6uaO.png)
+You can simply click on an entry to see more information about the nature of the check:
+
+![](https://i.imgur.com/wNfgUIm.png)
 
 
 
