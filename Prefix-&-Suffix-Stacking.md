@@ -12,12 +12,14 @@ meta-formatting:
   prefix:
     format:
       - "highest"
+    duplicates: first-only
     start-spacer: ""
     middle-spacer: " "
     end-spacer: ""
   suffix:
     format:
       - "highest"
+    duplicates: first-only
     start-spacer: ""
     middle-spacer: " "
     end-spacer: ""
@@ -62,6 +64,7 @@ prefix:
     - "highest_on_track_prison"
     - "highest_on_track_donor"
     - "highest_on_track_staff"
+  duplicates: first-only
   start-spacer: ""
   middle-spacer: " "
   end-spacer: ""
@@ -77,6 +80,7 @@ The start, middle and end spacers allow you to control how each element is separ
       - "highest_on_track_prison"
       - "highest_on_track_donor"
       - "highest_on_track_staff"
+    duplicates: first-only
     start-spacer: "★ "
     middle-spacer: " | "
     end-spacer: " "
