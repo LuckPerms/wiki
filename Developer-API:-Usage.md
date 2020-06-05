@@ -1,5 +1,6 @@
 This page shows some sample usages of the LuckPerms API, which is introduced [here](https://github.com/lucko/LuckPerms/wiki/Developer-API).
 
+More samples can be found on the [api-cookbook](https://github.com/LuckPerms/api-cookbook).
 ___
 
 ### Index
