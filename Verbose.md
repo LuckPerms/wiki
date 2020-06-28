@@ -27,7 +27,7 @@ The `/lp verbose command` command allows you to check the permissions of a speci
 
 This sequence of rapid events will result in the permissions that were checked appearing in chat, without the usual spam. This is especially useful if you need to find permissions for a command that is not well documented.
 
-This command will sudo the user, effectively forcing them to run the command as themselves. As a result, there are additional permissions required to use this functionality. You can find them (on the permissions page)[https://github.com/lucko/LuckPerms/wiki/Permissions]. While they are included under the `luckperms.*` wildcard permission, they are not included in the regular verbose permission.
+This command will sudo the user, effectively forcing them to run the command as themselves. As a result, there are additional permissions required to use this functionality. You can find them [on the permissions page](https://github.com/lucko/LuckPerms/wiki/Permissions). While they are included under the `luckperms.*` wildcard permission, they are not included in the regular verbose permission.
 
 ##### Client lags when verbose is turned on?
 If your client lags when you run `/lp verbose on`, it is likely because there are too many permission checks being processed and the client can't handle that many messages. It is often best to run `lp verbose record` instead. The `record` command will send the permission checks to the web-based verbose viewer, instead of to your client as a chat message. To finish recording permission checks and open the web viewer, simply run `lp verbose upload`.
