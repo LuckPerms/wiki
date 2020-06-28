@@ -19,7 +19,7 @@ The first argument enables/disables the system, and the second sets up the filte
 
 ### `/lp verbose command <name> <command>` functionality:
 
-The `/lp verbose command` command allows you to check the permissions of a specific command in-game without and chat-spam or web viewer. To use it, you simply run `/lp verbose command <name> <command>` and LuckPerms will run a couple of steps very quickly.
+The `/lp verbose command` command allows you to check the permissions of a specific command in-game without any chat-spam or web viewer. To use it, you simply run `/lp verbose command <name> <command>` and LuckPerms will run a couple of steps very quickly.
 
 1. It will turn on verbose for the user in question, using the filter for that user.
 2. It will force them to run the command you specify.
