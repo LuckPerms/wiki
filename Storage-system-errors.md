@@ -135,6 +135,17 @@ If your MySQL server is provided by a hosting company, you need to ask them to r
 
 ___
 
+### MySQL failed to set port
+
+Errors similar to:
+
+> Failed to set property port on target class me.lucko.luckperms.lib.mysql.jdbc.jdbc2.optional.MysqlDataSource
+java.lang.NumberFormatException: For input string: xxxx
+
+Your `address` setting in the LuckPerms configuration is unable to set the port, likely due to a mistyped or misformatted address and port. If the port is 3306, as it is by default, there is no need to set the port at all. The correct format for the `address` line is `"address:port"`.
+
+___
+
 ### LuckPerms cannot connect to my Redis server
 Check that the following is correct:
 
