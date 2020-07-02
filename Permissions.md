@@ -126,3 +126,4 @@ luckperms.user.permission.unsettemp | [`/lp user <user> permission unsettemp` co
 luckperms.user.promote | [`/lp user <user> promote` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-promote-track-context)
 luckperms.user.showtracks | [`/lp user <user> showtracks` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-User#lp-user-user-showtracks)
 luckperms.verbose | [`/lp verbose` command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-verbose-onrecordoffupload-filter)
+luckperms.verbose.commandother | [`/lp verbose command <name> command`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-verbose-onrecordoffupload-filter)
