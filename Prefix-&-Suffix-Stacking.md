@@ -12,12 +12,14 @@ meta-formatting:
   prefix:
     format:
       - "highest"
+    duplicates: first-only
     start-spacer: ""
     middle-spacer: " "
     end-spacer: ""
   suffix:
     format:
       - "highest"
+    duplicates: first-only
     start-spacer: ""
     middle-spacer: " "
     end-spacer: ""
@@ -45,6 +47,14 @@ The following elements are allowed.
 | `highest_not_from_group_<group>` | Selects the value with the highest weight, but only if the value was not inherited from the given group. |
 | `lowest_not_from_group_<group>` | Same as above, except takes the value with the lowest weight. |
 
+### Duplicate Settings
+| Element | Description |
+|---------|-------------|
+| `first-only` | Allows only the first duplicate |
+| `last-only` | Allows only the last duplicate |
+| `retain-all` | Allows all duplicates |
+| `none` | Allows no duplicates |
+
 ### An example
 For example, on a prison server, you might have 3 types of group. The "gameplay" rank, a user's donor group, and staff groups.
 
@@ -62,6 +72,7 @@ prefix:
     - "highest_on_track_prison"
     - "highest_on_track_donor"
     - "highest_on_track_staff"
+  duplicates: first-only
   start-spacer: ""
   middle-spacer: " "
   end-spacer: ""
@@ -77,6 +88,7 @@ The start, middle and end spacers allow you to control how each element is separ
       - "highest_on_track_prison"
       - "highest_on_track_donor"
       - "highest_on_track_staff"
+    duplicates: first-only
     start-spacer: "★ "
     middle-spacer: " | "
     end-spacer: " "
