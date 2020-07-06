@@ -135,6 +135,31 @@ If your MySQL server is provided by a hosting company, you need to ask them to r
 
 ___
 
+### MySQL Public Key Retrieval is not allowed
+
+Errors similar to:
+
+> Caused by: me.lucko.luckperms.lib.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Public Key Retrieval is not allowed
+
+This is a MySQL error that is certainly possible to correct.
+
+You can do this by editing the connection properties in the LuckPerms config file. Under the "Storage" section, locate:
+
+```yaml
+data:
+  pool-settings:
+    # This setting allows you to define extra properties for connections.
+    properties:
+      useUnicode: true
+      characterEncoding: utf8
+      useSSL: false
+      verifyServerCertificate: false
+      allowPublicKeyRetrieval: true
+```
+and add last option, `allowPublicKeyRetrieval`, set to true.
+
+___
+
 ### MySQL failed to set port
 
 Errors similar to:
