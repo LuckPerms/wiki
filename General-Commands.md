@@ -119,18 +119,22 @@ ___
 Refreshes all cached data with the storage provider, and then uses the plugins Messaging Service (if configured) to "ping" all other connected servers and request that they sync too.
 
 ___
-#### `/lp import <file>`  
+#### `/lp import <file|code --upload> [--merge]`  
 **Permission**: luckperms.import  
 **Arguments**:  
 * `<file>` - the file to import from
+* `<code> --upload` - the code to web-import from
+* `[--merge]` - if included, will merge the import with existing permissions. If not, will overwrite.
+
 
 Imports data into LuckPerms from a file. The file must be a list of commands, starting with "/luckperms". This file can be generated using the export command. The file is expected to be in the plugin directory.
 
 ___
-#### `/lp export <file>`  
+#### `/lp export <file> [--upload]`  
 **Permission**: luckperms.export  
 **Arguments**:  
 * `<file>` - the file to export to
+* `[--upload]` - if added, will export to the web and provide a code for web-based imports.
 
 Exports data from LuckPerms into a file. This file can either be used as a backup, or used to move data between LuckPerms installations. The file can be re-imported using the import command. The generated file will be in the plugin directory.
 
