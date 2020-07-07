@@ -21,8 +21,8 @@ ___
 *  [/lp `search` \<permission\>](#lp-search-permission)
 *  [/lp `check` \<user\> \<permission\>](#lp-check-user-permission)
 *  [/lp `networksync`](#lp-networksync)
-*  [/lp `import` \<file | code --upload\> [--merge]](#lp-import-filecode-upload-merge)
-*  [/lp `export` \<file\> [--upload]](#lp-export-file-upload)
+*  [/lp `import` \<file | code --upload\> [--merge]](#lp-import-filecode---upload---merge)
+*  [/lp `export` \<file\> [--upload]](#lp-export-file--upload)
 *  [/lp `reloadconfig`](#lp-reloadconfig)
 *  [/lp `bulkupdate`](#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
 *  [/lp `migration`](#lp-migration-plugin-name-options)
@@ -127,14 +127,14 @@ ___
 * `[--merge]` - if included, will merge the import with existing permissions. If not, will overwrite.
 
 
-Imports data into LuckPerms from a file or from the web. If a file, it must be a JSON GZIP type file, exported from Luckperms v5. If from the web, the code must be generated when exporting with the `--upload` flag. The file is expected to be in the plugin directory.
+Imports data into LuckPerms from a file or from the web. If a file, it must be a JSON GZIP type file, exported from Luckperms v5. If from the web, the code must be generated when exporting with the `--upload` flag. The file is expected to be in the plugin directory. When importing a file, the extension `.json.gz` should be included in the name of the import file. When importing a file or web-export, the `--merge` flag may be added to the end of the command to merge the import with the existing permissions setup. If the `--merge` flag is not included, the existing permissions setup will be overriden and replaced.
 
 ___
-#### `/lp export <file> [--upload]`  
+#### `/lp export <file|--upload>`  
 **Permission**: luckperms.export  
 **Arguments**:  
 * `<file>` - the file to export to
-* `[--upload]` - if added, will export to the web and provide a code for web-based imports.
+* `<--upload>` - if added, will export to the web and provide a code for web-based imports.
 
 Exports data from LuckPerms into a file or into web-based datastorage. This file can either be used as a backup, or used to move data between LuckPerms installations. The web-based export will expire and should not be used as a backup. The file and the web-based export can be re-imported using the import command. The generated file will be in the plugin directory.
 
