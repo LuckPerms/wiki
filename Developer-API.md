@@ -66,11 +66,9 @@ repositories {
 }
 
 dependencies {
-    compile 'net.luckperms:api:5.0'
+    compileOnly 'net.luckperms:api:5.0'
 }
 ```
-
-> Note: `compile` can be optionally replaced by either `api` or `implementation` on newer Gradle versions to distinguish whether dependant projects should transitively pick up the LuckPerms API dependency.
 
 #### Manual
 
