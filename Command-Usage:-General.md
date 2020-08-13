@@ -135,6 +135,7 @@ ___
 **Arguments**:  
 * `<file>` - the file to export to
 * `<--upload>` - if added, will export to the web and provide a code for web-based imports.
+* `<--without-users>` - if added, will export only all the group data. The export will not include any user data.
 
 Exports data from LuckPerms into a file or into web-based datastorage. This file can either be used as a backup, or used to move data between LuckPerms installations. The web-based export will expire and should not be used as a backup. The file and the web-based export can be re-imported using the import command. The generated file will be in the plugin directory.
 
