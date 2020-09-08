@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.luckperms:api:5.0'
+    compileOnly 'net.luckperms:api:5.1'
 }
 ```
 
