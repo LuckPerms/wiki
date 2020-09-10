@@ -106,7 +106,8 @@ primary-group: default
 permissions:
 - test.permission:
     value: true
-    server: factions
+    context:
+      server: factions
 - negated.permission.example:
     value: false
 - special.test.perm
@@ -129,34 +130,40 @@ meta:
   "primaryGroup": "default",
   "permissions": [
     {
-      "test.permission": {
-        "value": true,
+      "permission": "test.permission",
+      "value": true,
+      "context": {
         "server": "factions"
       }
     },
     {
-      "negated.permission.example": {
-        "value": false
-      }
+      "permission": "negated.permission.example",
+      "value": false
     },
-    "special.test.perm",
-    "special.test.permission"
+    {
+      "permission": "special.test.perm",
+      "value": true
+    },
+    {
+      "permission": "special.test.permission",
+      "value": true
+    }
   ],
   "parents": [
-    "default"
+    {
+      "group": "default"
+    }
   ],
   "prefixes": [
     {
-      "&c[Admin] ": {
-        "priority": 10
-      }
+      "prefix": "&c[Admin] ",
+      "priority": 10
     }
   ],
   "meta": [
     {
-      "homes": {
-        "value": "10"
-      }
+      "key": "homes",
+      "value": "10"
     }
   ]
 }
@@ -165,39 +172,45 @@ meta:
 ##### Example HOCON file
 ```conf
 uuid=c1d60c50-70b5-4722-8057-87767557e50d
-name="Luck"
+name=Luck
 primary-group=default
 permissions=[
-  {
-    "test.permission" {
-      server=factions
-      value=true
+    {
+        permission="test.permission"
+        value=true
+        context {
+            server=factions
+        }
+    },
+    {
+        permission="negated.permission.example"
+        value=false
+    },
+    {
+        permission="special.test.perm"
+        value=true
+    },
+    {
+        permission="special.test.permission"
+        value=true
     }
-  },
-  {
-    "negated.permission.example" {
-      value=false
-    }
-  },
-  "special.test.perm",
-  "special.test.permission"
 ]
 parents=[
-  default
+    {
+        group=default
+    }
 ]
 prefixes=[
-  {
-    "&c[Admin] " {
-      priority=10
+    {
+        prefix="&c[Admin] "
+        priority=10
     }
-  }
 ]
 meta=[
-  {
-    homes {
-      value="10"
+    {
+        key=homes
+        value="10"
     }
-  }
 ]
 ```
 
