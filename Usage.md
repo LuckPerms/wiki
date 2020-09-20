@@ -11,6 +11,11 @@ A **permission is just a string** (a sequence of letters/digits), and is separat
 
 The string that represents a certain permission is also sometimes called a "permission node" or just "node" for short.
 
+Permission nodes can have **three values**: `true`, `false`, and `undefined`.
+- `true` means that the player *has that permission* and the condition(s) assigned to it will be given to the player.
+- `false` means that the player *does not have that permission* and the condition(s) assigned to it will be *denied* to the player.
+- `undefined` means that the permission is *not explicitly set* in LuckPerms. This **usually** means that it defaults to being the same as `false`. Very rarely, plugins can make `undefined` permissions default to `true`, in which case you need to **set them explicitly to `false`**. 
+
 ### Group
 Instead of assigning permissions to every user individually, we have **groups of permissions**, which can then be **assigned to a user** as a whole.
 
