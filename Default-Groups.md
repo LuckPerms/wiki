@@ -45,7 +45,7 @@ This option would mean that all users are still in the "default" group. However,
 ## Configure default assignments
 If you have more specific needs, then you can use this option. However, be aware that it will negate the storage space optimisations discussed in the first section of this page. All users will be explicitly saved, whether they are a "regular" user or not.
 
-**Note:** This feature was removed in v5 of LuckPerms, if you still need it, see [this page](Upgrading-from-v4-to-v5#other). As this has been removed from all modern versions of LuckPerms, is not guaranteed to work by any means - this is no longer supported, and it is a bad idea to try it.
+**Note:** This feature was removed in v5 of LuckPerms, if you still need it, see [this page](Upgrading-from-v4-to-v5#other). This is *not* the ideal method for default groups. If it is possible to achieve your desired result in any other way, please attempt to do so first.
 
 ##### Note: see the "Default Assignments" section of the config for more detail on this.
 
