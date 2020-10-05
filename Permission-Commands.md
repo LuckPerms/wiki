@@ -11,7 +11,7 @@ Key things to remember from the main page:
 ___
 
 ### Index
-*  [`info`](#lp-usergroup-usergroup-permission-info)
+*  [`info`](#lp-usergroup-usergroup-permission-info-page-sorting-mode)
 *  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set-node-truefalse-context)
 *  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset-node-context)
 *  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
@@ -21,9 +21,22 @@ ___
 *  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear-context)
 
 ___
-#### `/lp user/group <user|group> permission info`  
+#### `/lp user/group <user|group> permission info [page] [sorting mode]`  
 **Permission**: luckperms.user.permission.info or luckperms.group.permission.info  
+**Arguments**:  
+* `[page]` - the page number to view
+* `[sorting mode]` - how the results will be sorted
+
 Displays a list of the permission nodes a user/group has.
+
+The "sorting mode" argument allows you to specify how the list will be sorted. You can pick between 4 different options.
+
+| Sorting mode             | Description                                                              |
+|--------------------------|--------------------------------------------------------------------------|
+| `priority`               | the results will be sorted according to the platform's inheritance rules |
+| `!priority`/`reverse`    | it will sort it by priority and then reverse the list                    |
+| `abc`/`alphabetically`   | the list will be sorted alphabetically (A - Z)                           |
+| `!abc`/`!alphabetically` | will sort the list alphabetically and then reverse it (Z - A)            |
 
 ___
 #### `/lp user/group <user|group> permission set <node> [true|false] [context...]`  
