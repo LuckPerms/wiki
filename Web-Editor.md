@@ -23,7 +23,7 @@ You can run different commands to open sessions with different scopes:
 
 > Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
 
-> The user permission filter command will load only users with a permission matching the filter to the editor.
+> The user permission filter command will load only users with a directly applied permission matching the filter to the editor.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
