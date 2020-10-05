@@ -8,7 +8,7 @@ Users on your server are likely to be split into two types.
 1. The standard player.
 2. Players who have been added to a different group, or given their own special permissions.
 
-You don't want to waste precious disk space storing data about Player Type #1. You only want to store data about your staff members, and people with special ranks. Regular "members" are just that, regular. There's no need to store any data about them.
+You don't want to waste precious disk space storing data about Player Type #1. You only want to store data about your staff members, and people with special ranks. Regular "members" are just that, regular. There's no need to store any permissions data about them.
 
 The next issue I face is how to decide if a user is "regular" or not. Imagine the following situation.
 
@@ -45,7 +45,7 @@ This option would mean that all users are still in the "default" group. However,
 ## Configure default assignments
 If you have more specific needs, then you can use this option. However, be aware that it will negate the storage space optimisations discussed in the first section of this page. All users will be explicitly saved, whether they are a "regular" user or not.
 
-**Note:** This feature got removed in v5 of LuckPerms, if you still need it, see [this page](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5#other).
+**Note:** This feature was removed in v5 of LuckPerms, if you still need it, see [this page](https://github.com/lucko/LuckPerms/wiki/Upgrading-from-v4-to-v5#other). This is *not* the ideal method for default groups. If it is possible to achieve your desired result in any other way, please attempt to do so first.
 
 ##### Note: see the "Default Assignments" section of the config for more detail on this.
 
