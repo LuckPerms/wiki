@@ -14,9 +14,10 @@ You can run different commands to open sessions with different scopes:
 
 | Scope                                          | Command                                             |
 |------------------------------------------------|-----------------------------------------------------|
-| **All groups and online users:**               | `/lp editor`                                        |
+| **All groups and online/non-default users:**   | `/lp editor` or `lp editor all`                     |
 | **All groups:**                                | `/lp editor groups`                                 |
-| **All online users:**                          | `/lp editor users`                                  |
+| **All online and non-default users:**          | `/lp editor users`                                  |
+| **All online users:**                          | `/lp editor online`                                 |
 | **For a specific group:**                      | `/lp group <group> editor`                          |
 | **For a specific user:**                       | `/lp user <user> editor`                            |
 | **For users only with a specific permission:** | `/lp editor users <filter>` or `lp editor <filter>` |
