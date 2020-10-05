@@ -12,15 +12,19 @@ Editor sessions are first created by executing a command on the server.
 You can run different commands to open sessions with different scopes:
 
 
-| Scope                            | Command                    |
-|----------------------------------|----------------------------|
-| **All groups and online users:** | `/lp editor`               |
-| **All groups:**                  | `/lp editor groups`        |
-| **All online users:**            | `/lp editor users`         |
-| **For a specific group:**        | `/lp group <group> editor` |
-| **For a specific user:**         | `/lp user <user> editor`   |
+| Scope                                          | Command                                             |
+|------------------------------------------------|-----------------------------------------------------|
+| **All groups and online/non-default users:**   | `/lp editor` or `lp editor all`                     |
+| **All groups:**                                | `/lp editor groups`                                 |
+| **All online and non-default users:**          | `/lp editor users`                                  |
+| **All online users:**                          | `/lp editor online`                                 |
+| **For a specific group:**                      | `/lp group <group> editor`                          |
+| **For a specific user:**                       | `/lp user <user> editor`                            |
+| **For users only with a specific permission:** | `/lp editor users <filter>` or `lp editor <filter>` |
 
 > Remember to use `/lpb` instead of `/lp` if you want to target your command to the BungeeCord version of LP and `/lpv` for Velocity.
+
+> The user permission filter command will load only users with a directly applied permission matching the filter to the editor.
 
 Once the command has been executed, the server will begin creating a new session. It should only take a second or so (depending on your connection speed).
 
