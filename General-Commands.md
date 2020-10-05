@@ -18,7 +18,7 @@ ___
 *  [/lp `debug`](#lp-debug)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
-*  [/lp `search` \<permission\>](#lp-search-permission)
+*  [/lp `search` \[comparison\] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `check` \<user\> \<permission\>](#lp-check-user-permission)
 *  [/lp `networksync`](#lp-networksync)
 *  [/lp `import` \<file | code --upload\> [--merge]](#lp-import-filecode---upload---merge)
