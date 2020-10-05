@@ -28,7 +28,7 @@ ___
 *  [`settempsuffix` [priority] \<suffix\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-meta-settempsuffix-priority-suffix-duration-temporary-modifier-context)
 *  [`removetempprefix` \<priority\> [prefix] [context...]](#lp-usergroup-usergroup-meta-removetempprefix-priority-prefix-context)
 *  [`removetempsuffix` \<priority\> [suffix] [context...]](#lp-usergroup-usergroup-meta-removetempsuffix-priority-suffix-context)
-*  [`clear` [context...]](#lp-usergroup-usergroup-meta-clear-context)
+*  [`clear` \[type\] [context...]](#lp-usergroup-usergroup-meta-clear-type-context)
 
 ___
 #### `/lp user/group <user|group> meta info`  
@@ -253,9 +253,19 @@ ___
 Removes a temporary suffix from a user/group. You can wrap the suffix in " " quotes to escape spaces.
 
 ___
-#### `/lp user/group <user|group> meta clear [context...]`  
+#### `/lp user/group <user|group> meta clear [type] [context...]`  
 **Permission**: luckperms.user.meta.clear or luckperms.group.meta.clear  
 **Arguments**:  
+* `[type]` - the type of meta you would like to clear
+
+| Type                | Meaning                                     | 
+|---------------------|---------------------------------------------|
+| `any`/`all`/`*`     | Default type - clears all meta              |
+| `chat`/`chatmeta`   | Clears all prefixes and suffixes            |
+| `meta`              | Clears non-chat meta (No prefixes/suffixes) |
+| `prefix`/`prefixes` | Clears prefixes                             |
+| `suffix`/`suffixes` | Clears suffixes                             |
+
 * `[context...]` - the [contexts](Context) to filter by
 
 Removes all meta/prefixes/suffixes.
