@@ -18,7 +18,7 @@ ___
 *  [/lp `debug`](#lp-debug)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
-*  [/lp `search` \<permission\>](#lp-search-permission)
+*  [/lp `search` \[comparison\] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `check` \<user\> \<permission\>](#lp-check-user-permission)
 *  [/lp `networksync`](#lp-networksync)
 *  [/lp `import` \<file | code --upload\> [--merge]](#lp-import-filecode---upload---merge)
@@ -97,9 +97,18 @@ All arguments are optional. The default selection is `.` (just a dot, which mean
 Scope allows you to only generate a part of the tree. For example, a scope of `luckperms.user` will only return the branch of the tree starting with "luckperms.user".
 
 ___
-#### `/lp search <permission>`  
+#### `/lp search [comparison] <permission>`  
 **Permission**: luckperms.search  
 **Arguments**:  
+* `[comparison]` - the relation between the search and the results
+
+| Comparison | Meaning         | Function                                                                       |
+|------------|-----------------|--------------------------------------------------------------------------------|
+| `==`       | "Equal to"      | Default comparator - returns permissions equal to the `<permission>` searched. |
+| `!=`       | "Not Equal to"  | Returns permissions not equal to the `<permission>` searched.                  |
+| `~~`       | "Similar to"    | Returns permissions 'similar' to the `<permission>` searched. (SQL Style)      |
+| `!~`       | "Not Similar to | Returns permissions 'not similar' to the `<permission>` searched. (SQL Style)  |
+
 * `<permission>` - the permission to search for
 
 Searches all users/groups for a specific permission, and returns a paginated list of all found entries. 
