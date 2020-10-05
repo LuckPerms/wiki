@@ -188,8 +188,8 @@ This is a very common question, and quite simple to set up. All you need to do i
 | `luckperms.user.promote.*` <--- This in only needed on Sponge                     | false                 |
 | `luckperms.user.promote.modify.others `                                           | true                  |
 | `luckperms.user.promote.<track>.*`                                                | true                  |
-| `luckperms.user.promote.<track>.<(all\|groups\|they\|cannot\|promote\|to\|or\|past)>`    | false                 |
+| `luckperms.user.promote.<track>.<{all,groups,they,cannot,promote,to,or,past}>`    | false                 |
 
-For the final node, you add all groups in the track they cannot promote to or past, separated by a `|` and all contained within (). For example, you could set `luckperms.user.promote.staff.(admin|owner)` to prevent them from promoting to or past admin on the staff track.
+For the final node, you add all groups in the track they cannot promote to or past, separated by a `,` and all contained within {}. For example, you could set `luckperms.user.promote.staff.{admin,owner}` to prevent them from promoting to or past admin on the staff track.
 
 Additionally, if you want the group/user to be able to promote using global context (without requiring certain contextual conditions), you need to add the node `luckperms.usecontext.global`. 
