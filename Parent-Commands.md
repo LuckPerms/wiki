@@ -36,9 +36,9 @@ The "sorting mode" argument allows you to specify how the list will be sorted. Y
 | Sorting mode             | Description                                                              |
 |--------------------------|--------------------------------------------------------------------------|
 | `priority`               | The list will be sorted according to the platform's inheritance rules    |
-| `!priority`/`reverse`    | The list will be sorted by priority and then reverse the list            |
+| `!priority`/`reverse`    | The list will be sorted by priority and then reversed                    |
 | `abc`/`alphabetically`   | The list will be sorted alphabetically (A - Z)                           |
-| `!abc`/`!alphabetically` | The list will be sorted alphabetically and then reverse it (Z - A)       |
+| `!abc`/`!alphabetically` | The list will be sorted alphabetically and then reversed (Z - A)         |
 
 ___
 #### `/lp user/group <user|group> parent set <group> [context...]`  
