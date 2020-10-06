@@ -35,10 +35,10 @@ The "sorting mode" argument allows you to specify how the list will be sorted. Y
 
 | Sorting mode             | Description                                                              |
 |--------------------------|--------------------------------------------------------------------------|
-| `priority`               | The results will be sorted according to the platform's inheritance rules |
-| `!priority`/`reverse`    | It will sort it by priority and then reverse the list                    |
+| `priority`               | The list will be sorted according to the platform's inheritance rules    |
+| `!priority`/`reverse`    | The list will be sorted by priority and then reverse the list            |
 | `abc`/`alphabetically`   | The list will be sorted alphabetically (A - Z)                           |
-| `!abc`/`!alphabetically` | Will sort the list alphabetically and then reverse it (Z - A)            |
+| `!abc`/`!alphabetically` | The list will be sorted alphabetically and then reverse it (Z - A)       |
 
 ___
 #### `/lp user/group <user|group> parent set <group> [context...]`  
