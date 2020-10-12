@@ -16,8 +16,8 @@ ___
 *  [/lp user \<user\> `parent`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Parent)
 *  [/lp user \<user\> `meta`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta)
 *  [/lp user \<user\> `editor`](#lp-user-user-editor)
-*  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote-track-context)
-*  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote-track-context)
+*  [/lp user \<user\> `promote` \<track\> [context...]](#lp-user-user-promote-track-context-flags)
+*  [/lp user \<user\> `demote` \<track\> [context...]](#lp-user-user-demote-track-context-flags)
 *  [/lp user \<user\> `showtracks`](#lp-user-user-showtracks)
 *  [/lp user \<user\> `clear` [context...]](#lp-user-user-clear-context)
 *  [/lp user \<user\> `clone` \<user\>](#lp-user-user-clone-user)
@@ -33,20 +33,26 @@ ___
 Opens a web interface to edit permissions for the specified group. After changes are saved, a command will be given that you need to run for the changes to take effect.
 
 ___
-#### `/lp user <user> promote <track> [context...]`  
+#### `/lp user <user> promote <track> [context...] [flags...]`  
 **Permission**: luckperms.user.promote  
 **Arguments**:  
 * `<track>` - the track to promote along
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to promote in
+**Flags**:
+* `[--dont-add-to-first]` - the command will fail to run if the user doesn't have parent groups on said track
+* `[-s]` - silent, don't print the user progress on the track
 
-This command will promote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given contexts. If the user is not on the track, they will be added to the first group on the track. If they are on the track in more than one place, the command will fail. In all other cases, the user will be promoted up the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
+This command will promote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given contexts. If the user is not on the track, they will be added to the first group on the track unless a flag is used. If they are on the track in more than one place, the command will fail. In all other cases, the user will be promoted up the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
 
 ___
-#### `/lp user <user> demote <track> [context...]`  
+#### `/lp user <user> demote <track> [context...] [flags...]`  
 **Permission**: luckperms.user.demote  
 **Arguments**:  
 * `<track>` - the track to demote along
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to demote in
+**Flags**:
+* `[--dont-remove-from-first]` - the command will fail to run if the user is on the first position on the track
+* `[-s]` - silent, don't print the user progress on the track
 
 This command will demote a user along a track. Firstly, the command will check to see if the user is on the track specified in the given contexts. If the user is not on the track, or on the track in more than one place, the command will fail. If not, the user will be demoted down the track, and will be removed from the existing group. If the track action affects their primary group, that will be updated too.
 
