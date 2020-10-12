@@ -11,11 +11,11 @@ Key things to remember from the main page:
 ___
 
 ### Index
-*  [`info`](#lp-usergroup-usergroup-parent-info)
+*  [`info`](#lp-usergroup-usergroup-parent-info-page-sorting-mode)
 *  [`set` \<group\> [context...]](#lp-usergroup-usergroup-parent-set-group-context)
 *  [`add` \<group\> [context...]](#lp-usergroup-usergroup-parent-add-group-context)
 *  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove-group-context)
-*  [`settrack` \<track\> \<group\> [context...]](#lp-usergroup-usergroup-parent-settrack-track-group-context)
+*  [`settrack` \<track\> \<index | group\> [context...]](#lp-usergroup-usergroup-parent-settrack-track-indexgroup-context)
 *  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-parent-addtemp-group-duration-temporary-modifier-context)
 *  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp-group-context)
 *  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear-context)
@@ -23,9 +23,22 @@ ___
 *  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup-group)
 
 ___
-#### `/lp user/group <user|group> parent info`  
+#### `/lp user/group <user|group> parent info [page] [sorting mode]`  
 **Permission**: luckperms.user.parent.info or luckperms.group.parent.info  
+**Arguments**:  
+* `[page]` - the page number to view
+* `[sorting mode]` - how the results will be sorted
+  
 Displays a list of a user/group's parent groups. (groups they inherit from)
+
+The "sorting mode" argument allows you to specify how the list will be sorted. You can pick between 4 different options.
+
+| Sorting mode             | Description                                                              |
+|--------------------------|--------------------------------------------------------------------------|
+| `priority`               | The list will be sorted according to the platform's inheritance rules    |
+| `!priority`/`reverse`    | The list will be sorted by priority and then reversed                    |
+| `abc`/`alphabetically`   | The list will be sorted alphabetically (A - Z)                           |
+| `!abc`/`!alphabetically` | The list will be sorted alphabetically and then reversed (Z - A)         |
 
 ___
 #### `/lp user/group <user|group> parent set <group> [context...]`  
@@ -56,11 +69,11 @@ Removes a parent from the user/group.
 If the removed group was the users primary group, will they be set back to default as primary.
 
 ___
-#### `/lp user/group <user|group> parent settrack <track> <group> [context...]`  
+#### `/lp user/group <user|group> parent settrack <track> <index|group> [context...]`  
 **Permission**: luckperms.user.parent.settrack or luckperms.group.parent.settrack  
 **Arguments**:  
 * `<track>` - the track to set on
-* `<group>` - the group to set to, or a number relating to the position of the group on the given track
+* `<index|group>` - the group to set to, or an index number relating to the position of the group on the given track
 * `[context...]` - the [contexts](https://github.com/lucko/LuckPerms/wiki/Context) to set the group in
 
 Sets a users/groups position on a given track. This behaves in the same way as the set command, except it only clears existing groups which are on the specified track. Other parent groups are not affected.
