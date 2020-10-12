@@ -14,14 +14,14 @@ ___
 *  [/lp](#lp)
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
-*  [/lp `editor`](#lp-editor-type)
+*  [/lp `editor`](#lp-editor-type-filter)
 *  [/lp `debug`](#lp-debug)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
 *  [/lp `search` \[comparison\] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `check` \<user\> \<permission\>](#lp-check-user-permission)
 *  [/lp `networksync`](#lp-networksync)
-*  [/lp `import` \<file | code --upload\> [--merge]](#lp-import-filecode---upload---merge)
+*  [/lp `import` \<file | code --upload\> [--replace]](#lp-import-filecode---upload---replace)
 *  [/lp `export` \<file\> [--upload]](#lp-export-file--upload)
 *  [/lp `reloadconfig`](#lp-reloadconfig)
 *  [/lp `bulkupdate`](#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
@@ -49,10 +49,11 @@ ___
 Lists some information/data about LuckPerms, including debugging output, statistics, settings, and important values from the configuration. 
 
 ___
-#### `/lp editor [type]`  
+#### `/lp editor [type] [filter]`  
 **Permission**: luckperms.editor  
 **Arguments**:  
-* `[type]` - the types to include in the editor session. can be "all", "users" or "groups"
+* `[type]` - the types to include in the editor session. can be "all", "users", "online" or "groups"
+* `[filter]` - if the session includes users (e.g. type = "all", "users" or "online"), it will exclude those whose nodes don't start with the provided filter. Groups are unaffected by this filter
 
 Opens a web interface to edit permissions data. After changes are saved, a command will be given that you need to run for the changes to take effect.
 
@@ -128,15 +129,15 @@ ___
 Refreshes all cached data with the storage provider, and then uses the plugins Messaging Service (if configured) to "ping" all other connected servers and request that they sync too.
 
 ___
-#### `/lp import <file|code --upload> [--merge]`  
+#### `/lp import <file|code --upload> [--replace]`  
 **Permission**: luckperms.import  
 **Arguments**:  
 * `<file>` - the file to import from
 * `<code> --upload` - the code to web-import from
-* `[--merge]` - if included, will merge the import with existing permissions. If not, will overwrite.
+* `[--replace]` - if included, will overwrite and replace the existing permissions with the import. If not, they will merge.
 
 
-Imports data into LuckPerms from a file or from the web. If a file, it must be a JSON GZIP type file, exported from Luckperms v5. If from the web, the code must be generated when exporting with the `--upload` flag. The file is expected to be in the plugin directory. When importing a file, the extension `.json.gz` should be included in the name of the import file. When importing a file or web-export, the `--merge` flag may be added to the end of the command to merge the import with the existing permissions setup. If the `--merge` flag is not included, the existing permissions setup will be overriden and replaced.
+Imports data into LuckPerms from a file or from the web. If a file, it must be a JSON GZIP type file, exported from Luckperms v5. If from the web, the code must be generated when exporting with the `--upload` flag. The file is expected to be in the plugin directory. When importing a file, the extension `.json.gz` should be included in the name of the import file. When importing a file or web-export, the `--replace` flag may be added to the end of the command to overwrite and replace the existing permissions setup. If the `--replace` flag is not included, the existing permissions setup will be merged with the imported one.
 
 ___
 #### `/lp export <file|--upload>`  
@@ -144,7 +145,8 @@ ___
 **Arguments**:  
 * `<file>` - the file to export to
 * `<--upload>` - if added, will export to the web and provide a code for web-based imports.
-* `<--without-users>` - if added, will export only all the group data. The export will not include any user data.
+* `[--without-users]` - if added, will export only all the group data. The export will not include any user data.
+* `[--without-groups]` - if added, will export only all the user data. The export will not include any group data.
 
 Exports data from LuckPerms into a file or into web-based datastorage. This file can either be used as a backup, or used to move data between LuckPerms installations. The web-based export will expire and should not be used as a backup. The file and the web-based export can be re-imported using the import command. The generated file will be in the plugin directory.
 
