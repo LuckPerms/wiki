@@ -1,23 +1,23 @@
-All messages (including colour and formatting codes) in LuckPerms can be modified and changed. (within reason)
+### Overview
 
-Simply copy one of the files below and save it into the LuckPerms folder, and named as **"lang.yml"**.
+All in-game messages in LuckPerms can be customised and translated using the translation system.
 
-Edit the messages in the file to your liking, and then restart your server.
+The base translation file for *English* can be found here: [`luckperms_en.properties`](https://github.com/lucko/LuckPerms/blob/master/common/src/main/resources/luckperms_en.properties)
 
+## Contributing
 
-## Translations
-* [**en_US** - English](https://github.com/LuckPerms/locale/blob/master/en_US.yml)
-* [**de_DE** - German](https://github.com/LuckPerms/locale/blob/master/de_DE.yml)
-* [**es_ES** - Spanish](https://github.com/LuckPerms/locale/blob/master/es_ES.yml)
-* [**fr_FR** - French](https://github.com/LuckPerms/locale/blob/master/fr_FR.yml)
-* [**hu_HU** - Hungarian](https://github.com/LuckPerms/locale/blob/master/hu_HU.yml)
-* [**pl_PL** - Polish](https://github.com/LuckPerms/locale/blob/master/pl_PL.yml)
-* [**ru_RU** - Russian](https://github.com/LuckPerms/locale/blob/master/ru_RU.yml)
-* [**zh-CN** - Simplified Chinese](https://github.com/LuckPerms/locale/blob/master/zh-CN.yml)
+Translation into other languages is organised on our [Crowdin project](https://crowdin.com/project/luckperms).
 
+We greatly appreciate any help! :heart:
 
+## Using the translated messages
 
-### Contributing translations
-I (and everyone else) would be grateful if those who do make translations submit the changes back to the project so others can benefit.
+Translations can be loaded into the plugin as follows:
 
-The [en_US](https://github.com/LuckPerms/locale/blob/master/en_US.yml) translation should be used as a baseline. Only the values should be changed. The keys should remain the same.
+* Create the folder `/plugins/LuckPerms/translations/`
+* Export the modified `.properties` file, and rename it to `<locale id>.properties`.
+  * A list of the supported locale ids can be found [here](https://www.localeplanet.com/java/)
+  * For example, to load translations for *Spanish* use `es.properties`, or for *Portuguese (Brazil)* use `pt_BR.properties`
+* Restart the server
+
+Players will be sent messages translated to the language selected in their Minecraft client settings, if possible. If no such translation exists, the built-in English messages are used.
