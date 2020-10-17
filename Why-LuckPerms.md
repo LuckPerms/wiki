@@ -29,7 +29,7 @@ As well as the command interface, you can also use the web editor to make change
 
 The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
 
-![]https://imgur.com/a/YAStkW4
+![](https://imgur.com/a/YAStkW4)
 
 It's super easy to use.
 
