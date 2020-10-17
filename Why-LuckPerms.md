@@ -40,7 +40,7 @@ ___
 ### Verbose
 LuckPerms has a [verbose](Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-![](https://imgur.com/a/12ThFUN)
+![](https://i.postimg.cc/HLq7v6z5/h-Pu-I1wi-Imgur.png)
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
