@@ -29,7 +29,7 @@ As well as the command interface, you can also use the web editor to make change
 
 The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
 
-![](https://imgur.com/a/Gg8fgK8)
+![](https://i.postimg.cc/K8bqw596/image.png)
 
 It's super easy to use.
 
@@ -59,8 +59,7 @@ As the server runs for longer periods, the tree also grows, as permissions check
 
 An example tree:
 
-![](https://imgur.com/a/316vPEY)
-
+![](https://i.postimg.cc/76zSqFhm/1-OQw-GKN-Imgur.png)
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
 
@@ -72,9 +71,6 @@ The command system is super easy to use and understand. As well as the [document
 ![](http://i.imgur.com/XIVPP6P.png)
 
 All LuckPerms commands are fully tab completable, meaning you have to do less typing to get stuff done!
-
-[![](https://zippy.gfycat.com/AnnualYoungKoi.gif)](https://gfycat.com/AnnualYoungKoi)
-
 ___
 
 ### Action logging
