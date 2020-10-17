@@ -6,7 +6,7 @@ LuckPerms has a complete developer API, which allows other plugins on the server
 
 The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-backwards compatible change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
-The current API release is `5.1`.
+The current API release is `5.2`.
 
 * The API package in LuckPerms is `net.luckperms.api`.
 * JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/net.luckperms/api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api).
@@ -50,7 +50,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
     <dependency>
         <groupId>net.luckperms</groupId>
         <artifactId>api</artifactId>
-        <version>5.1</version>
+        <version>5.2</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.luckperms:api:5.1'
+    compileOnly 'net.luckperms:api:5.2'
 }
 ```
 
