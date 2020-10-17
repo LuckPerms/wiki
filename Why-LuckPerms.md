@@ -29,11 +29,9 @@ As well as the command interface, you can also use the web editor to make change
 
 The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
 
-![](https://i.imgur.com/vSJ5NAp.png)
+![]https://imgur.com/a/YAStkW4
 
 It's super easy to use.
-
-[![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
 
 The Web editor is such a powerful tool that it has its own [wiki page](Web-Editor).
 
@@ -42,15 +40,15 @@ ___
 ### Verbose
 LuckPerms has a [verbose](Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-[![](https://giant.gfycat.com/ArtisticPleasantAlbacoretuna.gif)](https://gfycat.com/ArtisticPleasantAlbacoretuna)
+![](https://imgur.com/a/12ThFUN)
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
-[![](https://i.imgur.com/Ta7gtd9.png)](https://i.imgur.com/Ta7gtd9.png)
+![](https://i.imgur.com/ut3S9Ps.png)
 
 You can also upload recordings to the web, for easier analysis and reading.
 
-![](https://i.imgur.com/6IxXIGg.png)
+![](https://i.imgur.com/tRRosMp.png)
 
 ___
 
@@ -61,7 +59,7 @@ As the server runs for longer periods, the tree also grows, as permissions check
 
 An example tree:
 
-![](https://i.imgur.com/nkdtDkG.png)
+![](https://imgur.com/a/316vPEY)
 
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
