@@ -29,7 +29,7 @@ As well as the command interface, you can also use the web editor to make change
 
 The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
 
-![](imgur.com/pzkiR1L)
+![](https://i.imgur.com/wFisSQz.png)
 
 It's super easy to use.
 
@@ -40,7 +40,7 @@ ___
 ### Verbose
 LuckPerms has a [verbose](Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-![](https://imgur.com/a/zDG6Lmf)
+![](https://i.imgur.com/QOb7AeH.png)
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
@@ -59,7 +59,7 @@ As the server runs for longer periods, the tree also grows, as permissions check
 
 An example tree:
 
-![](https://imgur.com/a/67v7Kbs)
+![](https://i.imgur.com/a2f9yqu.png)
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
 
