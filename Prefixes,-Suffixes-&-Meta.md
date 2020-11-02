@@ -88,8 +88,8 @@ Some popular chat formatting plugins which work with LuckPerms + Vault include:
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [VentureChat](https://www.spigotmc.org/resources/771/) 
 * [CarbonChat](https://github.com/Hexaoxide/Carbon) (beta)
-* [ChatControl](https://www.spigotmc.org/resources/10258/) (paid)
 * [DeluxeChat](https://www.spigotmc.org/resources/1277/) (paid)
+* [ChatControl](https://www.spigotmc.org/resources/10258/) (paid)
 
 
 Some popular tab/nametag formatting plugins which work with LuckPerms + Vault include:
