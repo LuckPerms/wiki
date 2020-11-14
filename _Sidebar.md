@@ -1,5 +1,3 @@
-## Contents
-
 * [**Home**](/wiki)
 * [**Why LuckPerms?**](Why-LuckPerms)
 * [**Credits**](Credits)

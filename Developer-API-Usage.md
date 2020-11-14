@@ -1,6 +1,7 @@
 This page shows some sample usages of the LuckPerms API, which is introduced [here](Developer-API).
 
-More samples can be found on the [api-cookbook](https://github.com/LuckPerms/api-cookbook).
+As well as this documentation, we also have the [api-cookbook](https://github.com/LuckPerms/api-cookbook). This is an example Bukkit plugin which uses the API to perform certain common functions.
+
 ___
 
 ### Index
@@ -74,8 +75,8 @@ In order to conserve memory usage, LuckPerms will only load User data when it ab
 
 Meaning:
 
-* Online players are guaranteed to have an associated User object loaded already.
-* Offline players *may* have an associated User object loaded, but they most likely will not.
+* **Online** players are guaranteed to have an associated User object loaded already.
+* **Offline** players *may* have an associated User object loaded, but they most likely will not.
 
 This makes getting a User instance a little complicated, depending on if the Player is online or not.
 
@@ -88,27 +89,21 @@ If we know the player is connected, LuckPerms will already have data in memory f
 It's as simple as...
 
 ```java
-public User loadUser(Player player) {
-    // assert that the player is online
-    if (!player.isOnline()) {
-        throw new IllegalStateException("Player is offline");
-    }
-    
-    return luckPerms.getUserManager().getUser(player.getUniqueId());
-}
+Player player = ...;
+User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
 ```
 
-However, remember that this instance *may* not represent the user's most up-to-date state. If you want to make changes, it's a good idea to request for the user's data to be loaded again.
+Or if you only have a `UUID`...
+
+```java
+User user = luckPerms.getUserManager().getUser(uuid);
+```
+
+However, remember that this instance *may* not represent the user's most up-to-date state. If you want to make changes, it's a good idea to request for the user's data to be loaded again (read on...).
 
 ##### If the player isn't (or might not be) online
 
 Let's assume we want to load some data about a user - but we only have their unique id.
-
-For the purposes of explaining, assume we want to write an implementation for this method.
-
-```java
-public void giveAdminPermissions(UUID uniqueId) {...}
-```
 
 The first thing we need to do is obtain the `UserManager`. This object is responsible for handling all operations relating to `User`s. The user manager provides a method which lets us load a `User` instance, appropriately named `loadUser`.
 
@@ -117,18 +112,16 @@ The method returns a `CompletableFuture` (explained [here](Developer-API#using-c
 We can simply attach a callback onto the future to apply the action.
 
 ```java
-public void giveAdminPermissions(UUID uniqueId) {
-    UserManager userManager = luckPerms.getUserManager();
-    CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
+UserManager userManager = luckPerms.getUserManager();
+CompletableFuture<User> userFuture = userManager.loadUser(uniqueId);
 
-    userFuture.thenAcceptAsync(user -> {
-        // TODO: apply the action to the User instance
-        user.someMethod(...);
-    });
-}
+userFuture.thenAcceptAsync(user -> {
+    // Now we have a user which we can query.
+    // ...
+});
 ```
 
-##### How to query information for a (potentially) offline player
+##### If the player isn't (or might not be) online & we want to return something
 
 The callback approach works well if you don't need to actually "return" anything. It performs all of the nasty i/o away from the main server thread, and handles everything in the background.
 
@@ -157,7 +150,9 @@ In an ideal world, we'd be able to do something like this, without any consequen
 ```java
 public boolean isAdmin(UUID who) {
     User user = luckPerms.getUserManager().loadUser(who);
-    return user.inheritsGroup("admin"); // not a real method, just used here as an example :p
+
+    Collection<Group> inheritedGroups = user.getInheritedGroups(user.getQueryOptions());
+    return inheritedGroups.stream().anyMatch(g -> g.getName().equals("admin"));
 }
 
 public void informIfAdmin(CommandSender sender, UUID who) {
@@ -169,14 +164,17 @@ public void informIfAdmin(CommandSender sender, UUID who) {
 }
 ```
 
-However, we can't, because `#loadUser` returns a Future - as it performs lots of expensive database queries to produce a result.
+However, we can't, because `#loadUser` returns a CompletableFuture - as it performs lots of expensive database queries to produce a result.
 
 The solution? More futures!
 
 ```java
 public CompletableFuture<Boolean> isAdmin(UUID who) {
     return luckPerms.getUserManager().loadUser(who)
-            .thenApplyAsync(user -> user.inheritsGroup("admin")); // again, inheritsGroup is not a real method, just used as an example
+        .thenApplyAsync(user -> {
+            Collection<Group> inheritedGroups = user.getInheritedGroups(user.getQueryOptions());
+            return inheritedGroups.stream().anyMatch(g -> g.getName().equals("admin"));
+        });
 }
 
 public void informIfAdmin(CommandSender sender, UUID who) {
@@ -192,7 +190,7 @@ public void informIfAdmin(CommandSender sender, UUID who) {
 
 To summarise, there are two ways to obtain a user.
 
-* Using `UserManager#getUser`
+* Using `UserManager#getUser` or `PlayerAdapter#getUser`
   * Always returns a result for online players
   * Is "main thread friendly" (can be called sync)
   * Will sometimes (but usually not) return a result of offline players
@@ -232,10 +230,23 @@ After making changes to a user/group/track, you have to save the changes back to
 
 ```java
 public void addPermission(User user, String permission) {
-    // TODO add the permission
-    
+    // Add the permission
+    user.data().add(Node.builder(permission).build());
+
     // Now we need to save changes.
     luckPerms.getUserManager().saveUser(user);
+}
+```
+
+There is also a handy `modify*` method which handles loading and saving for you.
+
+```java
+public void addPermission(UUID userUuid, String permission) {
+    // Load, modify, then save
+    luckPerms.getUserManager().modifyUser(userUuid, user -> {
+        // Add the permission
+        user.data().add(Node.builder(permission).build());
+    });
 }
 ```
 
@@ -357,24 +368,30 @@ You can use the Stream API to easily filter the returned data to find what you n
 
 ```java
 Set<String> groups = user.getNodes().stream()
-        .filter(NodeType.INHERITANCE::matches)
-        .map(NodeType.INHERITANCE::cast)
-        .map(InheritanceNode::getGroupName)
-        .collect(Collectors.toSet());
+    .filter(NodeType.INHERITANCE::matches)
+    .map(NodeType.INHERITANCE::cast)
+    .map(InheritanceNode::getGroupName)
+    .collect(Collectors.toSet());
+```
+
+You can make this a bit simpler by passing the node type as a parameter!
+
+```java
+Set<String> groups = user.getNodes(NodeType.INHERITANCE).stream()
+    .map(InheritanceNode::getGroupName)
+    .collect(Collectors.toSet());
 ```
 
 Or even more complicated queries, like finding the max priority of a temporary prefix held on a specific server.
 
 ```java
-int maxWeight = user.getNodes().stream()
-        .filter(Node::hasExpiry)
-        .filter(NodeType.PREFIX::matches)
-        .map(NodeType.PREFIX::cast)
-        .filter(n -> n.getContexts().getAnyValue(DefaultContextKeys.SERVER_KEY)
-                .map(v -> v.equals("factions")).orElse(false))
-        .mapToInt(ChatMetaNode::getPriority)
-        .max()
-        .orElse(0);
+int maxWeight = user.getNodes(NodeType.PREFIX).stream()
+    .filter(Node::hasExpiry)
+    .filter(n -> n.getContexts().getAnyValue(DefaultContextKeys.SERVER_KEY)
+        .map(v -> v.equals("factions")).orElse(false))
+    .mapToInt(ChatMetaNode::getPriority)
+    .max()
+    .orElse(0);
 ```
 
 If you need to do a more specific lookup or check, prefer using one of the other methods (described later) to avoid iterating over the whole collection of nodes.
@@ -461,10 +478,10 @@ ImmutableContextSet set3 = ImmutableContextSet.builder()
 Map<String, String> map = new HashMap<>();
 map.put("region", "something");
 
-ImmutableContextSet.Builder builder2 = ImmutableContextSet.builder();
-map.forEach(builder2::add);
+ImmutableContextSet.Builder builder = ImmutableContextSet.builder();
+map.forEach(builder::add);
 
-ImmutableContextSet set4 = builder2.build();
+ImmutableContextSet set4 = builder.build();
 ```
 
 You can of course also create an `ImmutableContextSet` by first creating (or obtaining) a `MutableContextSet` and converting it.
@@ -518,6 +535,7 @@ The subject type varies between platforms.
 | BungeeCord | `net.md_5.bungee.api.connection.ProxiedPlayer`     |
 | Sponge     | `org.spongepowered.api.service.permission.Subject` |
 | Nukkit     | `cn.nukkit.Player`                                 |
+| Velocity   | `com.velocitypowered.api.proxy.Player`             |
 
 In order to provide your own context, you need to create and register a `ContextCalculator`.
 
@@ -528,8 +546,8 @@ The `estimatePotentialContexts` method can be added, but is not necessary, to sh
 public class CustomCalculator implements ContextCalculator<Player> {
 
     @Override  
-    public void calculate(Player t, ContextConsumer contextConsumer) {
-        contextConsumer.accept("gamemode", t.getGameMode().name());
+    public void calculate(Player target, ContextConsumer contextConsumer) {
+        contextConsumer.accept("gamemode", target.getGameMode().name());
     }
     
     @Override
@@ -547,7 +565,7 @@ public class CustomCalculator implements ContextCalculator<Player> {
 Then register it using
 
 ```java
-api.getContextManager().registerCalculator(new CustomCalculator());
+luckPerms.getContextManager().registerCalculator(new CustomCalculator());
 ```
 
 #### Querying active contexts/query options
@@ -559,22 +577,28 @@ If you already have an instance of the subject type, you can query directly usin
 ```java
 Player player = ...;
 
-ImmutableContextSet contextSet = api.getContextManager().getContext(player);
-QueryOptions queryOptions = api.getContextManager().getQueryOptions(player);
+ImmutableContextSet contextSet = luckPerms.getContextManager().getContext(player);
+QueryOptions queryOptions = luckPerms.getContextManager().getQueryOptions(player);
 ```
 
 If you only have a `User`, you can still perform a lookup, however, a result will only be returned if the corresponding subject (player) is online.
 
 ```java
-Optional<ImmutableContextSet> contextSet = api.getContextManager().getContext(user);
-Optional<QueryOptions> queryOptions = api.getContextManager().getQueryOptions(user);
+Optional<ImmutableContextSet> contextSet = luckPerms.getContextManager().getContext(user);
+Optional<QueryOptions> queryOptions = luckPerms.getContextManager().getQueryOptions(user);
 ```
 
 If you absolutely need to obtain an instance, you can fallback to the server's "static" context/query option. (these are formed using calculators which provide contexts/query options regardless of the passed subject.)
 
 ```java
-ContextManager cm = api.getContextManager();
+User user = ...;
 
+// This is the easy way...
+ImmutableContextSet contextSet = user.getQueryOptions().context();
+QueryOptions queryOptions = user.getQueryOptions();
+
+// But is equivalent to this...
+ContextManager cm = luckPerms.getContextManager();
 ImmutableContextSet contextSet = cm.getContext(user).orElse(cm.getStaticContext());
 QueryOptions queryOptions = cm.getQueryOptions(user).orElse(cm.getStaticQueryOptions());
 ```
@@ -606,6 +630,12 @@ You need:
 ```java
 CachedPermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
 CachedMetaData metaData = user.getCachedData().getMetaData(queryOptions);
+
+// If you want to just use the most appropriate current query options for the User..
+// i.e. 'cm.getQueryOptions(user).orElse(cm.getStaticQueryOptions())'
+// .. then you can skip the queryOpptions parameter.
+CachedPermissionData permissionData = user.getCachedData().getPermissionData();
+CachedMetaData metaData = user.getCachedData().getMetaData();
 ```
 
 #### Performing permission checks
@@ -622,26 +652,24 @@ We can put all of this together to create a method that can run a "normal" permi
 
 ```java
 public boolean hasPermission(User user, String permission) {
-    ContextManager contextManager = api.getContextManager();
-    ImmutableContextSet contextSet = contextManager.getContext(user).orElseGet(contextManager::getStaticContext);
-
-    CachedPermissionData permissionData = user.getCachedData().getPermissionData(QueryOptions.contextual(contextSet));
-    return permissionData.checkPermission(permission).asBoolean();
+    return user.getCachedData().getPermissionData().checkPermission(permission).asBoolean();
 }
 ```
 
 #### Retrieving prefixes/suffixes
 
 ```java
-String prefix = metaData.getPrefix();
-String suffix = metaData.getSuffix();
+String prefix = user.getCachedData().getMetaData().getPrefix();
+String suffix = user.getCachedData().getMetaData().getSuffix();
 ```
 
 #### Retrieving meta data
 
 ```java
-String metaValue = metaData.getMetaValue("some-key");
+String metaValue = user.getCachedData().getMetaData().getMetaValue("some-key");
 ```
+
+Of course these methods work with `Group`s too!
 
 ___
 
@@ -668,9 +696,10 @@ public class TestListener {
         // get the LuckPerms event bus
         EventBus eventBus = api.getEventBus();
 
-        // subscribe to an event using a lambda
+        // subscribe to an event using an expression lambda
         eventBus.subscribe(LogPublishEvent.class, e -> e.setCancelled(true));
 
+      	// subscribe to an event using a lambda
         eventBus.subscribe(UserLoadEvent.class, e -> {
             System.out.println("User " + e.getUser().getUsername() + " was loaded!");
             // TODO: do something else...
@@ -696,3 +725,4 @@ public class TestListener {
 ```
 
 `EventBus#subscribe` returns an [`EventSubscription`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventSubscription.java) instance, which can be used to unregister the listener when your plugin disables.
+

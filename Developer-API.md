@@ -6,7 +6,7 @@ LuckPerms has a complete developer API, which allows other plugins on the server
 
 The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-backwards compatible change is made, the major version will increment. You can rest assured knowing your integration will not break between versions, providing the major version remains the same.
 
-The current API release is `5.1`.
+The current API release is `5.2`.
 
 * The API package in LuckPerms is `net.luckperms.api`.
 * JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/net.luckperms/api/), or within the API [source code](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api).
@@ -50,7 +50,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
     <dependency>
         <groupId>net.luckperms</groupId>
         <artifactId>api</artifactId>
-        <version>5.1</version>
+        <version>5.2</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.luckperms:api:5.1'
+    compileOnly 'net.luckperms:api:5.2'
 }
 ```
 
@@ -128,17 +128,17 @@ Now you've added the API classes to your project, and obtained an instance of th
 
 #### Thread safety
 
-* All LuckPerms internals are thread-safe. You can safely interact with the API from scheduler tasks (or just generally from other threads)
+* All LuckPerms internals are thread-safe. You can safely interact with the API from async scheduler tasks (or just generally from other threads)
 * This also extends to the permission querying methods in Bukkit/Bungee/Sponge. These can be safely called async when LuckPerms is being used as the permissions plugin.
 
 #### Immutability
 
 * In cases where methods return classes from the Java collections framework, assume that the returned methods are always immutable, unless indicated otherwise. (in the JavaDocs)
-* This means that you cannot make changes to any returned collections.
+* This means that you cannot make changes to any returned collections, and that the collections are only an accurate representation of the underlying data at the time of the method call.
 
 #### Blocking operations
 
-* Some methods are not "main thread friendly", meaning if they are called from the main Minecraft Server thread, the server will lag.
+* Some methods are not "main thread friendly", meaning that if they are called from the main Minecraft Server thread, the server will lag.
 * This is because many methods conduct I/O with either the file system or the network. 
 * In most cases, these methods return [CompletableFutures](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html).
 * Futures can be an initially complex paradigm for some users - however, it is crucial that you have at least a basic understanding of how they work before attempting to use them.
@@ -155,13 +155,13 @@ For the purposes of explaining, take the following method in the `ActionLogger` 
 CompletableFuture<ActionLog> getLog();
 ```
 
-After calling the method, we get a `CompletableFuture<Log>` - the object we actually want is the `ActionLog`. The `CompletableFuture` represents the result of some computation (in this case the computation to obtain the ActionLog), and provides us with methods to obtain the `ActionLog` object.
+After calling the method, we get a `CompletableFuture<ActionLog>` - the object we actually want is the `ActionLog`. The `CompletableFuture` represents the result of some computation (in this case the computation to obtain the ActionLog), and provides us with methods to obtain the `ActionLog` object.
 
 If the context of our method call is already asynchronous (if we're calling the method from an async scheduler task), then we can do-away with the future entirely.
 
 ```java
 /*
-  Calling this method effectively "requests" an ActionLog from the API.
+  Calling this method "requests" an ActionLog from the API.
   
   However, it's unlikely that the log will be available immediately...
   We need to wait for it to be supplied.
@@ -181,15 +181,15 @@ CompletableFuture<ActionLog> logFuture = actionLogger.getLog();
 ActionLog log = logFuture.join();
 ```
 
-An alternative to using `#join` is to register a callback with the Future, to be executed once the `Log` is supplied.
+An alternative to using `#join` is to register a callback with the CompletableFuture, to be executed once the `Log` is supplied.
 
 If we need to use the instance on the main server thread, then a special executor can be passed to the callback is executed on the server thread.
 
 ```java
-// The executor to run the callback on
-Executor executor = runnable -> Bukkit.getScheduler().runTask(this, runnable);
+// Create an executor that will run our callback on the server thread.
+Executor executor = runnable -> Bukkit.getScheduler().runTask(plugin, runnable);
 
-// To be called once the Log is obtained.
+// Register a callback with the future.
 logFuture.whenCompleteAsync(new BiConsumer<ActionLog, Throwable>() { // can be reduced to a lambda, I've left it as an anonymous class for clarity
     @Override
     public void accept(ActionLog log, Throwable exception) {
