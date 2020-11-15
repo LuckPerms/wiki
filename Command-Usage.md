@@ -44,7 +44,7 @@ General commands used to operate LuckPerms functions.
 *  [/lp `reloadconfig`](General-Commands#lp-reloadconfig)
 *  [/lp `bulkupdate`](General-Commands#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
 *  [/lp `migration`](General-Commands#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](General-Commands#lp-creategroup-name)
+*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](General-Commands#lp-creategroup-name-weight-displayname)
 *  [/lp `deletegroup` \<group\>](General-Commands#lp-deletegroup-name)
 *  [/lp `listgroups`](General-Commands#lp-listgroups)
 *  [/lp `createtrack` \<track\>](General-Commands#lp-createtrack-name)
