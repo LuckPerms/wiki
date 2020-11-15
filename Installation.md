@@ -57,7 +57,7 @@ Your options are:
 ### Older Minecraft versions
 The main release of LuckPerms is not compatible with Bukkit versions earlier than 1.8.8.
 
-A LuckPerms release for 1.7.10 can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/) or [Downloads](https://luckperms.net/download/).
+A LuckPerms release for 1.7.10 can be found on our [downloads page](https://luckperms.net/download/).
 
 1.7.10 is the earliest version supported by LuckPerms.
 
