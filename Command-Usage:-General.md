@@ -25,7 +25,7 @@ ___
 *  [/lp `reloadconfig`](#lp-reloadconfig)
 *  [/lp `bulkupdate`](#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
 *  [/lp `migration`](#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](#lp-creategroup-name)
+*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](#lp-creategroup-name-weight-displayname)
 *  [/lp `deletegroup` \<group\>](#lp-deletegroup-name)
 *  [/lp `listgroups`](#lp-listgroups)
 *  [/lp `createtrack` \<track\>](#lp-createtrack-name)
