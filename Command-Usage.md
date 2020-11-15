@@ -44,7 +44,7 @@ General commands used to operate LuckPerms functions.
 *  [/lp `reloadconfig`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-reloadconfig)
 *  [/lp `bulkupdate`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
 *  [/lp `migration`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-creategroup-name)
+*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-creategroup-name)
 *  [/lp `deletegroup` \<group\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-deletegroup-name)
 *  [/lp `listgroups`](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-listgroups)
 *  [/lp `createtrack` \<track\>](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-General#lp-createtrack-name)
