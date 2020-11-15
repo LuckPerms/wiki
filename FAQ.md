@@ -64,7 +64,7 @@ To fix this, you need to give your groups and users the required permissions. If
 ***
 
 ### What versions does LuckPerms support?
-The LuckPerms supports Minecraft versions from 1.8.8 up to the latest release.  
+LuckPerms supports Minecraft versions from 1.8.8 up to the latest release.  
 
 If you want to use LuckPerms on a Bukkit 1.7.10 server, you will need to use the Bukkit-Legacy jar, available [here](https://luckperms.net/download).
 
