@@ -22,6 +22,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **OmegaWeaponDev**
 * **RyanJH**
 * **Tobi**
+* **Fefo**
 * Andre_601 (retired)
 * BrainStone (retired)
 * Darktilldawn (retired)
@@ -31,9 +32,9 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **\_11**
 * **ben**
 * **Doctor Zod**
-* **Fefo**
 * **Rainbow Dash**
 * **usb_hub**
+* **powercas_gamer**
 
 ## Patreons / donors
 
