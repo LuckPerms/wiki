@@ -17,6 +17,7 @@ A huge amount of thanks is owed to:
 Additionally, I'd like to thank the project's Discord moderators and helpers, past and present, who work incredibly hard to keep things in order & support the community in using the plugin.
 
 ### Moderators
+* **Fefo**
 * **Jay**
 * **Larry**
 * **OmegaWeaponDev**
@@ -31,7 +32,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **\_11**
 * **ben**
 * **Doctor Zod**
-* **Fefo**
+* **powercas_gamer**
 * **Rainbow Dash**
 * **usb_hub**
 
