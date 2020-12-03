@@ -1,13 +1,39 @@
-LuckPerms wouldn't be the way it is today without the help of many contributors & supporters.
+LuckPerms is an open-source project, released freely under the terms of the permissive [MIT License](https://github.com/lucko/LuckPerms/blob/master/LICENSE.txt).
+
+> MIT License
+> 
+> Copyright (c) lucko (Luck) <luck@lucko.me>  
+> Copyright (c) Turbotailz <sam@goodger.nz>  
+> Copyright (c) contributors  
+> 
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+> 
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+> 
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+
+LuckPerms is written and maintained by [lucko (Luck)](https://github.com/lucko) and [Turbotailz](https://github.com/Turbotailz).
 
 ## Contributors
+LuckPerms wouldn't be the way it is today without the help of many contributors & supporters.
 
 A huge amount of thanks is owed to:
 
-* [**Turbotailz**](https://github.com/Turbotailz), for his work on LuckPermsWeb.
-* [contributors to `lucko/LuckPerms`](https://github.com/lucko/LuckPerms/graphs/contributors)
-* [contributors to `lucko/LuckPermsWeb`](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
-* [contributors to `LuckPerms/wiki`](https://github.com/LuckPerms/wiki/graphs/contributors)
+* [contributors to LuckPerms](https://github.com/lucko/LuckPerms/graphs/contributors)
+* [contributors to LuckPermsWeb](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
+* [contributors to the wiki](https://github.com/LuckPerms/wiki/graphs/contributors)
 * [contributors to the translation/i18n effort](https://crowdin.com/project/luckperms)
 * [contributors to any of our other projects](https://github.com/LuckPerms)
 
@@ -87,7 +113,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * waqe
 * x313
 
-> (the above list is those who have pledged $5 or more & have made their pledges publicly visible in their Patreon profile)
+(the above list is those who have pledged $5 or more & have made their pledges publicly visible in their Patreon profile)
 
 
 ## Open Source
