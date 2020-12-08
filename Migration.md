@@ -18,8 +18,9 @@ If you have an old permissions setup, or a setup you're not completely happy wit
   * PowerfulPerms
   * bPermissions
   * PermissionsBukkit
+  * PowerRanks
 * BungeeCord
-  * BungeeCord
+  * BungeePerms
 * Sponge
   * None!
     * Support for migration on Sponge was removed due to API compatibility issues. LuckPerms is now the only supported permissions plugin for Sponge servers, and most users had already migrated or were using LuckPerms already.
