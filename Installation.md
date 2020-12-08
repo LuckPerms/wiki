@@ -6,10 +6,10 @@ The first thing you will need to do is download the plugin. You can always find 
 
 Just click the link to download and save the file somewhere easily accessible.
 
-* If you are running a _non-modded_ server for Minecraft: Java Edition, we reccomend that you use [Paper](https://papermc.io/) as your server.
-* If you are running a _Forge "modded"_ server for Minecraft: Java Edition, we reccomend that you use [SpongeForge](https://www.spongepowered.org/) as your server.
-* If you are running a server for Minecraft: Bedrock Edition, we reccomend that you use [NukkitX](https://cloudburstmc.org/) as your server.
-* If you are running a proxy to connect multiple Minecraft servers together, we reccomend that you use [Waterfall](https://papermc.io/downloads#Waterfall) (BungeeCord) or [Velocity](https://velocitypowered.com/) as your proxy.
+* If you are running a _non-modded_ server for Minecraft: Java Edition, we recommend that you use [Paper](https://papermc.io/) as your server.
+* If you are running a _Forge "modded"_ server for Minecraft: Java Edition, we recommend that you use [SpongeForge](https://www.spongepowered.org/) as your server.
+* If you are running a server for Minecraft: Bedrock Edition, we recommend that you use [NukkitX](https://cloudburstmc.org/) as your server.
+* If you are running a proxy to connect multiple Minecraft servers together, we recommend that you use [Waterfall](https://papermc.io/downloads#Waterfall) (BungeeCord) or [Velocity](https://velocitypowered.com/) as your proxy.
 
 If you haven't got anywhere to host your server yet, check out our partner [BisectHosting](https://bisecthosting.com/luck), who are offering LuckPerms users 25% off all of their Minecraft server hosting plans.
 
