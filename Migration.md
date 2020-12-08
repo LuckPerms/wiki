@@ -20,7 +20,6 @@ If you have an old permissions setup, or a setup you're not completely happy wit
   * PermissionsBukkit
   * PowerRanks
 * BungeeCord
-  * BungeeCord
   * BungeePerms
 * Sponge
   * None!
