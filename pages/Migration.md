@@ -43,8 +43,8 @@ Download the jar that corresponds to your existing permission plugin from the ta
 | zPermissions      | [luckperms-migration-zpermissions.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/zpermissions/build/libs/luckperms-migration-zpermissions.jar) | `/migrate-zpermissions`      |
 | bPermissions      | [luckperms-migration-bpermissions.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/bpermissions/build/libs/luckperms-migration-bpermissions.jar) | `/migrate-bpermissions`      |
 | PermissionsBukkit | [luckperms-migration-permissionsbukkit.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/permissionsbukkit/build/libs/luckperms-migration-permissionsbukkit.jar) | `/migrate-permissionsbukkit` |
-| PowerRanks        | [luckperms-migration-powerranks.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/powerranks/build/libs/luckperms-migration-powerranks.jar) | `/migrate powerranks`        |
-| BungeePerms       | [luckperms-migration-bungeeperms.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/bungeeperms/build/libs/luckperms-migration-bungeeperms.jar) | `/migrate bungeeperms`       |
+| PowerRanks        | [luckperms-migration-powerranks.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/powerranks/build/libs/luckperms-migration-powerranks.jar) | `/migrate-powerranks`        |
+| BungeePerms       | [luckperms-migration-bungeeperms.jar](https://ci.lucko.me/job/luckperms-migration/lastSuccessfulBuild/artifact/bungeeperms/build/libs/luckperms-migration-bungeeperms.jar) | `/migrate-bungeeperms`       |
 
 #### Step 3: Restart your server, then run the migration command.
 
