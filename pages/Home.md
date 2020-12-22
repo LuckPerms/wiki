@@ -2,44 +2,29 @@ Hello! :wave:
 
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
-## Where to start?
-If you've never used a permissions plugin before, I suggest you start at the top of the **Setup** section and work your way through everything.
+### Where to start?
+If you've never used a permissions plugin before, I suggest you just start at the top and work your way down!
 
-The basics are covered in detail in the [Usage](Usage) section. Full command usage is detailed under [Command Usage](Command-Usage).
+The basics of permissions are covered in detail in the [Getting Started](Usage) page.
 
-## Support
+A more to the point command reference can be found in the [Command Usage](Command-Usage) subpages.
 
-Free support for the project is offered by me (Luck) and other members of the community.
+### How to get help
 
-### I would like help using / setting up / configuring the plugin
+Support for the project is provided on [Discord](https://discord.gg/luckperms).
 
-If you would like support using the plugin, please seek help in the following places. (in order of preference)
+We would appreciate it if you try to look for an answer to your question here on the wiki first. It saves us having to repeatedly answer the same questions!
 
-#### 1) :book: ​ Wiki
+In particular, check the [FAQ](FAQ) page and the "How To" section. 🙂
 
-**Please** make use of the resources available here on the wiki. The entire plugin has extensive documentation, and most things are covered and explained here.
+### How to report bugs
 
-Please do not be offended if we respond to your question linking back here. It gets *really* boring answering the same questions again and again, when answers are readily available on the wiki. 🙂 
+Bug reports live on [GitHub](https://github.com/lucko/LuckPerms/issues).
 
-Please take a look through the [Frequently Asked Questions](FAQ) page, and any sections which are relevant to your question before seeking support with us directly.
+You'll need to create a GitHub account, then open a new "issue".
 
-#### 2) :speech_balloon: ​ Discord
+Before reporting a bug, please make sure it is actually being caused by or related to LuckPerms. We get a lot of reports which are caused by other things - please double check! If you're unsure, feel free to ask us in Discord *before* making a report.
 
-You can join the LuckPerms guild by clicking on the following link, or typing it manually into the "Join a Server" window.
+### How to contribute to the wiki
 
-[https://discord.gg/luckperms](https://discord.gg/luckperms)
-
-The community Discord Server is a great place to go if you have any unanswered questions, or want to chill out and chat with fellow admins and LuckPerms users.
-
-There are lots of other people here who can answer any questions!
-
-
-### I would like to report a bug or an issue
-
-Before reporting a bug or issue, please make sure that the issue is actually being caused by or related to LuckPerms. We get a lot of reports which are caused by other software - please double check!
-
-If you're unsure, feel free to ask using the above resources BEFORE making a report.
-
-#### 1) GitHub
-
-Bugs or issues should be reported using the [GitHub Issues tab](https://github.com/lucko/LuckPerms/issues).
+The text files that make up this wiki are [open source](https://github.com/LuckPerms/wiki) - we always appreciate contributions!
