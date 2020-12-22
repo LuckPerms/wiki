@@ -1,60 +1,57 @@
-* [**Home**](/wiki)
-* [**Why LuckPerms?**](Why-LuckPerms)
-* [**Credits**](Credits)
-
-### Setup
-* [**Installation**](Installation)
-  * [Initial Setup](Installation#initial-setup)
-  * [Requirements](Installation#requirements)
-  * [Compatibility](Installation#compatibility)
-* [**Network Installation**](Network-Installation)
-  * [BungeeCord version](Network-Installation#the-bungeecord-version-of-luckperms)
-* [**Storage types**](Storage-types)
-* [**Syncing data between servers**](Syncing-data-between-servers)
-* [**Usage**](Usage)
-  * [Key Definitions](Usage#key-definitions)
-  * [Getting Started](Usage#getting-started)
+* [**Install** (on a single server)](Installation)
+* [**Install** (on multiple servers)](Network-Installation)
+* [**Getting Started**](Usage)
+* [**Storage**](Storage-types)
 * [**Configuration**](Configuration)
-* [**Command Usage**](Command-Usage)
-  * [General commands](General-Commands)
-  * [User commands](User-Commands)
-  * [Group commands](Group-Commands)
-  * [Permission commands](Permission-Commands)
-  * [Parent commands](Parent-Commands)
-  * [Meta commands](Meta-Commands)
-  * [Track commands](Track-Commands)
-  * [Log commands](Log-Commands)
-* [**Permissions**](Permissions)
 * [**FAQ**](FAQ)
-* [**Storage system errors**](Storage-system-errors)
-
-### Migration
-* [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
-* [**Migration from other plugins**](Migration)
-* [**Command Equivalents**](GM-&-PEX-Command-Equivalents)
+* [**Command Usage**](Command-Usage)
+  * [General](General-Commands)
+  * [User](User-Commands)
+  * [Group](Group-Commands)
+  * [Permission](Permission-Commands)
+  * [Parent](Parent-Commands)
+  * [Meta](Meta-Commands)
+  * [Track](Track-Commands)
+  * [Log](Log-Commands)
+  * [Permissions Reference](Permissions)
 
 ### Features
+
+* [**Web Editor**](Web-Editor)
 * [**Context**](Context)
 * [**Weight**](Weight)
-* [**Web Editor**](Web-Editor)
+* [**Prefix, Suffix, Meta**](Prefixes,-Suffixes-&-Meta)
 * [**Verbose**](Verbose)
-* [**Bulk Editing**](Bulk-Editing)
-* [**Switching Storage Types & Backups**](Switching-storage-types)
-* [**Prefixes, Suffixes & Meta**](Prefixes,-Suffixes-&-Meta)
-* [**Prefix & Suffix Stacking**](Prefix-&-Suffix-Stacking)
 * [**Tracks**](Tracks)
-* [**Extensions**](Extensions)
-* [**Advanced Setup**](Advanced-Setup)
 * [**Default Groups**](Default-Groups)
-* [**Argument based command permissions**](Argument-based-command-permissions)
+
+### How To
+
+* [**Sync data** between servers](Syncing-data-between-servers)
+* [Fix **storage errors**](Storage-system-errors)
+* [**Migrate** from other plugins](Migration)
+* [**Switch storage** types](Switching-storage-types)
+* [Perform **bulk edits**](Bulk-Editing)
+* [**Stack prefixes**](Prefix-&-Suffix-Stacking)
+* [Install **extensions**](Extensions)
+* [Setup **Argument based command permissions**](Argument-based-command-permissions)
 
 ### Developers
-* [**Developer API**](Developer-API)
-  * [Quick start guide](Developer-API#quick-start-guide)
-  * [Usage](Developer-API-Usage)
 
-### Other
+* [**API Introduction**](Developer-API)
+* [**API Usage**](Developer-API-Usage)
+
+### Reference
+
+* [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
+* [**GM & PEX Command Equivalents**](GM-&-PEX-Command-Equivalents)
+* [**How permission calculation works**](Advanced-Setup)
+* [**Self hosting the web interfaces**](Self-hosting-the-web-interfaces)
+
+### Project Info
+
+* [**Why LuckPerms?**](Why-LuckPerms)
+* [**Credits**](Credits)
 * [**Locale and Translations**](Locale-and-Translations)
 * [**Placeholders**](Placeholders)
 * [**External connections**](External-connections)
-* [**Self hosting the web interfaces**](Self-hosting-the-web-interfaces)
