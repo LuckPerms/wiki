@@ -1,64 +1,119 @@
+LuckPerms is an open-source project, released freely under the terms of the permissive [MIT License](https://github.com/lucko/LuckPerms/blob/master/LICENSE.txt).
+
+> MIT License
+> 
+> Copyright (c) lucko (Luck) <luck@lucko.me>  
+> Copyright (c) Turbotailz <sam@goodger.nz>  
+> Copyright (c) contributors  
+> 
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+> 
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+> 
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+
+LuckPerms is written and maintained by [lucko (Luck)](https://github.com/lucko) and [Turbotailz](https://github.com/Turbotailz).
+
+## Contributors
 LuckPerms wouldn't be the way it is today without the help of many contributors & supporters.
 
-## Discord moderators
+A huge amount of thanks is owed to:
 
-I'd like to especially thank the project's Discord moderators, past and present, who work incredibly hard to keep things in order & support the community in using the plugin:
+* [contributors to LuckPerms](https://github.com/lucko/LuckPerms/graphs/contributors)
+* [contributors to LuckPermsWeb](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
+* [contributors to the wiki](https://github.com/LuckPerms/wiki/graphs/contributors)
+* [contributors to the translation/i18n effort](https://crowdin.com/project/luckperms)
+* [contributors to any of our other projects](https://github.com/LuckPerms)
 
-* **BrainStone**
+
+## Discord moderators & helpers
+
+Additionally, I'd like to thank the project's Discord moderators and helpers, past and present, who work incredibly hard to keep things in order & support the community in using the plugin.
+
+### Moderators
+* **Fefo**
+* **Jay**
 * **Larry**
-* **OmegaWeapon_**
+* **OmegaWeaponDev**
 * **RyanJH**
 * **Tobi**
-* **Turbotailz**
-* **Void**
-* **Andre_601** (retired)
-* **Darktilldawn** (retired)
-* **SpannerMan** (retired)
+* Andre_601 (retired)
+* BrainStone (retired)
+* Darktilldawn (retired)
+* SpannerMan (retired)
+
+### Helpers
+* **\_11**
+* **ben**
+* **Doctor Zod**
+* **powercas_gamer**
+* **Rainbow Dash**
+* **usb_hub**
 
 ## Patreons / donors
 
 A big thank you to my Patreons and donators, whose contributions allow me to continue to work on & offer the project to the community for free!
 
-* **andrewkm**
-* **Andre_601**
-* **Audio**
-* **BinkyQuack**
-* **Birkhoff Lee**
-* **bloodmc**
-* **Collin**
-* **DrOreo002**
-* **FreeMonoid**
-* **iLemon**
-* **imaxorz**
-* **James Darling**
-* **Khan Jal**
-* **KuNet**
-* **Kxnrl**
-* **Maldred**
-* **mocfunky**
-* **MrMicky**
-* **Niels**
-* **PandaSenpai**
-* **royalkingkb**
-* **Ruinscraft**
-* **Shirt**
-* **Shmeeb**
-* **Songoda**
-* **Tobi**
-* **VergilPrime**
-* **Yive**
+* andrewkm
+* apflu
+* Arclite
+* AtariKafa
+* Audio
+* austin4195
+* austind9999
+* bloodshot
+* Combustible
+* Cosido
+* Cryptic
+* Dj
+* doitliketyler
+* Dracathio
+* DrOreo002
+* EatSleepCodeRepeat
+* Ferris
+* HyperVx2
+* I9hdkill
+* Inysal
+* James Darling
+* jasperYAY
+* Jay113355
+* KaiNoMood
+* Khan Jal
+* KuNet
+* Marco
+* mattw
+* metalshark
+* Mikirae
+* mikroskeem
+* mr_coffee1026
+* MrMicky
+* Nathan A.
+* Nogapra
+* ofunny
+* ozraru
+* Plajer
+* royalkingkb
+* Ruinscraft
+* Shmeeb
+* SkippTekk
+* StilauGamer
+* Tummy
+* waqe
+* x313
 
-> (the above list is of those pledging on the "Donor" tier or above on Patreon, or one-time donations at the same level)
-
-## Contributors
-
-Additionally, a huge amount of thanks is owed to:
-
-* [contributors to `lucko/LuckPerms`](https://github.com/lucko/LuckPerms/graphs/contributors)
-* [contributors to `lucko/LuckPermsWeb`](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
-* [contributors to the LuckPerms `wiki`](https://github.com/LuckPerms/wiki/graphs/contributors)
-* [contributors to the the `locale` project](https://github.com/LuckPerms/locale/graphs/contributors)
-* [contributors to `LuckPerms/clippy`](https://github.com/LuckPerms/clippy/graphs/contributors)
+(the above list is those who have pledged $5 or more & have made their pledges publicly visible in their Patreon profile)
 
 
 ## Open Source

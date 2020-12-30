@@ -18,7 +18,7 @@ The plugin can be configured and used in a number of ways. For example, it suppo
 ##### The download process
 
 * Downloads will only be attempted for libraries which are required
-* Downloaded binaries are cached in the `/LuckPerms/lib/` folder after the initial download. If a library is already present here, a connection to the download server will not be attempted.
+* Downloaded binaries are cached in the `/LuckPerms/libs/` folder after the initial download. If a library is already present here, a connection to the download server will not be attempted.
 * The URL and version of libraries is hardcoded within the plugin - they will never automatically update.
 
 All libraries are downloaded from https://nexus.lucko.me/ or https://repo1.maven.org/maven2/.

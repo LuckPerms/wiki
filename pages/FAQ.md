@@ -58,27 +58,45 @@ Please see [here](Storage-system-errors).
 ***
 
 ### I use SpongeForge and when I install LuckPerms I lose all my permissions, why?
-This is an intentional behaviour of SpongeForge. As soon as a permission plugin is installed, it will disable the OP system.  
-To fix this, give the groups and users the required permissions for the plugins. If you want OP-like permissions, you can use the wildcard `*` but this is considered [bad practice](https://nucleuspowered.org/docs/nowildcard.html).
+This is intentional behaviour of SpongeForge. As soon as a permission plugin is installed, it will disable the OP system.  
+To fix this, you need to give your groups and users the required permissions. If you want OP-like permissions, you can use the wildcard `*` but this is [not reccomended](https://nucleuspowered.org/docs/nowildcard.html).
 
 ***
 
 ### What versions does LuckPerms support?
-The latest version of LuckPerms supports MC versions from 1.8.8 up to the latest release which is currently 1.15.2.  
-For the version 1.7.10 will you need to use the Legacy version of LuckPerms, which can be found on [Jenkins](https://ci.lucko.me/view/LuckPerms/job/LuckPerms/).  
-Even older versions are not supported.
+LuckPerms supports Minecraft versions from 1.8.8 up to the latest release.  
+
+If you want to use LuckPerms on a Bukkit 1.7.10 server, you will need to use the Bukkit-Legacy jar, available [here](https://luckperms.net/download).
 
 ***
 
 ### When I install LuckPerms my server shuts down
 LuckPerms will never shut down your server.  
-In most, if not all cases is the cause another plugin.
 
 If you use AuthMe, make sure to check your console for the following lines:  
 ```
 [AuthMe] Aborting initialization of AuthMe: [InjectorReflectionException]: Could not invoke method 'setup' for fr.xephi.authme.permission.PermissionsManager@xxxxxxxx
 [AuthMe] THE SERVER IS GOING TO SHUT DOWN AS DEFINED IN THE CONFIGURATION!
-```  
+```
+
 If those lines are shown, the server was shut down by AuthMe, due to a configuration setting it has by default.
 
 To fix, open the AuthMe config.yml and change `forceVaultHook` from false to true.
+
+***
+
+### LuckPerms cannot download the dependencies 
+LuckPerms requires an internet connection to be able to download it's dependencies. If LuckPerms does not have an connection or a host is blocking it, the plugin will **not** work.
+
+> me.lucko.luckperms.common.dependencies.DependencyDownloadException: java.net.ConnectException: Connection refused (Connection refused)
+
+An error like that either means that **a)** the server doesn't have an internet connection or **b)** your host is blocking the connection.
+
+Do either of the following to resolve this:
+
+- You can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server, into the folder `/LuckPerms/libs/`.
+
+- Contact your server host to allow connections from [nexus.lucko.me](https://nexus.lucko.me/repository/maven-central/) and [repo1.maven.org](https://repo1.maven.org/maven2/).
+
+
+

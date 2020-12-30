@@ -100,7 +100,7 @@ ___
 
 ___
 ### `%luckperms_highest_group_by_weight%`
-**Description:** Returns the name of the players highest prioity group.    
+**Description:** Returns the name of the players highest priority group.    
 **Example:** n/a
 
 ___

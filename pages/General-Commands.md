@@ -15,7 +15,6 @@ ___
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
 *  [/lp `editor`](#lp-editor-type-filter)
-*  [/lp `debug`](#lp-debug)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
 *  [/lp `search` \[comparison\] \<permission\>](#lp-search-comparison-permission)
@@ -26,7 +25,7 @@ ___
 *  [/lp `reloadconfig`](#lp-reloadconfig)
 *  [/lp `bulkupdate`](#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
 *  [/lp `migration`](#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\>](#lp-creategroup-name)
+*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](#lp-creategroup-name-weight-displayname)
 *  [/lp `deletegroup` \<group\>](#lp-deletegroup-name)
 *  [/lp `listgroups`](#lp-listgroups)
 *  [/lp `createtrack` \<track\>](#lp-createtrack-name)
@@ -56,11 +55,6 @@ ___
 * `[filter]` - if the session includes users (e.g. type = "all", "users" or "online"), it will exclude those whose nodes don't start with the provided filter. Groups are unaffected by this filter
 
 Opens a web interface to edit permissions data. After changes are saved, a command will be given that you need to run for the changes to take effect.
-
-___
-#### `/lp debug`  
-**Permission**: luckperms.debug  
-Records debugging output and provides you with a link.
 
 ___
 #### `/lp verbose <on|record|off|upload> [filter]`  
@@ -177,10 +171,12 @@ ___
 Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](Migration).
 
 ___
-#### `/lp creategroup <name>`  
+#### `/lp creategroup <name> [weight] [displayname]`  
 **Permission**: luckperms.creategroup  
 **Arguments**:  
 * `<name>` - the name of the group
+* `[weight]` - the weight of the group
+* `[displayname]` - the displayname of the group
 
 Creates a new group.
 
