@@ -31,7 +31,7 @@ The interface is split into multiple tabs. You can add/remove entries, as well a
 
 ![](https://i.imgur.com/wFisSQz.png)
 
-It's super easy to use.
+It's super easy to use. You can try it out [here](https://luckperms.net/editor/demo)!
 
 The Web editor is such a powerful tool that it has its own [wiki page](Web-Editor).
 
@@ -44,10 +44,7 @@ LuckPerms has a [verbose](Verbose) system, which allows you to monitor permissio
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
-![](https://i.imgur.com/ut3S9Ps.png)
-
-You can also upload recordings to the web, for easier analysis and reading.
-
+You can also upload recordings to the web, for easier analysis and reading. Try it out [here](https://luckperms.net/verbose/demo)
 ![](https://i.imgur.com/tRRosMp.png)
 
 ___
@@ -57,9 +54,7 @@ LuckPerms allows you [build "permission trees"](General-Commands#lp-tree-scope-p
 
 As the server runs for longer periods, the tree also grows, as permissions checked for by plugins on the server are added.
 
-An example tree:
-
-![](https://i.imgur.com/a2f9yqu.png)
+An example tree is available [here](https://luckperms.net/treeview)
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
 
