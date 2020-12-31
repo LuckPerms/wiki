@@ -29,11 +29,9 @@ As well as the command interface, you can also use the web editor to make change
 
 The interface is split into multiple tabs. You can add/remove entries, as well as change attributes on existing entries.
 
-![](https://i.imgur.com/vSJ5NAp.png)
+![](https://i.imgur.com/wFisSQz.png)
 
-It's super easy to use.
-
-[![](https://giant.gfycat.com/ShorttermPowerfulGoldeneye.gif)](https://gfycat.com/ShorttermPowerfulGoldeneye)
+It's super easy to use. You can try it out [here](https://luckperms.net/editor/demo)!
 
 The Web editor is such a powerful tool that it has its own [wiki page](Web-Editor).
 
@@ -42,15 +40,12 @@ ___
 ### Verbose
 LuckPerms has a [verbose](Verbose) system, which allows you to monitor permission checks made by other plugins, occurring in real time.
 
-[![](https://giant.gfycat.com/ArtisticPleasantAlbacoretuna.gif)](https://gfycat.com/ArtisticPleasantAlbacoretuna)
+![](https://i.imgur.com/QOb7AeH.png)
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
-[![](https://i.imgur.com/Ta7gtd9.png)](https://i.imgur.com/Ta7gtd9.png)
-
-You can also upload recordings to the web, for easier analysis and reading.
-
-![](https://i.imgur.com/6IxXIGg.png)
+You can also upload recordings to the web, for easier analysis and reading. Try it out [here](https://luckperms.net/verbose/demo)
+![](https://i.imgur.com/tRRosMp.png)
 
 ___
 
@@ -59,10 +54,7 @@ LuckPerms allows you [build "permission trees"](General-Commands#lp-tree-scope-p
 
 As the server runs for longer periods, the tree also grows, as permissions checked for by plugins on the server are added.
 
-An example tree:
-
-![](https://i.imgur.com/nkdtDkG.png)
-
+An example tree is available [here](https://luckperms.net/treeview)
 
 You can also color the trees, depending on whether a certain player has a permission. This allows you to easily visualise which permissions a player has access to.
 
@@ -74,9 +66,6 @@ The command system is super easy to use and understand. As well as the [document
 ![](http://i.imgur.com/XIVPP6P.png)
 
 All LuckPerms commands are fully tab completable, meaning you have to do less typing to get stuff done!
-
-[![](https://zippy.gfycat.com/AnnualYoungKoi.gif)](https://gfycat.com/AnnualYoungKoi)
-
 ___
 
 ### Action logging
