@@ -60,6 +60,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **Doctor Zod**
 * **powercas_gamer**
 * **Rainbow Dash**
+* **Unix**
 * **usb_hub**
 
 ## Patreons / donors
@@ -126,7 +127,7 @@ LuckPerms utilises a number of open source libraries and utilities to provide it
 | [Gson](https://github.com/google/gson)                                 | [Google](https://github.com/google)                     | [Apache License 2.0](https://github.com/google/gson/blob/master/LICENSE) |
 | [ASM](http://asm.ow2.org/)                                             | [OW2](https://www.ow2.org/)                             | [BSD 3-Clause License](http://asm.ow2.io/license.html) |
 | [jar-relocator](https://github.com/lucko/jar-relocator)                | [Luck](https://github.com/lucko)                        | [Apache License 2.0](https://github.com/lucko/jar-relocator/blob/master/LICENSE.txt) |
-| [text](https://github.com/KyoriPowered/text)                           | [KyoriPowered](https://github.com/KyoriPowered)         | [MIT License](https://github.com/KyoriPowered/text/blob/master/license.txt) |
+| [adventure](https://github.com/kyoripowered/adventure)                           | [KyoriPowered](https://github.com/KyoriPowered)         | [MIT License](https://github.com/KyoriPowered/adventure/blob/master/license.txt) |
 | [event](https://github.com/KyoriPowered/event)                         | [KyoriPowered](https://github.com/KyoriPowered)         | [MIT License](https://github.com/KyoriPowered/event/blob/master/license.txt) |
 | [Caffeine](https://github.com/ben-manes/caffeine)                      | [Ben Manes](https://github.com/ben-manes)               | [Apache License 2.0](https://github.com/ben-manes/caffeine/blob/master/LICENSE) |
 | [Okio](https://github.com/square/okio)                                 | [square](https://square.github.io/)                     | [Apache License 2.0](https://github.com/square/okio/blob/master/LICENSE.txt) |
