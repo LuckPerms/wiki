@@ -30,11 +30,11 @@ Once the command has been executed, the server will begin creating a new session
 
 Once the session is ready, you will be sent a link.
 
-![](https://i.imgur.com/GEojPzy.png)
+![](../img/webeditor-1.png)
 
 To proceed, click on the URL, then press "**Yes**".
 
-![](https://i.imgur.com/ORN1mZW.png)
+![](../img/webeditor-2.png)
 
 Your default web browser should then open the new editor session you've created.
 
@@ -58,19 +58,19 @@ After you've entered the permission(s), click the "+" button to add.
 
 You can add multiple permissions at once! Just type or copy/paste them into the box, and add them as usual.
 
-![](https://i.imgur.com/vyCVt7j.gif)
+![](../img/webeditor-3.gif)
 
 #### Editing existing data
 
 To edit any value in the table, just click it.
 
-![](https://i.imgur.com/s3G5MvP.gif)
+![](../img/webeditor-4.gif)
 
 #### Sorting the data
 
 To change the sorting settings, click on the column heading you'd like to sort by.
 
-![](https://i.imgur.com/yVN4Lzp.gif)
+![](../img/webeditor-5.gif)
 
 #### Luckperms Nodes
 
@@ -94,8 +94,8 @@ Once you've finished making changes to the data, you need to save your changes b
 
 Click on the "Save" button, or use the `CTRL + S` keyboard shortcut to save, and the editor will generate a command which you need to execute in-game or in the console for your changes to apply. Simply clicking on the command will copy it to your clipboard.
 
-![](https://i.imgur.com/pNZgEN0.gif)
+![](../img/webeditor-6.gif)
 
 When you run the command, a summary of the changes will be shown.
 
-![](https://i.imgur.com/7nQp5Fn.png)
+![](../img/webeditor-7.png)

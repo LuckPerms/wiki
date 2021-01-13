@@ -21,7 +21,7 @@ There are two ways to set contexts on permissions; the command you use to set th
 
 * With the editor, you click on `Add Context`, and simply fill in key and value. Just like the command, `key` will be the type of context, and `value` will be its value. An example:
 
-![](https://i.imgur.com/Assh7sG.gif)
+![](../img/context-1.gif)
 ___
 
 Contexts can be combined with each other to form so called "context sets" - simply a collection of context pairs.

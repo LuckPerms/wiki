@@ -46,7 +46,7 @@ To do this, login to your server, and then open the server console.
 Then, type `lp user <your username> permission set luckperms.* true`. (don't worry, the usage of this command will be explained later)
 
 The result should look something like this:   
-![](https://i.imgur.com/VKie2fs.png)
+![](../img/usage-1.png)
 
 Effectively, what this command does, is give the your account the `luckperms.*` permission. (or sets it to true for the user) You'll notice there's a `*` character at the end of the permission string. This character is called a wildcard, and gives a user access to **all** permissions which start with "luckperms".
 
@@ -57,39 +57,39 @@ You can create a new group with the creategroup command. Let's create a new grou
 
 First, run `lp creategroup admin`. This will create a new empty group named "admin".
 
-![](https://i.imgur.com/nD2Qu6e.png)
+![](../img/usage-2.png)
 
 Next, we want to add a permission to the admin group. The command to modify a group is `lp group <group>`. If you run the command, it will list each of the subcommands back to you.
 
-![](https://i.imgur.com/75e6j9R.png)
+![](../img/usage-3.png)
 
 Since we want to add a permission, the subcommand we want is "permission". This allows you to modify the permissions held by the group. Again, running `lp group admin permission` will list the available sub-commands.
 
-![](https://i.imgur.com/YJqso0o.png)
+![](../img/usage-4.png)
 
 Again, we see more commands we can use. The first is another "info" command. Since it's a sub command of "permission", this info command returns information about the permissions a group has. The next command however is the "set" command.
 
 Remember, we used this earlier to give a user access to the "luckperms.*" permission. It works the same here.
 
 Just running the command without any arguments will return information about how to use it. For example:    
-![](https://i.imgur.com/N2C02Sa.png)
+![](../img/usage-5.png)
 
 For example, I want to give my admin group access to "minecraft.command.ban". I can therefore just run `lp group admin permission set minecraft.command.ban true`.
 
-![](https://i.imgur.com/QGYbLkg.png)
+![](../img/usage-6.png)
 
 This command is giving `admin` access to the `minecraft.command.ban` permission. The true at the end is the value we're assigning the permission as. You can either set a permission to `true` or `false`. Setting a permission as true gives the user or group access to it, and setting it to false negates it. (specifically doesn't give them access)
 
 If I decide later that I don't want admin to have this permission anymore, I can just use the unset command to remove it, with `lp group admin permission unset minecraft.command.ban`.
 
-![](https://i.imgur.com/Cb3hTEl.png)
+![](../img/usage-7.png)
 
 ## Adding a user to a group
 Adding users to a group can be done with the "parent" command. (we just swap "permission" for "parent" in our command usage)
 
 For example, to add myself to the admin group, I would run `lp user Luck parent add admin`.
 
-![](https://i.imgur.com/1Q8UCkF.png)
+![](../img/usage-8.png)
 
 This command adds the user `Luck` to the `admin` group. This means that any permissions admin has, I also have through inheritance.
 
@@ -111,7 +111,7 @@ To achieve this, I can setup the groups to inherit from each other.
 
 The command `lp group admin parent add mod` will make admin inherit all of mods permissions. I can then do the same for mod, and run `lp group mod parent add default`.
 
-![](https://i.imgur.com/fRhYucv.png)
+![](../img/usage-9.png)
 
 The inheritance is recursive, so since although admin how only inherits directly from mod, mod inherits from default. This means admin has access to both the permissions in mod **and** default.
 
@@ -122,4 +122,4 @@ Removing parent groups is done with a spookily similar command.
 
 To remove myself from admin, I'd just run `lp user Luck parent remove admin`.
 
-![](https://i.imgur.com/WfPHj8u.png)
+![](../img/usage-10.png)

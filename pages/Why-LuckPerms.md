@@ -41,7 +41,7 @@ As well as the in-game/console command interface, LuckPerms has a web editor whi
 
 Anyone can use the editor, it works out of the box and doesn't require any extra setup!
 
-![](https://i.imgur.com/wFisSQz.png)
+![](../img/whyluckperms-1.png)
 
 It's super easy to use. You can try out a [demo session](https://luckperms.net/editor/demo) or have a look at the editor [wiki page](Web-Editor).
 
@@ -52,7 +52,7 @@ LuckPerms has a [verbose](Verbose) system, which allows you to monitor permissio
 
 You can trace exactly where permission checks originate from - right down to the line of code which caused the check!
 
-![](https://i.imgur.com/tRRosMp.png)
+![](../img/whyluckperms-2.png)
 
 Verbose recordings can be viewed in a special web app for easier analysis and reading. You can have a look at a [demo recording here](https://luckperms.net/verbose/demo).
 
@@ -72,18 +72,18 @@ ___
 ### Command interface & tab completion
 The command system is super easy to use and understand. As well as the [documentation available here on the wiki](Command-Usage), command usage and listings can also be viewed in-game.
 
-![](http://i.imgur.com/XIVPP6P.png)
+![](http://i.imgur.com/whyluckperms-3.png)
 
 All LuckPerms commands are fully tab completable, meaning you have to do less typing to get stuff done!
 
-![](https://i.imgur.com/o3AcyVY.png)
+![](../img/whyluckperms-4.png)
 
 ___
 
 ### Action logging
 LuckPerms makes a detailed log of all changes that are made. If you have a rogue staff member try to give themselves permissions, instead of trawling through the servers log file, you can simply search for any actions executed by them!
 
-![](http://i.imgur.com/Jfu8XCI.png)
+![](http://i.imgur.com/whyluckperms-5.png)
 
 You can also view the history of certain users, groups, or tracks, or look at the actions executed by a user.
 

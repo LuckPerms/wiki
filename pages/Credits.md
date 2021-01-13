@@ -152,11 +152,11 @@ LuckPerms utilises a number of open source libraries and utilities to provide it
 ## Sponsors
 
 ### YourKit
-[![](https://www.yourkit.com/images/yklogo.png)](https://www.yourkit.com/)
+[![](../img/credits-yourkit.png)](https://www.yourkit.com/)
 
 YourKit supports open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/) and [YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/), innovative and intelligent tools for profiling Java and .NET applications.
 
 ### JProfiler
-[![](https://www.ej-technologies.com/images/product_banners/jprofiler_large.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
+[![](../img/credits-jprofiler.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
 
 Thanks to ej-technologies for granting LuckPerms an open source licence to their [Java Profiling Software](http://www.ej-technologies.com/products/jprofiler/overview.html "Java Profiler").

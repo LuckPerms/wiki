@@ -47,11 +47,11 @@ A filter string will match the start of the permission being checked, or the use
 ## Web viewer
 The web viewer exposes the same information available in-game, but is easier to analyse when there are lots of checks being processed.
 
-![](https://i.imgur.com/tRRosMp.png)
+![](../img/verbose-1.png)
 
 You can simply click on an entry to see more information about the nature of the check:
 
-![](https://i.imgur.com/ut3S9Ps.png)
+![](../img/verbose-2.png)
 
 
 

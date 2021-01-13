@@ -19,11 +19,11 @@ Next, we need to install the plugin onto the server. Make sure you have selected
 
 Navigate to your hosting panel's "File Manager", and open the `plugins` folder (for Bukkit, Nukkit, etc) or `mods` folder (for Sponge).
 
-![](https://i.imgur.com/5RIgmxi.png)
+![](../img/installation-1.png)
 
 Once you're in the plugins folder, click upload and select the LuckPerms jar you downloaded in Step 1.
 
-![](https://i.imgur.com/Ch9Vxa4.png)
+![](../img/installation-2.png)
 
 If you've installed an older version of LuckPerms before, make sure to delete any existing jar files.
 
@@ -35,7 +35,7 @@ This allows LuckPerms to enable and generate the default configuration file.
 
 As your server restarts, you can monitor the console to make sure LuckPerms starts up and enables correctly.
 
-![](https://i.imgur.com/UUul7MC.png)
+![](../img/installation-3.png)
 
 The plugin is now installed and you can start using it right away! Move onto the Usage section of the wiki for more information about what to do next!
 
@@ -45,7 +45,7 @@ To customize the plugin, you can make changes to its configuration file.
 
 Go back to the "File Manager", then open the `plugins` folder (for Bukkit, Nukkit, etc) or `config` folder (for Sponge). Then, open the `LuckPerms` folder within.
 
-![](https://i.imgur.com/oTksUKd.png)
+![](../img/installation-4.png)
 
 Here you will find a number of files. The important ones are:
 
@@ -64,19 +64,19 @@ If you run multiple servers in a network (or plan to do so in the future), then 
 
 Most server hosts provide these for free! Click the option for "MySQL Database", then "Create database". You should be presented with 4 things: a hostname, database name, username and password.
 
-![](https://i.imgur.com/2fjh2zS.png)
+![](../img/installation-5.png)
 
 Once you have these details, take a note of them (or duplicate your tab), then navigate back to the LuckPerms `config.yml` file in the File Manager, and click "edit".
 
 Scroll down to "Storage Settings" and set `storage-method` to `mysql`. Then fill out your database info under the `data:` section.
 
-![](https://i.imgur.com/d5cUgAI.png)
+![](../img/installation-6.png)
 
 Click save on the file, then restart your server.
 
 You can then confirm in the console that MySQL has been setup correctly. If you see `Loading storage provider... [MYSQL]` followed by no errors, everything is working correctly!
 
-![](https://i.imgur.com/vBlHkwN.png)
+![](../img/installation-7.png)
 
 Remember, you'll need to complete these steps for all servers you have in your network.
 
