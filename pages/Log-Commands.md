@@ -14,7 +14,6 @@ ___
 *  [/lp log `recent` [user] [page]](#lp-log-recent-user-page)
 *  [/lp log `search` \<query\> [page]](#lp-log-search-query-page)
 *  [/lp log `notify` [on|off]](#lp-log-notify-onoff)
-*  [/lp log `export` \<file\>](#lp-log-export-file)
 *  [/lp log `userhistory` \<user\> [page]](#lp-log-userhistory-user-page)
 *  [/lp log `grouphistory` \<group\> [page]](#lp-log-grouphistory-group-page)
 *  [/lp log `trackhistory` \<track\> [page]](#lp-log-trackhistory-track-page)
@@ -44,14 +43,6 @@ ___
 * `[on|off]` - whether to enable or disable
 
 Toggles log notifications for the sender executing the command.
-
-___
-#### `/lp log export <file>`  
-**Permission**: luckperms.log.export  
-**Arguments**:  
-* `<file>` - the file to export to
-
-Exports the log to a list of commands, recognisable by the "/lp import" command. This feature should rarely be used, and use of "/lp export" is recommended instead.
 
 ___
 #### `/lp log userhistory <user> [page]`  

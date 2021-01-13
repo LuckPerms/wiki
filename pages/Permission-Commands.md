@@ -16,8 +16,7 @@ ___
 *  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset-node-context)
 *  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
 *  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp-node-context)
-*  [`check` \<node\> [context...]](#lp-usergroup-usergroup-permission-check-node-context)
-*  [`checkinherits` \<node\> [context...]](#lp-usergroup-usergroup-permission-checkinherits-node-context)
+*  [`check` \<node\>](#lp-usergroup-usergroup-permission-check-node)
 *  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear-context)
 
 ___
@@ -87,22 +86,13 @@ ___
 Unsets a temporary permission for a user/group.
 
 ___
-#### `/lp user/group <user|group> permission check <node> [context...]`  
+#### `/lp user/group <user|group> permission check <node>`  
 **Permission**: luckperms.user.permission.check or luckperms.group.permission.check  
 **Arguments**:  
-* `<node>` - the permission node to check for
-* `[context...]` - the [contexts](Context) to check for the permission in
 
-Checks to see if a user/group has a certain permission.
+* `<node>` - the permission node to check
 
-___
-#### `/lp user/group <user|group> permission checkinherits <node> [context...]`  
-**Permission**: luckperms.user.permission.checkinherits or luckperms.group.permission.checkinherits  
-**Arguments**:  
-* `<node>` - the permission node to check for
-* `[context...]` - the [contexts](Context) to check for the permission in
-
-Checks to see if a user/group inherits a certain permission, and if so, where from.
+Checks to see if a user/group has a certain permission, providing useful information about the factors that influenced the result of the check.
 
 ___
 #### `/lp user/group <user|group> permission clear [context...]`  

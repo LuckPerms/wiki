@@ -12,6 +12,7 @@ ___
 
 ### Index
 *  [/lp track \<track\> `info`](#lp-track-track-info)
+*  [/lp track \<track\> `editor`](#lp-track-track-editor)
 *  [/lp track \<track\> `append` \<group\>](#lp-track-track-append-group)
 *  [/lp track \<track\> `insert` \<group\> \<position\>](#lp-track-track-insert-group-position)
 *  [/lp track \<track\> `remove` \<group\>](#lp-track-track-remove-group)
@@ -25,7 +26,15 @@ ___
 Displays the groups in the track.
 
 ___
+#### `/lp track <track> editor`  
+
+**Permission**: luckperms.track.editor  
+Opens a web interface to edit permissions for the specified track. After changes are saved, a command will be given that you need to run for the changes to take effect.
+
+___
+
 #### `/lp track <track> append <group>`  
+
 **Permission**: luckperms.track.append  
 **Arguments**:  
 * `<group>` - the group to add

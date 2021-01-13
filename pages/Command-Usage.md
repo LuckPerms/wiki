@@ -5,13 +5,13 @@ If the only thing returned when you type a command is the plugin version, you do
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
 
-| Bukkit / Sponge / Nukkit  | BungeeCord       | Velocity           |
-|---------------------------|------------------|--------------------|
-| /luckperms                | /luckpermsbungee | /luckpermsvelocity |
-| /perms                    | /bperms          | /vperms            |
-| /permissions              | /bpermissions    | /vpermissions      |
-| /perm                     | /bperm           | /vperm             |
-| /lp                       | /lpb             | /lpv               |
+| Bukkit / Sponge / Fabric / Nukkit | BungeeCord       | Velocity           |
+| --------------------------------- | ---------------- | ------------------ |
+| /luckperms                        | /luckpermsbungee | /luckpermsvelocity |
+| /perms                            | /bperms          | /vperms            |
+| /permissions                      | /bpermissions    | /vpermissions      |
+| /perm                             | /bperm           | /vperm             |
+| /lp                               | /lpb             | /lpv               |
 
 **`Important:`** The command aliases are different on BungeeCord and Velocity. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
 
@@ -33,18 +33,16 @@ General commands used to operate LuckPerms functions.
 *  [/lp `sync`](General-Commands#lp-sync)
 *  [/lp `info`](General-Commands#lp-info)
 *  [/lp `editor`](General-Commands#lp-editor-type)
-*  [/lp `debug`](General-Commands#lp-debug)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](General-Commands#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](General-Commands#lp-tree-scope-player)
-*  [/lp `search` \<permission\>](General-Commands#lp-search-permission)
-*  [/lp `check` \<user\> \<permission\>](General-Commands#lp-check-user-permission)
+*  [/lp `search` [comparison] \<permission\>](General-Commands#lp-search-comparison-permission)
 *  [/lp `networksync`](General-Commands#lp-networksync)
-*  [/lp `import` \<file\>](General-Commands#lp-import-file)
-*  [/lp `export` \<file\>](General-Commands#lp-export-file)
+*  [/lp `import` \<file | code --upload\> [--replace]](General-Commands#lp-import-filecode---upload---replace)
+*  [/lp `export` \<file\> [--upload]](General-Commands#lp-export-file--upload)
 *  [/lp `reloadconfig`](General-Commands#lp-reloadconfig)
 *  [/lp `bulkupdate`](General-Commands#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
-*  [/lp `migration`](General-Commands#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](General-Commands#lp-creategroup-name-weight-displayname)
+*  [/lp `translations`](General-Commands#lp-translations)
+*  [/lp `creategroup` \<group\> [weight] [displayname]](General-Commands#lp-creategroup-name-weight-displayname)
 *  [/lp `deletegroup` \<group\>](General-Commands#lp-deletegroup-name)
 *  [/lp `listgroups`](General-Commands#lp-listgroups)
 *  [/lp `createtrack` \<track\>](General-Commands#lp-createtrack-name)
@@ -92,8 +90,7 @@ Formed of either `/lp user <user> permission ...` or `/lp group <group> permissi
 *  [`unset` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-unset-node-context)
 *  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](Permission-Commands#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
 *  [`unsettemp` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-unsettemp-node-context)
-*  [`check` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-check-node-context)
-*  [`checkinherits` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-checkinherits-node-context)
+*  [`check` \<node\>](Permission-Commands#lp-usergroup-usergroup-permission-check-node)
 *  [`clear` [context...]](Permission-Commands#lp-usergroup-usergroup-permission-clear-context)
 
 ### Parent commands
@@ -139,6 +136,7 @@ Commands used to view or modify a specific track.
 
 Formed of `/lp track <track> ...` - where `<track>` is the name of the track being queried / modified.
 *  [/lp track \<track\> `info`](Track-Commands#lp-track-track-info)
+*  [/lp track \<track\> `editor`](Track-Commands#lp-track-track-editor)
 *  [/lp track \<track\> `append` \<group\>](Track-Commands#lp-track-track-append-group)
 *  [/lp track \<track\> `insert` \<group\> \<position\>](Track-Commands#lp-track-track-insert-group-position)
 *  [/lp track \<track\> `remove` \<group\>](Track-Commands#lp-track-track-remove-group)
@@ -151,7 +149,6 @@ Commands used to view the action log.
 *  [/lp log `recent` [user] [page]](Log-Commands#lp-log-recent-user-page)
 *  [/lp log `search` \<query\> [page]](Log-Commands#lp-log-search-query-page)
 *  [/lp log `notify` [on|off]](Log-Commands#lp-log-notify-onoff)
-*  [/lp log `export` \<file\>](Log-Commands#lp-log-export-file)
 *  [/lp log `userhistory` \<user\> [page]](Log-Commands#lp-log-userhistory-user-page)
 *  [/lp log `grouphistory` \<group\> [page]](Log-Commands#lp-log-grouphistory-group-page)
 *  [/lp log `trackhistory` \<track\> [page]](Log-Commands#lp-log-trackhistory-track-page)

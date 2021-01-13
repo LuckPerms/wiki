@@ -17,15 +17,14 @@ ___
 *  [/lp `editor`](#lp-editor-type-filter)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
-*  [/lp `search` \[comparison\] \<permission\>](#lp-search-comparison-permission)
-*  [/lp `check` \<user\> \<permission\>](#lp-check-user-permission)
+*  [/lp `search` [comparison] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `networksync`](#lp-networksync)
 *  [/lp `import` \<file | code --upload\> [--replace]](#lp-import-filecode---upload---replace)
 *  [/lp `export` \<file\> [--upload]](#lp-export-file--upload)
 *  [/lp `reloadconfig`](#lp-reloadconfig)
 *  [/lp `bulkupdate`](#lp-bulkupdate-data-type-action-action-field-action-value-constraints)
-*  [/lp `migration`](#lp-migration-plugin-name-options)
-*  [/lp `creategroup` \<group\> \[weight\] \[displayname\]](#lp-creategroup-name-weight-displayname)
+*  [/lp `translations`](#lp-translations)
+*  [/lp `creategroup` \<group\> [weight] [displayname]](#lp-creategroup-name-weight-displayname)
 *  [/lp `deletegroup` \<group\>](#lp-deletegroup-name)
 *  [/lp `listgroups`](#lp-listgroups)
 *  [/lp `createtrack` \<track\>](#lp-createtrack-name)
@@ -75,7 +74,8 @@ Filters match the start of permissions or the user being checked. You can use `&
 * `Luck & (essentials | worldedit)` - matches any checks made against my user starting with "essentials" or "worldedit"
 * `!Luck & !anticheat` - matches any checks not against my user and not starting with "anticheat"
 * `anticheat & !anticheat.check` - matches any checks starting with "anticheat" but not starting with "anticheat.check"    
-     
+  
+
 More information can be found [**here**](Verbose)
 
 ___
@@ -107,15 +107,6 @@ ___
 * `<permission>` - the permission to search for
 
 Searches all users/groups for a specific permission, and returns a paginated list of all found entries. 
-
-___
-#### `/lp check <user> <permission>`  
-**Permission**: luckperms.check  
-**Arguments**:  
-* `<user>` - the user to check
-* `<permission>` - the permission to check for
-
-Performs a standard permission check on an online player, and returns the result. This check is equivalent to the checks performed by other plugins when checking for permissions.
 
 ___
 #### `/lp networksync`  
@@ -162,18 +153,15 @@ ___
 Allows you to perform a bulk modification to all permission data. A detailed guide on how to use this command can be found [here](Bulk-Editing).
 
 ___
-#### `/lp migration <plugin name> [options]`  
-**Permission**: luckperms.migration  
-**Arguments**:  
-* `<plugin name>` - the plugin to migrate data from
-* `[options]` - the options required for certain plugin migrations
-
-Main command used for the migration system. Allows you to import permissions data into LuckPerms from other permission plugins. More information about this feature can be found [here](Migration).
+#### `/lp translations`  
+**Permission**: luckperms.translations  
+Shows information about loaded translations, and allows installation of community provided translation bundles.
 
 ___
 #### `/lp creategroup <name> [weight] [displayname]`  
 **Permission**: luckperms.creategroup  
 **Arguments**:  
+
 * `<name>` - the name of the group
 * `[weight]` - the weight of the group
 * `[displayname]` - the displayname of the group
