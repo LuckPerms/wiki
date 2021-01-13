@@ -72,7 +72,7 @@ ___
 ### Command interface & tab completion
 The command system is super easy to use and understand. As well as the [documentation available here on the wiki](Command-Usage), command usage and listings can also be viewed in-game.
 
-![](http://i.imgur.com/whyluckperms-3.png)
+![](../img/whyluckperms-3.png)
 
 All LuckPerms commands are fully tab completable, meaning you have to do less typing to get stuff done!
 
@@ -83,7 +83,7 @@ ___
 ### Action logging
 LuckPerms makes a detailed log of all changes that are made. If you have a rogue staff member try to give themselves permissions, instead of trawling through the servers log file, you can simply search for any actions executed by them!
 
-![](http://i.imgur.com/whyluckperms-5.png)
+![](../img/whyluckperms-5.png)
 
 You can also view the history of certain users, groups, or tracks, or look at the actions executed by a user.
 
