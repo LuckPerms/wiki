@@ -40,7 +40,7 @@ ___
 ### Contexts provided by LuckPerms
 The context system is designed to be extensible - the system should not (and is not!) confined to only a few types of contexts.
 
-With that said, LuckPerms provides by default, three contexts of its own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
+With that said, LuckPerms provides by default, five contexts of its own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
 
 | Context Key | Description | Example |
 |-------------|-------------|---------|
