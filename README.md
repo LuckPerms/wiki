@@ -2,11 +2,12 @@
 
 Welcome to the LuckPerms wiki repository.
 
-If you want to view the wiki, go here: https://luckperms.net/wiki
+The wiki can be viewed on our website: https://luckperms.net/wiki
 
 ### Layout
 
 * `/pages/` - the actual wiki content as markdown documents
+* `/img` - image files which are embedded in the wiki pages
 
 ### License
 
