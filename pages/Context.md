@@ -40,12 +40,14 @@ ___
 ### Contexts provided by LuckPerms
 The context system is designed to be extensible - the system should not (and is not!) confined to only a few types of contexts.
 
-With that said, LuckPerms provides by default, three contexts of its own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
+With that said, LuckPerms provides by default, five contexts of its own. Other plugins are also able to provide their own contexts by registering a `ContextCalculator` in the API.
 
 | Context Key | Description | Example |
 |-------------|-------------|---------|
 | `server`    | The player's current server. This value is determined by the **server** setting at the very top of the LuckPerms config file. | `server=survival` |
 | `world`    | The player's current world - this value is just retrieved from the server. When LuckPerms runs on a BungeeCord/Velocity proxy, the world context value refers to the subserver the player is currently connected to. | `world=world_nether` |
+| `gamemode`    | The player's current gamemode. | `gamemode=creative` |
+| `dimension`    | The dimension of the world the player is currently in. | `dimension=the_nether` |
 | `proxy`    | This context is only applied when LuckPerms is running on a BungeeCord proxy with RedisBungee installed. It refers to the proxy the player is currently connected to. | `proxy=redisbungee1` |
 
 ___
@@ -95,6 +97,6 @@ This would mean that, for `/lp` commands on the server which you've added the de
 
 ### ExtraContexts
 
-ExtraContexts is another plugin which adds functionality for more contexts that stock LuckPerms does not, such as WorldGuard contexts, gamemode contexts, PlaceholderAPI contexts, and more! 
+ExtraContexts is another plugin which adds functionality for more contexts that stock LuckPerms does not, such as WorldGuard contexts, PlaceholderAPI contexts, and more! 
 
 See [here](https://github.com/LuckPerms/ExtraContexts) for more information.
