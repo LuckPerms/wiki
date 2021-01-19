@@ -1,0 +1,11 @@
+{
+  "name": "wiki-indexer",
+  "version": "1.0.0",
+  "description": "Generates an index for the wiki",
+  "main": "gen_index.js",
+  "author": "Luck",
+  "license": "MIT",
+  "dependencies": {
+    "lunr": "^2.3.9"
+  }
+}
