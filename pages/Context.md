@@ -97,6 +97,6 @@ This would mean that, for `/lp` commands on the server which you've added the de
 
 ### ExtraContexts
 
-ExtraContexts is another plugin which adds functionality for more contexts that stock LuckPerms does not, such as WorldGuard contexts, gamemode contexts, PlaceholderAPI contexts, and more! 
+ExtraContexts is another plugin which adds functionality for more contexts that stock LuckPerms does not, such as WorldGuard contexts, PlaceholderAPI contexts, and more! 
 
 See [here](https://github.com/LuckPerms/ExtraContexts) for more information.
