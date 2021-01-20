@@ -676,11 +676,19 @@ ___
 
 ### Listening to LuckPerms events
 
-All event interfaces can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package. They all extend [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java).
+LuckPerms uses it's own event system, completely separate from the event systems used by platforms (e.g. Bukkit or Sponge). This means that instead of registering your listener with the server, you must register it directly with LuckPerms.
 
-To listen to events, you need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance, using `LuckPerms#getEventBus`.
+The events supported by LuckPerms are defined as `interface`s that extend from [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java). They can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package.
 
-It's usually a good idea to create a separate class for your listeners. Here's a short example class you can reference.
+To listen to events, you first need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance using `LuckPerms#getEventBus`, then register each listener using the `subscribe` method.
+
+The `subscribe` method accepts a `java.util.function.Consumer` object - which allows listeners to be defined as:
+
+1. [Expression lambdas](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
+2. [Statement lambdas](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax)
+3. [Method references](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
+
+It's usually a good idea to create a separate class for your listeners. Here's a short example class demonstrating how to subscribe to events.
 
 ```java
 import net.luckperms.api.event.EventBus;
@@ -688,42 +696,55 @@ import net.luckperms.api.event.log.LogPublishEvent;
 import net.luckperms.api.event.user.UserLoadEvent;
 import net.luckperms.api.event.user.track.UserPromoteEvent;
 
-public class TestListener {
+public class MyListener {
     private final MyPlugin plugin;
 
-    public TestListener(MyPlugin plugin, LuckPerms api) {
+    public MyListener(MyPlugin plugin, LuckPerms luckPerms) {
         this.plugin = plugin;
 
-        // get the LuckPerms event bus
-        EventBus eventBus = api.getEventBus();
+        EventBus eventBus = luckPerms.getEventBus();
 
-        // subscribe to an event using an expression lambda
-        eventBus.subscribe(LogPublishEvent.class, e -> e.setCancelled(true));
+        // 1. Subscribe to an event using an expression lambda
+        eventBus.subscribe(this.plugin, LogPublishEvent.class, e -> /* ... */);
 
-      	// subscribe to an event using a lambda
-        eventBus.subscribe(UserLoadEvent.class, e -> {
-            System.out.println("User " + e.getUser().getUsername() + " was loaded!");
-            // TODO: do something else...
+      	// 2. Subscribe to an event using a statement lambda
+        eventBus.subscribe(this.plugin, UserLoadEvent.class, e -> {
+            // ...
         });
 
-        // subscribe to an event using a method reference
-        eventBus.subscribe(UserPromoteEvent.class, this::onUserPromote);
+        // 3. Subscribe to an event using a method reference
+        eventBus.subscribe(this.plugin, UserPromoteEvent.class, this::onUserPromote);
     }
 
     private void onUserPromote(UserPromoteEvent event) {
-        // as we want to access the Bukkit API, we need to use the scheduler to jump back onto the main thread.
-        Bukkit.getScheduler().runTask(plugin, () -> {
-            Bukkit.broadcastMessage(event.getUser().getUsername() + " was promoted to" + event.getGroupTo().get() + "!");
-
-            Player player = Bukkit.getPlayer(event.getUser().getUniqueId());
-            if (player != null) {
-                player.sendMessage("Congrats!");
-            }
-        });
+        // ...
     }
-
 }
 ```
 
-`EventBus#subscribe` returns an [`EventSubscription`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventSubscription.java) instance, which can be used to unregister the listener when your plugin disables.
+If your listener is simple, then an expression or statement lambda is best. If your listener is complex, then method references are probably going to be more organised.
+
+#### Listening for changes to user cached data
+
+If you have a system that depends on a users cached data (e.g. their prefix or permission state), then you may find it necessary to perform some action in your plugin when the data changes (e.g. invalidate or update a cache). The best & most simple event to use to achieve this is the [`UserDataRecalculateEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/user/UserDataRecalculateEvent.java).
+
+This is a simple event that is "called when a User's cached data is refreshed". It doesn't give any information about what caused the refresh - just that it happened!
+
+#### Listening for changes to permissions/parent groups/etc
+
+Recall from earlier that [all user/group data is stored as `Node`s](#the-basics-of-node) - introducing:
+
+* the [`NodeAddEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java) - called when a node is added to a user/group
+* the [`NodeRemoteEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeRemoveEvent.java) - called when a node is removed from a user/group
+* the [`NodeClearEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeClearEvent.java) - called when a user/group has all/some their existing nodes removed
+
+All of these events extend from [`NodeMutateEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeMutateEvent.java) which defines the base properties.
+
+These events cover all possible changes that could be made to a user/groups LuckPerms data. The trick is to figure out which event you need, and how to filter down to only catch the desired changes.
+
+For example, to catch *prefixes* being added to *groups*, you would need to listen to the `NodeAddEvent`, then check if `e.isGroup() && e.getNode().getType() == NodeType.PREFIX`. Of course, afterwards, you could then cast `((Group) e.getTarget())` and `((PrefixNode) node)` to extract further information.
+
+To catch both additions and removals, you can either subscribe to the generic `NodeMutateEvent`, or to both the add and remove events separately.
+
+There is an [example listener in the API Cookbook](https://github.com/LuckPerms/api-cookbook/blob/master/src/main/java/me/lucko/lpcookbook/listener/PlayerNodeChangeListener.java) which demonstrates this nicely.
 
