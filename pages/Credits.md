@@ -75,15 +75,17 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * austin4195
 * austind9999
 * bloodshot
+* BomBardyGamer
 * Combustible
 * Cosido
 * Cryptic
 * Dj
-* doitliketyler
 * Dracathio
 * DrOreo002
 * EatSleepCodeRepeat
+* EBatuzay
 * Ferris
+* Forrest Hopkins
 * HyperVx2
 * I9hdkill
 * Inysal
@@ -104,7 +106,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * Nogapra
 * ofunny
 * ozraru
-* Plajer
+* queeirdo
 * royalkingkb
 * Ruinscraft
 * Shmeeb
@@ -113,6 +115,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * Tummy
 * waqe
 * x313
+* zFrost87
 
 (the above list is those who have pledged $5 or more & have made their pledges publicly visible in their Patreon profile)
 
