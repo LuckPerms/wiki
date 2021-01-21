@@ -59,7 +59,7 @@ Please see [here](Storage-system-errors).
 
 ### I use SpongeForge and when I install LuckPerms I lose all my permissions, why?
 This is intentional behaviour of SpongeForge. As soon as a permission plugin is installed, it will disable the OP system.  
-To fix this, you need to give your groups and users the required permissions. If you want OP-like permissions, you can use the wildcard `*` but this is [not reccomended](https://nucleuspowered.org/docs/nowildcard.html).
+To fix this, you need to give your groups and users the required permissions. If you want OP-like permissions, you can use the wildcard `*` but this is [not recommended](https://nucleuspowered.org/docs/nowildcard.html).
 
 ***
 
