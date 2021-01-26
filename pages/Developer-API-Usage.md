@@ -432,6 +432,7 @@ Here is an example of adding a permission to a user:
 ```java
 DataMutateResult result = user.data().add(Node.builder("your.node.here").build());
 ```
+Don't forget to [save](#saving-changes) your changes!
 
 ___
 
