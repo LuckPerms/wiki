@@ -38,8 +38,8 @@ This is explained in detail on the [Network Installation](Network-Installation) 
   - you want to manage Bungeecord permissions (in most cases, you do), or
   - you set your messaging-service to `pluginmsg` (not recommended when using a SQL database).
 - You need LuckPerms installed on each of your backend (Spigot, Sponge) servers.
-- You must ensure IP forwarding is enabled on Bungeecord and that the Spigot servers have `bungeecord: true`.
-- You must use the same [remote storage method](Storage-types#remote-databases) (such as MySQL) on ALL of your LuckPerms installations. This requires the `storage-method` property to be set as well as the database credentials on all servers.
+- You must ensure IP forwarding is enabled on Bungeecord and that the Spigot servers have `bungeecord: true` set in their spigot.yml file.
+- You must use the same [remote storage method](Storage-types#remote-databases) (such as MySQL) on ALL of your LuckPerms installations. This requires the `storage-method` property to be set as well as the database credentials to be identical on all servers.
 - Ensure your servers are all connected to the correct database by running `/lp info` and checking if the storage method is correct. Use `/lpb info` for Bungeecord (run it from the console if you run into permission errors).
 - If you are using MySQL or MariaDB, set the [`messaging-service`](Configuration#messaging-service) to `sql` on all servers. This will enable syncing for all of your servers when a change is made to the database.
 
@@ -85,12 +85,12 @@ To fix, open the AuthMe config.yml and change `forceVaultHook` from false to tru
 
 ***
 
-### LuckPerms cannot download the dependencies 
-LuckPerms requires an internet connection to be able to download it's dependencies. If LuckPerms does not have an connection or a host is blocking it, the plugin will **not** work.
+### LuckPerms cannot download dependencies 
+LuckPerms requires an internet connection to be able to download its dependencies. If LuckPerms does not have an connection or a host is blocking it, the plugin will **not** work.
 
 > me.lucko.luckperms.common.dependencies.DependencyDownloadException: java.net.ConnectException: Connection refused (Connection refused)
 
-An error like that either means that **a)** the server doesn't have an internet connection or **b)** your host is blocking the connection.
+An error like this either means that **a)** the server doesn't have an internet connection or **b)** your host is blocking the connection.
 
 Do either of the following to resolve this:
 
