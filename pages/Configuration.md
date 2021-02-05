@@ -30,6 +30,7 @@ Links to the default file for each platform are above. Please note that the conf
 * [`push-log-entries`](#push-log-entries)
 * [`broadcast-received-log-entries`](#broadcast-received-log-entries)
 * [`redis`](#redis)
+* [`rabbitmq`](#rabbitmq)
 
 ### Customization Settings
 * [`temporary-add-behaviour`](#temporary-add-behaviour)
@@ -230,6 +231,7 @@ If you decide to enable this feature, you should set "sync-minutes" to -1, as th
 * **`pluginmsg`** - uses the plugin messaging channels to communicate. LuckPerms must be installed on your BungeeCord/Velocity proxy & all connected backend servers. This won't work if you have multiple proxies. The option needs to be set on all LP instances. Using `sql` is recommended over this option!
 * **`lilypad`** - uses LilyPad's pub sub to push changes. You need to have the LilyPad-Connect plugin installed.
 * **`redis`** - uses Redis pub sub to push changes.
+* **`rabbitmq`** - uses RabbitMQ pub sub (AMQP) to push changes.
 * **`none`** - nothing!
 
 ##### Example
@@ -279,6 +281,25 @@ redis:
   enabled: true
   address: localhost
   password: 'passw0rd'
+```
+
+---
+### `rabbitmq`
+Settings for RabbitMQ (AMQP).
+
+* **`address`** - the host to be used for rabbitmq. Uses the standard AMQP port by default (5672). If you have a non-default port, specify it here using `host:port`.
+* **`vhost`** - the virtual host to use for LuckPerms. In most cases, this can (and should) be left default. See [here](https://www.rabbitmq.com/vhosts.html) for more information on virtual hosts.
+* **`username`** - the username to be used. Default is guest, which is a user that has all privileges on the / virtual host. See [here](https://www.rabbitmq.com/access-control.html) for more information on access control.
+* **`password`** - the password to be used. Default is guest, which is the password for the guest user (see above)
+
+##### Example
+```yaml
+rabbitmq:
+  enabled: true
+  address: localhost
+  vhost: '/'
+  username: 'guest'
+  password: 'guest'
 ```
 
 ___

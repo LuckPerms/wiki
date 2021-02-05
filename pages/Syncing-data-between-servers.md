@@ -47,6 +47,6 @@ A messaging service can be configured in the config, under the `messaging-servic
 | pluginmsg | Uses the plugin messaging channels to communicate with the proxy. LuckPerms must be installed on your proxy & all connected servers backend servers. Won't work if you have more than one proxy. |
 | lilypad | Uses LilyPad Connect's PubSub system to communicate. |
 | redis | Connects to a Redis instance and uses PubSub to communicate. |
-| rabbitmq | Connects to a RabbitMQ instance to communicate across the servers. |
+| rabbitmq | Connects to a RabbitMQ instance and uses PubSub over AMQP to communicate. |
 
 It is also possible to provide your own implementation of this service via the LuckPerms API.
