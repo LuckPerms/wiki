@@ -12,7 +12,7 @@ luckperms.createtrack | [`/lp createtrack` command](General-Commands#lp-createtr
 luckperms.debug | [`/lp debug` command](General-Commands#lp-debug)
 luckperms.deletegroup | [`/lp deletegroup` command](General-Commands#lp-deletegroup-name)
 luckperms.deletetrack | [`/lp deletetrack` command](General-Commands#lp-deletetrack-name)
-luckperms.editor | [`/lp editor` command](General-Commands#lp-editor)
+luckperms.editor | [`/lp editor` command](General-Commands#lp-editor-type-filter)
 luckperms.applyedits | [`/lp applyedits` command](Web-Editor#saving-your-changes)
 luckperms.export | [`/lp export` command](General-Commands#lp-export-file--upload)
 luckperms.group.clear | [`/lp group <group> clear` command](Group-Commands#lp-group-group-clear-context)
