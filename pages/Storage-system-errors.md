@@ -4,7 +4,7 @@ It includes a number of common errors & fixes for storage providers (mostly MySQ
 
 ___
 
-Firstly, I want to clarify how LuckPerms permission storage operates. I get a lot of (sometimes angry) comments from people blaming me for things not working, when 95% of the time it's got nothing to do with LuckPerms. :cry:
+Firstly, let's clarify how LuckPerms permission storage operates. We get a lot of (sometimes quite angry!) comments from people blaming us for things not working, when 95% of the time it's got nothing to do with LuckPerms. :cry:
 
 In order to write permissions data to a storage backend, LuckPerms uses something called a "driver" to interact with the underlying storage system.
 

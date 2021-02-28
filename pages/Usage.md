@@ -1,4 +1,4 @@
-This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, I suggest you read the page on [Command Usage and Permissions](Command-Usage), as this gives a much more "straight to the point" description of how the plugin works.
+This guide is intended for people who have never used a permissions plugin before. If you're familiar with the concept, and think you'll be able to understand things just from reading the command usages, we suggest you read the page on [Command Usage and Permissions](Command-Usage), as this gives a much more "straight to the point" description of how the plugin works.
 
 If you're struggling to understand that, then this guide is a good place to start. :)
 
@@ -6,7 +6,7 @@ If you're struggling to understand that, then this guide is a good place to star
 # Key Definitions
 ### Permission
 On your server, there will be certain **features, commands, and functionality** which exist. Some of these features will be included with the server, and others are added with “plugins”. Most of these actions **have a permission associated with them**, so you can control which users have access to each feature or command.
- 
+
 A **permission is just a string** (a sequence of letters/digits), and is separated into parts using periods. For example, “minecraft.command.ban” is the permission for Minecraft's /ban command.
 
 The string that represents a certain permission is also sometimes called a "permission node" or just "node" for short.

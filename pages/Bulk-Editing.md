@@ -75,5 +75,3 @@ Will change any server entries from "factions" to "global"
 
 #### `/lp bulkupdate all update permission essentials.ban "permission == essentials.mute" "server == survival"`
 Will change any permission entries for "essentials.mute" to "essentials.ban" set on the "survival" server
-
-Hopefully you get the idea. If you're unsure about how to form a command for an update you want to apply, feel free to contact me using the means detailed on the wiki homepage.

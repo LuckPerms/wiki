@@ -3,7 +3,7 @@ Hello! :wave:
 Welcome to the LuckPerms wiki. Here you will find a complete set of documentation for the plugin, outlining how to install, setup, configure and effectively use LuckPerms.
 
 ### Where to start?
-If you've never used a permissions plugin before, I suggest you just start at the top and work your way down!
+If you've never used a permissions plugin before, we suggest you just start at the top and work your way down!
 
 The basics of permissions are covered in detail in the [Getting Started](Usage) page.
 

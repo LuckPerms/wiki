@@ -5,7 +5,7 @@ LuckPerms has a number of online editors / viewers built into the plugin. These 
 * https://luckperms.net/treeview/
 * https://bytebin.lucko.me/
 
-However, I appreciate there is some interest in self hosting these sites, to allow for customisation or implementing custom behaviour. It's not really something I'd recommend doing (there's not much to gain from it) - but alas, here are the details.
+However, we appreciate there is some interest in self hosting these sites, to allow for customisation or implementing custom behaviour. It's not really something we recommend doing (there's not much to gain from it) - but alas, here are the details.
 
 This guide assumes the user has some previous technical knowledge of setting up (web) applications on Linux server machines.
 

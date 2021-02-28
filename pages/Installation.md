@@ -109,14 +109,14 @@ LuckPerms uses a number of [external libraries](External-connections), some of w
 If your server does not have an internet connection, you can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server.
 
 ## Compatibility
-Some known compatibility issues are outlined below. In all cases, these issues are out of my control - and there's nothing I can do to resolve them in LuckPerms itself. 🙁
+Some known compatibility issues are outlined below. In all cases, these issues are out of our control - and there's nothing we can do to resolve them in LuckPerms itself. 🙁
 
 Some of the compatibility issues are resolved in newer releases of the server - but the fixes are not backdated.
 
 ### CraftBukkit and Offline Mode
 If your server is running CraftBukkit and configured in offline (cracked) mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541).
 
-This issue is yet to be resolved. (as of writing on 11th Jan 18) There is nothing I can personally do about it.
+This issue is yet to be resolved. (as of writing on 11th Jan 18) There is nothing we can do about it.
 
 Your options are:
 
@@ -135,7 +135,7 @@ If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encoun
 
 These issues have been reported to the respective projects, however none are currently being maintained, so this issue will (most likely) never be fixed. In the meantime, you can hack around these problems using the steps outlined below.
 
-(I offer absolutely **no support** for these fixes.)
+(We offer absolutely **no support** for these fixes.)
 
 1. Navigate to the `libraries/net/md-5/SpecialSource/1.7-SNAPSHOT` directory
 2. Delete the `SpecialSource-1.7-SNAPSHOT.jar` file

@@ -1,8 +1,8 @@
 ### Summary
 The tl;dr is...
 
-* LuckPerms uses the servers internet connection to securely download required libraries when it first starts
-* LuckPerms will send data to a remote server in order to provide certain functions - but never for metrics or monitoring purposes
+* LuckPerms uses an internet connection to securely download required libraries and translation bundles when it first starts
+* LuckPerms will send data to a external service in order to provide certain functions (`/lp editor` etc)
 * LuckPerms does not report to metrics or analytics services
 
 The specific nature of these interactions and usages are documented below.
@@ -26,7 +26,7 @@ The latter is a public software repository commonly referred to as the "Central 
 
 Maven Central is a trustworthy source - it is used by most Java developers and open source projects.
 
-As a precautionary measure in case either of the sites become compromised, LuckPerms will perform additional verification during the download process to ensure that libraries are intact and as expected. 
+As a precautionary measure in case either of the sites become compromised, the plugin will perform additional verification during the download process to ensure that libraries are intact and as expected. 
 
 ##### The verification process
 
@@ -47,11 +47,27 @@ These checks are put in place to minimise the risk of malicious code from being 
 
 ___
 
-### Web editor / Verbose viewer / Tree viewer functionality
+### Downloading translation bundles
 
-* **Web Editor** - A web based permissions editor for data stored in the plugin.
-* **Verbose Viewer** - A web based viewer for verbose recording logs.
-* **Tree Viewer** - A web based viewer to visualise tree permission structures.
+The messages used in LuckPerms commands have kindly been [translated by the community](Locale-and-Translations).
+
+These translations are automatically exported, compiled into "translation bundle" files, and then made available from an API endpoint. This means that translations can be added/improved over time, without requiring a recompilation of the plugin.
+
+The translation bundles are updated automatically (roughly every 24 hours) by the plugin. This is a relatively safe process, as the translations themselves do not affect how the plugin works.
+
+The functionality can be disabled in the LuckPerms config.
+
+___
+
+### Web apps (`/lp editor` etc)
+
+LuckPerms has a number of web apps that are hosted centrally for everyone to use.
+
+* **Web Editor** - an editor for permissions data
+* **Verbose Viewer** - a viewer for verbose recording logs
+* **Tree Viewer** - a viewer to visualise tree permission structures
+
+
 
 The clients for each of these applications can be found at
 
@@ -61,16 +77,17 @@ The clients for each of these applications can be found at
 
 respectively. 
 
-These sites are hosted and published using [GitHub Pages](https://pages.github.com/). They are not backed by a special web server. All dynamic functionality is provided using client-side JavaScript.
+
+
+The website itself is static (the content served to your browser does not change). All dynamic functionality is provided using client-side JavaScript.
 
 The source code for these sites is freely available here: https://github.com/lucko/LuckPermsWeb
 
-Communication between the editors/viewers and the plugin (which runs on your MC server) is performed using isolated data payloads.
+Communication between the editors/viewers and the plugin (which runs on your Minecraft server) is performed using isolated data payloads. There is never any direct communication between the editors/viewers and the server.
 
-There is never any direct communication between the editors/viewers and the server. You can freely share the links to editor sessions - changes must be applied by running a command on the MC server.
+You can freely share the links to editor sessions - any changes must always be applied by running a command on the Minecraft server.
 
-Data is posted to & read from https://bytebin.lucko.me/ - effectively a very simple pastebin API.   
-This is (currently) hosted by me (Luck) using DigitalOcean & CloudFlare.
+Data is posted to & read from https://bytebin.lucko.me/ - effectively a very simple content storage system. This service is written and hosted by Luck.
 
 Again, the source is freely available here: https://github.com/lucko/bytebin
 

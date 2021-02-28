@@ -21,7 +21,7 @@ LuckPerms is:
 * **free** - available for download and usage at no cost, and permissively licensed so it can remain free forever.
 
 #### I've been using [x] plugin for years and it works great! Why should I bother switching?
-Most other permission plugins date back a number of years, and increasingly have been abandoned by their original authors, receive no updates, support or bug fixes. LuckPerms is still an active resource and I endeavour to reply to all bug reports, issues and feature requests in a timely manner.
+Most other permission plugins date back a number of years, and increasingly have been abandoned by their original authors, receive no updates, support or bug fixes. LuckPerms is still an active resource and we endeavour to reply to all bug reports, issues and feature requests in a timely manner.
 
 #### LuckPerms seems pretty big/complex and I just want something simple and lightweight.
 Although the plugin has lots of customisation options, the default values are fine for most users.
