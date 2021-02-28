@@ -70,40 +70,13 @@ server {
 
 Now, you can run bytebin with `java -jar bytebin.jar` - and the service should be accessible at `https://bytebin.example.com/`.
 
-### Step 2: Hosting the static pages
+### Step 2: Installing the site
 
-The static webpages for the web editor, verbose viewer and tree viewer are available on GitHub here: https://github.com/lucko/LuckPermsWeb
+The source for the web apps is available from GitHub: https://github.com/lucko/LuckPermsWeb
 
-These need to be cloned and then copied to the public html directory of your website.
+You will need to build and host this site on your web server. You can either use the [automatic setup script](https://github.com/LuckPerms/web-installer#automatic-setup) or [install manually](https://github.com/LuckPerms/web-installer#manual-setup).
 
-```bash
-git clone https://github.com/lucko/LuckPermsWeb
-cd LuckPermsWeb
-rm index.html  # the index page is the project homepage (https://luckperms.net/), you most likely won't want that :)
-```
-
-The sites are then in `editor/`, `verbose/` and `treeview/` respectively, and can be copied into the web root.
-
-e.g.
-
-```bash
-# whilst still in the LuckPermsWeb directory...
-mv * /var/www/html/luckperms/
-```
-
-They should then be accessible from your site, at `https://example.com/luckperms/editor/`, `https://example.com/luckperms/verbose/` etc.
-
-### Step 3: Configuring the static pages to use your custom bytebin instance.
-
-This is only required if you followed Step 1 and setup a custom bytebin instance for the system to use.
-
-The URL needs to be configured in the following places:
-
-* [`editor/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/editor/assets/app.js#L1)
-* [`verbose/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/verbose/assets/app.js#L1)
-* [`treeview/assets/app.js`](https://github.com/lucko/LuckPermsWeb/blob/master/treeview/assets/app.js#L1)
-
-### Step 4: Configuring the plugin to use your custom bytebin instance / pages.
+### Step 3: Configuring the plugin to use your custom bytebin / site
 
 Add the following to the end of the LuckPerms `config.yml`.
 
