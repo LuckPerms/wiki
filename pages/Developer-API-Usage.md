@@ -6,35 +6,38 @@ ___
 
 ### Index
 
-* Simple queries
-  * [Checking if a player is in a group](#checking-if-a-player-is-in-a-group)
-  * [Finding a players group](#finding-a-players-group)
-* I/O - loading & saving data
-  * [Obtaining a User instance](#obtaining-a-user-instance)
-    * [Distinction between online & offline players](#distinction-between-online--offline-players)
-    * [Loading data for players](#loading-data-for-players)
-  * [Obtaining a Group/Track instance](#obtaining-a-grouptrack-instance)
-  * [Saving changes](#saving-changes)
-* [The basics of Node](#the-basics-of-node)
-  * [Creating new node instances](#creating-new-node-instances)
+* [Player group membership check](#checking-if-a-player-is-in-a-group)
+* [Player group membership lookup](#finding-a-players-group)
+* [Getting a LuckPerms `User` object](#obtaining-a-user-instance)
+  * [Distinction between online & offline players](#distinction-between-online--offline-players)
+  * [Loading data for players](#loading-data-for-players)
+* [Getting a LuckPerms `Group` or `Track` object](#obtaining-a-grouptrack-instance)
+* [Saving changes](#saving-changes)
+
+* [The `Node` object](#the-basics-of-node)
+  * [Creating new nodes](#creating-new-node-instances)
   * [Modifying existing nodes](Developer-API-Usage#modifying-existing-nodes)
 * [Reading user/group data](#reading-usergroup-data)
 * [Modifying user/group data](#modifying-usergroup-data)
-* [The basics of Context](#the-basics-of-context)
+* [Context](#the-basics-of-context)
   * [Important classes](#important-classes)
   * [Registering ContextCalculators](#registering-contextcalculators)
   * [Querying active contexts/query options](#querying-active-contextsquery-options)
-* [The basics of CachedData](#the-basics-of-cacheddata)
+* [CachedData](#the-basics-of-cacheddata)
   * [Performing permission checks](#performing-permission-checks)
-  * [Retrieving prefixes and suffixes](#retrieving-prefixessuffixes)
-  * [Retrieving meta data](#retrieving-meta-data)
-* [Listening to LuckPerms events](#listening-to-luckperms-events)
+  * [Getting prefixes and suffixes](#retrieving-prefixessuffixes)
+  * [Getting metadata](#retrieving-metadata)
+* [Store and query custom metadata](#store-and-query-custom-metadata)
+* [Events](#events)
+  * [Event listeners](#event-listeners)
+  * [Listening for changes to user cached data](#listening-for-changes-to-user-cached-data)
+  * [Listening for changes to permissions/parent groups/etc](#listening-for-changes-to-permissionsparent-groupsetc)
 
 ___
 
 ### Checking if a player is in a group
 
-Checking for group membership can be done directly via hasPermission checks.
+Checking for group membership can be most easily achieved using hasPermission checks.
 
 ```java
 public static boolean isPlayerInGroup(Player player, String group) {
@@ -42,15 +45,13 @@ public static boolean isPlayerInGroup(Player player, String group) {
 }
 ```
 
-However, remember that anyone with server operator status or `*` permissions will also have these permissions.
+However, keep in mind that anyone with server operator status or `*` permissions will also have these permissions.
 
 ___
 
 ### Finding a players group
 
-We can use the method used above alongside a list of defined "possible" groups in order to search for a player's group.
-
-Remember to order your group list in order of priority. e.g. owner first, member last.
+We can use the method above with a list of "possible" groups in order to find a player's group.
 
 ```java
 public static String getPlayerGroup(Player player, Collection<String> possibleGroups) {
@@ -62,6 +63,8 @@ public static String getPlayerGroup(Player player, Collection<String> possibleGr
     return null;
 }
 ```
+
+Remember to order your `possibleGroups` list by priority. e.g. owner first, member last.
 
 ___
 
@@ -665,7 +668,7 @@ String prefix = user.getCachedData().getMetaData().getPrefix();
 String suffix = user.getCachedData().getMetaData().getSuffix();
 ```
 
-#### Retrieving meta data
+#### Retrieving metadata
 
 ```java
 String metaValue = user.getCachedData().getMetaData().getMetaValue("some-key");
@@ -675,11 +678,59 @@ Of course these methods work with `Group`s too!
 
 ___
 
-### Listening to LuckPerms events
+### Store and query custom metadata
+
+The metadata stored by LuckPerms isn't limited to only a few types. You use the API to easily store any sort of data about players, whilst also taking advantage of the storage / caching systems built into LP.
+
+#### Setting metadata
+
+You can set metadata by creating & adding a `MetaNode` to a user.
+
+To illustrate this, let's store a player "level" meta value.
+
+```java
+public void setLevel(Player player, int level) {
+    // obtain a User instance (by any means! see above for other ways)
+    User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
+
+    // create a new MetaNode holding the level value
+    // of course, this can have context/expiry/etc too!
+    MetaNode node = MetaNode.builder("level", Integer.toString(level)).build();
+
+    // clear any existing meta nodes with the same key - we want to override
+    user.data().clear(NodeType.META.predicate(mn -> mn.getMetaKey().equals("level")));
+    // add the new node
+    user.data().add(node);
+
+    // save!
+    luckPerms.getUserManager().saveUser(user);
+}
+```
+
+#### Querying metadata
+
+Once the metadata is set, querying it is easy!
+
+```java
+public int getLevel(Player player) {
+    // obtain CachedMetaData - the easiest way is via the PlayerAdapter
+    // of course, you can get it via a User too if the player is offline.
+    CachedMetaData metaData = luckPerms.getPlayerAdapter(Player.class).getMetaData(player);
+
+    // query & parse the meta value
+    return metaData.getMetaValue("level", Integer::parseInt).orElse(0);
+}
+```
+
+___
+
+### Events
 
 LuckPerms uses it's own event system, completely separate from the event systems used by platforms (e.g. Bukkit or Sponge). This means that instead of registering your listener with the server, you must register it directly with LuckPerms.
 
 The events supported by LuckPerms are defined as `interface`s that extend from [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java). They can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package.
+
+#### Event listeners
 
 To listen to events, you first need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance using `LuckPerms#getEventBus`, then register each listener using the `subscribe` method.
 
