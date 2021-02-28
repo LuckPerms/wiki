@@ -47,7 +47,7 @@ Once you've created and opened the session, you can use the interface to make ch
 ### Editor Context
 
 You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with appropriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
- 
+
 Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
 
 #### Adding a permission
@@ -72,19 +72,18 @@ To change the sorting settings, click on the column heading you'd like to sort b
 
 ![](../img/webeditor-5.gif)
 
-#### Luckperms Nodes
+#### LuckPerms Nodes
 
 The editor allows you to add or change aspects about groups and players such as weight and parents using nodes.
-This is all of them, and what they do:
 
-| Function                                                                  | Node                         |
-|---------------------------------------------------------------------------|------------------------------|
-| **To define a user or group's parent, add:**                              | `group.<parentgroup>`        |
-| **To set a group's displayname, add:**                                    | `displayname.<name>`         |
-| **To set a group's weight, add:**                                         | `weight.<weightnumber>`      |
-| **To add a prefix to a group or player, add:**                            | `prefix.<priority>.<prefix>` |
-| **To add a suffix to a group or player, add:**                            | `suffix.<priority>.<suffix>` |
-| **To add meta:**                                                          | `meta.<key>.<value>`         |
+| Function                                | Node                         |
+| --------------------------------------- | ---------------------------- |
+| **To define a user or group's parent:** | `group.<parentgroup>`        |
+| **To set a group's displayname:**       | `displayname.<name>`         |
+| **To set a group's weight:**            | `weight.<weightnumber>`      |
+| **To add a prefix:**                    | `prefix.<priority>.<prefix>` |
+| **To add a suffix:**                    | `suffix.<priority>.<suffix>` |
+| **To add meta:**                        | `meta.<key>.<value>`         |
 
 ___
 

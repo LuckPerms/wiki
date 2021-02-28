@@ -1,8 +1,12 @@
 # Weights
-Weights are an integral part of the way LuckPerms operates, and are based on the premise of resolving conflict where it may appear. There are two different, independent weights systems in LuckPerms, the first being [**Groups**](#group-weights) and the second being [**Meta**](#meta-weights) like prefixes and suffixes. In all cases,  **a higher weight number is a higher priority** 
+Weights are an integral part of the way LuckPerms operates, and are based on the premise of resolving conflict where it may appear.
 
-* When setting up weights, it is recommended that large gaps weight-wise be left between groups, like going up by 100 instead of 1. This is so that if you want to insert groups later, you do not have to reweigh all groups.
-* Weight can be any number, including negative.
+There are two different, independent weights systems in LuckPerms, the first being [**group weight**](#group-weights) and the second being [**meta weight**](#meta-weights) (like prefixes and suffixes).
+
+In all cases, **a higher weight number is a higher priority** 
+
+* When setting up weights, it is recommended that large gaps be left between groups, like going up by 100 instead of 1. This is so that if you want to insert groups/prefixes/suffixes later, you do not have to redefine everything.
+* Weights can be any number, even negative!
 
 
 ## Group Weights
@@ -14,10 +18,10 @@ Group weights determine, in cases where a user has more than one group, which gr
 
 Likewise, whenever a player has several groups, the permissions in the highest weighted group will override the permissions in any lower weighted ones that conflict. 
 
-### Setting Group Weights
-There are two ways to set weight for a group; using a [command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Group#lp-group-group-setweight-weight), and using the [editor](https://github.com/lucko/LuckPerms/wiki/Web-Editor#luckperms-nodes).
+### Setting group weights
+There are two ways to set weight for a group; using a [command](#Group-Commands#lp-group-group-setweight-weight), and using the [editor](#Web-Editor#luckperms-nodes).
 
-* With commands, you run `lp group <group> setweight <weight>`.
+* With commands, you run /`lp group <group> setweight <weight>`.
 * In the editor, you add the node `weight.<weight>` to the group.
 
 
@@ -25,8 +29,8 @@ There are two ways to set weight for a group; using a [command](https://github.c
 
 Meta weights are very similar to group weights, but for prefixes and suffixes. In the same way the group weights work, when a player inherits multiple prefixes or suffixes, the highest weighted one is the one that will display.
 
-### Setting Meta Weights
-There are two ways to set a weight for a prefix or suffix; using a [command](https://github.com/lucko/LuckPerms/wiki/Command-Usage:-Meta#index), and using the [editor](https://github.com/lucko/LuckPerms/wiki/Web-Editor#luckperms-nodes).
+### Setting meta weights
+There are two ways to set a weight for a prefix or suffix; using a [command](#Meta-Commands), and using the [editor](#Web-Editor#luckperms-nodes).
 
-* With commands, you simply set the weight when you add or set a prefix or suffix to a group or player: `/lp user/group <user|group> meta setprefix/addprefix <weight> [ThePrefix]`. 
-* With the editor, you simply add or modify the node `prefix.<priority>.[ThePrefix]` to change the weight, AKA priority, of a prefix. The same principle applies to suffixes.
+* With commands, you simply set the weight when you add or set a prefix or suffix to a group or player: `/lp user/group <user|group> meta setprefix/addprefix <weight> <prefix>`.
+* In the editor, you simply add or modify the node `prefix.<weight>.<prefix>` to change the weight. The same principle applies to suffixes.
