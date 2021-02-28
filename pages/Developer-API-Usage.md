@@ -13,7 +13,6 @@ ___
   * [Loading data for players](#loading-data-for-players)
 * [Getting a LuckPerms `Group` or `Track` object](#obtaining-a-grouptrack-instance)
 * [Saving changes](#saving-changes)
-
 * [The `Node` object](#the-basics-of-node)
   * [Creating new nodes](#creating-new-node-instances)
   * [Modifying existing nodes](Developer-API-Usage#modifying-existing-nodes)
