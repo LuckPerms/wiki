@@ -78,7 +78,7 @@ Example: if a user has a true permission set for "luckperms.\*", and a false per
 
 * **Temporary permissions will override other temporary permissions with a longer expiry time**
 
-Example: if a user has a temporary true permission set for "fly.use" that expires in 1 day, and then has a temporary false permission set for "fly.use" that expires in 1 hour, the temporary permission expiring in 1 hour will override the one expiring in 1 day, and the user will be granted the negative node for the duration of 1 hour.
+Example: if a user has a temporary true permission set for "fly.use" that expires in 1 day, and a temporary false permission set for "fly.use" that expires in 1 hour, the temporary permission expiring in 1 hour will override the one expiring in 1 day, and the user will be granted the negative node for the duration of 1 hour.
 
 * **More specific wildcards override less specific ones**
 
