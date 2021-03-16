@@ -60,6 +60,7 @@ If you're using Maven, simply add this to the `dependencies` section of your POM
 
 If you're using Gradle, you need to add these lines to your build script.
 
+##### Groovy DSL:
 ```gradle
 repositories {
     mavenCentral()
@@ -67,6 +68,17 @@ repositories {
 
 dependencies {
     compileOnly 'net.luckperms:api:5.3'
+}
+```
+
+##### Kotlin DSL:
+```kotlin
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("net.luckperms:api:5.3")
 }
 ```
 
