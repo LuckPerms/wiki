@@ -89,7 +89,7 @@ Formed of either `/lp user <user> permission ...` or `/lp group <group> permissi
 *  [`set` \<node\> \<true/false\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-set-node-truefalse-context)
 *  [`unset` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-unset-node-context)
 *  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](Permission-Commands#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
-*  [`unsettemp` \<node\> [context...]](Permission-Commands#lp-usergroup-usergroup-permission-unsettemp-node-context)
+*  [`unsettemp` \<node\> [duration] [context...]](Permission-Commands#lp-usergroup-usergroup-permission-unsettemp-node-duration-context)
 *  [`check` \<node\>](Permission-Commands#lp-usergroup-usergroup-permission-check-node)
 *  [`clear` [context...]](Permission-Commands#lp-usergroup-usergroup-permission-clear-context)
 
@@ -103,7 +103,7 @@ Formed of either `/lp user <user> parent ...` or `/lp group <group> parent ...`
 *  [`remove` \<group\> [context...]](Parent-Commands#lp-usergroup-usergroup-parent-remove-group-context)
 *  [`settrack` \<track\> \<group\> [context...]](Parent-Commands#lp-usergroup-usergroup-parent-settrack-track-group-context)
 *  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](Parent-Commands#lp-usergroup-usergroup-parent-addtemp-group-duration-temporary-modifier-context)
-*  [`removetemp` \<group\> [context...]](Parent-Commands#lp-usergroup-usergroup-parent-removetemp-group-context)
+*  [`removetemp` \<group\> [duration] [context...]](Parent-Commands#lp-usergroup-usergroup-parent-removetemp-group-duration-context)
 *  [`clear` [context...]](Parent-Commands#lp-usergroup-usergroup-parent-clear-context)
 *  [`cleartrack` \<track\> [context...]](Parent-Commands#lp-usergroup-usergroup-parent-cleartrack-track-context)
 *  [`switchprimarygroup` \<group\>](Parent-Commands#lp-user-user-parent-switchprimarygroup-group)

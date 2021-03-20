@@ -15,7 +15,7 @@ ___
 *  [`set` \<node\> \<true/false\> [context...]](#lp-usergroup-usergroup-permission-set-node-truefalse-context)
 *  [`unset` \<node\> [context...]](#lp-usergroup-usergroup-permission-unset-node-context)
 *  [`settemp` \<node\> \<true/false\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-permission-settemp-node-truefalse-duration-temporary-modifier-context)
-*  [`unsettemp` \<node\> [context...]](#lp-usergroup-usergroup-permission-unsettemp-node-context)
+*  [`unsettemp` \<node\> [duration] [context...]](#lp-usergroup-usergroup-permission-unsettemp-node-duration-context)
 *  [`check` \<node\>](#lp-usergroup-usergroup-permission-check-node)
 *  [`clear` [context...]](#lp-usergroup-usergroup-permission-clear-context)
 
@@ -77,10 +77,11 @@ The "temporary modifier" argument allows you to specify how the permission shoul
 | `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
-#### `/lp user/group <user|group> permission unsettemp <node> [context...]`  
+#### `/lp user/group <user|group> permission unsettemp <node> [duration] [context...]`  
 **Permission**: luckperms.user.permission.unsettemp or luckperms.group.permission.unsettemp  
 **Arguments**:  
 * `<node>` - the permission node to unset
+* `[duration]` - the duration to subtract from the temporary permission, can be omitted to remove entirely
 * `[context...]` - the [contexts](Context) to unset the permission in
 
 Unsets a temporary permission for a user/group.

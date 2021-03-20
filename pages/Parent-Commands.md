@@ -17,7 +17,7 @@ ___
 *  [`remove` \<group\> [context...]](#lp-usergroup-usergroup-parent-remove-group-context)
 *  [`settrack` \<track\> \<index | group\> [context...]](#lp-usergroup-usergroup-parent-settrack-track-indexgroup-context)
 *  [`addtemp` \<group\> \<duration\> [temporary modifier] [context...]](#lp-usergroup-usergroup-parent-addtemp-group-duration-temporary-modifier-context)
-*  [`removetemp` \<group\> [context...]](#lp-usergroup-usergroup-parent-removetemp-group-context)
+*  [`removetemp` \<group\> [duration] [context...]](#lp-usergroup-usergroup-parent-removetemp-group-duration-context)
 *  [`clear` [context...]](#lp-usergroup-usergroup-parent-clear-context)
 *  [`cleartrack` \<track\> [context...]](#lp-usergroup-usergroup-parent-cleartrack-track-context)
 *  [`switchprimarygroup` \<group\>](#lp-user-user-parent-switchprimarygroup-group)
@@ -29,6 +29,7 @@ ___
 * `[page]` - the page number to view
 * `[sorting mode]` - how the results will be sorted
   
+
 Displays a list of a user/group's parent groups. (groups they inherit from)
 
 The "sorting mode" argument allows you to specify how the list will be sorted. You can pick between 4 different options.
@@ -97,10 +98,11 @@ The "temporary modifier" argument allows you to specify how the permission shoul
 | `deny`       | the command will just fail if you try to add a duplicate temporary node   |
 
 ___
-#### `/lp user/group <user|group> parent removetemp <group> [context...]`  
+#### `/lp user/group <user|group> parent removetemp <group> [duration] [context...]`  
 **Permission**: luckperms.user.parent.removetemp or luckperms.group.parent.removetemp  
 **Arguments**:  
 * `<group>` - the group to remove
+* `[duration]` - the duration to subtract from the temporary group membership, can be omitted to remove entirely
 * `[context...]` - the [contexts](Context) to remove the group in
 
 Removes a tempoary parent from the user/group.
