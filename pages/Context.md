@@ -47,7 +47,7 @@ With that said, LuckPerms provides by default, five contexts of its own. Other p
 | `server`    | The player's current server. This value is determined by the **server** setting at the very top of the LuckPerms config file. | `server=survival` |
 | `world`    | The player's current world - this value is just retrieved from the server. When LuckPerms runs on a BungeeCord/Velocity proxy, the world context value refers to the subserver the player is currently connected to. | `world=world_nether` |
 | `gamemode`    | The player's current gamemode. | `gamemode=creative` |
-| `dimension`    | The dimension of the world the player is currently in. | `dimension=the_nether` |
+| `dimension-type`    | The dimension of the world the player is currently in. | `dimension-type=the_nether` |
 | `proxy`    | This context is only applied when LuckPerms is running on a BungeeCord proxy with RedisBungee installed. It refers to the proxy the player is currently connected to. | `proxy=redisbungee1` |
 
 ___
