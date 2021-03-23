@@ -44,7 +44,7 @@
 ### Reference
 
 * [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
-* [**GM & PEX Command Equivalents**](GM-&-PEX-Command-Equivalents)
+* [**Migrating from GroupManager or PEX**](Migrating-from-GroupManager-or-PermissionsEx)
 * [**How permission calculation works**](Advanced-Setup)
 * [**Self hosting the web interfaces**](Self-hosting-the-web-interfaces)
 

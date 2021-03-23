@@ -57,3 +57,5 @@ Then, go to your server console and run the migration command listed in the tabl
 Sit back, relax, and let LuckPerms handle the rest! You will be notified of the migration progress, and then notified again once it has finished.
 
 When the process has finished, stop the server, remove the your old permissions plugin and the migration jar, then start your server again.
+
+If you're migrating from GroupManager or PermissionsEx, there are some additional resources [here](Migrating-from-GroupManager-or-PermissionsEx) which may be useful!
