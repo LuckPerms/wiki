@@ -72,7 +72,7 @@ dependencies {
 ```
 
 ##### Kotlin DSL:
-```kotlin
+```gradle
 repositories {
     mavenCentral()
 }

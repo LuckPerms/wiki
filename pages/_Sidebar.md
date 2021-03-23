@@ -44,7 +44,7 @@
 ### Reference
 
 * [**Upgrading from v4 to v5**](Upgrading-from-v4-to-v5)
-* [**Migrating from GroupManager or PEX**](Migrating-from-GroupManager-or-PermissionsEx)
+* [**Migrating from GM or PEX**](Migrating-from-GroupManager-or-PermissionsEx)
 * [**How permission calculation works**](Advanced-Setup)
 * [**Self hosting the web interfaces**](Self-hosting-the-web-interfaces)
 
