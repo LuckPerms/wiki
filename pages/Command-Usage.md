@@ -7,13 +7,13 @@ A list of aliases for each platform are listed below. Each command works in exac
 
 | Bukkit / Sponge / Fabric / Nukkit | BungeeCord       | Velocity           |
 | --------------------------------- | ---------------- | ------------------ |
-| /luckperms                        | /luckpermsbungee | /luckpermsvelocity |
-| /perms                            | /bperms          | /vperms            |
-| /permissions                      | /bpermissions    | /vpermissions      |
-| /perm                             | /bperm           | /vperm             |
 | /lp                               | /lpb             | /lpv               |
+| /luckperms                        | /luckpermsbungee | /luckpermsvelocity |
+| /permissions (*deprecated*)       |                  |                    |
+| /perms (*deprecated*)             |                  |                    |
+| /perm (*deprecated*)              |                  |                    |
 
-**`Important:`** The command aliases are different on BungeeCord and Velocity. This is so you can choose where your command gets directed to. If commands were the same, you would never be able to control LuckPerms on a backend server.
+**`Important:`** The command aliases are different on BungeeCord and Velocity. This is so you can choose where the command is executed. If the aliases were the same, you would never be able to control LuckPerms on a backend server as the command would always be handled by the proxy!
 
 If you are using Bukkit/Spigot, by default, all users with OP have access to LuckPerms commands. You can change this in the config.
 
