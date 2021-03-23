@@ -56,12 +56,14 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 
 ### Helpers
 * **\_11**
+* **Aberdeener**
 * **ben**
-* **Doctor Zod**
+* **JG**
 * **powercas_gamer**
 * **Rainbow Dash**
 * **Unix**
 * **usb_hub**
+* Doctor Zod (retired)
 
 ## Patreons / donors
 
@@ -79,6 +81,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * Combustible
 * Cosido
 * Cryptic
+* dig
 * Dj
 * Dracathio
 * DrOreo002
@@ -94,6 +97,7 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * Jay113355
 * KaiNoMood
 * Khan Jal
+* kristianbinau
 * KuNet
 * Marco
 * mattw
@@ -106,12 +110,15 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * Nogapra
 * ofunny
 * ozraru
+* Paul Sauve
+* powercas_gamer
 * queeirdo
 * royalkingkb
 * Ruinscraft
 * Shmeeb
 * SkippTekk
 * StilauGamer
+* TheBusyBiscuit
 * Tummy
 * waqe
 * x313
