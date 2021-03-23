@@ -5,13 +5,13 @@ If the only thing returned when you type a command is the plugin version, you do
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
 
-| Bukkit / Sponge / Fabric / Nukkit | BungeeCord       | Velocity           |
-| --------------------------------- | ---------------- | ------------------ |
-| /lp                               | /lpb             | /lpv               |
-| /luckperms                        | /luckpermsbungee | /luckpermsvelocity |
-| /permissions (*deprecated*)       |                  |                    |
-| /perms (*deprecated*)             |                  |                    |
-| /perm (*deprecated*)              |                  |                    |
+| Bukkit / Sponge / Fabric / Nukkit   | BungeeCord         | Velocity             |
+| ----------------------------------- | ------------------ | -------------------- |
+| `/lp`                               | `/lpb`             | `/lpv`               |
+| `/luckperms`                        | `/luckpermsbungee` | `/luckpermsvelocity` |
+| `/permissions` (*deprecated*)       |                    |                      |
+| `/perms` (*deprecated*)             |                    |                      |
+| `/perm` (*deprecated*)              |                    |                      |
 
 **`Important:`** The command aliases are different on BungeeCord and Velocity. This is so you can choose where the command is executed. If the aliases were the same, you would never be able to control LuckPerms on a backend server as the command would always be handled by the proxy!
 
@@ -24,7 +24,7 @@ If you are using Bukkit/Spigot, by default, all users with OP have access to Luc
 
 If you want to include spaces in arguments, you must escape the argument with quotes. `"  "`
 
-The alias used below (/lp) can be exchanged for any of the ones listed in the aliases section above.
+The alias used below (`/lp`) can be exchanged for any of the ones listed in the aliases section above.
 
 ### General commands
 General commands used to operate LuckPerms functions.
