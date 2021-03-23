@@ -5,7 +5,7 @@ It should be noted that these scripts are not perfect. They will do a pretty dec
 
 LuckPerms has some similarities with other permission plugins, however, some parts are fundamentally different, and therefore sometimes automatic migration is tricky.
 
-Additionally, letting the plugin migrate all of your data for you means you will not have a chance to learn any of the LuckPerms commands. This may become an issue later on. 😉 If you're migrating from PermissionsEx or GroupManager, you might [find this page useful](GM-&-PEX-Command-Equivalents).
+Additionally, letting the plugin migrate all of your data for you means you will not have a chance to learn any of the LuckPerms commands. This may become an issue later on. 😉 If you're migrating from PermissionsEx or GroupManager, you might [find this page useful](Migrating-from-GroupManager-or-PermissionsEx).
 
 If you have an old permissions setup, or a setup you're not completely happy with, now might be a great time to have a restructure and cleanup, and a chance to learn LuckPerms commands in the process!
 
