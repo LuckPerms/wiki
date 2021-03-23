@@ -90,6 +90,6 @@ You can also view the history of certain users, groups, or tracks, or look at th
 ___
 
 ### Supports multiple versions and platforms
-LuckPerms was build in a way which makes it easy for us to support lots of different server types and versions.
+LuckPerms was written in a way which makes it easy for us to support lots of different server types and versions.
 
 You can always grab the latest downloads for the platforms we support on the [downloads](https://luckperms.net/download) page!
