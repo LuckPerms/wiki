@@ -84,7 +84,7 @@ If you're having issues with a plugin not picking up data correctly, please make
 
 Some popular chat formatting plugins which work with LuckPerms + Vault include:
 * [VaultChatFormatter](https://www.spigotmc.org/resources/49016/) - recommended if you just want something simple!
-* [EssentialsX Chat](https://essentialsx.net/downloads.html) - recommended if you already have Essentials on your server
+* [EssentialsX Chat](https://essentialsx.net/downloads.html) - recommended if you already have Essentials on your server.
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [VentureChat](https://www.spigotmc.org/resources/771/)
 * [Stylizer](https://www.spigotmc.org/resources/stylizer.78327/) - includes chat formatting and tablist.
@@ -103,7 +103,7 @@ This is by no means a definitive list. Anything that supports Vault also support
 ### BungeeCord
 
 Some popular chat formatting plugins which work with LuckPerms on BungeeCord include:
-* [gChat](https://github.com/lucko/gChat) - recommended if you just want something simple
+* [gChat](https://github.com/lucko/gChat) - recommended if you just want something simple.
 * [BungeeChat](https://www.spigotmc.org/resources/12592/)
 * [MultiChat](https://www.spigotmc.org/resources/26204/)
 
@@ -112,4 +112,7 @@ Some popular tab/nametag formatting plugins which work with LuckPerms on BungeeC
 * [TAB](https://www.spigotmc.org/resources/57806/)
 
 ### Sponge
-* [Nucleus](http://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](http://nucleuspowered.org/docs/modules/chat.html).
+* [Nucleus](https://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](https://nucleuspowered.org/docs/modules/chat.html).
+
+### Fabric
+* [GraphiXMod](https://github.com/lochnessdragon/GraphiXMod) - includes chat formatting, holograms, tablist and scoreboard.
