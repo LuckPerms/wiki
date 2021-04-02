@@ -33,9 +33,9 @@ Prefixes and suffixes are split up into two parts
 * **Weight** - this is just a number which determines the priority of the prefix/suffix. A higher number = a higher weight and a higher priority. 
 * **Value** - what the actual value of the prefix is.
 
-A prefix of "[Admin] ", set with a weight of 100 translates into the permission: `"prefix.100.[Admin] "`.
+A prefix of `"[Admin] "`, set with a weight of 100 translates into the permission: `prefix.100.[Admin] `.
 
-A similar system is used for meta. A meta pair, `favourite-color = red` would translate into the permission: `"meta.favourite-color.red"`.
+A similar system is used for meta. A meta pair, `favourite-color = red` would translate into the permission: `meta.favourite-color.red`.
 
 ## How does prefix/suffix weight work
 Prefixes and suffixes can be inherited in the same way as permissions. This means that LuckPerms needs to determine which prefix/suffix to actually use for a player, when it gets requested.
