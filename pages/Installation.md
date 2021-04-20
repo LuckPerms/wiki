@@ -47,19 +47,19 @@ Go back to the "File Manager", then open the `plugins` folder (for Bukkit, Nukki
 
 ![](../img/installation-4.png)
 
-Here you will find a number of files. The important ones are: 
+Here you will find a number of files. The important ones are:
 
 * `config.yml` - this is the LuckPerms configuration file for Bukkit, Spigot, Nukkit, etc. servers
 * `luckperms.conf` - this is the LuckPerms configuration file for Sponge and Fabric servers
 * `luckperms-h2.mv.db` - this is the database file LuckPerms uses to store your permissions data (don't delete it!)
 
-You can click the "edit" button next to `config.yml` (or `luckperms.conf`) to open an editor in your browser. It's also possible to edit these files via FTP.
+You can click the "edit" button next to `config.yml` or `luckperms.conf` to open an editor in your browser. It's also possible to edit these files via FTP.
 
 #### Step 5 (optional): Setup LuckPerms to use a MySQL database or .yml files to store data
 
 By default, LuckPerms stores all of it's data in a file-based database file called "H2". This is great because it's efficient and lets people start using LuckPerms without any extra config steps.
 
-However, if you would prefer for LuckPerms data to be stored in **readable, editable .yml files**: open `config.yml` (or `luckperms.conf`), scroll down to the "Storage Settings" section and set `storage-method` to `yaml`. Then restart your server.
+However, if you would prefer for LuckPerms data to be stored in **readable, editable .yml files**: open `config.yml`/`luckperms.conf`, scroll down to the "Storage Settings" section and set `storage-method` to `yaml`. Then restart your server.
 
 If you run multiple servers in a network (or plan to do so in the future), then you will need to setup a remote database like **MySQL** for LuckPerms to store its data in.
 
@@ -67,7 +67,7 @@ Most server hosts provide these for free! Click the option for "MySQL Database",
 
 ![](../img/installation-5.png)
 
-Once you have these details, take a note of them (or duplicate your tab), then navigate back to the LuckPerms `config.yml` (or `luckperms.conf`) file in the File Manager, and click "edit".
+Once you have these details, take a note of them (or duplicate your tab), then navigate back to the LuckPerms `config.yml`/`luckperms.conf` file in the File Manager, and click "edit".
 
 Scroll down to "Storage Settings" and set `storage-method` to `mysql`. Then fill out your database info under the `data:` section.
 
