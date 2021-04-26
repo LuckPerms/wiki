@@ -116,4 +116,4 @@ Some popular tab/nametag formatting plugins which work with LuckPerms on BungeeC
 
 ### Fabric
 * [GraphiXMod](https://github.com/lochnessdragon/GraphiXMod) - includes chat formatting, holograms, tablist and scoreboard.
-* [Chatter](https://github.com/Axieum/Chatter) - includes chat formatting and Discord integration ([wiki](https://axieum.gitbook.io/chatter-for-minecraft))
+* [Chatter](https://github.com/Axieum/Chatter) - includes chat formatting and Discord integration
