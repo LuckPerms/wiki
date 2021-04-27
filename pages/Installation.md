@@ -2,7 +2,7 @@
 
 #### Step 1: Download the LuckPerms jar file
 
-The first thing you will need to do is download the plugin. You can always find the latest versions of LuckPerms for all of the platforms we support on our [downloads page](https://luckperms.net/download).
+The first thing you will need to do is download LuckPerms. You can always find the latest versions of LuckPerms for all of the platforms we support on our [downloads page](https://luckperms.net/download).
 
 Just click the link to download and save the file somewhere easily accessible.
 
@@ -15,13 +15,13 @@ If you haven't got anywhere to host your server yet, check out our partner [Bise
 
 #### Step 2: Add the LuckPerms jar to your server's `plugins` or `mods` folder
 
-Next, we need to install the plugin onto the server. Make sure you have selected & installed the correct server jar, and that your server has successfully started at least once (this is to ensure the necessary folders will have been generated).
+Next, we need to install LuckPerms onto the server. Make sure you have selected & installed the correct server jar, and that your server has successfully started at least once (this is to ensure the necessary folders will have been generated).
 
-Navigate to your hosting panel's "File Manager", and open the `plugins` folder (for Bukkit, Nukkit, etc) or `mods` folder (for Sponge).
+Navigate to your hosting panel's "File Manager", and open the `plugins` folder (for Bukkit, Nukkit, etc) or `mods` folder (for Sponge or Fabric).
 
 ![](../img/installation-1.png)
 
-Once you're in the plugins folder, click upload and select the LuckPerms jar you downloaded in Step 1.
+Once you're in the plugins or mods folder, click upload and select the LuckPerms jar you downloaded in Step 1.
 
 ![](../img/installation-2.png)
 
@@ -37,28 +37,29 @@ As your server restarts, you can monitor the console to make sure LuckPerms star
 
 ![](../img/installation-3.png)
 
-The plugin is now installed and you can start using it right away! Move onto the Usage section of the wiki for more information about what to do next!
+LuckPerms is now installed and you can start using it right away! Move onto the Usage section of the wiki for more information about what to do next!
 
-#### Step 4: Configuring the plugin
+#### Step 4: Configuring LuckPerms
 
-To customize the plugin, you can make changes to its configuration file.
+To customize LuckPerms, you can make changes to its configuration file.
 
-Go back to the "File Manager", then open the `plugins` folder (for Bukkit, Nukkit, etc) or `config` folder (for Sponge). Then, open the `LuckPerms` folder within.
+Go back to the "File Manager", then open the `plugins` folder (for Bukkit, Nukkit, etc) or `config` folder (for Sponge or Fabric). Then, open the `LuckPerms` folder within.
 
 ![](../img/installation-4.png)
 
 Here you will find a number of files. The important ones are:
 
-* `config.yml` - this is the configuration file
+* `config.yml` - this is the LuckPerms configuration file for Bukkit, Spigot, Nukkit, etc. servers
+* `luckperms.conf` - this is the LuckPerms configuration file for Sponge and Fabric servers
 * `luckperms-h2.mv.db` - this is the database file LuckPerms uses to store your permissions data (don't delete it!)
 
-You can click the "edit" button next to `config.yml` to open an editor in your browser. It's also possible to edit these files via FTP.
+You can click the "edit" button next to `config.yml` or `luckperms.conf` to open an editor in your browser. It's also possible to edit these files via FTP.
 
 #### Step 5 (optional): Setup LuckPerms to use a MySQL database or .yml files to store data
 
-By default, LuckPerms stores all of it's data in a file-based database file called "H2". This is great because it's efficient and lets people start using the plugin without any extra config steps.
+By default, LuckPerms stores all of it's data in a file-based database file called "H2". This is great because it's efficient and lets people start using LuckPerms without any extra config steps.
 
-However, if you would prefer for LuckPerms data to be stored in **readable, editable .yml files**: open `config.yml`, scroll down to the "Storage Settings" section and set `storage-method` to `yaml`. Then restart your server.
+However, if you would prefer for LuckPerms data to be stored in **readable, editable .yml files**: open `config.yml`/`luckperms.conf`, scroll down to the "Storage Settings" section and set `storage-method` to `yaml`. Then restart your server.
 
 If you run multiple servers in a network (or plan to do so in the future), then you will need to setup a remote database like **MySQL** for LuckPerms to store its data in.
 
@@ -66,7 +67,7 @@ Most server hosts provide these for free! Click the option for "MySQL Database",
 
 ![](../img/installation-5.png)
 
-Once you have these details, take a note of them (or duplicate your tab), then navigate back to the LuckPerms `config.yml` file in the File Manager, and click "edit".
+Once you have these details, take a note of them (or duplicate your tab), then navigate back to the LuckPerms `config.yml`/`luckperms.conf` file in the File Manager, and click "edit".
 
 Scroll down to "Storage Settings" and set `storage-method` to `mysql`. Then fill out your database info under the `data:` section.
 
@@ -96,7 +97,7 @@ Remember, you'll need to complete these steps for all servers you have in your n
 LuckPerms has a few requirements. The *vast* majority of servers will meet these requirements already.
 
 * You need Java 8 or higher
-* Your server needs access to the internet the first time you load the plugin
+* Your server needs access to the internet the first time you load LuckPerms
 
 ---
 ### Java 8
