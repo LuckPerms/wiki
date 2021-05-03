@@ -319,7 +319,7 @@ temporary-add-behaviour: deny
 ___
 ### `primary-group-calculation`
 
-How should LuckPerms determine a users "primary" group. The default behaviour for Bukkit/Bungee is `stored`, and the default for Sponge is `parents-by-weight`.
+How should LuckPerms determine a users "primary" group. The default is `parents-by-weight`.
 
 * **`stored`** - use the value stored against the users record in the file/database
 * **`parents-by-weight`** - use the users most highly weighted parent
@@ -327,7 +327,7 @@ How should LuckPerms determine a users "primary" group. The default behaviour fo
 
 ##### Example
 ```yaml
-primary-group-calculation: stored
+primary-group-calculation: parents-by-weight
 ```
 
 ___
