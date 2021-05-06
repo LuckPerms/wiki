@@ -315,10 +315,10 @@ RegexPermissionNode node = RegexPermissionNode.builder(pattern).build();
 InheritanceNode node = InheritanceNode.builder(group).build();
 
 // build a prefix node
-PrefixNode node = PrefixNode.builder(100, "[Some Prefix]").build();
+PrefixNode node = PrefixNode.builder("[Some Prefix]", 100).build();
 
 // build a suffix node
-SuffixNode node = SuffixNode.builder(150, "[Some Suffix]").build();
+SuffixNode node = SuffixNode.builder("[Some Suffix]", 150).build();
 
 // build a metadata node
 MetaNode node = MetaNode.builder("some-key", "some-value").build();
