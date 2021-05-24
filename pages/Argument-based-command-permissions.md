@@ -1,5 +1,12 @@
 This page documents the [`argument-based-command-permissions`](Configuration#argument-based-command-permissions) configuration option.
 
+**For any of the following permissions to work, you must first enable [`argument-based-command-permissions: true`](Configuration#argument-based-command-permissions) in your [config](Configuration#argument-based-command-permissions)**
+
+```
+# config file
+argument-based-command-permissions: true
+```
+
 When this option is enabled, LuckPerms will run extra permission checks when a player tries to modify or view permission data.
 
 These permissions allow for finer control over what changes a player is able to do, including preventing them from granting specific groups, or making changes in certain contexts.
