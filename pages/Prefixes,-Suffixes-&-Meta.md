@@ -94,7 +94,7 @@ Some popular chat formatting plugins which work with LuckPerms + Vault include:
 
 Some popular tab/nametag formatting plugins which work with LuckPerms + Vault include:
 * [NametagEdit](https://www.spigotmc.org/resources/3836/)
-* [TAB](https://www.spigotmc.org/resources/57806/)
+* [TAB](https://github.com/NEZNAMY/TAB)
 * [Tab](https://www.spigotmc.org/resources/1448/) (paid)
 
 This is by no means a definitive list. Anything that supports Vault also supports LuckPerms!
@@ -109,7 +109,7 @@ Some popular chat formatting plugins which work with LuckPerms on BungeeCord inc
 
 Some popular tab/nametag formatting plugins which work with LuckPerms on BungeeCord include:
 * [BungeeTabListPlus](https://www.spigotmc.org/resources/313/)
-* [TAB](https://www.spigotmc.org/resources/57806/)
+* [TAB](https://github.com/NEZNAMY/TAB)
 
 ### Sponge
 * [Nucleus](https://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](https://nucleuspowered.org/docs/modules/chat.html).
