@@ -36,15 +36,15 @@ ___
 
 ### Checking if a player is in a group
 
-Checking for group membership can be most easily achieved using hasPermission checks.
+Checking for group membership can be most easily achieved using `isPermissionSet`.
 
 ```java
 public static boolean isPlayerInGroup(Player player, String group) {
-    return player.hasPermission("group." + group);
+    return player.isPermissionSet("group." + group);
 }
 ```
 
-However, keep in mind that anyone with server operator status or `*` permissions will also have these permissions.
+We use `isPermissionSet` because anyone with server operator status or `*` permissions will also have these permissions.
 
 ___
 
@@ -55,7 +55,7 @@ We can use the method above with a list of "possible" groups in order to find a 
 ```java
 public static String getPlayerGroup(Player player, Collection<String> possibleGroups) {
     for (String group : possibleGroups) {
-        if (player.hasPermission("group." + group)) {
+        if (player.isPermissionSet("group." + group)) {
             return group;
         }
     }
