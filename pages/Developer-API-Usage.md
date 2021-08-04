@@ -786,7 +786,7 @@ This is a simple event that is "called when a User's cached data is refreshed". 
 Recall from earlier that [all user/group data is stored as `Node`s](#the-basics-of-node) - introducing:
 
 * the [`NodeAddEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java) - called when a node is added to a user/group
-* the [`NodeRemoteEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeRemoveEvent.java) - called when a node is removed from a user/group
+* the [`NodeRemoveEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeRemoveEvent.java) - called when a node is removed from a user/group
 * the [`NodeClearEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeClearEvent.java) - called when a user/group has all/some their existing nodes removed
 
 All of these events extend from [`NodeMutateEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeMutateEvent.java) which defines the base properties.
