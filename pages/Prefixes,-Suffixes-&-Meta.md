@@ -88,6 +88,7 @@ Some popular chat formatting plugins which work with LuckPerms + Vault include:
 * [ChatEx](https://dev.bukkit.org/projects/chatex)
 * [VentureChat](https://www.spigotmc.org/resources/771/)
 * [Stylizer](https://www.spigotmc.org/resources/stylizer.78327/) - includes chat formatting and tablist.
+* [DisplayFormatter](https://github.com/MCMDEV/displayformatter) - includes chat formatting and tablist, specifically for LuckPerms.
 * [CarbonChat](https://github.com/Hexaoxide/Carbon) (beta)
 * [DeluxeChat](https://www.spigotmc.org/resources/1277/) (paid)
 * [ChatControl](https://www.spigotmc.org/resources/10258/) (paid)
