@@ -65,6 +65,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **usb_hub**
 * **Lord_Samosa**
 * **SilverCore**
+* **Evident**
 * Doctor Zod (retired)
 
 ## Patreons / donors
