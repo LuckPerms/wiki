@@ -63,6 +63,8 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **Rainbow Dash**
 * **Unix**
 * **usb_hub**
+* **Lord_Samosa**
+* **SilverCore**
 * Doctor Zod (retired)
 
 ## Patreons / donors
