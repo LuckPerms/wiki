@@ -58,6 +58,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **\_11**
 * **Aberdeener**
 * **ben**
+* **Doctor Zod**
 * **Evident**
 * **JG**
 * **Lord_Samosa**
@@ -66,7 +67,6 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **SilverCore**
 * **Unix**
 * **usb_hub**
-* Doctor Zod (retired)
 
 ## Patreons / donors
 
