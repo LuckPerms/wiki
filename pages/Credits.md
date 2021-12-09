@@ -57,6 +57,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 ### Helpers
 * **\_11**
 * **Aberdeener**
+* **ANutley**
 * **ben**
 * **Doctor Zod**
 * **Evident**
@@ -64,9 +65,9 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **Lord_Samosa**
 * **powercas_gamer**
 * **Rainbow Dash**
-* **SilverCore**
 * **Unix**
 * **usb_hub**
+* **Zeromaniac**
 
 ## Patreons / donors
 
