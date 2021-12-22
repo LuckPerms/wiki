@@ -57,6 +57,8 @@ The basic idea is that:
 
 When constraints are defined in commands, the entire constraint must be wrapped with `" "` quotes.
 
+If you are wanting to remove a specific context from a permission or group that has been assigned with a specific world or server context, you can simply just set the world and/or context to `global` which will essentially remove the context making that permission and/or group global again. 
+
 ### Command Examples
 #### `/lp bulkupdate all update permission group.mod "permission == group.moderator"`
 Will update all entries, and replace any occurrence of the "group.moderator" permission with "group.mod". (effectively renaming the group)
@@ -75,3 +77,6 @@ Will change any server entries from "factions" to "global"
 
 #### `/lp bulkupdate all update permission essentials.ban "permission == essentials.mute" "server == survival"`
 Will change any permission entries for "essentials.mute" to "essentials.ban" set on the "survival" server
+
+#### `/lp bulkupdate all update server global "permission == group.mod" "server == survival"`
+Will change all memberships of the MOD group to use the global context (Essentially removing the context)
