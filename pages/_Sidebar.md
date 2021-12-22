@@ -40,6 +40,7 @@
 
 * [**API Introduction**](Developer-API)
 * [**API Usage**](Developer-API-Usage)
+* [**Contributing**](Contributing)
 
 ### Reference
 
