@@ -114,6 +114,15 @@ Some known compatibility issues are outlined below. In all cases, these issues a
 
 Some of the compatibility issues are resolved in newer releases of the server - but the fixes are not backdated.
 
+### Other permission plugins
+For LuckPerms to fully work & handle all permission checks, it must be the only permission plugin installed on your server (unless you want to perform automatic migration)!
+
+We notice that people often to forget to remove the following permission plugins when they install LuckPerms:
+* PowerRanks
+* PermissionsEx
+* UltraPermissions
+
+---
 ### CraftBukkit and Offline Mode
 If your server is running CraftBukkit and configured in offline (cracked) mode, LuckPerms (and a number of other plugins, for that matter) will not work. This is due to a [CraftBukkit bug regarding the AsyncPlayerPreLoginEvent](https://hub.spigotmc.org/jira/browse/SPIGOT-3541).
 
