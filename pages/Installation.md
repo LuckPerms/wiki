@@ -115,11 +115,12 @@ Some known compatibility issues are outlined below. In all cases, these issues a
 Some of the compatibility issues are resolved in newer releases of the server - but the fixes are not backdated.
 
 ### Other permission plugins
-For LuckPerms to fully work & handle all permission checks, it must be the only permission plugin installed on your server!
-Common permission plugins (if you have any of these, remove them):
-- PowerRanks
-- PermissionsEx
-- UltraPermissions
+For LuckPerms to fully work & handle all permission checks, it must be the only permission plugin installed on your server (unless you want to perform automatic migration)!
+
+We notice that people often to forget to remove the following permission plugins when they install LuckPerms:
+* PowerRanks
+* PermissionsEx
+* UltraPermissions
 
 ---
 ### CraftBukkit and Offline Mode
