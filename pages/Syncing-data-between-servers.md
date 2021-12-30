@@ -48,5 +48,6 @@ A messaging service can be configured in the config, under the `messaging-servic
 | lilypad | Uses LilyPad Connect's PubSub system to communicate. |
 | redis | Connects to a Redis instance and uses PubSub to communicate. |
 | rabbitmq | Connects to a RabbitMQ instance and uses PubSub over AMQP to communicate. |
+| custom | Forces the messaging-service to use your own custom implemention that you provide through the LuckPerms API. |
 
-It is also possible to provide your own implementation of this service via the LuckPerms API.
+It is also possible to provide your own implementation of this service via the LuckPerms API. Make sure you set the messaging-service option in the config to `custom` otherwise it will throw an error on startup.
