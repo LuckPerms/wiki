@@ -16,6 +16,12 @@ To use the LuckPerms placeholders in plugins which support [MVdWPlaceholderAPI](
 * Download `LuckPermsMVdWHook.jar` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/)
 * Place it in your `/plugins/` folder.
 
+### Fabric PlaceholderAPI
+To use the Fabric LuckPerms placeholders in mods which support [Fabric PlaceholderAPI](https://placeholders.pb4.eu/), you need to install the LuckPerms placeholder hook mod. The placeholder format is slightly different and documented in their docs [here](https://placeholders.pb4.eu/user/mod-placeholders/#luckperms).
+
+* Download `LuckPerms-Fabric-PlaceholderAPI-Hook.jar	` from [here](https://ci.lucko.me/job/LuckPermsPlaceholders/)
+* Place it in your `/mods/` folder.
+
 
 
 ## Placeholders
