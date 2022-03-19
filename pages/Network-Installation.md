@@ -78,12 +78,12 @@ The "Messaging Service" is a feature within LuckPerms which allows servers to no
 
 ___
 
-## The BungeeCord version of LuckPerms
-A common misconception with the BungeeCord version is that it's a replacement for installing LuckPerms on your backend Spigot/Sponge servers. This is untrue.
+## The Proxy version of LuckPerms
+A common misconception with the proxy version is that it's a replacement for installing LuckPerms on your backend Spigot/Sponge servers. This is untrue.
 
-When LuckPerms is installed on a BungeeCord proxy, it does two things:
+When LuckPerms is installed on a proxy, it does two things:
 
-* It handles permissions checks made by **BungeeCord plugins**. It does *not* intercept or handle permission checks made by plugins on the backend server.
+* It handles permissions checks made by **proxy plugins**. It does *not* intercept or handle permission checks made by plugins on the backend server.
 * It forwards update notifications and log messages around the network when `messaging-service` is set to 'pluginmsg'.
 
 This means that if you want LuckPerms to respond to permission checks on your backend Spigot or Sponge server, you need to install it there too, even if you have it on your proxy.
