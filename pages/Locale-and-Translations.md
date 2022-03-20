@@ -2,7 +2,7 @@
 
 All in-game messages in LuckPerms can be customised and translated using the translation system.
 
-The base translation file for *English* can be found here: [`luckperms_en.properties`](https://github.com/lucko/LuckPerms/blob/master/common/src/main/resources/luckperms_en.properties)
+The base translation file for *English* can be found here: [`luckperms_en.properties`](https://github.com/LuckPerms/LuckPerms/blob/master/common/src/main/resources/luckperms_en.properties)
 
 ## Contributing
 

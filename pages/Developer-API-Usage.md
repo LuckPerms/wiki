@@ -727,11 +727,11 @@ ___
 
 LuckPerms uses it's own event system, completely separate from the event systems used by platforms (e.g. Bukkit or Sponge). This means that instead of registering your listener with the server, you must register it directly with LuckPerms.
 
-The events supported by LuckPerms are defined as `interface`s that extend from [`LuckPermsEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java). They can be found in the [`net.luckperms.api.event`](https://github.com/lucko/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package.
+The events supported by LuckPerms are defined as `interface`s that extend from [`LuckPermsEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/LuckPermsEvent.java). They can be found in the [`net.luckperms.api.event`](https://github.com/LuckPerms/LuckPerms/tree/master/api/src/main/java/net/luckperms/api/event) package.
 
 #### Event listeners
 
-To listen to events, you first need to obtain the [`EventBus`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance using `LuckPerms#getEventBus`, then register each listener using the `subscribe` method.
+To listen to events, you first need to obtain the [`EventBus`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/EventBus.java) instance using `LuckPerms#getEventBus`, then register each listener using the `subscribe` method.
 
 The `subscribe` method accepts a `java.util.function.Consumer` object - which allows listeners to be defined as:
 
@@ -777,7 +777,7 @@ If your listener is simple, then an expression or statement lambda is best. If y
 
 #### Listening for changes to user cached data
 
-If you have a system that depends on a users cached data (e.g. their prefix or permission state), then you may find it necessary to perform some action in your plugin when the data changes (e.g. invalidate or update a cache). The best & most simple event to use to achieve this is the [`UserDataRecalculateEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/user/UserDataRecalculateEvent.java).
+If you have a system that depends on a users cached data (e.g. their prefix or permission state), then you may find it necessary to perform some action in your plugin when the data changes (e.g. invalidate or update a cache). The best & most simple event to use to achieve this is the [`UserDataRecalculateEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/user/UserDataRecalculateEvent.java).
 
 This is a simple event that is "called when a User's cached data is refreshed". It doesn't give any information about what caused the refresh - just that it happened!
 
@@ -785,11 +785,11 @@ This is a simple event that is "called when a User's cached data is refreshed". 
 
 Recall from earlier that [all user/group data is stored as `Node`s](#the-basics-of-node) - introducing:
 
-* the [`NodeAddEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java) - called when a node is added to a user/group
-* the [`NodeRemoveEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeRemoveEvent.java) - called when a node is removed from a user/group
-* the [`NodeClearEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeClearEvent.java) - called when a user/group has all/some their existing nodes removed
+* the [`NodeAddEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java) - called when a node is added to a user/group
+* the [`NodeRemoveEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeRemoveEvent.java) - called when a node is removed from a user/group
+* the [`NodeClearEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeClearEvent.java) - called when a user/group has all/some their existing nodes removed
 
-All of these events extend from [`NodeMutateEvent`](https://github.com/lucko/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeMutateEvent.java) which defines the base properties.
+All of these events extend from [`NodeMutateEvent`](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeMutateEvent.java) which defines the base properties.
 
 These events cover all possible changes that could be made to a user/groups LuckPerms data. The trick is to figure out which event you need, and how to filter down to only catch the desired changes.
 

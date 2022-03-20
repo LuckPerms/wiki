@@ -85,7 +85,7 @@ You will need to input the address, port, database, username and password values
    
 This option is recommended for users expecting to store a lot of data, or thinking about expanding into a network of servers. If you are already running multiple servers and want to sync data between them, then you need to use a remote database type.   
    
-The schema layouts can be found [here](https://github.com/lucko/LuckPerms/tree/master/common/src/main/resources/me/lucko/luckperms/schema).
+The schema layouts can be found [here](https://github.com/LuckPerms/LuckPerms/tree/master/common/src/main/resources/me/lucko/luckperms/schema).
 
 To use either of these options, set:
 ```yaml

@@ -30,7 +30,7 @@ As a precautionary measure in case either of the sites become compromised, the p
 
 ##### The verification process
 
-Each dependency that can be downloaded at runtime, along with it's version and location within Maven Central is defined in [this source code file](https://github.com/lucko/LuckPerms/blob/master/common/src/main/java/me/lucko/luckperms/common/dependencies/Dependency.java) in LuckPerms.
+Each dependency that can be downloaded at runtime, along with it's version and location within Maven Central is defined in [this source code file](https://github.com/LuckPerms/LuckPerms/blob/master/common/src/main/java/me/lucko/luckperms/common/dependencies/Dependency.java) in LuckPerms.
 
 Each entry also includes a SHA-256 hash of the dependency file, at the time the release was first included within LuckPerms. This hash is used as a checksum for downloaded files.
 
@@ -81,7 +81,7 @@ respectively.
 
 The website itself is static (the content served to your browser does not change). All dynamic functionality is provided using client-side JavaScript.
 
-The source code for these sites is freely available here: https://github.com/lucko/LuckPermsWeb
+The source code for these sites is freely available here: https://github.com/LuckPerms/LuckPermsWeb
 
 Communication between the editors/viewers and the plugin (which runs on your Minecraft server) is performed using isolated data payloads. There is never any direct communication between the editors/viewers and the server.
 

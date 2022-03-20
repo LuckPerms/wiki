@@ -10,7 +10,7 @@ ___
 ## Pre setup
 Before you get started, there are a number of things you need to check. These aren't just here for the sake of it - these steps are important. Do not skip them!
 
-LuckPerms supports networks using either `BungeeCord` or `LilyPad`.
+LuckPerms supports networks using either `BungeeCord`, `Velocity` or `LilyPad`.
 
 ### BungeeCord
 LuckPerms uses a player's unique ids (UUID) as an index when saving data. A players uuid is provided by the server implementation, however, this value can depend on the state of the `online-mode` setting.
@@ -72,18 +72,18 @@ This means that `storage-method` should be set to 'mysql', 'mariadb', 'postgresq
 The "Messaging Service" is a feature within LuckPerms which allows servers to notify other servers within the network whenever changes are made. It also allows log entries to be dispatched across the network.
 
 * If you're running multiple servers which are not connected to one proxy, but use the same database set this option to `sql`.
-* If you're running a small network with one BungeeCord proxy, then you should set this option to `pluginmsg`.
+* If you're running a small network with one BungeeCord/Velocity proxy, then you should set this option to `pluginmsg`.
 * If you're running a LilyPad network, set this to `lilypad`.
-* If you're running a network with more than one BungeeCord proxy, then it is advisable to install a Redis server (if you're running a network with more than one proxy, I'll assume you already know how to do this!), and set this option to `redis`. Remember to fill out your Redis credentials after changing this option!
+* If you're running a network with more than one BungeeCord/Velocity proxy, then it is advisable to install a Redis server (if you're running a network with more than one proxy, I'll assume you already know how to do this!), and set this option to `redis`. Remember to fill out your Redis credentials after changing this option!
 
 ___
 
-## The Proxy version of LuckPerms
+## The BungeeCord/Velocity version of LuckPerms
 A common misconception with the proxy version is that it's a replacement for installing LuckPerms on your backend Spigot/Sponge servers. This is untrue.
 
 When LuckPerms is installed on a proxy, it does two things:
 
-* It handles permissions checks made by **proxy plugins**. It does *not* intercept or handle permission checks made by plugins on the backend server.
+* It handles permissions checks made by **plugins on the proxy**. It does *not* intercept or handle permission checks made by plugins on the backend server.
 * It forwards update notifications and log messages around the network when `messaging-service` is set to 'pluginmsg'.
 
 This means that if you want LuckPerms to respond to permission checks on your backend Spigot or Sponge server, you need to install it there too, even if you have it on your proxy.

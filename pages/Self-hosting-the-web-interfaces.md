@@ -72,7 +72,7 @@ Now, you can run bytebin with `java -jar bytebin.jar` - and the service should b
 
 ### Step 2: Installing the site
 
-The source for the web apps is available from GitHub: https://github.com/lucko/LuckPermsWeb
+The source for the web apps is available from GitHub: https://github.com/LuckPerms/LuckPermsWeb
 
 You will need to build and host this site on your web server. You can either use the [automatic setup script](https://github.com/LuckPerms/web-installer#automatic-setup) or [install manually](https://github.com/LuckPerms/web-installer#manual-setup).
 
