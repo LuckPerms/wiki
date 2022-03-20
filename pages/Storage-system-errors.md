@@ -99,7 +99,7 @@ Crucially, the `maximum-lifetime` value in the LP config must be **less than** t
 
 | `maximum-lifetime` |
 |--------------------|
-| Location: [LuckPerms config](https://github.com/lucko/LuckPerms/blob/be92a6754404b387dead24ebc1dd3ca8af8e6456/bukkit/src/main/resources/config.yml#L125-L128) |
+| Location: [LuckPerms config](https://github.com/LuckPerms/LuckPerms/blob/be92a6754404b387dead24ebc1dd3ca8af8e6456/bukkit/src/main/resources/config.yml#L125-L128) |
 | Units: milliseconds |
 | Default value: `1800000` (30 minutes) |
 

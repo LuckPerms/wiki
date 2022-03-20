@@ -1,4 +1,4 @@
-LuckPerms is an open-source project, released freely under the terms of the permissive [MIT License](https://github.com/lucko/LuckPerms/blob/master/LICENSE.txt).
+LuckPerms is an open-source project, released freely under the terms of the permissive [MIT License](https://github.com/LuckPerms/LuckPerms/blob/master/LICENSE.txt).
 
 > MIT License
 > 
@@ -31,8 +31,8 @@ LuckPerms wouldn't be the way it is today without the help of many contributors 
 
 A huge amount of thanks is owed to:
 
-* [contributors to LuckPerms](https://github.com/lucko/LuckPerms/graphs/contributors)
-* [contributors to LuckPermsWeb](https://github.com/lucko/LuckPermsWeb/graphs/contributors)
+* [contributors to LuckPerms](https://github.com/LuckPerms/LuckPerms/graphs/contributors)
+* [contributors to LuckPermsWeb](https://github.com/LuckPerms/LuckPermsWeb/graphs/contributors)
 * [contributors to the wiki](https://github.com/LuckPerms/wiki/graphs/contributors)
 * [contributors to the translation/i18n effort](https://crowdin.com/project/luckperms)
 * [contributors to any of our other projects](https://github.com/LuckPerms)
@@ -67,7 +67,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **Rainbow Dash**
 * **Unix**
 * **usb_hub**
-* **Zeromaniac**
+* Zeromaniac (retired)
 
 ## Patreons / donors
 
