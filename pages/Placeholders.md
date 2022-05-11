@@ -54,8 +54,8 @@ For example, the `%luckperms_meta%` placeholder requires a `<meta key>` argument
 | `%luckperms_highest_inherited_group_by_weight%` |                              | Returns the name of the players highest weighted group, *including* groups they indirectly inherit from others. |
 | `%luckperms_lowest_inherited_group_by_weight%`  |                              | Returns the name of the players lowest weighted group, *including* groups they indirectly inherit from others. |
 | `%luckperms_current_group_on_track%`            | `<track>`                    | If the player is currently on the given track, returns the name of the group. |
-| `%luckperms_next_group_on_track%`               | `<track>`                    | If the player is currently is currently on the given track, returns the name of the next group (the one they would be promoted to next). |
-| `%luckperms_previous_group_on_track%`           | `<track>`                    | If the player is currently is currently on the given track, returns the name of the previous group (the one they would be demoted to next). |
+| `%luckperms_next_group_on_track%`               | `<track>`                    | If the player is currently on the given track, returns the name of the next group (the one they would be promoted to next). |
+| `%luckperms_previous_group_on_track%`           | `<track>`                    | If the player is currently on the given track, returns the name of the previous group (the one they would be demoted to next). |
 | `%luckperms_first_group_on_tracks%`             | `<tracks>`                   | Given a comma separated list of track names, finds the first group inherited by the player on any of the given tracks. |
 | `%luckperms_last_group_on_tracks%`              | `<tracks>`                   | Given a comma separated list of track names, finds the last group inherited by the player on any of the given tracks. |
 | `%luckperms_expiry_time%`                       | `<permission>`               | Gets the duration remaining on a temporary permission assigned directly to the player. |
