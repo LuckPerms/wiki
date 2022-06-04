@@ -105,7 +105,7 @@ ___
 * `[duration]` - the duration to subtract from the temporary group membership, can be omitted to remove entirely
 * `[context...]` - the [contexts](Context) to remove the group in
 
-Removes a tempoary parent from the user/group.
+Removes a temporary parent from the user/group.
 
 ___
 #### `/lp user/group <user|group> parent clear [context...]`  
