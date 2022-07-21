@@ -100,6 +100,6 @@ Do either of the following to resolve this:
 
 - You can install LP locally (where you do have an internet connection), and then copy the content of the `/LuckPerms/libs/` directory to your other server, into the folder `/LuckPerms/libs/`.
 
-- Contact your server host to allow connections from [nexus.lucko.me](https://nexus.lucko.me/repository/maven-central/) and [repo1.maven.org](https://repo1.maven.org/maven2/).
+- Contact your server host to allow connections from [libraries.luckperms.net](https://libraries.luckperms.net/) and [repo1.maven.org](https://repo1.maven.org/maven2/).
 
 

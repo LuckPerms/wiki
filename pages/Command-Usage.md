@@ -5,7 +5,7 @@ If the only thing returned when you type a command is the plugin version, you do
 ### Aliases
 A list of aliases for each platform are listed below. Each command works in exactly the same manner, so you can use whichever you prefer.
 
-| Bukkit / Sponge / Fabric / Nukkit   | BungeeCord         | Velocity             |
+| Bukkit / Sponge / Fabric / Forge / Nukkit   | BungeeCord         | Velocity             |
 | ----------------------------------- | ------------------ | -------------------- |
 | `/lp`                               | `/lpb`             | `/lpv`               |
 | `/luckperms`                        | `/luckpermsbungee` | `/luckpermsvelocity` |
