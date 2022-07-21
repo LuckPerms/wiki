@@ -43,6 +43,8 @@ A huge amount of thanks is owed to:
 Additionally, I'd like to thank the project's Discord moderators and helpers, past and present, who work incredibly hard to keep things in order & support the community in using the plugin.
 
 ### Moderators
+* **\_11**
+* **aberdeener**
 * **emilyy**
 * **Jay**
 * **Larry**
@@ -55,12 +57,11 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * SpannerMan (retired)
 
 ### Helpers
-* **\_11**
-* **Aberdeener**
 * **ANutley**
 * **ben**
 * **Doctor Zod**
 * **Evident**
+* **Frying Pan**
 * **JG**
 * **Lord_Samosa**
 * **powercas_gamer**
@@ -115,7 +116,6 @@ A big thank you to my Patreons and donators, whose contributions allow me to con
 * ofunny
 * ozraru
 * Paul Sauve
-* powercas_gamer
 * queeirdo
 * royalkingkb
 * Ruinscraft
@@ -156,7 +156,7 @@ LuckPerms utilises a number of open source libraries and utilities to provide it
 | [HikariCP](https://github.com/brettwooldridge/HikariCP)      | [Brett Wooldridge](https://github.com/brettwooldridge) | [Apache License 2.0](https://github.com/brettwooldridge/HikariCP/blob/dev/LICENSE) |
 | [SLF4J](https://github.com/qos-ch/slf4j)                     | [SLF4J](https://www.slf4j.org/)                        | [MIT License](https://github.com/qos-ch/slf4j/blob/master/LICENSE.txt) |
 | [MongoDB Java Driver](https://mongodb.github.io/mongo-java-driver/) | [MongoDB](https://www.mongodb.com/)                    | [Apache License 2.0](https://github.com/mongodb/mongo-java-driver/blob/master/LICENSE.txt) |
-| [Jedis](https://github.com/xetorthio/jedis)                  | [Jonathan Leibiusky](https://github.com/xetorthio)     | [MIT License](https://github.com/xetorthio/jedis/blob/master/LICENSE.txt) |
+| [Jedis](https://github.com/redis/jedis)                  | [Redis](https://github.com/redis)     | [MIT License](https://github.com/redis/jedis/blob/master/LICENSE.txt) |
 | [RabbitMQ Java Client](https://github.com/rabbitmq/rabbitmq-java-client/) | [RabbitMQ](https://github.com/rabbitmq)                | [Mozilla Public License 2.0 or GNU General Public License v2.0 or Apache License 2.0](https://github.com/rabbitmq/rabbitmq-java-client/blob/master/LICENSE) |
 | [Apache Commons Pool](https://commons.apache.org/proper/commons-pool/) | [Apache](https://www.apache.org/)                      | [Apache License 2.0](https://github.com/apache/commons-pool/blob/master/LICENSE.txt) |
 | [configurate](https://github.com/SpongePowered/configurate)  | [SpongePowered](https://github.com/SpongePowered)      | [Apache License 2.0](https://github.com/SpongePowered/configurate/blob/master/LICENSE) |
@@ -172,6 +172,6 @@ LuckPerms utilises a number of open source libraries and utilities to provide it
 YourKit supports open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/) and [YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/), innovative and intelligent tools for profiling Java and .NET applications.
 
 ### JProfiler
-[![](../img/credits-jprofiler.png)](http://www.ej-technologies.com/products/jprofiler/overview.html)
+[![](../img/credits-jprofiler.png)](https://www.ej-technologies.com/products/jprofiler/overview.html)
 
-Thanks to ej-technologies for granting LuckPerms an open source licence to their [Java Profiling Software](http://www.ej-technologies.com/products/jprofiler/overview.html "Java Profiler").
+Thanks to ej-technologies for granting LuckPerms an open source licence to their [Java Profiling Software](https://www.ej-technologies.com/products/jprofiler/overview.html "Java Profiler").
