@@ -61,7 +61,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 * **ben**
 * **Doctor Zod**
 * **Evident**
-* **Frying Pan**
+* **Frying☆Pan**
 * **JG**
 * **Lord_Samosa**
 * **powercas_gamer**
