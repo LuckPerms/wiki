@@ -17,7 +17,9 @@ docker run -it --rm ghcr.io/luckperms/luckperms
 
 This will give you a CLI that you can use just like you would a Minecraft server.
 
-![](../img/standalone-1.png)
+<p>
+  <img src="../img/standalone-1.png" height="400"/>
+</p>
 
 You can configure your database host/user/password using [environment variables](Configuration#environment-variables).
 
