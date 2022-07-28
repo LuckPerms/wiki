@@ -40,6 +40,7 @@
 
 * [**API Introduction**](Developer-API)
 * [**API Usage**](Developer-API-Usage)
+* [**Standalone App** & **REST API**](Standalone-and-REST-API)
 * [**Contributing**](Contributing)
 
 ### Reference
