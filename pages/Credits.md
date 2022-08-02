@@ -3,7 +3,7 @@ LuckPerms is an open-source project, released freely under the terms of the perm
 > MIT License
 > 
 > Copyright (c) lucko (Luck) <luck@lucko.me>  
-> Copyright (c) Turbotailz <sam@goodger.nz>  
+> Copyright (c) Turbotailz <turbo@tailz.dev>  
 > Copyright (c) contributors  
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
