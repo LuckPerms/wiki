@@ -21,8 +21,8 @@ The plugin can be configured and used in a number of ways. For example, it suppo
 * Downloaded binaries are cached in the `/LuckPerms/libs/` folder after the initial download. If a library is already present here, a connection to the download server will not be attempted.
 * The URL and version of libraries is hardcoded within the plugin - they will never automatically update.
 
-All libraries are downloaded from https://nexus.lucko.me/ or https://repo1.maven.org/maven2/.
-The latter is a public software repository commonly referred to as the "Central Repository" or "Maven Central", and the former is a repository owned and controlled by me (Luck) which mirrors Maven Central.
+All libraries are downloaded from [https://libraries.luckperms.net/](https://libraries.luckperms.net/) or [https://repo1.maven.org/maven2/](https://repo1.maven.org/maven2/).
+The latter is a public software repository commonly referred to as the "Central Repository" or "Maven Central", and the former is a repository owned and controlled by the LuckPerms project which mirrors Maven Central.
 
 Maven Central is a trustworthy source - it is used by most Java developers and open source projects.
 
@@ -71,27 +71,19 @@ LuckPerms has a number of web apps that are hosted centrally for everyone to use
 
 The clients for each of these applications can be found at
 
-* https://luckperms.net/editor/
-* https://luckperms.net/verbose/
-* https://luckperms.net/treeview/
+* [https://luckperms.net/editor/](https://luckperms.net/editor/)
+* [https://luckperms.net/verbose/](https://luckperms.net/verbose/)
+* [https://luckperms.net/treeview/](https://luckperms.net/treeview/)
 
 respectively. 
 
-
-
-The website itself is static (the content served to your browser does not change). All dynamic functionality is provided using client-side JavaScript.
-
-The source code for these sites is freely available here: https://github.com/LuckPerms/LuckPermsWeb
+The source code for these sites is freely available here: [https://github.com/LuckPerms/LuckPermsWeb](https://github.com/LuckPerms/LuckPermsWeb)
 
 Communication between the editors/viewers and the plugin (which runs on your Minecraft server) is performed using isolated data payloads. There is never any direct communication between the editors/viewers and the server.
 
-You can freely share the links to editor sessions - any changes must always be applied by running a command on the Minecraft server.
+You can freely share the links to editor sessions - any changes must always be applied by running a command on the Minecraft server, or by explictly trusting the editor session.
 
-Data is posted to & read from https://bytebin.lucko.me/ - effectively a very simple content storage system. This service is written and hosted by Luck.
-
-Again, the source is freely available here: https://github.com/lucko/bytebin
-
-Posted data is retained for 14 days and then deleted.
+Additional technical details can be found [here](Web-Editor-Technical-Details).
 
 ___
 
