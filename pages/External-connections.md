@@ -83,6 +83,10 @@ Communication between the editors/viewers and the plugin (which runs on your Min
 
 You can freely share the links to editor sessions - any changes must always be applied by running a command on the Minecraft server, or by explictly trusting the editor session.
 
+Data is posted to & read from https://usercontent.luckperms.net - effectively a very simple content storage system. This service is written and hosted by Luck.
+
+Again, the source is freely available here: https://github.com/lucko/bytebin
+
 Additional technical details can be found [here](Web-Editor-Technical-Details).
 
 ___

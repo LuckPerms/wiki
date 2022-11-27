@@ -538,6 +538,7 @@ The subject type varies between platforms.
 | BungeeCord | `net.md_5.bungee.api.connection.ProxiedPlayer`     |
 | Sponge     | `org.spongepowered.api.service.permission.Subject` |
 | Fabric     | `net.minecraft.server.network.ServerPlayerEntity`  |
+| Forge      | `net.minecraft.server.level.ServerPlayer`          |
 | Nukkit     | `cn.nukkit.Player`                                 |
 | Velocity   | `com.velocitypowered.api.proxy.Player`             |
 

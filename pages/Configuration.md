@@ -6,6 +6,7 @@ The main configuration file for LuckPerms can be found at these locations.
 | BungeeCord    | [`/plugins/LuckPerms/config.yml`](https://github.com/LuckPerms/LuckPerms/blob/master/bungee/src/main/resources/config.yml)        |
 | Sponge        | [`/config/luckperms/luckperms.conf`](https://github.com/LuckPerms/LuckPerms/blob/master/sponge/src/main/resources/luckperms.conf) |
 | Fabric        | [`/config/luckperms/luckperms.conf`](https://github.com/LuckPerms/LuckPerms/blob/master/fabric/src/main/resources/luckperms.conf) |
+| Forge         | [`/config/luckperms/luckperms.conf`](https://github.com/LuckPerms/LuckPerms/blob/master/forge/src/main/resources/luckperms.conf)  |
 | Nukkit        | [`/plugins/LuckPerms/config.yml`](https://github.com/LuckPerms/LuckPerms/blob/master/nukkit/src/main/resources/config.yml)        |
 | Velocity      | [`/plugins/luckperms/config.yml`](https://github.com/LuckPerms/LuckPerms/blob/master/velocity/src/main/resources/config.yml)      |
 
