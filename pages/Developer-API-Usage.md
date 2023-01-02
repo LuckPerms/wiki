@@ -612,36 +612,44 @@ ___
 
 ### The basics of CachedData
 
-All `User`s and `Group`s also have an extra object attached to them called `CachedData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all permission holders.
-
-The lookup methods provided by this class are very fast. If you're doing frequent data lookups, it is highly recommended that if possible, you use `CachedData` over the methods in `User` and `Group`.
+All `User`s and `Group`s also have an extra object attached to them called `CachedData`. This is the name of the caching class used by LuckPerms to store easily query-able data for all permission holders. The lookup methods provided by this class are very fast. If you're doing frequent data lookups, it is highly recommended that you use `CachedData` over the methods in `User` and `Group`.
 
 Everything in `CachedData` is indexed by `QueryOptions`, as this is how LuckPerms processes all lookups internally.
 
 The contained data is split into two separate sections: `CachedPermissionData` and `CachedMetaData`.
 
-`CachedPermissionData` contains the user/groups fully resolved map of permissions, and allows you to run permission checks in exactly the same way as you would using the Player class provided by the platform.
-
-`CachedMetaData` contains information about a user/groups prefixes, suffixes, and meta values.
+* `CachedPermissionData` contains the user/groups fully resolved map of permissions, and allows you to run permission checks in exactly the same way as you would using the Player class provided by the platform.
+* `CachedMetaData` contains information about a user/groups prefixes, suffixes, and meta values.
 
 #### Obtaining `CachedPermissionData` and `CachedMetaData`
 
-You need:
+You need either:
 
-* A `User` or `Group` instance
+* A platform `Player` instance
+* A LuckPerms `User` or `Group` instance + optionally some `QueryOptions` (see above for how to obtain this)
 
-* The `QueryOptions` to get the data in (see above for how to obtain this)
+If you have a `Player` platform instance (like *org.bukkit.entity.Player*), you can use the `PlayerAdapter` to obtain cached data.
 
 ```java
-CachedPermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
-CachedMetaData metaData = user.getCachedData().getMetaData(queryOptions);
+Player player = ...;
+PlayerAdapter<Player> adapter = luckperms.getPlayerAdapter(Player.class);
 
-// If you want to just use the most appropriate current query options for the User..
-// i.e. 'cm.getQueryOptions(user).orElse(cm.getStaticQueryOptions())'
-// .. then you can skip the queryOpptions parameter.
+CachedPermissionData permissionData = adapter.getPermissionData(player);
+CachedMetaData metaData = adapter.getMetaData(player);
+```
+
+If you already have a LuckPerms `User` or `Group` instance, you can use the following methods to obtain cached data.
+```java
+// Will attempt to use the most appropriate currect query options for the User
 CachedPermissionData permissionData = user.getCachedData().getPermissionData();
 CachedMetaData metaData = user.getCachedData().getMetaData();
+
+// You can also manually specify which query options to use
+CachedPermissionData permissionData = user.getCachedData().getPermissionData(queryOptions);
+CachedMetaData metaData = user.getCachedData().getMetaData(queryOptions);
 ```
+
+Once you have a cached data instance, you can perform lots of different queries.
 
 #### Performing permission checks
 
@@ -653,7 +661,7 @@ Tristate checkResult = permissionData.checkPermission("some.permission.node");
 boolean checkResultAsBoolean = checkResult.asBoolean();
 ```
 
-We can put all of this together to create a method that can run a "normal" permission check with passed a `User` and a `String` (the permission).
+We can put all of this together to create a method that can run a "normal" permission check when passed a `User` and a `String` (the permission).
 
 ```java
 public boolean hasPermission(User user, String permission) {
@@ -674,7 +682,7 @@ String suffix = user.getCachedData().getMetaData().getSuffix();
 String metaValue = user.getCachedData().getMetaData().getMetaValue("some-key");
 ```
 
-Of course these methods work with `Group`s too!
+These methods work with `Group`s too!
 
 ___
 
