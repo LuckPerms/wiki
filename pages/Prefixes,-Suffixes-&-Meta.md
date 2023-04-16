@@ -121,8 +121,8 @@ Some popular tab/nametag formatting plugins which work with LuckPerms on BungeeC
 * [Nucleus](https://nucleuspowered.org/) - an "essentials" like plugin, which also includes a [module for chat formatting](https://nucleuspowered.org/docs/modules/chat.html).
 
 ### Fabric
-* [Styled Chat](https://modrinth.com/mod/styled-chat) - includes chat formatting, uses [Fabric TextPlaceholderAPI](https://placeholders.pb4.eu)
-* [Styled Player List](https://modrinth.com/mod/styledplayerlist) - includes tablist formatting, uses [Fabric TextPlaceholderAPI](https://placeholders.pb4.eu)
+* [Styled Chat](https://github.com/Patbox/StyledChat) - includes chat formatting, uses [Fabric TextPlaceholderAPI](https://placeholders.pb4.eu)
+* [Styled Player List](https://github.com/Patbox/StyledPlayerList) - includes tablist formatting, uses [Fabric TextPlaceholderAPI](https://placeholders.pb4.eu)
 * [GraphiXMod](https://github.com/lochnessdragon/GraphiXMod) - includes chat formatting, holograms, tablist and scoreboard.
 * [Chatter](https://github.com/Axieum/Chatter) - includes chat formatting and Discord integration
 
