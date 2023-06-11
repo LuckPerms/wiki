@@ -59,6 +59,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 ### Helpers
 * **ANutley**
 * **ben**
+* **DarkLaw**
 * **Doctor Zod**
 * **Evident**
 * **Frying☆Pan**
