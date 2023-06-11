@@ -94,6 +94,7 @@ Some popular chat formatting plugins which work with LuckPerms + Vault include:
 * [ChatControl](https://builtbybit.com/resources/18217) (paid)
 * [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/) (paid)
 * [BetterPrefix](https://www.spigotmc.org/resources/betterprefix-papi-support.18096/)
+* [BetterChat](https://www.spigotmc.org/resources/betterchat-lightweight-luckperms-chat.110389/)
 
 Some popular tab/nametag formatting plugins which work with LuckPerms + Vault include:
 * [NametagEdit](https://www.spigotmc.org/resources/3836/)
