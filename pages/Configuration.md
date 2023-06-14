@@ -331,13 +331,24 @@ ___
 Settings for Redis.
 
 * **`address`** - the host to be used for redis. Uses the standard port by default (6379). If you have a non-default port, specify it here using `host:port`.
+* **`addresses`** - the hosts to be used for redis. Uses the standard port by default (6379). If you have a non-default port, specify it here using `host:port`.
 * **`password`** - the password to be used. Leave empty to use no authentication.
 
 ##### Example
+For redis node:
 ```yaml
 redis:
   enabled: true
   address: localhost
+  password: 'passw0rd'
+```
+
+For redis cluster:
+```yaml
+redis:
+  enabled: true
+  addresses:
+    - localhost
   password: 'passw0rd'
 ```
 
