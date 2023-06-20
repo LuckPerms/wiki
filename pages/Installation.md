@@ -19,6 +19,8 @@ Next, we need to install LuckPerms onto the server. Make sure you have selected 
 
 Navigate to your hosting panel's "File Manager", and open the `plugins` folder (for Bukkit, Nukkit, etc) or `mods` folder (for Sponge or Fabric).
 
+Note in step 1 that while Sponge can use 'plugins', these are not the same as Bukkit plugins. The Sponge version of LuckPerms and the Bukkit version are different JARs because they are not cross-compatible. Ensure you install the correct version!
+
 ![](../img/installation-1.png)
 
 Once you're in the plugins or mods folder, click upload and select the LuckPerms jar you downloaded in Step 1.
