@@ -24,7 +24,7 @@ username-color: blue
 ## Who provides what?
 Generally, plugins which provide and manage permissions on your server will also have functionality to allow you to set, manage and store prefixes/suffixes/meta. This is true of LuckPerms.
 
-Occasionally, permissions plugins will also provide the means to apply this data to the chat. This is not the case for LuckPerms, and you'll need an addittional plugin to apply chat formatting for you. More on this later.
+Occasionally, permissions plugins will also provide the means to apply this data to the chat. This is not the case for LuckPerms, and you'll need an additional plugin to apply chat formatting for you. More on this later.
 
 ## How do prefixes/suffixes/meta get stored
 Prefixes and suffixes in LuckPerms are converted and stored as permission nodes. You'll notice that when you add a prefix or suffix to a user/group, that a new entry will appear in their permissions data which relates to the value you set. Why do it this way? Well, it makes things much easier from a programming point of view to have everything stored in the same place, and in similar formats. It also means you can easily manipulate prefix and suffix data in the same way you do for permissions.
