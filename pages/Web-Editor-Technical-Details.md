@@ -41,14 +41,14 @@ The web editor will only accept messages sent in the channel that have been sign
 The connection flow starts when the web editor sends a `hello` message to the channel (the server should be connected & "listening" in the channel already).
 
 The `hello` message includes:
-* nonce - a short, random string to indentify the session
+* nonce - a short, random string to identify the session
 * sessionId - the bytebin id the web editor was opened with
 * browser - a short description of the os/browser being used
-* publicKey - the editor's public key. This is used by the server to ensure that subsequent messages recieved from the editor have not been tampered with.
+* publicKey - the editor's public key. This is used by the server to ensure that subsequent messages received from the editor have not been tampered with.
 
 During the connection flow, the Minecraft server (LuckPerms plugin) will ensure that either:
 * the editor public key is known from a previous session
-* the user runs a command to explictly trust the editor. This process uses the nonce to ensure they trust the right one in the case of >1 connections!
+* the user runs a command to explicitly trust the editor. This process uses the nonce to ensure they trust the right one in the case of >1 connections!
 
 The server will return a `hello-reply` message to inform the editor of what the outcome is.
 
