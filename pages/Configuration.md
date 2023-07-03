@@ -102,7 +102,7 @@ LuckPerms will attempt to resolve configuration settings from various sources (i
 
 ### System Properties
 
-[System properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html) are a generic way to configure Java applications. They can either be set using a command line flag, or programatically using the [`java.lang.System`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html) API.
+[System properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html) are a generic way to configure Java applications. They can either be set using a command line flag, or programmatically using the [`java.lang.System`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html) API.
 
 e.g. To replicate the following YAML from a LuckPerms config.yml with system properties:
 
@@ -126,7 +126,7 @@ java
 
 ### Environment Variables
 
-[Enviroment variables](https://en.wikipedia.org/wiki/Environment_variable) are a generic way to configure any application. The way they are defined depends on your setup. An example is given below for unix-like shells, but you can also [easily set them](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file) if you're running your server in a Docker container, for example.
+[Environment variables](https://en.wikipedia.org/wiki/Environment_variable) are a generic way to configure any application. The way they are defined depends on your setup. An example is given below for unix-like shells, but you can also [easily set them](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file) if you're running your server in a Docker container, for example.
 
 e.g. To replicate the following YAML from a LuckPerms config.yml with environment variables:
 
@@ -415,7 +415,7 @@ argument-based-command-permissions: true
 ___
 ### `log-notify`
 
-If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to recieve the notification. 
+If the plugin should send log notifications to users whenever permissions are modified. Notifications are only sent to those with the appropriate permission to receive the notification. 
 
 Notifications can also be disabled temporarily in-game using `/lp log notify off`
 
@@ -642,7 +642,7 @@ apply-sponge-default-subjects=true
 ___
 ### `world-rewrite`
 
-Allows you to set "aliases" for the worlds sent forward for context calculation. These aliases are provided in addittion to the real world name. Applied recursively.
+Allows you to set "aliases" for the worlds sent forward for context calculation. These aliases are provided in addition to the real world name. Applied recursively.
 
 ##### Example
 ```yaml
