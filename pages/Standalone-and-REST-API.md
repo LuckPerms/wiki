@@ -64,7 +64,7 @@ It's quite easy:
 
 1. Create a file called `extension.json` at the root of your jar with the following contents:
     ```json
-    {"class": "com.example.extention.MainClass"}
+    {"class": "com.example.extension.MainClass"}
     ```
     (replace with your main class!)
 2. Create a main class that extends `import net.luckperms.api.extension.Extension`.
