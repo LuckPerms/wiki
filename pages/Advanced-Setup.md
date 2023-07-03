@@ -15,7 +15,7 @@ This is the name of the server. If you want to set server specific permissions, 
 # If users on this server should have their global permissions/groups applied.
 include-global: true
 ```
-The include global option is also imporant.
+The include global option is also important.
 
 Permissions in LuckPerms are either server specific (they only apply on certain servers) or global (they apply on all servers). 
 
@@ -78,7 +78,7 @@ Example: if a user has a true permission set for "luckperms.\*", and a false per
 
 * **Temporary permissions will override other temporary permissions with a longer expiry time**
 
-Example: if a user has a temporary true permission set for "fly.use" that expires in 1 day, and a temporary false permission set for "fly.use" that expires in 1 hour, the temporary permission expiring in 1 hour will override the one expiring in 1 day, and the negative node will take precendence for the duration of 1 hour.
+Example: if a user has a temporary true permission set for "fly.use" that expires in 1 day, and a temporary false permission set for "fly.use" that expires in 1 hour, the temporary permission expiring in 1 hour will override the one expiring in 1 day, and the negative node will take precedence for the duration of 1 hour.
 
 * **More specific wildcards override less specific ones**
 
