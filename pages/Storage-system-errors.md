@@ -181,7 +181,7 @@ Check that the following is correct:
   
 ___
 
-### "transaction_isolation" error
+### Transaction Isolation error
 
 If you are receiving the following error in your startup log:
 > Caused by: java.sql.SQLException: Unknown system variable 'transaction_isolation'
