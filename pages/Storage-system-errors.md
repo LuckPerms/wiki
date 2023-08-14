@@ -185,4 +185,5 @@ ___
 
 If you are receiving the following error in your startup log:
 > Caused by: java.sql.SQLException: Unknown system variable 'transaction_isolation'
+
 Make sure you have set your `storage-method` to `MariaDB` in your LuckPerms config.
