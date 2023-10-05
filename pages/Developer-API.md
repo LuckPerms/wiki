@@ -9,7 +9,7 @@ The API uses [Semantic Versioning](https://semver.org/), meaning whenever a non-
 The current API release is `5.4`.
 
 * The API package in LuckPerms is `net.luckperms.api`.
-* JavaDocs are available either in [a standard JavaDoc layout](https://javadoc.io/doc/net.luckperms/api/), or within the API [source code](https://github.com/LuckPerms/LuckPerms/tree/master/api/src/main/java/net/luckperms/api).
+* JavaDocs are available either in [a standard JavaDoc layout](https://javadocs.dev/net.luckperms/api/latest), or within the API [source code](https://github.com/LuckPerms/LuckPerms/tree/master/api/src/main/java/net/luckperms/api).
 
 #### Changelogs
 
