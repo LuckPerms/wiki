@@ -44,13 +44,16 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 
 ### Moderators
 * **\_11**
-* **aberdeener**
+* **DarkLaw**
 * **emilyy**
+* **Evident**
+* **Frying☆Pan**
 * **Jay**
 * **Larry**
 * **OmegaWeaponDev**
 * **RyanJH**
 * **Tobi**
+* aberdeener (retired)
 * Andre_601 (retired)
 * BrainStone (retired)
 * Darktilldawn (retired)
@@ -59,10 +62,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 ### Helpers
 * **ANutley**
 * **ben**
-* **DarkLaw**
 * **Doctor Zod**
-* **Evident**
-* **Frying☆Pan**
 * **JG**
 * **Lord_Samosa**
 * **powercas_gamer**
