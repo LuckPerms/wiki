@@ -15,7 +15,8 @@ ___
 *  [/lp `sync`](#lp-sync)
 *  [/lp `info`](#lp-info)
 *  [/lp `editor`](#lp-editor-type-filter)
-*  [/lp `verbose` \<on | record | off | upload | command\> [filter|<me|player> <command>]](#lp-verbose-onrecordoffuploadcommand-filtermeplayer-command)
+*  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
+*  [/lp `verbose command` \<me | player\> \<command\>](#lp-verbose-command-meplayer-command)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
 *  [/lp `search` [comparison] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `networksync`](#lp-networksync)
@@ -56,17 +57,17 @@ ___
 Opens a web interface to edit permissions data. After changes are saved, a command will be given that you need to run for the changes to take effect.
 
 ___
-#### `/lp verbose <on|record|off|upload|command> [filter|<me|player> <command>]`  
+#### `/lp verbose <on|record|off|upload> [filter]`  
 **Permission**: luckperms.verbose  
 **Arguments**:  
 * `<on|record|off|upload>` - whether to enable/disable logging, or to upload the logged output
-* `[filter|<me|player> <command>]` - the filter to sort the output, or the player and command to use verbose on when the `command` argument is used
+* `[filter]` - the filter to sort the output, or the player and command to use verbose on when the `command` argument is used
 
 Controls the LuckPerms verbose logging system. This allows you to listen for all permission checks against players on the server. Whenever a permission is checked by a plugin, the check is passed onto the verbose handler.    
 
 If your filters match the permission check, you will be notified.    
 
-`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `upload` will upload the first results to the web viewer, and provide you with a link. `command` will allow you to execute a command as the specified player and return any permission checks.    
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `upload` will upload the first results to the web viewer, and provide you with a link.
 
 Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
 
@@ -77,6 +78,15 @@ Filters match the start of permissions or the user being checked. You can use `&
   
 
 More information can be found [**here**](Verbose)
+
+___
+#### `/lp verbose command <me|player> <command>`
+**Permission**: luckperms.vebose  
+**Argzments**:
+* `<me|player>` - The player to perform the verbose check on. Use `me` to select yourself.
+* `<command>` - The command to use for the verbose check.
+
+Controls the LuckPerms verbose logging system. This allows you to execute a command as a specific player and listen for all permission checks against the player on the server for this command.
 
 ___
 #### `/lp tree [scope] [player]`  
