@@ -45,7 +45,10 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 ### Moderators
 * **\_11**
 * **aberdeener**
+* **DarkLaw**
 * **emilyy**
+* **Evident**
+* **Frying☆Pan**
 * **Jay**
 * **Larry**
 * **OmegaWeaponDev**
@@ -59,10 +62,7 @@ Additionally, I'd like to thank the project's Discord moderators and helpers, pa
 ### Helpers
 * **ANutley**
 * **ben**
-* **DarkLaw**
 * **Doctor Zod**
-* **Evident**
-* **Frying☆Pan**
 * **JG**
 * **Lord_Samosa**
 * **powercas_gamer**
