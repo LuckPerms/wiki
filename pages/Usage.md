@@ -39,7 +39,7 @@ If you haven't got LuckPerms installed just yet, please refer to the [installati
 Then, please make sure you read the section about [choosing a Storage type](Storage-types) before proceeding. Whilst it is possible to change these options later, it's better to get them right the first time around.
 
 ## Granting full access to modify permissions
-The first thing you'll want to do is give yourself full access to the plugin. When the LuckPerms is first installed, nobody has access to any of the LP commands.
+The first thing you'll want to do is give yourself full access to the plugin. When LuckPerms is first installed, nobody has access to any of the LP commands.
 
 To do this, login to your server, and then open the server console.
 
@@ -48,7 +48,7 @@ Then, type `lp user <your username> permission set luckperms.* true`. (don't wor
 The result should look something like this:   
 ![](../img/usage-1.png)
 
-Effectively, what this command does, is give the your account the `luckperms.*` permission. (or sets it to true for the user) You'll notice there's a `*` character at the end of the permission string. This character is called a wildcard, and gives a user access to **all** permissions which start with "luckperms".
+Effectively, what this command does, is give your account the `luckperms.*` permission. (or sets it to true for the user) You'll notice there's a `*` character at the end of the permission string. This character is called a wildcard, and gives a user access to **all** permissions which start with "luckperms".
 
 Now you've done this, you can either continue the setup process in-game, or keep typing commands into the console.
 
