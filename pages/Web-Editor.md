@@ -44,7 +44,7 @@ Once you've created and opened the session, you can use the interface to make ch
 
 ### Editor Context
 
-You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with appropriate keys and vaules, such as `world` and `nether`, or `server` and `hub`.
+You can add contexts in the editor in addition to in-game. To do so, either click the "Add Contexts" button before adding a permission or simply fill in the `key` and `value` fields after a permission with appropriate keys and values, such as `world` and `nether`, or `server` and `hub`.
 
 Note that a permission can only have one world and one server context at a time. You have to set the same permission again with the other context to make it apply on multiple worlds/servers.
 

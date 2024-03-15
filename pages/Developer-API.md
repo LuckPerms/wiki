@@ -221,7 +221,7 @@ If you don't care about errors, this can be simplified further.
 logFuture.thenAcceptAsync(log -> { /* Use the log for something */ }, executor);
 ```
 
-The CompletableFuture class can initially be very confusing to use (it's still a relatively new API in Java!), however it is a great way to encapsulate async computations, and in the case of Minecraft, ensures that users don't accidently block the server thread waiting on lengthy I/O calls.
+The CompletableFuture class can initially be very confusing to use (it's still a relatively new API in Java!), however it is a great way to encapsulate async computations, and in the case of Minecraft, ensures that users don't accidentally block the server thread waiting on lengthy I/O calls.
 
 #### Asynchronous events & callbacks
 
