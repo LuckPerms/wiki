@@ -178,3 +178,12 @@ Check that the following is correct:
 * Your password is correct
 * There are no firewall rules blocking the connection
 * The Redis server is actually running
+  
+___
+
+### Transaction Isolation error
+
+If you are receiving the following error in your startup log:
+> Caused by: java.sql.SQLException: Unknown system variable 'transaction_isolation'
+
+Make sure you have set your `storage-method` to `MariaDB` in your LuckPerms config.
