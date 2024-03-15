@@ -61,7 +61,7 @@ ___
 **Permission**: luckperms.verbose  
 **Arguments**:  
 * `<on|record|off|upload>` - whether to enable/disable logging, or to upload the logged output
-* `[filter]` - the filter to sort the output, or the player and command to use verbose on when the `command` argument is used
+* `[filter]` - the filter to sort the output
 
 Controls the LuckPerms verbose logging system. This allows you to listen for all permission checks against players on the server. Whenever a permission is checked by a plugin, the check is passed onto the verbose handler.    
 
@@ -82,9 +82,9 @@ More information can be found [**here**](Verbose)
 ___
 #### `/lp verbose command <me|player> <command>`
 **Permission**: luckperms.vebose  
-**Argzments**:
-* `<me|player>` - The player to perform the verbose check on. Use `me` to select yourself.
-* `<command>` - The command to use for the verbose check.
+**Arguments**:
+* `<me|player>` - the player to perform the verbose check on. Use `me` to select yourself
+* `<command>` - the command to use for the verbose check
 
 Controls the LuckPerms verbose logging system. This allows you to execute a command as a specific player and listen for all permission checks against the player on the server for this command.
 
