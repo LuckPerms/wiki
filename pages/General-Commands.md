@@ -16,6 +16,7 @@ ___
 *  [/lp `info`](#lp-info)
 *  [/lp `editor`](#lp-editor-type-filter)
 *  [/lp `verbose` \<on | record | off | upload\> [filter]](#lp-verbose-onrecordoffupload-filter)
+*  [/lp `verbose command` \<me | player\> \<command\>](#lp-verbose-command-meplayer-command)
 *  [/lp `tree` [scope] [player]](#lp-tree-scope-player)
 *  [/lp `search` [comparison] \<permission\>](#lp-search-comparison-permission)
 *  [/lp `networksync`](#lp-networksync)
@@ -66,7 +67,7 @@ Controls the LuckPerms verbose logging system. This allows you to listen for all
 
 If your filters match the permission check, you will be notified.    
 
-`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `upload` will upload the first results to the web viewer, and provide you with a link.    
+`on` will enable the system, and will send you an alert in chat when the filter is matched. `record` will do the same, however you will not be notified of checks in the chat. `off` will simply disable the checking, and `upload` will upload the first results to the web viewer, and provide you with a link.
 
 Filters match the start of permissions or the user being checked. You can use `&` (and) and `|` (or) symbols, and `!` to negate a match. Parenthesis `( )` are also supported.   
 
@@ -77,6 +78,15 @@ Filters match the start of permissions or the user being checked. You can use `&
   
 
 More information can be found [**here**](Verbose)
+
+___
+#### `/lp verbose command <me|player> <command>`
+**Permission**: luckperms.vebose  
+**Arguments**:
+* `<me|player>` - the player to perform the verbose check on. Use `me` to select yourself
+* `<command>` - the command to use for the verbose check
+
+Controls the LuckPerms verbose logging system. This allows you to execute a command as a specific player and listen for all permission checks against the player on the server for this command.
 
 ___
 #### `/lp tree [scope] [player]`  
