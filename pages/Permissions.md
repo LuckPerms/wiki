@@ -95,7 +95,7 @@ luckperms.group.meta.info | [`/lp group <group> meta info` command](Meta-Command
 luckperms.group.meta.set | [`/lp group <group> meta set` command](Meta-Commands#lp-usergroup-usergroup-meta-set-key-value-context)
 luckperms.group.meta.unset | [`/lp group <group> meta unset` command](Meta-Commands#lp-usergroup-usergroup-meta-unset-key-value-context)
 luckperms.group.meta.settemp | [`/lp group <group> meta settemp` command](Meta-Commands#lp-usergroup-usergroup-meta-settemp-key-value-duration-temporary-modifier-context)
-luckperms.group.meta.unsettemp | [`/lp group <group> meta unsettem`pcommand](Meta-Commands#lp-usergroup-usergroup-meta-unsettemp-key-context)
+luckperms.group.meta.unsettemp | [`/lp group <group> meta unsettemp `command](Meta-Commands#lp-usergroup-usergroup-meta-unsettemp-key-context)
 luckperms.group.meta.addprefix | [`/lp group <group> meta addprefix` command](Meta-Commands#lp-usergroup-usergroup-meta-addprefix-priority-prefix-context)
 luckperms.group.meta.addsuffix | [`/lp group <group> meta addsuffix` command](Meta-Commands#lp-usergroup-usergroup-meta-addsuffix-priority-suffix-context)
 luckperms.group.meta.setprefix | [`/lp group <group> meta setprefix` command](Meta-Commands#lp-usergroup-usergroup-meta-setprefix-priority-prefix-context)
