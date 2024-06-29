@@ -1,4 +1,4 @@
-LuckPerms can store it's data in a number of ways. These options can be changed in the "Storage Settings" section of the config file.
+LuckPerms can store its data in a number of ways. These options can be changed in the "Storage Settings" section of the config file.
 
 ### Possible options
 
