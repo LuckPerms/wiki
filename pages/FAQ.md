@@ -90,7 +90,7 @@ To fix, open the AuthMe config.yml and change `forceVaultHook` from false to tru
 ***
 
 ### LuckPerms cannot download dependencies 
-LuckPerms requires an internet connection to be able to download its dependencies. If LuckPerms does not have an connection or a host is blocking it, the plugin will **not** work.
+LuckPerms requires an internet connection to be able to download its dependencies. If LuckPerms does not have a connection or a host is blocking it, the plugin will **not** work.
 
 > me.lucko.luckperms.common.dependencies.DependencyDownloadException: java.net.ConnectException: Connection refused (Connection refused)
 
