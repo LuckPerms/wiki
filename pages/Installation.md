@@ -100,12 +100,14 @@ Remember, you'll need to complete these steps for all servers you have in your n
 ## Requirements
 LuckPerms has a few requirements. The *vast* majority of servers will meet these requirements already.
 
-* You need Java 8 or higher
+* You need Java 11 or higher
 * Your server needs access to the internet the first time you load LuckPerms
 
 ---
-### Java 8
-Your server must be running **Java 8** or higher. LuckPerms does not work on older versions of Java.
+### Java 11
+Your server must be running **Java 11** or higher. LuckPerms does not work on older versions of Java.
+
+Some platforms / Minecraft releases necessitate even new versions of Java (e.g. Java 21) which LuckPerms also supports.
 
 ---
 ### Internet Connection
