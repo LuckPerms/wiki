@@ -148,6 +148,7 @@ A Bukkit LuckPerms release for 1.7.10 can be found on our [downloads page](https
 ---
 ### Cauldron, Thermos, etc
 If you're using Cauldron, Thermos or any other Bukkit-Forge hack, you may encounter errors when trying to load LuckPerms. This is **not** a LuckPerms issue - but rather due to a bug in the server.
+Please make sure to use luckperms bukkit version 5.5.0 since the newest (legacy) builds are not compatible with this fix!
 
 These issues have been reported to the respective projects, however none are currently being maintained, so this issue will (most likely) never be fixed. In the meantime, you can hack around these problems using the steps outlined below.
 
