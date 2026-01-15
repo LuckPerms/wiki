@@ -36,26 +36,20 @@ chat-formatter:
   # If LuckPerms should handle chat formatting.
   enabled: true
 
-  # The string to use as a spacer between the username and the message.
-  message-spacer: ": "
+  # The format to use.
+  message-format: "<prefix><username><suffix>: <message>"
 ```
 
 This functionality is only intended for simple chat formatting needs. For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms.
 
-When enabled, LuckPerms formats the chat using the following format:
-```
-{prefix}{username}{suffix}{spacer}{message}
-```
+The message format string supports the following placeholders:
 
-where:
+* `<prefix>` is the players prefix meta value
+* `{username>` is the players username
+* `<suffix>` is the players suffix meta value
+* `<message>` is the actual chat message sent by the player
 
-* `{prefix}` is the players prefix meta value
-* `{username}` is the players username
-* `{suffix}` is the players suffix meta value
-* `{spacer}` is a spacer string defined in the config
-* `{message}` is the actual chat message sent by the player
-
-The prefix and suffix values support formatting using [MiniMessage](https://docs.papermc.io/adventure/minimessage/format/). (Yes, this is a Minecraft format, it was easier to use something existing!)
+The format string, as well as the prefix and suffix values support formatting using [MiniMessage](https://docs.papermc.io/adventure/minimessage/format/). (Yes, this is a Minecraft format, but it's good and it was easier to reuse it!)
 
 Formatting from the prefix and suffix will intentionally "*spill over*" into subsequent parts of the format.
 
