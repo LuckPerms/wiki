@@ -50,6 +50,7 @@
 * [**How permission calculation works**](Advanced-Setup)
 * [**Web Editor Technical Details**](Web-Editor-Technical-Details)
 * [**Self hosting the web interfaces**](Self-hosting-the-web-interfaces)
+* [**Hytale**](Hytale)
 
 ### Project Info
 
