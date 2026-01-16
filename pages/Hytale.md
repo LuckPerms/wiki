@@ -1,5 +1,5 @@
 
-There is an **early beta / experiemental** version of **LuckPerms for [Hytale](https://hytale.com/)** available to [download from CurseForge](https://www.curseforge.com/hytale/mods/luckperms). This is the same LuckPerms you know and (maybe/hopefully) love from Minecraft, ported across and integrated with Hytale! 🎉
+There is an **early beta / experimental** version of **LuckPerms for [Hytale](https://hytale.com/)** available to [download from CurseForge](https://www.curseforge.com/hytale/mods/luckperms). This is the same LuckPerms you know and (maybe/hopefully) love from Minecraft, ported across and integrated with Hytale! 🎉
 
 At time of writing, it is still very early days and a lot of things are unknown and uncertain. Hytale has quite a lot of modding capability, but there is a limited amount of official documentation and guidance.
 
@@ -7,13 +7,25 @@ LuckPerms for Hytale is built on top of the same common codebase as the other Lu
 
 ## FAQs
 
-### Built-in permission system
+### I've never used LuckPerms before! How do I get started?
+
+Hello and welcome!
+
+There is lots of useful information here on the wiki. Thankfully, the Hytale edition of LuckPerms behaves mostly the same as the Minecraft editions, so everything that has been written before is still relevant. Yay!
+
+If you've never used a permissions plugin before, we suggest you just start at the top and work your way down!
+
+* The basics of permissions are covered in detail in the [Getting Started](Usage) page.
+* A more to the point command reference can be found in the [Command Usage](Command-Usage) subpages.
+
+### Hytale built-in permission system
 
 When LuckPerms is installed, the built-in Hytale permission system is largely replaced. This is subject to change, but it's the approach we've gone with for now.
 
 This means:
 
 * The built-in `/op` command will not work. It should tell you if you try to use it! Use LuckPerms to configure permissions instead.
+
 * The built-in `/perm` command will not work. You must use the LuckPerms `/lp` commands to configure permissions.
 
 LuckPerms attempts to maintain compatibility with other mods checking permissions via `CommandSender#hasPermission` or `PermissionsModule#hasPermission`, but the other methods in `PermissionsModule` probably will not work as you expect (for now...).
@@ -21,6 +33,8 @@ LuckPerms attempts to maintain compatibility with other mods checking permission
 ### Finding permissions / troubleshooting 
 
 If you don't know the permissions associated with a given command or feature, use the LuckPerms verbose feature! See the [Verbose](Verbose) wiki page for details.
+
+You can also use the built-in `/help` command, which will bring up a UI listing available commands and their corresponding permissions.
 
 
 ### Chat formatting
@@ -40,14 +54,12 @@ chat-formatter:
   message-format: "<prefix><username><suffix>: <message>"
 ```
 
-This functionality is only intended for simple chat formatting needs. For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms.
-
 The message format string supports the following placeholders:
 
-* `<prefix>` is the players prefix meta value
-* `{username>` is the players username
-* `<suffix>` is the players suffix meta value
-* `<message>` is the actual chat message sent by the player
+* `<prefix>` is the player's **prefix** meta value
+* `<username>` is the player's **username**
+* `<suffix>` is the player's **suffix** meta value
+* `<message>` is the **chat message** sent by the player
 
 The format string, as well as the prefix and suffix values support formatting using [MiniMessage](https://docs.papermc.io/adventure/minimessage/format/). (Yes, this is a Minecraft format, but it's good and it was easier to reuse it!)
 
@@ -66,6 +78,8 @@ Hopefully you get the idea. For more information:
 
 * [Prefixes, Suffixes & Meta](Prefixes,-Suffixes-&-Meta) (LP wiki)
 * [MiniMessage format](https://docs.papermc.io/adventure/minimessage/format/) (PaperMC docs)
+
+The built-in functionality is only intended for simple chat formatting and likely will not be enhanced further. For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms (although we aren't aware of any that exist, yet!).
 
 ### Known caveats/issues
 
