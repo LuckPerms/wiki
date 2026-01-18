@@ -3,9 +3,16 @@ There is an **early beta / experimental** version of **LuckPerms for [Hytale](ht
 
 At time of writing, it is still very early days and a lot of things are unknown and uncertain. Hytale has quite a lot of modding capability, but there is a limited amount of official documentation and guidance.
 
-LuckPerms for Hytale is built on top of the same common codebase as the other LuckPerms plugin/mods, but its integration with the server is not as stable. **You have been warned! There will be bugs! 🐞**
+LuckPerms for Hytale is built on top of the same common codebase as the other LuckPerms plugin/mods, but its integration with the server is not as stable. **You have been warned! There will be bugs! 🐞** However, we believe that basing the Hytale version of LuckPerms on top of the same core code as the well-proven Minecraft versions should enable us to make things very stable, quite quickly!
 
 ## FAQs
+
+* [I've never used LuckPerms before! How do I get started?](#ive-never-used-luckperms-before-how-do-i-get-started)
+* [OP doesn't work anymore!](#op-doesnt-work-anymore)
+* [Compatibility with other mods/plugins](#compatibility-with-other-modsplugins)
+* [Finding permissions and troubleshooting](#finding-permissions-and-troubleshooting)
+* [Chat formatting](#chat-formatting)
+* [Known caveats/issues](#known-caveatsissues)
 
 ### I've never used LuckPerms before! How do I get started?
 
@@ -18,19 +25,28 @@ If you've never used a permissions plugin before, we suggest you just start at t
 * The basics of permissions are covered in detail in the [Getting Started](Usage) page.
 * A more to the point command reference can be found in the [Command Usage](Command-Usage) subpages.
 
-### Hytale built-in permission system
+### OP doesn't work anymore!
 
-When LuckPerms is installed, the built-in Hytale permission system is largely replaced. This is subject to change, but it's the approach we've gone with for now.
+When LuckPerms is installed, the built-in Hytale permission system is largely replaced. This is part of the Hytale server code and is beyond our control.
 
-This means:
+This means that:
 
 * The built-in `/op` command will not work. It should tell you if you try to use it! Use LuckPerms to configure permissions instead.
 
 * The built-in `/perm` command will not work. You must use the LuckPerms `/lp` commands to configure permissions.
 
+If you want to replicate OP-like functionality (full access to **all** commands, features, etc), you can use the following LuckPerms commands:
+
+* `/lp user <user> permission set *` - give `<user>` all permissions
+* `/lp group <group> permission set *` - give any user in `<group>` all permissions (e.g. you may want to do this for your "admin" or "owner" group)
+
+### Compatibility with other mods/plugins
+
 LuckPerms attempts to maintain compatibility with other mods checking permissions via `CommandSender#hasPermission` or `PermissionsModule#hasPermission`, but the other methods in `PermissionsModule` probably will not work as you expect (for now...).
 
-### Finding permissions / troubleshooting 
+LuckPerms has a built-in chat formatter that is enabled by default (see below for more info). If you want to use LuckPerms prefixes or suffixes in chat messages, we recommend that you leave it enabled and disable chat formatting functionality in any other mods you may have installed. :)
+
+### Finding permissions / troubleshooting
 
 If you don't know the permissions associated with a given command or feature, use the LuckPerms verbose feature! See the [Verbose](Verbose) wiki page for details.
 
