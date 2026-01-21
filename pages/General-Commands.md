@@ -81,7 +81,7 @@ More information can be found [**here**](Verbose)
 
 ___
 #### `/lp verbose command <me|player> <command>`
-**Permission**: luckperms.vebose  
+**Permission**: luckperms.verbose  
 **Arguments**:
 * `<me|player>` - the player to perform the verbose check on. Use `me` to select yourself
 * `<command>` - the command to use for the verbose check
