@@ -12,6 +12,7 @@ LuckPerms for Hytale is built on top of the same common codebase as the other Lu
 * [Compatibility with other mods/plugins](#compatibility-with-other-modsplugins)
 * [Finding permissions and troubleshooting](#finding-permissions-and-troubleshooting)
 * [Chat formatting](#chat-formatting)
+* [Integrating with the LuckPerms API](#integrating-with-the-luckperms-api)
 * [Known caveats/issues](#known-caveatsissues)
 
 ### I've never used LuckPerms before! How do I get started?
@@ -96,6 +97,76 @@ Hopefully you get the idea. For more information:
 * [MiniMessage format](https://docs.papermc.io/adventure/minimessage/format/) (PaperMC docs)
 
 The built-in functionality is only intended for simple chat formatting and likely will not be enhanced further. For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms (although we aren't aware of any that exist, yet!).
+
+### Integrating with the LuckPerms API
+
+We have created a basic example plugin which demonstrates how to access the LuckPerms API from a Hytale plugin.
+
+[https://github.com/LuckPerms/api-cookbook-hytale](https://github.com/LuckPerms/api-cookbook-hytale)
+
+The key things are:
+
+#### 1) Declare LuckPerms as a dependency or optional dependency
+
+In your plugin `manifest.json`, you must include either:
+
+```json
+{
+  "Dependencies": {
+    "LuckPerms:LuckPerms": "*"
+  }
+}
+```
+
+or
+
+```json
+{
+  "OptionalDependencies": {
+    "LuckPerms:LuckPerms": "*"
+  }
+}
+```
+
+This is because Hytale's plugin manager isolates classloaders between plugins, except if a dependency is declared.
+
+#### 2) Obtain the API instance from JavaPlugin.start() or later
+
+LuckPerms performs it's final initialisation during the "start" phase, it is **not** ready during the "setup" phase.
+
+```java
+  @Override
+  protected void setup() {
+    // doesn't work! ❌
+    LuckPerms luckPerms = LuckPermsProvider.get();
+  }
+
+  @Override
+  protected void start() {
+    // works! ✅
+    LuckPerms luckPerms = LuckPermsProvider.get();
+  }
+```
+
+#### 3) PlayerAdapter and ContextManager expect `PlayerRef`
+
+Methods in the LuckPerms API that expect a "player" object need to be passed a `PlayerRef`, **not** a `Player`.
+
+For example:
+
+```java
+// PlayerAdapter is a convenience class for converting
+// between Hytale's PlayerRef and LuckPerms' User objects
+PlayerAdapter<PlayerRef> playerAdapter = LuckPermsProvider.get().getPlayerAdapter(PlayerRef.class);
+
+User user = playerAdapter.getUser(playerRef);
+CachedPermissionData permissionData = playerAdapter.getPermissionData(playerRef);
+CachedMetaData metaData = playerAdapter.getMetaData(playerRef);
+
+// Get the players prefix, for example :)
+String prefix = metaData.getPrefix();
+```
+
 
 ### Known caveats/issues
 
