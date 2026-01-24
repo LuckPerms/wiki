@@ -28,13 +28,13 @@ If you've never used a permissions plugin before, we suggest you just start at t
 
 ### OP doesn't work anymore!
 
-When LuckPerms is installed, the built-in Hytale permission system is largely replaced. This is part of the Hytale server code and is beyond our control.
+When LuckPerms is installed, the built-in Hytale permission system is largely replaced. This is so LuckPerms can intercept and handle permissions checks for players.
 
 This means that:
 
-* The built-in `/op` command will not work. It should tell you if you try to use it! Use LuckPerms to configure permissions instead.
+* The built-in `/op` command will not work as expected. Use LuckPerms to configure permissions instead.
 
-* The built-in `/perm` command will not work. You must use the LuckPerms `/lp` commands to configure permissions.
+* The built-in `/perm` command will not work as expected. You must use the LuckPerms `/lp` commands to configure permissions for players.
 
 If you want to replicate OP-like functionality (full access to **all** commands, features, etc), you can use the following LuckPerms commands:
 
@@ -43,7 +43,9 @@ If you want to replicate OP-like functionality (full access to **all** commands,
 
 ### Compatibility with other mods/plugins
 
-LuckPerms attempts to maintain compatibility with other mods checking permissions via `CommandSender#hasPermission` or `PermissionsModule#hasPermission`, but the other methods in `PermissionsModule` probably will not work as you expect (for now...).
+LuckPerms attempts to maintain compatibility with other mods checking permissions via `CommandSender#hasPermission` or `PermissionsModule#hasPermission`, but the other methods in `PermissionsModule` probably will not work as you expect.
+
+By default, LuckPerms will delegate permission checks for non-Player entities to the built-in Hytale permissions system. This means that you *can* use the built-in `/perm` commands to configure permissions for **non-Player** NPCs, "service accounts", or the Nitrado "anonymous" user. Player permissions **must** be configured through LuckPerms.
 
 LuckPerms has a built-in chat formatter that is enabled by default (see below for more info). If you want to use LuckPerms prefixes or suffixes in chat messages, we recommend that you leave it enabled and disable chat formatting functionality in any other mods you may have installed. :)
 
