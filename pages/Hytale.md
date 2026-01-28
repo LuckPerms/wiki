@@ -1,5 +1,5 @@
 
-There is an **early beta / experimental** version of **LuckPerms for [Hytale](https://hytale.com/)** available to [download from CurseForge](https://www.curseforge.com/hytale/mods/luckperms). This is the same LuckPerms you know and (maybe/hopefully) love from Minecraft, ported across and integrated with Hytale! 🎉
+There is an **early beta** version of **LuckPerms for [Hytale](https://hytale.com/)** available from our [downloads page](https://luckperms.net/download). This is the same LuckPerms you know and (maybe/hopefully) love from Minecraft, ported across and integrated with Hytale! 🎉
 
 At time of writing, it is still very early days and a lot of things are unknown and uncertain. Hytale has quite a lot of modding capability, but there is a limited amount of official documentation and guidance.
 
