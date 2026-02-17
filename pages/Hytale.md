@@ -49,8 +49,6 @@ LuckPerms aims to maintain compatibility with other mods checking permissions vi
 
 By default, LuckPerms will delegate permission checks for non-Player entities to the built-in Hytale permissions system. This means that you *can* use the built-in `/perm` commands to configure permissions for **non-Player** NPCs, "service accounts", or the Nitrado "anonymous" user. Player permissions **must** be configured through LuckPerms.
 
-LuckPerms has a built-in chat formatter that is enabled by default (see below for more info). If you want to use LuckPerms prefixes or suffixes in chat messages, we recommend that you leave it enabled and disable chat formatting functionality in any other mods you may have installed. :)
-
 ### Finding permissions and troubleshooting
 
 If you don't know the permissions associated with a given command or feature, use the LuckPerms verbose feature! See the [Verbose](Verbose) wiki page for details.
@@ -60,27 +58,19 @@ You can also use the built-in `/help` command, which will bring up a UI listing 
 
 ### Chat formatting
 
-Unlike LuckPerms on other platforms, LuckPerms for Hytale includes a basic, built-in, chat formatter. It is enabled by default.
+In early beta versions, LuckPerms had a built-in chat formatter. Now that the mod/plugin ecosystem has developed a bit, this functionality has been removed from LuckPerms as there are better alternatives available. We suggest you use one of the following approaches format your chat.
 
-It can be configured with the following settings in the LuckPerms `config.yml` file:
+#### mini-chat-formatter
 
-```yml
-# Configuration for the built-in LuckPerms chat formatter.
-chat-formatter:
+[mini-chat-formatter](https://github.com/lucko/mini-chat-formatter) is written by the same author as LuckPerms and is a simple Hytale chat formatting mod. It has native integration with LuckPerms.
 
-  # If LuckPerms should handle chat formatting.
-  enabled: true
+Simply download and install it, then set the following config in `mods/lucko_mini-chat-formatter/config.json`:
 
-  # The format to use.
-  message-format: "<prefix><username><suffix>: <message>"
+```json
+{
+  "Format": "<prefix><username><suffix>: <message>"
+}
 ```
-
-The message format string supports the following placeholders:
-
-* `<prefix>` is the player's **prefix** meta value
-* `<username>` is the player's **username**
-* `<suffix>` is the player's **suffix** meta value
-* `<message>` is the **chat message** sent by the player
 
 The format string, as well as the prefix and suffix values support formatting using [MiniMessage](https://docs.papermc.io/adventure/minimessage/format/). (Yes, this is a Minecraft format, but it's good and it was easier to reuse it!)
 
@@ -97,10 +87,13 @@ Some examples:
 
 Hopefully you get the idea. For more information:
 
+* [mini-chat-formatter](https://github.com/lucko/mini-chat-formatter) (GitHub)
 * [Prefixes, Suffixes & Meta](Prefixes,-Suffixes-&-Meta) (LP wiki)
 * [MiniMessage format](https://docs.papermc.io/adventure/minimessage/format/) (PaperMC docs)
 
-The built-in functionality is only intended for simple chat formatting and likely will not be enhanced further. For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms (although we aren't aware of any that exist, yet!).
+#### Advanced chat formatting options
+
+For more advanced chat formatting, we recommend using a dedicated chat plugin that integrates with LuckPerms. Some options include: HeroChat, EliteEssentials, EssentialsPlus, and others.
 
 ### Integrating with the LuckPerms API
 
