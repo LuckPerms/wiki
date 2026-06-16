@@ -12,6 +12,10 @@ Before you get started, there are a number of things you need to check. These ar
 
 LuckPerms supports networks using either `BungeeCord`, `Velocity` or `LilyPad`.
 
+### Velocity
+
+Setup Velocity following their [instructions](https://docs.papermc.io/velocity/getting-started/) and setup [modern forwarding](https://docs.papermc.io/velocity/player-information-forwarding/#configuring-modern-forwarding). Fabric servers will need `hackEarlySend` changed to `true` in `FabricProxy-Lite.toml`.
+
 ### BungeeCord
 LuckPerms uses a player's unique ids (UUID) as an index when saving data. A players uuid is provided by the server implementation, however, this value can depend on the state of the `online-mode` setting.
 
