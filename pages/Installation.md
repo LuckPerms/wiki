@@ -6,7 +6,7 @@ Just click the link to download and save the file somewhere easily accessible.
 
 * If you are running a _non-modded_ server for Minecraft: Java Edition, we recommend that you use [Paper](https://papermc.io/) as your server.
 * If you are running a _modded_ server for Minecraft: Java Edition, we recommend that you use [Fabric](https://fabricmc.net/) or [NeoForge](https://neoforged.net/) as your server.
-* If you are running a server for Minecraft: Bedrock Edition, we recommend that you use [Nukkit](https://cloudburstmc.org/) as your server.
+* If you are running a server for Minecraft: Bedrock Edition, we recommend that you use [Endstone](https://endstone.dev/) as your server. Nukkit is deprecated and we do not advise using it.
 * If you are running a proxy to connect multiple Minecraft servers together, we recommend that you use [Velocity](https://velocitypowered.com/) or [Waterfall](https://papermc.io/downloads#Waterfall) (BungeeCord) as your proxy.
 * If you are running a server for Hytale - you don't have much choice (currently)! The vanilla server is fine!
 
