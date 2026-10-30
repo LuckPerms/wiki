@@ -59,3 +59,5 @@
 * [**Locale and Translations**](Locale-and-Translations)
 * [**Placeholders**](Placeholders)
 * [**External connections**](External-connections)
+* [**Terms of Service**](Terms-of-Service)
+* [**Privacy Policy**](Privacy-Policy)
